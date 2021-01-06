@@ -25,7 +25,10 @@ import scala.util.Try
 
 trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
-  sys.addShutdownHook {
-    Try(SingletonDriver.closeInstance)
+/*
+  E.g.
+  When("""I enter date {date} on {string}""") { (salary: String) =>
+    ...
   }
+*/
 }
