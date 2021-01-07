@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,13 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object ExamplePage extends BasePage {
 
-  val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val title       = "Authority Wizard"
+  override val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  override val title = "Example title"
+
+  override def expectedPageErrorTitle: Option[String] = Some("Example error title")
+
+  override def expectedPageTitle: Option[String] = Some("Example title")
+
+  override def expectedPageHeader: Option[String] = Some("Example header")
 
 }

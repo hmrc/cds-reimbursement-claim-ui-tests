@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,60 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.scalatest.matchers.should.Matchers
-import org.scalatest.concurrent.Eventually
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import io.cucumber.scala.{EN, ScalaDsl}
-import uk.gov.hmrc.webdriver.SingletonDriver
+import org.scalatest.concurrent.Eventually
+import org.scalatest.matchers.should.Matchers
+import org.scalatestplus.selenium.WebBrowser
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.generic.PageObjectFinder
 
-import scala.util.Try
+trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
-
-/*
-  E.g.
-  When("""I enter date {date} on {string}""") { (salary: String) =>
-    ...
+  When("""I select Welsh translation on {string}""") { (page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).enableWelsh()
   }
-*/
+
+  When("""I select English translation on {string}""") { (page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).enableEnglish()
+  }
+
+  When("""I select radio button {string} on {string}""") { (choice: String, page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).clickRadioButton(choice)
+  }
+
+  When("""I select {string} on {string}""") { (selection: String, page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).selectBoxes(selection.replaceAll(" to ", "_").split(","))
+  }
+
+  When("""I click continue on {string}""") { (page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).clickContinueButton()
+  }
+
+  When("""I click {string} on {string}""") { (button: String, page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).clickButton(button)
+  }
+
+  And("""I navigate to the {string}""") { text: String =>
+    val pageName = text.replaceAll(" ", "")
+    go to PageObjectFinder.page(pageName)
+  }
+
+  Then("""I am presented with the {string}""") { text: String =>
+    val pageName = text.replaceAll(" ", "")
+    waitForPageHeader
+    PageObjectFinder.page(pageName).checkPageHeader
+    PageObjectFinder.page(pageName).checkPageTitle
+  }
+
+  Then("""I am presented with the {string} error page""") { text: String =>
+    val pageName = text.replaceAll(" ", "")
+    waitForPageHeader
+    PageObjectFinder.page(pageName).checkPageErrorTitle
+  }
+
+
 }
