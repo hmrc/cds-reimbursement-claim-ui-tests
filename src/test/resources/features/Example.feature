@@ -9,7 +9,6 @@ Feature: Example Feature file using Cucumber
     Then payment details page is displayed
     When I click continue
 
-  @test
   Scenario: Test file upload
     Given a user is on test page
     When the user uploads file

@@ -31,4 +31,8 @@ class ExampleStepDef extends BaseStepDef {
     driver.findElement(By.xpath("/html/body/form/input[2]")).click()
   }
 
+  Given("""I am on login page""") { () =>
+    driver.navigate().to("localhost:9949/auth-login-stub/gg-sign-in")
+  }
+
 }
