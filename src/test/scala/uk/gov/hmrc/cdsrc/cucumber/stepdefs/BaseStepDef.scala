@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.WebBrowser
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages.generic.PageObjectFinder
+import uk.gov.hmrc.cdsrc.driver.BrowserDriver
+import uk.gov.hmrc.cdsrc.pages.BasePage
+import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 
 trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
 

@@ -14,18 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.cdsrc
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import com.typesafe.config.{Config, ConfigFactory}
+import org.scalatest.wordspec.AnyWordSpec
+import uk.gov.hmrc.zap.ZapTest
+import uk.gov.hmrc.zap.config.ZapConfiguration
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin =
-    Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/ZapRunner.xml"),
-  tags = "@ZAP"
-)
-class ZapRunner {}
+class ZapSpec extends AnyWordSpec with ZapTest {
+  val zapConfig: Config = ConfigFactory.load().getConfig("zap-automation-config")
+
+  override val zapConfiguration: ZapConfiguration = new ZapConfiguration(zapConfig)
+
+  "Kicking off the zap scan" should {
+    "should complete successfully" in {
+      triggerZapScan()
+    }
+  }
+}

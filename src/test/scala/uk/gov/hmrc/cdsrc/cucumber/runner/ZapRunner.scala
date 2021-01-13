@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.cdsrc.cucumber.runner
 
 import io.cucumber.junit.Cucumber
 import io.cucumber.junit.CucumberOptions
@@ -24,7 +24,8 @@ import org.junit.runner.RunWith
 @CucumberOptions(
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@test"
+  plugin =
+    Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/ZapRunner.xml"),
+  tags = "@ZAP"
 )
-class Runner {}
+class ZapRunner {}

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import org.openqa.selenium.By
 

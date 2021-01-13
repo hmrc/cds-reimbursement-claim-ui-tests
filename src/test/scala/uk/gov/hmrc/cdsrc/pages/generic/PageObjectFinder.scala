@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.generic
+package uk.gov.hmrc.cdsrc.pages.generic
 
 import java.io.{File, FileNotFoundException}
-
 import org.apache.commons.io.FileUtils
 import org.scalatest.exceptions.TestFailedException
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.collection.JavaConverters._
 

@@ -14,24 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.cdsrc.pages
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-import scala.util.Try
+object ExamplePage extends BasePage {
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+  override val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  override val title = "Example title"
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  override def expectedPageErrorTitle: Option[String] = Some("Example error title")
 
-  val debug: Boolean = sys.props.getOrElse("drivernotquit", "false").toBoolean
-  if (!debug)
-    sys.addShutdownHook {
-      Try(driver.quit())
-    }
+  override def expectedPageTitle: Option[String] = Some("Example title")
+
+  override def expectedPageHeader: Option[String] = Some("Example header")
+
 }

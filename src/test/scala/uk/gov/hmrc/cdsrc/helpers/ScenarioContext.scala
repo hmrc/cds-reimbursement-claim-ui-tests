@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.helpers
+package uk.gov.hmrc.cdsrc.helpers
 
 object ScenarioContext {
 
