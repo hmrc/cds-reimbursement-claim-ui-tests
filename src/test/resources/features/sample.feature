@@ -1,5 +1,5 @@
 Feature: Login
 
-@test
-Scenario: Login function
-Given I am on login page
+  #@test
+  Scenario: Login function
+    Given I am on login page

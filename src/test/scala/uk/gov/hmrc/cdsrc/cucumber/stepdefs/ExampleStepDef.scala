@@ -17,6 +17,7 @@
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.cdsrc.pages.AuthLoginStubPage
 
 class ExampleStepDef extends BaseStepDef {
 
@@ -33,6 +34,19 @@ class ExampleStepDef extends BaseStepDef {
 
   Given("""I am on login page""") { () =>
     driver.navigate().to("localhost:9949/auth-login-stub/gg-sign-in")
+    println("dsfdfasdf")
+  }
+
+  When("""I enter Enrollment Name {string} and Enrollment ID {string} on {string}""") { (eName: String, eID: String, _: String) =>
+    AuthLoginStubPage.login(eName, eID)
+  }
+
+  And("""I click submit on {string}""") { (_: String) =>
+    click on xpath("//*[@id=\"inputForm\"]/p[1]/input")
+  }
+
+  And("""I enter redirectURL""") { () =>
+    AuthLoginStubPage.enterRedirectURL("https://www.development.tax.service.gov.uk/claim-for-reimbursement-of-import-duties/start")
   }
 
 }
