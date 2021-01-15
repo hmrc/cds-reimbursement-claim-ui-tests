@@ -32,6 +32,6 @@ trait BrowserDriver extends LazyLogging {
   val debug: Boolean = sys.props.getOrElse("drivernotquit", "false").toBoolean
   if (!debug)
     sys.addShutdownHook {
-      //Try(driver.quit())
+      Try(driver.quit())
     }
 }

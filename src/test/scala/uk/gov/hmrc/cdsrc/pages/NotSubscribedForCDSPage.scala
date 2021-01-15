@@ -18,15 +18,15 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object SignInUsingGovernmentGatewayPage extends BasePage {
+object NotSubscribedForCDSPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("https://www.development.tax.service.gov.uk/bas-stub/login")
-  override val title = "Sign in using Government Gateway"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/not-subscribed-for-cds"
+  override val title = "Not registered with CDS"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Example error title")
+  override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Sign in using Government Gateway")
+  override def expectedPageTitle: Option[String] = Some("Not registered with CDS")
 
-  override def expectedPageHeader: Option[String] = Some("Sign in using Government Gateway")
+  override def expectedPageHeader: Option[String] = Some("You need a valid EORI number to use the Customs Declaration Service (CDS)")
 
 }

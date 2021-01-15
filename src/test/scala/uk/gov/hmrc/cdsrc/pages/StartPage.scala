@@ -18,15 +18,15 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object ExamplePage extends BasePage {
+object StartPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  override val title = "Example title"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/start"
+  override val title = "cds-reimbursement-claim-frontend"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Example error title")
+  override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Example title")
+  override def expectedPageTitle: Option[String] = Some("cds-reimbursement-claim-frontend")
 
-  override def expectedPageHeader: Option[String] = Some("Example header")
+  override def expectedPageHeader: Option[String] = Some("Welcome TestUser")
 
 }
