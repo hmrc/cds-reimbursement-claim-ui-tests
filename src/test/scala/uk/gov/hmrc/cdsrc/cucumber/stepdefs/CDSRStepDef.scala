@@ -17,19 +17,24 @@
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.cdsrc.pages.AuthLoginStubPage
+import org.openqa.selenium.support.ui.Select
+import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, UploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
 
-  Given("""a user is on test page""") { () =>
-    driver.navigate().to("https://ps.uci.edu/~franklin/doc/file_upload.html")
+  When("""I select document type {string} on {string}""") { (documentType: String, page: String) =>
+    page match {
+      case "Select Supporting Evidence Type Page" =>
+          val dropdown = new Select(driver.findElement(By.id("supporting-evidence.choose-document-type")))
+          dropdown.selectByVisibleText(documentType)
+    }
   }
 
-  When("""the user uploads file""") { () =>
+  When("""I upload a {string} file on {string}""") { (file: String, page: String) =>
     //click on choose file & select file to send
-    driver.findElement(By.xpath("/html/body/form/input[1]")).sendKeys("/home/jayen/Downloads/10.jpg")
-    //click on send file
-    driver.findElement(By.xpath("/html/body/form/input[2]")).click()
+    page match {
+      case "Upload Supporting Evidence Page" => UploadSupportingEvidencePage.uploadDocument(file)
+    }
   }
 
   When("""I enter Enrollment Key {string}, ID Name {string} and ID Value {string} on {string}""") { (eKey: String, IDName: String, IDValue: String, _: String) =>

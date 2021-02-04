@@ -76,7 +76,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
   }
 
-  def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
+  def clickContinueButton(): Unit = click on cssSelector("#submitButton")
 
   def clickButton(buttonText: String): Unit = click on partialLinkText(buttonText)
 
