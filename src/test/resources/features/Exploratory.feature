@@ -19,7 +19,7 @@ Feature: Exploratory file using Cucumber
     When I select radio button "0" on "Who Is The Declarant Page"
     When I click continue on "Who Is The Declarant Page"
     #Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
-    When I upload a filetype file on "Supporting Evidence Upload Supporting Evidence Page"
+    When I upload a ".jpg" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     When I select document type "C88/E2" on "Supporting Evidence Select Supporting Evidence Type Page"
@@ -34,10 +34,10 @@ Feature: Exploratory file using Cucumber
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
 
-    Examples:
-      | filetype |
-      | ".jpg"   |
-      | ".png"   |
+#    Examples:
+#      | filetype |
+#      | ".jpg"   |
+#      | ".png"   |
 
   @testFail
   Scenario: CDSR-4 - User is a CDS Trader, does not have an EORI
