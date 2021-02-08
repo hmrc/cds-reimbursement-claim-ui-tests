@@ -18,15 +18,22 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object SelectSupportingEvidenceCheckYourAnswersPage extends BasePage {
+object SupportingEvidenceScanProgressPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/check-your-answers"
-  override val title = "Confirm these are the files you want to submit"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/scan-progress"
+  override val title = "Wait a few seconds and then select ‘continue’"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Confirm these are the files you want to submit - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Wait a few seconds and then select ‘continue’ - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Confirm these are the files you want to submit")
+  override def expectedPageHeader: Option[String] = Some("Wait a few seconds and then select ‘continue’")
+
+  def continuouslyClickContinue(): Unit = {
+    waitForPageHeader
+    while (find(tagName("h1")).map(_.text).contains("Wait a few seconds and then select ‘continue’")) {
+      clickContinueButton()
+    }
+  }
 
 }

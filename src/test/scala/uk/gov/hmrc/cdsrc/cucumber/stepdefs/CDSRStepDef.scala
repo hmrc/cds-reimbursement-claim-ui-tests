@@ -18,13 +18,25 @@ package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, UploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterMovementReferenceNumberPage, SupportingEvidenceScanProgressPage, SupportingEvidenceUploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
 
+  When("""I enter {string} on {string}""") { (data: String, page: String) =>
+    page match {
+      case "Enter Movement Reference Number Page" => enterText("enter-mrn", data)
+    }
+  }
+
+  When("""I click continue if I'm on {string}""") { (page: String) =>
+    page match {
+      case "Supporting Evidence Scan Progress Page" => SupportingEvidenceScanProgressPage.continuouslyClickContinue()
+    }
+  }
+
   When("""I select document type {string} on {string}""") { (documentType: String, page: String) =>
     page match {
-      case "Select Supporting Evidence Type Page" =>
+      case "Supporting Evidence Select Supporting Evidence Type Page" =>
           val dropdown = new Select(driver.findElement(By.id("supporting-evidence.choose-document-type")))
           dropdown.selectByVisibleText(documentType)
     }
@@ -33,18 +45,18 @@ class CDSRStepDef extends BaseStepDef {
   When("""I upload a {string} file on {string}""") { (file: String, page: String) =>
     //click on choose file & select file to send
     page match {
-      case "Upload Supporting Evidence Page" => UploadSupportingEvidencePage.uploadDocument(file)
+      case "Supporting Evidence Upload Supporting Evidence Page" => SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
     }
-  }
-
-  When("""I enter Enrollment Key {string}, ID Name {string} and ID Value {string} on {string}""") { (eKey: String, IDName: String, IDValue: String, _: String) =>
-    AuthLoginStubPage.login(eKey, IDName, IDValue)
   }
 
   And("""I click submit on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" => click on xpath("//*[@id=\"inputForm\"]/p[1]/input")
     }
+  }
+
+  When("""I enter Enrollment Key {string}, ID Name {string} and ID Value {string} on {string}""") { (eKey: String, IDName: String, IDValue: String, _: String) =>
+    AuthLoginStubPage.login(eKey, IDName, IDValue)
   }
 
   And("""I enter redirectURL on {string}""") { (page: String) =>

@@ -18,20 +18,15 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object UploadSupportingEvidencePage extends BasePage {
+object WhoIsTheDeclarantPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/upload-supporting-evidence"
-  override val title = "Upload a document with your supporting evidence"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/declarant-details"
+  override val title = "Who is making this claim?"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Upload a document with your supporting evidence - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Who is making this claim? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Upload a document with your supporting evidence")
-
-  def uploadDocument(file: String): Unit = {
-    if (file != "")
-      enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
-  }
+  override def expectedPageHeader: Option[String] = Some("Who is making this claim?")
 
 }

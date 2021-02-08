@@ -18,15 +18,15 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object SelectSupportingEvidenceTypePage extends BasePage {
+object DeclarantDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/select-supporting-evidence-type"
-  override val title = "Select the description of the file you just uploaded"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/declarant-details"
+  override val title = "Check these details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select the description of the file you just uploaded")
+  override def expectedPageHeader: Option[String] = Some("Check these details are correct")
 
 }
