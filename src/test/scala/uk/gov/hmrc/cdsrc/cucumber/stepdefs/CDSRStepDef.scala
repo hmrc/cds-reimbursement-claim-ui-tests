@@ -24,7 +24,7 @@ class CDSRStepDef extends BaseStepDef {
 
   When("""I enter {string} on {string}""") { (data: String, page: String) =>
     page match {
-      case "Enter Movement Reference Number Page" => enterText("enter-mrn", data)
+      case "Enter Movement Reference Number Page" => enterText("enter-reference-number", data)
     }
   }
 

@@ -23,7 +23,7 @@ object SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/select-supporting-evidence-type"
   override val title = "Select the description of the file you just uploaded"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("generic.errorPrefix Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
 
