@@ -28,7 +28,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     # ---
     # upload file 2
-    When I upload a "document.doc" file on "Supporting Evidence Upload Supporting Evidence Page"
+    When I upload a "image.jpg" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     When I select document type "Packing List" on "Supporting Evidence Select Supporting Evidence Type Page"
@@ -39,6 +39,7 @@ Feature: Exploratory file using Cucumber
     #upload file 3
     When I upload a "document.pdf" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     When I select document type "Commercial Invoice" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
@@ -64,6 +65,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     # I don't upload a file, but I click continue
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     Then I am presented with the "Supporting Evidence Document Did Not Upload Page"
     And I click continue on "Supporting Evidence Document Did Not Upload Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
@@ -71,6 +73,7 @@ Feature: Exploratory file using Cucumber
     # I upload a file that is too big
     When I upload a "image-big.jpg" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     Then I am presented with the "Supporting Evidence Document Did Not Upload Page"
     And I click continue on "Supporting Evidence Document Did Not Upload Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
@@ -78,6 +81,7 @@ Feature: Exploratory file using Cucumber
     # I upload a file that isn't allowed
 #    When I upload a "other.dmg" file on "Supporting Evidence Upload Supporting Evidence Page"
 #    And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
+#    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
 #    Then I am presented with the "Supporting Evidence Problem With Document Page"
 #    And I click continue on "Supporting Evidence Problem With Document Page"
 #    Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
@@ -85,7 +89,8 @@ Feature: Exploratory file using Cucumber
     # I upload a file that isn't allowed and is too big
 #    When I upload a "other-big.dmg" file on "Supporting Evidence Upload Supporting Evidence Page"
 #    And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
-#    Then I am presented with the "Supporting Evidence Problem With Document Page"
+#    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
+#    Then I am presented with the "Supporting Evidence Document Did Not Upload Page"
 #    And I click continue on "Supporting Evidence Problem With Document Page"
 #    Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     # ---
@@ -100,6 +105,7 @@ Feature: Exploratory file using Cucumber
     # I select a description
     When I select document type "Air Waybill" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
+    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
     # ---
     # I remove all uploaded documents
