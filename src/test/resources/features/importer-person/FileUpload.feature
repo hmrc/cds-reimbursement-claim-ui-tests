@@ -3,6 +3,10 @@
 Feature: Exploratory file using Cucumber
 
   @test
+  Scenario: Dummy Test
+    Given Dummy
+
+  @test
   Scenario: User is a CDS Trader, has an EORI, uploads 3 valid files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -17,12 +21,15 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Who Is The Declarant Page"
     When I select radio button "0" on "Who Is The Declarant Page"
     And I click continue on "Who Is The Declarant Page"
+    Then I am presented with the "Enter Reason For Claim Page"
+    When I select dropdown value "Duty suspension" on "Enter Reason For Claim Page"
+    And I click continue on "Enter Reason For Claim Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     # upload file 1
     When I upload a "image.jpg" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Supporting Evidence Scan Progress Page"
-    When I select document type "C88/E2" on "Supporting Evidence Select Supporting Evidence Type Page"
+    When I select dropdown value "C88/E2" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click "Add another file" on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
@@ -31,7 +38,7 @@ Feature: Exploratory file using Cucumber
     When I upload a "document.doc" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Supporting Evidence Scan Progress Page"
-    When I select document type "Packing List" on "Supporting Evidence Select Supporting Evidence Type Page"
+    When I select dropdown value "Packing List" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click "Add another file" on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
@@ -39,7 +46,7 @@ Feature: Exploratory file using Cucumber
     #upload file 3
     When I upload a "document.pdf" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
-    When I select document type "Commercial Invoice" on "Supporting Evidence Select Supporting Evidence Type Page"
+    When I select dropdown value "Commercial Invoice" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
     # ---
@@ -47,7 +54,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Check Answers Accept Send Page"
 
   @test
-  Scenario: User fails file upload process
+  Scenario: User fails steps
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
@@ -61,6 +68,13 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Who Is The Declarant Page"
     When I select radio button "0" on "Who Is The Declarant Page"
     And I click continue on "Who Is The Declarant Page"
+    Then I am presented with the "Enter Reason For Claim Page"
+    # I don't select a reason for claim
+    When I click continue on "Enter Reason For Claim Page"
+    Then I am presented with the "Enter Reason For Claim Page" error page
+    # ---
+    When I select dropdown value "Duty suspension" on "Enter Reason For Claim Page"
+    And I click continue on "Enter Reason For Claim Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     # I don't upload a file, but I click continue
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
@@ -98,7 +112,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Supporting Evidence Select Supporting Evidence Type Page" error page
     # ---
     # I select a description
-    When I select document type "Air Waybill" on "Supporting Evidence Select Supporting Evidence Type Page"
+    When I select dropdown value "Air Waybill" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
     # ---
@@ -111,7 +125,7 @@ Feature: Exploratory file using Cucumber
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     Then I am presented with the "Supporting Evidence Select Supporting Evidence Type Page"
-    When I select document type "Bill of Lading" on "Supporting Evidence Select Supporting Evidence Type Page"
+    When I select dropdown value "Bill of Lading" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
     # ---
@@ -133,12 +147,15 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Who Is The Declarant Page"
     When I select radio button "0" on "Who Is The Declarant Page"
     And I click continue on "Who Is The Declarant Page"
+    Then I am presented with the "Enter Reason For Claim Page"
+    When I select dropdown value "Duty suspension" on "Enter Reason For Claim Page"
+    And I click continue on "Enter Reason For Claim Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     When I upload a <filetype> file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     Then I am presented with the "Supporting Evidence Select Supporting Evidence Type Page"
-    When I select document type "Bill of Lading" on "Supporting Evidence Select Supporting Evidence Type Page"
+    When I select dropdown value "Bill of Lading" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
     When I click continue on "Supporting Evidence Check Your Answers Page"
@@ -167,12 +184,15 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Who Is The Declarant Page"
     When I select radio button "0" on "Who Is The Declarant Page"
     And I click continue on "Who Is The Declarant Page"
+    Then I am presented with the "Enter Reason For Claim Page"
+    When I select dropdown value "Duty suspension" on "Enter Reason For Claim Page"
+    And I click continue on "Enter Reason For Claim Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     When I upload a <filetype> file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     Then I am presented with the "Supporting Evidence Select Supporting Evidence Type Page"
-    When I select document type "Bill of Lading" on "Supporting Evidence Select Supporting Evidence Type Page"
+    When I select dropdown value "Bill of Lading" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
     When I click continue on "Supporting Evidence Check Your Answers Page"

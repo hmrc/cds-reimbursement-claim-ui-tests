@@ -20,20 +20,20 @@ import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
+object EnterReasonForClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/select-supporting-evidence-type"
-  override val title = "Select the description of the file you just uploaded"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-reason-for-claim"
+  override val title = "Select the reason and or basis for claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("generic.errorPrefix Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("generic.errorPrefix Select the reason and or basis for claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the reason and or basis for claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select the description of the file you just uploaded")
+  override def expectedPageHeader: Option[String] = Some("Select the reason and or basis for claim")
 
   def dropdownSelect(selection: String): Unit = {
-    val dropdown = new Select(driver.findElement(By.id("supporting-evidence.choose-document-type")))
+    val dropdown = new Select(driver.findElement(By.id("select-reason-for-claim")))
     dropdown.selectByVisibleText(selection)
-
   }
+
 }

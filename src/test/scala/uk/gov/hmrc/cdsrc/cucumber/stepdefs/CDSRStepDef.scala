@@ -18,9 +18,12 @@ package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterMovementReferenceNumberPage, SupportingEvidenceScanProgressPage, SupportingEvidenceUploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterMovementReferenceNumberPage, EnterReasonForClaimPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
+
+  Given("""Dummy""") { () =>
+  }
 
   When("""I enter {string} on {string}""") { (data: String, page: String) =>
     page match {
@@ -34,11 +37,10 @@ class CDSRStepDef extends BaseStepDef {
     }
   }
 
-  When("""I select document type {string} on {string}""") { (documentType: String, page: String) =>
+  When("""I select dropdown value {string} on {string}""") { (selection: String, page: String) =>
     page match {
-      case "Supporting Evidence Select Supporting Evidence Type Page" =>
-          val dropdown = new Select(driver.findElement(By.id("supporting-evidence.choose-document-type")))
-          dropdown.selectByVisibleText(documentType)
+      case "Supporting Evidence Select Supporting Evidence Type Page" => SupportingEvidenceSelectSupportingEvidenceTypePage.dropdownSelect(selection)
+      case "Enter Reason For Claim Page" => EnterReasonForClaimPage.dropdownSelect(selection)
     }
   }
 
