@@ -43,7 +43,7 @@ Feature: Exploratory file using Cucumber
     And I click "Add another file" on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     # ---
-    #upload file 3
+    # upload file 3
     When I upload a "document.pdf" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
     When I select dropdown value "Commercial Invoice" on "Supporting Evidence Select Supporting Evidence Type Page"
