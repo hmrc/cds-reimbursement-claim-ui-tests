@@ -140,7 +140,7 @@ Feature: Exploratory file using Cucumber
     And I click submit on "Auth Login Stub Page"
     Given I navigate to the "Start Page"
     Then I am presented with the "Enter Movement Reference Number Page"
-    When I enter "" on "Enter Movement Reference Number Page"
+    When I enter "10ABCDEFGHIJKLMNO0" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Declarant Details Page"
     When I click continue on "Declarant Details Page"
