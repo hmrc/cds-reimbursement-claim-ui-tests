@@ -18,7 +18,7 @@ package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterMovementReferenceNumberPage, EnterReasonForClaimPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterMovementReferenceNumberPage, EnterReasonForClaimPage, StartPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
 
@@ -27,7 +27,7 @@ class CDSRStepDef extends BaseStepDef {
 
   When("""I enter {string} on {string}""") { (data: String, page: String) =>
     page match {
-      case "Enter Movement Reference Number Page" => enterText("enter-reference-number", data)
+      case "Enter Movement Reference Number Page" => enterText("enter-movement-reference-number", data)
     }
   }
 
@@ -58,13 +58,13 @@ class CDSRStepDef extends BaseStepDef {
   }
 
   When("""I enter Enrollment Key {string}, ID Name {string} and ID Value {string} on {string}""") { (eKey: String, IDName: String, IDValue: String, _: String) =>
-    AuthLoginStubPage.login(eKey, IDName, IDValue)
+    AuthLoginStubPage.enrolments(eKey, IDName, IDValue)
   }
 
-  And("""I enter redirectURL on {string}""") { (page: String) =>
+  When("""I enter redirectURL on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" =>
-        AuthLoginStubPage.enterRedirectURL("/claim-for-reimbursement-of-import-duties/start")
+        AuthLoginStubPage.enterRedirectURL("/claim-for-reimbursement-of-import-duties/start/claim-for-reimbursement")
     }
   }
 

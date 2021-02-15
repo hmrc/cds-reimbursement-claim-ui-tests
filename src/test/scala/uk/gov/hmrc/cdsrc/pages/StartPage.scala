@@ -20,13 +20,15 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
 object StartPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/start"
-  override val title = "cds-reimbursement-claim-frontend"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/start/claim-for-reimbursement"
+  override val title = "Claim for reimbursement of import duties"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("cds-reimbursement-claim-frontend")
+  override def expectedPageTitle: Option[String] = Some("Claim for reimbursement of import duties - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Welcome TestUser")
+  override def expectedPageHeader: Option[String] = Some("Claim for reimbursement of import duties")
+
+  //def clickOnStartNow = click on xpath("//*[@id=\"content\"]/article/a")
 
 }

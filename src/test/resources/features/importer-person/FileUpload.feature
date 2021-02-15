@@ -2,13 +2,14 @@
 
 Feature: Exploratory file using Cucumber
 
-  @test
+  @test12
   Scenario: User is a CDS Trader, has an EORI, uploads 3 valid files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
     And I click submit on "Auth Login Stub Page"
-    Given I navigate to the "Start Page"
+    Then I navigate to the "Start Page"
+    And I click "Start now" on "Start Page"
     Then I am presented with the "Enter Movement Reference Number Page"
     When I enter "10ABCDEFGHIJKLMNO0" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
@@ -55,7 +56,8 @@ Feature: Exploratory file using Cucumber
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
     And I click submit on "Auth Login Stub Page"
-    Given I navigate to the "Start Page"
+    Then I navigate to the "Start Page"
+    And I click "Start now" on "Start Page"
     Then I am presented with the "Enter Movement Reference Number Page"
     When I enter "10ABCDEFGHIJKLMNO0" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
@@ -134,7 +136,8 @@ Feature: Exploratory file using Cucumber
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
     And I click submit on "Auth Login Stub Page"
-    Given I navigate to the "Start Page"
+    Then I navigate to the "Start Page"
+    And I click "Start now" on "Start Page"
     Then I am presented with the "Enter Movement Reference Number Page"
     When I enter "10ABCDEFGHIJKLMNO0" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
@@ -171,7 +174,8 @@ Feature: Exploratory file using Cucumber
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
     And I click submit on "Auth Login Stub Page"
-    Given I navigate to the "Start Page"
+    Then I navigate to the "Start Page"
+    And I click "Start now" on "Start Page"
     Then I am presented with the "Enter Movement Reference Number Page"
     When I enter "10ABCDEFGHIJKLMNO0" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"

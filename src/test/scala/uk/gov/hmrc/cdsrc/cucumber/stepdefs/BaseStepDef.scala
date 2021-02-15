@@ -50,7 +50,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page.replaceAll(" ", "")).clickButton(button)
   }
 
-  And("""I navigate to the {string}""") { text: String =>
+  Then("""I navigate to the {string}""") { text: String =>
     val pageName = text.replaceAll(" ", "")
     go to PageObjectFinder.page(pageName)
   }
