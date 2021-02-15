@@ -2,7 +2,7 @@
 
 Feature: Exploratory file using Cucumber
 
-  @test12
+  @test
   Scenario: User is a CDS Trader, has an EORI, uploads 3 valid files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
