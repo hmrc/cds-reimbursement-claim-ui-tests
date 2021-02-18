@@ -18,16 +18,35 @@ package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterMovementReferenceNumberPage, EnterReasonForClaimPage, StartPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
+import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterClaimantDetailsAsCompanyPage, EnterClaimantDetailsAsIndividualPage, EnterDeclarationDetailsPage, EnterMovementReferenceNumberPage, EnterReasonForClaimPage, StartPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage, WhoIsTheDeclarantPage}
 
 class CDSRStepDef extends BaseStepDef {
 
   Given("""Dummy""") { () =>
   }
 
+//  When("""I select radio button {string} on {string}""") { (choice: String, page: String) =>
+//    page match {
+//      case "Enter Claimant Details As Individual Page" => EnterClaimantDetailsAsIndividualPage.clickRadioButton(choice)
+//    }
+//  }
+
   When("""I enter {string} on {string}""") { (data: String, page: String) =>
     page match {
       case "Enter Movement Reference Number Page" => enterText("enter-movement-reference-number", data)
+      case "Enter Declaration Details Page" =>
+        data match {
+          case "" => EnterDeclarationDetailsPage.enterDetails()
+        }
+      case "Enter Claimant Details As Individual Page" =>
+        data match {
+          case "" => EnterClaimantDetailsAsIndividualPage.enterDetails()
+        }
+      case "Enter Claimant Details As Company Page" =>
+        data match {
+          case "" => EnterClaimantDetailsAsCompanyPage.enterDetails()
+        }
     }
   }
 
