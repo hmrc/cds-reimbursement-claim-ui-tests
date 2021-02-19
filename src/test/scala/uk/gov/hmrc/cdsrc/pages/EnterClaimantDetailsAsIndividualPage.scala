@@ -21,13 +21,13 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 object EnterClaimantDetailsAsIndividualPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-claimant-details-as-individual"
-  override val title = "Enter your claimant details as an individual"
+  override val title = "Enter your claimant details"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter your claimant details as an individual - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter your claimant details - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter your claimant details as an individual")
+  override def expectedPageHeader: Option[String] = Some("Enter your claimant details")
 
   def enterDetails(
                     fullName: String = "Johnathon Smithson",
@@ -51,7 +51,7 @@ object EnterClaimantDetailsAsIndividualPage extends BasePage {
     enterText("nonUkAddress-line3", addressLine3)
     enterText("nonUkAddress-line4", town)
     enterText("nonUkAddress-line5", county)
-    enterText("nonUkAddress-line6", postcode)
+    enterText("postcode", postcode)
     enterText("countryCode", country)
   }
 

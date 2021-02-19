@@ -27,6 +27,6 @@ object WhoIsTheDeclarantPage extends BasePage {
 
   override def expectedPageTitle: Option[String] = Some("Who is making this claim? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Declarant Type\nWho is making this claim?")
+  override def expectedPageHeader: Option[String] = Some("Who is making this claim?")
 
 }
