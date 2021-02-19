@@ -43,6 +43,7 @@ Feature: Exploratory file using Cucumber
     # upload file 3
     When I upload a "document.pdf" file on "Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
     When I select dropdown value "Commercial Invoice" on "Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Supporting Evidence Check Your Answers Page"

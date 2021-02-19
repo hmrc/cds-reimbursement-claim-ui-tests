@@ -86,6 +86,10 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     }
   }
 
+  def selectCheckBox(): Unit = {
+    click on cssSelector("")
+  }
+
   def elementText(query: Query): String = find(query).get.underlying.getText
 
   //for multiple check boxes (might not be needed)

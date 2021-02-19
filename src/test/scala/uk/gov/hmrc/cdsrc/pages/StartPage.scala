@@ -29,6 +29,4 @@ object StartPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Claim for reimbursement of import duties")
 
-  //def clickOnStartNow = click on xpath("//*[@id=\"content\"]/article/a")
-
 }

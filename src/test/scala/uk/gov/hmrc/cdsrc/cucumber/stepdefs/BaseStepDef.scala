@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
-import uk.gov.hmrc.cdsrc.pages.{BasePage, WhoIsTheDeclarantPage}
+import uk.gov.hmrc.cdsrc.pages.BasePage
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 
 trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
@@ -36,6 +36,10 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   When("""I select radio button {string} on {string}""") { (choice: String, page: String) =>
     PageObjectFinder.page(page.replaceAll(" ", "")).clickRadioButton(choice)
+  }
+
+  When("""I select checkbox on {string}""") { (page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).selectCheckBox()
   }
 
   When("""I select {string} on {string}""") { (selection: String, page: String) =>

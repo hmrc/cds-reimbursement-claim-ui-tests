@@ -16,21 +16,9 @@
 
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
-import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
-import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterClaimantDetailsAsCompanyPage, EnterClaimantDetailsAsIndividualPage, EnterCommodityDetailsPage, EnterDeclarationDetailsPage, EnterDuplicateDeclarationDetailsPage, EnterMovementReferenceNumberPage, EnterReasonForClaimAndBasisPage, EnterReasonForClaimPage, StartPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage, WhoIsTheDeclarantPage}
+import uk.gov.hmrc.cdsrc.pages._
 
 class CDSRStepDef extends BaseStepDef {
-
-  Given("""Dummy""") { () =>
-  }
-
-//  When("""I select radio button {string} on {string}""") { (choice: String, page: String) =>
-//    page match {
-//      case "Enter Claimant Details As Individual Page" => EnterClaimantDetailsAsIndividualPage.clickRadioButton(choice)
-//    }
-//  }
 
   When("""I enter {string} on {string}""") { (data: String, page: String) =>
     page match {
@@ -54,6 +42,18 @@ class CDSRStepDef extends BaseStepDef {
       case "Enter Commodity Details Page" =>
         data match {
           case _ => EnterCommodityDetailsPage.enterDetails(data)
+        }
+      case "Enter UK Duty Amounts Page" =>
+        data match {
+          case _ => EnterUKDutyAmountsPage.enterDetails()
+        }
+      case "Enter EU Duty Amounts Page" =>
+        data match {
+          case _ => EnterEUDutyAmountsPage.enterDetails()
+        }
+      case "Enter Bank Account Details Page" =>
+        data match {
+          case _ => EnterBankAccountDetailsPage.enterDetails()
         }
     }
   }

@@ -20,7 +20,7 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
 object EnterDuplicateDeclarationDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-declaration-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-duplicate-declaration-details"
   override val title = "Enter Declaration Details"
 
   override def expectedPageErrorTitle: Option[String] = Some("")

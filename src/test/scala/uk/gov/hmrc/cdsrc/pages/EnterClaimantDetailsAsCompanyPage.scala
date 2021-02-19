@@ -20,7 +20,7 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
 object EnterClaimantDetailsAsCompanyPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-claimant-details-as-individual"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-claimant-details-as-company"
   override val title = "Enter your claimant details as an importer company"
 
   override def expectedPageErrorTitle: Option[String] = Some("")

@@ -20,7 +20,7 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
 object EnterCommodityDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-movement-reference-number"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-commodity-details"
   override val title = "Enter details of the commodities you would like reimbursing for"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
