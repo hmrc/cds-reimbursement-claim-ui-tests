@@ -19,7 +19,7 @@ package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
-import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterClaimantDetailsAsCompanyPage, EnterClaimantDetailsAsIndividualPage, EnterDeclarationDetailsPage, EnterMovementReferenceNumberPage, EnterReasonForClaimPage, StartPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage, WhoIsTheDeclarantPage}
+import uk.gov.hmrc.cdsrc.pages.{AuthLoginStubPage, EnterClaimantDetailsAsCompanyPage, EnterClaimantDetailsAsIndividualPage, EnterCommodityDetailsPage, EnterDeclarationDetailsPage, EnterDuplicateDeclarationDetailsPage, EnterMovementReferenceNumberPage, EnterReasonForClaimAndBasisPage, EnterReasonForClaimPage, StartPage, SupportingEvidenceScanProgressPage, SupportingEvidenceSelectSupportingEvidenceTypePage, SupportingEvidenceUploadSupportingEvidencePage, WhoIsTheDeclarantPage}
 
 class CDSRStepDef extends BaseStepDef {
 
@@ -47,6 +47,14 @@ class CDSRStepDef extends BaseStepDef {
         data match {
           case "" => EnterClaimantDetailsAsCompanyPage.enterDetails()
         }
+      case "Enter Duplicate Declaration Details Page" =>
+        data match {
+          case "" => EnterDuplicateDeclarationDetailsPage.enterDetails()
+        }
+      case "Enter Commodity Details Page" =>
+        data match {
+          case _ => EnterCommodityDetailsPage.enterDetails(data)
+        }
     }
   }
 
@@ -60,6 +68,7 @@ class CDSRStepDef extends BaseStepDef {
     page match {
       case "Supporting Evidence Select Supporting Evidence Type Page" => SupportingEvidenceSelectSupportingEvidenceTypePage.dropdownSelect(selection)
       case "Enter Reason For Claim Page" => EnterReasonForClaimPage.dropdownSelect(selection)
+      case "Enter Reason For Claim And Basis Page" => EnterReasonForClaimAndBasisPage.dropdownSelect(selection)
     }
   }
 
