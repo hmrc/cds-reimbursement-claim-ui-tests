@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 object EnterEUDutyAmountsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-eu-duty-amounts"
-  override val title = "Enter EU Duty Amounts to Calculate Your Claim"
+  override val title = "Enter EU duty amounts to calculate your Claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
