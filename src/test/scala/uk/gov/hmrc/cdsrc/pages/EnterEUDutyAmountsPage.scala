@@ -25,9 +25,9 @@ object EnterEUDutyAmountsPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter EU Duty Amounts to Calculate Your Claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter EU duty amounts to calculate your claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter EU Duty Amounts to Calculate Your Claim")
+  override def expectedPageHeader: Option[String] = Some("Enter EU duty amounts to calculate your claim")
 
   def enterDetails(
                       a50Paid: String = "10",
