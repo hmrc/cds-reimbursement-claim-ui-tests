@@ -29,10 +29,10 @@ object EnterCommodityDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter details of the commodities you would like reimbursing for")
 
-  def enterDetails(details: String): Unit = {
+  override def enterDetails(details: String): Unit = {
     details match {
-      case "under 500 characters" => enterText("s\"enter-commodities-details\"", "under 500 characters")
-      case "over 500 characters" => enterText("s\"enter-commodities-details\"",
+      case "under 500 characters" => enterText("enter-commodities-details", "under 500 characters")
+      case "over 500 characters" => enterText("enter-commodities-details",
         "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
@@ -40,7 +40,7 @@ object EnterCommodityDetailsPage extends BasePage {
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "1"
       )
-      case _ => enterText("s\"enter-commodities-details\"", details)
+      case _ => enterText("enter-commodities-details", details)
     }
   }
 

@@ -18,19 +18,20 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object EnterMovementReferenceNumberPage extends BasePage {
+object EnterClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-movement-reference-number"
-  override val title = "What is your Movement Reference Number (MRN)?"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-claim"
+  override val title = "Enter the claim amount for duty A20 - Additional Duty"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("What is your Movement Reference Number (MRN)? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("What is your Movement Reference Number (MRN)?")
+  override def expectedPageHeader: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty")
 
-  override def enterDetails(textToEnter: String){
-    enterText("enter-movement-reference-number", textToEnter)
+  override def enterDetails(data: String): Unit = {
+    val amounts: Array[String] = data.split(",")
+    enterText("enter-claim.paid-amount", amounts(0))
+    enterText("enter-claim.claim-amount", amounts(1))
   }
-
 }

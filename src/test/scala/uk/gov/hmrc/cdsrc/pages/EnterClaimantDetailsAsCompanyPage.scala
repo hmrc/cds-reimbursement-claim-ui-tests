@@ -29,29 +29,25 @@ object EnterClaimantDetailsAsCompanyPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter your claimant details as an importer company")
 
-  def enterDetails(
-                    companyName: String = "Johnathon Smithson Co.",
-                    emailAddress: String = "johnathonsmithsonco@email.com",
-                    phoneNumber: String = "01234567891",
-                    buildingName: String = "1",
-                    addressLine1: String = "John Rd",
-                    addressLine2: String = "",
-                    addressLine3: String = "",
-                    town: String = "Johnstown",
-                    county: String = "Mercia",
-                    postcode: String = "JO0 0HN",
-                    country: String = "United Kingdom"
-                  ): Unit = {
+  override def enterDetails(data: String): Unit = {
+    val companyName: String = "Johnathon Smithson Co."
+    val emailAddress: String = "johnathonsmithsonco@email.com"
+    val phoneNumber: String = "01234567891"
+    val addressLine1: String = "John Rd"
+    val addressLine2: String = ""
+    val addressLine3: String = ""
+    val town: String = "Johnstown"
+    val postcode: String = "JO0 0HN"
+    val country: String = "United Kingdom"
+
     enterText("enter-claimant-details-importer-company.importer-company-name", companyName)
     enterText("enter-claimant-details-importer-company.importer-email", emailAddress)
     enterText("enter-claimant-details-importer-company.importer-phone-number", phoneNumber)
-    enterText("nonUkAddress-building", buildingName)
     enterText("nonUkAddress-line1", addressLine1)
     enterText("nonUkAddress-line2", addressLine2)
     enterText("nonUkAddress-line3", addressLine3)
     enterText("nonUkAddress-line4", town)
-    enterText("nonUkAddress-line5", county)
-    enterText("nonUkAddress-line6", postcode)
+    enterText("postcode", postcode)
     enterText("countryCode", country)
   }
 

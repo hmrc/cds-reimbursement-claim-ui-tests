@@ -54,6 +54,10 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page.replaceAll(" ", "")).clickButton(button)
   }
 
+  When("""I enter {string} on {string}""") { (data: String, page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).enterDetails(data)
+  }
+
   Then("""I navigate to the {string}""") { text: String =>
     val pageName = text.replaceAll(" ", "")
     go to PageObjectFinder.page(pageName)
@@ -71,6 +75,5 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     waitForPageHeader
     PageObjectFinder.page(pageName).checkPageErrorTitle
   }
-
 
 }

@@ -29,13 +29,13 @@ object EnterBankAccountDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter bank account details")
 
-  def enterDetails(
-                      bankAccountName: String = "Mr John Smith",
-                      sortCode1: String = "01",
-                      sortCode2: String = "02",
-                      sortCode3: String = "03",
-                      accountNumber: String = "12345678"
-                  ): Unit = {
+  override def enterDetails(data: String): Unit = {
+    val bankAccountName: String = "Mr John Smith"
+    val sortCode1: String = "11"
+    val sortCode2: String = "12"
+    val sortCode3: String = "13"
+    val accountNumber: String = "12345678"
+
     enterText("enter-bank-details.account-name", bankAccountName)
     enterText("enter-bank-details-sort-code-1", sortCode1)
     enterText("enter-bank-details-sort-code-2", sortCode2)

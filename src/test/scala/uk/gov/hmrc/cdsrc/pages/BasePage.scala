@@ -111,6 +111,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     driver.findElement(By.id(id)).sendKeys(textToEnter)
   }
 
+  def enterDetails(data: String): Unit = {
+  }
+
   def enableWelsh(): Unit = {
     if (System.getProperty("welsh", "false") == "true")
       click on cssSelector("body > div:nth-child(5) > nav > ul > li:nth-child(2) > a > span:nth-child(2)")

@@ -21,24 +21,26 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 object EnterDuplicateDeclarationDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-duplicate-declaration-details"
-  override val title = "Enter Declaration Details"
+  override val title = "Enter declaration details"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter Declaration Details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter declaration details - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter Declaration Details")
+  override def expectedPageHeader: Option[String] = Some("Enter declaration details")
 
-  def enterDetails(
-                    importDate: String = "1", importMonth: String = "1", importYear: String = "2021",
-                    placeOfImport: String = "Dover",
-                    importerName: String = "John Smith",
-                    importerEmailAddress: String = "johnsmith@email.com",
-                    importerPhoneNumber: String = "01234567890",
-                    declarantName: String = "Johnathon Smithson",
-                    declarantEmailAddress: String = "johnathonsmithson@email.com",
-                    declarantPhoneNumber: String = "01234567891"
-                  ): Unit = {
+  override def enterDetails(data: String): Unit = {
+    val importDate: String = "1"
+    val importMonth: String = "1"
+    val importYear: String = "2021"
+    val placeOfImport: String = "Dover"
+    val importerName: String = "John Smith"
+    val importerEmailAddress: String = "johnsmith@email.com"
+    val importerPhoneNumber: String = "01234567890"
+    val declarantName: String = "Johnathon Smithson"
+    val declarantEmailAddress: String = "johnathonsmithson@email.com"
+    val declarantPhoneNumber: String = "01234567891"
+
     enterText("enter-declaration-details-month", importMonth)
     enterText("enter-declaration-details-day", importDate)
     enterText("enter-declaration-details-year", importYear)

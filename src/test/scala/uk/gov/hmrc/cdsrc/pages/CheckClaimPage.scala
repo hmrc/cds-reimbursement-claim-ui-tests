@@ -18,15 +18,15 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object CheckReimbursementClaimTotalPage extends BasePage {
+object CheckClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/check-reimbursement-claim-total"
-  override val title = "Your Reimbursement Claim Total"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/check-claim"
+  override val title = "Your reimbursement claim totals"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Your Reimbursement Claim Total - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Your reimbursement claim totals - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Your Reimbursement Claim Total")
+  override def expectedPageHeader: Option[String] = Some("Your reimbursement claim totals")
 
 }
