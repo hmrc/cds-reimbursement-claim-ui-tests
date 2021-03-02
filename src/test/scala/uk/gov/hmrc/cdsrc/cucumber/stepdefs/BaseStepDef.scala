@@ -58,6 +58,10 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page.replaceAll(" ", "")).enterDetails(data)
   }
 
+  When("""I select dropdown value {string} on {string}""") { (selection: String, page: String) =>
+    PageObjectFinder.page(page.replaceAll(" ", "")).dropdownSelect(selection)
+  }
+
   Then("""I navigate to the {string}""") { text: String =>
     val pageName = text.replaceAll(" ", "")
     go to PageObjectFinder.page(pageName)

@@ -40,4 +40,8 @@ object AuthLoginStubPage extends BasePage {
     driver.findElement(By.cssSelector("#input-0-0-value")).sendKeys(IDValue)
   }
 
+  override def clickContinueButton(): Unit ={
+    click on xpath("//*[@id=\"inputForm\"]/p[1]/input")
+  }
+
 }

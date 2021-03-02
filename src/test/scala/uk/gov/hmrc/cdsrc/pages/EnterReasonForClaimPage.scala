@@ -31,7 +31,7 @@ object EnterReasonForClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Select the reason and or basis for claim")
 
-  def dropdownSelect(selection: String): Unit = {
+  override def dropdownSelect(selection: String): Unit = {
     val dropdown = new Select(driver.findElement(By.id("select-reason-for-claim")))
     dropdown.selectByVisibleText(selection)
   }

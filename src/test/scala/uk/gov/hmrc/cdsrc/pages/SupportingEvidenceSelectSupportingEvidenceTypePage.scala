@@ -31,7 +31,7 @@ object SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Select the description of the file you just uploaded")
 
-  def dropdownSelect(selection: String): Unit = {
+  override def dropdownSelect(selection: String): Unit = {
     val dropdown = new Select(driver.findElement(By.id("supporting-evidence.choose-document-type")))
     dropdown.selectByVisibleText(selection)
 

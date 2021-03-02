@@ -6,7 +6,7 @@ Feature: Exploratory file using Cucumber
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
-    And I click submit on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
     Then I navigate to the "Start Page"
     And I click "Start now" on "Start Page"
     Then I am presented with the "Enter Movement Reference Number Page"
