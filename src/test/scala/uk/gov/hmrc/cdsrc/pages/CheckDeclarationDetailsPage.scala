@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.cucumber.runner
+package uk.gov.hmrc.cdsrc.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.cdsrc.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@test"
-)
-class Runner {}
+object CheckDeclarationDetailsPage extends BasePage {
+
+  override val url: String = TestConfiguration.url("cds-frontend") + "/check-declaration-details"
+  override val title = "Check these details are correct"
+
+  override def expectedPageErrorTitle: Option[String] = Some("")
+
+  override def expectedPageTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
+
+  override def expectedPageHeader: Option[String] = Some("Check these details are correct")
+
+}

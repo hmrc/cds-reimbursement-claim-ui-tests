@@ -17,19 +17,20 @@
 package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
+import uk.gov.hmrc.cdsrc.pages.EnterDuplicateMovementReferenceNumberPage.enterText
 
-object EnterDuplicateMovementReferenceNumberPage extends BasePage {
+object ImporterEoriEntryPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-duplicate-movement-reference-number"
-  override val title = "What is your Movement Reference Number (MRN)?"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/importer-eori-entry"
+  override val title = "Enter the importer’s EORI number"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("What is your Movement Reference Number (MRN)? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("What is your Movement Reference Number (MRN)?")
+  override def expectedPageHeader: Option[String] = Some("Enter the importer’s EORI number")
 
   override def enterDetails(textToEnter: String) {
-    enterText("enter-movement-reference-number", textToEnter)
+    enterText("enter-importer-eori-number", textToEnter)
   }
 }

@@ -108,6 +108,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def enterText(id: String, textToEnter: String): Unit = {
+    driver.findElement(By.id(id)).clear()
     driver.findElement(By.id(id)).sendKeys(textToEnter)
   }
 

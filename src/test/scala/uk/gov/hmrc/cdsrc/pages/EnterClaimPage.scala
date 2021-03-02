@@ -31,7 +31,12 @@ object EnterClaimPage extends BasePage {
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    enterText("enter-claim.paid-amount", amounts(0))
-    enterText("enter-claim.claim-amount", amounts(1))
+    amounts.length match {
+      case 2 =>
+        enterText("enter-claim.paid-amount", amounts(0))
+        enterText("enter-claim.claim-amount", amounts(1))
+      case 1 =>
+        enterText("enter-claim", amounts(0))
+    }
   }
 }
