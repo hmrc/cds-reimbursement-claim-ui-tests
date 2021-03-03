@@ -70,7 +70,7 @@ Feature: Exploratory file using Cucumber
 #    When I select checkbox on "Check Answers Accept Send Page"
 #    And I click continue on "Check Answers Accept Send Page"
 
-  @test @a11y @z
+  @test @a11y
   Scenario: User is a CDS Trader - happy path (mrn - other journey)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -96,7 +96,7 @@ Feature: Exploratory file using Cucumber
     When I enter "" on "Enter Claimant Details As Individual Page"
     And I select radio button "true" on "Enter Claimant Details As Individual Page"
     And I click continue on "Enter Claimant Details As Individual Page"
-    Then I am presented with the "Enter Claimant Details As Company Page"
+#    Then I am presented with the "Enter Claimant Details As Company Page"
 #    When I enter "" on "Enter Claimant Details As Company Page"
 #    And I click continue on "Enter Claimant Details As Company Page"
 #    And I click continue on "Enter Claimant Details As Company Page"
