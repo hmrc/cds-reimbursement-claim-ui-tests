@@ -17,7 +17,6 @@
 package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
-import uk.gov.hmrc.cdsrc.pages.ImporterEoriEntryPage.enterText
 
 object DeclarantEoriEntryPage extends BasePage {
 
