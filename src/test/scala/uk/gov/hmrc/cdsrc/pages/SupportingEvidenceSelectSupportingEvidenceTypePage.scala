@@ -25,16 +25,15 @@ object SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/select-supporting-evidence-type"
   override val title = "Select the description of the file you just uploaded"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Error: Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select the description of the file you just uploaded")
 
-  override def expectedPageTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the description of the file you just uploaded")
 
   override def expectedPageHeader: Option[String] = Some("Select the description of the file you just uploaded")
 
   override def dropdownSelect(selection: String): Unit = {
     val dropdown = new Select(driver.findElement(By.id("supporting-evidence.choose-document-type")))
     dropdown.selectByVisibleText(selection)
-
   }
 
 }

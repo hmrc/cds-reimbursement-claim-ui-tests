@@ -25,7 +25,7 @@ object SelectDutiesPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for")
 
   override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for")
 

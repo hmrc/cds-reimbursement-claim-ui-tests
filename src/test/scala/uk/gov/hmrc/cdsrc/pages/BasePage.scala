@@ -30,14 +30,14 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   override val url: String = ""
   val title: String = ""
 
-  /** Fluent Wait config **/
+  /** Fluent Wait config * */
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(10))
     .pollingEvery(Duration.ofMillis(500))
 
   def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
 
-  /** Page assertions **/
+  /** Page assertions * */
   def expectedPageTitle: Option[String] = None
 
   def expectedPageErrorTitle: Option[String] = None
@@ -76,14 +76,12 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
   }
 
-  def clickContinueButton(): Unit = click on cssSelector("#submitButton")
+  def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
 
   def clickButton(buttonText: String): Unit = click on partialLinkText(buttonText)
 
   def clickRadioButton(text: String): Unit = {
-    text.toLowerCase() match {
-      case _ => click on xpath(s"//input[@value='$text']")
-    }
+    click on xpath(s"//input[@value='$text']")
   }
 
   def selectCheckBox(): Unit = {

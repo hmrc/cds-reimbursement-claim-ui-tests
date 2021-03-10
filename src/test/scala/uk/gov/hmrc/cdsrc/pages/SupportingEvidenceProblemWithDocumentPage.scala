@@ -25,7 +25,7 @@ object SupportingEvidenceProblemWithDocumentPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("There is a problem with your file - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("There is a problem with your file")
 
   override def expectedPageHeader: Option[String] = Some("There is a problem with your file")
 

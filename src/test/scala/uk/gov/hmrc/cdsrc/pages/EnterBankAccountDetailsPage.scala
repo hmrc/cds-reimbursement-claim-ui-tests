@@ -25,26 +25,22 @@ object EnterBankAccountDetailsPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter bank account details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter bank account details")
 
   override def expectedPageHeader: Option[String] = Some("Enter bank account details")
 
   override def enterDetails(data: String): Unit = {
     val bankAccountName: String = "Mr John Smith"
-    val sortCode1: String = "11"
-    val sortCode2: String = "12"
-    val sortCode3: String = "13"
+    val sortCode: String = "111213"
     val accountNumber: String = "12345678"
 
     enterText("enter-bank-details.account-name", bankAccountName)
-    enterText("enter-bank-details-sort-code-1", sortCode1)
-    enterText("enter-bank-details-sort-code-2", sortCode2)
-    enterText("enter-bank-details-sort-code-3", sortCode3)
+    enterText("enter-bank-details.sort-code", sortCode)
     enterText("enter-bank-details.account-number", accountNumber)
   }
 
   override def selectCheckBox(): Unit ={
-    click on cssSelector("#enter-bank-details\\.is-business-account-0")
+    click on cssSelector("#enter-bank-details_is-business-account")
   }
 
 }

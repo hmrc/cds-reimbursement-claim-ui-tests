@@ -25,7 +25,7 @@ object ImporterEoriEntryPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number")
 
   override def expectedPageHeader: Option[String] = Some("Enter the importer’s EORI number")
 

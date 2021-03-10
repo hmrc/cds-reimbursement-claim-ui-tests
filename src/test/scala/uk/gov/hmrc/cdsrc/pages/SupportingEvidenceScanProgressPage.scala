@@ -25,7 +25,7 @@ object SupportingEvidenceScanProgressPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Wait a few seconds and then select ‘continue’ - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Wait a few seconds and then select ‘continue’")
 
   override def expectedPageHeader: Option[String] = Some("Wait a few seconds and then select ‘continue’")
 

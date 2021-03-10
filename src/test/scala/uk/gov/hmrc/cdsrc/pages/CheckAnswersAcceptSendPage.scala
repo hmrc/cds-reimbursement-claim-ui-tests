@@ -21,16 +21,12 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 object CheckAnswersAcceptSendPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-answers-accept-send"
-  override val title = "Review your claim"
+  override val title = "Check your answers before sending your application"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Review your claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check your answers before sending your application")
 
-  override def expectedPageHeader: Option[String] = Some("Review your claim")
-
-  override def selectCheckBox(): Unit = {
-    click on cssSelector("#check-your-answers\\.declaration-0")
-  }
+  override def expectedPageHeader: Option[String] = Some("Check your answers before sending your application")
 
 }

@@ -25,7 +25,7 @@ object SupportingEvidenceCheckYourAnswersPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Confirm these are the files you want to submit - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Confirm these are the files you want to submit")
 
   override def expectedPageHeader: Option[String] = Some("Confirm these are the files you want to submit")
 

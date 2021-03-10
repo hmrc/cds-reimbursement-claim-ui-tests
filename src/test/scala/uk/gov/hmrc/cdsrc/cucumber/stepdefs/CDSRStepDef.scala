@@ -27,7 +27,7 @@ class CDSRStepDef extends BaseStepDef {
     waitForPageHeader
     pageName match {
       case "EnterClaimPage" =>
-        driver.findElement(By cssSelector "#content > article > h1").getText should equal (s"Enter the claim amount for duty $duty")
+        driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal (s"Enter the claim amount for duty $duty")
     }
   }
 

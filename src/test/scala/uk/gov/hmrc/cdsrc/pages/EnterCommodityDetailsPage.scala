@@ -25,7 +25,7 @@ object EnterCommodityDetailsPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter details of the commodities you would like reimbursing for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter details of the commodities you would like reimbursing for")
 
   override def expectedPageHeader: Option[String] = Some("Enter details of the commodities you would like reimbursing for")
 

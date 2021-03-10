@@ -25,7 +25,7 @@ object CheckTheseBankDetailsAreCorrectPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Check these bank details are correct - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check these bank details are correct")
 
   override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
 

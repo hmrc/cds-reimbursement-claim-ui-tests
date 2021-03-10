@@ -2,7 +2,7 @@
 
 Feature: Exploratory file using Cucumber
 
-  @test @a11y
+  @test @a11y @e
   Scenario: User is a CDS Trader - happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -31,7 +31,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Reason For Claim And Basis Page"
     When I select dropdown value "Duplicate MRN or Entry,Mail order goods" on "Enter Reason For Claim And Basis Page"
     And I click continue on "Enter Reason For Claim And Basis Page"
-    Then I am presented with the "Enter Duplicate Movement Reference Number Page"
+    #Then I am presented with the "Enter Duplicate Movement Reference Number Page"
     When I enter "666541198B49856762" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Enter Duplicate Declaration Details Page"
@@ -41,7 +41,7 @@ Feature: Exploratory file using Cucumber
     When I enter "under 500 characters" on "Enter Commodity Details Page"
     And I click continue on "Enter Commodity Details Page"
     Then I am presented with the "Select Duties Page"
-    When I select "0,1,2,3,4,5,6,7,8,9,10,11" on "Select Duties Page"
+    When I select "0,1,2,3,4,5,6,7,8,9,10,11,12,13" on "Select Duties Page"
     And I click continue on "Select Duties Page"
     Then I am presented with the "Enter Claim Page" "A00 - Customs Duty"
     When I enter "2,1" on "Enter Claim Page"
@@ -73,11 +73,17 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Claim Page" "A80 - Definitive Anti-Dumping Duty"
     When I enter "11,10" on "Enter Claim Page"
     And I click continue on "Enter Claim Page"
-    Then I am presented with the "Enter Claim Page" "A90 - Definitive Countervailing Duty"
+    Then I am presented with the "Enter Claim Page" "A85 - Provisional Anti-Dumping Duty"
     When I enter "12,11" on "Enter Claim Page"
     And I click continue on "Enter Claim Page"
-    Then I am presented with the "Enter Claim Page" "B05 - Value Added Tax"
+    Then I am presented with the "Enter Claim Page" "A90 - Definitive Countervailing Duty"
     When I enter "13,12" on "Enter Claim Page"
+    And I click continue on "Enter Claim Page"
+    Then I am presented with the "Enter Claim Page" "A95 - Provisional Countervailing Duty"
+    When I enter "14,13" on "Enter Claim Page"
+    And I click continue on "Enter Claim Page"
+    Then I am presented with the "Enter Claim Page" "B05 - Value Added Tax"
+    When I enter "15,14" on "Enter Claim Page"
     And I click continue on "Enter Claim Page"
     Then I am presented with the "Check Claim Page"
     When I click continue on "Check Claim Page"
@@ -94,5 +100,4 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Supporting Evidence Check Your Answers Page"
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
-    When I select checkbox on "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"

@@ -31,7 +31,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Reason For Claim And Basis Page"
     When I select dropdown value "Duplicate MRN or Entry,Mail order goods" on "Enter Reason For Claim And Basis Page"
     And I click continue on "Enter Reason For Claim And Basis Page"
-    Then I am presented with the "Enter Duplicate Movement Reference Number Page"
+    #Then I am presented with the "Enter Duplicate Movement Reference Number Page"
     When I enter "666541198B49856762" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Enter Duplicate Declaration Details Page"
@@ -81,7 +81,6 @@ Feature: Exploratory file using Cucumber
     # ---
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
-    When I select checkbox on "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
 
   @test
@@ -113,7 +112,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Reason For Claim And Basis Page"
     When I select dropdown value "Duplicate MRN or Entry,Mail order goods" on "Enter Reason For Claim And Basis Page"
     And I click continue on "Enter Reason For Claim And Basis Page"
-    Then I am presented with the "Enter Duplicate Movement Reference Number Page"
+    #Then I am presented with the "Enter Duplicate Movement Reference Number Page"
     When I enter "666541198B49856762" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Enter Duplicate Declaration Details Page"
@@ -137,10 +136,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     # I don't upload a file, but I click continue
     And I click continue on "Supporting Evidence Upload Supporting Evidence Page"
-    And I click continue if I'm on "Supporting Evidence Scan Progress Page"
-    Then I am presented with the "Supporting Evidence Document Did Not Upload Page"
-    And I click continue on "Supporting Evidence Document Did Not Upload Page"
-    Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
+    Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page" error page
     # ---
     # I upload a file that is too big
     When I upload a "image-big.jpg" file on "Supporting Evidence Upload Supporting Evidence Page"
@@ -192,7 +188,6 @@ Feature: Exploratory file using Cucumber
     # ---
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
-    When I select checkbox on "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
 
   @testFail ### this test may contain errors
@@ -224,7 +219,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Reason For Claim And Basis Page"
     When I select dropdown value "Duplicate MRN or Entry,Mail order goods" on "Enter Reason For Claim And Basis Page"
     And I click continue on "Enter Reason For Claim And Basis Page"
-    Then I am presented with the "Enter Duplicate Movement Reference Number Page"
+    #Then I am presented with the "Enter Duplicate Movement Reference Number Page"
     When I enter "666541198B49856762" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Enter Duplicate Declaration Details Page"
@@ -248,7 +243,6 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Supporting Evidence Upload Supporting Evidence Page"
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
-    When I select checkbox on "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
 
     Examples:

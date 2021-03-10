@@ -25,7 +25,7 @@ object EnterDuplicateMovementReferenceNumberPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("What is your Movement Reference Number (MRN)? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("What is your Movement Reference Number (MRN)?")
 
   override def expectedPageHeader: Option[String] = Some("What is your Movement Reference Number (MRN)?")
 

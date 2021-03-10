@@ -25,7 +25,7 @@ object EnterDuplicateDeclarationDetailsPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter declaration details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter declaration details")
 
   override def expectedPageHeader: Option[String] = Some("Enter declaration details")
 
@@ -41,9 +41,9 @@ object EnterDuplicateDeclarationDetailsPage extends BasePage {
     val declarantEmailAddress: String = "johnathonsmithson@email.com"
     val declarantPhoneNumber: String = "01234567891"
 
-    enterText("enter-declaration-details-month", importMonth)
-    enterText("enter-declaration-details-day", importDate)
-    enterText("enter-declaration-details-year", importYear)
+    enterText("enter-declaration-details-enter-declaration-details.day", importDate)
+    enterText("enter-declaration-details-enter-declaration-details.month", importMonth)
+    enterText("enter-declaration-details-enter-declaration-details.year", importYear)
     enterText("enter-declaration-details.place-of-import", placeOfImport)
     enterText("enter-declaration-details.importer-name", importerName)
     enterText("enter-declaration-details.importer-email-address", importerEmailAddress)

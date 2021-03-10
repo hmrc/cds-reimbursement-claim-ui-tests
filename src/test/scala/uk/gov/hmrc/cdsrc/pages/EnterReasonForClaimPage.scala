@@ -25,9 +25,9 @@ object EnterReasonForClaimPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-reason-for-claim"
   override val title = "Select the basis for claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("generic.errorPrefix Select the reason and or basis for claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("generic.errorPrefix Select the reason and or basis for claim")
 
-  override def expectedPageTitle: Option[String] = Some("Select the basis for claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the basis for claim")
 
   override def expectedPageHeader: Option[String] = Some("Select the basis for claim")
 

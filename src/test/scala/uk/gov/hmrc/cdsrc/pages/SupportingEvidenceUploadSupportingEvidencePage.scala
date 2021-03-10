@@ -23,15 +23,19 @@ object SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/upload-supporting-evidence"
   override val title = "Upload files to support your claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Upload files to support your claim")
 
-  override def expectedPageTitle: Option[String] = Some("Upload files to support your claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Upload files to support your claim")
 
   override def expectedPageHeader: Option[String] = Some("Upload files to support your claim")
 
   def uploadDocument(file: String): Unit = {
     if (file != "")
       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+  }
+
+  override def clickContinueButton(): Unit = {
+    click on cssSelector("#main-content > div > div > form > div.govuk-\\!-margin-bottom-9 > button")
   }
 
 }

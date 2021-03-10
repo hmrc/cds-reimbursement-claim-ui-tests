@@ -25,7 +25,7 @@ object EnterClaimPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the claim amount for duty A20")
 
   override def expectedPageHeader: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty")
 

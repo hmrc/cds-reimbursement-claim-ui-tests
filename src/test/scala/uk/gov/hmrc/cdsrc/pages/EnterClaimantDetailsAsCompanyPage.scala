@@ -25,7 +25,7 @@ object EnterClaimantDetailsAsCompanyPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Enter your claimant details as an importer company - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter your claimant details as an importer company")
 
   override def expectedPageHeader: Option[String] = Some("Enter your claimant details as an importer company")
 

@@ -25,7 +25,7 @@ object SupportingEvidenceDocumentDidNotUploadPage extends BasePage {
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("There is a problem with the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("There is a problem with the file you uploaded")
 
   override def expectedPageHeader: Option[String] = Some("There is a problem with the file you uploaded")
 
