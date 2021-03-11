@@ -2,7 +2,7 @@
 
 Feature: Exploratory file using Cucumber
 
-  @test @a11y
+  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
