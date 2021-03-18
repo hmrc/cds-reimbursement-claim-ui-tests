@@ -1,6 +1,6 @@
 @Regression
 
-Feature: Exploratory file using Cucumber
+Feature:  C285 - MRN - importer-person
 
   @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
@@ -25,11 +25,9 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Claimant Details As Company Page"
     #When I enter "" on "Enter Claimant Details As Company Page"
     And I click continue on "Enter Claimant Details As Company Page"
-    #And I click continue on "Enter Claimant Details As Company Page"
-    ### duplicate should be removed after CDSR-210 is fixed
-    Then I am presented with the "Enter Reason For Claim Page"
-    When I select dropdown value "Duplicate MRN or Entry" on "Enter Reason For Claim Page"
-    And I click continue on "Enter Reason For Claim Page"
+    Then I am presented with the "Choose Basis For Claim Page"
+    When I select dropdown value "Duplicate MRN or Entry" on "Choose Basis For Claim Page"
+    And I click continue on "Choose Basis For Claim Page"
     #Then I am presented with the "Enter Duplicate Movement Reference Number Page"
     When I enter "10ABCDEFGHIJKLMNO0" on "Enter Duplicate Movement Reference Number Page"
     And I click continue on "Enter Duplicate Movement Reference Number Page"
@@ -97,11 +95,9 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Claimant Details As Company Page"
     When I enter "" on "Enter Claimant Details As Company Page"
     And I click continue on "Enter Claimant Details As Company Page"
-    And I click continue on "Enter Claimant Details As Company Page"
-    ### duplicate should be removed after CDSR-210 is fixed
-    Then I am presented with the "Enter Reason For Claim Page"
-    When I select dropdown value "Duty suspension" on "Enter Reason For Claim Page"
-    And I click continue on "Enter Reason For Claim Page"
+    Then I am presented with the "Choose Basis For Claim Page"
+    When I select dropdown value "Duty suspension" on "Choose Basis For Claim Page"
+    And I click continue on "Choose Basis For Claim Page"
     Then I am presented with the "Enter Commodity Details Page"
     When I enter "under 500 characters" on "Enter Commodity Details Page"
     And I click continue on "Enter Commodity Details Page"

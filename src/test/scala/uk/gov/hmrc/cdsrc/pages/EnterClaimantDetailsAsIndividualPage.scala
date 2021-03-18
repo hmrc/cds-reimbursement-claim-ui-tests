@@ -53,6 +53,6 @@ object EnterClaimantDetailsAsIndividualPage extends BasePage {
 
   override def clickRadioButton(selection: String): Unit = {
     super.clickRadioButton(selection)
-    super.clickRadioButton(selection) //duplicate should be removed after CDSR-210 is fixed
   }
+
 }

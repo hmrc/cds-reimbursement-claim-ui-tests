@@ -26,8 +26,6 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Claimant Details As Company Page"
     When I enter "" on "Enter Claimant Details As Company Page"
     And I click continue on "Enter Claimant Details As Company Page"
-    And I click continue on "Enter Claimant Details As Company Page"
-    ### duplicate should be removed after CDSR-210 is fixed
     Then I am presented with the "Enter Reason For Claim And Basis Page"
     When I select dropdown value "Duplicate MRN or Entry,Mail order goods" on "Enter Reason For Claim And Basis Page"
     And I click continue on "Enter Reason For Claim And Basis Page"
@@ -107,8 +105,6 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Claimant Details As Company Page"
     When I enter "" on "Enter Claimant Details As Company Page"
     And I click continue on "Enter Claimant Details As Company Page"
-    And I click continue on "Enter Claimant Details As Company Page"
-    ### duplicate should be removed after CDSR-210 is fixed
     Then I am presented with the "Enter Reason For Claim And Basis Page"
     When I select dropdown value "Duplicate MRN or Entry,Mail order goods" on "Enter Reason For Claim And Basis Page"
     And I click continue on "Enter Reason For Claim And Basis Page"
@@ -214,8 +210,6 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Claimant Details As Company Page"
     When I enter "" on "Enter Claimant Details As Company Page"
     And I click continue on "Enter Claimant Details As Company Page"
-    And I click continue on "Enter Claimant Details As Company Page"
-    ### duplicate should be removed after CDSR-210 is fixed
     Then I am presented with the "Enter Reason For Claim And Basis Page"
     When I select dropdown value "Duplicate MRN or Entry,Mail order goods" on "Enter Reason For Claim And Basis Page"
     And I click continue on "Enter Reason For Claim And Basis Page"
