@@ -19,7 +19,7 @@ package uk.gov.hmrc.cdsrc.pages
 import java.time.Duration
 import java.util.concurrent.TimeUnit
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Wait}
-import org.openqa.selenium.{By, WebDriver, WebElement}
+import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
@@ -108,6 +108,10 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def enterText(id: String, textToEnter: String): Unit = {
     driver.findElement(By.id(id)).clear()
     driver.findElement(By.id(id)).sendKeys(textToEnter)
+  }
+
+  def selectFromAutocomplete(id: String, textToSelect: String): Unit = {
+    driver.findElement(By.id(id)).sendKeys(textToSelect + Keys.ENTER)
   }
 
   def enterDetails(data: String): Unit = {

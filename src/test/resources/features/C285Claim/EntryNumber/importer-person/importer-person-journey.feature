@@ -3,10 +3,10 @@
 Feature: Exploratory file using Cucumber
 
   @test @a11y @ZAP
-  Scenario: User is a CDS Trader - happy path
+  Scenario: User is a CDS Trader - happy path (entry number)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB123456789012345" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     Then I navigate to the "Start Page"
     And I click "Start now" on "Start Page"

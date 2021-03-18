@@ -18,17 +18,15 @@ package uk.gov.hmrc.cdsrc.pages
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-object CheckTheseBankDetailsAreCorrectPage extends BasePage {
+object CheckDuplicateDeclarationDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/check-these-bank-details-are-correct"
-  override val title = "Check these bank details are correct"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/check-duplicate-declaration-details"
+  override val title = "Check these details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Check these bank details are correct")
+  override def expectedPageTitle: Option[String] = Some("Check these details are correct")
 
-  override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
-
-  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
+  override def expectedPageHeader: Option[String] = Some("Check these details are correct")
 
 }

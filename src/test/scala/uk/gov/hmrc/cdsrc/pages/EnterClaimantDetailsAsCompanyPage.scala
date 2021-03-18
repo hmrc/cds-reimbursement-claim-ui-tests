@@ -48,7 +48,7 @@ object EnterClaimantDetailsAsCompanyPage extends BasePage {
     enterText("nonUkAddress-line3", addressLine3)
     enterText("nonUkAddress-line4", town)
     enterText("postcode", postcode)
-    enterText("countryCode", country)
+    selectFromAutocomplete("countryCode", country)
   }
 
 }
