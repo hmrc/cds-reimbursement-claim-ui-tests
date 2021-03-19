@@ -1,12 +1,12 @@
 @Regression
 
-Feature: Exploratory file using Cucumber
+Feature: C285 - File upload
 
   @test
-  Scenario: User is a CDS Trader, has an EORI, uploads 3 valid files
+  Scenario: User is a CDS Trader, uploads 3 valid files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB123456789012345" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     Then I navigate to the "Start Page"
     And I click "Start now" on "Start Page"
@@ -82,10 +82,10 @@ Feature: Exploratory file using Cucumber
     And I click continue on "Check Answers Accept Send Page"
 
   @test
-  Scenario: User fails steps
+  Scenario: User is a CDS Trader, fails file upload steps
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB123456789012345" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     Then I navigate to the "Start Page"
     And I click "Start now" on "Start Page"
@@ -190,7 +190,7 @@ Feature: Exploratory file using Cucumber
   Scenario Outline: User is a CDS Trader, has an EORI, uploads different types of invalid files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB123456789012345" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     Then I navigate to the "Start Page"
     And I click "Start now" on "Start Page"

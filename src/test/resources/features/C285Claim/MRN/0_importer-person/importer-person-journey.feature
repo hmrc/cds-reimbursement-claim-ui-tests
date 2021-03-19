@@ -19,11 +19,9 @@ Feature:  C285 - MRN - importer-person
     When I select radio button "0" on "Who Is The Declarant Page"
     And I click continue on "Who Is The Declarant Page"
     Then I am presented with the "Enter Claimant Details As Individual Page"
-    #When I enter "" on "Enter Claimant Details As Individual Page"
     And I select radio button "true" on "Enter Claimant Details As Individual Page"
     And I click continue on "Enter Claimant Details As Individual Page"
     Then I am presented with the "Enter Claimant Details As Company Page"
-    #When I enter "" on "Enter Claimant Details As Company Page"
     And I click continue on "Enter Claimant Details As Company Page"
     Then I am presented with the "Choose Basis For Claim Page"
     When I select dropdown value "Duplicate MRN or Entry" on "Choose Basis For Claim Page"
@@ -66,7 +64,7 @@ Feature:  C285 - MRN - importer-person
     Then I am presented with the "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
 
-  @test @a11y
+  @test
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
