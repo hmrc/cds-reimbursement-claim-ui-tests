@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.cucumber.runner
+package uk.gov.hmrc.cdsrc.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.cdsrc.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@test1"
-)
-class Runner {}
+object ClaimSubmittedPage extends BasePage {
+
+  override val url: String = TestConfiguration.url("cds-frontend") + "/claim-submitted"
+  override val title = "Claim submitted"
+
+  override def expectedPageErrorTitle: Option[String] = Some("")
+
+  override def expectedPageTitle: Option[String] = Some("Claim submitted")
+
+  override def expectedPageHeader: Option[String] = Some("Claim submitted")
+
+}

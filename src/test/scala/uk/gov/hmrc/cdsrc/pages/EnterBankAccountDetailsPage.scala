@@ -31,8 +31,8 @@ object EnterBankAccountDetailsPage extends BasePage {
 
   override def enterDetails(data: String): Unit = {
     val bankAccountName: String = "Mr John Smith"
-    val sortCode: String = "111213"
-    val accountNumber: String = "12345678"
+    val sortCode: String = "123456"
+    val accountNumber: String = "11001001"
 
     enterText("enter-bank-details.account-name", bankAccountName)
     enterText("enter-bank-details.sort-code", sortCode)

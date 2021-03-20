@@ -100,11 +100,11 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
 
-  @test
+  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (entry number)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB123456789012345" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "AA12345678901234Z" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     Then I navigate to the "Start Page"
     And I click "Start now" on "Start Page"
@@ -191,6 +191,7 @@ Feature: C285 - Entry Number - importer-person
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
+    Then I am presented with the "Claim Submitted Page"
 
   @test
   Scenario: User is a CDS Trader - happy path (entry number) - no company details
