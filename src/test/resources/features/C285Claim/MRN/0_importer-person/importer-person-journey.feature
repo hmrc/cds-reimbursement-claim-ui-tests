@@ -64,7 +64,7 @@ Feature:  C285 - MRN - importer-person
     Then I am presented with the "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
 
-  @test
+  @test @test1
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
