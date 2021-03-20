@@ -2,7 +2,7 @@
 
 Feature:  C285 - MRN - importer-company
 
-  @test @a11y @ZAP
+  @test
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -66,7 +66,7 @@ Feature:  C285 - MRN - importer-company
     Then I am presented with the "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
 
-  @test
+  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

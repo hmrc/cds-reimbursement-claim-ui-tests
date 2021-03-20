@@ -2,7 +2,7 @@
 
 Feature:  C285 - Entry Number - representative company
 
-  @test @a11y @ZAP
+  @test
   Scenario: User is a CDS Trader - happy path (entry number) - duplicate Entry Number
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
