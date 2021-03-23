@@ -154,7 +154,7 @@ Feature:  C285 - MRN - importer-person
     When I enter "" on "Enter Claimant Details As Company Page"
     And I click continue on "Enter Claimant Details As Company Page"
     Then I am presented with the "Choose Basis For Claim Page"
-    When I select dropdown value "Duty Suspension" on "Choose Basis For Claim Page"
+    When I select dropdown value "Incorrect Value" on "Choose Basis For Claim Page"
     And I click continue on "Choose Basis For Claim Page"
     Then I am presented with the "Enter Commodity Details Page"
     When I enter "under 500 characters" on "Enter Commodity Details Page"
