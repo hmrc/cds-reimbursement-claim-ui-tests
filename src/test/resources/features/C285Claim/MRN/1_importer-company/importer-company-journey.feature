@@ -3,15 +3,15 @@
 Feature: C285 - MRN - importer-company
 
   @test
-  Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn - sorry there is a problem with the service page
+  Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB123456789012345" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     Then I navigate to the "Start Page"
     And I click "Start now" on "Start Page"
     Then I am presented with the "Enter Movement Reference Number Page"
-    When I enter "10ABCDEFGHIJKLMNO0" on "Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA1" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Check Declaration Details Page"
     And I click continue on "Check Declaration Details Page"
@@ -29,7 +29,7 @@ Feature: C285 - MRN - importer-company
     When I select dropdown value "Duplicate Entry" on "Choose Basis For Claim Page"
     And I click continue on "Choose Basis For Claim Page"
     Then I am presented with the "Enter Duplicate Movement Reference Number Page"
-    When I enter "10ABCDEFGHIJKLMNO0" on "Enter Duplicate Movement Reference Number Page"
+    When I enter "20AAAAAAAAAAAAAAA1" on "Enter Duplicate Movement Reference Number Page"
     And I click continue on "Enter Duplicate Movement Reference Number Page"
     Then I am presented with the "Check Duplicate Declaration Details Page"
     And I click continue on "Check Duplicate Declaration Details Page"
@@ -65,7 +65,7 @@ Feature: C285 - MRN - importer-company
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
-    Then I am presented with the "Check If Claim Was Sent Page"
+    Then I am presented with the "Claim Submitted Page"
 
   @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
@@ -131,4 +131,4 @@ Feature: C285 - MRN - importer-company
     When I click continue on "Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Check Answers Accept Send Page"
     And I click continue on "Check Answers Accept Send Page"
-    Then I am presented with the "Check If Claim Was Sent Page"
+    Then I am presented with the "Claim Submitted Page"
