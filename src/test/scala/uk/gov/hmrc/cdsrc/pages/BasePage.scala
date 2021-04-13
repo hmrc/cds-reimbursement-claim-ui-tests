@@ -81,7 +81,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def clickButton(buttonText: String): Unit = click on partialLinkText(buttonText)
 
   def clickRadioButton(text: String): Unit = {
-    println(driver.getPageSource) //prints page source to aid jenkins failing bug
     click on xpath(s"//input[@value='$text']")
   }
 
