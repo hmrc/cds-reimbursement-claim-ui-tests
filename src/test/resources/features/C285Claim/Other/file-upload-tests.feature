@@ -1,4 +1,4 @@
-@Regression @1
+@Regression
 
 Feature: C285 - File upload
 
