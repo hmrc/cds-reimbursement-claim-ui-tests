@@ -50,7 +50,7 @@ object EnterYourDetailsAsRegisteredWithCDS extends BasePage {
   }
 
   override def clickRadioButton(selection: String): Unit = {
-    click on xpath(s"""//input[@id="enter-claimant-details-as-registered-with-cds.add-company-details-$selection"]""")
+    click on xpath(s"""//*[@id="enter-claimant-details-as-registered-with-cds.add-company-details-$selection"]""")
   }
 
 }
