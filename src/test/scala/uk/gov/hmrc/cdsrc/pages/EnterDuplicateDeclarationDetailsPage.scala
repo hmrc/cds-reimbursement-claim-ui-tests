@@ -41,9 +41,9 @@ object EnterDuplicateDeclarationDetailsPage extends BasePage {
     val declarantEmailAddress: String = "johnathonsmithson@email.com"
     val declarantPhoneNumber: String = "01234567891"
 
-    enterText("enter-declaration-details-enter-declaration-details.day", importDate)
-    enterText("enter-declaration-details-enter-declaration-details.month", importMonth)
-    enterText("enter-declaration-details-enter-declaration-details.year", importYear)
+    enterText("enter-declaration-details.day", importDate)
+    enterText("enter-declaration-details.month", importMonth)
+    enterText("enter-declaration-details.year", importYear)
     enterText("enter-declaration-details.place-of-import", placeOfImport)
     enterText("enter-declaration-details.importer-name", importerName)
     enterText("enter-declaration-details.importer-email-address", importerEmailAddress)
