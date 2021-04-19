@@ -29,4 +29,10 @@ object CheckAnswersAcceptSendPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check your answers before sending your application")
 
+  override def clickButton(buttonText: String): Unit = {
+    buttonText match {
+      case "change reference number" => click on cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__actions > a")
+    }
+  }
+
 }
