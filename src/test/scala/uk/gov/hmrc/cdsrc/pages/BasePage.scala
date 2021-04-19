@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
-import java.time.Duration
-import java.util.concurrent.TimeUnit
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Wait}
 import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
 import org.scalatest.Assertion
@@ -25,6 +23,9 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.{Page, WebBrowser}
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
+
+import java.time.Duration
+import java.util.concurrent.TimeUnit
 
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
@@ -85,7 +86,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def selectCheckBox(): Unit = {
-    click on cssSelector("")
   }
 
   def elementText(query: Query): String = find(query).get.underlying.getText
@@ -131,5 +131,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def clickOnLinkText(text: String): Unit = click on linkText(text)
+
+  def checkDutyPage(duty: String): Unit = {
+  }
 
 }

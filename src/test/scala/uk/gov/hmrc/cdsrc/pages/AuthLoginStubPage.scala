@@ -41,7 +41,7 @@ object AuthLoginStubPage extends BasePage {
   }
 
   override def clickContinueButton(): Unit ={
-    click on xpath("//*[@id=\"inputForm\"]/p[1]/input")
+    click on cssSelector("#inputForm > div.form-field-group > p > input")
   }
 
 }

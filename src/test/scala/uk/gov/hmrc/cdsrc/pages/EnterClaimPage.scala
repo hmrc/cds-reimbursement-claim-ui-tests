@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
 object EnterClaimPage extends BasePage {
@@ -39,4 +40,9 @@ object EnterClaimPage extends BasePage {
         enterText("enter-claim", amounts(0))
     }
   }
+
+  override def checkDutyPage(duty: String): Unit = {
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Enter the claim amount for duty $duty")
+  }
+
 }

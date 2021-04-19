@@ -40,11 +40,13 @@ object PageObjectFinder extends BasePage {
     directories.flatMap(fileList)
   }
 
-  def page(page: String): BasePage =
+  def page(pageIn: String): BasePage = {
+    val page = pageIn.replaceAll(" ", "")
     files.find(_.getName == s"$page.scala")
       .map(_.getAbsolutePath.replaceAll(".*/(uk/.*).scala", "$1").replaceAll("/", "."))
       .map(str => Class.forName(str + "$").getField("MODULE$").get(classOf[BasePage]).asInstanceOf[BasePage])
       .getOrElse(throw new TestFailedException(s"$page does not exist in tests, or it does not conform to Web page format", new FileNotFoundException(), 12))
+  }
 
   def file(path: String): File = {
     new File(path)
