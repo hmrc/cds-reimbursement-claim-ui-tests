@@ -2,7 +2,7 @@
 
 Feature: C285 - MRN - importer-person
 
-  @test @a11y @ZAP
+  @test
   Scenario: User is a CDS Trader - happy path (mrn)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -121,7 +121,7 @@ Feature: C285 - MRN - importer-person
     And I click continue on "Check Answers Accept Send Page"
     Then I am presented with the "Claim Submitted Page"
 
-  @test
+  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn) - change mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -236,7 +236,7 @@ Feature: C285 - MRN - importer-person
     And I click continue on "Enter Duplicate Movement Reference Number Page"
     Then I am presented with the "Enter Duplicate Movement Reference Number Page" error page
 
-  @1 ### This test fails on Jenkins, but works locally - 20th March 2021
+  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

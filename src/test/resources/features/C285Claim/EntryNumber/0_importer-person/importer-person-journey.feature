@@ -284,7 +284,7 @@ Feature: C285 - Entry Number - importer-person
     And I click continue on "Check Answers Accept Send Page"
     Then I am presented with the "Claim Submitted Page"
 
-  @test
+  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (entry number) - change entry number
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
