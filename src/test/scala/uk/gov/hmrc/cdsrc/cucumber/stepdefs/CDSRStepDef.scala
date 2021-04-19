@@ -51,7 +51,7 @@ class CDSRStepDef extends BaseStepDef {
   When("""I enter redirectURL on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" =>
-        AuthLoginStubPage.enterRedirectURL("/claim-for-reimbursement-of-import-duties/start/claim-for-reimbursement")
+        AuthLoginStubPage.enterRedirectURL("http://localhost:7500/claim-for-reimbursement-of-import-duties/start/claim-for-reimbursement")
     }
   }
 
