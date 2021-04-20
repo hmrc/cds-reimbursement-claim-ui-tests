@@ -23,7 +23,7 @@ object SupportingEvidenceDocumentDidNotUploadPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/document-did-not-upload"
   override val title = "There is a problem with the file you uploaded"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("There is a problem with the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("There is a problem with the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
 

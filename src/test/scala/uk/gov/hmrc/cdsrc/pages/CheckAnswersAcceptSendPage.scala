@@ -23,7 +23,7 @@ object CheckAnswersAcceptSendPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-answers-accept-send"
   override val title = "Check your answers before sending your application"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your application - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Check your answers before sending your application - Claim for reimbursement of import duties - GOV.UK")
 

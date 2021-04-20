@@ -23,7 +23,7 @@ object EnterDeclarationDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-declaration-details"
   override val title = "Enter declaration details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter declaration details - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Enter declaration details - Claim for reimbursement of import duties - GOV.UK")
 

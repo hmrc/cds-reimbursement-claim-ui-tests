@@ -23,7 +23,7 @@ object CheckIfClaimWasSentPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-if-claim-was-sent"
   override val title = "Sorry, there is a problem with the service"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Sorry, there is a problem with the service - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Sorry, there is a problem with the service - Claim for reimbursement of import duties - GOV.UK")
 

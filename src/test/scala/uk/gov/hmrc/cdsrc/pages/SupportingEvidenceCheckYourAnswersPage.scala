@@ -23,7 +23,7 @@ object SupportingEvidenceCheckYourAnswersPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/check-your-answers"
   override val title = "Confirm these are the files you want to submit"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Confirm these are the files you want to submit - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Confirm these are the files you want to submit - Claim for reimbursement of import duties - GOV.UK")
 

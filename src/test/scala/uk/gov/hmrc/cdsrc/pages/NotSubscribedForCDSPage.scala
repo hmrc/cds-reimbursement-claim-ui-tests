@@ -23,7 +23,7 @@ object NotSubscribedForCDSPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/not-subscribed-for-cds"
   override val title = "Not registered with CDS"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Not registered with CDS - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Not registered with CDS - Claim for reimbursement of import duties - GOV.UK")
 

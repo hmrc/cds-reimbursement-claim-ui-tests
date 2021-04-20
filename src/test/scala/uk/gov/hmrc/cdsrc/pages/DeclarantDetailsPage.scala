@@ -23,7 +23,7 @@ object DeclarantDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/declarant-details"
   override val title = "Check these details are correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
 

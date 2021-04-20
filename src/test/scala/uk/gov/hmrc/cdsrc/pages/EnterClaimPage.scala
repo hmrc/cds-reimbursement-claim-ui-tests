@@ -24,7 +24,7 @@ object EnterClaimPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-claim"
   override val title = "Enter the claim amount for duty A20 - Additional Duty"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter the claim amount for duty A20")
 
   override def expectedPageTitle: Option[String] = Some("Enter the claim amount for duty A20")
 
@@ -42,6 +42,10 @@ object EnterClaimPage extends BasePage {
   }
 
   override def checkDutyPage(duty: String): Unit = {
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Enter the claim amount for duty $duty")
+  }
+
+  override def checkDutyPageError(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Enter the claim amount for duty $duty")
   }
 

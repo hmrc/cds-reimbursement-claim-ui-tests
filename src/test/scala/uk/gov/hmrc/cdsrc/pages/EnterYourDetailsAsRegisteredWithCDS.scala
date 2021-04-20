@@ -23,7 +23,7 @@ object EnterYourDetailsAsRegisteredWithCDS extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-your-details-as-registered-with-cds"
   override val title = "Enter your details as registered with CDS"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Enter your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
 
@@ -50,7 +50,7 @@ object EnterYourDetailsAsRegisteredWithCDS extends BasePage {
   }
 
   override def clickRadioButton(selection: String): Unit = {
-    click on cssSelector(s"""#enter-claimant-details-as-registered-with-cds\\.add-company-details-$selection""")
+    click on cssSelector(s"""#enter-claimant-details-as-registered-with-cds\\.add-company-details${if (selection == "no") {"-no"} else {""}}""")
   }
 
 }

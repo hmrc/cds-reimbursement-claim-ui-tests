@@ -23,7 +23,7 @@ object StartPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/start/claim-for-reimbursement"
   override val title = "Claim for reimbursement of import duties"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Claim for reimbursement of import duties - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Claim for reimbursement of import duties - Claim for reimbursement of import duties - GOV.UK")
 

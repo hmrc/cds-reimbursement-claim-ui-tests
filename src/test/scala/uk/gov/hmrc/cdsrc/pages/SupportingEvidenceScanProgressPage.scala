@@ -23,7 +23,7 @@ object SupportingEvidenceScanProgressPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/scan-progress"
   override val title = "Wait a few seconds and then select ‘continue’"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Wait a few seconds and then select ‘continue’ - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Wait a few seconds and then select ‘continue’ - Claim for reimbursement of import duties - GOV.UK")
 
