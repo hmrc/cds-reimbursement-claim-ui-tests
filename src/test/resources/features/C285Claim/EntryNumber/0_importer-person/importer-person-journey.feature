@@ -373,7 +373,7 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Claim Submitted Page"
 
   @test
-  Scenario: User is a CDS Trader - sad path (mrn) - same duplicate legacy number & mrn attempt
+  Scenario: User is a CDS Trader - sad path (entry number) - same duplicate legacy number & mrn attempt
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
