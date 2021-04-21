@@ -372,8 +372,8 @@ Feature: C285 - Entry Number - importer-person
     And I click continue on "Check Answers Accept Send Page"
     Then I am presented with the "Claim Submitted Page"
 
-  @testFail #@test @a11y @ZAP #CDSR-600 this test should be modified to fail after entering duplicate MRN
-  Scenario: User is a CDS Trader - sad path (entry number) - duplicate MRN
+  @test
+  Scenario: User is a CDS Trader - sad path (entry number) - same duplicate legacy number & mrn attempt
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -402,3 +402,9 @@ Feature: C285 - Entry Number - importer-person
     When I enter "000000001A00000001" on "Enter Duplicate Movement Reference Number Page"
     And I click continue on "Enter Duplicate Movement Reference Number Page"
     Then I am presented with the "Enter Duplicate Movement Reference Number Page" error page
+    When I enter "000000001A00000001" on "Enter Duplicate Movement Reference Number Page"
+    And I click continue on "Enter Duplicate Movement Reference Number Page"
+    Then I am presented with the "Enter Duplicate Movement Reference Number Page" error page
+    When I enter "000000002A00000002" on "Enter Duplicate Movement Reference Number Page"
+    And I click continue on "Enter Duplicate Movement Reference Number Page"
+    Then I am presented with the "Enter Duplicate Declaration Details Page"
