@@ -9,6 +9,9 @@ Feature: C285 - Error Scenarios
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     And I click "Start now" on "Start Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
 
     Then I am presented with the "Enter Movement Reference Number Page"
     When I enter "000000001A00000001e" on "Enter Movement Reference Number Page"
