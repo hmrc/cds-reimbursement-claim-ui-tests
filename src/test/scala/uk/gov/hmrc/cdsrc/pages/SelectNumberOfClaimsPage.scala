@@ -20,7 +20,7 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
 object SelectNumberOfClaimsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/check-eori-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/select-number-of-claims"
   override val title = "Select number of claims"
 
   override def expectedPageErrorTitle: Option[String] = Some("Select number of claims - Claim for reimbursement of import duties - GOV.UK")
@@ -33,7 +33,7 @@ object SelectNumberOfClaimsPage extends BasePage {
     text.toLowerCase() match {
       case "individual" => click on cssSelector("#select-number-of-claims-individual")
       case "bulk" => click on cssSelector("#select-number-of-claims-bulk")
-      case "scheduled" => click on cssSelector("#select-number-of-claims-scheduled")
+      case "schedule" => click on cssSelector("#select-number-of-claims-scheduled")
     }
   }
 }

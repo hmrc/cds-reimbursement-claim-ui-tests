@@ -37,6 +37,11 @@ class CDSRStepDef extends BaseStepDef {
     AuthLoginStubPage.enrolments(eKey, IDName, IDValue)
   }
 
+  //used to enable or disable the bulk claim page, so that we can test "select-number-of-claims"
+  When("""I {string} the bulk feature"""){ (feature: String) =>
+    driver.get(s"""http://localhost:7500/claim-for-reimbursement-of-import-duties/test-only/feature/bulk-claim/$feature""")
+  }
+
   When("""I enter redirectURL on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" =>
