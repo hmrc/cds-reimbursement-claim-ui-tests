@@ -1,6 +1,9 @@
 @Regression
 
 Feature: C285 - MRN - representative-company
+  Background:
+    Given the Bulk Claim feature is disabled
+    Given the Northern Ireland feature is enabled
 
   @test
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
@@ -27,6 +30,9 @@ Feature: C285 - MRN - representative-company
     #Then I am presented with the "Enter Your Contact Details Page"
     #When I enter "" on "Enter Your Contact Details Page"
     #And I click continue on "Enter Your Contact Details Page"
+    Then I am presented with the "Claim Northern Ireland Page"
+    When I select radio button "yes" on "Claim Northern Ireland Page"
+    And I click continue on "Claim Northern Ireland Page"
     Then I am presented with the "Choose Basis For Claim Page"
     When I select dropdown value "Duplicate Entry" on "Choose Basis For Claim Page"
     And I click continue on "Choose Basis For Claim Page"
@@ -100,6 +106,9 @@ Feature: C285 - MRN - representative-company
     #Then I am presented with the "Enter Your Contact Details Page"
     #When I enter "" on "Enter Your Contact Details Page"
     #And I click continue on "Enter Your Contact Details Page"
+    Then I am presented with the "Claim Northern Ireland Page"
+    When I select radio button "yes" on "Claim Northern Ireland Page"
+    And I click continue on "Claim Northern Ireland Page"
     Then I am presented with the "Choose Basis For Claim Page"
     When I select dropdown value "IP" on "Choose Basis For Claim Page"
     And I click continue on "Choose Basis For Claim Page"

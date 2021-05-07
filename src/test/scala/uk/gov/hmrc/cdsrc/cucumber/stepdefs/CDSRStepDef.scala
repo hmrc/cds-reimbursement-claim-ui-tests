@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
+import org.scalatest.AppendedClues.convertToClueful
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages._
 
@@ -38,9 +39,22 @@ class CDSRStepDef extends BaseStepDef {
     AuthLoginStubPage.enrolments(eKey, IDName, IDValue)
   }
 
-  //used to enable or disable the bulk claim page, so that we can test "select-number-of-claims"
-  When("""I {string} the bulk feature"""){ (feature: String) =>
-    driver.get(s"""${TestConfiguration.url("cds-frontend")}/test-only/feature/bulk-claim/$feature""")
+//  //used to enable or disable the bulk claim page, so that we can test "select-number-of-claims"
+//  When("""I {string} the bulk feature"""){ (feature: String) =>
+//    driver.get(s"""${TestConfiguration.url("cds-frontend")}/test-only/feature/bulk-claim/$feature""")
+//  }
+
+  Given("""^the (.*) feature is (.*)""") { (feature: String, featureState: String) =>
+    TestConfiguration.toString match {
+      case "Local" => configureFeatureSwitch(feature, featureState)
+      case _ => None
+    }
+  }
+
+  private def configureFeatureSwitch(featureSwitch: String, featureState: String) = {
+    val featureName = featureSwitch.toLowerCase().replace(" ", "-")
+    val result = FeatureSwitchPage(featureName, featureState.dropRight(1)).configure
+    result should be(true) withClue s", Feature $featureName could not be toggled"
   }
 
   When("""I enter redirectURL on {string}""") { (page: String) =>
