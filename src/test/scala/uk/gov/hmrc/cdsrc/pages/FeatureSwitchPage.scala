@@ -16,19 +16,14 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 
-case class FeatureSwitchPage(featureName: String , featureState: String ) extends BasePage {
+object FeatureSwitchPage extends BasePage {
 
-  override val url : String = TestConfiguration.url("cds-frontend") + s"/test-only/feature/$featureName/$featureState"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/test-only/feature/"
 
-  def configure: Boolean = {
-    go to url
-
-    // this doesn't check if the above feature switching worked or not...
-    val elements = driver.findElements(By.tagName("pre"))
-    elements.size() == 1 && elements.get(0).getText.toLowerCase.startsWith(featureState.toLowerCase())
+  override def configure(feature: String, featureState: String): Unit = {
+    go to url + s"${feature.toLowerCase().replace(" ", "-")}/${featureState.dropRight(1)}"
   }
 
 }

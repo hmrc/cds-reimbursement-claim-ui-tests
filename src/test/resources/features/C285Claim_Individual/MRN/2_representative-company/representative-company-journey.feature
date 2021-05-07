@@ -2,8 +2,8 @@
 
 Feature: C285 - MRN - representative-company
   Background:
-    Given the Bulk Claim feature is disabled
-    Given the Northern Ireland feature is enabled
+    Given the "Bulk Claim" feature is "disabled"
+    Given the "Northern Ireland" feature is "enabled"
 
   @test
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
