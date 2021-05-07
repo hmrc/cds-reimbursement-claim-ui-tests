@@ -3,7 +3,7 @@ Feature: C285 scheduled
 
   @test
   Scenario: test temp pages
-    Given I "enable" the bulk feature
+    Given the "Bulk Claim" feature is "enabled"
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"

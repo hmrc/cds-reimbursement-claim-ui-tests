@@ -138,4 +138,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def checkDutyPageError(duty: String): Unit = {
   }
 
+  def configure(feature: String, featureState: String): Unit = {
+  }
+
 }

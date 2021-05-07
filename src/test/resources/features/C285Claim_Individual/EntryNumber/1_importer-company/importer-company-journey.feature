@@ -2,6 +2,9 @@
 
 Feature: C285 - Entry Number - importer-company
 
+  Background:
+    Given the "Bulk Claim" feature is "disabled"
+
   @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (entry number) - duplicate Entry Number
     Given I navigate to the "Auth Login Stub Page"

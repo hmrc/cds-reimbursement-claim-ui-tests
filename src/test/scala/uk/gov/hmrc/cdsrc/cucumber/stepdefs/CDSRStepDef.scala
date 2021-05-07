@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
-import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages._
 
 class CDSRStepDef extends BaseStepDef {
@@ -36,11 +35,6 @@ class CDSRStepDef extends BaseStepDef {
 
   When("""I enter Enrollment Key {string}, ID Name {string} and ID Value {string} on {string}""") { (eKey: String, IDName: String, IDValue: String, _: String) =>
     AuthLoginStubPage.enrolments(eKey, IDName, IDValue)
-  }
-
-  //used to enable or disable the bulk claim page, so that we can test "select-number-of-claims"
-  When("""I {string} the bulk feature"""){ (feature: String) =>
-    driver.get(s"""${TestConfiguration.url("cds-frontend")}/test-only/feature/bulk-claim/$feature""")
   }
 
   When("""I enter redirectURL on {string}""") { (page: String) =>
