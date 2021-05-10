@@ -8,7 +8,7 @@ Download the latest Chromedriver from (http://chromedriver.chromium.org/download
 
 Extract the zip file and save the driver in the following folder - /usr/local/bin/
 
-#Cloning the project and service startup
+# Cloning the project and service startup
 
 Clone this project to the directory of your choice
 
