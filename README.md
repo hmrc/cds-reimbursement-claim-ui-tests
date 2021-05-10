@@ -1,4 +1,3 @@
-
 # cds-reimbursement-claim-ui-tests
 UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
 
