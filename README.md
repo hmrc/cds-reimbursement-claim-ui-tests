@@ -1,21 +1,55 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
-
 # cds-reimbursement-claim-ui-tests
 UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
 
-## Running the tests
+# Chromedriver setup
+Download the latest Chromedriver from (http://chromedriver.chromium.org/downloads).
 
-Prior to executing the tests ensure you have:
- - Docker - to run mongo and browser (Chrome or Firefox) inside a container 
- - Appropriate [drivers installed](#installing-local-driver-binaries) - to run tests against locally installed Browser
- - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
+Extract the zip file and save the driver in the following folder - /usr/local/bin/
 
-When running these example tests locally, Chrome requires the additional `appendArgs` to be set otherwise the tests will fail. This is due to payments which is used in the examples having specific cross site settings in order for the Barclaycard iframe to work.
+# Cloning the project and service startup
 
-Run the following command to start services locally:
+Clone this project to the directory of your choice
 
-    docker run --rm -d --name mongo -d -p 27017:27017 mongo:3.6
-    sm --start UI_TEST_TEMPLATE --appendArgs '{"PAY_FRONTEND":["-Dplay.http.session.sameSite=Lax"]}' -r
+On a Terminal instance, start up all services using:
+
+```sm --start CDSRC_ALL -r```
+
+If you want to run the Customs Financials Frontend service locally, stop the service using:
+
+```sm --stop CDSRC_FRONTEND```
+
+Then run the Frontend locally using:
+
+```sbt "run 7500 -Dplay.http.router=testOnlyDoNotUseInAppConf.Routes"```
+
+## Running the Tests
+
+1. Navigate to the directory where the project has been cloned.
+
+2. To run all acceptance tests on your local machine, use: ```./run_tests_local.sh```  OR ```sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER -Ddrivernotquit=true "testOnly uk.gov.hmrc.cdsrc.cucumber.runner.Runner"```
+3. To run all tests that are tagged as "@wip", use: ```./run_local_wip.sh```
+
+## Running ZAP tests locally
+
+Download ZAP from the following links
+
+For Linux - https://github.com/zaproxy/zaproxy/releases/download/v2.10.0/ZAP_2.10.0_Linux.tar.gz
+
+For Mac - https://github.com/zaproxy/zaproxy/releases/download/v2.10.0/ZAP_2.10.0.dmg
+
+1. Extract ZAP to following location:
+   ```Mac - /Applications/OWASP ZAP.app/Contents/Java/zap.sh```
+2. Start zap using -
+
+For Mac - ```./start-ZAP.sh```
+
+For Linux - In one terminal cd into your copy of Zap and run it in daemon mode ```./zap.sh -daemon -config api.disablekey=true -port 11000```
+
+To run pen tests on your local maching, use:
+
+```./run_local_zap.sh```
+
+ZAP report is generated in folder - ```/target/zap-reports```
 
 Then execute the `run_tests.sh` script:
 
