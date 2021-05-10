@@ -1,4 +1,3 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
 
 # cds-reimbursement-claim-ui-tests
 UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
