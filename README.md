@@ -28,8 +28,7 @@ Then run the Frontend locally using:
 
 1. Navigate to the directory where the project has been cloned.
 
-2. To run all acceptance tests on your local machine, use: ```./run_tests_local.sh```  OR ```sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER -Ddrivernotquit=true "testOnly uk.gov.hmrc.cdsrc.cucumber.runner.Runner"
-   '```
+2. To run all acceptance tests on your local machine, use: ```./run_tests_local.sh```  OR ```sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER -Ddrivernotquit=true "testOnly uk.gov.hmrc.cdsrc.cucumber.runner.Runner"```
 3. To run all tests that are tagged as "@wip", use: ```./run_local_wip.sh```
 
 ## Running ZAP tests locally
