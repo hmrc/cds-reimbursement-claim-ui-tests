@@ -40,7 +40,7 @@ class CDSRStepDef extends BaseStepDef {
   When("""I enter redirectURL on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" =>
-        AuthLoginStubPage.enterRedirectURL(StartPage.url)
+        AuthLoginStubPage.enterRedirectURL(CheckEoriDetailsPage.url)
     }
   }
 
