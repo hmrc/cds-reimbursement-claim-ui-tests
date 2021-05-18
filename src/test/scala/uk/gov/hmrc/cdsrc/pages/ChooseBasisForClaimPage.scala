@@ -43,7 +43,7 @@ object ChooseBasisForClaimPage extends BasePage {
   }
 
   override def clickContinueButton(): Unit = {
-    click on cssSelector("#main-content > div > div > strong > strong > form > button")
+    click on cssSelector("#main-content > div > div > form > button")
   }
 
 }
