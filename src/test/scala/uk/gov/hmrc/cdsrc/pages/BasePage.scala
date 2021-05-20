@@ -30,6 +30,7 @@ import java.util.concurrent.TimeUnit
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
   val title: String = ""
+  val pageShouldHaveBackButton: Boolean = true
 
   /** Fluent Wait config * */
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
@@ -71,6 +72,13 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def checkPageHeader: Assertion = {
     fluentWait.until(ExpectedConditions.textToBe(By.cssSelector("h1"), expectedPageHeader.get))
     expectedPageHeaderList should contain(List(pageHeader.get))
+  }
+
+  //if page should have back button, then there should be more than 1 back button on that page
+  def checkBackButtonExistsIfItShould: Any = {
+    if (pageShouldHaveBackButton) {
+      driver.findElements(By.cssSelector("#cdsr-back-link > a")).size() should be > 0
+    }
   }
 
   def waitForPageToLoad(): WebDriver.Timeouts = {

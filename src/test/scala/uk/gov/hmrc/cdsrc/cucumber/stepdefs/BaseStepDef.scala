@@ -70,6 +70,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     waitForPageHeader
     PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).checkPageTitle
+    PageObjectFinder.page(page).checkBackButtonExistsIfItShould
   }
 
   Then("""I am presented with the {string} error page""") { page: String =>
@@ -80,6 +81,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   Then("""I am presented with the {string} {string}""") { (page: String, duty: String) =>
     waitForPageHeader
     PageObjectFinder.page(page).checkDutyPage(duty)
+    PageObjectFinder.page(page).checkBackButtonExistsIfItShould
   }
 
   Then("""I am presented with the {string} {string} error page""") { (page: String, duty: String) =>
