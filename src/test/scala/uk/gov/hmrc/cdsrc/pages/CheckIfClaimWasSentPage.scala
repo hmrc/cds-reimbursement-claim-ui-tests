@@ -21,12 +21,12 @@ import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 object CheckIfClaimWasSentPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-if-claim-was-sent"
-  override val title = "Sorry, there is a problem with the service"
+  override val title = "Claim submission failed"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Sorry, there is a problem with the service - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Claim submission failed - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Sorry, there is a problem with the service - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Claim submission failed - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Sorry, there is a problem with the service")
+  override def expectedPageHeader: Option[String] = Some("Claim submission failed")
 
 }
