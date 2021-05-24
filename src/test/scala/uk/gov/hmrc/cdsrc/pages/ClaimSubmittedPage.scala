@@ -22,6 +22,7 @@ object ClaimSubmittedPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/claim-submitted"
   override val title = "Claim submitted"
+  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Claim submitted - Claim for reimbursement of import duties - GOV.UK")
 

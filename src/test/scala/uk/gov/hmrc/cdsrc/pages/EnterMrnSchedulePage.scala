@@ -22,6 +22,7 @@ object EnterMrnSchedulePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-mrn-schedule"
   override val title = "What is your Movement Reference Number (MRN)?"
+  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("What is your Movement Reference Number (MRN)? - Claim for reimbursement of import duties - GOV.UK")
 

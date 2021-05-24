@@ -23,6 +23,7 @@ object EnterClaimPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-claim"
   override val title = "Enter the claim amount for duty A20 - Additional Duty"
+  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the claim amount for duty A20")
 
