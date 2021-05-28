@@ -63,7 +63,7 @@ Feature: C285 - Error Scenarios
     Then I am presented with the "Select Duties Page"
     And I click continue on "Select Duties Page"
     Then I am presented with the "Select Duties Page" error page
-    When I select "0" on "Select Duties Page"
+    When I select "A00" on "Select Duties Page"
     And I click continue on "Select Duties Page"
 
     Then I am presented with the "Enter Claim Page" "Customs Duty - Code A00"

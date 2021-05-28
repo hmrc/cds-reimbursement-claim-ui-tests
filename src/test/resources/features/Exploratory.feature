@@ -133,7 +133,7 @@ Feature: Exploratory file using Cucumber
     When I enter "under 500 characters" on "Enter Commodity Details Page"
     And I click continue on "Enter Commodity Details Page"
     Then I am presented with the "Select Duties Page"
-    When I select "0,1,2,3" on "Select Duties Page"
+    When I select "A80,A95,A90,A85" on "Select Duties Page"
     And I click continue on "Select Duties Page"
     Then I am presented with the "Enter Claim Page" "Definitive Anti-Dumping Duty - Code A80"
     When I enter "10" on "Enter Claim Page"

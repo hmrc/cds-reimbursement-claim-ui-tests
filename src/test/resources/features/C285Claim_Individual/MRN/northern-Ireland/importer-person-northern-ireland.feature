@@ -6,7 +6,7 @@ Feature: C285 - MRN - importer-person
     Given the "Bulk Claim" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
 
-  @test
+  @test @1
   Scenario: User is a CDS Trader - happy path (mrn)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -38,11 +38,8 @@ Feature: C285 - MRN - importer-person
     When I enter "under 500 characters" on "Enter Commodity Details Page"
     And I click continue on "Enter Commodity Details Page"
     Then I am presented with the "Select Duties Page"
-    When I select "0,1,2,3" on "Select Duties Page"
+    When I select "421,623,99C" on "Select Duties Page"
     And I click continue on "Select Duties Page"
-    Then I am presented with the "Enter Claim Page" "Definitive Anti-Dumping Duty - Code A80"
-    When I enter "10" on "Enter Claim Page"
-    And I click continue on "Enter Claim Page"
     Then I am presented with the "Enter Claim Page" "Made-wine (sparkling), exceeding 8.5% vol. but not exceeding 15% vol."
     When I enter "10" on "Enter Claim Page"
     And I click continue on "Enter Claim Page"
