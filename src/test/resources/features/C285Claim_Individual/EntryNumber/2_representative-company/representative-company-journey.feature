@@ -2,9 +2,12 @@
 
 Feature:  C285 - Entry Number - representative company
 
+  Background:
+    Given the "Bulk Claim" feature is "disabled"
+    Given the "Entry Number" feature is "enabled"
+
   @test
   Scenario: User is a CDS Trader - happy path (entry number) - duplicate Entry Number
-    Given the "Bulk Claim" feature is "disabled"
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -105,7 +108,6 @@ Feature:  C285 - Entry Number - representative company
 
   @test
   Scenario: User is a CDS Trader - happy path (entry number)
-    Given the "Bulk Claim" feature is "disabled"
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"

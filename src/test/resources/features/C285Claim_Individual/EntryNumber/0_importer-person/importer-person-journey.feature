@@ -4,6 +4,7 @@ Feature: C285 - Entry Number - importer-person
 
   Background:
     Given the "Bulk Claim" feature is "disabled"
+    Given the "Entry Number" feature is "enabled"
 
   @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (entry number) - duplicate Entry Number
