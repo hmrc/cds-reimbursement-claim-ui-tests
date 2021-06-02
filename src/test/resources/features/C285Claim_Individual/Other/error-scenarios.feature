@@ -66,10 +66,10 @@ Feature: C285 - Error Scenarios
     When I select "A00" on "Select Duties Page"
     And I click continue on "Select Duties Page"
 
-    Then I am presented with the "Enter Claim Page" "Customs Duty - Code A00"
+    Then I am presented with the "Enter Claim Page" "A00 - Customs Duty"
     When I enter "-2,-1" on "Enter Claim Page"
     And I click continue on "Enter Claim Page"
-    Then I am presented with the "Enter Claim Page" "Customs Duty - Code A00" error page
+    Then I am presented with the "Enter Claim Page" "A00 - Customs Duty" error page
     When I enter "2,1" on "Enter Claim Page"
     And I click continue on "Enter Claim Page"
 
