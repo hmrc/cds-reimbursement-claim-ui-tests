@@ -23,7 +23,6 @@ object EnterClaimPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-claim"
   override val title = "Enter the claim amount for duty A20 - Additional Duty"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the claim amount for duty A20")
 
@@ -48,6 +47,11 @@ object EnterClaimPage extends BasePage {
 
   override def checkDutyPageError(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Enter the claim amount for duty $duty")
+  }
+
+  override def checkBackButtonExistsIfItShould: Any = {
+    //Legacy journey shows back button, but MRN does not
+    //This method is just to stop it using the standard method, since ^^^ was an unexpected circumstance
   }
 
 }

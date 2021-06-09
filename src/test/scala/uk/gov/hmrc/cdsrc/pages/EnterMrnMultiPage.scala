@@ -22,7 +22,6 @@ object EnterMrnMultiPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-mrn-multi"
   override val title = "What is your lead MRN or entry number?"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("What is your lead MRN or entry number? - Claim for reimbursement of import duties - GOV.UK")
 
