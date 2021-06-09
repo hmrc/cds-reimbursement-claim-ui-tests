@@ -78,6 +78,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def checkBackButtonExistsIfItShould: Any = {
     if (pageShouldHaveBackButton) {
       driver.findElements(By.cssSelector("#cdsr-back-link > a")).size() should be > 0
+    } else {
+      driver.findElements(By.cssSelector("#cdsr-back-link > a")).size() should equal(0)
     }
   }
 

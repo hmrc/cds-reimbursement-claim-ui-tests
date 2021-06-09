@@ -22,7 +22,7 @@ object DeclarantEoriEntryPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/declarant-eori-entry"
   override val title = "Enter the declarant’s EORI number"
-  override val pageShouldHaveBackButton = false
+  //override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the declarant’s EORI number - Claim for reimbursement of import duties - GOV.UK")
 
