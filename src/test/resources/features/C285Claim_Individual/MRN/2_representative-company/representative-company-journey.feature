@@ -1,9 +1,9 @@
-@Regression
+@Regression @Individual @MRN
 
 Feature: C285 - MRN - representative-company
   Background:
     Given the "Bulk Claim" feature is "disabled"
-    Given the "Northern Ireland" feature is "enabled"
+    Given the "Northern Ireland" feature is "disabled"
 
   @test
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
@@ -24,14 +24,6 @@ Feature: C285 - MRN - representative-company
     And I click continue on "Who Is The Declarant Page"
     Then I am presented with the "Enter Your Details As Registered With CDS"
     When I enter "" on "Enter Your Details As Registered With CDS"
-    #And I select radio button "yes" on "Enter Your Details As Registered With CDS"
-    #And I click continue on "Enter Your Details As Registered With CDS"
-    #Then I am presented with the "Enter Your Contact Details Page"
-    #When I enter "" on "Enter Your Contact Details Page"
-    #And I click continue on "Enter Your Contact Details Page"
-    Then I am presented with the "Claim Northern Ireland Page"
-    When I select radio button "No" on "Claim Northern Ireland Page"
-    And I click continue on "Claim Northern Ireland Page"
     Then I am presented with the "Choose Basis For Claim Page"
     When I select radio button "Duplicate Entry" on "Choose Basis For Claim Page"
     And I click continue on "Choose Basis For Claim Page"
@@ -99,14 +91,6 @@ Feature: C285 - MRN - representative-company
     And I click continue on "Who Is The Declarant Page"
     Then I am presented with the "Enter Your Details As Registered With CDS"
     When I enter "" on "Enter Your Details As Registered With CDS"
-    #And I select radio button "yes" on "Enter Your Details As Registered With CDS"
-    #And I click continue on "Enter Your Details As Registered With CDS"
-    #Then I am presented with the "Enter Your Contact Details Page"
-    #When I enter "" on "Enter Your Contact Details Page"
-    #And I click continue on "Enter Your Contact Details Page"
-    Then I am presented with the "Claim Northern Ireland Page"
-    When I select radio button "No" on "Claim Northern Ireland Page"
-    And I click continue on "Claim Northern Ireland Page"
     Then I am presented with the "Choose Basis For Claim Page"
     When I select radio button "IP" on "Choose Basis For Claim Page"
     And I click continue on "Choose Basis For Claim Page"

@@ -1,6 +1,6 @@
-@Regression
+@Regression @Individual @Entry
 
-Feature:  C285 - Entry Number - representative company
+Feature: C285 - Entry Number - representative company
 
   Background:
     Given the "Bulk Claim" feature is "disabled"

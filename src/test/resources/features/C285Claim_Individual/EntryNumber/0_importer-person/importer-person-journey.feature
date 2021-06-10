@@ -1,4 +1,4 @@
-@Regression
+@Regression @Individual @Entry
 
 Feature: C285 - Entry Number - importer-person
 

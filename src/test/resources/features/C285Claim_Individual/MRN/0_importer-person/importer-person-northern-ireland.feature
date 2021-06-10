@@ -1,6 +1,6 @@
-@Regression
+@Regression @Individual @MRN @NorthernIreland
 
-Feature: C285 - MRN - importer-person
+Feature: C285 - MRN - importer-person-northern-ireland
 
   Background:
     Given the "Bulk Claim" feature is "disabled"
