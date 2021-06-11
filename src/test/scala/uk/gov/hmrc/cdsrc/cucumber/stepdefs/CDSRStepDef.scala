@@ -17,6 +17,8 @@
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import uk.gov.hmrc.cdsrc.pages._
+import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
+import uk.gov.hmrc.cdsrc.pages.individual.{CheckEoriDetailsPage, SupportingEvidenceScanProgressPage, SupportingEvidenceUploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
 
