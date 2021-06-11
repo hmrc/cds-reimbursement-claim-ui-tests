@@ -1,5 +1,6 @@
-@Regression
-Feature: C285 multi MRN
+@Regression @Bulk
+
+Feature: C285 Bulk
 
   @test
   Scenario: test temp pages

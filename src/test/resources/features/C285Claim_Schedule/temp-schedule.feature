@@ -1,4 +1,5 @@
-@Regression
+@Regression @Scheduled
+
 Feature: C285 scheduled
 
   @test
