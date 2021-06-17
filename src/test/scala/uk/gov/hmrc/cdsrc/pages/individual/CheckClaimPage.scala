@@ -22,13 +22,20 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CheckClaimPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-claim"
-  override val title = "Your reimbursement claim totals"
+  override val title = "Check the reimbursement claim totals for all MRNs"
   override val pageShouldHaveBackButton = false
 
-  override def expectedPageErrorTitle: Option[String] = Some("Your reimbursement claim totals - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check the reimbursement claim totals for all MRNs - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Your reimbursement claim totals - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check the reimbursement claim totals for all MRNs - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Your reimbursement claim totals")
+  override def expectedPageHeader: Option[String] = Some("Check the reimbursement claim totals for all MRNs")
+
+  override def clickRadioButton(text: String): Unit = {
+    text.toLowerCase() match {
+      case "yes" => click on xpath(s"""//*[@id="check-claim-summary"]""")
+      case "no" => click on xpath(s"""//*[@id="check-claim-summary-eori-incorrect"]""")
+    }
+  }
 
 }

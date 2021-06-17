@@ -74,6 +74,7 @@ Feature: C285 - Error Scenarios
     And I click continue on "Enter Claim Page"
 
     Then I am presented with the "Check Claim Page"
+    And I select radio button "yes" on "Check Claim Page"
     When I click continue on "Check Claim Page"
 
     Then I am presented with the "Enter Bank Account Details Page"

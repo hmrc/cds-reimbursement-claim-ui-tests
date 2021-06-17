@@ -50,6 +50,7 @@ Feature: C285 - MRN - importer-person-northern-ireland
     When I enter "10" on "Enter Claim Page"
     And I click continue on "Enter Claim Page"
     Then I am presented with the "Check Claim Page"
+    And I select radio button "yes" on "Check Claim Page"
     When I click continue on "Check Claim Page"
     Then I am presented with the "Check These Bank Details Are Correct Page"
     When I click continue on "Check These Bank Details Are Correct Page"
