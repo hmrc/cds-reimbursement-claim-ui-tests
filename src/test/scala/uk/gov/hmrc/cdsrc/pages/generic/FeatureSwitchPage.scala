@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.cucumber.runner
+package uk.gov.hmrc.cdsrc.pages.generic
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.cdsrc.conf.TestConfiguration
+import uk.gov.hmrc.cdsrc.pages.BasePage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.cdsrc.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@1"
-)
-class Runner {}
+object FeatureSwitchPage extends BasePage {
+
+  override val url: String = TestConfiguration.url("cds-frontend") + "/test-only/feature/"
+
+  override def configure(feature: String, featureState: String): Unit = {
+    go to url + s"${feature.toLowerCase().replace(" ", "-")}/${featureState.dropRight(1)}"
+  }
+
+}
