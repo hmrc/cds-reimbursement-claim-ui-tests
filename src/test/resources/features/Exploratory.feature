@@ -12,7 +12,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Enter Movement Reference Number Page"
     When I enter "000000001A00000001" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
-    Then I am presented with the "Entry_Enter Declaration Details Page"
+    Then I am presented with the "Entry_Enter Declaration Details Page" and content "000000001A00000001"
     When I enter "" on "Entry_Enter Declaration Details Page"
     And I click continue on "Entry_Enter Declaration Details Page"
     Then I am presented with the "Entry_Who Is The Declarant Page"

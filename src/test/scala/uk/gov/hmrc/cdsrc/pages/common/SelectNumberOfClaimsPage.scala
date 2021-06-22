@@ -42,6 +42,8 @@ object SelectNumberOfClaimsPage extends BasePage {
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("Multiple (bulk) claims - upload a scheduled document")
     driver.findElement(By.cssSelector("#select-number-of-claims-scheduled-item-hint")).getText should equal("You can enter a bulk claim by uploading a document with MRNs or Entry numbers for multiple declarations.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
   override def clickRadioButton(text: String) {
