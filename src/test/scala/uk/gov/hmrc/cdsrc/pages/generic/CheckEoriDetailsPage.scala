@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.entry
+package uk.gov.hmrc.cdsrc.pages.generic
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Entry_CheckEoriDetailsPage extends BasePage {
+object CheckEoriDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-eori-details"
   override val title = "Enter the declarant’s EORI number"

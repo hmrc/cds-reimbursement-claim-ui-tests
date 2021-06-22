@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.generic
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Mrn_EnterMovementReferenceNumberPage extends BasePage {
+object EnterMovementReferenceNumberPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-movement-reference-number"
   override val title = "What is your Movement Reference Number (MRN)?"

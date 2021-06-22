@@ -17,7 +17,8 @@
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
-import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_CheckEoriDetailsPage, Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.generic.CheckEoriDetailsPage
+import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
 import uk.gov.hmrc.cdsrc.pages.individual.mrn.{Mrn_SupportingEvidenceScanProgressPage, Mrn_SupportingEvidenceUploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
@@ -44,7 +45,7 @@ class CDSRStepDef extends BaseStepDef {
   When("""I enter redirectURL on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" =>
-        AuthLoginStubPage.enterRedirectURL(Entry_CheckEoriDetailsPage.url)
+        AuthLoginStubPage.enterRedirectURL(CheckEoriDetailsPage.url)
     }
   }
 
