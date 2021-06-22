@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.generic
+package uk.gov.hmrc.cdsrc.pages.common
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -29,6 +30,19 @@ object SelectNumberOfClaimsPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Select number of claims - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select number of claims")
+
+  override def checkContent(): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("You can make more than one claim. Multiple (bulk) claims must be from the same importer, have the same reason for overpayment and contain either MRNs or Entry numbers, but not mixed.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Individual claim")
+    driver.findElement(By.cssSelector("#select-number-of-claims-individual-item-hint")).getText should equal("Enter one claim only using an MRN or Entry number for one declaration.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Multiple (bulk) claims - manual entry of MRNs or Entry numbers")
+    driver.findElement(By.cssSelector("#select-number-of-claims-bulk-item-hint")).getText should equal("You can enter a bulk claim by manually adding multiple MRNs or Entry numbers for each declaration.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("Multiple (bulk) claims - upload a scheduled document")
+    driver.findElement(By.cssSelector("#select-number-of-claims-scheduled-item-hint")).getText should equal("You can enter a bulk claim by uploading a document with MRNs or Entry numbers for multiple declarations.")
+  }
 
   override def clickRadioButton(text: String) {
     text.toLowerCase() match {

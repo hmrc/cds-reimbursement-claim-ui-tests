@@ -17,7 +17,7 @@
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
-import uk.gov.hmrc.cdsrc.pages.generic.CheckEoriDetailsPage
+import uk.gov.hmrc.cdsrc.pages.common.CheckEoriDetailsPage
 import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
 import uk.gov.hmrc.cdsrc.pages.individual.mrn.{Mrn_SupportingEvidenceScanProgressPage, Mrn_SupportingEvidenceUploadSupportingEvidencePage}
 
