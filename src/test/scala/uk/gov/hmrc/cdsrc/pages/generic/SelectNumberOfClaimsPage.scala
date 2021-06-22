@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.entry
+package uk.gov.hmrc.cdsrc.pages.generic
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Entry_SelectNumberOfClaimsPage extends BasePage {
+object SelectNumberOfClaimsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/select-number-of-claims"
   override val title = "Select number of claims"
