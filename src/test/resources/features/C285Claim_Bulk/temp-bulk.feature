@@ -15,4 +15,4 @@ Feature: C285 Bulk
     Then I am presented with the "Select Number Of Claims Page"
     When I select radio button "bulk" on "Select Number Of Claims Page"
     And I click continue on "Select Number Of Claims Page"
-    Then I am presented with the "Enter Mrn Multi Page"
+    Then I am presented with the "Bulk_Enter Movement Reference Number Page"

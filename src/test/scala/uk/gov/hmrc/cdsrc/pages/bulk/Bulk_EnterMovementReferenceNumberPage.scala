@@ -19,16 +19,16 @@ package uk.gov.hmrc.cdsrc.pages.bulk
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object EnterMrnMultiPage extends BasePage {
+object Bulk_EnterMovementReferenceNumberPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-mrn-multi"
-  override val title = "What is your lead MRN or entry number?"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/enter-movement-reference-number"
+  override val title = "Enter the lead Movement Reference Number (MRN)"
 
-  override def expectedPageErrorTitle: Option[String] = Some("What is your lead MRN or entry number? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter the lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("What is your lead MRN or entry number? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("What is your lead MRN or entry number?")
+  override def expectedPageHeader: Option[String] = Some("Enter the lead Movement Reference Number (MRN)")
 
 
 }

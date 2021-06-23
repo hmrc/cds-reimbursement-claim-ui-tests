@@ -31,6 +31,6 @@ object Entry_EnterDuplicateMovementReferenceNumberPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("What is your duplicated Movement Reference Number (MRN)?")
 
   override def enterDetails(textToEnter: String) {
-    enterText("enter-movement-reference-number", textToEnter)
+    enterText("enter-duplicate-movement-reference-number", textToEnter)
   }
 }
