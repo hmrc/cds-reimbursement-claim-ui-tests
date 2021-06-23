@@ -31,7 +31,7 @@ object SelectNumberOfClaimsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Select number of claims")
 
-  override def checkContent(): Unit = {
+  override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("You can make more than one claim. Multiple (bulk) claims must be from the same importer, have the same reason for overpayment and contain either MRNs or Entry numbers, but not mixed.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Individual claim")

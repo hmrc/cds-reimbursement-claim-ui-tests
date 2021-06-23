@@ -83,9 +83,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     }
   }
 
-  def checkContent(): Unit = {
-  }
-
   def checkContent(content: String): Unit = {
   }
 

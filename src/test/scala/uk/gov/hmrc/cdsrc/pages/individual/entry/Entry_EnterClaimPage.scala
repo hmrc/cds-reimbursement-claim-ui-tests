@@ -31,6 +31,12 @@ object Entry_EnterClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty")
 
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("sd")).getText should equal("sd")
+//CONTINUE HERE
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
+
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
     amounts.length match {

@@ -6,7 +6,7 @@ Feature: C285 - Entry Number - importer-person
     Given the "Bulk Claim" feature is "disabled"
     Given the "Entry Number" feature is "enabled"
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @1
   Scenario: User is a CDS Trader - happy path (entry number) - duplicate Entry Number
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -37,7 +37,8 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Entry_Enter Duplicate Movement Reference Number Page"
     When I enter "000000002B00000002" on "Entry_Enter Duplicate Movement Reference Number Page"
     And I click continue on "Entry_Enter Duplicate Movement Reference Number Page"
-    Then I am presented with the "Entry_Enter Duplicate Declaration Details Page"
+    ### line below is an error and should be changed when fixed, to: Then I am presented with the "Entry_Enter Duplicate Declaration Details Page" and content "000000002B00000002"
+    Then I am presented with the "Entry_Enter Duplicate Declaration Details Page" and content "000000001A00000001"
     When I enter "" on "Entry_Enter Duplicate Declaration Details Page"
     And I click continue on "Entry_Enter Duplicate Declaration Details Page"
     Then I am presented with the "Entry_Enter Commodity Details Page"

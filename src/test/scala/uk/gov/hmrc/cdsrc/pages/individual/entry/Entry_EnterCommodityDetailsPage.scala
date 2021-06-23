@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.entry
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -29,6 +30,17 @@ object Entry_EnterCommodityDetailsPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Enter details of the commodities you would like reimbursing for - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter details of the commodities you would like reimbursing for")
+
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("You can enter more than one commodity (goods) from the same MRN declaration. Describe each commodity in the claim.\n\nThis will help reduce delays in your claim being processed.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > div > label")).getText should equal("Enter commodity details")
+    driver.findElement(By.cssSelector("#enter-commodities-details-hint")).getText should equal("Explain why you would like to be reimbursed and why you are entitled to this claim.")
+
+    driver.findElement(By.cssSelector("#enter-commodities-details-info")).getText should equal("You have 500 characters remaining")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
 
   override def enterDetails(details: String): Unit = {
     details match {

@@ -31,7 +31,7 @@ object EnterMovementReferenceNumberPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("What is your Movement Reference Number (MRN)?")
 
-  override def checkContent(): Unit = {
+  override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal("The Movement Reference Number (MRN) will be issued when an import is declared. Find out more about this number (opens in new tab). You can also add an Entry number found in your CHIEF documentation.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Enter the MRN or Entry number")

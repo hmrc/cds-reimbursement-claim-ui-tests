@@ -31,7 +31,7 @@ object Entry_EnterDeclarationDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter declaration details")
 
-  override def checkContent(content: String): Unit ={
+  override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal(s"""These are the import date and place of import related to the entry number: $content.""")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(4) > fieldset > legend")).getText should equal("Date of import")
