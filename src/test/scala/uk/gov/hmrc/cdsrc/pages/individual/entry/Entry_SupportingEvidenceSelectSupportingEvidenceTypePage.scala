@@ -33,6 +33,26 @@ object Entry_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage
 
   override def expectedPageHeader: Option[String] = Some("Select the description of the file you just uploaded")
 
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal("Choose a definition of the file from this list. This will help us to process your claim more efficiently.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Choose document type")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type")).click()
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(1)")).getText should equal("Choose")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(2)")).getText should equal("C88/E2")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(3)")).getText should equal("Commercial Invoice")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(4)")).getText should equal("Packing List")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(5)")).getText should equal("Air Waybill")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(6)")).getText should equal("Bill of Lading")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(7)")).getText should equal("Substitute Entry")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(8)")).getText should equal("Proof of Authority")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(9)")).getText should equal("Correspondence Trader")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(10)")).getText should equal("Import and Export Declaration")
+    driver.findElement(By.cssSelector("#supporting-evidence\\.choose-document-type > option:nth-child(11)")).getText should equal("Other documents")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Save and continue")
+  }
+
   override def dropdownSelect(selection: String): Unit = {
     val dropdown = new Select(driver.findElement(By.id("supporting-evidence.choose-document-type")))
     dropdown.selectByVisibleText(selection)

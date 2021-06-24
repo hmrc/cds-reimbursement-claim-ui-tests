@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.entry
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,5 +31,26 @@ object Entry_ClaimSubmittedPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Claim submitted - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Claim submitted")
+
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > div > h1")).getText should equal("Claim submitted")
+    // ADD TESTS FOR REIMBURSEMENT AMOUNT
+//    driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(2)")).getText should equal("Reimbursement amount\n£105.00")
+    driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(2) > strong")).getText should equal(content)
+    // ADD TESTS FOR REIMBURSEMENT REFERENCE
+//    driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(4)")).getText should equal("Your claim reference number")
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("We have sent you a confirmation email. If you have not received it, check your SPAM folder or contact HMRC.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > h2")).getText should equal("What happens next?")
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(4)")).getText should equal("Your application will be reviewed by HMRC and we will aim to email or write a letter to you to tell you the outcome within 30 working days. We will contact you to either:")
+    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(1)")).getText should equal("confirm your claim and bank transfer")
+    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(2)")).getText should equal("ask for more information")
+    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(3)")).getText should equal("explain why your claim was rejected")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(6)")).getText should equal("Print or save a copy of this page for your records.")
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(7) > a")).getText should equal("Start another claim")
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(8)")).getText should equal("What did you think of this service? This page will sign you out of this service where you can leave your feedback.")
+
+  }
 
 }

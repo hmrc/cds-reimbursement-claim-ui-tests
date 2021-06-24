@@ -31,6 +31,34 @@ object Entry_CheckClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check the reimbursement claim totals for all MRNs")
 
+  override def checkContent(content: String): Unit = {
+    println("Page is missing content checks")
+//    driver.findElement(By.cssSelector("#main-content > div > div > p.govuk-body.govuk-\\!-margin-bottom-8")).getText should equal("These are the calculations based on the information you gave us.")
+//
+//    val duties = content.split("UK Duty")
+//    val duties1 = duties(0)//.split("EU Duty")
+//    val duties2 = duties(1)//.split("NI Duty")
+//    println()
+//    println("uk stuff" + duties1)
+//    println("eu stuff" + duties2)
+//
+//
+//
+//
+////    driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(3)")).getText should equal("UK Duty")
+////    driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("")
+////    driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("")
+////    driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dt")).getText should equal("")
+////
+////
+////    driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(5)")).getText should equal("EU Duty")
+//    driver.findElement(By.cssSelector("poiu")).getText should equal("")
+//
+//
+//
+//    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
+
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
       case "yes" => click on xpath(s"""//*[@id="check-claim-summary"]""")

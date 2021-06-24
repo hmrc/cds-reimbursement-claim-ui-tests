@@ -89,7 +89,7 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Entry_Enter Claim Page" "B05 - Value Added Tax"
     When I enter "15,14" on "Entry_Enter Claim Page"
     And I click continue on "Entry_Enter Claim Page"
-    Then I am presented with the "Entry_Check Claim Page"
+    Then I am presented with the "Entry_Check Claim Page" and content "UK Duty,Value Added Tax,£7.00,Provisional Countervailing Duty,£6.00,Definitive Countervailing Duty,£5.00,Provisional Anti-Dumping Duty,£4.00,Definitive Anti-Dumping Duty,£3.00,Additional Duty,£2.00,Customs duty,£1.00,EU Duty,Value Added Tax,£14.00,Provisional Countervailing Duty,£13.00,Definitive Countervailing Duty,£12.00,Provisional Anti-Dumping Duty,£11.00,Definitive Anti-Dumping Duty,£10.00,Additional Duty,£9.00,Customs Duty,£8.00"
     And I select radio button "yes" on "Entry_Check Claim Page"
     When I click continue on "Entry_Check Claim Page"
     Then I am presented with the "Entry_Enter Bank Account Details Page"
@@ -100,13 +100,14 @@ Feature: C285 - Entry Number - importer-person
     When I upload a "document.pdf" file on "Entry_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Entry_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Entry_Supporting Evidence Scan Progress Page"
+    Then I am presented with the "Entry_Supporting Evidence Select Supporting Evidence Type Page"
     When I select dropdown value "Commercial Invoice" on "Entry_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Entry_Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Entry_Supporting Evidence Check Your Answers Page"
     When I click continue on "Entry_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Entry_Check Answers Accept Send Page"
     And I click continue on "Entry_Check Answers Accept Send Page"
-    Then I am presented with the "Entry_Claim Submitted Page"
+    Then I am presented with the "Entry_Claim Submitted Page" and content "£105.00"
 
   @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (entry number)

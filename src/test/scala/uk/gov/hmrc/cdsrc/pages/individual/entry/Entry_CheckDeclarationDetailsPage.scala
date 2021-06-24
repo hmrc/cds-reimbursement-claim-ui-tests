@@ -30,4 +30,7 @@ object Entry_CheckDeclarationDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check these details are correct")
 
+  override def checkContent(content: String): Unit = {
+    println("Page is missing content checks")
+  }
 }
