@@ -84,6 +84,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("")).getText should equal("")
   }
 
   def waitForPageToLoad(): WebDriver.Timeouts = {

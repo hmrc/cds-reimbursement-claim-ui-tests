@@ -32,21 +32,23 @@ object Entry_EnterClaimPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty")
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("sd")).getText should equal("sd")
-//CONTINUE HERE
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This is to calculate your reimbursement (repayment) as part of your claim. HMRC does not refund agents’ fees.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Paid Amount")
+    driver.findElement(By.cssSelector("#enter-claim\\.paid-amount-hint")).getText should equal("This is the Customs Duty amount you wish to claim for.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > label")).getText should equal("Claim Amount")
+    driver.findElement(By.cssSelector("#enter-claim\\.claim-amount-hint")).getText should equal("This is the Customs Duty amount you wish to claim for.")
+
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    amounts.length match {
-      case 2 =>
-        enterText("enter-claim.paid-amount", amounts(0))
-        enterText("enter-claim.claim-amount", amounts(1))
-      case 1 =>
-        enterText("enter-claim", amounts(0))
-    }
+    enterText("enter-claim.paid-amount", amounts(0))
+    enterText("enter-claim.claim-amount", amounts(1))
   }
+
 
   override def checkDutyPage(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Enter the claim amount for duty $duty")
