@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object EnterMrnSchedulePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-mrn-schedule"
+  override val url: String = TestConfiguration.url("cds-frontend") + "schedule/enter-movement-reference-number"
   override val title = "What is your Movement Reference Number (MRN)?"
 
   override def expectedPageErrorTitle: Option[String] = Some("What is your Movement Reference Number (MRN)? - Claim for reimbursement of import duties - GOV.UK")
@@ -30,5 +30,7 @@ object EnterMrnSchedulePage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("What is your Movement Reference Number (MRN)?")
 
-
+  override def checkContent(content: String): Unit = {
+    println("Page is missing content checks")
+  }
 }

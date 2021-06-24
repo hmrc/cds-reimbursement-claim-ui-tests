@@ -30,5 +30,7 @@ object Bulk_EnterMovementReferenceNumberPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter the Movement Reference Number (MRN)")
 
-
+  override def checkContent(content: String): Unit = {
+    println("Page is missing content checks")
+  }
 }

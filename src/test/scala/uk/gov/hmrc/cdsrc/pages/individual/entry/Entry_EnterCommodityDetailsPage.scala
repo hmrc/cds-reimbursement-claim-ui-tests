@@ -37,7 +37,10 @@ object Entry_EnterCommodityDetailsPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > div > label")).getText should equal("Enter commodity details")
     driver.findElement(By.cssSelector("#enter-commodities-details-hint")).getText should equal("Explain why you would like to be reimbursed and why you are entitled to this claim.")
 
-    driver.findElement(By.cssSelector("#enter-commodities-details-info")).getText should equal("You have 500 characters remaining")
+    content match {
+      case "" => driver.findElement(By.cssSelector("#enter-commodities-details-info")).getText should equal("You have 500 characters remaining")
+      case _ => driver.findElement(By.cssSelector("#enter-commodities-details-info")).getText should equal(s"""You have $content characters remaining""")
+    }
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
