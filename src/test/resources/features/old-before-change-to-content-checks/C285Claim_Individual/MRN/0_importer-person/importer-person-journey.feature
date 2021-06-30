@@ -6,7 +6,7 @@ Feature: C285 - MRN - importer-person
     Given the "Bulk Claim" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader - happy path (mrn)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -66,7 +66,7 @@ Feature: C285 - MRN - importer-person
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page"
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn - no company details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -129,7 +129,7 @@ Feature: C285 - MRN - importer-person
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @testOld @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn) - change mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -220,7 +220,7 @@ Feature: C285 - MRN - importer-person
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page"
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader - sad path (mrn) - same duplicate mrn & legacy number attempt
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -254,7 +254,7 @@ Feature: C285 - MRN - importer-person
     And I click continue on "Mrn_Enter Duplicate Movement Reference Number Page"
     Then I am presented with the "Mrn_Check Duplicate Declaration Details Page"
 
-  @test @a11y @ZAP
+  @testOld @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -308,7 +308,7 @@ Feature: C285 - MRN - importer-person
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page"
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader -  Claim submission failed page (change mrn)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

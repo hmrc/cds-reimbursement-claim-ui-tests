@@ -6,7 +6,7 @@ Feature: C285 - MRN - importer-person-northern-ireland
     Given the "Bulk Claim" feature is "_disabled"
     Given the "Northern Ireland" feature is "enabled"
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader - happy path (mrn)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

@@ -5,7 +5,7 @@ Feature: C285 - MRN - representative-company
     Given the "Bulk Claim" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -67,7 +67,7 @@ Feature: C285 - MRN - representative-company
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page"
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

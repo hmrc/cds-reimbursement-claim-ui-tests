@@ -27,7 +27,7 @@ object Entry_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage
   override val title = "Select the description of the file you just uploaded"
   override val pageShouldHaveBackButton = false
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
 

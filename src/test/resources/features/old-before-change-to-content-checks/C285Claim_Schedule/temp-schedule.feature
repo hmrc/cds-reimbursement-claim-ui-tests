@@ -2,7 +2,7 @@
 
 Feature: C285 scheduled
 
-  @test
+  @testOld
   Scenario: test temp pages
     Given the "Bulk Claim" feature is "enabled"
     Given I navigate to the "Auth Login Stub Page"

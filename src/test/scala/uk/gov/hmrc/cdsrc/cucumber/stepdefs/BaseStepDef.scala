@@ -27,38 +27,55 @@ import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
 
   When("""I select Welsh translation on {string}""") { (page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).enableWelsh()
   }
 
   When("""I select English translation on {string}""") { (page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).enableEnglish()
   }
 
   When("""I select radio button {string} on {string}""") { (choice: String, page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).clickRadioButton(choice)
   }
 
   When("""I select checkbox on {string}""") { (page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).selectCheckBox()
   }
 
   When("""I select {string} on {string}""") { (selection: String, page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).selectBoxes(selection.replaceAll(" to ", "_").split(","))
   }
 
   When("""I click continue on {string}""") { (page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).clickContinueButton()
   }
 
   When("""I click {string} on {string}""") { (button: String, page: String) =>
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).clickButton(button)
   }
 
   When("""I enter {string} on {string}""") { (data: String, page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).enterDetails(data)
   }
 
   When("""I select dropdown value {string} on {string}""") { (selection: String, page: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).dropdownSelect(selection)
   }
 
@@ -89,6 +106,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   Then("""I am presented with the {string} {string}""") { (page: String, duty: String) =>
     waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).checkDutyPage(duty)
     PageObjectFinder.page(page).checkBackButtonExistsIfItShould
     PageObjectFinder.page(page).checkContent("")
@@ -96,6 +114,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   Then("""I am presented with the {string} {string} error page""") { (page: String, duty: String) =>
     waitForPageHeader
+    PageObjectFinder.page(page).checkPageHeader
     PageObjectFinder.page(page).checkDutyPageError(duty)
   }
 

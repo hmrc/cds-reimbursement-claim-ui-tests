@@ -2,7 +2,7 @@
 
 Feature: C285 - Error Scenarios
 
-  @test
+  @testOld
   Scenario: User is a CDS Trader - Trigger error pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
