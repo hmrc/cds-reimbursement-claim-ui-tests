@@ -19,7 +19,7 @@ package uk.gov.hmrc.cdsrc.pages.individual.mrn
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Mrn_EnterYourDetailsAsRegisteredWithCDS extends BasePage {
+object Mrn_EnterYourDetailsAsRegisteredWithCDSPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-your-details-as-registered-with-cds"
   override val title = "Enter your details as registered with CDS"

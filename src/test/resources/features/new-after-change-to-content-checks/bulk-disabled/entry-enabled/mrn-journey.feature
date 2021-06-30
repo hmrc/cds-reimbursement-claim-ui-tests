@@ -1,22 +1,23 @@
-@Regression @Individual @MRN @NorthernIreland
+@Regression @Entry @new
 
-Feature: C285 - MRN - importer-person-northern-ireland
+Feature: C285 - Entry Number - importer-person
 
   Background:
-    Given the "Bulk Claim" feature is "_disabled"
-    Given the "Northern Ireland" feature is "enabled"
+    Given the "Bulk Claim" feature is "disabled"
+    Given the "Entry Number" feature is "enabled"
+    Given the "Northern Ireland" feature is "disabled"
 
-  @testOld
-  Scenario: User is a CDS Trader - happy path (mrn)
+  @test @a11y @ZAP
+  Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000002" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
+    Then I am presented with the "Check Eori Details Page" and content "GB000000000000001,TestUser"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
     Then I am presented with the "Enter Movement Reference Number Page"
-    When I enter "10AAAAAAAAAAAAAAA3" on "Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA1" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Mrn_Check Declaration Details Page"
     And I click continue on "Mrn_Check Declaration Details Page"
@@ -28,25 +29,30 @@ Feature: C285 - MRN - importer-person-northern-ireland
     And I click continue on "Mrn_Enter Your Details As Registered With CDS Page"
     Then I am presented with the "Mrn_Enter Your Contact Details Page"
     And I click continue on "Mrn_Enter Your Contact Details Page"
-    Then I am presented with the "Mrn_Claim Northern Ireland Page"
-    When I select radio button "Yes" on "Mrn_Claim Northern Ireland Page"
-    And I click continue on "Mrn_Claim Northern Ireland Page"
     Then I am presented with the "Mrn_Choose Basis For Claim Page"
-    When I select radio button "Incorrect excise value (for imports into Northern Ireland only)" on "Mrn_Choose Basis For Claim Page"
+    When I select radio button "Duplicate Entry" on "Mrn_Choose Basis For Claim Page"
     And I click continue on "Mrn_Choose Basis For Claim Page"
+    Then I am presented with the "Mrn_Enter Duplicate Movement Reference Number Page"
+    When I enter "20AAAAAAAAAAAAAAA1" on "Mrn_Enter Duplicate Movement Reference Number Page"
+    And I click continue on "Mrn_Enter Duplicate Movement Reference Number Page"
+    Then I am presented with the "Mrn_Check Duplicate Declaration Details Page"
+    And I click continue on "Mrn_Check Duplicate Declaration Details Page"
     Then I am presented with the "Mrn_Enter Commodity Details Page"
     When I enter "under 500 characters" on "Mrn_Enter Commodity Details Page"
     And I click continue on "Mrn_Enter Commodity Details Page"
     Then I am presented with the "Mrn_Select Duties Page"
-    When I select "421,623,99C" on "Mrn_Select Duties Page"
+    When I select "A80,A95,A90,A85" on "Mrn_Select Duties Page"
     And I click continue on "Mrn_Select Duties Page"
-    Then I am presented with the "Mrn_Enter Claim Page" "421 - Made-wine (sparkling), exceeding 8.5% vol. but not exceeding 15% vol."
+    Then I am presented with the "Mrn_Enter Claim Page" "A80 - Definitive Anti-Dumping Duty"
     When I enter "10" on "Mrn_Enter Claim Page"
     And I click continue on "Mrn_Enter Claim Page"
-    Then I am presented with the "Mrn_Enter Claim Page" "623 - Smoking tobacco – other"
+    Then I am presented with the "Mrn_Enter Claim Page" "A95 - Provisional Countervailing Duty"
     When I enter "10" on "Mrn_Enter Claim Page"
     And I click continue on "Mrn_Enter Claim Page"
-    Then I am presented with the "Mrn_Enter Claim Page" "99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain"
+    Then I am presented with the "Mrn_Enter Claim Page" "A90 - Definitive Countervailing Duty"
+    When I enter "10" on "Mrn_Enter Claim Page"
+    And I click continue on "Mrn_Enter Claim Page"
+    Then I am presented with the "Mrn_Enter Claim Page" "A85 - Provisional Anti-Dumping Duty"
     When I enter "10" on "Mrn_Enter Claim Page"
     And I click continue on "Mrn_Enter Claim Page"
     Then I am presented with the "Mrn_Check Claim Page"

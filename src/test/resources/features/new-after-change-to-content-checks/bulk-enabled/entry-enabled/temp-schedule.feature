@@ -1,4 +1,4 @@
-@Regression @Scheduled @test
+@Regression @Scheduled @new
 
 Feature: C285 scheduled
 
@@ -7,7 +7,7 @@ Feature: C285 scheduled
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @testOld
+  @test
   Scenario: test temp pages - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

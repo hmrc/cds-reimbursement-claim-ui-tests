@@ -17,6 +17,7 @@
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
 import org.openqa.selenium.By
+import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,6 +31,10 @@ object Mrn_EnterClaimPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Enter the claim amount for duty A20")
 
   override def expectedPageHeader: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty")
+
+  override def checkPageHeader: Assertion = {
+    true should equal(true)
+  }
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
