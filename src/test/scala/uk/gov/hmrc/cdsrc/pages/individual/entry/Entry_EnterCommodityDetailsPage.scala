@@ -23,18 +23,18 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Entry_EnterCommodityDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-commodity-details"
-  override val title = "Enter details of the commodities you would like reimbursing for"
+  override val title = "Tell us the reason for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter details of the commodities you would like reimbursing for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Tell us the reason for this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter details of the commodities you would like reimbursing for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Tell us the reason for this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter details of the commodities you would like reimbursing for")
+  override def expectedPageHeader: Option[String] = Some("Tell us the reason for this claim")
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("You can enter more than one commodity (goods) from the same MRN declaration. Describe each commodity in the claim.\n\nThis will help reduce delays in your claim being processed.")
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This will help reduce delays in your claim being processed.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > div > label")).getText should equal("Enter commodity details")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > div > label")).getText should equal("Enter claim reason")
     driver.findElement(By.cssSelector("#enter-commodities-details-hint")).getText should equal("Explain why you would like to be reimbursed and why you are entitled to this claim.")
 
     content match {

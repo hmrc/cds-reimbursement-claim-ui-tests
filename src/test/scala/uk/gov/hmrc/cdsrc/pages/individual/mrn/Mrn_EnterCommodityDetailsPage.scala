@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Mrn_EnterCommodityDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/enter-commodity-details"
-  override val title = "Enter details of the commodities you would like reimbursing for"
+  override val title = "Tell us the reason for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter details of the commodities you would like reimbursing for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Tell us the reason for this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter details of the commodities you would like reimbursing for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Tell us the reason for this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter details of the commodities you would like reimbursing for")
+  override def expectedPageHeader: Option[String] = Some("Tell us the reason for this claim")
 
   override def enterDetails(details: String): Unit = {
     details match {
