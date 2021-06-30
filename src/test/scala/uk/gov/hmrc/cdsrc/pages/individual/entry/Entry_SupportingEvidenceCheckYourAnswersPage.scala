@@ -14,23 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.scheduled
+package uk.gov.hmrc.cdsrc.pages.individual.entry
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object EnterMrnSchedulePage extends BasePage {
+object Entry_SupportingEvidenceCheckYourAnswersPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "schedule/enter-movement-reference-number"
-  override val title = "Enter the lead Movement Reference Number (MRN)"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/check-your-answers"
+  override val title = "Confirm these are the files you want to submit"
+  override val pageShouldHaveBackButton = false
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter the lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Confirm these are the files you want to submit - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Confirm these are the files you want to submit - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter the lead Movement Reference Number (MRN)")
+  override def expectedPageHeader: Option[String] = Some("Confirm these are the files you want to submit")
 
   override def checkContent(content: String): Unit = {
     println("Page is missing content checks")
   }
+
 }

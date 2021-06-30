@@ -16,22 +16,25 @@
 
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
-import uk.gov.hmrc.cdsrc.pages._
 import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
-import uk.gov.hmrc.cdsrc.pages.individual.{CheckEoriDetailsPage, SupportingEvidenceScanProgressPage, SupportingEvidenceUploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.common.CheckEoriDetailsPage
+import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.individual.mrn.{Mrn_SupportingEvidenceScanProgressPage, Mrn_SupportingEvidenceUploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
 
   When("""I click continue if I'm on {string}""") { (page: String) =>
     page match {
-      case "Supporting Evidence Scan Progress Page" => SupportingEvidenceScanProgressPage.continuouslyClickContinue()
+      case "Entry_Supporting Evidence Scan Progress Page" => Entry_SupportingEvidenceScanProgressPage.continuouslyClickContinue()
+      case "Mrn_Supporting Evidence Scan Progress Page" => Mrn_SupportingEvidenceScanProgressPage.continuouslyClickContinue()
     }
   }
 
   When("""I upload a {string} file on {string}""") { (file: String, page: String) =>
     //click on choose file & select file to send
     page match {
-      case "Supporting Evidence Upload Supporting Evidence Page" => SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
+      case "Entry_Supporting Evidence Upload Supporting Evidence Page" => Entry_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
+      case "Mrn_Supporting Evidence Upload Supporting Evidence Page" => Mrn_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
     }
   }
 
