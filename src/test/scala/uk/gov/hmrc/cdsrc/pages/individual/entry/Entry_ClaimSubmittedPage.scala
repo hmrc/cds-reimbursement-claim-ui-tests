@@ -34,11 +34,11 @@ object Entry_ClaimSubmittedPage extends BasePage {
 
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > div > h1")).getText should equal("Claim submitted")
-    // ADD TESTS FOR REIMBURSEMENT AMOUNT
-//    driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(2)")).getText should equal("Reimbursement amount\n£105.00")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(2) > span")).getText should equal("Reimbursement amount")
     driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(2) > strong")).getText should equal(content)
-    // ADD TESTS FOR REIMBURSEMENT REFERENCE
-//    driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(4)")).getText should equal("Your claim reference number")
+    driver.findElement(By.cssSelector("#main-content > div > div > div > div:nth-child(4) > span")).getText should equal("Your claim reference number")
+
     driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("We have sent you a confirmation email. If you have not received it, check your SPAM folder or contact HMRC.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > h2")).getText should equal("What happens next?")
