@@ -56,7 +56,7 @@ object Entry_ChooseBasisForClaimPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > details > div > ul > li:nth-child(14)")).getText should equal("Risk classification error - Northern Ireland claims only: Correction to risk classification because you’ve declared a good/goods ‘at risk’ by mistake")
     driver.findElement(By.cssSelector("#main-content > div > div > details > div > ul > li:nth-child(15)")).getText should equal("Miscellaneous: For any other reason not detailed in this list")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Duplicate Entry")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Duplicate MRN")
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Duty Suspension")
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("End Use")
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(4) > label")).getText should equal("Incorrect Commodity Code")

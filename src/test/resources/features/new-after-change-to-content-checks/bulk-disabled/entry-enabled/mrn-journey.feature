@@ -30,7 +30,7 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Mrn_Enter Your Contact Details Page"
     And I click continue on "Mrn_Enter Your Contact Details Page"
     Then I am presented with the "Mrn_Choose Basis For Claim Page"
-    When I select radio button "Duplicate Entry" on "Mrn_Choose Basis For Claim Page"
+    When I select radio button "Duplicate MRN" on "Mrn_Choose Basis For Claim Page"
     And I click continue on "Mrn_Choose Basis For Claim Page"
     Then I am presented with the "Mrn_Enter Duplicate Movement Reference Number Page"
     When I enter "20AAAAAAAAAAAAAAA1" on "Mrn_Enter Duplicate Movement Reference Number Page"
