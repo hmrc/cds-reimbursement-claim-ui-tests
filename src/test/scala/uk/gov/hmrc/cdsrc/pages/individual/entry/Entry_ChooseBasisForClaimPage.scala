@@ -17,10 +17,8 @@
 package uk.gov.hmrc.cdsrc.pages.individual.entry
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.individual.entry.Entry_EnterDeclarationDetailsPage.{driver, equal}
 
 import scala.jdk.CollectionConverters.asScalaBufferConverter
 

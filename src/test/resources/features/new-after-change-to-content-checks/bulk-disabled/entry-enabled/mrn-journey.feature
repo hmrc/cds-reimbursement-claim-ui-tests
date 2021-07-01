@@ -7,7 +7,7 @@ Feature: C285 - Entry Number - importer-person
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @1
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -19,7 +19,7 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Enter Movement Reference Number Page"
     When I enter "10AAAAAAAAAAAAAAA1" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
-    Then I am presented with the "Mrn_Check Declaration Details Page"
+    Then I am presented with the "Mrn_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
     And I click continue on "Mrn_Check Declaration Details Page"
     Then I am presented with the "Mrn_Who Is The Declarant Page"
     When I select radio button "0" on "Mrn_Who Is The Declarant Page"
@@ -70,4 +70,4 @@ Feature: C285 - Entry Number - importer-person
     When I click continue on "Mrn_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Mrn_Check Answers Accept Send Page"
     And I click continue on "Mrn_Check Answers Accept Send Page"
-    Then I am presented with the "Mrn_Claim Submitted Page"
+    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"

@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,4 +31,30 @@ object Mrn_CheckDeclarationDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check these details are correct")
 
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal(s"These are the declaration details given by the MRN Reference Number: $content.\n\nIf these details are incorrect, you can change them by contacting the CDS team (opens in new tab) via imports and exports: general enquires.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dt")).getText should equal("MRN number")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dt")).getText should equal("Import date")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dt")).getText should equal("Paid charges")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(4) > dt")).getText should equal("Importer name")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(5) > dt")).getText should equal("Importer email")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(6) > dt")).getText should equal("Importer telephone")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(7) > dt")).getText should equal("Importer contact address")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(8) > dt")).getText should equal("Declarant contact address")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dd")).getText should equal(content)
+    content match {
+      case _ =>
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dd")).getText should equal("12 February 2021")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dd")).getText should equal("£828.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(4) > dd")).getText should equal("IT Solutions LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(5) > dd")).getText should equal("automation@gmail.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(6) > dd")).getText should equal("+4420723934397")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(7) > dd")).getText should equal("19 Bricks Road, Newcastle, NE12 5BT, GB")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(8) > dd")).getText should equal("12 Skybricks Road, Coventry, CV3 6EA, GB")
+    }
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
 }
