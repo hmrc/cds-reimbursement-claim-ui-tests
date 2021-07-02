@@ -35,7 +35,7 @@ object Entry_EnterDuplicateMovementReferenceNumberPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal("This will help us to process your claim more efficiently.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Enter duplicate Entry Number")
-    driver.findElement(By.cssSelector("#enter-duplicate-entry-number-hint")).getText should equal("Must be 18 or 17 characters, for example 19GB03I52858027017.")
+    driver.findElement(By.cssSelector("#enter-duplicate-entry-number-hint")).getText should equal("Must be 17 characters, for example 19GB03I5285802701.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }

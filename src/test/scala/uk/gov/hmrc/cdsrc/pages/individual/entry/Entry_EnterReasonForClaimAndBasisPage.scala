@@ -37,7 +37,7 @@ object Entry_EnterReasonForClaimAndBasisPage extends BasePage {
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > details:nth-child(4) > summary > span")).getText should equal("Examples of basis of claim")
     driver.findElement(By.cssSelector("#main-content > div > div > form > details:nth-child(4) > summary > span")).click()
-    driver.findElement(By.cssSelector("#main-content > div > div > form > details:nth-child(4) > div > ul > li:nth-child(1)")).getText should equal("duplicate MRN or entry number (a claim if a duplicate MRN or entry number has been made and a trader overpaid duties)")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > details:nth-child(4) > div > ul > li:nth-child(1)")).getText should equal("duplicate Entry Number (a claim if an Entry Number has been made and a trader overpaid duties)")
     driver.findElement(By.cssSelector("#main-content > div > div > form > details:nth-child(4) > div > ul > li:nth-child(2)")).getText should equal("duty suspension (goods liable to import charges but not collected until they leave the point of deferring payment of customs duties)")
     driver.findElement(By.cssSelector("#main-content > div > div > form > details:nth-child(4) > div > ul > li:nth-child(3)")).getText should equal("end use relief (gives a favourable rate of duty and/or levy on some goods imported from non-EU countries)")
     driver.findElement(By.cssSelector("#main-content > div > div > form > details:nth-child(4) > div > ul > li:nth-child(4)")).getText should equal("incorrect commodity code (a claim made if a trader originally entered an incorrect commodity code and overpaid duties)")

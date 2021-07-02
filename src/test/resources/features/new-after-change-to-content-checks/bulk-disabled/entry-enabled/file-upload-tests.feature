@@ -33,7 +33,7 @@ Feature: C285 - File upload
     When I enter "" on "Entry_Enter Your Contact Details Page"
     And I click continue on "Entry_Enter Your Contact Details Page"
     Then I am presented with the "Entry_Enter Reason For Claim And Basis Page"
-    When I select dropdown value "Duplicate Entry,Special circumstances" on "Entry_Enter Reason For Claim And Basis Page"
+    When I select dropdown value "Duplicate Entry Number,Special circumstances" on "Entry_Enter Reason For Claim And Basis Page"
     And I click continue on "Entry_Enter Reason For Claim And Basis Page"
     Then I am presented with the "Entry_Enter Duplicate Movement Reference Number Page"
     When I enter "000000002B00000002" on "Entry_Enter Duplicate Movement Reference Number Page"
