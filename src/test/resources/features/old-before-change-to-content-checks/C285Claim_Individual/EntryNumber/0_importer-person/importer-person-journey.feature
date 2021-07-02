@@ -6,7 +6,7 @@ Feature: C285 - Entry Number - importer-person
     Given the "Bulk Claim" feature is "disabled"
     Given the "Entry Number" feature is "enabled"
 
-  @testOld @a11y @ZAP
+  @testOld
   Scenario: User is a CDS Trader - happy path (entry number) - duplicate Entry Number
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -109,7 +109,7 @@ Feature: C285 - Entry Number - importer-person
     And I click continue on "Entry_Check Answers Accept Send Page"
     Then I am presented with the "Entry_Claim Submitted Page" and content "£105.00"
 
-  @testOld @a11y @ZAP
+  @testOld
   Scenario: User is a CDS Trader - happy path (entry number)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -296,7 +296,7 @@ Feature: C285 - Entry Number - importer-person
     And I click continue on "Entry_Check Answers Accept Send Page"
     Then I am presented with the "Entry_Claim Submitted Page"
 
-  @testOld @a11y @ZAP
+  @testOld
   Scenario: User is a CDS Trader - happy path (entry number) - change entry number
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

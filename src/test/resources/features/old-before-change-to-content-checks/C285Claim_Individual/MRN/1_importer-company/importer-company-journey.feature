@@ -68,7 +68,7 @@ Feature: C285 - MRN - importer-company
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page"
 
-  @testOld @a11y @ZAP
+  @testOld
   Scenario: User is a CDS Trader - happy path (mrn - enter importer and declarant EORIs)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
