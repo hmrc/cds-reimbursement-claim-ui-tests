@@ -32,9 +32,6 @@ object Entry_EnterCommodityDetailsPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Tell us the reason for this claim")
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This will help reduce delays in your claim being processed.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > div > label")).getText should equal("Enter claim reason")
     driver.findElement(By.cssSelector("#enter-commodities-details-hint")).getText should equal("Explain why you would like to be reimbursed and why you are entitled to this claim.")
 
     content match {

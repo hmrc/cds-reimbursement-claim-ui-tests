@@ -50,7 +50,6 @@ object Entry_ClaimSubmittedPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(6)")).getText should equal("Print or save a copy of this page for your records.")
     driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(7) > a")).getText should equal("Start another claim")
     driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(8)")).getText should equal("What did you think of this service? This page will sign you out of this service where you can leave your feedback.")
-
   }
 
 }
