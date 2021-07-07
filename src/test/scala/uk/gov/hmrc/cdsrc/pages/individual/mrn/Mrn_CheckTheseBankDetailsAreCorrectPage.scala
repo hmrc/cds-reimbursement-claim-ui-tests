@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -29,6 +30,21 @@ object Mrn_CheckTheseBankDetailsAreCorrectPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Check these bank details are correct - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
+
+  override def checkContent(content: String) {
+    driver.findElement(By.cssSelector("#main-content > div > div > p.govuk-body.govuk-\\!-margin-bottom-8")).getText should equal("These are the details of where your reimbursements will be made in the UK based on our records. If you are a representative and want to change these bank details, then you will need to provide a letter of authority that proves you are a representative.")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText should equal("Account name")
+    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText should equal("Sort code")
+    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dt")).getText should equal("Account number")
+    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd")).getText should equal("CDS E2E To E2E Bank")
+    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd")).getText should equal("Ending with 44")
+    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd")).getText should equal("Ending with 5678")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(4) > a")).getText should equal("Enter different bank details")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > a")).getText should equal("Continue")
+  }
 
   override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
 

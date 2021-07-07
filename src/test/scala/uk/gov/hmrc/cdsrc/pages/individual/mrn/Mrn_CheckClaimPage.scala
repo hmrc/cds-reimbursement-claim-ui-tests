@@ -31,6 +31,10 @@ object Mrn_CheckClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check the reimbursement claim totals for all MRNs")
 
+  override def checkContent(content: String): Unit = {
+    println("Page is missing content checks")
+  }
+
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
       case "yes" => click on xpath(s"""//*[@id="check-claim-summary"]""")

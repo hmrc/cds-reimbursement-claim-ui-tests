@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -29,6 +30,17 @@ object Mrn_EnterCommodityDetailsPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Tell us the reason for this claim - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Tell us the reason for this claim")
+
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#enter-commodities-details-hint")).getText should equal("Explain why you would like to be reimbursed and why you are entitled to this claim.")
+
+    content match {
+      case "" => driver.findElement(By.cssSelector("#enter-commodities-details-info")).getText should equal("You have 500 characters remaining")
+      case _ => driver.findElement(By.cssSelector("#enter-commodities-details-info")).getText should equal(s"""You have $content characters remaining""")
+    }
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
 
   override def enterDetails(details: String): Unit = {
     details match {
