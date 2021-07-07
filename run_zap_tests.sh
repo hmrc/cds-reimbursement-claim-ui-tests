@@ -14,4 +14,3 @@ fi
 # single ZAP focused journey test is sufficient.
 
 sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER -Dzap.proxy=true "testOnly uk.gov.hmrc.cdsrc.cucumber.runner.ZapRunner"
-sbt "testOnly uk.gov.hmrc.cdsrc.ZapSpec"
