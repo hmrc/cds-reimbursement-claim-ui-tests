@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Entry_CheckClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/check-claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-claim"
   override val title = "Check the reimbursement claim totals for all MRNs"
   override val pageShouldHaveBackButton = false
 

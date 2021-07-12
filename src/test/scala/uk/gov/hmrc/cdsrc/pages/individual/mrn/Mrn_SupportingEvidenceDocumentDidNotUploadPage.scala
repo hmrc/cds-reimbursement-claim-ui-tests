@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_SupportingEvidenceDocumentDidNotUploadPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/document-did-not-upload"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/document-did-not-upload"
   override val title = "There is a problem with the file you uploaded"
   override val pageShouldHaveBackButton = false
 

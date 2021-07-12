@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_SupportingEvidenceProblemWithDocumentPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/problem-with-document"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/problem-with-document"
   override val title = "There is a problem with your file"
 
   override def expectedPageErrorTitle: Option[String] = Some("There is a problem with your file - Claim for reimbursement of import duties - GOV.UK")

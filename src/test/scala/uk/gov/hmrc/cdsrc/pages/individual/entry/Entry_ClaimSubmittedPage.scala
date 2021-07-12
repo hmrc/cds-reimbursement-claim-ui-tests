@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Entry_ClaimSubmittedPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/claim-submitted"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/claim-submitted"
   override val title = "Claim submitted"
   override val pageShouldHaveBackButton = false
 

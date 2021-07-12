@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Entry_EnterYourDetailsAsRegisteredWithCDS extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-your-details-as-registered-with-cds"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-your-details-as-registered-with-cds"
   override val title = "Enter your details as registered with CDS"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")

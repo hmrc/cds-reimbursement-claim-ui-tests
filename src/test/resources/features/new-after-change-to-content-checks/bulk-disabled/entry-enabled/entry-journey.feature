@@ -111,7 +111,7 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Entry_Claim Submitted Page" and content "£105.00"
 
 
-  @test
+  @testFail
   Scenario: User is a CDS Trader - happy path (entry number) - change entry number
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

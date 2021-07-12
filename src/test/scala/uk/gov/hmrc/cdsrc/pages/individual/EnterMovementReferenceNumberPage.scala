@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.common
+package uk.gov.hmrc.cdsrc.pages.individual
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object EnterMovementReferenceNumberPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-movement-reference-number"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-movement-reference-number"
   override val title = "What is your Movement Reference Number (MRN)?"
 
   override def expectedPageErrorTitle: Option[String] = Some("What is your Movement Reference Number (MRN)? - Claim for reimbursement of import duties - GOV.UK")
