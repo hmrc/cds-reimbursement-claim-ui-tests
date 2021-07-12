@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Entry_NotSubscribedForCDSPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/not-subscribed-for-cds"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/not-subscribed-for-cds"
   override val title = "Not registered with CDS"
 
   override def expectedPageErrorTitle: Option[String] = Some("Not registered with CDS - Claim for reimbursement of import duties - GOV.UK")

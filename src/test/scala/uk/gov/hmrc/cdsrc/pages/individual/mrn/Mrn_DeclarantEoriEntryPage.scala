@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_DeclarantEoriEntryPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/declarant-eori-entry"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/declarant-eori-entry"
   override val title = "Enter the declarant’s EORI number"
   //override val pageShouldHaveBackButton = false
 

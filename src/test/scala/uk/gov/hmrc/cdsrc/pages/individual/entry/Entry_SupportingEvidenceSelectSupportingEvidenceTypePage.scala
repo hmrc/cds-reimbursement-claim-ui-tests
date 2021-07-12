@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Entry_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/select-supporting-evidence-type"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/select-supporting-evidence-type/..."
   override val title = "Select the description of the file you just uploaded"
   override val pageShouldHaveBackButton = false
 

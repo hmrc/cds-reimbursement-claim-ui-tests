@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_SelectDutiesPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/select-duties"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/select-duties"
   override val title = "Select the duties you want to claim for"
   override val pageShouldHaveBackButton = false
 

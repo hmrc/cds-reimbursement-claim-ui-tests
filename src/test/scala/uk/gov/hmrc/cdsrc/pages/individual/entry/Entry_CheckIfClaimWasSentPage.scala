@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Entry_CheckIfClaimWasSentPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/check-if-claim-was-sent"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-if-claim-was-sent"
   override val title = "Claim submission failed"
 
   override def expectedPageErrorTitle: Option[String] = Some("Claim submission failed - Claim for reimbursement of import duties - GOV.UK")

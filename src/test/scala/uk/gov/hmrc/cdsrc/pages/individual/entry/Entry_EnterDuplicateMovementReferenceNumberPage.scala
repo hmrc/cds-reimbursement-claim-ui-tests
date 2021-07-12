@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Entry_EnterDuplicateMovementReferenceNumberPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-duplicate-movement-reference-number"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-duplicate-movement-reference-number"
   override val title = "Tell us your duplicate Entry Number"
 
   override def expectedPageErrorTitle: Option[String] = Some("Tell us your duplicate Entry Number - Claim for reimbursement of import duties - GOV.UK")

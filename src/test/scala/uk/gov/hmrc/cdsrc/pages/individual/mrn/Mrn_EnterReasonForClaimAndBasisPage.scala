@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_EnterReasonForClaimAndBasisPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/enter-reason-for-claim-and-basis"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-reason-for-claim-and-basis"
   override val title = "Select the reason and or basis for claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("Select the reason and or basis for claim - Claim for reimbursement of import duties - GOV.UK")

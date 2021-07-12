@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_CheckTheseBankDetailsAreCorrectPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/check-these-bank-details-are-correct"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-these-bank-details-are-correct"
   override val title = "Check these bank details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these bank details are correct - Claim for reimbursement of import duties - GOV.UK")

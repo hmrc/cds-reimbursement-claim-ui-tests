@@ -17,12 +17,14 @@
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
 import org.openqa.selenium.By
+import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
+import uk.gov.hmrc.cdsrc.pages.individual.entry.Entry_SupportingEvidenceUploadSupportingEvidencePage.{driver, url}
 
 object Mrn_SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/supporting-evidence/upload-supporting-evidence"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/upload-supporting-evidence"
   override val title = "Upload files to support your claim"
   override val pageShouldHaveBackButton = false
 
@@ -31,6 +33,10 @@ object Mrn_SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Upload files to support your claim - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Upload files to support your claim")
+
+  override def checkURL: Assertion = {
+    driver.getCurrentUrl should fullyMatch regex(url + ".*?").r
+  }
 
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("Upload supporting evidence you have received for the commodities you have imported. Files can be up to 10MB.")

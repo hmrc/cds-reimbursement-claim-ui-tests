@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_ClaimNorthernIrelandPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/claim-northern-ireland"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/claim-northern-ireland"
   override val title: String = "Were your commodities (goods) moved or imported into Northern Ireland?"
 
   override def expectedPageErrorTitle: Option[String] = Some("Were your commodities (goods) moved or imported into Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")

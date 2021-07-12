@@ -69,6 +69,14 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     expectedPageErrorTitleList should contain(List(pageTitle))
   }
 
+  def checkURL: Assertion = {
+    if (url.contains("...")) {
+      driver.getCurrentUrl should fullyMatch regex (url.replace("...","") + ".*").r
+    } else {
+      driver.getCurrentUrl should equal(url)
+    }
+  }
+
   def checkPageHeader: Assertion = {
     fluentWait.until(ExpectedConditions.textToBe(By.cssSelector("h1"), expectedPageHeader.get))
     expectedPageHeaderList should contain(List(pageHeader.get))
