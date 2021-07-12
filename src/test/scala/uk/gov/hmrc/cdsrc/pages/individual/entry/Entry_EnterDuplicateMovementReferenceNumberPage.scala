@@ -35,16 +35,12 @@ object Entry_EnterDuplicateMovementReferenceNumberPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal("This will help us to process your claim more efficiently.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Enter duplicate Entry Number")
-    //below line should replace the line below that, once CDSR-895 has has been fixed
-    driver.findElement(By.cssSelector("#enter-duplicate-entry-number-hint")).getText should equal("Must be 18 characters, for example 190007914H11112017.")
-    //driver.findElement(By.cssSelector("#enter-duplicate-movement-reference-number-hint")).getText should equal("Must be 17 characters, for example 19GB03I5285802701.")
+    driver.findElement(By.cssSelector("#enter-duplicate-movement-reference-number-hint")).getText should equal("Must be 18 characters, for example 190007914H11112017.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
   override def enterDetails(textToEnter: String) {
-    //below line should replace the line below that, once CDSR-895 has has been fixed
-    enterText("enter-duplicate-entry-number", textToEnter)
-    //enterText("enter-duplicate-movement-reference-number", textToEnter)
+    enterText("enter-duplicate-movement-reference-number", textToEnter)
   }
 }
