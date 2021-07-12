@@ -72,7 +72,6 @@ object Entry_ChooseBasisForClaimPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Save and continue")
   }
 
-
   override def clickRadioButton(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
   }

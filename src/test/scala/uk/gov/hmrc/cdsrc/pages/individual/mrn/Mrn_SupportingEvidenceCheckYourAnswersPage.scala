@@ -31,4 +31,8 @@ object Mrn_SupportingEvidenceCheckYourAnswersPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Confirm these are the files you want to submit")
 
+  override def checkContent(content: String): Unit = {
+    println("Page is missing content checks")
+  }
+
 }

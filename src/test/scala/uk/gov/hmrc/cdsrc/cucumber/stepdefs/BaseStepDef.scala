@@ -111,6 +111,13 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page).checkContent("")
   }
 
+  Then("""I am presented with the {string} {string} and content {string}""") { (page: String, duty: String, content: String) =>
+    waitForPageHeader
+    PageObjectFinder.page(page).checkDutyPage(duty)
+    PageObjectFinder.page(page).checkBackButtonExistsIfItShould
+    PageObjectFinder.page(page).checkContent(content)
+  }
+
   Then("""I am presented with the {string} {string} error page""") { (page: String, duty: String) =>
     waitForPageHeader
     PageObjectFinder.page(page).checkDutyPageError(duty)
