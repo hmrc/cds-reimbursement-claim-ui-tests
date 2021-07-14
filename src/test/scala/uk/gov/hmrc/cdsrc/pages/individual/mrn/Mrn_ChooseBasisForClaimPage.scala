@@ -36,7 +36,7 @@ object Mrn_ChooseBasisForClaimPage extends BasePage {
 
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This will help us to understand why you are making the claim so we can review and validate it. If you believe you are entitled to an excise claim that is not listed below, please contact the CDS team (opens in new tab).")
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This will help us to understand why you are making the claim so we can review and validate it.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > details > summary > span")).getText should equal("Examples of basis of claim")
     driver.findElement(By.cssSelector("#main-content > div > div > details > summary > span")).click()
