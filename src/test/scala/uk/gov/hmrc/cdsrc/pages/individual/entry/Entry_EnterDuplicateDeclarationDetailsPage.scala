@@ -35,7 +35,7 @@ object Entry_EnterDuplicateDeclarationDetailsPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal(s"""These are the import date and place of import related to the entry number: $content.""")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(4) > fieldset > legend")).getText should equal("Date of import")
-    driver.findElement(By.cssSelector("#enter-declaration-details-hint")).getText should equal("This is the date when the commodities arrived in the UK.")
+    driver.findElement(By.cssSelector("#enter-declaration-details-hint")).getText should equal("This is date when the commodities arrived in the UK. For example, 7 11 2007.")
     driver.findElement(By.cssSelector("#enter-declaration-details > div:nth-child(1) > div > label")).getText should equal("Day")
     driver.findElement(By.cssSelector("#enter-declaration-details > div:nth-child(2) > div > label")).getText should equal("Month")
     driver.findElement(By.cssSelector("#enter-declaration-details > div:nth-child(3) > div > label")).getText should equal("Year")
