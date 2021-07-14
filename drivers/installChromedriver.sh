@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #This script supports linux and mac installations.
-OS=${1:-mac64}
+OS=${1:-linux64}
 
 die () {
     echo >&2 "$@"
