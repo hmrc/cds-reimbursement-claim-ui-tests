@@ -3,7 +3,7 @@
 Feature: C285 scheduled
 
   Background:
-    Given the "Scheduled Claim" feature is "enabled"
+    Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
