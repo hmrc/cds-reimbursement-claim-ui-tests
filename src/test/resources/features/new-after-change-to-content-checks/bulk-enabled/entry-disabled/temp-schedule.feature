@@ -7,7 +7,7 @@ Feature: C285 scheduled
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP ### this journey fails due to 641. Enabling entry number fixes this
   Scenario: test temp pages - entry number disabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -19,5 +19,4 @@ Feature: C285 scheduled
     Then I am presented with the "Select Number Of Claims Page"
     When I select radio button "schedule" on "Select Number Of Claims Page"
     And I click continue on "Select Number Of Claims Page"
-    ###below line fails due to entry number, who knows why?, it should be fixed eventually
-    Then I am presented with the "Enter Mrn Schedule Page"
+    Then I am presented with the "Scheduled_Enter Movement Reference Number Page"
