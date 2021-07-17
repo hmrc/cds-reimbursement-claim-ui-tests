@@ -32,9 +32,9 @@ object Mrn_CheckDuplicateDeclarationDetailsPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Check these details are correct")
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal(s"These are the declaration details given by the MRN Reference Number: $content.\n\nIf these details are incorrect, you can change them by contacting the CDS team (opens in new tab) via imports and exports: general enquires.")
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal(s"These are the declarant details we have from the MRN declaration. If they are incorrect, you can change them by contacting the CDS team (opens in new tab).")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dt")).getText should equal("MRN number")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dt")).getText should equal("MRN")
     driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dt")).getText should equal("Import date")
     driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dt")).getText should equal("Paid charges")
     driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(4) > dt")).getText should equal("Importer name")
@@ -56,6 +56,14 @@ object Mrn_CheckDuplicateDeclarationDetailsPage extends BasePage {
     }
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
+
+  override def clickRadioButton(text: String): Unit = {
+    text.toLowerCase() match {
+      case "yes" => click on cssSelector("#check-declaration-details")
+      case "no" => click on cssSelector("##check-declaration-details-eori-incorrect")
+    }
+
   }
 
 }
