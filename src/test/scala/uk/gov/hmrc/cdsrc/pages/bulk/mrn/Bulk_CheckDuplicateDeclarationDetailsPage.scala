@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Mrn_CheckDeclarationDetailsPage extends BasePage {
+object Bulk_CheckDuplicateDeclarationDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-declaration-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/check-duplicate-declaration-details"
   override val title = "Check these details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
@@ -61,8 +61,9 @@ object Mrn_CheckDeclarationDetailsPage extends BasePage {
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#check-declaration-details")
-      case "no" => click on cssSelector("##check-declaration-details-eori-incorrect")
+      case "no" => click on cssSelector("#check-declaration-details-eori-incorrect")
     }
 
   }
+
 }

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.scheduled.mrn
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Mrn_CheckDeclarationDetailsPage extends BasePage {
+object Scheduled_CheckDeclarationDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-declaration-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/check-declaration-details"
   override val title = "Check these details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
@@ -34,7 +34,7 @@ object Mrn_CheckDeclarationDetailsPage extends BasePage {
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal(s"These are the declarant details we have from the MRN declaration. If they are incorrect, you can change them by contacting the CDS team (opens in new tab).")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dt")).getText should equal("MRN")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dt")).getText should equal("Lead MRN")
     driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dt")).getText should equal("Import date")
     driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dt")).getText should equal("Paid charges")
     driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(4) > dt")).getText should equal("Importer name")
@@ -47,7 +47,7 @@ object Mrn_CheckDeclarationDetailsPage extends BasePage {
     content match {
       case _ =>
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dd")).getText should equal("12 February 2021")
-        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dd")).getText should equal("£828.00")
+        //driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dd")).getText should equal("£1,341.00")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(4) > dd")).getText should equal("IT Solutions LTD")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(5) > dd")).getText should equal("automation@gmail.com")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(6) > dd")).getText should equal("+4420723934397")
