@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_EnterCommodityDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-commodity-details?...."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-commodity-details"
   override val title = "Tell us the reason for this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("Tell us the reason for this claim - Claim for reimbursement of import duties - GOV.UK")
