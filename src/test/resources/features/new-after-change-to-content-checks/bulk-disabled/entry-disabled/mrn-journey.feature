@@ -4,7 +4,7 @@ Feature: C285 - Entry Number - importer-person
 
   Background:
     Given the "Bulk Claim" feature is "disabled"
-    Given the "Entry Number" feature is "enabled"
+    Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
   @test @a11y @ZAP
@@ -16,7 +16,7 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Check Eori Details Page" and content "GB000000000000001,TestUser"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Enter Movement Reference Number Page" and content "bulk-disabled,entry-enabled"
+    Then I am presented with the "Enter Movement Reference Number Page" and content "bulk-disabled,entry-disabled"
     When I enter "10AAAAAAAAAAAAAAA1" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Mrn_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"

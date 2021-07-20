@@ -32,16 +32,26 @@ object Mrn_SelectDutiesPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for")
 
-//  override def checkContent(content: String): Unit = {
-//    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the duties that have been paid in the import declaration.\nYou can select any of the paid duties.")
-//
-//    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("A80 - Definitive Anti-Dumping Duty")
-//    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("A95 - Provisional Countervailing Duty")
-//    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("A90 - Definitive Countervailing Duty")
-//    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(4) > label")).getText should equal("A85 - Provisional Anti-Dumping Duty")
-//
-//    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-//  }
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the duties that have been paid in the import declaration.\nYou can select any of the paid duties.")
+    content match {
+      case "50AAAAAAAAAAAAAAA1" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("A20 - Additional Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("A35 - Provisional Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("A90 - Definitive Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(4) > label")).getText should equal("A85 - Provisional Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(5) > label")).getText should equal("A95 - Provisional Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(6) > label")).getText should equal("421 - Made-wine (sparkling), exceeding 8.5% vol. but not exceeding 15% vol.")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(7) > label")).getText should equal("623 - Smoking tobacco – other")
+      case "10AAAAAAAAAAAAAAA1" | _ =>
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("A80 - Definitive Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("A95 - Provisional Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("A90 - Definitive Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(4) > label")).getText should equal("A85 - Provisional Anti-Dumping Duty")
+    }
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
 
   def enterDetails(): Unit = {
 

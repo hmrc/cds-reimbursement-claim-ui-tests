@@ -61,9 +61,8 @@ object Mrn_CheckDuplicateDeclarationDetailsPage extends BasePage {
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#check-declaration-details")
-      case "no" => click on cssSelector("##check-declaration-details-eori-incorrect")
+      case "no" => click on cssSelector("#check-declaration-details-eori-incorrect")
     }
-
   }
 
 }

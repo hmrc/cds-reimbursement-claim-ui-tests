@@ -17,7 +17,6 @@
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
 import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
-import uk.gov.hmrc.cdsrc.pages.common.CheckEoriDetailsPage
 import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
 import uk.gov.hmrc.cdsrc.pages.individual.mrn.{Mrn_SupportingEvidenceScanProgressPage, Mrn_SupportingEvidenceUploadSupportingEvidencePage}
 
@@ -45,7 +44,7 @@ class CDSRStepDef extends BaseStepDef {
   When("""I enter redirectURL on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" =>
-        AuthLoginStubPage.enterRedirectURL(CheckEoriDetailsPage.url)
+        AuthLoginStubPage.enterRedirectURL("http://localhost:7500/claim-for-reimbursement-of-import-duties/start")
     }
   }
 

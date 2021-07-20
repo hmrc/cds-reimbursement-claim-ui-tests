@@ -59,12 +59,12 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   private val expectedPageErrorTitleList = expectedPageErrorTitle.map(_.split(";").toList)
   private val expectedPageHeaderList = expectedPageHeader.map(_.split(";").toList)
 
-  def checkPageTitle: Assertion = {
+  def checkPageTitle(content: String): Assertion = {
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
     expectedPageTitleList should contain(List(pageTitle))
   }
 
-  def checkPageErrorTitle: Assertion = {
+  def checkPageErrorTitle(content: String): Assertion = {
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
     expectedPageErrorTitleList should contain(List(pageTitle))
   }
@@ -77,7 +77,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     }
   }
 
-  def checkPageHeader: Assertion = {
+  def checkPageHeader(content: String): Assertion = {
     fluentWait.until(ExpectedConditions.textToBe(By.cssSelector("h1"), expectedPageHeader.get))
     expectedPageHeaderList should contain(List(pageHeader.get))
   }
