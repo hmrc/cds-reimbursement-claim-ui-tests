@@ -19,7 +19,7 @@ Feature: C285 - Entry Number - importer-person - entry disabled
     Then I am presented with the "Select Number Of Claims Page"
     When I select radio button "individual" on "Select Number Of Claims Page"
     And I click continue on "Select Number Of Claims Page"
-    Then I am presented with the "Enter Movement Reference Number Page" and content "entry-disabled"
+    Then I am presented with the "Enter Movement Reference Number Page" and content "bulk-enabled,entry-disabled"
     When I enter "000000001A00000001" on "Enter Movement Reference Number Page"
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Enter Movement Reference Number Page" error page
