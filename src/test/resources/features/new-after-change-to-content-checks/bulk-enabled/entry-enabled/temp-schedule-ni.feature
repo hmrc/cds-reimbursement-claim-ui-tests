@@ -42,7 +42,7 @@ Feature: Bulk scheduled
     Then I am presented with the "Scheduled_Enter Commodity Details Page"
     When I enter "under 500 characters" on "Scheduled_Enter Commodity Details Page"
     And I click continue on "Scheduled_Enter Commodity Details Page"
-    Then I am presented with the "Mrn_Select Duties Page"
+    Then I am presented with the "Mrn_Select Duties Page" and content "50AAAAAAAAAAAAAAA1"
     When I select "A20,A35,A90,A85,A95,421,623" on "Mrn_Select Duties Page"
     And I click continue on "Mrn_Select Duties Page"
     Then I am presented with the "Mrn_Enter Claim Page" "A20 - Additional Duty" and content "£218.00"
