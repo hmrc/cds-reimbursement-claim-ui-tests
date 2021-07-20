@@ -71,7 +71,7 @@ Feature: C285 scheduled
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
-  @test
+  @testFail @CDSR-650
   Scenario: test temp pages - wrong entry mrn - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -88,6 +88,7 @@ Feature: C285 scheduled
     And I click continue on "Scheduled_Enter Movement Reference Number Page"
     Then I am presented with the "Scheduled_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
     And I select radio button "no" on "Scheduled_Check Declaration Details Page"
+    And I click continue on "Bulk_Check Declaration Details Page"
     Then I am presented with the "Scheduled_Enter Movement Reference Number Page"
     When I enter "10AAAAAAAAAAAAAAA1" on "Scheduled_Enter Movement Reference Number Page"
     And I click continue on "Scheduled_Enter Movement Reference Number Page"

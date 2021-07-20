@@ -21,7 +21,7 @@ Feature: C285 Bulk
     And I click continue on "Select Number Of Claims Page"
     Then I am presented with the "Bulk_Enter Movement Reference Number Page"
 
-  @test
+  @testFail @CDSR-650
   Scenario: test temp pages - wrong entry mrn - entry number disabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -38,6 +38,7 @@ Feature: C285 Bulk
     And I click continue on "Bulk_Enter Movement Reference Number Page"
     Then I am presented with the "Bulk_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
     And I select radio button "no" on "Bulk_Check Declaration Details Page"
+    And I click continue on "Bulk_Check Declaration Details Page"
     Then I am presented with the "Bulk_Enter Movement Reference Number Page"
     When I enter "10AAAAAAAAAAAAAAA1" on "Bulk_Enter Movement Reference Number Page"
     And I click continue on "Bulk_Enter Movement Reference Number Page"
