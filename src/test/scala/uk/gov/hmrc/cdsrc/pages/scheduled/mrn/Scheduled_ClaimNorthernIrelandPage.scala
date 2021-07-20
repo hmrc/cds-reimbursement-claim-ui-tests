@@ -35,8 +35,6 @@ object Scheduled_ClaimNorthernIrelandPage extends BasePage {
 
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("If you select Yes, then all your MRNs in this claim must have been imported or moved through Northern Ireland.")
-
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
