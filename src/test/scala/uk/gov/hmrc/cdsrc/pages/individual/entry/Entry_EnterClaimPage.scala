@@ -32,7 +32,7 @@ object Entry_EnterClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty")
 
-  override def checkPageHeader: Assertion = {
+  override def checkPageHeader(content: String): Assertion = {
     true should equal(true)
   }
 
