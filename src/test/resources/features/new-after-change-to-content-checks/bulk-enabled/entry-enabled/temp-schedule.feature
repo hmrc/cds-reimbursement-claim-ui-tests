@@ -71,7 +71,7 @@ Feature: C285 scheduled
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
-  @testFail @CDSR-650
+  @test
   Scenario: test temp pages - wrong entry mrn - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
