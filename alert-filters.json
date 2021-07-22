@@ -26,7 +26,7 @@
       "contextId": 1,
       "reason": "This issue is related to up-scan which is outside scope.",
       "url": "http://localhost:7500/claim-for-reimbursement-of-import-duties/single/supporting-evidence/upload-supporting-evidence",
-      "ruleId": 100202,
+      "ruleId": 10202,
       "newLevel": -1
     }
   ]
