@@ -7,7 +7,7 @@ Feature: C285 Bulk
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP ### this journey fails due to 641. Enabling entry number fixes this
+  @test @a11y @ZAP
   Scenario: test temp pages - entry number disabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

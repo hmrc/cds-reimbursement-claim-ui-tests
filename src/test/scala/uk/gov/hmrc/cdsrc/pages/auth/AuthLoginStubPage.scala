@@ -36,13 +36,13 @@ object AuthLoginStubPage extends BasePage {
   }
 
   def enrolments(eKey: String, IDName: String, IDValue: String): Unit = {
-    driver.findElement(By.name("enrolment[0].name")).sendKeys(eKey)
-    driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys(IDName)
-    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys(IDValue)
+    driver.findElement(By.id("enrolment[0].name")).sendKeys(eKey)
+    driver.findElement(By.id("input-0-0-name")).sendKeys(IDName)
+    driver.findElement(By.id("input-0-0-value")).sendKeys(IDValue)
   }
 
   override def clickContinueButton(): Unit ={
-    click on cssSelector("#inputForm > p:nth-child(2) > input")
+    click on id("submit")
   }
 
 }
