@@ -42,7 +42,7 @@ object AuthLoginStubPage extends BasePage {
   }
 
   override def clickContinueButton(): Unit ={
-    click on cssSelector("#inputForm > p:nth-child(2) > input")
+    click on id("submit")
   }
 
 }
