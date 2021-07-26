@@ -44,7 +44,7 @@ Feature: C285 - File upload
     Then I am presented with the "Entry_Enter Claim Page" "A00 - Customs Duty"
     When I enter "2,1" on "Entry_Enter Claim Page"
     And I click continue on "Entry_Enter Claim Page"
-    Then I am presented with the "Entry_Check Claim Page"
+    Then I am presented with the "Entry_Check Claim Page" and content "first box only"
     And I select radio button "yes" on "Entry_Check Claim Page"
     When I click continue on "Entry_Check Claim Page"
     Then I am presented with the "Entry_Enter Bank Account Details Page"
@@ -88,7 +88,7 @@ Feature: C285 - File upload
     And I click continue on "Entry_Check Answers Accept Send Page"
     Then I am presented with the "Entry_Claim Submitted Page" and content "£1.00"
 
-  @test
+  @test @1
   Scenario: User is a CDS Trader - fails file upload steps
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -125,7 +125,7 @@ Feature: C285 - File upload
     Then I am presented with the "Entry_Enter Claim Page" "A00 - Customs Duty"
     When I enter "2,1" on "Entry_Enter Claim Page"
     And I click continue on "Entry_Enter Claim Page"
-    Then I am presented with the "Entry_Check Claim Page"
+    Then I am presented with the "Entry_Check Claim Page" and content "first box only"
     And I select radio button "yes" on "Entry_Check Claim Page"
     When I click continue on "Entry_Check Claim Page"
     Then I am presented with the "Entry_Enter Bank Account Details Page"

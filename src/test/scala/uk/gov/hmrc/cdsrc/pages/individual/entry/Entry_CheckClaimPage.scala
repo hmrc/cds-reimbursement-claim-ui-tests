@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.entry
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -32,31 +33,65 @@ object Entry_CheckClaimPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Check the reimbursement claim totals for all MRNs")
 
   override def checkContent(content: String): Unit = {
-    println("Page is missing content checks")
-//    driver.findElement(By.cssSelector("#main-content > div > div > p.govuk-body.govuk-\\!-margin-bottom-8")).getText should equal("These are the calculations based on the information you gave us.")
-//
-//    val duties = content.split("UK Duty")
-//    val duties1 = duties(0)//.split("EU Duty")
-//    val duties2 = duties(1)//.split("NI Duty")
-//    println()
-//    println("uk stuff" + duties1)
-//    println("eu stuff" + duties2)
-//
-//
-//
-//
-////    driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(3)")).getText should equal("UK Duty")
-////    driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("")
-////    driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("")
-////    driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dt")).getText should equal("")
-////
-////
-////    driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(5)")).getText should equal("EU Duty")
-//    driver.findElement(By.cssSelector("poiu")).getText should equal("")
-//
-//
-//
-//    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+    driver.findElement(By.cssSelector("#main-content > div > div > p.govuk-body.govuk-\\!-margin-bottom-8")).getText should equal("These are the calculations based on the information you gave us.")
+
+    content match {
+      case "first box only" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(3)")).getText should equal("UK Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dd")).getText should equal("£1.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dt")).getText should equal("Customs Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dd")).getText should equal("£1.00")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(7)")).getText should equal("Overall total")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(8) > div > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(8) > div > dd")).getText should equal("£1.00")
+
+      case "all" | _ =>
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(3)")).getText should equal("UK Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dd")).getText should equal("£28.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dt")).getText should equal("Value Added Tax")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dd")).getText should equal("£7.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(3) > dt")).getText should equal("Provisional Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(3) > dd")).getText should equal("£6.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(4) > dt")).getText should equal("Definitive Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(4) > dd")).getText should equal("£5.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(5) > dt")).getText should equal("Provisional Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(5) > dd")).getText should equal("£4.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(6) > dt")).getText should equal("Definitive Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(6) > dd")).getText should equal("£3.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(7) > dt")).getText should equal("Additional Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(7) > dd")).getText should equal("£2.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(8) > dt")).getText should equal("Customs Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(8) > dd")).getText should equal("£1.00")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(5)")).getText should equal("EU Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd")).getText should equal("£77.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dt")).getText should equal("Value Added Tax")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd")).getText should equal("£14.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(3) > dt")).getText should equal("Provisional Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(3) > dd")).getText should equal("£13.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(4) > dt")).getText should equal("Definitive Countervailing Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(4) > dd")).getText should equal("£12.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(5) > dt")).getText should equal("Provisional Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(5) > dd")).getText should equal("£11.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(6) > dt")).getText should equal("Definitive Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(6) > dd")).getText should equal("£10.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(7) > dt")).getText should equal("Additional Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(7) > dd")).getText should equal("£9.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(8) > dt")).getText should equal("Customs Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(8) > dd")).getText should equal("£8.00")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(8)")).getText should equal("Overall total")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div > dd")).getText should equal("£105.00")
+    }
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > legend")).getText should equal("Are these duties correct?")
+
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
   override def clickRadioButton(text: String): Unit = {
