@@ -66,7 +66,7 @@ Feature: Bulk scheduled
     Then I am presented with the "Mrn_Enter Claim Page" "623 - Smoking tobacco – other" and content "£171.00"
     When I enter "10" on "Mrn_Enter Claim Page"
     And I click continue on "Mrn_Enter Claim Page"
-    Then I am presented with the "Mrn_Check Claim Page"
+    Then I am presented with the "Mrn_Check Claim Page" and content "ni"
     And I select radio button "yes" on "Mrn_Check Claim Page"
     When I click continue on "Mrn_Check Claim Page"
     Then I am presented with the "Mrn_Check These Bank Details Are Correct Page"

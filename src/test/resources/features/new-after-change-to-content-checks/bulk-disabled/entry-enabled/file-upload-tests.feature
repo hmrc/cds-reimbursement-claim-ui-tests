@@ -88,7 +88,7 @@ Feature: C285 - File upload
     And I click continue on "Entry_Check Answers Accept Send Page"
     Then I am presented with the "Entry_Claim Submitted Page" and content "£1.00"
 
-  @test @1
+  @test
   Scenario: User is a CDS Trader - fails file upload steps
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
