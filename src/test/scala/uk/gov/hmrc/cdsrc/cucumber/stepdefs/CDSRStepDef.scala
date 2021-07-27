@@ -19,6 +19,7 @@ package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
 import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
 import uk.gov.hmrc.cdsrc.pages.individual.mrn.{Mrn_SupportingEvidenceScanProgressPage, Mrn_SupportingEvidenceUploadSupportingEvidencePage}
+import uk.gov.hmrc.cdsrc.pages.scheduled.mrn.Scheduled_ScheduledDocumentUploadUploadPage
 
 class CDSRStepDef extends BaseStepDef {
 
@@ -34,6 +35,7 @@ class CDSRStepDef extends BaseStepDef {
     page match {
       case "Entry_Supporting Evidence Upload Supporting Evidence Page" => Entry_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
       case "Mrn_Supporting Evidence Upload Supporting Evidence Page" => Mrn_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
+      case "Scheduled_Scheduled Document Upload Upload Page" => Scheduled_ScheduledDocumentUploadUploadPage.uploadDocument(file)
     }
   }
 

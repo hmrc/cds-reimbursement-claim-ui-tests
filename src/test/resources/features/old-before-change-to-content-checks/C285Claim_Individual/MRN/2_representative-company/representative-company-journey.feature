@@ -1,4 +1,4 @@
-@Regression @Individual @MRN
+@Regression
 
 Feature: C285 - MRN - representative-company
   Background:

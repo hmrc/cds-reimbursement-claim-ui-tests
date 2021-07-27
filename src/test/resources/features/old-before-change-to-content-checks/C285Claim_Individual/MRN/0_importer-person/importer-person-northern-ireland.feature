@@ -1,4 +1,4 @@
-@Regression @Individual @MRN @NorthernIreland
+@Regression
 
 Feature: C285 - MRN - importer-person-northern-ireland
 
