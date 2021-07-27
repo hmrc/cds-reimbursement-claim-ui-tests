@@ -45,6 +45,14 @@ object Scheduled_CheckDeclarationDetailsPage extends BasePage {
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dd")).getText should equal(content)
     content match {
+      case "50AAAAAAAAAAAAAAA1" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dd")).getText should equal("12 February 2021")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dd")).getText should equal("£1,341.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(4) > dd")).getText should equal("IT Solutions LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(5) > dd")).getText should equal("automation@gmail.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(6) > dd")).getText should equal("+4420723934397")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(7) > dd")).getText should equal("19 Bricks Road, Newcastle, NE12 5BT, GB")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(8) > dd")).getText should equal("12 Skybricks Road, Coventry, CV3 6EA, GB")
       case _ =>
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dd")).getText should equal("12 February 2021")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dd")).getText should equal("£828.00")

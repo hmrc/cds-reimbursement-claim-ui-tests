@@ -28,7 +28,6 @@ Feature: C285 scheduled
     Then I am presented with the "Scheduled_Scheduled Document Upload Upload Page"
     When I upload a "document.pdf" file on "Scheduled_Scheduled Document Upload Upload Page"
     And I click continue on "Scheduled_Scheduled Document Upload Upload Page"
-    Then I am presented with the "Scheduled_Scheduled Document Upload Upload Page"
 
   @test
   Scenario: test temp pages - wrong entry mrn - entry number enabled
@@ -54,4 +53,3 @@ Feature: C285 scheduled
     Then I am presented with the "Scheduled_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
     And I select radio button "yes" on "Scheduled_Check Declaration Details Page"
     And I click continue on "Scheduled_Check Declaration Details Page"
-    Then I am presented with the "Scheduled_Who Is The Declarant Page"
