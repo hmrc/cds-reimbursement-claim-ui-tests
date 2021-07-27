@@ -47,7 +47,7 @@ object Scheduled_CheckDeclarationDetailsPage extends BasePage {
     content match {
       case _ =>
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dd")).getText should equal("12 February 2021")
-        //driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dd")).getText should equal("£1,341.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(3) > dd")).getText should equal("£828.00")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(4) > dd")).getText should equal("IT Solutions LTD")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(5) > dd")).getText should equal("automation@gmail.com")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(6) > dd")).getText should equal("+4420723934397")
