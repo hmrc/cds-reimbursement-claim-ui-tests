@@ -28,6 +28,8 @@ Feature: C285 Bulk
     Then I am presented with the "Bulk_Who Is The Declarant Page"
     When I select radio button "0" on "Bulk_Who Is The Declarant Page"
     And I click continue on "Bulk_Who Is The Declarant Page"
+    Then I am presented with the "Bulk_Claimant Details Page"
+    And I click continue on "Bulk_Claimant Details Page"
     Then I am presented with the "Mrn_Enter Your Details As Registered With CDS Page"
     And I select radio button "yes" on "Mrn_Enter Your Details As Registered With CDS Page"
     And I click continue on "Mrn_Enter Your Details As Registered With CDS Page"
