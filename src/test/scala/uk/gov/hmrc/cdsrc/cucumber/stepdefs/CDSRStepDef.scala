@@ -19,7 +19,7 @@ package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
 import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
 import uk.gov.hmrc.cdsrc.pages.individual.mrn.{Mrn_SupportingEvidenceScanProgressPage, Mrn_SupportingEvidenceUploadSupportingEvidencePage}
-import uk.gov.hmrc.cdsrc.pages.scheduled.mrn.Scheduled_ScheduledDocumentUploadUploadPage
+import uk.gov.hmrc.cdsrc.pages.scheduled.mrn.{Scheduled_ScheduledDocumentUploadProgressPage, Scheduled_ScheduledDocumentUploadUploadPage}
 
 class CDSRStepDef extends BaseStepDef {
 
@@ -27,6 +27,7 @@ class CDSRStepDef extends BaseStepDef {
     page match {
       case "Entry_Supporting Evidence Scan Progress Page" => Entry_SupportingEvidenceScanProgressPage.continuouslyClickContinue()
       case "Mrn_Supporting Evidence Scan Progress Page" => Mrn_SupportingEvidenceScanProgressPage.continuouslyClickContinue()
+      case "Scheduled_Scheduled Document Upload Progress Page" => Scheduled_ScheduledDocumentUploadProgressPage.continuouslyClickContinue()
     }
   }
 
