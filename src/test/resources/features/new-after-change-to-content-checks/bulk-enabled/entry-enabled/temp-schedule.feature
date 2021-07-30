@@ -33,9 +33,6 @@ Feature: C285 scheduled
     And I click continue on "Scheduled_Scheduled Document Upload Review Page"
     Then I am presented with the "Scheduled_Who Is The Declarant Page"
 
-
-
-
   @test
   Scenario: test temp pages - wrong entry mrn - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
