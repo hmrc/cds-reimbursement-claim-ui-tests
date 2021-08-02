@@ -1,14 +1,14 @@
-@Regression @Mrn @new
+@Regression @Scheduled
 
-Feature: C285 - Entry Number - importer-person
+Feature: MRN Northern Ireland
 
   Background:
     Given the "Bulk Claim" feature is "disabled"
     Given the "Entry Number" feature is "disabled"
-    Given the "Northern Ireland" feature is "disabled"
+    Given the "Northern Ireland" feature is "enabled"
 
   @test @a11y @ZAP
-  Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
+  Scenario: User is a CDS Trader - happy path (mrn ni)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -32,7 +32,10 @@ Feature: C285 - Entry Number - importer-person
     And I click continue on "Mrn_Enter Your Details As Registered With CDS Page"
     Then I am presented with the "Mrn_Enter Your Contact Details Page"
     And I click continue on "Mrn_Enter Your Contact Details Page"
-    Then I am presented with the "Mrn_Choose Basis For Claim Page"
+    Then I am presented with the "Mrn_Claim Northern Ireland Page"
+    And I select radio button "yes" on "Mrn_Claim Northern Ireland Page"
+    And I click continue on "Mrn_Claim Northern Ireland Page"
+    Then I am presented with the "Mrn_Choose Basis For Claim Page" and content "ni"
     When I select radio button "Duplicate MRN" on "Mrn_Choose Basis For Claim Page"
     And I click continue on "Mrn_Choose Basis For Claim Page"
     Then I am presented with the "Mrn_Enter Duplicate Movement Reference Number Page"
@@ -75,26 +78,3 @@ Feature: C285 - Entry Number - importer-person
     Then I am presented with the "Mrn_Check Answers Accept Send Page"
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
-
-  @test
-  Scenario: test temp pages - wrong entry mrn - entry number disabled
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page" and content "GB000000000000001,TestUser"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Enter Movement Reference Number Page" and content "bulk-disabled,entry-disabled"
-    When I enter "10AAAAAAAAAAAAAAA1" on "Enter Movement Reference Number Page"
-    And I click continue on "Enter Movement Reference Number Page"
-    Then I am presented with the "Mrn_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
-    And I select radio button "no" on "Mrn_Check Declaration Details Page"
-    And I click continue on "Mrn_Check Declaration Details Page"
-    Then I am presented with the "Enter Movement Reference Number Page" and content "bulk-disabled,entry-disabled"
-    When I enter "10AAAAAAAAAAAAAAA1" on "Enter Movement Reference Number Page"
-    And I click continue on "Enter Movement Reference Number Page"
-    Then I am presented with the "Mrn_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
-    And I select radio button "yes" on "Mrn_Check Declaration Details Page"
-    And I click continue on "Mrn_Check Declaration Details Page"
-    Then I am presented with the "Mrn_Who Is The Declarant Page"

@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Mrn_ClaimNorthernIrelandPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/claim-northern-ireland"
-  override val title: String = "Were your commodities (goods) moved or imported into Northern Ireland?"
+  override val title: String = "Were your commodities (goods) imported or moved through Northern Ireland?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Were your commodities (goods) moved or imported into Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Were your commodities (goods) moved or imported into Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Were your commodities (goods) moved or imported into Northern Ireland?")
+  override def expectedPageHeader: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland?")
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
