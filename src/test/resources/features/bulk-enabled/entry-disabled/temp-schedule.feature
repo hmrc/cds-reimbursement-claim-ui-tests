@@ -7,7 +7,7 @@ Feature: C285 scheduled
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP
+  @test
   Scenario: test temp pages - entry number disabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -20,6 +20,23 @@ Feature: C285 scheduled
     When I select radio button "schedule" on "Select Number Of Claims Page"
     And I click continue on "Select Number Of Claims Page"
     Then I am presented with the "Scheduled_Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA1" on "Scheduled_Enter Movement Reference Number Page"
+    And I click continue on "Scheduled_Enter Movement Reference Number Page"
+    Then I am presented with the "Scheduled_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
+    And I select radio button "yes" on "Scheduled_Check Declaration Details Page"
+    And I click continue on "Scheduled_Check Declaration Details Page"
+    Then I am presented with the "Scheduled_Scheduled Document Upload Upload Page"
+    When I upload a "image.jpg" file on "Scheduled_Scheduled Document Upload Upload Page"
+    And I click continue on "Scheduled_Scheduled Document Upload Upload Page"
+    And I click continue if I'm on "Scheduled_Scheduled Document Upload Progress Page"
+    Then I am presented with the "Scheduled_Scheduled Document Upload Review Page"
+    And I click continue on "Scheduled_Scheduled Document Upload Review Page"
+    Then I am presented with the "Scheduled_Who Is The Declarant Page"
+    When I select radio button "0" on "Scheduled_Who Is The Declarant Page"
+    And I click continue on "Scheduled_Who Is The Declarant Page"
+    Then I am presented with the "Scheduled_Claimant Details Page"
+    And I click continue on "Scheduled_Claimant Details Page"
+    Then I am presented with the "Scheduled_Enter Your Details As Registered With CDS Page"
 
   @test
   Scenario: test temp pages - wrong entry mrn - entry number disabled
@@ -45,3 +62,28 @@ Feature: C285 scheduled
     Then I am presented with the "Scheduled_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
     And I select radio button "yes" on "Scheduled_Check Declaration Details Page"
     And I click continue on "Scheduled_Check Declaration Details Page"
+
+  @test @a11y @ZAP
+  Scenario: test temp pages - test file upload size and format fail pages
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page" and content "GB000000000000001,TestUser"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Number Of Claims Page"
+    When I select radio button "schedule" on "Select Number Of Claims Page"
+    And I click continue on "Select Number Of Claims Page"
+    Then I am presented with the "Scheduled_Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA1" on "Scheduled_Enter Movement Reference Number Page"
+    And I click continue on "Scheduled_Enter Movement Reference Number Page"
+    Then I am presented with the "Scheduled_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
+    And I select radio button "yes" on "Scheduled_Check Declaration Details Page"
+    And I click continue on "Scheduled_Check Declaration Details Page"
+    Then I am presented with the "Scheduled_Scheduled Document Upload Upload Page"
+    # I upload a file that is too big
+    When I upload a "image-big.jpg" file on "Scheduled_Scheduled Document Upload Upload Page"
+    And I click continue on "Scheduled_Scheduled Document Upload Upload Page"
+    And I click continue if I'm on "Scheduled_Scheduled Document Upload Progress Page"
+    Then I am presented with the "Scheduled_Scheduled Document Upload Size Fail Page"

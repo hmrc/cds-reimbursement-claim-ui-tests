@@ -4,7 +4,7 @@ Feature: Bulk scheduled
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
-    Given the "Entry Number" feature is "enabled"
+    Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
 
   @test

@@ -1,4 +1,4 @@
-@Regression @Bulk
+@Bulk
 
 Feature: C285 Bulk
 
@@ -7,7 +7,6 @@ Feature: C285 Bulk
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
   Scenario: test temp pages - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -79,7 +78,6 @@ Feature: C285 Bulk
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
-  @test
   Scenario: test temp pages - wrong entry mrn - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
