@@ -1,5 +1,3 @@
-@Regression @Entry @new
-
 Feature: C285 - Entry Number - importer-person
 
   Background:
@@ -7,7 +5,6 @@ Feature: C285 - Entry Number - importer-person
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (entry number) - duplicate Entry Number
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
