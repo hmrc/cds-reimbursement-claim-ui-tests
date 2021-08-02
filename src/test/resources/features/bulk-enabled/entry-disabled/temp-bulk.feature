@@ -1,4 +1,4 @@
-@Regression @Bulk @new
+@Regression @Bulk
 
 Feature: C285 Bulk
 
