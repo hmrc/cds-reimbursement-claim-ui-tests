@@ -7,7 +7,7 @@ Feature: C285 scheduled
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
+  @test @1
   Scenario: test temp pages - entry number disabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -35,6 +35,7 @@ Feature: C285 scheduled
     When I select radio button "0" on "Scheduled_Who Is The Declarant Page"
     And I click continue on "Scheduled_Who Is The Declarant Page"
     Then I am presented with the "Scheduled_Claimant Details Page"
+    When I select radio button "yes" on "Scheduled_Claimant Details Page"
     And I click continue on "Scheduled_Claimant Details Page"
     Then I am presented with the "Scheduled_Enter Your Details As Registered With CDS Page"
 
