@@ -8,7 +8,7 @@ Feature: C285 scheduled
     Given the "Northern Ireland" feature is "disabled"
 
   @test
-  Scenario: test temp pages - entry number disabled
+  Scenario: test temp pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -40,7 +40,7 @@ Feature: C285 scheduled
     Then I am presented with the "Scheduled_Enter Your Details As Registered With CDS Page"
 
   @test
-  Scenario: test temp pages - wrong entry mrn - entry number disabled
+  Scenario: test temp pages - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
