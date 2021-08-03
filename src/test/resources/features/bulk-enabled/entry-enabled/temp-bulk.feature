@@ -1,13 +1,12 @@
-@Regression @Bulk
+@Bulk
 
-Feature: C285 Bulk
+Feature: Bulk (bulk enabled, entry enabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
   Scenario: test temp pages - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -29,6 +28,7 @@ Feature: C285 Bulk
     When I select radio button "0" on "Bulk_Who Is The Declarant Page"
     And I click continue on "Bulk_Who Is The Declarant Page"
     Then I am presented with the "Bulk_Claimant Details Page"
+    When I select radio button "yes" on "Bulk_Claimant Details Page"
     And I click continue on "Bulk_Claimant Details Page"
     Then I am presented with the "Mrn_Enter Your Details As Registered With CDS Page"
     And I select radio button "yes" on "Mrn_Enter Your Details As Registered With CDS Page"
@@ -79,7 +79,6 @@ Feature: C285 Bulk
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
-  @test
   Scenario: test temp pages - wrong entry mrn - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

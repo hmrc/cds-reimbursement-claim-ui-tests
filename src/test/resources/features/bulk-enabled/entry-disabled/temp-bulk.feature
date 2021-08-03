@@ -1,6 +1,6 @@
 @Regression @Bulk
 
-Feature: C285 Bulk
+Feature: Bulk (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
@@ -8,7 +8,7 @@ Feature: C285 Bulk
     Given the "Northern Ireland" feature is "disabled"
 
   @test @a11y @ZAP
-  Scenario: test temp pages - entry number disabled
+  Scenario: test temp pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -20,9 +20,68 @@ Feature: C285 Bulk
     When I select radio button "bulk" on "Select Number Of Claims Page"
     And I click continue on "Select Number Of Claims Page"
     Then I am presented with the "Bulk_Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA1" on "Bulk_Enter Movement Reference Number Page"
+    And I click continue on "Bulk_Enter Movement Reference Number Page"
+    Then I am presented with the "Bulk_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA1"
+    And I select radio button "yes" on "Bulk_Check Declaration Details Page"
+    And I click continue on "Bulk_Check Declaration Details Page"
+    Then I am presented with the "Bulk_Who Is The Declarant Page"
+    When I select radio button "0" on "Bulk_Who Is The Declarant Page"
+    And I click continue on "Bulk_Who Is The Declarant Page"
+    Then I am presented with the "Bulk_Claimant Details Page"
+    When I select radio button "yes" on "Bulk_Claimant Details Page"
+    And I click continue on "Bulk_Claimant Details Page"
+    Then I am presented with the "Mrn_Enter Your Details As Registered With CDS Page"
+    And I select radio button "yes" on "Mrn_Enter Your Details As Registered With CDS Page"
+    And I click continue on "Mrn_Enter Your Details As Registered With CDS Page"
+    Then I am presented with the "Mrn_Enter Your Contact Details Page"
+    And I click continue on "Mrn_Enter Your Contact Details Page"
+    Then I am presented with the "Bulk_Choose Basis For Claim Page"
+    When I select radio button "Duplicate MRN" on "Bulk_Choose Basis For Claim Page"
+    And I click continue on "Bulk_Choose Basis For Claim Page"
+    Then I am presented with the "Bulk_Enter Duplicate Movement Reference Number Page"
+    When I enter "20AAAAAAAAAAAAAAA1" on "Bulk_Enter Duplicate Movement Reference Number Page"
+    And I click continue on "Bulk_Enter Duplicate Movement Reference Number Page"
+    Then I am presented with the "Bulk_Check Duplicate Declaration Details Page" and content "20AAAAAAAAAAAAAAA1"
+    And I select radio button "yes" on "Bulk_Check Duplicate Declaration Details Page"
+    And I click continue on "Bulk_Check Duplicate Declaration Details Page"
+    Then I am presented with the "Bulk_Enter Commodity Details Page"
+    When I enter "under 500 characters" on "Bulk_Enter Commodity Details Page"
+    And I click continue on "Bulk_Enter Commodity Details Page"
+    Then I am presented with the "Mrn_Select Duties Page"
+    When I select "A80,A95,A90,A85" on "Mrn_Select Duties Page"
+    And I click continue on "Mrn_Select Duties Page"
+    Then I am presented with the "Mrn_Enter Claim Page" "A80 - Definitive Anti-Dumping Duty" and content "£218.00"
+    When I enter "10" on "Mrn_Enter Claim Page"
+    And I click continue on "Mrn_Enter Claim Page"
+    Then I am presented with the "Mrn_Enter Claim Page" "A95 - Provisional Countervailing Duty" and content "£211.00"
+    When I enter "10" on "Mrn_Enter Claim Page"
+    And I click continue on "Mrn_Enter Claim Page"
+    Then I am presented with the "Mrn_Enter Claim Page" "A90 - Definitive Countervailing Duty" and content "£228.00"
+    When I enter "10" on "Mrn_Enter Claim Page"
+    And I click continue on "Mrn_Enter Claim Page"
+    Then I am presented with the "Mrn_Enter Claim Page" "A85 - Provisional Anti-Dumping Duty" and content "£171.00"
+    When I enter "10" on "Mrn_Enter Claim Page"
+    And I click continue on "Mrn_Enter Claim Page"
+    Then I am presented with the "Mrn_Check Claim Page"
+    And I select radio button "yes" on "Mrn_Check Claim Page"
+    When I click continue on "Mrn_Check Claim Page"
+    Then I am presented with the "Mrn_Check These Bank Details Are Correct Page"
+    When I click continue on "Mrn_Check These Bank Details Are Correct Page"
+    Then I am presented with the "Mrn_Supporting Evidence Upload Supporting Evidence Page"
+    When I upload a "document.pdf" file on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Mrn_Supporting Evidence Scan Progress Page"
+    When I select dropdown value "Commercial Invoice" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
+    And I click continue on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
+    Then I am presented with the "Mrn_Supporting Evidence Check Your Answers Page"
+    When I click continue on "Mrn_Supporting Evidence Check Your Answers Page"
+    Then I am presented with the "Mrn_Check Answers Accept Send Page"
+    And I click continue on "Mrn_Check Answers Accept Send Page"
+    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
   @test
-  Scenario: test temp pages - wrong entry mrn - entry number disabled
+  Scenario: wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -46,3 +105,4 @@ Feature: C285 Bulk
     And I select radio button "yes" on "Bulk_Check Declaration Details Page"
     And I click continue on "Bulk_Check Declaration Details Page"
     Then I am presented with the "Bulk_Who Is The Declarant Page"
+

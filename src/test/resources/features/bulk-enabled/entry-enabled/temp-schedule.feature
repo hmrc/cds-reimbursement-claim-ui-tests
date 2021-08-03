@@ -1,13 +1,12 @@
-@Regression @Scheduled
+@Scheduled
 
-Feature: C285 scheduled
+Feature: Scheduled (bulk enabled, entry enabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
   Scenario: test temp pages - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -33,7 +32,6 @@ Feature: C285 scheduled
     And I click continue on "Scheduled_Scheduled Document Upload Review Page"
     Then I am presented with the "Scheduled_Who Is The Declarant Page"
 
-  @test
   Scenario: test temp pages - wrong entry mrn - entry number enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -58,7 +56,6 @@ Feature: C285 scheduled
     And I select radio button "yes" on "Scheduled_Check Declaration Details Page"
     And I click continue on "Scheduled_Check Declaration Details Page"
 
-  @test
   Scenario: test temp pages - test file upload size and format fail pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
