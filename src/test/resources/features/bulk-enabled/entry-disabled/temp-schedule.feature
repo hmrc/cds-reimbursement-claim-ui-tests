@@ -7,7 +7,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
+  @test @a11y @ZAP
   Scenario: test temp pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -64,7 +64,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     And I select radio button "yes" on "Scheduled_Check Declaration Details Page"
     And I click continue on "Scheduled_Check Declaration Details Page"
 
-  @test @a11y @ZAP
+  @test
   Scenario: test temp pages - test file upload size and format fail pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
