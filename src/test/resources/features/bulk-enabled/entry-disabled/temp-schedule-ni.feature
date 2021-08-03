@@ -8,7 +8,7 @@ Feature: Bulk scheduled
     Given the "Northern Ireland" feature is "enabled"
 
   @test
-  Scenario: test temp Ni pages - NI enabled
+  Scenario: test temp NI pages - NI enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000005" on "Auth Login Stub Page"
