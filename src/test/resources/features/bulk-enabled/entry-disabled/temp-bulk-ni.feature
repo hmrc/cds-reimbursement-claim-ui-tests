@@ -1,6 +1,6 @@
-@Regression @Scheduled
+@Regression @Bulk
 
-Feature: Bulk scheduled
+Feature: Bulk NI (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

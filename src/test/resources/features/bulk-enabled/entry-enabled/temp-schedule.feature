@@ -1,6 +1,6 @@
 @Scheduled
 
-Feature: C285 scheduled
+Feature: Scheduled (bulk enabled, entry enabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

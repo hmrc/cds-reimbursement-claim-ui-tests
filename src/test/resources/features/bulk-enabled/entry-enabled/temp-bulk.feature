@@ -1,6 +1,6 @@
 @Bulk
 
-Feature: C285 Bulk
+Feature: Bulk (bulk enabled, entry enabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

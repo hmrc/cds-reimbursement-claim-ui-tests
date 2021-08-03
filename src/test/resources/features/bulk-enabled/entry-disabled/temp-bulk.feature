@@ -1,6 +1,6 @@
 @Regression @Bulk
 
-Feature: C285 Bulk
+Feature: Bulk (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

@@ -1,6 +1,6 @@
-@Regression @Scheduled @new
+@Regression @Scheduled
 
-Feature: C285 scheduled
+Feature: Scheduled (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

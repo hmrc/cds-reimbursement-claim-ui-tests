@@ -1,6 +1,6 @@
-@Regression @Mrn @new
+@Regression @Mrn
 
-Feature: C285 - Entry Number - importer-person
+Feature: MRN (bulk disabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "disabled"

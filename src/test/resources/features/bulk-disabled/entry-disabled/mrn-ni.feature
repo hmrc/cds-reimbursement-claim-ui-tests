@@ -1,6 +1,6 @@
 @Regression @Mrn
 
-Feature: MRN Northern Ireland
+Feature: MRN Northern Ireland (bulk disabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "disabled"
