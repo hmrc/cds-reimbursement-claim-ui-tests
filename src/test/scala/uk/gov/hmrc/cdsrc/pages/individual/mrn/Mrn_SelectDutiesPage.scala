@@ -35,6 +35,15 @@ object Mrn_SelectDutiesPage extends BasePage {
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the duties that have been paid in the import declaration.\nYou can select any of the paid duties.")
     content match {
+      case "10AAAAAAAAAAAAAAA3" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("A80 - Definitive Anti-Dumping Duty")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("421 - Made-wine (sparkling), exceeding 8.5% vol. but not exceeding 15% vol.")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("623 - Smoking tobacco – other")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(4) > label")).getText should equal("99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain")
+      case "10AAAAAAAAAAAAAAA3 - excise" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("421 - Made-wine (sparkling), exceeding 8.5% vol. but not exceeding 15% vol.")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("623 - Smoking tobacco – other")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain")
       case "50AAAAAAAAAAAAAAA1" =>
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("A20 - Additional Duty")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("A35 - Provisional Anti-Dumping Duty")
