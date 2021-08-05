@@ -37,7 +37,6 @@ object Mrn_ChooseBasisForClaimPage extends BasePage {
 
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This will help us to understand why you are making the claim so we can review and validate it.")
-
     driver.findElement(By.cssSelector("#main-content > div > div > details > summary > span")).getText should equal("Examples of basis of claim")
     driver.findElement(By.cssSelector("#main-content > div > div > details > summary > span")).click()
     driver.findElement(By.cssSelector("#main-content > div > div > details > div > ul > li:nth-child(1)")).getText should equal("Duplicate MRN: A claim if a duplicate MRN has been made and a trader overpaid duties")
@@ -56,7 +55,7 @@ object Mrn_ChooseBasisForClaimPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > details > div > ul > li:nth-child(14)")).getText should equal("Miscellaneous: For any other reason not detailed in this list")
 
     content match {
-      case "ni" | "northern-ireland" =>
+      case "ni" =>
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Duplicate MRN")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Duty Suspension")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("End Use")
@@ -72,6 +71,23 @@ object Mrn_ChooseBasisForClaimPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(13) > label")).getText should equal("Proof of Return/Refund Given")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(14) > label")).getText should equal("Incorrect Additional Information code (excluding NIAID) - Northern Ireland claims only")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(15) > label")).getText should equal("Miscellaneous")
+      case "excise" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Duplicate MRN")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Duty Suspension")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("End Use")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(4) > label")).getText should equal("Incorrect Commodity Code")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(5) > label")).getText should equal("Incorrect CPC")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(6) > label")).getText should equal("Incorrect Value")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(7) > label")).getText should equal("Incorrect EORI & Deferment Acc. Num.")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(8) > label")).getText should equal("IP")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(9) > label")).getText should equal("OPR")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(10) > label")).getText should equal("Personal Effects")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(11) > label")).getText should equal("Preference")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(12) > label")).getText should equal("RGR")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(13) > label")).getText should equal("Proof of Return/Refund Given")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(14) > label")).getText should equal("Incorrect excise value - Northern Ireland claims only")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(15) > label")).getText should equal("Incorrect Additional Information code (excluding NIAID) - Northern Ireland claims only")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(16) > label")).getText should equal("Miscellaneous")
       case _ =>
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Duplicate MRN")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Duty Suspension")
