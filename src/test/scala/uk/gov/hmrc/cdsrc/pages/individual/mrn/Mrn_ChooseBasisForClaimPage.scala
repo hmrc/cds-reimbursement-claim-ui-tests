@@ -71,7 +71,7 @@ object Mrn_ChooseBasisForClaimPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(13) > label")).getText should equal("Proof of Return/Refund Given")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(14) > label")).getText should equal("Incorrect Additional Information code (excluding NIAID) - Northern Ireland claims only")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(15) > label")).getText should equal("Miscellaneous")
-      case "excise" =>
+      case "10AAAAAAAAAAAAAAA3" =>
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Duplicate MRN")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Duty Suspension")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("End Use")
