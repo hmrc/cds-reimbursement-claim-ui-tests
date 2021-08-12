@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Mrn_CheckTheseBankDetailsAreCorrectPage extends BasePage {
+object Bulk_CheckTheseBankDetailsAreCorrectPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-these-bank-details-are-correct"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/check-these-bank-details-are-correct"
   override val title = "Check these bank details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these bank details are correct - Claim for reimbursement of import duties - GOV.UK")
