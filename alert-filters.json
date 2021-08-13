@@ -10,7 +10,7 @@
     {
       "contextId": 1,
       "reason": "This issue is related to auth login",
-      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+      "url": "http://localhost:9949/auth-login-stub/gg-sign-in.*",
       "ruleId": 10017,
       "newLevel": 0
     },
