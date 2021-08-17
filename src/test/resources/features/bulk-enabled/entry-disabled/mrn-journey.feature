@@ -223,6 +223,7 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Mrn_Who Is The Declarant Page"
     When I select radio button "0" on "Mrn_Who Is The Declarant Page"
     And I click continue on "Mrn_Who Is The Declarant Page"
+
     Then I am presented with the "Mrn_Claimant Details Page" and content "10AAAAAAAAAAAAAAA6"
     When I select radio button "yes" on "Mrn_Claimant Details Page"
     And I click continue on "Mrn_Claimant Details Page"
