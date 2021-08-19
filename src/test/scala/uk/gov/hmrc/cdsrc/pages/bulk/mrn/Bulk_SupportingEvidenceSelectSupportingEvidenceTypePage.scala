@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.asScalaBufferConverter
 
-object Mrn_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
+object Bulk_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/select-supporting-evidence-type/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/supporting-evidence/select-supporting-evidence-type/..."
   override val title = "Select the description of the file you just uploaded"
   override val pageShouldHaveBackButton = false
 

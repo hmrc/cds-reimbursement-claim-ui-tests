@@ -14,17 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 
 import org.openqa.selenium.By
-import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.individual.entry.Entry_SupportingEvidenceUploadSupportingEvidencePage.{driver, url}
 
-object Mrn_SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
+object Bulk_SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/upload-supporting-evidence"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/supporting-evidence/upload-supporting-evidence"
   override val title = "Upload files to support your claim"
   override val pageShouldHaveBackButton = false
 
