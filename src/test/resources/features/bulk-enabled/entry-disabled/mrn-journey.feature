@@ -192,7 +192,7 @@ Feature: MRN (bulk enabled, entry disabled)
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
-  @test @ALF @3
+  @test @ALF
   Scenario: happy path (mrn) - confirm ALF data works in journey
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
