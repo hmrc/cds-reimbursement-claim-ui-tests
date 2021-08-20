@@ -31,11 +31,6 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Mrn_Claimant Details Page"
     When I select radio button "yes" on "Mrn_Claimant Details Page"
     And I click continue on "Mrn_Claimant Details Page"
-    Then I am presented with the "Mrn_Enter Your Details As Registered With CDS Page"
-    And I select radio button "yes" on "Mrn_Enter Your Details As Registered With CDS Page"
-    And I click continue on "Mrn_Enter Your Details As Registered With CDS Page"
-    Then I am presented with the "Mrn_Enter Your Contact Details Page"
-    And I click continue on "Mrn_Enter Your Contact Details Page"
     Then I am presented with the "Mrn_Choose Basis For Claim Page"
     When I select radio button "Duplicate MRN" on "Mrn_Choose Basis For Claim Page"
     And I click continue on "Mrn_Choose Basis For Claim Page"
@@ -147,11 +142,6 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Mrn_Claimant Details Page"
     When I select radio button "yes" on "Mrn_Claimant Details Page"
     And I click continue on "Mrn_Claimant Details Page"
-    Then I am presented with the "Mrn_Enter Your Details As Registered With CDS Page"
-    And I select radio button "yes" on "Mrn_Enter Your Details As Registered With CDS Page"
-    And I click continue on "Mrn_Enter Your Details As Registered With CDS Page"
-    Then I am presented with the "Mrn_Enter Your Contact Details Page"
-    And I click continue on "Mrn_Enter Your Contact Details Page"
     Then I am presented with the "Mrn_Choose Basis For Claim Page"
     When I select radio button "Duplicate MRN" on "Mrn_Choose Basis For Claim Page"
     And I click continue on "Mrn_Choose Basis For Claim Page"
@@ -202,7 +192,7 @@ Feature: MRN (bulk enabled, entry disabled)
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
-  @test @ALF
+  @test @ALF @3
   Scenario: happy path (mrn) - confirm ALF data works in journey
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -223,7 +213,6 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Mrn_Who Is The Declarant Page"
     When I select radio button "0" on "Mrn_Who Is The Declarant Page"
     And I click continue on "Mrn_Who Is The Declarant Page"
-
     Then I am presented with the "Mrn_Claimant Details Page" and content "10AAAAAAAAAAAAAAA6"
     When I select radio button "yes" on "Mrn_Claimant Details Page"
     And I click continue on "Mrn_Claimant Details Page"

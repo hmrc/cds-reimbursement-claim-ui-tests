@@ -31,11 +31,6 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Bulk_Claimant Details Page"
     When I select radio button "yes" on "Bulk_Claimant Details Page"
     And I click continue on "Bulk_Claimant Details Page"
-    Then I am presented with the "Mrn_Enter Your Details As Registered With CDS Page"
-    And I select radio button "yes" on "Mrn_Enter Your Details As Registered With CDS Page"
-    And I click continue on "Mrn_Enter Your Details As Registered With CDS Page"
-    Then I am presented with the "Mrn_Enter Your Contact Details Page"
-    And I click continue on "Mrn_Enter Your Contact Details Page"
     Then I am presented with the "Bulk_Choose Basis For Claim Page"
     When I select radio button "Duplicate MRN" on "Bulk_Choose Basis For Claim Page"
     And I click continue on "Bulk_Choose Basis For Claim Page"
@@ -106,7 +101,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     And I click continue on "Bulk_Check Declaration Details Page"
     Then I am presented with the "Bulk_Who Is The Declarant Page"
 
-  @test @ALF
+  @test @ALF @2
   Scenario: test temp pages - confirm ALF data works in journey
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
