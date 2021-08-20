@@ -37,7 +37,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Claimant Details Page"
     When I select radio button "yes" on "Scheduled_Claimant Details Page"
     And I click continue on "Scheduled_Claimant Details Page"
-    Then I am presented with the "Scheduled_Enter Your Details As Registered With CDS Page"
+    Then I am presented with the "Scheduled_Choose Basis For Claim Page"
 
   @test
   Scenario: test temp pages - wrong mrn
