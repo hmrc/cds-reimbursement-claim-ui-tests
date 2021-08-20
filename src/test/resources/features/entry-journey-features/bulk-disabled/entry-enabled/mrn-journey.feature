@@ -7,7 +7,6 @@ Feature: C285 - Entry Number - importer-person
     Given the "Entry Number" feature is "enabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP
   Scenario: User is a CDS Trader - happy path (mrn) - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -69,7 +68,7 @@ Feature: C285 - Entry Number - importer-person
     When I upload a "document.pdf" file on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Mrn_Supporting Evidence Scan Progress Page"
-    When I select dropdown value "Commercial Invoice" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
+    When I select radio button "Commercial Invoice" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Mrn_Supporting Evidence Check Your Answers Page"
     When I click continue on "Mrn_Supporting Evidence Check Your Answers Page"

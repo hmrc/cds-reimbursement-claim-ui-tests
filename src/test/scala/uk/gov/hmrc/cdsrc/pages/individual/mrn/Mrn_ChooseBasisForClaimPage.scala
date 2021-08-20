@@ -105,7 +105,6 @@ object Mrn_ChooseBasisForClaimPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(14) > label")).getText should equal("Miscellaneous")
     }
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Save and continue")
   }
 
   override def dropdownSelect(selection: String): Unit = {
