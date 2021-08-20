@@ -46,9 +46,9 @@ object Mrn_ClaimantDetailsDetailsContactPage extends BasePage {
     val emailAddress: String = "john@smith.com"
     val telephone: String = "01234567890"
 
-    enterText("enter-or-change-contact-details.contact-name", fullName)
-    enterText("enter-or-change-contact-details.contact-email", emailAddress)
-    enterText("enter-or-change-contact-details.contact-phone-number", telephone)
+    enterText("enter-contact-details.contact-name", fullName)
+    enterText("enter-contact-details.contact-email", emailAddress)
+    enterText("enter-contact-details.contact-phone-number", telephone)
   }
 
 }
