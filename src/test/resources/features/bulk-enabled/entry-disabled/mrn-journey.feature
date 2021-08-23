@@ -120,7 +120,7 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Enter Movement Reference Number Page" error page
 
   @test @a11y @ZAP
-  Scenario: happy path (mrn) - duplicate mrn
+  Scenario: happy path (mrn) - duplicate mrn 2
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
