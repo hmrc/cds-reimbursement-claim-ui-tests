@@ -180,6 +180,8 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Mrn_Enter Bank Account Details Page"
     When I enter "" on "Mrn_Enter Bank Account Details Page"
     And I click continue on "Mrn_Enter Bank Account Details Page"
+    Then I am presented with the "Mrn_Check These Bank Details Are Correct Page" and content "changed"
+    And I click continue on "Mrn_Check These Bank Details Are Correct Page"
     Then I am presented with the "Mrn_Supporting Evidence Upload Supporting Evidence Page"
     When I upload a "document.pdf" file on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
