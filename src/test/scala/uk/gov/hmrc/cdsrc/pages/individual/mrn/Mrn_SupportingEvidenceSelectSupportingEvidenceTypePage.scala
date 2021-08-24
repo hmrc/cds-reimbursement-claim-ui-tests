@@ -17,12 +17,13 @@
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
 import org.openqa.selenium.By
+import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Mrn_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/select-supporting-evidence-type/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/select-supporting-evidence-type"
   override val title = "Select the description of the file you just uploaded"
   override val pageShouldHaveBackButton = false
 
@@ -31,6 +32,10 @@ object Mrn_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select the description of the file you just uploaded")
+
+  override def checkURL: Assertion = {
+    driver.getCurrentUrl should fullyMatch regex(url + ".*?").r
+  }
 
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("Choose a definition of the file from this list. This will help us to process your claim more efficiently.")

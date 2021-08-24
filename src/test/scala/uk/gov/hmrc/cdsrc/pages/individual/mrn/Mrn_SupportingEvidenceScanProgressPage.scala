@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
+import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -29,6 +30,10 @@ object Mrn_SupportingEvidenceScanProgressPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Wait a few seconds and then select ‘continue’ - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Wait a few seconds and then select ‘continue’")
+
+  override def checkURL: Assertion = {
+    driver.getCurrentUrl should fullyMatch regex(url + ".*?").r
+  }
 
   def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()

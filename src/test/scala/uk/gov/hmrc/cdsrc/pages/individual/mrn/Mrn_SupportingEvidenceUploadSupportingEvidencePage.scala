@@ -25,14 +25,14 @@ import uk.gov.hmrc.cdsrc.pages.individual.entry.Entry_SupportingEvidenceUploadSu
 object Mrn_SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/upload-supporting-evidence"
-  override val title = "Upload files to support your claim"
+  override val title = "Add documents to support your claim"
   override val pageShouldHaveBackButton = false
 
-  override def expectedPageErrorTitle: Option[String] = Some("Error: Upload files to support your claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Add documents to support your claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Upload files to support your claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Add documents to support your claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Upload files to support your claim")
+  override def expectedPageHeader: Option[String] = Some("Add documents to support your claim")
 
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("Upload supporting evidence you have received for the commodities you have imported. The documents can be up to a maximum of 10MB size per file. Valid file format: JPG, PNG, PDF.")
