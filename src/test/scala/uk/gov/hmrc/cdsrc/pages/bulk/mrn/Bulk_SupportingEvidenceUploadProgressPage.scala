@@ -30,11 +30,4 @@ object Bulk_SupportingEvidenceUploadProgressPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("We are checking your document")
 
-  def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (find(tagName("h1")).map(_.text).contains("We are checking your document")) {
-      clickContinueButton()
-    }
-  }
-
 }

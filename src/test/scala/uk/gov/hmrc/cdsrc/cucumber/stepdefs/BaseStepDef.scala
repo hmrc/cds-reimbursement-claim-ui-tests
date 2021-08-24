@@ -74,6 +74,14 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     go to PageObjectFinder.page(page)
   }
 
+  When("""I click continue if I'm on {string}""") { (page: String) =>
+    PageObjectFinder.page(page).continuouslyClickContinue()
+  }
+
+  When("""I upload a {string} file on {string}""") { (file: String, page: String) =>
+    PageObjectFinder.page(page).uploadDocument(file)
+  }
+
   Then("""I am presented with the {string}""") { page: String =>
     waitForPageHeader
     PageObjectFinder.page(page).checkURL

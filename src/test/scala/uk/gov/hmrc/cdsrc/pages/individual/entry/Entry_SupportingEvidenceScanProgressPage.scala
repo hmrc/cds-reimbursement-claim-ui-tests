@@ -30,11 +30,4 @@ object Entry_SupportingEvidenceScanProgressPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Wait a few seconds and then select ‘continue’")
 
-  def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (find(tagName("h1")).map(_.text).contains("We are checking your document")) {
-      clickContinueButton()
-    }
-  }
-
 }
