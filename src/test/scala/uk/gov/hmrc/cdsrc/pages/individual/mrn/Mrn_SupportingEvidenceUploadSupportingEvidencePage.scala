@@ -17,10 +17,8 @@
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
 import org.openqa.selenium.By
-import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.individual.entry.Entry_SupportingEvidenceUploadSupportingEvidencePage.{driver, url}
 
 object Mrn_SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
 
@@ -50,11 +48,6 @@ object Mrn_SupportingEvidenceUploadSupportingEvidencePage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > details > div > ul > li:nth-child(9)")).getText should equal("Other documents: If you have alternative supporting documents")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div.govuk-form-group > label")).getText should equal("Select document")
-  }
-
-  def uploadDocument(file: String): Unit = {
-    if (file != "")
-      enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
   }
 
   override def clickContinueButton(): Unit = {

@@ -35,11 +35,4 @@ object Mrn_SupportingEvidenceScanProgressPage extends BasePage {
     driver.getCurrentUrl should fullyMatch regex(url + ".*?").r
   }
 
-  def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (find(tagName("h1")).map(_.text).contains("We are checking your document")) {
-      clickContinueButton()
-    }
-  }
-
 }

@@ -43,12 +43,6 @@ object Scheduled_ScheduledDocumentUploadUploadPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > form > div.govuk-\\!-margin-bottom-9 > button")).getText should equal("Continue")
   }
 
-  def uploadDocument(file: String): Unit = {
-    if (file != "") {
-      enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
-    }
-  }
-
   override def clickContinueButton(): Unit = {
     click on cssSelector("#main-content > div > div > form > div.govuk-\\!-margin-bottom-9 > button")
   }

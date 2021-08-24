@@ -77,6 +77,18 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     }
   }
 
+  def uploadDocument(file: String): Unit = {
+    if (file != "")
+      enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+  }
+
+  def continuouslyClickContinue(): Unit = {
+    waitForPageToLoad()
+    while (find(tagName("h1")).map(_.text).contains("We are checking your document")) {
+      clickContinueButton()
+    }
+  }
+
   def checkPageHeader(content: String): Assertion = {
     fluentWait.until(ExpectedConditions.textToBe(By.cssSelector("h1"), expectedPageHeader.get))
     expectedPageHeaderList should contain(List(pageHeader.get))

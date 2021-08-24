@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.scheduled.mrn
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,12 +29,5 @@ object Scheduled_ScheduledDocumentUploadProgressPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("We are checking your document - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("We are checking your document")
-
-  def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (find(tagName("h1")).map(_.text).contains("We are checking your document")) {
-      clickContinueButton()
-    }
-  }
 
 }

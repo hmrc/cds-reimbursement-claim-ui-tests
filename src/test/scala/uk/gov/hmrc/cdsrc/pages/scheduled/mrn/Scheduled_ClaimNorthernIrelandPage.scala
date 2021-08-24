@@ -20,8 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-import scala.jdk.CollectionConverters.asScalaBufferConverter
-
 object Scheduled_ClaimNorthernIrelandPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/claim-northern-ireland"
