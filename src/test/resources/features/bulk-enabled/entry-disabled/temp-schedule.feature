@@ -7,7 +7,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP @1
+  @test @a11y @ZAP
   Scenario: test temp pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -40,9 +40,9 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Choose Basis For Claim Page"
     When I select radio button "OPR" on "Scheduled_Choose Basis For Claim Page"
     And I click continue on "Scheduled_Choose Basis For Claim Page"
-    Then I am presented with the "Scheduled_Choose Basis For Claim Page"
-    When I enter "under 500 characters" on "Scheduled_Choose Basis For Claim Page"
-    And I click continue on "Scheduled_Choose Basis For Claim Page"
+    Then I am presented with the "Scheduled_Enter Commodity Details Page"
+    When I enter "under 500 characters" on "Scheduled_Enter Commodity Details Page"
+    And I click continue on "Scheduled_Enter Commodity Details Page"
     Then I am presented with the "Mrn_Select Duties Page"
     When I select "A80,A95,A90,A85" on "Mrn_Select Duties Page"
     And I click continue on "Mrn_Select Duties Page"
@@ -73,10 +73,9 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Scheduled_Supporting Evidence Check Your Answers Page"
     And I click continue on "Scheduled_Supporting Evidence Check Your Answers Page"
-    Then I am presented with the "Scheduled_Supporting Answers Accept Send Page"
-    And I click continue on "Scheduled_Supporting Answers Accept Send Page"
-    Then I am presented with the "Scheduled_Supporting Submitted Page" and content "£40.00"
-
+    Then I am presented with the "Scheduled_Check Answers Accept Send Page"
+    And I click continue on "Scheduled_Check Answers Accept Send Page"
+    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
   @test
   Scenario: test temp pages - wrong mrn
