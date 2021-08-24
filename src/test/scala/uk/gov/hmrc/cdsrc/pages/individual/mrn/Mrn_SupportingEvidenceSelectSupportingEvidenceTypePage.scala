@@ -17,11 +17,8 @@
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-
-import scala.jdk.CollectionConverters.asScalaBufferConverter
 
 object Mrn_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
 
@@ -50,7 +47,20 @@ object Mrn_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
   }
 
   override def clickRadioButton(selection : String): Unit = {
-    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
+    //driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
+
+    selection match {
+      case "Commercial Invoice" => click on id("supporting-evidence.choose-document-type.document-type.d0")
+      case "Import and Export Declaration" => click on id("supporting-evidence.choose-document-type.document-type.d1")
+      case "Packing List" => click on id("supporting-evidence.choose-document-type.document-type.d3")
+      case "Air Waybill" => click on id("supporting-evidence.choose-document-type.document-type.d4")
+      case "Bill of Lading" => click on id("supporting-evidence.choose-document-type.document-type.d5")
+      case "Substitute Entry" => click on id("supporting-evidence.choose-document-type.document-type.d6")
+      case "Proof of Authority" => click on id("supporting-evidence.choose-document-type.document-type.d7")
+      case "Correspondence Trader" => click on id("supporting-evidence.choose-document-type.document-type.d8")
+      case "Other documents" => click on id("supporting-evidence.choose-document-type.document-type.d9")
+    }
+
   }
 
 }
