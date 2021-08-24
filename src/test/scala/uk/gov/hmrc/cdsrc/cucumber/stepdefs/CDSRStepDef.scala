@@ -20,7 +20,7 @@ import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
 import uk.gov.hmrc.cdsrc.pages.bulk.mrn.{Bulk_SupportingEvidenceUploadProgressPage, Bulk_SupportingEvidenceUploadSupportingEvidencePage}
 import uk.gov.hmrc.cdsrc.pages.individual.entry.{Entry_SupportingEvidenceScanProgressPage, Entry_SupportingEvidenceUploadSupportingEvidencePage}
 import uk.gov.hmrc.cdsrc.pages.individual.mrn.{Mrn_SupportingEvidenceScanProgressPage, Mrn_SupportingEvidenceUploadSupportingEvidencePage}
-import uk.gov.hmrc.cdsrc.pages.scheduled.mrn.{Scheduled_ScheduledDocumentUploadProgressPage, Scheduled_ScheduledDocumentUploadUploadPage}
+import uk.gov.hmrc.cdsrc.pages.scheduled.mrn.{Scheduled_ScheduledDocumentUploadProgressPage, Scheduled_ScheduledDocumentUploadUploadPage, Scheduled_SupportingEvidenceScanProgressPage, Scheduled_SupportingEvidenceUploadSupportingEvidencePage}
 
 class CDSRStepDef extends BaseStepDef {
 
@@ -29,6 +29,7 @@ class CDSRStepDef extends BaseStepDef {
       case "Entry_Supporting Evidence Scan Progress Page" => Entry_SupportingEvidenceScanProgressPage.continuouslyClickContinue()
       case "Mrn_Supporting Evidence Scan Progress Page" => Mrn_SupportingEvidenceScanProgressPage.continuouslyClickContinue()
       case "Scheduled_Scheduled Document Upload Progress Page" => Scheduled_ScheduledDocumentUploadProgressPage.continuouslyClickContinue()
+      case "Scheduled_Supporting Evidence Scan Progress Page" => Scheduled_SupportingEvidenceScanProgressPage.continuouslyClickContinue()
       case "Bulk_Supporting Evidence Upload Progress Page" => Bulk_SupportingEvidenceUploadProgressPage.continuouslyClickContinue()
     }
   }
@@ -39,6 +40,7 @@ class CDSRStepDef extends BaseStepDef {
       case "Entry_Supporting Evidence Upload Supporting Evidence Page" => Entry_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
       case "Mrn_Supporting Evidence Upload Supporting Evidence Page" => Mrn_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
       case "Scheduled_Scheduled Document Upload Upload Page" => Scheduled_ScheduledDocumentUploadUploadPage.uploadDocument(file)
+      case "Scheduled_Supporting Evidence Upload Supporting Evidence Page" => Scheduled_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
       case "Bulk_Supporting Evidence Upload Supporting Evidence Page" => Bulk_SupportingEvidenceUploadSupportingEvidencePage.uploadDocument(file)
     }
   }
