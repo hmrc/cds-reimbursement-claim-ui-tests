@@ -32,7 +32,7 @@ object Entry_SupportingEvidenceScanProgressPage extends BasePage {
 
   def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
-    while (find(tagName("h1")).map(_.text).contains("Wait a few seconds and then select ‘continue’")) {
+    while (find(tagName("h1")).map(_.text).contains("We are checking your document")) {
       clickContinueButton()
     }
   }
