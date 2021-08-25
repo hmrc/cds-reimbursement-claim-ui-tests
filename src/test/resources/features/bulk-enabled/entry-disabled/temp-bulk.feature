@@ -74,7 +74,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     And I click continue on "Bulk_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Bulk_Check Answers Accept Send Page"
     And I click continue on "Bulk_Check Answers Accept Send Page"
-    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
+    Then I am presented with the "Bulk_Claim Submitted Page" and content "£40.00"
 
   @test
   Scenario: wrong mrn
@@ -176,7 +176,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     And I click continue on "Bulk_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Bulk_Check Answers Accept Send Page"
     And I click continue on "Bulk_Check Answers Accept Send Page"
-    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
+    Then I am presented with the "Bulk_Claim Submitted Page" and content "£40.00"
 
   @testFail @ALF
   Scenario: test temp pages - confirm ALF data works in journey (no contact details)
@@ -248,4 +248,4 @@ Feature: Bulk (bulk enabled, entry disabled)
     When I click continue on "Bulk_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Bulk_Check Answers Accept Send Page"
     And I click continue on "Bulk_Check Answers Accept Send Page"
-    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
+    Then I am presented with the "Bulk_Claim Submitted Page" and content "£40.00"

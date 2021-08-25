@@ -73,7 +73,7 @@ Feature: Bulk (bulk enabled, entry enabled)
     And I click continue on "Mrn_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Mrn_Check Answers Accept Send Page"
     And I click continue on "Mrn_Check Answers Accept Send Page"
-    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
+    Then I am presented with the "Bulk_Claim Submitted Page" and content "£40.00"
 
   Scenario: test temp pages - wrong entry mrn - entry number enabled
     Given I navigate to the "Auth Login Stub Page"

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Mrn_ClaimSubmittedPage extends BasePage {
+object Bulk_ClaimSubmittedPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/claim-submitted"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/claim-submitted"
   override val title = "Claim submitted"
   override val pageShouldHaveBackButton = false
 
