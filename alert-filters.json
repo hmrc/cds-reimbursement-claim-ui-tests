@@ -5,14 +5,15 @@
       "reason": "This issue is related to assets-frontend which is outside scope.",
       "url": "http://localhost:9032/assets/3.16.0/javascripts/application.min.js",
       "ruleId": 10003,
-      "newLevel": 0
+      "urlIsRegex": "true",
+      "newLevel": -1
     },
     {
       "contextId": 1,
       "reason": "This issue is related to auth login",
       "url": "http://localhost:9949/auth-login-stub/gg-sign-in.*",
       "ruleId": 10017,
-      "newLevel": 0
+      "newLevel": -1
     },
     {
       "contextId": 1,
@@ -20,12 +21,26 @@
       "url": "http://localhost:9032/assets/.*/(javascripts|stylesheets)/.*.(js|css)",
       "ruleId": 10021,
       "urlIsRegex": "true",
-      "newLevel": 0
+      "newLevel": -1
     },
     {
       "contextId": 1,
       "reason": "This issue is related to up-scan which is outside scope.",
       "url": "http://localhost:7500/claim-for-reimbursement-of-import-duties/single/supporting-evidence/upload-supporting-evidence",
+      "ruleId": 10202,
+      "newLevel": -1
+    },
+    {
+      "contextId": 1,
+      "reason": "This issue is related to up-scan which is outside scope.",
+      "url": "http://localhost:7500/claim-for-reimbursement-of-import-duties/scheduled/scheduled-document-upload/upload",
+      "ruleId": 10202,
+      "newLevel": -1
+    },
+    {
+      "contextId": 1,
+      "reason": "This issue is related to up-scan which is outside scope.",
+      "url": "http://localhost:7500/claim-for-reimbursement-of-import-duties/bulk/supporting-evidence/upload-supporting-evidence",
       "ruleId": 10202,
       "newLevel": -1
     }
