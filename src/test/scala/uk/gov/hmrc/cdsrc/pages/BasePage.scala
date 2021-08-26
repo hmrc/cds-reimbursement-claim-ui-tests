@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
   val title: String = ""
-  val pageShouldHaveBackButton: Boolean = true
+  val pageShouldHaveBackButton: Boolean = true //"0 was not greater than 0" error requires this to be overriden with false
 
   /** Fluent Wait config * */
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
