@@ -75,7 +75,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     And I click continue on "Scheduled_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Scheduled_Check Answers Accept Send Page"
     And I click continue on "Scheduled_Check Answers Accept Send Page"
-    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
+    Then I am presented with the "Scheduled_Claim Submitted Page" and content "£40.00"
 
   @test
   Scenario: test temp pages - wrong mrn
