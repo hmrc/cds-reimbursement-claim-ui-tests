@@ -7,7 +7,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test
+  @test @1
   Scenario: test Accessibility page link works
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
