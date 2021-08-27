@@ -73,7 +73,7 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Mrn_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Mrn_Supporting Evidence Check Your Answers Page"
     And I click continue on "Mrn_Supporting Evidence Check Your Answers Page"
-    Then I am presented with the "Mrn_Check Answers Accept Send Page"
+    Then I am presented with the "Mrn_Check Answers Accept Send Page" and content "check content"
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
