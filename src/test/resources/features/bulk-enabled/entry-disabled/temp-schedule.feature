@@ -7,7 +7,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP @1
+  @test @a11y @ZAP
   Scenario: test temp pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -73,7 +73,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Scheduled_Supporting Evidence Check Your Answers Page"
     And I click continue on "Scheduled_Supporting Evidence Check Your Answers Page"
-    Then I am presented with the "Scheduled_Check Answers Accept Send Page"
+    Then I am presented with the "Scheduled_Check Answers Accept Send Page" and content "check content"
     And I click continue on "Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "Scheduled_Claim Submitted Page" and content "£40.00"
 
