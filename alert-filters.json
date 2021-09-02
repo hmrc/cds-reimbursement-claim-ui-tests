@@ -50,6 +50,13 @@
       "url": "http://localhost:7500/claim-for-reimbursement-of-import-duties/scheduled/supporting-evidence/upload-supporting-evidence",
       "ruleId": 10202,
       "newLevel": -1
+    },
+    {
+      "contextId": 1,
+      "reason": "These comments are in a library we do not control.",
+      "url": "http://localhost:7500/claim-for-reimbursement-of-import-duties/assets/lib.*",
+      "ruleId": 10027,
+      "newLevel": -1
     }
   ]
 }
