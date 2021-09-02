@@ -59,7 +59,7 @@ object Scheduled_CheckAnswersAcceptSendPage extends BasePage {
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(6)")).getText should equal("Claimant type")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div > dt")).getText should equal("Type of claimant")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nType of claimant")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(8)")).getText should equal("Claimant’s CDS details")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(1) > dt")).getText should equal("Full name")
