@@ -39,7 +39,7 @@ object Entry_EnterBankAccountDetailsPage extends BasePage {
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > div > div > label")).getText should equal("Is business account")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(4) > label")).getText should equal("Sort Code")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(4) > label")).getText should equal("Sort code")
     driver.findElement(By.cssSelector("#enter-bank-details\\.sort-code-hint")).getText should equal("Must be 6 digits long, for example 01 02 03")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(5) > label")).getText should equal("Account number")

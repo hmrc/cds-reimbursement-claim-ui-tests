@@ -38,18 +38,18 @@ object Entry_CheckClaimPage extends BasePage {
     content match {
       case "first box only" =>
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(3)")).getText should equal("UK Duty")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("Total reimbursement")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dd")).getText should equal("£1.00")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dt")).getText should equal("Customs Duty")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dd")).getText should equal("£1.00")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(7)")).getText should equal("Overall total")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(8) > div > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(8) > div > dt")).getText should equal("Total reimbursement")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(8) > div > dd")).getText should equal("£1.00")
 
       case "all" | _ =>
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(3)")).getText should equal("UK Duty")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dt")).getText should equal("Total reimbursement")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(1) > dd")).getText should equal("£28.00")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dt")).getText should equal("Value Added Tax")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(2) > dd")).getText should equal("£7.00")
@@ -67,7 +67,7 @@ object Entry_CheckClaimPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(4) > div:nth-child(8) > dd")).getText should equal("£1.00")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(5)")).getText should equal("EU Duty")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dt")).getText should equal("Total reimbursement")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd")).getText should equal("£77.00")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dt")).getText should equal("Value Added Tax")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd")).getText should equal("£14.00")
@@ -85,7 +85,7 @@ object Entry_CheckClaimPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(8) > dd")).getText should equal("£8.00")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(8)")).getText should equal("Overall total")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div > dt")).getText should equal("Total Reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div > dt")).getText should equal("Total reimbursement")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div > dd")).getText should equal("£105.00")
     }
 
