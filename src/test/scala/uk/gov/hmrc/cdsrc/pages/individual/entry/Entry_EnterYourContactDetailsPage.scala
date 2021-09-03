@@ -34,7 +34,7 @@ object Entry_EnterYourContactDetailsPage extends BasePage {
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the contact details if we need to get in touch about this claim.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Full Name")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Full name")
     driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > label")).getText should equal("Email address")
     driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(4) > label")).getText should equal("Phone number")
     driver.findElement(By.cssSelector("#enter-your-contact-details\\.contact-phone-number-hint")).getText should equal("For international numbers include the country code.")

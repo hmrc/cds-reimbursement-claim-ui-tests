@@ -35,7 +35,7 @@ object Scheduled_ClaimantDetailsPage extends BasePage {
   override def checkContent(content: String): Unit = {
 
     driver.findElement(By.cssSelector("#main-content > div > div > h2.govuk-heading-m.govuk-\\!-margin-bottom-6")).getText should equal("Details as registered with CDS")
-    driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Contact Details")
+    driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Contact details")
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the details we will use to contact you about your claim.")
 
     content match {
@@ -50,12 +50,12 @@ object Scheduled_ClaimantDetailsPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd > p:nth-child(2)")).getText should equal("Newcastle")
         driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd > p:nth-child(3)")).getText should equal("NE12 5BT")
 
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dt")).getText should equal("Contact Details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dt")).getText should equal("Contact details")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(1)")).getText should equal("Online Sales LTD")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(2)")).getText should equal("+4420723934397")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(3)")).getText should equal("someemail@mail.com")
 
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dt")).getText should equal("Contact Address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dt")).getText should equal("Contact address")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__value > p:nth-child(1)")).getText should equal("11 Mount Road")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__value > p:nth-child(2)")).getText should equal("London")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__value > p:nth-child(3)")).getText should equal("E10 7PP")

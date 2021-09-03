@@ -39,10 +39,10 @@ object Entry_EnterClaimPage extends BasePage {
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This is to calculate your reimbursement (repayment) as part of your claim. HMRC does not refund agents’ fees.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Paid Amount")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Paid amount")
     driver.findElement(By.cssSelector("#enter-claim\\.paid-amount-hint")).getText should equal("This is the Customs Duty amount you wish to claim for.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > label")).getText should equal("Claim Amount")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > label")).getText should equal("Claim amount")
     driver.findElement(By.cssSelector("#enter-claim\\.claim-amount-hint")).getText should equal("This is the Customs Duty amount you wish to claim for.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
