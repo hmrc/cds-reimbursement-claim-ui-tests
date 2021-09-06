@@ -78,9 +78,9 @@ object Bulk_CheckAnswersAcceptSendPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nReason")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(12)")).getText should equal("Commodity details")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dt")).getText should equal("Commodities details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dt")).getText should equal("Details of the commodities")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dd.govuk-summary-list__value")).getText should equal("under 500 characters")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nCommodities details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nDetails of the commodities")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(14)")).getText should equal("Claim calculation")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(1) > dt")).getText should equal("All UK duties to reimburse claimed by you")
