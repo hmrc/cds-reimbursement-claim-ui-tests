@@ -120,7 +120,7 @@ Feature: MRN (bulk enabled, entry disabled)
     And I click continue on "Enter Movement Reference Number Page"
     Then I am presented with the "Enter Movement Reference Number Page" error page
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @1
   Scenario: happy path (mrn) - duplicate mrn 2
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
