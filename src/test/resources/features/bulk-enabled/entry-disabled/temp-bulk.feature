@@ -72,7 +72,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Bulk_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Bulk_Supporting Evidence Check Your Answers Page"
     And I click continue on "Bulk_Supporting Evidence Check Your Answers Page"
-    Then I am presented with the "Bulk_Check Answers Accept Send Page"
+    Then I am presented with the "Bulk_Check Answers Accept Send Page" and content "check content"
     And I click continue on "Bulk_Check Answers Accept Send Page"
     Then I am presented with the "Bulk_Claim Submitted Page" and content "£40.00"
 
@@ -174,7 +174,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Bulk_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Bulk_Supporting Evidence Check Your Answers Page"
     And I click continue on "Bulk_Supporting Evidence Check Your Answers Page"
-    Then I am presented with the "Bulk_Check Answers Accept Send Page"
+    Then I am presented with the "Bulk_Check Answers Accept Send Page" and content "opr"
     And I click continue on "Bulk_Check Answers Accept Send Page"
     Then I am presented with the "Bulk_Claim Submitted Page" and content "£40.00"
 

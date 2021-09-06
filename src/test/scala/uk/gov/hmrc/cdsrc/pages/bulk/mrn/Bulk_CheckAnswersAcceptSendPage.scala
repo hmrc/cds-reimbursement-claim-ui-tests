@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,7 +32,175 @@ object Bulk_CheckAnswersAcceptSendPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Check your answers before sending your application")
 
   override def checkContent(content: String): Unit = {
-    println("Page is missing content checks")
+    content match {
+      case "check content" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > h2.govuk-heading-m.govuk-\\!-margin-top-7")).getText should equal("Movement Reference Number (MRN)")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dt")).getText should equal("MRN")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__value")).getText should equal("10AAAAAAAAAAAAAAA1")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nMRN")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Declaration details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(1) > dt")).getText should equal("Import date")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dt")).getText should equal("Paid charges")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dt")).getText should equal("Importer name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(4) > dt")).getText should equal("Importer email")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(5) > dt")).getText should equal("Import phone number")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(6) > dt")).getText should equal("Importer contact address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(7) > dt")).getText should equal("Declarant name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(8) > dt")).getText should equal("Declarant contact address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(1) > dd")).getText should equal("12 February 2021")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dd")).getText should equal("£828.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dd")).getText should equal("IT Solutions LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(4) > dd")).getText should equal("automation@gmail.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(5) > dd")).getText should equal("+4420723934397")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(6) > dd")).getText should equal("19 Bricks Road, Newcastle, NE12 5BT, GB")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(7) > dd")).getText should equal("Foxpro Central LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(8) > dd")).getText should equal("12 Skybricks Road, Coventry, CV3 6EA, GB")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(6)")).getText should equal("Claimant type")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div > dt")).getText should equal("Type of claimant")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nType of claimant")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(8)")).getText should equal("Claimant’s CDS details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(1) > dt")).getText should equal("Full name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dt")).getText should equal("Email address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dt")).getText should equal("Contact address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("IT Solutions LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dd.govuk-summary-list__value")).getText should equal("someemail@mail.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dd.govuk-summary-list__value")).getText should equal("19 Bricks Road, Newcastle, NE12 5BT, United Kingdom")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(1) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nFull name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nEmail address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nContact address")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(10)")).getText should equal("Reason or basis for claim")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dt")).getText should equal("Reason")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__value")).getText should equal("Duplicate MRN")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nReason")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(12)")).getText should equal("Commodity details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dt")).getText should equal("Commodities details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dd.govuk-summary-list__value")).getText should equal("under 500 characters")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nCommodities details")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(14)")).getText should equal("Claim calculation")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(1) > dt")).getText should equal("All UK duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(2) > dt")).getText should equal("All EU duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(3) > dt")).getText should equal("All excise duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(4) > dt")).getText should equal("Total claimed reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("£0.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(2) > dd.govuk-summary-list__value")).getText should equal("£40.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(3) > dd.govuk-summary-list__value")).getText should equal("£0.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(4) > dd.govuk-summary-list__value")).getText should equal("£40.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(1) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAll UK duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAll EU duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAll excise duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(4) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nTotal claimed reimbursement")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(16)")).getText should equal("Bank details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(1) > dt")).getText should equal("Account name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(2) > dt")).getText should equal("Sort code")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(3) > dt")).getText should equal("Account number")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("CDS E2E To E2E Bank")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(2) > dd.govuk-summary-list__value")).getText should equal("Ending with 44")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(3) > dd.govuk-summary-list__value")).getText should equal("Ending with 5678")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(1) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAccount name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nSort code")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAccount number")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(18)")).getText should equal("Attached documents")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dt")).getText should equal("Document 1")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dd.govuk-summary-list__value")).getText should equal("document.pdf")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nDocument 1")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(20)")).getText should equal("Now send your application")
+        driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Accept and send")
+      case "opr" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > h2.govuk-heading-m.govuk-\\!-margin-top-7")).getText should equal("Movement Reference Number (MRN)")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dt")).getText should equal("MRN")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__value")).getText should equal("10AAAAAAAAAAAAAAA1")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nMRN")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Declaration details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(1) > dt")).getText should equal("Import date")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dt")).getText should equal("Paid charges")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dt")).getText should equal("Importer name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(4) > dt")).getText should equal("Importer email")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(5) > dt")).getText should equal("Import phone number")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(6) > dt")).getText should equal("Importer contact address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(7) > dt")).getText should equal("Declarant name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(8) > dt")).getText should equal("Declarant contact address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(1) > dd")).getText should equal("12 February 2021")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dd")).getText should equal("£828.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dd")).getText should equal("IT Solutions LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(4) > dd")).getText should equal("automation@gmail.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(5) > dd")).getText should equal("+4420723934397")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(6) > dd")).getText should equal("19 Bricks Road, Newcastle, NE12 5BT, GB")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(7) > dd")).getText should equal("Foxpro Central LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(8) > dd")).getText should equal("12 Skybricks Road, Coventry, CV3 6EA, GB")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(6)")).getText should equal("Claimant type")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div > dt")).getText should equal("Type of claimant")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nType of claimant")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(8)")).getText should equal("Claimant’s CDS details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(1) > dt")).getText should equal("Full name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dt")).getText should equal("Email address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dt")).getText should equal("Contact address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("IT Solutions LTD")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dd.govuk-summary-list__value")).getText should equal("someemail@mail.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dd.govuk-summary-list__value")).getText should equal("19 Bricks Road, Newcastle, NE12 5BT, United Kingdom")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(1) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nFull name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nEmail address")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nContact address")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(10)")).getText should equal("Reason or basis for claim")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dt")).getText should equal("Reason")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__value")).getText should equal("OPR")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nReason")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(12)")).getText should equal("Commodity details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dt")).getText should equal("Commodities details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dd.govuk-summary-list__value")).getText should equal("under 500 characters")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nCommodities details")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(14)")).getText should equal("Claim calculation")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(1) > dt")).getText should equal("All UK duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(2) > dt")).getText should equal("All EU duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(3) > dt")).getText should equal("All excise duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(4) > dt")).getText should equal("Total claimed reimbursement")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("£0.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(2) > dd.govuk-summary-list__value")).getText should equal("£40.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(3) > dd.govuk-summary-list__value")).getText should equal("£0.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(4) > dd.govuk-summary-list__value")).getText should equal("£40.00")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(1) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAll UK duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAll EU duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAll excise duties to reimburse claimed by you")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(15) > div:nth-child(4) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nTotal claimed reimbursement")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(16)")).getText should equal("Bank details")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(1) > dt")).getText should equal("Account name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(2) > dt")).getText should equal("Sort code")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(3) > dt")).getText should equal("Account number")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("CDS E2E To E2E Bank")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(2) > dd.govuk-summary-list__value")).getText should equal("Ending with 44")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(3) > dd.govuk-summary-list__value")).getText should equal("Ending with 5678")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(1) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAccount name")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nSort code")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAccount number")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(18)")).getText should equal("Attached documents")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dt")).getText should equal("Document 1")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dd.govuk-summary-list__value")).getText should equal("document.pdf")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nDocument 1")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(20)")).getText should equal("Now send your application")
+        driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Accept and send")
+      case _ =>
+    }
   }
 
   override def clickButton(buttonText: String): Unit = {
