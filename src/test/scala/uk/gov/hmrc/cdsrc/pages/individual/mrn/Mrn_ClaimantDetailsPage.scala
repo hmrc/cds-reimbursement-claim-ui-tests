@@ -31,9 +31,7 @@ object Mrn_ClaimantDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check your details as registered with CDS")
 
-
   override def checkContent(content: String): Unit = {
-
     driver.findElement(By.cssSelector("#main-content > div > div > h2.govuk-heading-m.govuk-\\!-margin-bottom-6")).getText should equal("Details as registered with CDS")
 
     content match {
