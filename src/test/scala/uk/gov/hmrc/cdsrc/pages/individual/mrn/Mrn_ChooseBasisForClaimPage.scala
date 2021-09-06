@@ -34,7 +34,6 @@ object Mrn_ChooseBasisForClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Select the basis for claim")
 
-
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This will help us to understand why you are making the claim so we can review and validate it.")
     driver.findElement(By.cssSelector("#main-content > div > div > details > summary > span")).getText should equal("Examples of basis of claim")

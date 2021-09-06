@@ -31,9 +31,7 @@ object Mrn_ClaimantDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check your details as registered with CDS")
 
-
   override def checkContent(content: String): Unit = {
-
     driver.findElement(By.cssSelector("#main-content > div > div > h2.govuk-heading-m.govuk-\\!-margin-bottom-6")).getText should equal("Details as registered with CDS")
 
     content match {
@@ -117,7 +115,7 @@ object Mrn_ClaimantDetailsPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__actions.govuk-link > a")).getText should equal("Change")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1")).getText should equal("Do you want to continue using these contact details?")
         driver.findElement(By.cssSelector("#claimant-details-hint")).getText should equal("If you select No we will contact you using your CDS registered details.")
-      case _ =>
+      case "" | _ =>
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Contact details")
         driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the details we will use to contact you about your claim.")
 

@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -29,6 +30,13 @@ object Mrn_ImporterEoriEntryPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter the importer’s EORI number")
+
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("You can get the EORI number from the importer, otherwise you will be unable to make a claim.")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Enter the EORI number")
+    driver.findElement(By.cssSelector("#enter-importer-eori-number-hint")).getText should equal("Must be between 14-17 characters and start with the first two letters of the ISO county code, GB for example: GB03152858027018")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  }
 
   override def enterDetails(textToEnter: String) {
     enterText("enter-importer-eori-number", textToEnter)

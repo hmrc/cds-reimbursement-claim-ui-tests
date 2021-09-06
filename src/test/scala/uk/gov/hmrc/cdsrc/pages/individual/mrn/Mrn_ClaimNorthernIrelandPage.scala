@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -29,6 +30,11 @@ object Mrn_ClaimNorthernIrelandPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland?")
+
+  override def checkContent(content: String): Unit = {
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Yes")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
+  }
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {

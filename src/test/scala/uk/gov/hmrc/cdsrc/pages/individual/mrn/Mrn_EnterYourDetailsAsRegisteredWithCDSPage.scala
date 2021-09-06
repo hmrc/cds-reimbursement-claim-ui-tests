@@ -31,7 +31,6 @@ object Mrn_EnterYourDetailsAsRegisteredWithCDSPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter your details as registered with CDS")
 
-
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the details you used when registering with CDS.")
 
