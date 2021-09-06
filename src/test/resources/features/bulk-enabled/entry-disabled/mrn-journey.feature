@@ -347,7 +347,7 @@ Feature: MRN (bulk enabled, entry disabled)
     And I click continue on "Mrn_Check Answers Accept Send Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
 
-  @test @a11y @ZAP @1
+  @test @a11y @ZAP
   Scenario: happy path (mrn) - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
