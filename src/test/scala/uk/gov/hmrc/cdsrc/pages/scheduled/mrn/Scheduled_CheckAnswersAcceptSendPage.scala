@@ -72,10 +72,10 @@ object Scheduled_CheckAnswersAcceptSendPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nEmail address")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nContact address")
 
-        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(10)")).getText should equal("Reason or basis for claim")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dt")).getText should equal("Reason")
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(10)")).getText should equal("Basis for claim")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dt")).getText should equal("This is the basis behind the claim")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__value")).getText should equal("Duplicate MRN")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nReason")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nThis is the basis behind the claim")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(12)")).getText should equal("Were your goods imported into Northern Ireland?")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dt")).getText should equal("Were your goods imported into Northern Ireland?")
@@ -161,10 +161,10 @@ object Scheduled_CheckAnswersAcceptSendPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nEmail address")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nContact address")
 
-        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(10)")).getText should equal("Reason or basis for claim")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dt")).getText should equal("Reason")
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(10)")).getText should equal("Basis for claim")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dt")).getText should equal("This is the basis behind the claim")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__value")).getText should equal("OPR")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nReason")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nThis is the basis behind the claim")
 
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(12)")).getText should equal("Reason for claim")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(13) > div > dt")).getText should equal("This is the reason for the claim")
