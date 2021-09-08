@@ -17,6 +17,7 @@
 package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
 import org.openqa.selenium.By
+import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -32,9 +33,53 @@ object Mrn_SupportingEvidenceCheckYourAnswersPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("You have added 1 document to your claim")
 
+  override def checkPageHeader(content: String): Assertion = {
+    true should equal(true)
+  }
+
+  override def checkPageTitle(content: String): Assertion = {
+    true should equal(true)
+  }
+
   override def checkContent(content: String): Unit = {
     content match {
-      case _ =>
+      case "2 files" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > h1")).getText should equal("You have added 2 documents to your claim")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the documents you have added so far to support this claim. So we can process your claim efficiently, add the commercial invoice used in the import declaration.")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText should equal("document.pdf\nImport and Export Declaration")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd > a")).getText should equal("Remove")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dt")).getText should equal("document.pdf\nCommercial Invoice")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd > a")).getText should equal("Remove")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > legend")).getText should equal("Do you want to add another document?")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Yes")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+
+      case "3 files" =>
+        driver.findElement(By.cssSelector("#main-content > div > div > h1")).getText should equal("You have added 3 documents to your claim")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the documents you have added so far to support this claim. So we can process your claim efficiently, add the commercial invoice used in the import declaration.")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText should equal("document.pdf\nPacking List")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd > a")).getText should equal("Remove")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dt")).getText should equal("document.pdf\nImport and Export Declaration")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd > a")).getText should equal("Remove")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dt")).getText should equal("document.pdf\nCommercial Invoice")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dd > a")).getText should equal("Remove")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > legend")).getText should equal("Do you want to add another document?")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Yes")
+        driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
+
+        driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+
+      case "1 file" | _ =>
+        driver.findElement(By.cssSelector("#main-content > div > div > h1")).getText should equal("You have added 1 document to your claim")
+
         driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the documents you have added so far to support this claim. So we can process your claim efficiently, add the commercial invoice used in the import declaration.")
 
         driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText should equal("document.pdf\nCommercial Invoice")
@@ -45,6 +90,8 @@ object Mrn_SupportingEvidenceCheckYourAnswersPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
 
         driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+
+
     }
   }
 
