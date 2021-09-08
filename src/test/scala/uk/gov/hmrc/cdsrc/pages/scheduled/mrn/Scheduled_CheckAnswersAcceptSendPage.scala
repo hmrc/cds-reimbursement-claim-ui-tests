@@ -112,7 +112,7 @@ object Scheduled_CheckAnswersAcceptSendPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nSort code")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAccount number")
 
-        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(20)")).getText should equal("Attached documents")
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(20)")).getText should equal("Supporting documents")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(21) > div > dt")).getText should equal("Uploaded")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(21) > div > dd.govuk-summary-list__value")).getText should equal("document.pdf\nCommercial Invoice")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(21) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nUploaded")
@@ -196,7 +196,7 @@ object Scheduled_CheckAnswersAcceptSendPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(2) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nSort code")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(17) > div:nth-child(3) > dd.govuk-summary-list__actions > a")).getText should equal("Change\nAccount number")
 
-        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(18)")).getText should equal("Attached documents")
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(18)")).getText should equal("Supporting documents")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dt")).getText should equal("Uploaded")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dd.govuk-summary-list__value")).getText should equal("document.pdf\nCommercial Invoice")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(19) > div > dd.govuk-summary-list__actions > a")).getText should equal("Change\nUploaded")
