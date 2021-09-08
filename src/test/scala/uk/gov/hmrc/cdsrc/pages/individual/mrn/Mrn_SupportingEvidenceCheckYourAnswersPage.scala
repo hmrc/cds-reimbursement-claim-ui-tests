@@ -90,8 +90,6 @@ object Mrn_SupportingEvidenceCheckYourAnswersPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
 
         driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-
-
     }
   }
 
