@@ -88,5 +88,3 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Start Page"
     When I click "Back" on "Start Page"
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
-    When I click "What did you think of this service?" on "Mrn_Claim Submitted Page"
-    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
