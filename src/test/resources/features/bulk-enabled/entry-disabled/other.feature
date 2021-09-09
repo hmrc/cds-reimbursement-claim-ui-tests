@@ -16,7 +16,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Accessibility Statement Page"
 
   @test @a11y @ZAP
-  Scenario: other - click start another claim link
+  Scenario: other - click links on last page
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -86,3 +86,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
     When I click "Start another claim" on "Mrn_Claim Submitted Page"
     Then I am presented with the "Start Page"
+    When I click "Back" on "Start Page"
+    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
+    When I click "What did you think of this service?" on "Mrn_Claim Submitted Page"
+    Then I am presented with the "Mrn_Claim Submitted Page" and content "£40.00"
