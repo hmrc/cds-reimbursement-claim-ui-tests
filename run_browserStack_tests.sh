@@ -1,7 +1,7 @@
 #!/bin/bash
 
-browserStackUsername="insert-Your-Username"
-browserStackAutomateKey="insert-Your-Key"
+browserStackUsername="narsiagaram_CkIKxA"
+browserStackAutomateKey="snb9nJ6K6UQsRUZX1bs3"
 
 #WindowsOS
 sbt -Dbrowser=browserstack -Dlanguage=english -Denvironment=local -Dbrowserstack.username=${browserStackUsername} -Dbrowserstack.key=${browserStackAutomateKey} -Dbrowserstack.browser_version="93" -Dbrowserstack.browser="Chrome" -Dbrowserstack.os="Windows" -Dbrowserstack.os_version="10" 'testOnly uk.gov.hmrc.cdsrc.cucumber.runner.BrowserStackRunner'
