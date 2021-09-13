@@ -2,6 +2,8 @@
 
 echo "BrowserStackLocal instances:"
 
+if pidof BrowserStackLocal; then
+
         ./BrowserStackLocal snb9nJ6K6UQsRUZX1bs3 &
 else
     echo "BrowserStack pid not found,  initialising BrowserStack"
