@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Bulk_ClaimantDetailsDetailsContactPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/claimant-details/details-contact"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/claimant-details/enter-contact-details"
   override val title = "Add contact details"
 
   override def expectedPageErrorTitle: Option[String] = Some("Add contact details - Claim for reimbursement of import duties - GOV.UK")
