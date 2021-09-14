@@ -13,7 +13,7 @@ else
         wget -0 https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
         unzip BrowserStackLocal-linux-x64.zip
         fi
-       ./BrowserStackLocal 5pTvC3CBdkwiNpujzwYa &
+       ./BrowserStackLocal snb9nJ6K6UQsRUZX1bs3 &
 
         elif [[ "$OSTYPE" == "darwin"* ]]; then
            echo "downloading mac osx browsetstack driver..."
