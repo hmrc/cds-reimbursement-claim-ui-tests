@@ -19,9 +19,9 @@ package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Bulk_CheckAnswersAcceptSendPage extends BasePage {
+object Multiple_CheckAnswersAcceptSendPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/check-answers-accept-send"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/check-answers-accept-send"
   override val title = "Check your answers before sending your application"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your application - Claim for reimbursement of import duties - GOV.UK")

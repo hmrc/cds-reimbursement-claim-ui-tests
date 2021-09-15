@@ -19,9 +19,9 @@ package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Bulk_SupportingEvidenceUploadProgressPage extends BasePage {
+object Multiple_SupportingEvidenceUploadProgressPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/scheduled-document-upload/progress"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/scheduled-document-upload/progress"
   override val title = "We are checking your document"
 
   override def expectedPageErrorTitle: Option[String] = Some("We are checking your document - Claim for reimbursement of import duties - GOV.UK")

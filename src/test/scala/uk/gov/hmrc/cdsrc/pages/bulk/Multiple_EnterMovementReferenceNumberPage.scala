@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Bulk_EnterMovementReferenceNumberPage extends BasePage {
+object Multiple_EnterMovementReferenceNumberPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/enter-movement-reference-number"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/enter-movement-reference-number"
   override val title = "Enter the lead Movement Reference Number (MRN)"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
