@@ -1,4 +1,4 @@
-@Regression @Scheduled
+@Regression @Scheduled @BrowserStack
 
 Feature: Scheduled NI (bulk enabled, entry disabled)
 
