@@ -341,6 +341,7 @@ Feature: MRN (bulk enabled, entry disabled)
     And I click continue if I'm on "Mrn_Supporting Evidence Scan Progress Page"
     When I select radio button "Commercial Invoice" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
+    When I select radio button "No" on "Mrn_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Mrn_Supporting Evidence Check Your Answers Page"
     When I click continue on "Mrn_Supporting Evidence Check Your Answers Page"
     Then I am presented with the "Mrn_Check Answers Accept Send Page"

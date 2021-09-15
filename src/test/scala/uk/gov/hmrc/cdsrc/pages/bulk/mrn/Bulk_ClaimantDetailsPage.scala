@@ -65,8 +65,8 @@ object Bulk_ClaimantDetailsPage extends BasePage {
 
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dt")).getText should equal("Contact details")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(1)")).getText should equal("John Smith")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(2)")).getText should equal("01234567890")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(3)")).getText should equal("john@smith.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(2)")).getText should equal("john@smith.com")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(3)")).getText should equal("01234567890")
 
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dt")).getText should equal("Contact address")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__value > p:nth-child(1)")).getText should equal("123 Fake Street")
