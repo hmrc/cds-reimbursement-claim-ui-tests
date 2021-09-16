@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Bulk_ClaimSubmittedPage extends BasePage {
+object Multiple_ClaimSubmittedPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/claim-submitted"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/claim-submitted"
   override val title = "Claim submitted"
   override val pageShouldHaveBackButton = false
 

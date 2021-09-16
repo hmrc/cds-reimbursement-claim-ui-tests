@@ -22,9 +22,9 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.asScalaBufferConverter
 
-object Bulk_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
+object Multiple_SupportingEvidenceSelectSupportingEvidenceTypePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/supporting-evidence/select-supporting-evidence-type/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/supporting-evidence/select-supporting-evidence-type/..."
   override val title = "Select the description of the file you just uploaded"
   override val pageShouldHaveBackButton = false
 

@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Bulk_ClaimantDetailsDetailsContactPage extends BasePage {
+object Multiple_ClaimantDetailsDetailsContactPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/claimant-details/enter-contact-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/claimant-details/enter-contact-details"
   override val title = "Add contact details"
 
   override def expectedPageErrorTitle: Option[String] = Some("Add contact details - Claim for reimbursement of import duties - GOV.UK")

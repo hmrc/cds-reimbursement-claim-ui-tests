@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Bulk_SupportingEvidenceCheckYourAnswersPage extends BasePage {
+object Multiple_SupportingEvidenceCheckYourAnswersPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/supporting-evidence/check-your-answers"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/supporting-evidence/check-your-answers"
   override val title = "You have added 1 document to your claim"
   override val pageShouldHaveBackButton = false
 

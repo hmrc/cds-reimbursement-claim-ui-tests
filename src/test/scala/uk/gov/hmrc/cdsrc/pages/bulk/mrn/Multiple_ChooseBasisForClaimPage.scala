@@ -23,9 +23,9 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.asScalaBufferConverter
 
-object Bulk_ChooseBasisForClaimPage extends BasePage {
+object Multiple_ChooseBasisForClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/bulk/choose-basis-for-claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/choose-basis-for-claim"
   override val title = "Select the basis for claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("Select the basis for claim - Claim for reimbursement of import duties - GOV.UK")
