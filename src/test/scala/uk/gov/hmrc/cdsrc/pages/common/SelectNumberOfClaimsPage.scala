@@ -22,25 +22,26 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object SelectNumberOfClaimsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/select-number-of-claims"
-  override val title = "Select number of claims"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/choose-how-many-mrns"
+  override val title = "How many MRNs do you want to submit in this claim?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select number of claims - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("SHow many MRNs do you want to submit in this claim? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select number of claims - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("How many MRNs do you want to submit in this claim? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select number of claims")
+  override def expectedPageHeader: Option[String] = Some("How many MRNs do you want to submit in this claim?")
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("You can make more than one claim. Multiple (bulk) claims must be from the same importer, have the same reason for overpayment and contain either MRNs or Entry numbers, but not mixed.")
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("A Movement Reference Number (MRN) is issued when an import is declared. Find out more about this number (opens in a new tab).")
+    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(3)")).getText should equal("Multiple MRNs must all be from the same importer and have the same reason for overpayment.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Individual claim")
-    driver.findElement(By.cssSelector("#select-number-of-claims-individual-item-hint")).getText should equal("Enter one claim only using an MRN or Entry number for one declaration.")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("One MRN")
+    driver.findElement(By.cssSelector("#select-number-of-claims-individual-item-hint")).getText should equal("Enter one MRN manually.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Multiple (bulk) claims - manual entry of MRNs or Entry numbers")
-    driver.findElement(By.cssSelector("#select-number-of-claims-bulk-item-hint")).getText should equal("You can enter a bulk claim by manually adding multiple MRNs or Entry numbers for each declaration.")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Multiple/bulk MRNs - Manual entry")
+    driver.findElement(By.cssSelector("#select-number-of-claims-bulk-item-hint")).getText should equal("Enter each number manually.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("Multiple (bulk) claims - upload a scheduled document")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("Multiple/bulk MRNs - Document upload")
     driver.findElement(By.cssSelector("#select-number-of-claims-scheduled-item-hint")).getText should equal("You can enter a bulk claim by uploading a document with MRNs or Entry numbers for multiple declarations.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
