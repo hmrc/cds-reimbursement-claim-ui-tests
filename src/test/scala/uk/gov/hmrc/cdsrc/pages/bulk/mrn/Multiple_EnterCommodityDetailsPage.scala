@@ -32,7 +32,7 @@ object Multiple_EnterCommodityDetailsPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Tell us the reason for this claim")
 
   override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#enter-commodities-details-hint")).getText should equal("Explain why you would like to be reimbursed and why you are entitled to this claim.")
+    driver.findElement(By.cssSelector("#enter-commodities-details-hint")).getText should equal("Explain why you would like to be reimbursed and why you are entitled to this claim. Your reason must apply to all MRNs in this claim.")
 
     content match {
       case "" => driver.findElement(By.cssSelector("#enter-commodities-details-info")).getText should equal("You have 500 characters remaining")
