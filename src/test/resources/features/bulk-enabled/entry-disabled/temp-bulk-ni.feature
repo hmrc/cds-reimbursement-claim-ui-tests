@@ -31,3 +31,13 @@ Feature: Bulk NI (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Claimant Details Check Page"
     And I select radio button "yes" on "Multiple_Claimant Details Check Page"
     And I click continue on "Multiple_Claimant Details Check Page"
+    Then I am presented with the "Multiple_Claim Northern Ireland Page"
+    And I select radio button "yes" on "Mrn_Claim Northern Ireland Page"
+    And I click continue on "Multiple_Claim Northern Ireland Page"
+    Then I am presented with the "Multiple_Choose Basis For Claim Page" and content "50AAAAAAAAAAAAAAA1"
+    When I select radio button "Incorrect excise value - Northern Ireland claims only" on "Multiple_Choose Basis For Claim Page"
+    And I click continue on "Multiple_Choose Basis For Claim Page"
+    Then I am presented with the "Multiple_Enter Commodity Details Page"
+    When I enter "under 500 characters" on "Multiple_Enter Commodity Details Page"
+    And I click continue on "Multiple_Enter Commodity Details Page"
+
