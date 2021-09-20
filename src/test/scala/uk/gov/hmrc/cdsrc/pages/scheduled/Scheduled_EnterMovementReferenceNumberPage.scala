@@ -34,8 +34,8 @@ object Scheduled_EnterMovementReferenceNumberPage extends BasePage {
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal("The Movement Reference Number (MRN) will be issued when an import is declared. Find out more about this number (opens in new tab).\n\nThe lead MRN is the one with the highest paid amount of duties.")
 
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Enter the MRN or Entry number")
-    driver.findElement(By.cssSelector("#enter-movement-reference-number-hint")).getText should equal("Must be 18 characters, for example 19GB03I52858027017.")
+    driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Enter lead MRN")
+    driver.findElement(By.cssSelector("#enter-movement-reference-number-hint")).getText should equal("Must be 18 characters, for example 19GB03I52858027001.")
 
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }

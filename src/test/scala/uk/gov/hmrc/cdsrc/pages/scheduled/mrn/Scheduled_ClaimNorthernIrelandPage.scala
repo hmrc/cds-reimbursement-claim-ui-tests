@@ -23,13 +23,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Scheduled_ClaimNorthernIrelandPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/claim-northern-ireland"
-  override val title = "Were your commodities (goods) imported or moved through Northern Ireland?"
+  override val title = "Were your goods imported to or moved through Northern Ireland?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Were your goods imported to or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Were your goods imported to or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Were your commodities (goods) imported or moved through Northern Ireland?")
+  override def expectedPageHeader: Option[String] = Some("Were your goods imported to or moved through Northern Ireland?")
 
 
   override def checkContent(content: String): Unit = {
