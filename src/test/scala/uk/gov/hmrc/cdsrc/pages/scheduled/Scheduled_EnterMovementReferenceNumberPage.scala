@@ -23,13 +23,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Scheduled_EnterMovementReferenceNumberPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-movement-reference-number"
-  override val title = "Enter the lead Movement Reference Number (MRN)"
+  override val title = "Tell us your lead Movement Reference Number (MRN)"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter the lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Tell us your lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Tell us your lead Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter the lead Movement Reference Number (MRN)")
+  override def expectedPageHeader: Option[String] = Some("Tell us your lead Movement Reference Number (MRN)")
 
   override def checkContent(content: String): Unit = {
     driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal("The Movement Reference Number (MRN) will be issued when an import is declared. Find out more about this number (opens in new tab).\n\nThe lead MRN is the one with the highest paid amount of duties.")
