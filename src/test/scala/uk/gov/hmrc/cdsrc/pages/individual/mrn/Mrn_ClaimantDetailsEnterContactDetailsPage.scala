@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.bulk.mrn
+package uk.gov.hmrc.cdsrc.pages.individual.mrn
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Multiple_ClaimantDetailsDetailsContactPage extends BasePage {
+object Mrn_ClaimantDetailsEnterContactDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/claimant-details/enter-contact-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/single/claimant-details/enter-contact-details"
   override val title = "Add contact details"
 
   override def expectedPageErrorTitle: Option[String] = Some("Add contact details - Claim for reimbursement of import duties - GOV.UK")

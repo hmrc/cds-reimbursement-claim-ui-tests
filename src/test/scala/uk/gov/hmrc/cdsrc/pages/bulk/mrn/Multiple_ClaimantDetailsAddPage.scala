@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual.mrn
+package uk.gov.hmrc.cdsrc.pages.bulk.mrn
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Mrn_ClaimantDetailsPage extends BasePage {
+object Multiple_ClaimantDetailsAddPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/claimant-details/check"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/claimant-details/add"
   override val title = "Check your details as registered with CDS"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
@@ -31,7 +31,9 @@ object Mrn_ClaimantDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check your details as registered with CDS")
 
+
   override def checkContent(content: String): Unit = {
+
     driver.findElement(By.cssSelector("#main-content > div > div > h2.govuk-heading-m.govuk-\\!-margin-bottom-6")).getText should equal("Details as registered with CDS")
 
     content match {
@@ -88,7 +90,7 @@ object Mrn_ClaimantDetailsPage extends BasePage {
 
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1")).getText should equal("Do you wish to add different contact details which we will use to contact you about this claim?")
       case "10AAAAAAAAAAAAAAA6 - change details" =>
-        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Contact details")
+        driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Contact Details")
         driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the details we will use to contact you about your claim.")
 
         driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText should equal("Details as registered with CDS")
@@ -102,8 +104,8 @@ object Mrn_ClaimantDetailsPage extends BasePage {
 
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dt")).getText should equal("Contact details")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(1)")).getText should equal("John Smith")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(2)")).getText should equal("john@smith.com")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(3)")).getText should equal("01234567890")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(2)")).getText should equal("01234567890")
+        driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value > p:nth-child(3)")).getText should equal("john@smith.com")
 
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dt")).getText should equal("Contact address")
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__value > p:nth-child(1)")).getText should equal("123 Fake Street")
@@ -115,7 +117,7 @@ object Mrn_ClaimantDetailsPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__actions.govuk-link > a")).getText should equal("Change\nContact address")
         driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > legend > h1")).getText should equal("Do you want to continue using these contact details?")
         driver.findElement(By.cssSelector("#claimant-details-hint")).getText should equal("If you select No we will contact you using your CDS registered details.")
-      case "" | _ =>
+      case _ =>
         driver.findElement(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText should equal("Contact details")
         driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the details we will use to contact you about your claim.")
 
