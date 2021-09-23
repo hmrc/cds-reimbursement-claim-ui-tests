@@ -54,14 +54,14 @@ object Multiple_CheckDuplicateDeclarationDetailsPage extends BasePage {
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(7) > dd")).getText should equal("19 Bricks Road, Newcastle, NE12 5BT, GB")
         driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(8) > dd")).getText should equal("12 Skybricks Road, Coventry, CV3 6EA, GB")
     }
-
+    driver.findElement(By.cssSelector("#main-content > div > div > form > h2")).getText should equal("Continue with this MRN?")
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#check-declaration-details")
-      case "no" => click on cssSelector("#check-declaration-details-eori-incorrect")
+      case "no" => click on cssSelector("#check-declaration-details-2")
     }
 
   }

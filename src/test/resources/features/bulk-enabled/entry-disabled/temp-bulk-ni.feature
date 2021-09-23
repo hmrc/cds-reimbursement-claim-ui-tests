@@ -25,6 +25,8 @@ Feature: Bulk NI (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Check Declaration Details Page" and content "50AAAAAAAAAAAAAAA1"
     And I select radio button "yes" on "Multiple_Check Declaration Details Page"
     And I click continue on "Multiple_Check Declaration Details Page"
+    Then I am presented with the "Multiple_Enter Movement Reference Number Second Page"
+    And I click continue on "Multiple_Enter Movement Reference Number Second Page"
     Then I am presented with the "Multiple_Who Is The Declarant Page"
     And I select radio button "0" on "Multiple_Who Is The Declarant Page"
     And I click continue on "Multiple_Who Is The Declarant Page"
