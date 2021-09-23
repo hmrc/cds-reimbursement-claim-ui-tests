@@ -44,7 +44,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     When I enter "under 500 characters" on "Scheduled_Enter Commodity Details Page"
     And I click continue on "Scheduled_Enter Commodity Details Page"
     Then I am presented with the "Scheduled_Select Duties Select Duty Types Page"
-    When I select "ukduty,euduty,beer,wine,madewine,lowalcoholbeverages" on "Scheduled_Select Duties Select Duty Types Page"
+    When I select "uk-duty,eu-duty,beer,wine,made-wine,low-alcohol-beverages,tobacco,miscellaneous-road-fuels,climate-change-levy" on "Scheduled_Select Duties Select Duty Types Page"
     And I click continue on "Scheduled_Select Duties Select Duty Types Page"
 
   @test
