@@ -174,7 +174,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Multiple_Supporting Evidence Check Your Answers Page"
     And I click continue on "Multiple_Supporting Evidence Check Your Answers Page"
-    Then I am presented with the "Multiple_Check Answers Accept Send Page" and content "opr"
+    Then I am presented with the "Multiple_Check Answers Accept Send Page"
     And I click continue on "Multiple_Check Answers Accept Send Page"
     Then I am presented with the "Multiple_Claim Submitted Page" and content "£40.00"
 
