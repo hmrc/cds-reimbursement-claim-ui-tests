@@ -54,6 +54,4 @@ object Scheduled_SelectDutiesSelectDutyTypesPage extends BasePage {
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
-
-
 }
