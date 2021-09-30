@@ -26,6 +26,7 @@ import uk.gov.hmrc.cdsrc.driver.BrowserDriver
 
 import java.time.Duration
 import java.util.concurrent.TimeUnit
+import scala.jdk.CollectionConverters.asScalaBufferConverter
 
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
@@ -118,7 +119,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def clickButton(buttonText: String): Unit = click on partialLinkText(buttonText)
 
   def clickRadioButton(text: String): Unit = {
-    click on xpath(s"//input[@value='$text']")
+    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == text).head.click()
   }
 
   def selectCheckBox(): Unit = {

@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object SelectNumberOfClaimsPage extends BasePage {
+object ChooseHowManyMrnsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/choose-how-many-mrns"
   override val title = "How many MRNs do you want to submit in this claim?"
