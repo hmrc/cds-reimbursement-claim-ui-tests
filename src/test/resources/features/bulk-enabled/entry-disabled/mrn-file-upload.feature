@@ -61,7 +61,7 @@ Feature: MRN file upload (bulk enabled, entry disabled)
     And I click continue on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Mrn_Supporting Evidence Scan Progress Page"
     Then I am presented with the "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
-    When I select radio button "Commercial Invoice" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
+    When I select radio button "Commercial invoice" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Mrn_Supporting Evidence Check Your Answers Page" and content "1 file"
     # upload file 2
@@ -72,7 +72,7 @@ Feature: MRN file upload (bulk enabled, entry disabled)
     And I click continue on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Mrn_Supporting Evidence Scan Progress Page"
     Then I am presented with the "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
-    When I select radio button "Import and Export Declaration" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
+    When I select radio button "Import and export declaration" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Mrn_Supporting Evidence Check Your Answers Page" and content "2 files"
     # upload file 3
@@ -83,7 +83,7 @@ Feature: MRN file upload (bulk enabled, entry disabled)
     And I click continue on "Mrn_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue if I'm on "Mrn_Supporting Evidence Scan Progress Page"
     Then I am presented with the "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
-    When I select radio button "Packing List" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
+    When I select radio button "Packing list" on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Mrn_Supporting Evidence Select Supporting Evidence Type Page"
     Then I am presented with the "Mrn_Supporting Evidence Check Your Answers Page" and content "3 files"
     # continue journey
