@@ -32,7 +32,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Scheduled Document Upload Review Page"
     And I click continue on "Scheduled_Scheduled Document Upload Review Page"
     Then I am presented with the "Scheduled_Who Is The Declarant Page"
-    When I select radio button "0" on "Scheduled_Who Is The Declarant Page"
+    When I select radio button "I am a private individual importer" on "Scheduled_Who Is The Declarant Page"
     And I click continue on "Scheduled_Who Is The Declarant Page"
     Then I am presented with the "Scheduled_Claimant Details Page"
     When I select radio button "yes" on "Scheduled_Claimant Details Page"

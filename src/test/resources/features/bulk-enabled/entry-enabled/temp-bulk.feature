@@ -24,7 +24,7 @@ Feature: Bulk (bulk enabled, entry enabled)
     And I select radio button "yes" on "Multiple_Check Declaration Details Page"
     And I click continue on "Multiple_Check Declaration Details Page"
     Then I am presented with the "Multiple_Who Is The Declarant Page"
-    When I select radio button "0" on "Multiple_Who Is The Declarant Page"
+    When I select radio button "I am a private individual importer" on "Multiple_Who Is The Declarant Page"
     And I click continue on "Multiple_Who Is The Declarant Page"
     Then I am presented with the "Multiple_Claimant Details Check Page"
     When I select radio button "yes" on "Multiple_Claimant Details Check Page"

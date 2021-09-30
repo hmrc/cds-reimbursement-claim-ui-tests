@@ -22,7 +22,7 @@ Feature: C285 - Entry Number - importer-person
     And I select radio button "yes" on "Mrn_Check Declaration Details Page"
     And I click continue on "Mrn_Check Declaration Details Page"
     Then I am presented with the "Mrn_Who Is The Declarant Page"
-    When I select radio button "0" on "Mrn_Who Is The Declarant Page"
+    When I select radio button "I am a private individual importer" on "Mrn_Who Is The Declarant Page"
     And I click continue on "Mrn_Who Is The Declarant Page"
     Then I am presented with the "Mrn_Claimant Details Check Page"
     When I select radio button "yes" on "Mrn_Claimant Details Check Page"

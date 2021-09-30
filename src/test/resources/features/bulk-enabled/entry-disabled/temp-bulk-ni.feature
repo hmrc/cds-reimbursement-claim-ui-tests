@@ -28,7 +28,7 @@ Feature: Bulk NI (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Enter Movement Reference Number Second Page"
     And I click continue on "Multiple_Enter Movement Reference Number Second Page"
     Then I am presented with the "Multiple_Who Is The Declarant Page"
-    And I select radio button "0" on "Multiple_Who Is The Declarant Page"
+    When I select radio button "I am a private individual importer" on "Multiple_Who Is The Declarant Page"
     And I click continue on "Multiple_Who Is The Declarant Page"
     Then I am presented with the "Multiple_Claimant Details Check Page"
     And I select radio button "yes" on "Multiple_Claimant Details Check Page"
