@@ -58,6 +58,14 @@
       "url": "http://localhost:7500/claim-for-reimbursement-of-import-duties/assets/lib.*",
       "ruleId": 10027,
       "newLevel": -1
+    },
+    {
+      "contextId": 1,
+      "reason": "This issue is related to auth login",
+      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+      "ruleId": 10202,
+      "urlIsRegex": "true",
+      "newLevel": -1
     }
   ]
 }
