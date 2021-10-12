@@ -16,24 +16,21 @@
 
 package uk.gov.hmrc.cdsrc.pages.bulk
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Multiple_EnterMovementReferenceNumberSecondPage extends BasePage {
+object Multiple_EnterMovementReferenceNumber2Page extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/enter-movement-reference-number/2"
-  override val title = "Tell us your 2 Movement Reference Number (MRN)"
+  override val title = "Tell us your second Movement Reference Number (MRN)"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Tell us your 2 Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Tell us your second Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Tell us your 2 Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Tell us your second Movement Reference Number (MRN) - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Tell us your 2 Movement Reference Number (MRN)")
-
-  driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
+  override def expectedPageHeader: Option[String] = Some("Tell us your second Movement Reference Number (MRN)")
 
   override def enterDetails(textToEnter: String) {
-    enterText("enter-movement-reference-number", textToEnter)
+    enterText("enter-associated-mrn", textToEnter)
   }
 }

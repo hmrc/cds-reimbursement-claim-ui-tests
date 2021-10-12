@@ -41,7 +41,7 @@ Feature: Scheduled NI (bulk enabled, entry disabled)
     And I select radio button "yes" on "Scheduled_Claim Northern Ireland Page"
     And I click continue on "Scheduled_Claim Northern Ireland Page"
     Then I am presented with the "Scheduled_Choose Basis For Claim Page"
-    When I select radio button "OPR" on "Scheduled_Choose Basis For Claim Page"
+    When I select radio button "Outward processing relief" on "Scheduled_Choose Basis For Claim Page"
     And I click continue on "Scheduled_Choose Basis For Claim Page"
     Then I am presented with the "Scheduled_Enter Commodity Details Page"
     When I enter "under 500 characters" on "Scheduled_Enter Commodity Details Page"

@@ -87,7 +87,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkPageHeader("")
     PageObjectFinder.page(page).checkPageTitle("")
-    PageObjectFinder.page(page).checkBackButtonExistsIfItShould
+    //PageObjectFinder.page(page).checkBackButtonExistsIfItShould
     //PageObjectFinder.page(page).checkContent("")
   }
 
@@ -96,7 +96,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkPageHeader(content)
     PageObjectFinder.page(page).checkPageTitle(content)
-    PageObjectFinder.page(page).checkBackButtonExistsIfItShould
+    //PageObjectFinder.page(page).checkBackButtonExistsIfItShould
     //PageObjectFinder.page(page).checkContent(content)
   }
 
@@ -109,7 +109,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     waitForPageHeader
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkDutyPage(duty)
-    PageObjectFinder.page(page).checkBackButtonExistsIfItShould
+    //PageObjectFinder.page(page).checkBackButtonExistsIfItShould
     //PageObjectFinder.page(page).checkContent("")
   }
 
@@ -117,7 +117,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     waitForPageHeader
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkDutyPage(duty)
-    PageObjectFinder.page(page).checkBackButtonExistsIfItShould
+    //PageObjectFinder.page(page).checkBackButtonExistsIfItShould
     //PageObjectFinder.page(page).checkContent(content)
   }
 

@@ -40,7 +40,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     When I select radio button "yes" on "Single_Claimant Details Check Page"
     And I click continue on "Single_Claimant Details Check Page"
     Then I am presented with the "Single_Choose Basis For Claim Page"
-    When I select radio button "Duplicate MRN" on "Single_Choose Basis For Claim Page"
+    When I select radio button "Duplicate Movement Reference Number (MRN)" on "Single_Choose Basis For Claim Page"
     And I click continue on "Single_Choose Basis For Claim Page"
     Then I am presented with the "Single_Enter Duplicate Movement Reference Number Page"
     When I enter "20AAAAAAAAAAAAAAA1" on "Single_Enter Duplicate Movement Reference Number Page"
