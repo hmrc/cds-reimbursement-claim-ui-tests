@@ -23,13 +23,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CheckEoriDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-eori-details"
-  override val title = "Enter the declarant’s EORI number"
+  override val title = "Check the EORI associated with the user ID is correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check if this is the correct EORI - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check the EORI associated with the user ID is correct - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check if this is the correct EORI - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check the EORI associated with the user ID is correct - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check if this is the correct EORI")
+  override def expectedPageHeader: Option[String] = Some("Check the EORI associated with the user ID is correct")
 
   override def checkContent(content: String): Unit = {
     val eori = content.split(",")(0)

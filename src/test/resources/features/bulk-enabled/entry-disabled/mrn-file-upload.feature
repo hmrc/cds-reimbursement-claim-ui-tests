@@ -30,7 +30,7 @@ Feature: MRN file upload (bulk enabled, entry disabled)
     When I select radio button "yes" on "Single_Claimant Details Check Page"
     And I click continue on "Single_Claimant Details Check Page"
     Then I am presented with the "Single_Choose Basis For Claim Page"
-    When I select radio button "Duty Suspension" on "Single_Choose Basis For Claim Page"
+    When I select radio button "Duty suspension" on "Single_Choose Basis For Claim Page"
     And I click continue on "Single_Choose Basis For Claim Page"
     Then I am presented with the "Single_Enter Commodity Details Page"
     When I enter "under 500 characters" on "Single_Enter Commodity Details Page"

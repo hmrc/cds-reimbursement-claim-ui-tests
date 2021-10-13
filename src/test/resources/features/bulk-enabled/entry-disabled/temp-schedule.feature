@@ -38,7 +38,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     When I select radio button "yes" on "Scheduled_Claimant Details Page"
     And I click continue on "Scheduled_Claimant Details Page"
     Then I am presented with the "Scheduled_Choose Basis For Claim Page"
-    When I select radio button "OPR" on "Scheduled_Choose Basis For Claim Page"
+    When I select radio button "Outward processing relief" on "Scheduled_Choose Basis For Claim Page"
     And I click continue on "Scheduled_Choose Basis For Claim Page"
     Then I am presented with the "Scheduled_Enter Commodity Details Page"
     When I enter "under 500 characters" on "Scheduled_Enter Commodity Details Page"
