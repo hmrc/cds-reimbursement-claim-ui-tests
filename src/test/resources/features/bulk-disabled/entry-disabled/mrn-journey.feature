@@ -111,7 +111,7 @@ Feature: MRN (bulk disabled, entry disabled)
     And I click continue on "Single_Enter Movement Reference Number Page"
     Then I am presented with the "Single_Enter Movement Reference Number Page" error page
 
-  @test
+  @test @ZAP @a11y
   Scenario: user selects CMA
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

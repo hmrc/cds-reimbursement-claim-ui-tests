@@ -363,12 +363,12 @@ Feature: MRN (bulk enabled, entry disabled)
     Then I am presented with the "Single_Enter Movement Reference Number Page" and content "bulk-enabled,entry-disabled"
     When I enter "10AAAAAAAAAAAAAAA6" on "Single_Enter Movement Reference Number Page"
     And I click continue on "Single_Enter Movement Reference Number Page"
-    Then I am presented with the "Single_Importer Eori Entry Page"
-    When I enter "GB000000000000006" on "Single_Importer Eori Entry Page"
-    And I click continue on "Single_Importer Eori Entry Page"
+    Then I am presented with the "Single_Enter Importer Eori Page"
+    When I enter "GB000000000000006" on "Single_Enter Importer Eori Page"
+    And I click continue on "Single_Enter Importer Eori Page"
     Then I am presented with the "Single_Declarant Eori Entry Page"
     When I enter "GB000000000000006" on "Single_Declarant Eori Entry Page"
-    And I click continue on "Single_Importer Eori Entry Page"
+    And I click continue on "Single_Enter Importer Eori Page"
     Then I am presented with the "Single_Check Declaration Details Page" and content "10AAAAAAAAAAAAAAA6"
 
   @test
