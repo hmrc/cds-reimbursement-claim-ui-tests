@@ -7,7 +7,7 @@ Feature: MRN (bulk disabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "disabled"
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path (mrn) - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
