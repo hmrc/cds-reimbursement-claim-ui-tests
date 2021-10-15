@@ -7,7 +7,7 @@ Feature: Bulk NI (bulk enabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
 
-  @test @1
+  @test
   Scenario: test temp NI pages - NI enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
