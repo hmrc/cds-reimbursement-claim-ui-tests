@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.individual
+package uk.gov.hmrc.cdsrc.pages.scheduled
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Single_EnterImporterEoriPage extends BasePage {
+object Scheduled_EnterImporterEoriPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-importer-eori"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-importer-eori"
   override val title = "Enter the importer’s EORI number"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the importer’s EORI number - Claim for reimbursement of import duties - GOV.UK")
