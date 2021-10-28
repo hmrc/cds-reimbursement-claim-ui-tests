@@ -1,6 +1,6 @@
 @Regression @Bulk
 
-Feature: Bulk (bulk enabled, entry disabled)
+Feature: Multiple (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
