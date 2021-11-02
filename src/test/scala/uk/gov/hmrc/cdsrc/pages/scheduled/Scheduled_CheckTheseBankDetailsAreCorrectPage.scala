@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.scheduled
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,39 +29,6 @@ object Scheduled_CheckTheseBankDetailsAreCorrectPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Check these bank details are correct - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
-
-  override def checkContent(content: String) {
-    content match {
-      case "changed" =>
-        driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("These are the details of where your reimbursements (repayments) will be made in the UK based on our records.")
-
-        driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(3)")).getText should equal("If you are a representative and want to change these bank details, then you will need to provide:")
-        driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(1)")).getText should equal("a letter of authority from the company you represent that proves you are their representative")
-        driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(2)")).getText should equal("a letter from the company you represent to their bank to confirm what the bank details should be changed to")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText should equal("Name on the account")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText should equal("Sort code")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dt")).getText should equal("Account number")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("Mr John Smith")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd")).getText should equal("123456")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd")).getText should equal("11001001")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions.govuk-link > a")).getText should equal("Change")
-        driver.findElement(By.cssSelector("#main-content > div > div > a")).getText should equal("Continue")
-      case _ =>
-        driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("These are the details of where your reimbursements (repayments) will be made in the UK based on our records.")
-
-        driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(3)")).getText should equal("If you are a representative and want to change these bank details, then you will need to provide:")
-        driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(1)")).getText should equal("a letter of authority from the company you represent that proves you are their representative")
-        driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(2)")).getText should equal("a letter from the company you represent to their bank to confirm what the bank details should be changed to")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText should equal("Name on the account")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText should equal("Sort code")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dt")).getText should equal("Account number")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText should equal("CDS E2E To E2E Bank")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd")).getText should equal("Ending with 44")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd")).getText should equal("Ending with 5678")
-        driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions.govuk-link > a")).getText should equal("Change")
-        driver.findElement(By.cssSelector("#main-content > div > div > a")).getText should equal("Continue")
-    }
-  }
 
   override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
 
