@@ -8,7 +8,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Given the "Northern Ireland" feature is "disabled"
 
   @test
-  Scenario: test temp pages
+  Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -126,6 +126,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
     When I upload a "image.jpg" file on "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Scheduled_Supporting Evidence Scan Progress Page"
     Then I am presented with the "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
@@ -137,7 +138,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Claim Submitted Page"
 
   @test @a11y @ZAP
-  Scenario: test temp pages - check importer/declarant eori pages
+  Scenario: check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -261,6 +262,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
     When I upload a "image.jpg" file on "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Scheduled_Supporting Evidence Scan Progress Page"
     Then I am presented with the "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
@@ -272,7 +274,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Claim Submitted Page"
 
   @test
-  Scenario: test temp pages - wrong mrn
+  Scenario: wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -297,7 +299,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
     And I click continue on "Scheduled_Check Declaration Details Page"
 
   @test
-  Scenario: test temp pages - test file upload size and format fail pages
+  Scenario: test file upload size and format fail pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"

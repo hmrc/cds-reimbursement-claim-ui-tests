@@ -8,7 +8,7 @@ Feature: Scheduled NI (bulk enabled, entry disabled)
     Given the "Northern Ireland" feature is "enabled"
 
   @test @a11y @ZAP
-  Scenario: test temp NI pages - NI enabled
+  Scenario: happy path - NI enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000005" on "Auth Login Stub Page"
@@ -129,6 +129,7 @@ Feature: Scheduled NI (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
     When I upload a "image.jpg" file on "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
     And I click continue on "Scheduled_Supporting Evidence Upload Supporting Evidence Page"
+    And I click continue if I'm on "Scheduled_Supporting Evidence Scan Progress Page"
     Then I am presented with the "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
