@@ -75,9 +75,9 @@ Feature: Multiple (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Multiple_Supporting Evidence Check Your Answers Page"
     And I click continue on "Multiple_Supporting Evidence Check Your Answers Page"
-#    Then I am presented with the "Multiple_Check Answers Accept Send Page"
-#    And I click continue on "Multiple_Check Answers Accept Send Page"
-#    Then I am presented with the "Multiple_Claim Submitted Page"
+    Then I am presented with the "Multiple_Check Answers Accept Send Page"
+    And I click continue on "Multiple_Check Answers Accept Send Page"
+    Then I am presented with the "Multiple_Claim Submitted Page"
 
   @test
   Scenario: error scenario - second mrn not linked to eori
@@ -206,9 +206,9 @@ Feature: Multiple (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Multiple_Supporting Evidence Check Your Answers Page"
     And I click continue on "Multiple_Supporting Evidence Check Your Answers Page"
-#    Then I am presented with the "Multiple_Check Answers Accept Send Page"
-#    And I click continue on "Multiple_Check Answers Accept Send Page"
-#    Then I am presented with the "Multiple_Claim Submitted Page"
+    Then I am presented with the "Multiple_Check Answers Accept Send Page"
+    And I click continue on "Multiple_Check Answers Accept Send Page"
+    Then I am presented with the "Multiple_Claim Submitted Page"
 
   @test
   Scenario: wrong mrn
@@ -321,9 +321,9 @@ Feature: Multiple (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Multiple_Supporting Evidence Check Your Answers Page"
     And I click continue on "Multiple_Supporting Evidence Check Your Answers Page"
-#    Then I am presented with the "Multiple_Check Answers Accept Send Page"
-#    And I click continue on "Multiple_Check Answers Accept Send Page"
-#    Then I am presented with the "Multiple_Claim Submitted Page" and content "£40.00"
+    Then I am presented with the "Multiple_Check Answers Accept Send Page"
+    And I click continue on "Multiple_Check Answers Accept Send Page"
+    Then I am presented with the "Multiple_Claim Submitted Page" and content "£40.00"
 
   @testFail
   Scenario: test temp pages - confirm ALF data works in journey (no contact details)
@@ -544,6 +544,6 @@ Feature: Multiple (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Supporting Evidence Check Your Answers Page"
     When I select radio button "No" on "Multiple_Supporting Evidence Check Your Answers Page"
     And I click continue on "Multiple_Supporting Evidence Check Your Answers Page"
-#    Then I am presented with the "Multiple_Check Answers Accept Send Page"
-#    And I click continue on "Multiple_Check Answers Accept Send Page"
-#    Then I am presented with the "Multiple_Claim Submitted Page"
+    Then I am presented with the "Multiple_Check Answers Accept Send Page"
+    And I click continue on "Multiple_Check Answers Accept Send Page"
+    Then I am presented with the "Multiple_Claim Submitted Page"
