@@ -30,8 +30,4 @@ object ALF_LookupAddressLookupPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Find UK address")
 
-  override def checkContent(content: String): Unit = {
-    // not checking content for this page, since we don't own it
-  }
-
 }
