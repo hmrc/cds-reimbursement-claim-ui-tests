@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.bulk
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,17 +30,11 @@ object Multiple_ClaimNorthernIrelandPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Were your goods imported to or moved through Northern Ireland?")
 
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("If you select Yes, then all your MRNs in this claim must have been imported to or moved through Northern Ireland.")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Yes")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
-
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#claim-northern-ireland-yes")
       case "no" => click on cssSelector("#claim-northern-ireland-no")
     }
   }
+
 }

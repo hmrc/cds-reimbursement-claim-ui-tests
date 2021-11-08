@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.bulk
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,19 +30,6 @@ object Multiple_SupportingEvidenceCheckYourAnswersPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("You have added 1 document to your claim - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("You have added 1 document to your claim")
-
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the documents you have added so far to support this claim. So we can process your claim efficiently, add the commercial invoice used in the import declaration.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText should equal("document.pdf\nCommercial Invoice")
-    driver.findElement(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd > a")).getText should equal("Remove")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > legend")).getText should equal("Do you want to add another document?")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Yes")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-
-  }
 
   override def clickRadioButton(choice: String): Unit = {
     choice.toLowerCase() match {

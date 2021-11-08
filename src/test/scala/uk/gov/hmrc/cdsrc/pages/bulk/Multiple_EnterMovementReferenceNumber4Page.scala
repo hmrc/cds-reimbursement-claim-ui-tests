@@ -33,4 +33,5 @@ object Multiple_EnterMovementReferenceNumber4Page extends BasePage {
   override def enterDetails(textToEnter: String) {
     enterText("enter-associated-mrn", textToEnter)
   }
+
 }
