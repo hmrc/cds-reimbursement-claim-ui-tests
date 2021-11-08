@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.common
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,22 +30,6 @@ object ChooseHowManyMrnsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("How many MRNs do you want to submit in this claim?")
 
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("A Movement Reference Number (MRN) is issued when an import is declared. Find out more about this number (opens in a new tab).")
-    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(3)")).getText should equal("Multiple MRNs must all be from the same importer and have the same reason for overpayment.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("One MRN")
-    driver.findElement(By.cssSelector("#select-number-of-claims-individual-item-hint")).getText should equal("Enter one MRN manually.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Multiple/bulk MRNs - Manual entry")
-    driver.findElement(By.cssSelector("#select-number-of-claims-bulk-item-hint")).getText should equal("Enter each number manually.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("Multiple/bulk MRNs - Document upload")
-    driver.findElement(By.cssSelector("#select-number-of-claims-scheduled-item-hint")).getText should equal("You can enter a bulk claim by uploading a document with MRNs or Entry numbers for multiple declarations.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
-
   override def clickRadioButton(text: String) {
     text.toLowerCase() match {
       case "individual" => click on cssSelector("#select-number-of-claims-individual")
@@ -54,4 +37,5 @@ object ChooseHowManyMrnsPage extends BasePage {
       case "schedule" => click on cssSelector("#select-number-of-claims-scheduled")
     }
   }
+
 }
