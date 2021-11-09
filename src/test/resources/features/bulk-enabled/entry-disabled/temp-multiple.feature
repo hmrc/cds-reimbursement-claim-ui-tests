@@ -253,7 +253,7 @@ Feature: Multiple (bulk enabled, entry disabled)
     Then I am presented with the "Choose How Many Mrns Page"
     When I select radio button "bulk" on "Choose How Many Mrns Page"
     And I click continue on "Choose How Many Mrns Page"
-    Then I am presented with the "Multiple_Enter Movement Reference Number Page" and content "bulk-enabled,entry-disabled"
+    Then I am presented with the "Multiple_Enter Movement Reference Number Page"
     When I enter "10AAAAAAAAAAAAAAA1" on "Multiple_Enter Movement Reference Number Page"
     And I click continue on "Multiple_Enter Movement Reference Number Page"
     Then I am presented with the "Multiple_Check Declaration Details Page"

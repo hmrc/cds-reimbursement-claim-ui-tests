@@ -95,6 +95,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     expectedPageHeaderList should contain(List(pageHeader.get))
   }
 
+  def checkContent(content: String): Unit = {
+  }
+
   def waitForPageToLoad(): WebDriver.Timeouts = {
     driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
   }
