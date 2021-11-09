@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.scheduled
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,15 +30,6 @@ object Scheduled_ScheduledDocumentUploadReviewPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim")
-
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("The document should show:")
-    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(1)")).getText should equal("the type of duty or tax you are claiming for each MRN")
-    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(2)")).getText should equal("the amount that was paid to HMRC for each MRN")
-    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(3)")).getText should equal("the amount that should have been paid to HMRC for each MRN")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
 
   override def clickContinueButton(): Unit = {
     click on cssSelector("#main-content > div > div > form > button")

@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.scheduled
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,14 +30,5 @@ object Scheduled_ScheduledDocumentUploadSizeFailPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("There is a problem with the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("There is a problem with the file you uploaded")
-
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("This could be because:")
-    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(1)")).getText should equal("the service has experienced technical issues")
-    driver.findElement(By.cssSelector("#main-content > div > div > ul > li:nth-child(2)")).getText should equal("your file was larger than 10MB")
-    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(4)")).getText should equal("You’ll need to try again.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Try again")
-  }
 
 }
