@@ -36,16 +36,6 @@ object Single_EnterClaimPage extends BasePage {
     true should equal(true)
   }
 
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("This is to calculate your reimbursement (repayment) as part of your claim. HMRC does not refund agents’ fees.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > p")).getText should equal(s"""Paid amount: $content""")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > label")).getText should equal("Claim amount")
-    driver.findElement(By.cssSelector("#enter-claim-hint")).getText should equal("This is the Customs Duty amount you wish to claim for.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
-
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
     enterText("enter-claim", amounts(0))

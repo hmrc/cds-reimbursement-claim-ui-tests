@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,12 +30,6 @@ object Single_BankAccountTypePage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("What type of account details are you providing? - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("What type of account details are you providing?")
-
-  override def checkContent(content: String) {
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Business bank account")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Personal bank account")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
 
   override def clickRadioButton(text: String): Unit = {
     text match {

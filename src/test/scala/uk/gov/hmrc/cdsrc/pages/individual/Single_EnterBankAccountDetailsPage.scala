@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,19 +29,6 @@ object Single_EnterBankAccountDetailsPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Enter bank account details - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter bank account details")
-
-  override def checkContent(content: String) {
-    driver.findElement(By.cssSelector("#main-content > div > div > p:nth-child(2)")).getText should equal("This is where you would like reimbursements (repayments) to be made in the UK.")
-    driver.findElement(By.cssSelector("#main-content > div > div > p.govuk-body.govuk-\\!-margin-bottom-8")).getText should equal("To use these bank details again, contact the CDS team (opens in new tab) via the imports and exports general enquiries. Updating your bank details will only affect this claim and not past and future claims.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Name on the account")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > label")).getText should equal("Sort code")
-    driver.findElement(By.cssSelector("#enter-bank-details\\.sort-code-hint")).getText should equal("Must be 6 digits long")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(4) > label")).getText should equal("Account number")
-    driver.findElement(By.cssSelector("#enter-bank-details\\.account-number-hint")).getText should equal("Must be between 6 and 8 digits long")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
 
   override def enterDetails(data: String): Unit = {
     val bankAccountName: String = "Mr John Smith"
