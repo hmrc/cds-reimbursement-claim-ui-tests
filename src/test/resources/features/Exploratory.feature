@@ -9,7 +9,7 @@ Feature: Exploratory file using Cucumber
     Then I am presented with the "Check Eori Details Page"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Single_Enter Movement Reference Number Page" and content "bulk-disabled,entry-disabled"
+    Then I am presented with the "Single_Enter Movement Reference Number Page"
     When I enter "10AAAAAAAAAAAAAAA1" on "Single_Enter Movement Reference Number Page"
     And I click continue on "Single_Enter Movement Reference Number Page"
     Then I am presented with the "Single_Check Declaration Details Page"

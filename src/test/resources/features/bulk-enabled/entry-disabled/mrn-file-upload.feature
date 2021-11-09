@@ -17,7 +17,7 @@ Feature: MRN file upload (bulk enabled, entry disabled)
     Then I am presented with the "Choose How Many Mrns Page"
     When I select radio button "individual" on "Choose How Many Mrns Page"
     And I click continue on "Choose How Many Mrns Page"
-    Then I am presented with the "Single_Enter Movement Reference Number Page" and content "bulk-enabled,entry-disabled"
+    Then I am presented with the "Single_Enter Movement Reference Number Page"
     When I enter "10AAAAAAAAAAAAAAA1" on "Single_Enter Movement Reference Number Page"
     And I click continue on "Single_Enter Movement Reference Number Page"
     Then I am presented with the "Single_Check Declaration Details Page"
