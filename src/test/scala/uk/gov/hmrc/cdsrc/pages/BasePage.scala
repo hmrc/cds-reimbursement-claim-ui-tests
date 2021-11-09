@@ -104,12 +104,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     }
   }
 
-  def checkContent(content: String): Unit = {
-    println("Page is missing content checks and overriding function")
-    //uncomment the below line to make it easier to find missing content pages
-    //driver.findElement(By.cssSelector("")).getText should equal("")
-  }
-
   def waitForPageToLoad(): WebDriver.Timeouts = {
     driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
   }
