@@ -34,8 +34,4 @@ object Scheduled_ScheduledDocumentUploadUploadPage extends BasePage {
     click on cssSelector("#main-content > div > div > form > div.govuk-\\!-margin-bottom-9 > button")
   }
 
-  override def checkBackButtonExistsIfItShould: Unit = {
-
-  }
-
 }

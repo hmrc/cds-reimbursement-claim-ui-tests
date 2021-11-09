@@ -95,15 +95,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     expectedPageHeaderList should contain(List(pageHeader.get))
   }
 
-  //if page should have back button, then there should be more than 1 back button on that page
-  def checkBackButtonExistsIfItShould: Any = {
-    if (pageShouldHaveBackButton) {
-      driver.findElements(By.cssSelector("#cdsr-back-link > a")).size() should be > 0
-    } else {
-      driver.findElements(By.cssSelector("#cdsr-back-link > a")).size() should equal(0)
-    }
-  }
-
   def waitForPageToLoad(): WebDriver.Timeouts = {
     driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
   }
