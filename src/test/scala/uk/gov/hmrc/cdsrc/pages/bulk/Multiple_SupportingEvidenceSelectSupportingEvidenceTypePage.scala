@@ -26,7 +26,6 @@ object Multiple_SupportingEvidenceSelectSupportingEvidenceTypePage extends BaseP
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/supporting-evidence/select-supporting-evidence-type/..."
   override val title = "Select the description of the file you just uploaded"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
 

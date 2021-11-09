@@ -23,7 +23,6 @@ object Scheduled_ScheduledDocumentUploadFormatVirusFailPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/scheduled-document-upload/format-virus-fail"
   override val title = "There is a problem with your file"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("There is a problem with your file - Claim for reimbursement of import duties - GOV.UK")
 

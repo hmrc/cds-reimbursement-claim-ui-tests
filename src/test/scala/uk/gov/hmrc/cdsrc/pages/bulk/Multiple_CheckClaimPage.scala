@@ -23,7 +23,6 @@ object Multiple_CheckClaimPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/check-claim"
   override val title = "Check the reimbursement claim totals for all MRNs"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Check the reimbursement claim totals for all MRNs - Claim for reimbursement of import duties - GOV.UK")
 

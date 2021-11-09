@@ -23,7 +23,6 @@ object Single_BankAccountTypePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/bank-account-type"
   override val title = "What type of account details are you providing?"
-  override val pageShouldHaveBackButton = true
 
   override def expectedPageErrorTitle: Option[String] = Some("What type of account details are you providing? - Claim for reimbursement of import duties - GOV.UK")
 

@@ -23,7 +23,6 @@ object Multiple_CheckMovementReferenceNumbersPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/check-movement-reference-numbers"
   override val title = "Claim submitted"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("All your MRNs entered in this claim - Claim for reimbursement of import duties - GOV.UK")
 

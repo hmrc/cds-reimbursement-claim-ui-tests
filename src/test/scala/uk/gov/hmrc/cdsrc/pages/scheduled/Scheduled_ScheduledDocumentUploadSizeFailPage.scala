@@ -23,7 +23,6 @@ object Scheduled_ScheduledDocumentUploadSizeFailPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/scheduled-document-upload/size-fail"
   override val title = "There is a problem with the file you uploaded"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("There is a problem with the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
 

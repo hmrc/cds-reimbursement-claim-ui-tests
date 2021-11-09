@@ -23,7 +23,6 @@ object Scheduled_ScheduledDocumentUploadReviewPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/scheduled-document-upload/review"
   override val title = "You have successfully uploaded a document showing all the MRNs in this claim"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
 

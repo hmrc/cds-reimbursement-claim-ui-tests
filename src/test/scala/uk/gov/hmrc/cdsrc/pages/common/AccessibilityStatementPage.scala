@@ -29,6 +29,4 @@ object AccessibilityStatementPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Accessibility statement for Claim for reimbursement of import duties service")
 
-  override val pageShouldHaveBackButton: Boolean = false
-
 }

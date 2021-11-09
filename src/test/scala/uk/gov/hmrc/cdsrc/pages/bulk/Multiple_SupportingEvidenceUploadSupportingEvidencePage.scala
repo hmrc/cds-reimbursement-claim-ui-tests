@@ -23,7 +23,6 @@ object Multiple_SupportingEvidenceUploadSupportingEvidencePage extends BasePage 
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/supporting-evidence/upload-supporting-evidence"
   override val title = "Add documents to support your claim"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Error: Add documents to support your claim - Claim for reimbursement of import duties - GOV.UK")
 
