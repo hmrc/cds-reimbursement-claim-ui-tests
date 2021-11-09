@@ -33,4 +33,5 @@ object Multiple_EnterDeclarantEoriPage extends BasePage {
   override def enterDetails(textToEnter: String) {
     enterText("enter-declarant-eori-number", textToEnter)
   }
+
 }

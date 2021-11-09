@@ -33,4 +33,5 @@ object Scheduled_EnterImporterEoriPage extends BasePage {
   override def enterDetails(textToEnter: String) {
     enterText("enter-importer-eori-number", textToEnter)
   }
+
 }

@@ -27,7 +27,6 @@ object Scheduled_SupportingEvidenceSelectSupportingEvidenceTypePage extends Base
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/supporting-evidence/select-supporting-evidence-type"
   override val title = "Select the description of the file you just uploaded"
-  override val pageShouldHaveBackButton = false
 
   override def expectedPageErrorTitle: Option[String] = Some("Select the description of the file you just uploaded - Claim for reimbursement of import duties - GOV.UK")
 
@@ -37,20 +36,6 @@ object Scheduled_SupportingEvidenceSelectSupportingEvidenceTypePage extends Base
 
   override def checkURL: Assertion = {
     driver.getCurrentUrl should fullyMatch regex (url + ".*?").r
-  }
-
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("Choose a definition of the file from this list. This will help us to process your claim more efficiently.")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Commercial Invoice")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("Import and Export Declaration")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(3) > label")).getText should equal("Packing List")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(4) > label")).getText should equal("Air Waybill")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(5) > label")).getText should equal("Bill of Lading")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(6) > label")).getText should equal("Substitute Entry")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(7) > label")).getText should equal("Proof of Authority")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(8) > label")).getText should equal("Correspondence Trader")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(9) > label")).getText should equal("Other documents")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
   }
 
   override def clickRadioButton(selection: String): Unit = {

@@ -29,8 +29,4 @@ object FeedbackPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Feedback")
 
-  override def checkContent(content: String): Unit = {
-    //content checks not required since this is not part of our service
-  }
-
 }

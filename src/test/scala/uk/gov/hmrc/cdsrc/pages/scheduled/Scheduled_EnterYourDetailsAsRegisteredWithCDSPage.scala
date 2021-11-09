@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.scheduled
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,28 +29,6 @@ object Scheduled_EnterYourDetailsAsRegisteredWithCDSPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Enter your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter your details as registered with CDS")
-
-
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("These are the details you used when registering with CDS.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Full name")
-    driver.findElement(By.cssSelector("#enter-claimant-details-as-registered-with-cds\\.individual-full-name-hint")).getText should equal("This must be your legal name")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > label")).getText should equal("Email address")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > fieldset > legend")).getText should equal("Contact address")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > fieldset > div:nth-child(2) > label")).getText should equal("Address Line 1")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > fieldset > div:nth-child(3) > label")).getText should equal("Address Line 2 (optional)")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > fieldset > div:nth-child(4) > label")).getText should equal("Address Line 3 (optional)")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > fieldset > div:nth-child(5) > label")).getText should equal("Town or city")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > fieldset > div:nth-child(6) > label")).getText should equal("Postcode")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > fieldset > div.form-group.country-code-wrapper > label")).getText should equal("Country")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(5) > fieldset > legend")).getText should equal("Do you want to add contact details so we can contact you about this claim?")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(5) > fieldset > div > div:nth-child(1) > label")).getText should equal("Yes")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(5) > fieldset > div > div:nth-child(2) > label")).getText should equal("No")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
 
   override def enterDetails(data: String): Unit = {
     val fullName: String = "Johnathon Smithson"

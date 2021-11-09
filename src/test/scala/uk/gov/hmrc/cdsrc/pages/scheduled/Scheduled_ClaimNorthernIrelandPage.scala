@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.scheduled
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,13 +29,6 @@ object Scheduled_ClaimNorthernIrelandPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Were your goods imported to or moved through Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Were your goods imported to or moved through Northern Ireland?")
-
-
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > p")).getText should equal("If you select Yes, then all your MRNs in this claim must have been imported or moved through Northern Ireland.")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {

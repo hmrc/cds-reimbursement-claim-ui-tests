@@ -30,10 +30,6 @@ object ALF_LookupAddressEditPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter address")
 
-  override def checkContent(content: String): Unit = {
-    // not checking content for this page, since we don't own it
-  }
-
   override def enterDetails(data: String): Unit = {
     val address1: String = "123 Fake Street"
     val town: String = "123 Fake Town"

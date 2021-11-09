@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.common
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -31,25 +30,11 @@ object CheckEoriDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check the EORI associated with the user ID is correct")
 
-  override def checkContent(content: String): Unit = {
-    val eori = content.split(",")(0)
-    val name = content.split(",")(1)
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dt")).getText should equal("EORI")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(1) > dd")).getText should equal(eori)
-    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dt")).getText should equal("Name")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > dl > div:nth-child(2) > dd")).getText should equal(name)
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).getText should equal("Yes")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).getText should equal("No, sign in again")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
-
   override def clickRadioButton(text: String) {
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#check-eori-details")
       case "no" => click on cssSelector("#check-eori-details-eori-incorrect")
     }
   }
+
 }

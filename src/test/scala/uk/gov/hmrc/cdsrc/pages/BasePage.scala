@@ -31,7 +31,6 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
   val title: String = ""
-  val pageShouldHaveBackButton: Boolean = true //"0 was not greater than 0" error requires this to be overriden with false
 
   /** Fluent Wait config * */
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
@@ -93,21 +92,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def checkPageHeader(content: String): Assertion = {
     fluentWait.until(ExpectedConditions.textToBe(By.cssSelector("h1"), expectedPageHeader.get))
     expectedPageHeaderList should contain(List(pageHeader.get))
-  }
-
-  //if page should have back button, then there should be more than 1 back button on that page
-  def checkBackButtonExistsIfItShould: Any = {
-    if (pageShouldHaveBackButton) {
-      driver.findElements(By.cssSelector("#cdsr-back-link > a")).size() should be > 0
-    } else {
-      driver.findElements(By.cssSelector("#cdsr-back-link > a")).size() should equal(0)
-    }
-  }
-
-  def checkContent(content: String): Unit = {
-    println("Page is missing content checks and overriding function")
-    //uncomment the below line to make it easier to find missing content pages
-    //driver.findElement(By.cssSelector("")).getText should equal("")
   }
 
   def waitForPageToLoad(): WebDriver.Timeouts = {

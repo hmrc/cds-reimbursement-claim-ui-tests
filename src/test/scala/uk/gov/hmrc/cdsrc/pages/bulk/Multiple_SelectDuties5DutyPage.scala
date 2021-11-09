@@ -49,9 +49,4 @@ object Multiple_SelectDuties5DutyPage extends BasePage {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for duty $duty under fifth MRN")
   }
 
-  override def checkBackButtonExistsIfItShould: Any = {
-    //Legacy journey shows back button, but MRN does not
-    //This method is just to stop it using the standard method, since ^^^ was an unexpected circumstance
-  }
-
 }

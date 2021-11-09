@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.bulk
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -30,16 +29,6 @@ object Multiple_ClaimantDetailsEnterContactDetailsPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Add contact details - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Add contact details")
-
-  override def checkContent(content: String): Unit = {
-    driver.findElement(By.cssSelector("#main-content > div > div > h2")).getText should equal("Enter your personal details")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(2) > label")).getText should equal("Full name")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(3) > label")).getText should equal("Email address")
-    driver.findElement(By.cssSelector("#main-content > div > div > form > div:nth-child(4) > label")).getText should equal("Telephone (optional)")
-
-    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).getText should equal("Continue")
-  }
 
   override def enterDetails(data: String): Unit = {
     val fullName: String = "John Smith"
