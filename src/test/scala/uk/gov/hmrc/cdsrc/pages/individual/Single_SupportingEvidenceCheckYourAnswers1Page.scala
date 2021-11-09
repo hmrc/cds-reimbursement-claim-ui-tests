@@ -16,11 +16,10 @@
 
 package uk.gov.hmrc.cdsrc.pages.individual
 
-import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Single_SupportingEvidenceCheckYourAnswersPage extends BasePage {
+object Single_SupportingEvidenceCheckYourAnswers1Page extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/check-your-answers"
   override val title = "You have added 1 document to your claim"
@@ -30,14 +29,6 @@ object Single_SupportingEvidenceCheckYourAnswersPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("You have added 1 document to your claim - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("You have added 1 document to your claim")
-
-  override def checkPageHeader(content: String): Assertion = {
-    true should equal(true)
-  }
-
-  override def checkPageTitle(content: String): Assertion = {
-    true should equal(true)
-  }
 
   override def clickRadioButton(choice: String): Unit = {
     choice.toLowerCase() match {
