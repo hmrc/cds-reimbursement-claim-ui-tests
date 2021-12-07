@@ -3,7 +3,7 @@ Feature: MRN file upload (bulk enabled, entry disabled)
   Background:
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
-    Given the "Northern Ireland" feature is "disabled"
+    Given the "Northern Ireland" feature is "enabled"
 
   @test
   Scenario: happy path (mrn) - upload 3 files
