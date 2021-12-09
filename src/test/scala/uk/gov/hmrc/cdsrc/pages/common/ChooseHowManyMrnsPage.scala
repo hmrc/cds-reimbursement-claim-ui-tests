@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object ChooseHowManyMrnsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/choose-how-many-mrns"
-  override val title = "How many MRNs do you want to submit in this claim?"
+  override val title = "Choose how many MRNs you want to submit in this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("SHow many MRNs do you want to submit in this claim? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("How many MRNs do you want to submit in this claim? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("How many MRNs do you want to submit in this claim?")
+  override def expectedPageHeader: Option[String] = Some("Choose how many MRNs you want to submit in this claim")
 
   override def clickRadioButton(text: String) {
     text.toLowerCase() match {
