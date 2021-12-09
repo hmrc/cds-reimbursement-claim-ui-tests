@@ -5,7 +5,7 @@ Feature: Scheduled (bulk enabled, entry disabled)
   Background:
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
-    Given the "Northern Ireland" feature is "disabled"
+    Given the "Northern Ireland" feature is "enabled"
 
   @test
   Scenario: happy path
@@ -37,6 +37,9 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Claimant Details Page"
     When I select radio button "yes" on "Scheduled_Claimant Details Page"
     And I click continue on "Scheduled_Claimant Details Page"
+    Then I am presented with the "Scheduled_Claim Northern Ireland Page"
+    And I select radio button "yes" on "Scheduled_Claim Northern Ireland Page"
+    And I click continue on "Scheduled_Claim Northern Ireland Page"
     Then I am presented with the "Scheduled_Choose Basis For Claim Page"
     When I select radio button "Outward processing relief" on "Scheduled_Choose Basis For Claim Page"
     And I click continue on "Scheduled_Choose Basis For Claim Page"
@@ -173,6 +176,9 @@ Feature: Scheduled (bulk enabled, entry disabled)
     Then I am presented with the "Scheduled_Claimant Details Page"
     When I select radio button "yes" on "Scheduled_Claimant Details Page"
     And I click continue on "Scheduled_Claimant Details Page"
+    Then I am presented with the "Scheduled_Claim Northern Ireland Page"
+    And I select radio button "yes" on "Scheduled_Claim Northern Ireland Page"
+    And I click continue on "Scheduled_Claim Northern Ireland Page"
     Then I am presented with the "Scheduled_Choose Basis For Claim Page"
     When I select radio button "Outward processing relief" on "Scheduled_Choose Basis For Claim Page"
     And I click continue on "Scheduled_Choose Basis For Claim Page"

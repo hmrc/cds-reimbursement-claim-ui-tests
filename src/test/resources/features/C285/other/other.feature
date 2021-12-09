@@ -3,7 +3,7 @@ Feature: Bulk (bulk enabled, entry disabled)
   Background:
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
-    Given the "Northern Ireland" feature is "disabled"
+    Given the "Northern Ireland" feature is "enabled"
 
   @testFailsOnJenkins
   Scenario: other - click Accessibility footer link
@@ -39,6 +39,9 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Single_Claimant Details Check Page"
     When I select radio button "yes" on "Single_Claimant Details Check Page"
     And I click continue on "Single_Claimant Details Check Page"
+    Then I am presented with the "Single_Claim Northern Ireland Page"
+    And I select radio button "yes" on "Single_Claim Northern Ireland Page"
+    And I click continue on "Single_Claim Northern Ireland Page"
     Then I am presented with the "Single_Choose Basis For Claim Page"
     When I select radio button "Duplicate Movement Reference Number (MRN)" on "Single_Choose Basis For Claim Page"
     And I click continue on "Single_Choose Basis For Claim Page"
