@@ -4,6 +4,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
+    Given the "Rejected Goods" feature is "disabled"
 
   @testFailsOnJenkins
   Scenario: other - click Accessibility footer link
