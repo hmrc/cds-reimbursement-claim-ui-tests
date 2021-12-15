@@ -19,4 +19,8 @@ Feature: temp file for C&E1179
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     #Then I am presented with the "RejectedGoods_Choose How Many Mrns Page"
+    Then I am presented with the "Rejected Goods_Single_Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA1" on "Rejected Goods_Single_Enter Movement Reference Number Page"
+    And I click continue on "Rejected Goods_Single_Enter Movement Reference Number Page"
+    #Then I am presented with the "Rejected Goods_Single_Check Declaration Details Page"
 
