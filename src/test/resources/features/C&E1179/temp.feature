@@ -28,4 +28,11 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Enter Declarant Eori Page"
     When I enter "GB000000000000002" on "Rejected Goods_Single_Enter Declarant Eori Page"
     And I click continue on "Rejected Goods_Single_Enter Declarant Eori Page"
-
+    Then I am presented with the "Rejected Goods_Single_Check Declaration Details Page"
+    When I select radio button "yes" on "Rejected Goods_Single_Check Declaration Details Page"
+    And I click continue on "Rejected Goods_Single_Check Declaration Details Page"
+    Then I am presented with the "Rejected Goods_Single_Claimant Details Page"
+    And I click continue on "Rejected Goods_Single_Claimant Details Page"
+    Then I am presented with the "Rejected Goods_Single_Choose Basis For Claim Page"
+    When I select radio button "Not in accordance with contract" on "Rejected Goods_Single_Choose Basis For Claim Page"
+    And I click continue on "Rejected Goods_Single_Choose Basis For Claim Page"
