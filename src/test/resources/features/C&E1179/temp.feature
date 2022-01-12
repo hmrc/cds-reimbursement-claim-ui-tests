@@ -36,3 +36,11 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Choose Basis For Claim Page"
     When I select radio button "Not in accordance with contract" on "Rejected Goods_Single_Choose Basis For Claim Page"
     And I click continue on "Rejected Goods_Single_Choose Basis For Claim Page"
+    Then I am presented with the "Rejected Goods_Single_Choose Disposal Method Page"
+    When I select radio button "Exported" on "Rejected Goods_Single_Choose Disposal Method Page"
+    And I click continue on "Rejected Goods_Single_Choose Disposal Method Page"
+
+#    Then I am presented with the "Rejected Goods_Single_Select Duties Page"
+#    When I select "A80,A95,A90,A85" on "Rejected Goods_Single_Select Duties Page"
+#    And I click continue on "Rejected Goods_Single_Select Duties Page"
+
