@@ -17,27 +17,21 @@
 package uk.gov.hmrc.cdsrc.pages.CE1179
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.asScalaBufferConverter
 
-object RejectedGoods_Single_ChooseBasisForClaimPage extends BasePage {
+object RejectedGoods_Single_ChooseDisposalMethodPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/choose-basis-for-claim"
-  override val title = "Choose the basis for claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/choose-disposal-method"
+  override val title = "How were your goods disposed of?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose the basis for claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("How were your goods disposed of? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose the basis for claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("How were your goods disposed of? - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Choose the basis for claim")
-
-  override def dropdownSelect(selection: String): Unit = {
-    val dropdown = new Select(driver.findElement(By.id("select-basis-for-claim")))
-    dropdown.selectByVisibleText(selection)
-  }
+  override def expectedPageHeader: Option[String] = Some("How were your goods disposed of?")
 
   override def clickRadioButton(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()

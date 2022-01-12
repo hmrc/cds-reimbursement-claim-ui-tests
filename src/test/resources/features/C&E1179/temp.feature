@@ -6,7 +6,7 @@ Feature: temp file for C&E1179
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @1
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -36,3 +36,6 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Choose Basis For Claim Page"
     When I select radio button "Not in accordance with contract" on "Rejected Goods_Single_Choose Basis For Claim Page"
     And I click continue on "Rejected Goods_Single_Choose Basis For Claim Page"
+    Then I am presented with the "Rejected Goods_Single_ChooseDisposalMethodPage"
+    When I select radio button "Exported" on "Rejected Goods_Single_ChooseDisposalMethodPage"
+    And I click continue on "Rejected Goods_Single_ChooseDisposalMethodPage"
