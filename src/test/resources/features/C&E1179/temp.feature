@@ -6,7 +6,7 @@ Feature: temp file for C&E1179
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @1
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -39,8 +39,9 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Choose Disposal Method Page"
     When I select radio button "Export" on "Rejected Goods_Single_Choose Disposal Method Page"
     And I click continue on "Rejected Goods_Single_Choose Disposal Method Page"
-
-#    Then I am presented with the "Rejected Goods_Single_Select Duties Page"
-#    When I select "A80,A95,A90,A85" on "Rejected Goods_Single_Select Duties Page"
-#    And I click continue on "Rejected Goods_Single_Select Duties Page"
-
+    Then I am presented with the "Rejected Goods_Single_Enter Rejected Goods Details Page"
+    When I enter "under 500 characters" on "Rejected Goods_Single_Enter Rejected Goods Details Page"
+    And I click continue on "Rejected Goods_Single_Enter Rejected Goods Details Page"
+    Then I am presented with the "Rejected Goods_Single_Select Duties Page"
+    When I select "A80,A95,A90,A85" on "Rejected Goods_Single_Select Duties Page"
+    And I click continue on "Rejected Goods_Single_Select Duties Page"
