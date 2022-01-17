@@ -19,21 +19,21 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.single
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object RejectedGoods_Single_EnterRejectedGoodsDetailsPage extends BasePage {
+object RejectedGoods_Single_EnterSpecialCircumstancesPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/enter-rejected-goods-details"
-  override val title = "Provide details of the rejected goods"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/enter-special-circumstances"
+  override val title = "Enter any special circumstances"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Provide details of the rejected goods - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter any special circumstances - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Provide details of the rejected goods - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter any special circumstances - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Provide details of the rejected goods")
+  override def expectedPageHeader: Option[String] = Some("Enter any special circumstances")
 
   override def enterDetails(details: String): Unit = {
     details match {
-      case "under 500 characters" => enterText("enter-rejected-goods-details.rejected-goods", "under 500 characters")
-      case "over 500 characters" => enterText("enter-rejected-goods-details.rejected-goods",
+      case "under 500 characters" => enterText("enter-special-circumstances.rejected-goods", "under 500 characters")
+      case "over 500 characters" => enterText("enter-special-circumstances.rejected-goods",
         "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
@@ -41,7 +41,7 @@ object RejectedGoods_Single_EnterRejectedGoodsDetailsPage extends BasePage {
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "1"
       )
-      case _ => enterText("enter-rejected-goods-details.rejected-goods", details)
+      case _ => enterText("enter-special-circumstances.rejected-goods", details)
     }
   }
 
