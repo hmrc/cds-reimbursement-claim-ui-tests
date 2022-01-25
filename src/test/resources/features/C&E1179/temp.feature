@@ -57,6 +57,9 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A85 - Provisional Anti-Dumping Duty"
     When I enter "10" on "Rejected Goods_Single_Enter Claim Page"
     And I click continue on "Rejected Goods_Single_Enter Claim Page"
+    Then I am presented with the "Rejected Goods_Single_Check Claim Page"
+    And I select radio button "yes" on "Rejected Goods_Single_Check Claim Page"
+    When I click continue on "Rejected Goods_Single_Check Claim Page"
 
 
   @test @a11y @ZAP
@@ -113,3 +116,6 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A85 - Provisional Anti-Dumping Duty"
     When I enter "10" on "Rejected Goods_Single_Enter Claim Page"
     And I click continue on "Rejected Goods_Single_Enter Claim Page"
+    Then I am presented with the "Rejected Goods_Single_Check Claim Page"
+    And I select radio button "yes" on "Rejected Goods_Single_Check Claim Page"
+    When I click continue on "Rejected Goods_Single_Check Claim Page"
