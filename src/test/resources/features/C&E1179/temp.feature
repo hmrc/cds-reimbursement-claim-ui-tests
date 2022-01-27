@@ -6,7 +6,7 @@ Feature: temp file for C&E1179
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @1
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -58,9 +58,14 @@ Feature: temp file for C&E1179
     When I enter "10" on "Rejected Goods_Single_Enter Claim Page"
     And I click continue on "Rejected Goods_Single_Enter Claim Page"
     Then I am presented with the "Rejected Goods_Single_Check Claim Page"
-    And I select radio button "yes" on "Rejected Goods_Single_Check Claim Page"
-    When I click continue on "Rejected Goods_Single_Check Claim Page"
-
+    When I select radio button "yes" on "Rejected Goods_Single_Check Claim Page"
+    And I click continue on "Rejected Goods_Single_Check Claim Page"
+    Then I am presented with the "Rejected Goods_Single_Enter Inspection Date Page"
+    When I enter "10,10,2020" on "Rejected Goods_Single_Enter Inspection Date Page"
+    And I click continue on "Rejected Goods_Single_Enter Inspection Date Page"
+    Then I am presented with the "Rejected Goods_Single_Inspection Address Choose Type Page"
+    When I select radio button "11 Mount Road, London, E10 7PP" on "Rejected Goods_Single_Inspection Address Choose Type Page"
+    And I click continue on "Rejected Goods_Single_Inspection Address Choose Type Page"
 
   @test @a11y @ZAP
   Scenario: happy path - Special circumstances
