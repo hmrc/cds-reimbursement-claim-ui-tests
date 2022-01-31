@@ -68,7 +68,7 @@ Feature: temp file for C&E1179
     And I click continue on "Rejected Goods_Single_Inspection Address Choose Type Page"
 
   @test @a11y @ZAP
-  Scenario: happy path - Special circumstances
+  Scenario: happy path - Special circumstances and CMA eligible
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -107,11 +107,8 @@ Feature: temp file for C&E1179
     When I enter "under 500 characters" on "Rejected Goods_Single_Enter Rejected Goods Details Page"
     And I click continue on "Rejected Goods_Single_Enter Rejected Goods Details Page"
     Then I am presented with the "Rejected Goods_Single_Select Duties Page"
-    When I select "A80,A95,A90,A85" on "Rejected Goods_Single_Select Duties Page"
+    When I select "A95,A90,A85" on "Rejected Goods_Single_Select Duties Page"
     And I click continue on "Rejected Goods_Single_Select Duties Page"
-    Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A80 - Definitive Anti-Dumping Duty"
-    When I enter "10" on "Rejected Goods_Single_Enter Claim Page"
-    And I click continue on "Rejected Goods_Single_Enter Claim Page"
     Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A95 - Provisional Countervailing Duty"
     When I enter "10" on "Rejected Goods_Single_Enter Claim Page"
     And I click continue on "Rejected Goods_Single_Enter Claim Page"
@@ -124,3 +121,12 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Check Claim Page"
     And I select radio button "yes" on "Rejected Goods_Single_Check Claim Page"
     When I click continue on "Rejected Goods_Single_Check Claim Page"
+    Then I am presented with the "Rejected Goods_Single_Enter Inspection Date Page"
+    When I enter "10,10,2020" on "Rejected Goods_Single_Enter Inspection Date Page"
+    And I click continue on "Rejected Goods_Single_Enter Inspection Date Page"
+    Then I am presented with the "Rejected Goods_Single_Inspection Address Choose Type Page"
+    When I select radio button "11 Mount Road, London, E10 7PP" on "Rejected Goods_Single_Inspection Address Choose Type Page"
+    And I click continue on "Rejected Goods_Single_Inspection Address Choose Type Page"
+    Then I am presented with the "Rejected Goods_Single_Choose Repayment Method Page"
+    When I select radio button "cma" on "Rejected Goods_Single_Choose Repayment Method Page"
+    And I click continue on "Rejected Goods_Single_Choose Repayment Method Page"
