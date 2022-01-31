@@ -66,6 +66,11 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Inspection Address Choose Type Page"
     When I select radio button "11 Mount Road, London, E10 7PP" on "Rejected Goods_Single_Inspection Address Choose Type Page"
     And I click continue on "Rejected Goods_Single_Inspection Address Choose Type Page"
+    Then I am presented with the "Rejected Goods_Single_Check These Bank Details Are Correct Page"
+    When I click continue on "Rejected Goods_Single_Check These Bank Details Are Correct Page"
+    Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
+    When I select radio button "Commercial invoice" on "Rejected Goods_Single_Choose File Type Page"
+    And I click continue on "Rejected Goods_Single_Choose File Type Page"
 
   @test @a11y @ZAP
   Scenario: happy path - Special circumstances and CMA eligible
@@ -130,3 +135,6 @@ Feature: temp file for C&E1179
     Then I am presented with the "Rejected Goods_Single_Choose Repayment Method Page"
     When I select radio button "cma" on "Rejected Goods_Single_Choose Repayment Method Page"
     And I click continue on "Rejected Goods_Single_Choose Repayment Method Page"
+    Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
+    When I select radio button "Commercial invoice" on "Rejected Goods_Single_Choose File Type Page"
+    And I click continue on "Rejected Goods_Single_Choose File Type Page"
