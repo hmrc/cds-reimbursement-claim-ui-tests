@@ -30,4 +30,8 @@ object RejectedGoods_Single_CheckBankDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
 
+  override def clickContinueButton(): Unit = {
+    click on cssSelector("#main-content > div > div > a")
+  }
+
 }
