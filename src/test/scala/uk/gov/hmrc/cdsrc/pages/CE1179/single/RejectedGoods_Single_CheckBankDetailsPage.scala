@@ -19,9 +19,9 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.single
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object RejectedGoods_Single_CheckTheseBankDetailsAreCorrectPage extends BasePage {
+object RejectedGoods_Single_CheckBankDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/check-these-bank-details-are-correct"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/check-bank-details"
   override val title = "Check these bank details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these bank details are correct - Claim for reimbursement of import duties - GOV.UK")

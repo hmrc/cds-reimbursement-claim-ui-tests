@@ -30,6 +30,4 @@ object RejectedGoods_Single_ClaimantDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("This is how we will contact you about this claim")
 
-  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
-
 }
