@@ -82,6 +82,10 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page).uploadDocument(file)
   }
 
+  When("""I upload a {int} {string} file on {string}""") { (fileNumber: Int, file: String, page: String) =>
+    PageObjectFinder.page(page).uploadDocument(fileNumber, file)
+  }
+
   Then("""I am presented with the {string}""") { page: String =>
     waitForPageHeader
     PageObjectFinder.page(page).checkURL
@@ -98,6 +102,10 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     waitForPageHeader
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkDutyPage(duty)
+  }
+
+  Then("""I go back on {string}""") { (page: String) =>
+    PageObjectFinder.page(page).goBack()
   }
 
   Then("""I am presented with the {string} {string} error page""") { (page: String, duty: String) =>

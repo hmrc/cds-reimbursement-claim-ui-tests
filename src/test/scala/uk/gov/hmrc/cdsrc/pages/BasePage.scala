@@ -82,6 +82,11 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
   }
 
+  def uploadDocument(docNumber: Int, file: String): Unit = {
+    if (file != "")
+      enterText("file-"+docNumber, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+  }
+
   def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
     while (find(tagName("h1")).map(_.text).contains("We are checking your document")) {
