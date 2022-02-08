@@ -89,7 +89,7 @@ Feature: temp file for C&E1179
     When I select radio button "I have no more documents to upload" on "Rejected Goods_Single_Choose File Type Page"
     And I click continue on "Rejected Goods_Single_Choose File Type Page"
 
-  @test @a11y @ZAP @1
+  @test @a11y @ZAP
   Scenario: happy path - Special circumstances and CMA eligible
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
