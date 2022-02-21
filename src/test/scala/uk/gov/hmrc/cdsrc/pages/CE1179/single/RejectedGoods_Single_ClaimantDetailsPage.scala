@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object RejectedGoods_Single_ClaimantDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/claimant-details"
-  override val title = "This is how we will contact you about this claim"
+  override val title = "How we will contact you about this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("This is how we will contact you about this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("How we will contact you about this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("This is how we will contact you about this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("How we will contact you about this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("This is how we will contact you about this claim")
+  override def expectedPageHeader: Option[String] = Some("How we will contact you about this claim")
 
   override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
 
