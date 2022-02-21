@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Multiple_ClaimantDetailsCheckPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/claimant-details/check"
-  override val title = "Check your details as registered with CDS"
+  override val title = "How we will contact you about this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("How we will contact you about this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("How we will contact you about this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check your details as registered with CDS")
+  override def expectedPageHeader: Option[String] = Some("How we will contact you about this claim")
 
   override def clickRadioButton(text: String): Unit = {
     text match {
