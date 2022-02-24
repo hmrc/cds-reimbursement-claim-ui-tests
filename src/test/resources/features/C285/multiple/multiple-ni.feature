@@ -42,7 +42,7 @@ Feature: Bulk NI (bulk enabled, entry disabled)
     And I select radio button "yes" on "Single_Claim Northern Ireland Page"
     And I click continue on "Multiple_Claim Northern Ireland Page"
     Then I am presented with the "Multiple_Choose Basis For Claim Page"
-    When I select radio button "Incorrect Additional Information code (excluding NIAID) - Northern Ireland claims only" on "Multiple_Choose Basis For Claim Page"
+    When I select radio button "Incorrect additional information code (excluding NIAID)" on "Multiple_Choose Basis For Claim Page"
     And I click continue on "Multiple_Choose Basis For Claim Page"
     Then I am presented with the "Multiple_Enter Commodity Details Page"
     When I enter "under 500 characters" on "Multiple_Enter Commodity Details Page"
