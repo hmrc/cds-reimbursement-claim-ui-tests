@@ -42,8 +42,9 @@ object UploadDocuments_ChooseFilesPage extends BasePage {
   override def clickContinueButton(): Unit = {
     waitForPageToLoad()
     var n : Int = 0 //to avoid an infinite loop if the file cannot upload
-    while (driver.getCurrentUrl.equals("http://localhost:10100/upload-documents/choose-files") & n < 500) {
+    while (driver.getCurrentUrl.equals("http://localhost:10100/upload-documents/choose-files") & n < 100) {
       click on cssSelector("#upload-documents-submit")
+      Thread.sleep(500)
       n += 1
     }
   }
