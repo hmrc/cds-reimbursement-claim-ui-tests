@@ -41,11 +41,11 @@ object RejectedGoods_Single_EnterClaimPage extends BasePage {
     enterText("enter-claim.rejected-goods.claim-amount", amounts(0))
   }
 
-  override def checkDutyPage(duty: String): Unit = {
+  override def checkSpecificPage(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
   }
 
-  override def checkDutyPageError(duty: String): Unit = {
+  override def checkSpecificPageError(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
   }
 

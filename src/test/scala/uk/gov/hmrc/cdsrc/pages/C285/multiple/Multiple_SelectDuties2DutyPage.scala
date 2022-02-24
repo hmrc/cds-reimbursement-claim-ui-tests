@@ -41,11 +41,11 @@ object Multiple_SelectDuties2DutyPage extends BasePage {
     enterText("multiple-enter-claim", amounts(0))
   }
 
-  override def checkDutyPage(duty: String): Unit = {
+  override def checkSpecificPage(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under second MRN")
   }
 
-  override def checkDutyPageError(duty: String): Unit = {
+  override def checkSpecificPageError(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under second MRN")
   }
 
