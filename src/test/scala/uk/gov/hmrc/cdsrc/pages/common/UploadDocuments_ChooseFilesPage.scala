@@ -25,18 +25,18 @@ object UploadDocuments_ChooseFilesPage extends BasePage {
   override val url: String = "http://localhost:10100/upload-documents/choose-files"
   override val title = "Upload supporting documents"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Upload supporting documents - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Upload supporting documents - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("")
 
-  override def expectedPageHeader: Option[String] = Some("Upload supporting documents")
+  override def expectedPageHeader: Option[String] = Some("")
 
   override def checkPageHeader(content: String): Assertion = {
     true should equal(true)
   }
 
-  override def checkDutyPage(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > div.govuk-\\!-margin-bottom-6 > h1").getText should equal("Upload " + duty)
+  override def checkSpecificPage(page: String): Unit = {
+    driver.findElement(By cssSelector "#main-content > div > div > div.govuk-\\!-margin-bottom-6 > h1").getText should equal("Upload " + page)
   }
 
   override def clickContinueButton(): Unit = {

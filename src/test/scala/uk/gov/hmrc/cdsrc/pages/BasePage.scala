@@ -158,10 +158,10 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   def clickOnLinkText(text: String): Unit = click on linkText(text)
 
-  def checkDutyPage(duty: String): Unit = {
+  def checkSpecificPage(duty: String): Unit = {
   }
 
-  def checkDutyPageError(duty: String): Unit = {
+  def checkSpecificPageError(duty: String): Unit = {
   }
 
   def configure(feature: String, featureState: String): Unit = {

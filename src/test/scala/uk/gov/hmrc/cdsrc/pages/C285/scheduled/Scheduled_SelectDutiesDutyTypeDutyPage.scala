@@ -42,11 +42,11 @@ object Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
     driver.findElement(By.name("enter-scheduled-claim.actual-amount")).sendKeys(amounts(1))
   }
 
-  override def checkDutyPage(duty: String): Unit = {
+  override def checkSpecificPage(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for all MRNs under $duty")
   }
 
-  override def checkDutyPageError(duty: String): Unit = {
+  override def checkSpecificPageError(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for all MRNs under $duty")
   }
 
