@@ -6,7 +6,7 @@ Feature: temp file for C&E1179
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @1
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -70,26 +70,24 @@ Feature: temp file for C&E1179
     And I click continue on "Rejected Goods_Single_Inspection Address Choose Type Page"
     Then I am presented with the "Rejected Goods_Single_Check Bank Details Page"
     When I click continue on "Rejected Goods_Single_Check Bank Details Page"
+
     Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
     When I select radio button "Commercial invoice" on "Rejected Goods_Single_Choose File Type Page"
     And I click continue on "Rejected Goods_Single_Choose File Type Page"
-##    Then I am presented with the "Upload Documents_Choose File Page"
-#    When I go back on "Upload Documents_Choose File Page"
-#    Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
-#    When I select radio button "Commercial invoice" on "Rejected Goods_Single_Choose File Type Page"
-#    And I click continue on "Rejected Goods_Single_Choose File Type Page"
-##    Then I am presented with the "Upload Documents_Choose Files Page"
-#    When I upload a 1 "document.pdf" file on "Upload Documents_Choose Files Page"
-#    And I click continue if I'm on "Upload Documents_Choose Files Page"
-#    Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
-#    When I select radio button "Letter of authority" on "Rejected Goods_Single_Choose File Type Page"
-#    And I click continue on "Rejected Goods_Single_Choose File Type Page"
-##    Then I am presented with the "Upload Documents_Choose Files Page"
-#    When I upload a 2 "image.jpg" file on "Upload Documents_Choose Files Page"
-#    And I click continue if I'm on "Upload Documents_Choose Files Page"
-#    Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
-#    When I select radio button "I have no more documents to upload" on "Rejected Goods_Single_Choose File Type Page"
-#    And I click continue on "Rejected Goods_Single_Choose File Type Page"
+    Then I am presented with the "Upload Documents_Choose Files Page" "commercial invoice"
+    When I upload a 1 "document.pdf" file on "Upload Documents_Choose Files Page"
+    And I select radio button "Yes" on "Upload Documents_Choose Files Page"
+    And I click continue on "Upload Documents_Choose Files Page"
+
+    Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
+    When I select radio button "Import and export declaration" on "Rejected Goods_Single_Choose File Type Page"
+    And I click continue on "Rejected Goods_Single_Choose File Type Page"
+    Then I am presented with the "Upload Documents_Choose Files Page" "import and export declaration"
+    When I upload a 2 "image.jpg" file on "Upload Documents_Choose Files Page"
+    And I select radio button "No" on "Upload Documents_Choose Files Page"
+    And I click continue on "Upload Documents_Choose Files Page"
+
+    Then I am presented with the "Rejected Goods_Single_Check Your Answers Page"
 
   @test @a11y @ZAP
   Scenario: happy path - Special circumstances and CMA eligible
