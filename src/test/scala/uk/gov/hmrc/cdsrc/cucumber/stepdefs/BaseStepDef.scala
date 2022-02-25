@@ -27,12 +27,12 @@ import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
 
   When("""I select Welsh translation on {string}""") { (page: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).enableWelsh()
   }
 
   When("""I select English translation on {string}""") { (page: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).enableEnglish()
   }
 
