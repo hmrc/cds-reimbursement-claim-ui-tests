@@ -37,7 +37,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   }
 
   When("""I select radio button {string} on {string}""") { (choice: String, page: String) =>
-    waitForPageHeader
+    //waitForPageHeader
     PageObjectFinder.page(page).clickRadioButton(choice)
   }
 
