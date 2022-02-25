@@ -37,22 +37,22 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   }
 
   When("""I select radio button {string} on {string}""") { (choice: String, page: String) =>
-    //waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).clickRadioButton(choice)
   }
 
   When("""I select checkbox on {string}""") { (page: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).selectCheckBox()
   }
 
   When("""I select {string} on {string}""") { (selection: String, page: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).selectBoxes(selection.replaceAll(" to ", "_").split(","))
   }
 
   When("""I click continue on {string}""") { (page: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).clickContinueButton()
   }
 
@@ -61,12 +61,12 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   }
 
   When("""I enter {string} on {string}""") { (data: String, page: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).enterDetails(data)
   }
 
   When("""I select dropdown value {string} on {string}""") { (selection: String, page: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).dropdownSelect(selection)
   }
 
@@ -87,19 +87,19 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   }
 
   Then("""I am presented with the {string}""") { page: String =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkPageHeader("")
     PageObjectFinder.page(page).checkPageTitle("")
   }
 
   Then("""I am presented with the {string} error page""") { page: String =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkPageErrorTitle("")
   }
 
   Then("""I am presented with the {string} {string}""") { (page: String, specificPage: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkSpecificPage(specificPage)
   }
@@ -109,7 +109,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   }
 
   Then("""I am presented with the {string} {string} error page""") { (page: String, duty: String) =>
-    waitForPageHeader
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkSpecificPageError(duty)
   }
 
