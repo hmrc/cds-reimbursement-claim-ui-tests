@@ -74,8 +74,8 @@ Feature: temp file for C&E1179
     When I select radio button "Commercial invoice" on "Rejected Goods_Single_Choose File Type Page"
     And I click continue on "Rejected Goods_Single_Choose File Type Page"
 
-    Then I am presented with the "Upload Documents_Choose Files Page" "commercial invoice"
-    When I upload a 1 "document.pdf" file on "Upload Documents_Choose Files Page"
+    #Then I am presented with the "Upload Documents_Choose Files Page" "commercial invoice"
+    #When I upload a 1 "document.pdf" file on "Upload Documents_Choose Files Page"
     And I select radio button "Yes" on "Upload Documents_Choose Files Page"
     And I click continue on "Upload Documents_Choose Files Page"
     Then I am presented with the "Rejected Goods_Single_Choose File Type Page"
