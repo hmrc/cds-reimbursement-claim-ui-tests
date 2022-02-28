@@ -32,7 +32,7 @@ object Single_EnterClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter the claim amount for duty A20 - Additional Duty")
 
-  override def checkPageHeader(content: String): Assertion = {
+  override def checkPageHeader(): Assertion = {
     true should equal(true)
   }
 
@@ -41,11 +41,11 @@ object Single_EnterClaimPage extends BasePage {
     enterText("enter-claim", amounts(0))
   }
 
-  override def checkSpecificPage(duty: String): Unit = {
+  override def checkPageTitle(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
   }
 
-  override def checkSpecificPageError(duty: String): Unit = {
+  override def checkPageErrorTitle(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
   }
 
