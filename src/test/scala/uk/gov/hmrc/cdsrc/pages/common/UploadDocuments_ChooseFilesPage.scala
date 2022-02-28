@@ -39,6 +39,7 @@ object UploadDocuments_ChooseFilesPage extends BasePage {
   override def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > h1")))
 
   override def checkSpecificPage(page: String): Unit = {
+    waitForPageToLoad()
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
   }
 
