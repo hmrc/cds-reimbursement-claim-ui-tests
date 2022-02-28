@@ -95,6 +95,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   Then("""I am presented with the {string} error page""") { page: String =>
     PageObjectFinder.page(page).waitForPageHeader
+    PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkPageErrorTitle("")
   }
 
