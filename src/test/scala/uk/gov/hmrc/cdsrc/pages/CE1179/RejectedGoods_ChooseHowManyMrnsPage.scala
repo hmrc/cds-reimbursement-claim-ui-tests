@@ -19,9 +19,15 @@ package uk.gov.hmrc.cdsrc.pages.CE1179
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-
 object RejectedGoods_ChooseHowManyMrnsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/choose-how-many-mrns"
+  override val title = "Choose how many MRNs you want to submit in this claim"
+
+  override def expectedPageErrorTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim for reimbursement of import duties - GOV.UK")
+
+  override def expectedPageTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim for reimbursement of import duties - GOV.UK")
+
+  override def expectedPageHeader: Option[String] = Some("Choose how many MRNs you want to submit in this claim")
 
 }
