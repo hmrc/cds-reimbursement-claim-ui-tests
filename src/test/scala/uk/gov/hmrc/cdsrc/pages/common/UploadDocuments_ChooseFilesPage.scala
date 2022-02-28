@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.common
 
-import org.openqa.selenium.support.ui.ExpectedConditions
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -32,11 +31,11 @@ object UploadDocuments_ChooseFilesPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("")
 
-  override def checkPageHeader(content: String): Assertion = {
+  override def checkPageHeader(): Assertion = {
     true should equal(true)
   }
 
-  override def checkSpecificPage(page: String): Unit = {
+  override def checkPageTitle(page: String): Unit = {
     waitForPageToLoad()
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
   }

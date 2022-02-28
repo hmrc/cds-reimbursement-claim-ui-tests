@@ -89,20 +89,20 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   Then("""I am presented with the {string}""") { page: String =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
-    PageObjectFinder.page(page).checkPageHeader("")
-    PageObjectFinder.page(page).checkPageTitle("")
+    PageObjectFinder.page(page).checkPageHeader()
+    PageObjectFinder.page(page).checkPageTitle()
   }
 
   Then("""I am presented with the {string} error page""") { page: String =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
-    PageObjectFinder.page(page).checkPageErrorTitle("")
+    PageObjectFinder.page(page).checkPageErrorTitle()
   }
 
   Then("""I am presented with the {string} {string}""") { (page: String, specificPage: String) =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
-    PageObjectFinder.page(page).checkSpecificPage(specificPage)
+    PageObjectFinder.page(page).checkPageTitle(specificPage)
   }
 
   Then("""I go back on {string}""") { (page: String) =>
@@ -111,7 +111,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   Then("""I am presented with the {string} {string} error page""") { (page: String, duty: String) =>
     PageObjectFinder.page(page).waitForPageHeader
-    PageObjectFinder.page(page).checkSpecificPageError(duty)
+    PageObjectFinder.page(page).checkPageErrorTitle(duty)
   }
 
   Given("""the {string} feature is {string}""") { (feature: String, featureState: String) =>

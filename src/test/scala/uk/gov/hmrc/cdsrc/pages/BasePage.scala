@@ -59,19 +59,25 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   private val expectedPageErrorTitleList = expectedPageErrorTitle.map(_.split(";").toList)
   private val expectedPageHeaderList = expectedPageHeader.map(_.split(";").toList)
 
-  def checkPageTitle(content: String): Assertion = {
+  def checkPageTitle(): Assertion = {
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
     expectedPageTitleList should contain(List(pageTitle))
   }
 
-  def checkPageErrorTitle(content: String): Assertion = {
+  def checkPageErrorTitle(): Assertion = {
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
     expectedPageErrorTitleList should contain(List(pageTitle))
   }
 
+  def checkPageTitle(page: String): Unit = {
+  }
+
+  def checkPageErrorTitle(page: String): Unit = {
+  }
+
   def checkURL: Assertion = {
     if (url.contains("...")) {
-      driver.getCurrentUrl should fullyMatch regex (url.replace("...","") + ".*").r
+      driver.getCurrentUrl should fullyMatch regex (url.replace("...", "") + ".*").r
     } else {
       driver.getCurrentUrl should equal(url)
     }
@@ -84,7 +90,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   def uploadDocument(docNumber: Int, file: String): Unit = {
     if (file != "")
-      enterText("file-"+docNumber, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+      enterText("file-" + docNumber, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
   }
 
   def continuouslyClickContinue(): Unit = {
@@ -94,7 +100,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     }
   }
 
-  def checkPageHeader(content: String): Assertion = {
+  def checkPageHeader(): Assertion = {
     fluentWait.until(ExpectedConditions.textToBe(By.cssSelector("h1"), expectedPageHeader.get))
     expectedPageHeaderList should contain(List(pageHeader.get))
   }
@@ -116,7 +122,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   def elementText(query: Query): String = find(query).get.underlying.getText
 
-  //for multiple check boxes (might not be needed)
   def selectBoxes(toSelect: Array[String]): Unit = {
     for (i <- toSelect.indices) {
       click on xpath(s"//input[@value='${toSelect(i)}']")
@@ -157,12 +162,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def clickOnLinkText(text: String): Unit = click on linkText(text)
-
-  def checkSpecificPage(duty: String): Unit = {
-  }
-
-  def checkSpecificPageError(duty: String): Unit = {
-  }
 
   def configure(feature: String, featureState: String): Unit = {
   }

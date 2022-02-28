@@ -32,7 +32,7 @@ object Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("")
 
-  override def checkPageHeader(content: String): Assertion = {
+  override def checkPageHeader(): Assertion = {
     true should equal(true)
   }
 
@@ -42,11 +42,11 @@ object Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
     driver.findElement(By.name("enter-scheduled-claim.actual-amount")).sendKeys(amounts(1))
   }
 
-  override def checkSpecificPage(duty: String): Unit = {
+  override def checkPageTitle(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for all MRNs under $duty")
   }
 
-  override def checkSpecificPageError(duty: String): Unit = {
+  override def checkPageErrorTitle(duty: String): Unit = {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for all MRNs under $duty")
   }
 
