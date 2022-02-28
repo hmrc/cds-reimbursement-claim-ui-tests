@@ -33,17 +33,10 @@ object UploadDocuments_ChooseFilesPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("")
 
   override def checkPageHeader(content: String): Assertion = {
-    print("cph")
     true should equal(true)
   }
 
-  override def waitForPageHeader: WebElement = {
-    print("wfph")
-    fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By tagName("h1")))
-  }
-
   override def checkSpecificPage(page: String): Unit = {
-    print("csp")
     waitForPageToLoad()
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
   }
