@@ -36,7 +36,7 @@ object UploadDocuments_ChooseFilesPage extends BasePage {
     true should equal(true)
   }
 
-  override def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > h1")))
+  override def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By tagName("h1")))
 
   override def checkSpecificPage(page: String): Unit = {
     waitForPageToLoad()
