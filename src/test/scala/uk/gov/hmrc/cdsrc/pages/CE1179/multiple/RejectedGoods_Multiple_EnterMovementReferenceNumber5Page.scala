@@ -19,15 +19,19 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.multiple
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object RejectedGoods_Multiple_SelectDuties1Page extends BasePage {
+object RejectedGoods_Multiple_EnterMovementReferenceNumber5Page extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/select-duties"
-  override val title = "Select the duties you want to claim for under first MRN"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/enter-movement-reference-number/5"
+  override val title = "Tell us the fifth MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under first MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Enter the fifth MRN - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for under first MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the fifth MRN - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for under first MRN")
+  override def expectedPageHeader: Option[String] = Some("Enter the fifth MRN")
+
+  override def enterDetails(textToEnter: String) {
+    enterText("enter-movement-reference-number.rejected-goods", textToEnter)
+  }
 
 }
