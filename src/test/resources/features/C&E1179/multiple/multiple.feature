@@ -6,7 +6,7 @@ Feature: multiple for C&E1179
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
 
-  @test @a11y @ZAP @1
+  @test @a11y @ZAP
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -38,9 +38,6 @@ Feature: multiple for C&E1179
     Then I am presented with the "Rejected Goods_Multiple_Choose Basis For Claim Page"
     When I select radio button "Defective" on "Rejected Goods_Multiple_Choose Basis For Claim Page"
     And I click continue on "Rejected Goods_Multiple_Choose Basis For Claim Page"
-    Then I am presented with the "Rejected Goods_Multiple_Enter Special Circumstances Page"
-    When I enter "under 500 characters" on "Rejected Goods_Multiple_Enter Special Circumstances Page"
-    And I click continue on "Rejected Goods_Multiple_Enter Special Circumstances Page"
     Then I am presented with the "Rejected Goods_Multiple_Choose Disposal Method Page"
     When I select radio button "Export" on "Rejected Goods_Multiple_Choose Disposal Method Page"
     And I click continue on "Rejected Goods_Multiple_Choose Disposal Method Page"
