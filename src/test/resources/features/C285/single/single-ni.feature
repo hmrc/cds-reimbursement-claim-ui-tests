@@ -153,7 +153,7 @@ Feature: MRN Northern Ireland (bulk enabled, entry disabled)
     And I click continue on "Single_Check Answers Accept Send Page"
     Then I am presented with the "Single_Claim Submitted Page"
 
-  @test @1
+  @test
   Scenario: happy path (mrn ni) - excise journey but excise not selected
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
