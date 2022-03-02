@@ -184,7 +184,7 @@ Feature: MRN Northern Ireland (bulk enabled, entry disabled)
     And I select radio button "yes" on "Single_Claim Northern Ireland Page"
     And I click continue on "Single_Claim Northern Ireland Page"
     Then I am presented with the "Single_Choose Basis For Claim Page"
-    When I select radio button "RGR" on "Single_Choose Basis For Claim Page"
+    When I select radio button "Returned goods relief (RGR)" on "Single_Choose Basis For Claim Page"
     And I click continue on "Single_Choose Basis For Claim Page"
     Then I am presented with the "Single_Enter Commodity Details Page"
     When I enter "under 500 characters" on "Single_Enter Commodity Details Page"
