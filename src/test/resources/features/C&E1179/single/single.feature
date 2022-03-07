@@ -236,3 +236,5 @@ Feature: temp file for C&E1179
     And I select radio button "No" on "Upload Documents_Choose Files Page"
     And I click continue on "Upload Documents_Choose Files Page"
     Then I am presented with the "Rejected Goods_Single_Check Your Answers Page"
+    And I click continue on "Rejected Goods_Single_Check Your Answers Page"
+    Then I am presented with the "Rejected Goods_Single_Claim Submitted Page"
