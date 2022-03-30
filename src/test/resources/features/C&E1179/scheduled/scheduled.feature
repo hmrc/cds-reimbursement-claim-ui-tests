@@ -22,4 +22,7 @@ Feature: Scheduled journey for C&E1179
     And I select radio button "Upload multiple MRNs" on "RejectedGoods_Choose How Many Mrns Page"
     And I click continue on "RejectedGoods_Choose How Many Mrns Page"
     Then I am presented with the "Rejected Goods_Scheduled_Enter Movement Reference Number Page"
-    When I enter "10AAAAAAAAAAAAAAA1" on "Rejected Goods_Scheduled_Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA2" on "Rejected Goods_Scheduled_Enter Movement Reference Number Page"
+    And I click continue on "Rejected Goods_Scheduled_Enter Movement Reference Number Page"
+    Then I am presented with the "Rejected Goods_Scheduled_Enter Importer Eori Page"
+    When I enter "GB000000000000002" on "Rejected Goods_Scheduled_Enter Importer Eori Page"
