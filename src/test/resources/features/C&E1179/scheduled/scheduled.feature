@@ -5,6 +5,7 @@ Feature: Scheduled journey for C&E1179
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
+    Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
   Scenario: happy path

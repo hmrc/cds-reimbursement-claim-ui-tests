@@ -7,6 +7,7 @@ Feature: MRN Northern Ireland (bulk enabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
+    Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
   Scenario: happy path (mrn ni) - duplicate mrn

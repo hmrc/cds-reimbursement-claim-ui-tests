@@ -5,6 +5,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "disabled"
+    Given the "Internal Upload Documents" feature is "enabled"
 
   @testFailsOnJenkins
   Scenario: other - click Accessibility footer link

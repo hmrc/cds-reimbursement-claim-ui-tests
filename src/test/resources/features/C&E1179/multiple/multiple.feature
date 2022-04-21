@@ -5,6 +5,7 @@ Feature: multiple for C&E1179
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "enabled"
+    Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
   Scenario: run before other journeys to get file upload to work
@@ -386,4 +387,3 @@ Feature: multiple for C&E1179
     Then I am presented with the "Rejected Goods_Multiple_Check Your Answers Page"
     And I click continue on "Rejected Goods_Multiple_Check Your Answers Page"
     Then I am presented with the "Rejected Goods_Multiple_Claim Submitted Page"
-
