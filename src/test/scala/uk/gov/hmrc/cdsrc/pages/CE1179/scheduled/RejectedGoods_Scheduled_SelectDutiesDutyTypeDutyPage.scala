@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object RejectedGoods_Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties..."
   override val title = ""
 
   override def expectedPageErrorTitle: Option[String] = Some("")
@@ -38,8 +38,8 @@ object RejectedGoods_Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    driver.findElement(By.name("enter-scheduled-claim.paid-amount")).sendKeys(amounts(0))
-    driver.findElement(By.name("enter-scheduled-claim.actual-amount")).sendKeys(amounts(1))
+    driver.findElement(By.name("enter-claim-scheduled.rejected-goods.paid-amount")).sendKeys(amounts(0))
+    driver.findElement(By.name("enter-claim-scheduled.rejected-goods.claim-amount")).sendKeys(amounts(1))
   }
 
   override def checkPageTitle(duty: String): Unit = {
