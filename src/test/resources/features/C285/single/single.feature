@@ -1,6 +1,5 @@
 @Regression @Mrn
-
-Feature: MRN (bulk enabled, entry disabled)
+Feature: C285 Single (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

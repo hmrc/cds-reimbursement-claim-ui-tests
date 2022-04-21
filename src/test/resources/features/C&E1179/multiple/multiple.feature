@@ -1,4 +1,4 @@
-Feature: multiple for C&E1179
+Feature: C&E1179 Multiple
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

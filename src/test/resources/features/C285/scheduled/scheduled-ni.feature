@@ -1,6 +1,5 @@
 @Regression @Scheduled @BrowserStack
-
-Feature: Scheduled NI (bulk enabled, entry disabled)
+Feature: C285 Scheduled NI (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

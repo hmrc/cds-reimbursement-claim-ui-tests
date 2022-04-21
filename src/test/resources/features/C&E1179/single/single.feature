@@ -1,4 +1,4 @@
-Feature: temp file for C&E1179
+Feature: C&E1179 Single
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

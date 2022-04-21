@@ -1,4 +1,4 @@
-Feature: MRN file upload (bulk enabled, entry disabled)
+Feature: C285 Single file upload (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

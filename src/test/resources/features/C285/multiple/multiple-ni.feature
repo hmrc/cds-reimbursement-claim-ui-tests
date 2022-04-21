@@ -1,6 +1,5 @@
 @Regression @Bulk
-
-Feature: Bulk NI (bulk enabled, entry disabled)
+Feature: C285 Multiple NI (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"

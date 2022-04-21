@@ -1,4 +1,4 @@
-Feature: external file upload (internal-upload-documents disabled)
+Feature: C&E1179 external file upload (internal-upload-documents disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
