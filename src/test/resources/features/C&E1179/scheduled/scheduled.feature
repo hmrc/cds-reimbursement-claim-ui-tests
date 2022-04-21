@@ -128,9 +128,3 @@ Feature: Scheduled journey for C&E1179
     Then I am presented with the "RejectedGoods_Scheduled_Select Duties DutyType Duty Page" "Climate Change Levy 99D"
     When I enter "10,5" on "RejectedGoods_Scheduled_Select Duties DutyType Duty Page"
     And I click continue on "RejectedGoods_Scheduled_Select Duties DutyType Duty Page"
-
-
-
-
-
-
