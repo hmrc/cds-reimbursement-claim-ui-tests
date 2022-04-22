@@ -9,7 +9,7 @@ Feature: C&E1179 Single
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
-  Scenario: happy path
+  Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -97,7 +97,7 @@ Feature: C&E1179 Single
     Then I am presented with the "Rejected Goods_Single_Claim Submitted Page"
 
   @test @a11y @ZAP
-  Scenario: happy path - Special circumstances and CMA eligible
+  Scenario: happy path - check importer/declarant eori pages, Special circumstances, CMA eligible
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"

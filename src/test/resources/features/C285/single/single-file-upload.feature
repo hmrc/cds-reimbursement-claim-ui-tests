@@ -9,7 +9,7 @@ Feature: C285 Single file upload (bulk enabled, entry disabled)
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test
-  Scenario: happy path (mrn) - upload 3 files
+  Scenario: happy path - upload 3 files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -26,11 +26,7 @@ Feature: C285 Single file upload (bulk enabled, entry disabled)
     Then I am presented with the "Single_Check Declaration Details Page"
     And I select radio button "yes" on "Single_Check Declaration Details Page"
     And I click continue on "Single_Check Declaration Details Page"
-    #Then I am presented with the "Single_Who Is The Declarant Page"
-    #When I select radio button "I am a private individual importer" on "Single_Who Is The Declarant Page"
-    #And I click continue on "Single_Who Is The Declarant Page"
     Then I am presented with the "Single_Claimant Details Page"
-    #When I select radio button "yes" on "Single_Claimant Details Page"
     And I click continue on "Single_Claimant Details Page"
     Then I am presented with the "Single_Claim Northern Ireland Page"
     And I select radio button "yes" on "Single_Claim Northern Ireland Page"

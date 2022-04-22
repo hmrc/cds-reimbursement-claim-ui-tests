@@ -9,7 +9,7 @@ Feature: C285 Multiple NI (bulk enabled, entry disabled)
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test
-  Scenario: test temp NI pages - NI enabled
+  Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -32,11 +32,7 @@ Feature: C285 Multiple NI (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Check Movement Reference Numbers Page"
     When I select radio button "No" on "Multiple_Check Movement Reference Numbers Page"
     And I click continue on "Multiple_Check Movement Reference Numbers Page"
-    #Then I am presented with the "Multiple_Who Is The Declarant Page"
-    #When I select radio button "I am a private individual importer" on "Multiple_Who Is The Declarant Page"
-    #And I click continue on "Multiple_Who Is The Declarant Page"
     Then I am presented with the "Multiple_Claimant Details Page"
-    #And I select radio button "yes" on "Multiple_Claimant Details Page"
     And I click continue on "Multiple_Claimant Details Page"
     Then I am presented with the "Multiple_Claim Northern Ireland Page"
     And I select radio button "yes" on "Single_Claim Northern Ireland Page"
