@@ -1,12 +1,12 @@
-@Regression @Scheduled @BrowserStack
-
-Feature: Scheduled NI (bulk enabled, entry disabled)
+@C285 @Scheduled @BrowserStack
+Feature: C285 Scheduled NI (bulk enabled, entry disabled)
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "disabled"
+    Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
   Scenario: happy path - NI enabled
@@ -32,11 +32,7 @@ Feature: Scheduled NI (bulk enabled, entry disabled)
     And I click continue if I'm on "Scheduled_Scheduled Document Upload Progress Page"
     Then I am presented with the "Scheduled_Scheduled Document Upload Review Page"
     And I click continue on "Scheduled_Scheduled Document Upload Review Page"
-    #Then I am presented with the "Scheduled_Who Is The Declarant Page"
-    #When I select radio button "I am a private individual importer" on "Scheduled_Who Is The Declarant Page"
-    #And I click continue on "Scheduled_Who Is The Declarant Page"
     Then I am presented with the "Scheduled_Claimant Details Page"
-    #When I select radio button "yes" on "Scheduled_Claimant Details Page"
     And I click continue on "Scheduled_Claimant Details Page"
     Then I am presented with the "Scheduled_Claim Northern Ireland Page"
     And I select radio button "yes" on "Scheduled_Claim Northern Ireland Page"

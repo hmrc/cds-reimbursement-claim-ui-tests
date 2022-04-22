@@ -1,20 +1,12 @@
-Feature: Bulk (bulk enabled, entry disabled)
+@C285 @Other
+Feature: C285 Other
 
   Background:
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
     Given the "Rejected Goods" feature is "disabled"
-
-  @testFailsOnJenkins
-  Scenario: other - click Accessibility footer link
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I click "Accessibility statement" on "Check Eori Details Page"
-    Then I am presented with the "Accessibility Statement Page"
+    Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
   Scenario: other - click links on last page
@@ -34,11 +26,7 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Single_Check Declaration Details Page"
     And I select radio button "yes" on "Single_Check Declaration Details Page"
     And I click continue on "Single_Check Declaration Details Page"
-    #Then I am presented with the "Single_Who Is The Declarant Page"
-    #When I select radio button "I am a private individual importer" on "Single_Who Is The Declarant Page"
-    #And I click continue on "Single_Who Is The Declarant Page"
     Then I am presented with the "Single_Claimant Details Page"
-    #When I select radio button "yes" on "Single_Claimant Details Page"
     And I click continue on "Single_Claimant Details Page"
     Then I am presented with the "Single_Claim Northern Ireland Page"
     And I select radio button "yes" on "Single_Claim Northern Ireland Page"
@@ -92,3 +80,13 @@ Feature: Bulk (bulk enabled, entry disabled)
     Then I am presented with the "Start Page"
     When I click "Back" on "Start Page"
     Then I am presented with the "Single_Claim Submitted Page"
+
+  @testFailsOnJenkins
+  Scenario: other - click Accessibility footer link
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I click "Accessibility statement" on "Check Eori Details Page"
+    Then I am presented with the "Accessibility Statement Page"

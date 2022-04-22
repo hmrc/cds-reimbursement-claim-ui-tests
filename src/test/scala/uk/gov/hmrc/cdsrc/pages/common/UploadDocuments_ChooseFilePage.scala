@@ -16,30 +16,19 @@
 
 package uk.gov.hmrc.cdsrc.pages.common
 
-import org.openqa.selenium.By
-import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object UploadDocuments_ChooseFilesPage extends BasePage {
+object UploadDocuments_ChooseFilePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/upload-documents/choose-file"
-  override val title = "Upload supporting documents"
+  override val title = "Add a document which shows all the MRNs in this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Add a document which shows all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("")
+  override def expectedPageTitle: Option[String] = Some("Add a document which shows all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("")
-
-  override def checkPageHeader(): Assertion = {
-    true should equal(true)
-  }
-
-  override def checkPageTitle(page: String): Unit = {
-    waitForPageToLoad()
-    driver.findElement(By tagName "h1").getText should equal("Upload " + page)
-  }
+  override def expectedPageHeader: Option[String] = Some("Add a document which shows all the MRNs in this claim")
 
   override def clickContinueButton(): Unit = {
     click on cssSelector("#main-content > div > div > form > div.govuk-\\!-margin-bottom-9 > button")
