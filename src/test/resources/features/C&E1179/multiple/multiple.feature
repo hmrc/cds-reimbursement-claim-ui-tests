@@ -8,7 +8,7 @@ Feature: C&E1179 Multiple
     Given the "Rejected Goods" feature is "enabled"
     Given the "Internal Upload Documents" feature is "enabled"
 
-  @test @a11y @ZAP
+  #@test @a11y @ZAP
   Scenario: run before other journeys to get file upload to work
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
