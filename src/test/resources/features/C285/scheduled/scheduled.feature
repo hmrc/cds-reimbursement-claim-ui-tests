@@ -1,4 +1,4 @@
-@Regression @Scheduled
+@C285 @Scheduled
 Feature: C285 Scheduled (bulk enabled, entry disabled)
 
   Background:

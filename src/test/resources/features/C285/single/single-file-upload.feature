@@ -1,3 +1,4 @@
+@C285 @Single
 Feature: C285 Single file upload (bulk enabled, entry disabled)
 
   Background:

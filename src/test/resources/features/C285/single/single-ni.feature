@@ -1,4 +1,4 @@
-@Regression @Mrn
+@C285 @Single
 Feature: C285 Single NI (bulk enabled, entry disabled)
 
   Background:

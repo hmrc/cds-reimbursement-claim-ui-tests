@@ -1,4 +1,4 @@
-@Regression @Bulk
+@C285 @Multiple
 Feature: C285 Multiple NI (bulk enabled, entry disabled)
 
   Background:

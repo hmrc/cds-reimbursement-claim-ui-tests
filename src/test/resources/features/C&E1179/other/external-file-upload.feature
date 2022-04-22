@@ -1,3 +1,4 @@
+@C&E1179 @ExternalFileUpload
 Feature: C&E1179 external file upload (internal-upload-documents disabled)
 
   Background:
@@ -77,12 +78,17 @@ Feature: C&E1179 external file upload (internal-upload-documents disabled)
     When I select radio button "Commercial invoice" on "Rejected Goods_Multiple_Choose File Type Page"
     And I click continue on "Rejected Goods_Multiple_Choose File Type Page"
     Then I am presented with the "Upload Documents_Choose Files Page" "commercial invoice"
-    When I upload a "document.pdf" file on "Upload Documents_Choose Files Page"
-    And I click continue on "Upload Documents_Choose File Page"
-    And I click continue if I'm on "Upload Documents_Progress Page"
-    Then I am presented with the "Upload Documents_Summary Page" "1"
-    When I select radio button "No" on "Upload Documents_Summary Page"
-    And I click continue on "Upload Documents_Summary Page"
+
+    ### vvv broken from here
+
+    When I upload a 1 "document.pdf" file on "Upload Documents_Choose Files Page"
+    And I select radio button "No" on "Upload Documents_Choose Files Page"
+    And I click continue on "Upload Documents_Choose Files Page"
+
+    ### ^^^ this should be how it should work, but there seem to be bugs around this at the moment
+
     Then I am presented with the "Rejected Goods_Multiple_Check Your Answers Page"
     And I click continue on "Rejected Goods_Multiple_Check Your Answers Page"
     Then I am presented with the "Rejected Goods_Multiple_Claim Submitted Page"
+
+    ### ^^^ this part should be fine

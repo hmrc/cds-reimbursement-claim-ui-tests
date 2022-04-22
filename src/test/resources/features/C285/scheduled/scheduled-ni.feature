@@ -1,4 +1,4 @@
-@Regression @Scheduled @BrowserStack
+@C285 @Scheduled @BrowserStack
 Feature: C285 Scheduled NI (bulk enabled, entry disabled)
 
   Background:
