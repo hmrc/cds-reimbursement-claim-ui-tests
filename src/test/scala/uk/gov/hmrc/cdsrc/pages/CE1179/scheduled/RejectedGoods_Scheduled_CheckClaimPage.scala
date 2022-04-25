@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.C285.scheduled
+package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Scheduled_CheckClaimPage extends BasePage {
+object RejectedGoods_Scheduled_CheckClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/check-claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/check-claim"
   override val title = "Check the repayment claim totals for all MRNs"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim for reimbursement of import duties - GOV.UK")
@@ -29,5 +29,12 @@ object Scheduled_CheckClaimPage extends BasePage {
   override def expectedPageTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim for reimbursement of import duties - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check the repayment claim totals for all MRNs")
+
+  override def clickRadioButton(text: String): Unit = {
+    text.toLowerCase() match {
+      case "yes" => click on xpath(s"""//*[@id="check-claim-summary"]""")
+      case "no" => click on xpath(s"""//*[@id="check-claim-summary"]""")
+    }
+  }
 
 }
