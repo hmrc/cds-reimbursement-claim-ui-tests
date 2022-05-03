@@ -27,9 +27,9 @@ object RejectedGoods_Single_InspectionAddressChooseTypePage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/inspection-address/choose-type"
   override val title = "Choose an address for the inspection"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose an address for the inspection - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Choose an address for the inspection - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose an address for the inspection - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Choose an address for the inspection - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Choose an address for the inspection")
 

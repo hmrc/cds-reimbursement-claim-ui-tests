@@ -25,9 +25,9 @@ object UploadDocuments_SummaryPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/upload-documents/summary"
   override val title = "You have successfully uploaded a document showing all the MRNs in this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("You have successfully uploaded a document showing all the MRNs in this claim")
 

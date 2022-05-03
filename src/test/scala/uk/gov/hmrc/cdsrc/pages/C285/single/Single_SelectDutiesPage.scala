@@ -24,9 +24,9 @@ object Single_SelectDutiesPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/select-duties"
   override val title = "Select the duties you want to claim for"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for")
 

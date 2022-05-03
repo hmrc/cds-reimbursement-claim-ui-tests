@@ -24,9 +24,9 @@ object Single_EnterDuplicateMovementReferenceNumberPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-duplicate-movement-reference-number"
   override val title = "Enter the duplicate MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Error: Enter the duplicate MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Enter the duplicate MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the duplicate MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the duplicate MRN - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter the duplicate MRN")
 

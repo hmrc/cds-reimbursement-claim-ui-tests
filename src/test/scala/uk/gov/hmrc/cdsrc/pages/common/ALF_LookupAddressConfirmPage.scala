@@ -24,9 +24,9 @@ object ALF_LookupAddressConfirmPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/lookup-address/.../confirm"
   override val title = "Review and confirm"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Review and confirm - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Review and confirm - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Review and confirm - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Review and confirm - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Review and confirm")
 

@@ -24,9 +24,9 @@ object Single_CheckDeclarationDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-declaration-details"
   override val title = "Check these declaration details are correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check these declaration details are correct - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check these declaration details are correct - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check these declaration details are correct - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check these declaration details are correct - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check these declaration details are correct")
 

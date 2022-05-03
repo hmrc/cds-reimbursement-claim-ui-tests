@@ -24,9 +24,9 @@ object RejectedGoods_Scheduled_ClaimantDetailsChangeContactDetailsPage extends B
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/claimant-details/change-contact-details"
   override val title = "Change contact details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Change contact details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Change contact details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Change contact details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Change contact details - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Change contact details")
 

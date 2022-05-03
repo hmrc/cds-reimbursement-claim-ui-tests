@@ -21,12 +21,12 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object AccessibilityStatementPage extends BasePage {
 
   override val url: String = "http://localhost:12346/accessibility-statement/cds-reimbursement-claim"
-  override val title = "Accessibility statement for Claim for reimbursement of import duties service"
+  override val title = "Accessibility statement for Claim back import duty and VAT service"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Accessibility statement for Claim for reimbursement of import duties service – GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Accessibility statement for Claim back import duty and VAT service – GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Accessibility statement for Claim for reimbursement of import duties service – GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Accessibility statement for Claim back import duty and VAT service – GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Accessibility statement for Claim for reimbursement of import duties service")
+  override def expectedPageHeader: Option[String] = Some("Accessibility statement for Claim back import duty and VAT service")
 
 }

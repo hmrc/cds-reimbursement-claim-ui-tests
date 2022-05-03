@@ -24,9 +24,9 @@ object RejectedGoods_Multiple_EnterBankAccountDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/enter-bank-account-details"
   override val title = "Enter bank account details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter bank account details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter bank account details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter bank account details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter bank account details - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter bank account details")
 

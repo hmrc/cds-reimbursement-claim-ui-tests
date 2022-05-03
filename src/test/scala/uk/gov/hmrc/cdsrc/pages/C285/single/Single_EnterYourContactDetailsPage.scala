@@ -24,9 +24,9 @@ object Single_EnterYourContactDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-your-contact-details"
   override val title = "Enter your contact details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter your contact details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter your contact details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter your contact details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter your contact details - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter your contact details")
 

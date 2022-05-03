@@ -24,9 +24,9 @@ object Multiple_ClaimantDetailsEnterContactDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/claimant-details/enter-contact-details"
   override val title = "Add contact details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Add contact details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Add contact details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Add contact details - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Add contact details - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Add contact details")
 

@@ -24,9 +24,9 @@ object ChooseHowManyMrnsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/choose-how-many-mrns"
   override val title = "Choose how many MRNs you want to submit in this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Choose how many MRNs you want to submit in this claim - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Choose how many MRNs you want to submit in this claim")
 

@@ -24,9 +24,9 @@ object Multiple_ClaimantDetailsAddPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/claimant-details/add"
   override val title = "Check your details as registered with CDS"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check your details as registered with CDS - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check your details as registered with CDS - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check your details as registered with CDS - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check your details as registered with CDS")
 
