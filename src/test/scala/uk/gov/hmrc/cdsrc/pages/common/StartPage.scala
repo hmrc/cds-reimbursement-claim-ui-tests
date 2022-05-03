@@ -22,12 +22,12 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object StartPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend")
-  override val title = "Claim for reimbursement of import duties"
+  override val title = "Claim back import duty and VAT"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Claim for reimbursement of import duties - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Claim back import duty and VAT - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Claim for reimbursement of import duties - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Claim back import duty and VAT - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Claim for reimbursement of import duties")
+  override def expectedPageHeader: Option[String] = Some("Claim back import duty and VAT")
 
 }

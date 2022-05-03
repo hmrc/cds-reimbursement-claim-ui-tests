@@ -27,9 +27,9 @@ object RejectedGoods_Scheduled_ChooseDisposalMethodPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/choose-disposal-method"
   override val title = "Choose what you intend to do with the goods"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose what you intend to do with the goods - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Choose what you intend to do with the goods - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose what you intend to do with the goods - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Choose what you intend to do with the goods - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Choose what you intend to do with the goods")
 

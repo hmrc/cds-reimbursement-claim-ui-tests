@@ -24,9 +24,9 @@ object Scheduled_ClaimNorthernIrelandPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/claim-northern-ireland"
   override val title = "Were your goods moved through or imported to Northern Ireland?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Were your goods moved through or imported to Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Were your goods moved through or imported to Northern Ireland? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Were your goods moved through or imported to Northern Ireland? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Were your goods moved through or imported to Northern Ireland? - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Were your goods moved through or imported to Northern Ireland?")
 

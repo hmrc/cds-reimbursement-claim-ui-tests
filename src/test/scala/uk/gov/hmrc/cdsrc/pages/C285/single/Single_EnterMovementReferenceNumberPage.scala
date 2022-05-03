@@ -24,9 +24,9 @@ object Single_EnterMovementReferenceNumberPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-movement-reference-number"
   override val title = "Enter the MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Enter the MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Enter the MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the MRN - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter the MRN")
 

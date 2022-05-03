@@ -24,9 +24,9 @@ object Scheduled_CheckAnswersAcceptSendPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/check-answers-accept-send"
   override val title = "Check your answers before sending your application"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your application - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your application - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check your answers before sending your application - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check your answers before sending your application - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check your answers before sending your application")
 

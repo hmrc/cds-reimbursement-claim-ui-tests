@@ -24,9 +24,9 @@ object RejectedGoods_Multiple_SelectDuties3Page extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/select-duties/3"
   override val title = "Select the duties you want to claim for under third MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under third MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under third MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for under third MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for under third MRN - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for under third MRN")
 

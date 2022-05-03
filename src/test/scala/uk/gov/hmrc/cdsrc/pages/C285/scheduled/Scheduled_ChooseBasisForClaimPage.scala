@@ -28,9 +28,9 @@ object Scheduled_ChooseBasisForClaimPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/choose-basis-for-claim"
   override val title = "Select the basis for claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the basis for claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select the basis for claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the basis for claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the basis for claim - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select the basis for claim")
 

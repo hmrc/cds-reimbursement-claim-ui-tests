@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.cucumber.stepdefs
 
+import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
 
 class CDSRStepDef extends BaseStepDef {
@@ -27,7 +28,7 @@ class CDSRStepDef extends BaseStepDef {
   When("""I enter redirectURL on {string}""") { (page: String) =>
     page match {
       case "Auth Login Stub Page" =>
-        AuthLoginStubPage.enterRedirectURL("http://localhost:7500/claim-for-reimbursement-of-import-duties/start")
+        AuthLoginStubPage.enterRedirectURL(TestConfiguration.url("cds-frontend") + "/start")
     }
   }
 

@@ -24,9 +24,9 @@ object Single_SupportingEvidenceCheckYourAnswers2Page extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/supporting-evidence/check-your-answers"
   override val title = "You have added 2 documents to your claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("You have added 2 documents to your claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("You have added 2 documents to your claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("You have added 2 documents to your claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("You have added 2 documents to your claim - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("You have added 2 documents to your claim")
 

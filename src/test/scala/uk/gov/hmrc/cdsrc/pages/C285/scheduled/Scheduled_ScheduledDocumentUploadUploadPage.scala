@@ -24,9 +24,9 @@ object Scheduled_ScheduledDocumentUploadUploadPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/scheduled-document-upload/upload"
   override val title = "Add a document which shows all the MRNs in this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Add a document which shows all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Add a document which shows all the MRNs in this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Add a document which shows all the MRNs in this claim - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Add a document which shows all the MRNs in this claim - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Add a document which shows all the MRNs in this claim")
 

@@ -24,9 +24,9 @@ object RejectedGoods_Scheduled_SelectDutiesClimateChangeLevyPage extends BasePag
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/climate-change-levy"
   override val title = "Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded")
 

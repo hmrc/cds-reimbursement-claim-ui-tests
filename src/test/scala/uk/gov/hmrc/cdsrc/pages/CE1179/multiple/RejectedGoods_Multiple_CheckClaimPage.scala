@@ -24,9 +24,9 @@ object RejectedGoods_Multiple_CheckClaimPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/check-claim"
   override val title = "Check the repayment claim totals for all MRNs"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check the repayment claim totals for all MRNs")
 

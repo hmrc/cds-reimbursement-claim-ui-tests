@@ -24,9 +24,9 @@ object Multiple_CheckDuplicateDeclarationDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/check-duplicate-declaration-details"
   override val title = "Check these details are correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check these details are correct - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check these details are correct - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check these details are correct - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Check these details are correct")
 

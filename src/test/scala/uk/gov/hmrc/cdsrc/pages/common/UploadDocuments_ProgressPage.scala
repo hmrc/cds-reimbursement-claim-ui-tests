@@ -24,9 +24,9 @@ object UploadDocuments_ProgressPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/upload-documents/progress/..."
   override val title = "We are checking your document"
 
-  override def expectedPageErrorTitle: Option[String] = Some("We are checking your document - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("We are checking your document - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("We are checking your document - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("We are checking your document - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("We are checking your document")
 

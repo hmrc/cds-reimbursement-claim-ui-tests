@@ -24,9 +24,9 @@ object Scheduled_EnterImporterEoriPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-importer-eori"
   override val title = "Enter the importer’s EORI number"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter the importer’s EORI number - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter the importer’s EORI number - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Enter the importer’s EORI number")
 

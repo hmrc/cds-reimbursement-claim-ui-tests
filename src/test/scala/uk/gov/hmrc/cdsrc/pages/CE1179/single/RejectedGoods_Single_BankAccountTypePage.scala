@@ -24,9 +24,9 @@ object RejectedGoods_Single_BankAccountTypePage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/bank-account-type"
   override val title = "What type of account details are you providing?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("What type of account details are you providing? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("What type of account details are you providing? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("What type of account details are you providing? - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("What type of account details are you providing? - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("What type of account details are you providing?")
 

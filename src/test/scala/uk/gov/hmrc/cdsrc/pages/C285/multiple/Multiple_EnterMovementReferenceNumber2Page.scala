@@ -24,9 +24,9 @@ object Multiple_EnterMovementReferenceNumber2Page extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/enter-movement-reference-number/2"
   override val title = "Tell us the second MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Tell us the second MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Tell us the second MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Tell us the second MRN - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Tell us the second MRN - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Tell us the second MRN")
 

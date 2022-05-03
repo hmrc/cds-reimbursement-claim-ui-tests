@@ -24,9 +24,9 @@ object RejectedGoods_Scheduled_SelectDutiesSelectDutyTypesPage extends BasePage 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/select-duty-types"
   override val title = "Select the duty types you want to claim for all MRNs in the file you uploaded"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the duty types you want to claim for all MRNs in the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select the duty types you want to claim for all MRNs in the file you uploaded - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duty types you want to claim for all MRNs in the file you uploaded - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the duty types you want to claim for all MRNs in the file you uploaded - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select the duty types you want to claim for all MRNs in the file you uploaded")
 

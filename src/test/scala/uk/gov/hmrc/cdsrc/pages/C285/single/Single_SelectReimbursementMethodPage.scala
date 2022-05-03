@@ -24,9 +24,9 @@ object Single_SelectReimbursementMethodPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/select-reimbursement-method"
   override val title = "Select repayment method"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select repayment method - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select repayment method - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select repayment method - Claim for reimbursement of import duties - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select repayment method - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageHeader: Option[String] = Some("Select repayment method")
 
