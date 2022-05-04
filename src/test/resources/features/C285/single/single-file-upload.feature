@@ -5,7 +5,7 @@ Feature: C285 Single file upload (bulk enabled, entry disabled)
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
-    Given the "Rejected Goods" feature is "disabled"
+    Given the "Rejected Goods" feature is "enabled"
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test

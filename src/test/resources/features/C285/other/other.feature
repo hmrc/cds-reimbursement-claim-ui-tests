@@ -5,7 +5,7 @@ Feature: C285 Other
     Given the "Bulk Claim" feature is "enabled"
     Given the "Entry Number" feature is "disabled"
     Given the "Northern Ireland" feature is "enabled"
-    Given the "Rejected Goods" feature is "disabled"
+    Given the "Rejected Goods" feature is "enabled"
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
