@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object FeatureSwitchPage extends BasePage {
 
-  override val url: String = "http://localhost:7500/claim-for-reimbursement-of-import-duties" + "/test-only/feature/"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/test-only/feature/"
 
   override def configure(feature: String, featureState: String): Unit = {
     go to url + s"${feature.toLowerCase().replace(" ", "-")}/${featureState.dropRight(1)}"
