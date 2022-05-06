@@ -8,7 +8,7 @@ Feature: C285 Multiple NI (bulk enabled, entry disabled)
     Given the "Rejected Goods" feature is "enabled"
     Given the "Internal Upload Documents" feature is "enabled"
 
-  @test @test
+  @test
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
