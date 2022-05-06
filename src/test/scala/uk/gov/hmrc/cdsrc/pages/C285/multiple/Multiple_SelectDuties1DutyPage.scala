@@ -42,11 +42,11 @@ object Multiple_SelectDuties1DutyPage extends BasePage {
   }
 
   override def checkPageTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under lead MRN")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under first MRN")
   }
 
   override def checkPageErrorTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under lead MRN")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under first MRN")
   }
 
 }
