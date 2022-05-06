@@ -8,7 +8,7 @@ Feature: C285 Multiple NI (bulk enabled, entry disabled)
     Given the "Rejected Goods" feature is "enabled"
     Given the "Internal Upload Documents" feature is "enabled"
 
-  @test
+  @test @test
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -72,13 +72,13 @@ Feature: C285 Multiple NI (bulk enabled, entry disabled)
     Then I am presented with the "Multiple_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "Multiple_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "Multiple_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "Multiple_Supporting Evidence Upload Supporting Evidence Page"
-    When I upload a "document.pdf" file on "Multiple_Supporting Evidence Upload Supporting Evidence Page"
-    And I click continue on "Multiple_Supporting Evidence Upload Supporting Evidence Page"
-    And I click continue if I'm on "Multiple_Supporting Evidence Upload Progress Page"
-    Then I am presented with the "Multiple_Supporting Evidence Check Your Answers Page"
-    When I select radio button "No" on "Multiple_Supporting Evidence Check Your Answers Page"
-    And I click continue on "Multiple_Supporting Evidence Check Your Answers Page"
+    Then I am presented with the "Upload Documents_Choose File Other Page"
+    When I upload a "document.pdf" file on "Upload Documents_Choose File Other Page"
+    And I click continue on "Upload Documents_Choose File Other Page"
+    And I click continue if I'm on "Upload Documents_Progress Page"
+    Then I am presented with the "Upload Documents_Summary Page" "1"
+    When I select radio button "No" on "Upload Documents_Summary Page"
+    And I click continue on "Upload Documents_Summary Page"
     Then I am presented with the "Multiple_Check Answers Accept Send Page"
     And I click continue on "Multiple_Check Answers Accept Send Page"
     Then I am presented with the "Multiple_Claim Submitted Page"
