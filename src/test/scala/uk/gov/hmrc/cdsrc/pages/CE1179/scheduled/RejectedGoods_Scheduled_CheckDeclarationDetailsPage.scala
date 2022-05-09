@@ -32,8 +32,8 @@ object RejectedGoods_Scheduled_CheckDeclarationDetailsPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on id("check-declaration-details.scheduled")
-      case "no" => click on id("check-declaration-details.scheduled-2")
+      case "yes" => click on cssSelector("#check-declaration-details")
+      case "no" => click on cssSelector("#check-declaration-details-2")
     }
   }
 

@@ -19,15 +19,15 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object RejectedGoods_Scheduled_CheckYourAnswersPage extends BasePage {
+object RejectedGoods_Scheduled_ClaimSubmittedPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/check-your-answers"
-  override val title = "Check your answers before sending your claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/claim-submitted"
+  override val title = "Claim submitted"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Claim submitted - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check your answers before sending your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Claim submitted - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check your answers before sending your claim")
+  override def expectedPageHeader: Option[String] = Some("Claim submitted")
 
 }
