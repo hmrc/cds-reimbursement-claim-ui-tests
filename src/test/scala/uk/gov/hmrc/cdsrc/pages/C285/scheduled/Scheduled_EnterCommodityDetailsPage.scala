@@ -21,19 +21,19 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Scheduled_EnterCommodityDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-commodity-details"
-  override val title = "Tell us the reason for this claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-additional-details"
+  override val title = "Provide additional details about this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Tell us the reason for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Provide additional details about this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Tell us the reason for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Provide additional details about this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Tell us the reason for this claim")
+  override def expectedPageHeader: Option[String] = Some("Provide additional details about this claim")
 
   override def enterDetails(details: String): Unit = {
     details match {
-      case "under 500 characters" => enterText("enter-commodities-details", "under 500 characters")
-      case "over 500 characters" => enterText("enter-commodities-details",
+      case "under 500 characters" => enterText("enter-additional-details", "under 500 characters")
+      case "over 500 characters" => enterText("enter-additional-details",
         "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
@@ -41,7 +41,7 @@ object Scheduled_EnterCommodityDetailsPage extends BasePage {
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
           "1"
       )
-      case _ => enterText("enter-commodities-details", details)
+      case _ => enterText("enter-additional-details", details)
     }
   }
 
