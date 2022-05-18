@@ -30,8 +30,4 @@ object UploadDocuments_ChooseFileOtherPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Add documents to support your claim")
 
-  override def clickContinueButton(): Unit = {
-    click on cssSelector("#main-content > div > div > form > div.govuk-\\!-margin-bottom-9 > button")
-  }
-
 }
