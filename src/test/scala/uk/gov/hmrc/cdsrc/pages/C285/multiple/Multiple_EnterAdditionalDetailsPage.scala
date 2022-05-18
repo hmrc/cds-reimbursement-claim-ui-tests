@@ -19,7 +19,7 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Multiple_EnterCommodityDetailsPage extends BasePage {
+object Multiple_EnterAdditionalDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/enter-additional-details"
   override val title = "Provide additional details about this claim"
