@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.C285.single
+package uk.gov.hmrc.cdsrc.pages.C285.scheduled
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Single_EnterCommodityDetailsPage extends BasePage {
+object Scheduled_EnterAdditionalDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/enter-additional-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-additional-details"
   override val title = "Provide additional details about this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("Provide additional details about this claim - Claim back import duty and VAT - GOV.UK")
