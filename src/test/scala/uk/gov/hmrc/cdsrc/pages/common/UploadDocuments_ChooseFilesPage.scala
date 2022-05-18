@@ -41,15 +41,4 @@ object UploadDocuments_ChooseFilesPage extends BasePage {
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
   }
 
-  override def clickContinueButton(): Unit = {
-    click on cssSelector("#main-content > div > div > form > div.govuk-\\!-margin-bottom-9 > button")
-//    waitForPageToLoad()
-//    var n : Int = 0 //to avoid an infinite loop if the file cannot upload
-//    while (driver.getCurrentUrl.equals("http://localhost:10100/upload-documents/choose-files") & n < 100) {
-//      click on cssSelector("#upload-documents-submit")
-//      Thread.sleep(500)
-//      n += 1
-//    }
-  }
-
 }
