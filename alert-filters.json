@@ -66,6 +66,15 @@
       "ruleId": 10202,
       "urlIsRegex": "true",
       "newLevel": -1
+    },
+
+    {
+      "contextId": 1,
+      "reason": "This issue is related upload documents",
+      "url": "http://localhost:7500/claim-back-import-duty-vat/upload-documents/choose-file",
+      "ruleId": 10202,
+      "urlIsRegex": "true",
+      "newLevel": -1
     }
   ]
 }
