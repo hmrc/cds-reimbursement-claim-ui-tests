@@ -1,10 +1,7 @@
 @C285 @Single
-Feature: C285 Single (bulk enabled, entry disabled)
+Feature: C285 Single
 
   Background:
-    Given the "Bulk Claim" feature is "enabled"
-    Given the "Entry Number" feature is "disabled"
-    Given the "Rejected Goods" feature is "enabled"
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
@@ -86,79 +83,7 @@ Feature: C285 Single (bulk enabled, entry disabled)
     Then I am presented with the "Single_Claim Submitted Page"
 
   @test @a11y @ZAP
-  Scenario: happy path - duplicate mrn
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "Choose How Many Mrns Page"
-    When I select radio button "individual" on "Choose How Many Mrns Page"
-    And I click continue on "Choose How Many Mrns Page"
-    Then I am presented with the "Single_Enter Movement Reference Number Page"
-    When I enter "10AAAAAAAAAAAAAAA1" on "Single_Enter Movement Reference Number Page"
-    And I click continue on "Single_Enter Movement Reference Number Page"
-    Then I am presented with the "Single_Check Declaration Details Page"
-    And I select radio button "yes" on "Single_Check Declaration Details Page"
-    And I click continue on "Single_Check Declaration Details Page"
-    Then I am presented with the "Single_Claimant Details Page"
-    And I click continue on "Single_Claimant Details Page"
-    Then I am presented with the "Single_Claim Northern Ireland Page"
-    And I select radio button "yes" on "Single_Claim Northern Ireland Page"
-    And I click continue on "Single_Claim Northern Ireland Page"
-    Then I am presented with the "Single_Choose Basis For Claim Page"
-    When I select radio button "Duplicate MRN" on "Single_Choose Basis For Claim Page"
-    And I click continue on "Single_Choose Basis For Claim Page"
-    Then I am presented with the "Single_Enter Duplicate Movement Reference Number Page"
-    When I enter "20AAAAAAAAAAAAAAA1" on "Single_Enter Duplicate Movement Reference Number Page"
-    And I click continue on "Single_Enter Duplicate Movement Reference Number Page"
-    Then I am presented with the "Single_Check Duplicate Declaration Details Page"
-    And I select radio button "yes" on "Single_Check Duplicate Declaration Details Page"
-    And I click continue on "Single_Check Duplicate Declaration Details Page"
-    Then I am presented with the "Single_Enter Additional Details Page"
-    When I enter "under 500 characters" on "Single_Enter Additional Details Page"
-    And I click continue on "Single_Enter Additional Details Page"
-    Then I am presented with the "Single_Select Duties Page"
-    When I select "A80,A95,A90,A85" on "Single_Select Duties Page"
-    And I click continue on "Single_Select Duties Page"
-    Then I am presented with the "Single_Enter Claim Page" "A80 - Definitive Anti-Dumping Duty"
-    When I enter "10" on "Single_Enter Claim Page"
-    And I click continue on "Single_Enter Claim Page"
-    Then I am presented with the "Single_Enter Claim Page" "A95 - Provisional Countervailing Duty"
-    When I enter "10" on "Single_Enter Claim Page"
-    And I click continue on "Single_Enter Claim Page"
-    Then I am presented with the "Single_Enter Claim Page" "A90 - Definitive Countervailing Duty"
-    When I enter "10" on "Single_Enter Claim Page"
-    And I click continue on "Single_Enter Claim Page"
-    Then I am presented with the "Single_Enter Claim Page" "A85 - Provisional Anti-Dumping Duty"
-    When I enter "10" on "Single_Enter Claim Page"
-    And I click continue on "Single_Enter Claim Page"
-    Then I am presented with the "Single_Check Claim Page"
-    And I select radio button "yes" on "Single_Check Claim Page"
-    When I click continue on "Single_Check Claim Page"
-    Then I am presented with the "Single_Check These Bank Details Are Correct Page"
-    When I click continue on "Single_Check These Bank Details Are Correct Page"
-    Then I am presented with the "Single_Supporting Evidence Select Supporting Evidence Type Page"
-    When I select radio button "Commercial invoice" on "Single_Supporting Evidence Select Supporting Evidence Type Page"
-    And I click continue on "Single_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "Upload Documents_Choose File Other Page"
-    When I upload a "document.pdf" file on "Upload Documents_Choose File Other Page"
-    And I click continue on "Upload Documents_Choose File Other Page"
-    And I click continue if I'm on "Upload Documents_Progress Page"
-    Then I am presented with the "Upload Documents_Summary Page" "1"
-    When I select radio button "No" on "Upload Documents_Summary Page"
-    And I click continue on "Upload Documents_Summary Page"
-    Then I am presented with the "Single_Check Answers Accept Send Page"
-    And I click continue on "Single_Check Answers Accept Send Page"
-    Then I am presented with the "Single_Claim Submitted Page"
-
-  @test @a11y @ZAP
-  Scenario: happy path - duplicate mrn 2
+  Scenario: happy path - duplicate mrn journey
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -238,7 +163,7 @@ Feature: C285 Single (bulk enabled, entry disabled)
     Then I am presented with the "Single_Claim Submitted Page"
 
   @test
-  Scenario: wrong mrn
+  Scenario: error scenario - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -267,7 +192,7 @@ Feature: C285 Single (bulk enabled, entry disabled)
     Then I am presented with the "Single_Claimant Details Page"
 
   @test
-  Scenario: user selects CMA
+  Scenario: happy path - user selects CMA
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
