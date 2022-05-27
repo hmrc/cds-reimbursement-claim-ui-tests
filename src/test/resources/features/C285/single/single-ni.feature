@@ -1,10 +1,7 @@
 @C285 @Single
-Feature: C285 Single NI (bulk enabled, entry disabled)
+Feature: C285 Single NI
 
   Background:
-    Given the "Bulk Claim" feature is "enabled"
-    Given the "Entry Number" feature is "disabled"
-    Given the "Rejected Goods" feature is "enabled"
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
