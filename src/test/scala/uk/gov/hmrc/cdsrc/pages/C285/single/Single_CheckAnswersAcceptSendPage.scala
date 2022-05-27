@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Single_CheckAnswersAcceptSendPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-answers-accept-send"
-  override val title = "Check your answers before sending your application"
+  override val title = "Check your answers before sending your claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your application - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check your answers before sending your application - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check your answers before sending your claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check your answers before sending your application")
+  override def expectedPageHeader: Option[String] = Some("Check your answers before sending your claim")
 
   override def clickButton(buttonText: String): Unit = {
     buttonText match {
