@@ -48,7 +48,7 @@ Feature: C&E1179 Single
     Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A80 - Definitive Anti-Dumping Duty"
     When I enter "10" on "Rejected Goods_Single_Enter Claim Page"
     And I click continue on "Rejected Goods_Single_Enter Claim Page"
-    Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A95F - Provisional Countervailing Duty"
+    Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A95 - Provisional Countervailing Duty"
     When I enter "10" on "Rejected Goods_Single_Enter Claim Page"
     And I click continue on "Rejected Goods_Single_Enter Claim Page"
     Then I am presented with the "Rejected Goods_Single_Enter Claim Page" "A90 - Definitive Countervailing Duty"
