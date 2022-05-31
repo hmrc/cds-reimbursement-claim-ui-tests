@@ -73,13 +73,13 @@ Feature: C&E1179 external file upload (internal-upload-documents disabled)
     Then I am presented with the "CE1179_Multiple_Choose File Type Page"
     When I select radio button "Commercial invoice" on "CE1179_Multiple_Choose File Type Page"
     And I click continue on "CE1179_Multiple_Choose File Type Page"
-    Then I am presented with the "Upload Documents_Choose Files Page" "commercial invoice"
+    Then I am presented with the "UDF_Choose Files Page" "commercial invoice"
 
     ### vvv broken from here
 
-    When I upload a 1 "document.pdf" file on "Upload Documents_Choose Files Page"
-    And I select radio button "No" on "Upload Documents_Choose Files Page"
-    And I click continue on "Upload Documents_Choose Files Page"
+    When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
+    And I select radio button "No" on "UDF_Choose Files Page"
+    And I click continue on "UDF_Choose Files Page"
 
     ### ^^^ this should be how it should work, but there seem to be bugs around this at the moment
 
