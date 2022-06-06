@@ -5,7 +5,7 @@ Feature: C285 Single
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
-  Scenario: happy path - check importer/declarant eori pages
+  Scenario: happy path - check importer/declarant eori pages, change contact details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -31,6 +31,11 @@ Feature: C285 Single
     Then I am presented with the "C285_Single_Check Declaration Details Page"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page"
     And I click continue on "C285_Single_Check Declaration Details Page"
+    Then I am presented with the "C285_Single_Claimant Details Page"
+    When I click "Change Contact details" on "C285_Single_Claimant Details Page"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page"
+    And I enter "" on "C285_Single_Claimant Details Change Claimant Details Page"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page"
     Then I am presented with the "C285_Single_Claimant Details Page"
     And I click continue on "C285_Single_Claimant Details Page"
     Then I am presented with the "C285_Single_Claim Northern Ireland Page"
@@ -83,7 +88,7 @@ Feature: C285 Single
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
   @test @a11y @ZAP
-  Scenario: happy path - duplicate mrn journey
+  Scenario: happy path - duplicate mrn journey, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
