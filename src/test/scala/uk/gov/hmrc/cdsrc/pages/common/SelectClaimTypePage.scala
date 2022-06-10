@@ -34,6 +34,7 @@ object SelectClaimTypePage extends BasePage {
     text.toLowerCase() match {
       case "c285" => click on cssSelector("#choose-claim-type-c285")
       case "ce1179" => click on cssSelector("#choose-claim-type-ce1179")
+      case "securities" => click on cssSelector("#choose-claim-type-securities")
     }
   }
 
