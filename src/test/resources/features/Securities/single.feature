@@ -1,7 +1,7 @@
 @Security @Single
 Feature: Security Single
 
-  @test @1
+  @test
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
