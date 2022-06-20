@@ -26,13 +26,13 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 object C285_Scheduled_ChooseBasisForClaimPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/choose-basis-for-claim"
-  override val title = "Select the basis for claim"
+  override val title = "Choose the basis for claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the basis for claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Choose the basis for claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the basis for claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Choose the basis for claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select the basis for claim")
+  override def expectedPageHeader: Option[String] = Some("Choose the basis for claim")
 
   override def dropdownSelect(selection: String): Unit = {
     val dropdown = new Select(driver.findElement(By.id("select-basis-for-claim")))
