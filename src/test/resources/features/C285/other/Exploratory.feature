@@ -10,7 +10,7 @@ Feature: C285 Exploratory file
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eorys Details Page"
     Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
+    When I select radio button "c285" on "Delete Claim Type Page"
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "C285_Choose How Many Mrns Page"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page"
