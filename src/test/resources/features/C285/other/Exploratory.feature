@@ -8,7 +8,7 @@ Feature: C285 Exploratory file
     And I click continue on "Auth Login Stub Page"
     Then I am presented with the "Check Eori Details Page"
     When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
+    And I click continue on "Check Eorys Details Page"
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "c285" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
