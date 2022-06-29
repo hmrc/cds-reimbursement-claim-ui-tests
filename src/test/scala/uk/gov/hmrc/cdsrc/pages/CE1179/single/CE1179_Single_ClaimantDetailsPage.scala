@@ -32,4 +32,10 @@ object CE1179_Single_ClaimantDetailsPage extends BasePage {
 
   override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
 
+  override def clickButton(buttonText: String): Unit =
+    buttonText.toLowerCase() match {
+      case "change contact details" => click on cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")
+      case "change contact address" => click on cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")
+    }
+
 }
