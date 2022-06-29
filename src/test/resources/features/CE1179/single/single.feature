@@ -5,7 +5,7 @@ Feature: C&E1179 Single
     Given the "Internal Upload Documents" feature is "enabled"
 
   @test @a11y @ZAP
-  Scenario: happy path - check importer/declarant eori pages
+  Scenario: happy path - check importer/declarant eori pages, change contact details, change bank detail
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -31,6 +31,11 @@ Feature: C&E1179 Single
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
     When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Single_Claimant Details Page"
+    When I click "Change Contact details" on "CE1179_Single_Claimant Details Page"
+    Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
     Then I am presented with the "CE1179_Single_Claimant Details Page"
     And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
@@ -66,6 +71,14 @@ Feature: C&E1179 Single
     Then I am presented with the "CE1179_Single_Inspection Address Choose Type Page"
     When I select radio button "11 Mount Road, London, E10 7PP" on "CE1179_Single_Inspection Address Choose Type Page"
     And I click continue on "CE1179_Single_Inspection Address Choose Type Page"
+    Then I am presented with the "CE1179_Single_Check Bank Details Page"
+    When I click "Change" on "CE1179_Single_Check Bank Details Page"
+    Then I am presented with the "CE1179_Single_Bank Account Type Page"
+    When I select radio button "Business bank account" on "CE1179_Single_Bank Account Type Page"
+    And I click continue on "CE1179_Single_Bank Account Type Page"
+    Then I am presented with the "CE1179_Single_Enter Bank Account Details Page"
+    When I enter "" on "CE1179_Single_Enter Bank Account Details Page"
+    And I click continue on "CE1179_Single_Enter Bank Account Details Page"
     Then I am presented with the "CE1179_Single_Check Bank Details Page"
     When I click continue on "CE1179_Single_Check Bank Details Page"
     Then I am presented with the "CE1179_Single_Choose File Type Page"
