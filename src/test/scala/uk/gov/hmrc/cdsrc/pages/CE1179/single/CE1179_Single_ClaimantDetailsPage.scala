@@ -30,8 +30,6 @@ object CE1179_Single_ClaimantDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("How we will contact you about this claim")
 
-  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
-
   override def clickButton(buttonText: String): Unit =
     buttonText.toLowerCase() match {
       case "change contact details" => click on cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")

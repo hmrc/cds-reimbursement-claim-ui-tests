@@ -37,8 +37,4 @@ object CE1179_Scheduled_ChooseFileTypePage extends BasePage {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
   }
 
-  override def clickContinueButton(): Unit = {
-    click on cssSelector("#main-content > div > div > form > button")
-  }
-
 }
