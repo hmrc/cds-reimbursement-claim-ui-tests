@@ -42,8 +42,4 @@ object CE1179_Multiple_InspectionAddressChooseTypePage extends BasePage {
     }
   }
 
-  override def clickContinueButton(): Unit = {
-    click on cssSelector("#main-content > div > div > form > button")
-  }
-
 }

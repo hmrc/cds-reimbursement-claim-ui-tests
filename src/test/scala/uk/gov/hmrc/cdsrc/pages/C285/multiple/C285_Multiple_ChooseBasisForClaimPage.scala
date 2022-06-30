@@ -17,7 +17,6 @@
 package uk.gov.hmrc.cdsrc.pages.C285.multiple
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -34,17 +33,8 @@ object C285_Multiple_ChooseBasisForClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Choose the basis for claim")
 
-  override def dropdownSelect(selection: String): Unit = {
-    val dropdown = new Select(driver.findElement(By.id("select-basis-for-claim")))
-    dropdown.selectByVisibleText(selection)
-  }
-
   override def clickRadioButton(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
-  }
-
-  override def clickContinueButton(): Unit = {
-    click on cssSelector("#main-content > div > div > form > button")
   }
 
 }

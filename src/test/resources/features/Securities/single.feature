@@ -2,7 +2,7 @@
 Feature: Security Single
 
   @test
-  Scenario: happy path
+  Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -13,4 +13,9 @@ Feature: Security Single
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "securities" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
-    #Then I am presented with the "Securities_Enter Movement Reference Number Page"
+    Then I am presented with the "Securities_Enter Movement Reference Number Page"
+    When I enter "10AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
+    And I click continue on "Securities_Enter Movement Reference Number Page"
+    Then I am presented with the "Securities_Choose Reason For Security Page"
+    When I select radio button "Account Sales" on "Securities_Choose Reason For Security Page"
+    And I click continue on "Securities_Choose Reason For Security Page"

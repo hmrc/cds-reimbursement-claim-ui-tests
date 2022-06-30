@@ -34,17 +34,8 @@ object C285_Single_ChooseBasisForClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Choose the basis for claim")
 
-  override def dropdownSelect(selection: String): Unit = {
-    val dropdown = new Select(driver.findElement(By.id("select-basis-for-claim")))
-    dropdown.selectByVisibleText(selection)
-  }
-
   override def clickRadioButton(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
-  }
-
-  override def clickContinueButton(): Unit = {
-    click on cssSelector("#main-content > div > div > form > button")
   }
 
 }
