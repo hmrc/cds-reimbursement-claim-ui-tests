@@ -20,8 +20,9 @@ Feature: Security Single
     When I select radio button "End-use Relief" on "Securities_Choose Reason For Security Page"
     And I click continue on "Securities_Choose Reason For Security Page"
     Then I am presented with the "Securities_Enter Importer Eori Page"
-    When I enter "GB000000000000002" on "C285_Single_Enter Importer Eori Page"
+    When I enter "GB000000000000002" on "Securities_Enter Importer Eori Page"
     And I click continue on "Securities_Enter Importer Eori Page"
     Then I am presented with the "Securities_Enter Declarant Eori Page"
     When I enter "GB000000000000002" on "Securities_Enter Declarant Eori Page"
     And I click continue on "Securities_Enter Declarant Eori Page"
+
