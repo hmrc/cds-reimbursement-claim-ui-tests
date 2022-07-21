@@ -26,13 +26,13 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 object Securities_ChooseReasonForSecurityPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/choose-reason-for-security"
-  override val title = "Choose the reason for security"
+  override val title = "Select why a security deposit or guarantee was required"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose the reason for security - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select why a security deposit or guarantee was required - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose the reason for security - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select why a security deposit or guarantee was required - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Choose the reason for security")
+  override def expectedPageHeader: Option[String] = Some("Select why a security deposit or guarantee was required")
 
   override def clickRadioButton(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
