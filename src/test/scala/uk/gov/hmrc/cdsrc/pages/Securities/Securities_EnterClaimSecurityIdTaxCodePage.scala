@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Securities_EnterClaimSecurityIdTaxCodePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/enter-claim/enter-claim/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/enter-claim/..."
   override val title       = "Claim details for A20 - Additional Duty"
 
   override def expectedPageHeader: Option[String] = Some("Claim details for A20 - Additional Duty")
