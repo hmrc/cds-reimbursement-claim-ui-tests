@@ -36,5 +36,5 @@ object Securities_SelectDutiesSecurityIdPage extends BasePage {
     true should equal(true)
 
    def checkSecurityId(securityID: String): Unit =
-    driver.findElement(By cssSelector "#main-content > div > div > form > h1").getText should equal(s"Security ID: $securityID")
+    driver.findElement(By cssSelector "#main-content > div > div > form > span > h1").getText should equal(s"Security ID: $securityID")
 }
