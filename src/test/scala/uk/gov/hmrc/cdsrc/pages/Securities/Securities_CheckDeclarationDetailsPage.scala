@@ -25,11 +25,15 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 object Securities_CheckDeclarationDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/check-declaration-details"
-  override val title = "Check these declaration details are correct"
+  override val title       = "Check these declaration details are correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check these declaration details are correct - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Check these declaration details are correct - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Check these declaration details are correct - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Check these declaration details are correct - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Check these declaration details are correct")
 
@@ -39,6 +43,15 @@ object Securities_CheckDeclarationDetailsPage extends BasePage {
     pageRows.findElement(By.tagName("a")).click()
   }
 
-
-
+  override def clickButton(buttonText: String): Unit =
+    buttonText match {
+      case "Change MRN"                 =>
+        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/enter-movement-reference-number']")
+      case "Change reason for security" =>
+        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/choose-reason-for-security']")
+      case "Change claim for ABC0123456" =>
+        click on cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions > a")
+      case "Change claim for DEF6543210" =>
+        click on cssSelector("#main-content > div > div > dl > div:nth-child(11) > dd.govuk-summary-list__actions > a")
+    }
 }
