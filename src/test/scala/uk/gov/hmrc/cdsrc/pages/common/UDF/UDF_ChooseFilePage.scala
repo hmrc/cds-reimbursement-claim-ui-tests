@@ -38,7 +38,7 @@ object UDF_ChooseFilePage extends BasePage {
 
   override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
-    while (find(tagName("h1")).map(_.text).contains("Add a document which shows all the MRNs in this claim")) {
+    while (driver.getCurrentUrl.equals(url)) {
       clickContinueButton()
     }
   }

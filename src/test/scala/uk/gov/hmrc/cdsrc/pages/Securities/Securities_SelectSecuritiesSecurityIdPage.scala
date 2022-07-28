@@ -24,13 +24,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_SelectSecuritiesSecurityIdPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/select-securities/..."
-  override val title = "Do you want to include this security in this claim?"
+  override val title = "Include this security deposit in your claim?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Do you want to include this security in this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Do you want to include this security in this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Do you want to include this security in this claim?")
+  override def expectedPageHeader: Option[String] = Some("Include this security deposit in your claim?")
 
   override def checkURL: Assertion = {
     true should equal (true)
@@ -39,7 +39,7 @@ object Securities_SelectSecuritiesSecurityIdPage extends BasePage {
   override def checkPageTitle(page: String): Unit = {
     val pageCaption : Array [String] = page.split(",")
     driver.findElement(By cssSelector "#main-content > div > div > span").getText should equal (s"""Security ${pageCaption(0)}""")
-    driver.findElement(By cssSelector "#main-content > div > div > form > div.govuk-heading-m").getText should equal (s"""Security ID: ${pageCaption(1)}""")
+    driver.findElement(By cssSelector "#main-content > div > div > form > h2").getText should equal (s"""Security deposit ID: ${pageCaption(1)}""")
     driver.getCurrentUrl should equal (TestConfiguration.url("cds-frontend") + s"""/securities/select-securities/${pageCaption(1)}""")
   }
 
