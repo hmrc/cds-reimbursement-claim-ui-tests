@@ -16,12 +16,13 @@
 
 package uk.gov.hmrc.cdsrc.pages.common.UDF
 
+import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object UDF_ChooseFileOtherPage extends BasePage {
+object UCDF_ChooseFileOtherPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/upload-documents/choose-file"
+  override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title = "Add documents to support your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
@@ -33,5 +34,21 @@ object UDF_ChooseFileOtherPage extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some("Add documents to support your claim")
+
+  override def clickRadioButton(text: String): Unit = {
+    text.toLowerCase() match {
+      case "yes" => click on cssSelector("#choice")
+      case "no" => click on cssSelector("#choice-2")
+    }
+  }
+
+  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+
+  override def continuouslyClickContinue(): Unit = {
+    waitForPageToLoad()
+    while (find(tagName("h1")).map(_.text).contains("Add documents to support your claim")) {
+      clickContinueButton()
+    }
+  }
 
 }

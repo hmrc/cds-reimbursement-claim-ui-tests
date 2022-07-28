@@ -2,7 +2,7 @@
 Feature: C285 Single file upload
 
   Background:
-    Given the "Internal Upload Documents" feature is "enabled"
+    Given the "Internal Upload Documents" feature is "disabled"
 
   @test
   Scenario: happy path - upload 3 files
@@ -60,35 +60,26 @@ Feature: C285 Single file upload
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "UDF_Choose File Other Page"
-    When I upload a "image.jpg" file on "UDF_Choose File Other Page"
-    And I click continue on "UDF_Choose File Other Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page" "1"
-    When I select radio button "Yes" on "UDF_Summary Page"
-    And I click continue on "UDF_Summary Page"
+    Then I am presented with the "UCDF_Choose File Other Page"
+    When I upload a 1 "image.jpg" file on "UCDF_Choose File Other Page"
+    And I select radio button "Yes" on "UCDF_Choose File Other Page"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     # upload file 2
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Bill of lading" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "UDF_Choose File Other Page"
-    When I upload a "document.pdf" file on "UDF_Choose File Other Page"
-    And I click continue on "UDF_Choose File Other Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page" "2"
-    When I select radio button "Yes" on "UDF_Summary Page"
-    And I click continue on "UDF_Summary Page"
+    Then I am presented with the "UCDF_Choose File Other Page"
+    When I upload a 2 "document.pdf" file on "UCDF_Choose File Other Page"
+    And I select radio button "Yes" on "UCDF_Choose File Other Page"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     # upload file 3
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Packing list" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "UDF_Choose File Other Page"
-    When I upload a "image.png" file on "UDF_Choose File Other Page"
-    And I click continue on "UDF_Choose File Other Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page" "3"
-    When I select radio button "No" on "UDF_Summary Page"
-    And I click continue on "UDF_Summary Page"
+    Then I am presented with the "UCDF_Choose File Other Page"
+    When I upload a 3 "image.png" file on "UCDF_Choose File Other Page"
+    And I select radio button "NO" on "UCDF_Choose File Other Page"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     # continue journey
     Then I am presented with the "C285_Single_Check Answers Accept Send Page"
     And I click continue on "C285_Single_Check Answers Accept Send Page"
