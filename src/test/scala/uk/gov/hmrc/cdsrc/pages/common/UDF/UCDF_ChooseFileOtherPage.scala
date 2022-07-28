@@ -46,7 +46,7 @@ object UCDF_ChooseFileOtherPage extends BasePage {
 
   override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
-    while (find(tagName("h1")).map(_.text).contains("Add documents to support your claim")) {
+    while (driver.getCurrentUrl.equals(url)) {
       clickContinueButton()
     }
   }
