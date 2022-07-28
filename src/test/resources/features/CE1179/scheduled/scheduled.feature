@@ -2,7 +2,7 @@
 Feature: C&E1179 Scheduled
 
   Background:
-    Given the "Internal Upload Documents" feature is "enabled"
+    Given the "Internal Upload Documents" feature is "disabled"
 
   @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages, Special circumstances
@@ -32,11 +32,8 @@ Feature: C&E1179 Scheduled
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
     Then I am presented with the "UDF_Choose File Page"
-    When I upload a "image.jpg" file on "UDF_Choose File Page"
-    And I click continue on "UDF_Choose File Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page"
-    When I click continue on "UDF_Summary Page"
+    When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
+    And I click continue if I'm on "UDF_Choose File Page"
     Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
     When I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Choose Basis For Claim Page"
@@ -141,12 +138,9 @@ Feature: C&E1179 Scheduled
     When I select radio button "Commercial invoice" on "CE1179_Scheduled_Choose File Type Page"
     And I click continue on "CE1179_Scheduled_Choose File Type Page"
     Then I am presented with the "UDF_Choose Files Page" "commercial invoice"
-    When I upload a "document.pdf" file on "UDF_Choose Files Page"
-    And I click continue on "UDF_Choose File Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page" "1"
-    When I select radio button "No" on "UDF_Summary Page"
-    And I click continue on "UDF_Summary Page"
+    When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
+    And I select radio button "No" on "UDF_Choose Files Page"
+    And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"

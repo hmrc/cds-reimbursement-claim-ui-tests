@@ -2,7 +2,7 @@
 Feature: C285 Scheduled NI
 
   Background:
-    Given the "Internal Upload Documents" feature is "enabled"
+    Given the "Internal Upload Documents" feature is "disabled"
 
   @test @a11y @ZAP
   Scenario: happy path - NI enabled
@@ -26,11 +26,8 @@ Feature: C285 Scheduled NI
     And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page"
     And I click continue on "C285_Scheduled_Check Declaration Details Page"
     Then I am presented with the "UDF_Choose File Page"
-    When I upload a "image.jpg" file on "UDF_Choose File Page"
-    And I click continue on "UDF_Choose File Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page"
-    And I click continue on "UDF_Summary Page"
+    When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
+    And I click continue if I'm on "UDF_Choose File Page"
     Then I am presented with the "C285_Scheduled_Claimant Details Page"
     And I click continue on "C285_Scheduled_Claimant Details Page"
     Then I am presented with the "C285_Scheduled_Claim Northern Ireland Page"
@@ -125,13 +122,10 @@ Feature: C285 Scheduled NI
     Then I am presented with the "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "UDF_Choose File Other Page"
-    When I upload a "document.pdf" file on "UDF_Choose File Other Page"
-    And I click continue on "UDF_Choose File Other Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page" "1"
-    When I select radio button "No" on "UDF_Summary Page"
-    And I click continue on "UDF_Summary Page"
+    Then I am presented with the "UCDF_Choose File Other Page"
+    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
+    And I select radio button "No" on "UCDF_Choose File Other Page"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page"
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page"

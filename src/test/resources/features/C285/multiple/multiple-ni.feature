@@ -2,7 +2,7 @@
 Feature: C285 Multiple NI
 
   Background:
-    Given the "Internal Upload Documents" feature is "enabled"
+    Given the "Internal Upload Documents" feature is "disabled"
 
   @test
   Scenario: happy path
@@ -68,13 +68,10 @@ Feature: C285 Multiple NI
     Then I am presented with the "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "UDF_Choose File Other Page"
-    When I upload a "document.pdf" file on "UDF_Choose File Other Page"
-    And I click continue on "UDF_Choose File Other Page"
-    And I click continue if I'm on "UDF_Progress Page"
-    Then I am presented with the "UDF_Summary Page" "1"
-    When I select radio button "No" on "UDF_Summary Page"
-    And I click continue on "UDF_Summary Page"
+    Then I am presented with the "UCDF_Choose File Other Page"
+    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
+    And I select radio button "No" on "UCDF_Choose File Other Page"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page"
     And I click continue on "C285_Multiple_Check Answers Accept Send Page"
     Then I am presented with the "C285_Multiple_Claim Submitted Page"

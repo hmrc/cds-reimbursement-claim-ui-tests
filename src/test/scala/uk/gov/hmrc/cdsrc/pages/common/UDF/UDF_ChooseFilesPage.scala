@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object UDF_ChooseFilesPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/upload-documents/choose-file"
+  override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title = "Upload supporting documents"
 
   override def expectedPageErrorTitle: Option[String] = Some("")
@@ -38,6 +38,15 @@ object UDF_ChooseFilesPage extends BasePage {
   override def checkPageTitle(page: String): Unit = {
     waitForPageToLoad()
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
+  }
+
+  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+
+  override def continuouslyClickContinue(): Unit = {
+    waitForPageToLoad()
+    while (driver.getCurrentUrl.equals(url)) {
+      clickContinueButton()
+    }
   }
 
 }

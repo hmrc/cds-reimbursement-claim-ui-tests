@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object UDF_ChooseFilePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/upload-documents/choose-file"
+  override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title = "Add a document which shows all the MRNs in this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
@@ -33,5 +33,14 @@ object UDF_ChooseFilePage extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some("Add a document which shows all the MRNs in this claim")
+
+  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+
+  override def continuouslyClickContinue(): Unit = {
+    waitForPageToLoad()
+    while (find(tagName("h1")).map(_.text).contains("Add a document which shows all the MRNs in this claim")) {
+      clickContinueButton()
+    }
+  }
 
 }
