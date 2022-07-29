@@ -40,6 +40,13 @@ object UDF_ChooseFilesPage extends BasePage {
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
   }
 
+  override def clickRadioButton(text: String): Unit = {
+    text.toLowerCase() match {
+      case "yes" => click on cssSelector("#choice")
+      case "no" => click on cssSelector("#choice-2")
+    }
+  }
+
   override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
   override def continuouslyClickContinue(): Unit = {
