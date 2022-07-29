@@ -35,9 +35,9 @@ object C285_Single_EnterBankAccountDetailsPage extends BasePage {
     val sortCode: String = "123456"
     val accountNumber: String = "11001001"
 
-    enterText("enter-bank-details.account-name", bankAccountName)
-    enterText("enter-bank-details.sort-code", sortCode)
-    enterText("enter-bank-details.account-number", accountNumber)
+    enterText("enter-bank-account-details.account-name", bankAccountName)
+    enterText("enter-bank-account-details.sort-code", sortCode)
+    enterText("enter-bank-account-details.account-number", accountNumber)
   }
 
   override def selectCheckBox(): Unit = {
