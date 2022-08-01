@@ -1,9 +1,6 @@
 @C285 @Other
 Feature: C285 Other
 
-  Background:
-    Given the "Internal Upload Documents" feature is "disabled"
-
   @test @a11y @ZAP
   Scenario: other - click links on last page
     Given I navigate to the "Auth Login Stub Page"

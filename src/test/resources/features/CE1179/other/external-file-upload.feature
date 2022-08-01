@@ -1,9 +1,6 @@
 @C&E1179 @ExternalFileUpload
 Feature: C&E1179 external file upload (internal-upload-documents disabled)
 
-  Background:
-    Given the "Internal Upload Documents" feature is "disabled"
-
   Scenario: multiple - happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
