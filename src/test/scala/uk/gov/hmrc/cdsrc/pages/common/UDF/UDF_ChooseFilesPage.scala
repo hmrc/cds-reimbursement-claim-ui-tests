@@ -36,7 +36,6 @@ object UDF_ChooseFilesPage extends BasePage {
     true should equal(true)
 
   override def checkPageTitle(page: String): Unit = {
-    waitForPageToLoad()
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
   }
 
