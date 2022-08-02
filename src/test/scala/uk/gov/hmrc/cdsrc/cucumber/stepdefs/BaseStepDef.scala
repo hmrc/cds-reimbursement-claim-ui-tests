@@ -84,6 +84,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   When("""I upload a {int} {string} file on {string}""") { (fileNumber: Int, file: String, page: String) =>
     PageObjectFinder.page(page).uploadDocument(fileNumber, file)
+    waitForPageToLoad()
   }
 
   Then("""I am presented with the {string}""") { page: String =>

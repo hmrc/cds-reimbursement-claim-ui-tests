@@ -105,8 +105,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     expectedPageHeaderList should contain(List(pageHeader.get))
   }
 
-  def waitForPageToLoad(): WebDriver.Timeouts = {
-    driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
+  def waitForPageToLoad() = {
+    fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "UPLOADED"))
+    //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
   }
 
   def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")

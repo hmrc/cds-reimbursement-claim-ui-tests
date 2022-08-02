@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.common.UDF
 
+import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
@@ -37,8 +38,8 @@ object UCDF_ChooseFileOtherPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on cssSelector("#choice")
-      case "no" => click on cssSelector("#choice-2")
+      case "yes" => click on id("choice")
+      case "no" => click on id("choice-2")
     }
   }
 

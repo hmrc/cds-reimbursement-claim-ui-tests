@@ -1,9 +1,6 @@
 @C&E1179 @Multiple
 Feature: C&E1179 Multiple
 
-  Background:
-    Given the "Internal Upload Documents" feature is "disabled"
-
   @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"

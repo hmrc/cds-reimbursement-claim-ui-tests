@@ -36,14 +36,13 @@ object UDF_ChooseFilesPage extends BasePage {
     true should equal(true)
 
   override def checkPageTitle(page: String): Unit = {
-    waitForPageToLoad()
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
   }
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on cssSelector("#choice")
-      case "no" => click on cssSelector("#choice-2")
+      case "yes" => click on id("choice")
+      case "no" => click on id("choice-2")
     }
   }
 
