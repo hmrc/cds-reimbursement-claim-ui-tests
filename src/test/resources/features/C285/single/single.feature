@@ -1,6 +1,9 @@
 @C285 @Single
 Feature: C285 Single
 
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages, change contact details
     Given I navigate to the "Auth Login Stub Page"

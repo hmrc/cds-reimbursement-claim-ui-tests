@@ -1,6 +1,9 @@
 @C285 @Multiple
 Feature: C285 Multiple NI
 
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"

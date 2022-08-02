@@ -1,6 +1,9 @@
 @C285 @Scheduled @BrowserStack
 Feature: C285 Scheduled NI
 
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test @a11y @ZAP
   Scenario: happy path - NI enabled
     Given I navigate to the "Auth Login Stub Page"

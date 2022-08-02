@@ -1,6 +1,9 @@
 @C285 @Single
 Feature: C285 Single NI
 
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test @a11y @ZAP
   Scenario: happy path - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"

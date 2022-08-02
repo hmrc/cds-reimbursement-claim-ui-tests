@@ -1,6 +1,9 @@
 @Security @Single
 Feature: Security Single
 
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"

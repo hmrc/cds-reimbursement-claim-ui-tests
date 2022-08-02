@@ -1,6 +1,9 @@
 @C285 @Single
 Feature: C285 Single file upload
 
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test
   Scenario: happy path - upload 3 files
     Given I navigate to the "Auth Login Stub Page"

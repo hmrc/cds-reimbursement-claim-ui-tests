@@ -1,5 +1,9 @@
 @Security @Single
 Feature: Change Link Tests - Securities Single
+
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test
   Scenario: Happy path - Change link tests
     Given I navigate to the "Auth Login Stub Page"

@@ -1,6 +1,9 @@
 @C&E1179 @Scheduled
 Feature: C&E1179 Scheduled
 
+  Background:
+    Given the "Internal Upload Documents" feature is "disabled"
+
   @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages, Special circumstances
     Given I navigate to the "Auth Login Stub Page"
