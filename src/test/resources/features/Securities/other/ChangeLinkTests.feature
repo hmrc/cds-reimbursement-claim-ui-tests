@@ -1,5 +1,6 @@
 @Security @Single
 Feature: Change Link Tests - Securities Single
+
   @test
   Scenario: Happy path - Change link tests
     Given I navigate to the "Auth Login Stub Page"

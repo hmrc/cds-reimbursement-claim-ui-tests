@@ -34,7 +34,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   /** Fluent Wait config * */
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(10))
+    .withTimeout(Duration.ofSeconds(20))
     .pollingEvery(Duration.ofMillis(500))
 
   def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
