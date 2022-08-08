@@ -23,17 +23,17 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_ConfirmFullRepaymentSecurityIdPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/confirm-full-repayment/..."
-  override val title       = "Do you want to reclaim the full amount for this security?"
+  override val title       = "Do you want to claim back all of this security deposit?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Do you want to reclaim the full amount for this security? - Claim back import duty and VAT - GOV.UK"
+    "Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Do you want to reclaim the full amount for this security? - Claim back import duty and VAT - GOV.UK"
+    "Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Do you want to include this security in this claim?")
+  override def expectedPageHeader: Option[String] = Some("Do you want to claim back all of this security deposit?")
   override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
     driver.findElement(By cssSelector "#main-content > div > div > form > span").getText should equal(
