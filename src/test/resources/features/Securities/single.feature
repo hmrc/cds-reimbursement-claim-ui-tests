@@ -1,7 +1,7 @@
 @Security @Single
 Feature: Security Single
 
-  @test
+  @test @CHIRU
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -33,6 +33,9 @@ Feature: Security Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Check Total Import Discharged Page"
+    When I select radio button "yes" on "Securities_Check Total Import Discharged Page"
+    And I click continue on "Securities_Check Total Import Discharged Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
@@ -61,7 +64,7 @@ Feature: Security Single
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
 
 
-  @test
+  @test @CHIRU
   Scenario: happy path - Securities without importer/declarant eori
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -87,6 +90,9 @@ Feature: Security Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Check Total Import Discharged Page"
+    When I select radio button "yes" on "Securities_Check Total Import Discharged Page"
+    And I click continue on "Securities_Check Total Import Discharged Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
