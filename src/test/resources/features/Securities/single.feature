@@ -1,7 +1,7 @@
 @Security @Single
 Feature: Security Single
 
-  @test @CHIRU
+  @test
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -64,7 +64,7 @@ Feature: Security Single
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
 
 
-  @test @CHIRU
+  @test
   Scenario: happy path - Securities without importer/declarant eori
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
