@@ -17,7 +17,7 @@ Feature: Change Link Tests - Securities Single
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
-    When I select radio button "End Use Relief" on "Securities_Choose Reason For Security Page"
+    When I select radio button "Manual override of duty amount" on "Securities_Choose Reason For Security Page"
     And I click continue on "Securities_Choose Reason For Security Page"
     Then I am presented with the "Securities_Select Securities Security Id Page" "1 of 2,ABC0123456"
     When I select radio button "no" on "Securities_Select Securities Security Id Page"
