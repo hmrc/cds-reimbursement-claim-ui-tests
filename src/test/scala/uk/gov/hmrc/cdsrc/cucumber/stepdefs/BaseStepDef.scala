@@ -123,4 +123,13 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
   Given("""the {string} feature is {string}""") { (feature: String, featureState: String) =>
     PageObjectFinder.page("FeatureSwitchPage").configure(feature, featureState)
   }
+
+  Given("""I enter upload customs documents service url"""){
+    driver.get("http://localhost:10110/upload-customs-documents")
+  }
+
+  Then("""The page title should be {string}"""){ (expectedPageTitle: String) =>
+    val pageTitle = driver.getTitle
+    pageTitle should equal(expectedPageTitle)
+  }
 }
