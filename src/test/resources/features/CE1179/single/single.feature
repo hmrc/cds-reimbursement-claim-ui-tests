@@ -174,7 +174,7 @@ Feature: C&E1179 Single
     Then I am presented with the "UDF_Choose Files Page" "import and export declaration"
     When I upload a 2 "image.jpg" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
-    And I click continue if I'm on "UDF_Choose Files Page"
+    And I click continue button on "UDF_Choose Files Page"
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"

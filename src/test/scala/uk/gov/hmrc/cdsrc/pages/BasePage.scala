@@ -39,6 +39,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
 
+  def waitForUploadedFile: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class='multi-file-upload__uploaded-tag govuk-tag'][normalize-space()='Uploaded'])[2]")))
+
   /** Page assertions * */
   def expectedPageTitle: Option[String] = None
 

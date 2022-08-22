@@ -56,6 +56,11 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page).clickContinueButton()
   }
 
+  When("""I click continue button on {string}""") { (page: String) =>
+    PageObjectFinder.page(page).waitForUploadedFile
+    PageObjectFinder.page(page).clickContinueButton()
+  }
+
   When("""I click back button on {string}""") { (page: String) =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).clickBackButton()
