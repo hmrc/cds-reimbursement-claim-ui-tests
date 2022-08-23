@@ -39,4 +39,6 @@ object Securities_CheckBankDetailsPage extends BasePage {
 
   override def checkPageErrorTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
+
+  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
 }
