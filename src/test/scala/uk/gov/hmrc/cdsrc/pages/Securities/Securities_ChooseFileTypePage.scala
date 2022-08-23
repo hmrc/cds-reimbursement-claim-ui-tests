@@ -41,7 +41,7 @@ object Securities_ChooseFileTypePage extends BasePage {
   override def checkPageErrorTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
 
-  def selectDocumentType(text: String): Unit =
+  override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "import declaration"             => click on cssSelector("input[id='choose-file-type.file-type.ImportDeclaration']")
       case "export declaration"             => click on cssSelector("input[id='choose-file-type.file-type.ExportDeclaration']")
@@ -50,6 +50,6 @@ object Securities_ChooseFileTypePage extends BasePage {
         click on cssSelector("input[id='choose-file-type.file-type.SubstituteOrDiversionEntry']")
       case "bill of discharge 3"            => click on cssSelector("input[id='choose-file-type.file-type.BillOfDischarge3']")
       case "other documents"                => click on cssSelector("input[id='choose-file-type.file-type.Other']")
-      case "evidence supporting your claim" => click on cssSelector("c")
+      case "evidence supporting your claim" => click on cssSelector("input[id='choose-file-type.file-type.SupportingEvidence']")
     }
 }
