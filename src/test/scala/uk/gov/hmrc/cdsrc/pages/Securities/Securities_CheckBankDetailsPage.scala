@@ -33,7 +33,7 @@ object Securities_CheckBankDetailsPage extends BasePage {
     "Check these bank details are correct - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("What type of account details are you providing?")
+  override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
   override def checkPageTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
 

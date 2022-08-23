@@ -41,8 +41,8 @@ object UDF_ChooseFilesPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on id("choice")
-      case "no" => click on id("choice-2")
+      case "yes" => click on cssSelector("#choice")
+      case "no" => click on cssSelector("#choice-2")
     }
   }
 
