@@ -224,3 +224,7 @@ Feature: Security Single
     Then I am presented with the "Securities_Export Method Page"
     When I select radio button "Exported in single shipment" on "Securities_Export Method Page"
     And I click continue on "Securities_Export Method Page"
+    Then I am presented with the "Securities_Enter Export Movement Reference Number Page"
+    When I enter "41ABCDEFGHIJKLMNO1" on "Securities_Enter Export Movement Reference Number Page"
+    And I click continue on "Securities_Enter Export Movement Reference Number Page"
+    Then I am presented with the "Securities_Claimant Details Page"
