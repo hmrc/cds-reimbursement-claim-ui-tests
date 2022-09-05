@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.common.ALF
+package uk.gov.hmrc.cdsrc.pages.Securities
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object ALF_LookupAddressLookupPage extends BasePage {
+object Securities_LetterOfAuthorityConfirmationPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("lookup-address") + "/..."
-  override val title = "Find your UK address"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/letter-of-authority-confirmation"
+  override val title       = "Letter of Authority confirmation"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Find your UK address"
+    "Letter of Authority confirmation - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageTitle: Option[String] = Some("Find your UK address")
+  override def expectedPageTitle: Option[String] = Some(
+    "Letter of Authority confirmation - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageHeader: Option[String] = Some("Find your UK address")
-
+  override def expectedPageHeader: Option[String] = Some("Letter of Authority confirmation")
 }

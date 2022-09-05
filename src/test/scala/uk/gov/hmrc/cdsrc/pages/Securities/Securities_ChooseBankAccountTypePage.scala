@@ -20,11 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-
 object Securities_ChooseBankAccountTypePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/choose-bank-account-type"
-  override val title = "What type of account details are you providing?"
+  override val title       = "What type of account details are you providing?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "What type of account details are you providing? - Claim back import duty and VAT - GOV.UK"
@@ -41,10 +40,10 @@ object Securities_ChooseBankAccountTypePage extends BasePage {
   override def checkPageErrorTitle(duty: String): Unit =
     driver.findElement(By cssSelector ".govuk-fieldset__heading").getText should equal(title)
 
-  override def clickRadioButton(text: String): Unit = {
-    text.toLowerCase() match {
-      case "business account" => click on cssSelector("#select-bank-account-type-business-bank-account")
-      case "personal account" => click on cssSelector("#select-bank-account-type-personal-bank-account")
+  override def clickRadioButton(buttonText: String): Unit = {
+    buttonText.toLowerCase() match {
+      case "business bank account" => click on cssSelector("#select-bank-account-type-business-bank-account")
+      case "personal bank account" => click on cssSelector("#select-bank-account-type-personal-bank-account")
     }
   }
 }

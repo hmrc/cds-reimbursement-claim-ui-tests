@@ -21,14 +21,14 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object ALF_LookupAddressEditPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/lookup-address/.../edit"
-  override val title = "Find UK address"
+  override val url: String = TestConfiguration.url("lookup-address") + "/..."
+  override val title = "Enter your address"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter address - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter your address")
 
-  override def expectedPageTitle: Option[String] = Some("Enter address - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter your address")
 
-  override def expectedPageHeader: Option[String] = Some("Enter address")
+  override def expectedPageHeader: Option[String] = Some("Enter your address")
 
   override def enterDetails(data: String): Unit = {
     val address1: String = "123 Fake Street"
