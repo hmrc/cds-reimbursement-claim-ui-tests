@@ -19,7 +19,6 @@ package uk.gov.hmrc.cdsrc.pages.Securities
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.Securities.Securities_ConfirmFullRepaymentSecurityIdPage.cssSelector
 
 object Securities_ChooseFileTypePage extends BasePage {
 
@@ -50,6 +49,8 @@ object Securities_ChooseFileTypePage extends BasePage {
         click on cssSelector("input[id='choose-file-type.file-type.SubstituteOrDiversionEntry']")
       case "bill of discharge 3"            => click on cssSelector("input[id='choose-file-type.file-type.BillOfDischarge3']")
       case "other documents"                => click on cssSelector("input[id='choose-file-type.file-type.Other']")
-      case "evidence supporting your claim" => click on cssSelector("input[id='choose-file-type.file-type.SupportingEvidence']")
+      case "evidence supporting your claim" =>
+        click on cssSelector("input[id='choose-file-type.file-type.SupportingEvidence']")
+      case "proof of authority"             => click on cssSelector("input[id='choose-file-type.file-type.ProofOfAuthority']")
     }
 }

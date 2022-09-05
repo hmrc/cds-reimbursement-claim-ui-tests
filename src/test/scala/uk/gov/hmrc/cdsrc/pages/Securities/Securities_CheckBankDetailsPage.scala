@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_CheckBankDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/check-bank-details"
-  override val title       = "Check these bank details are correct"
+  override val title = "Check these bank details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Check these bank details are correct - Claim back import duty and VAT - GOV.UK"
@@ -34,6 +34,7 @@ object Securities_CheckBankDetailsPage extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
+
   override def checkPageTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
 
@@ -41,4 +42,11 @@ object Securities_CheckBankDetailsPage extends BasePage {
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
 
   override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
+
+  override def clickButton(buttonText: String): Unit = {
+    buttonText.toLowerCase() match {
+      case "change bank details" =>
+        click on cssSelector ("a[href='/claim-back-import-duty-vat/securities/letter-of-authority-confirmation']")
+    }
+  }
 }

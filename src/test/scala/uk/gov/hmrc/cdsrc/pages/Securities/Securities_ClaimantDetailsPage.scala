@@ -22,12 +22,24 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_ClaimantDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/claimant-details"
-  override val title = "How we will contact you about this claim"
+  override val title       = "How we will contact you about this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("How we will contact you about this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "How we will contact you about this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("How we will contact you about this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "How we will contact you about this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("How we will contact you about this claim")
 
+  override def clickButton(buttonText: String): Unit = {
+    buttonText.toLowerCase() match {
+      case "change contact details" =>
+        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/claimant-details/change-contact-details']")
+      case "change contact address" =>
+        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/claimant-details/lookup-address']")
+    }
+  }
 }
