@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Single_SelectDutiesPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/select-duties"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/select-duties"
   override val title = "Select the duties you want to claim for"
 
   override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
