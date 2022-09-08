@@ -1,5 +1,5 @@
 @Security @Single
-Feature: Security Single
+Feature: Securities Single
 
   @test
   Scenario: happy path - check importer/declarant eori pages

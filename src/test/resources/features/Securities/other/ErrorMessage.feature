@@ -1,5 +1,5 @@
 @Security @Single
-Feature: Securities Journey Error Messages
+Feature: Securities Single Error Messages
 
   @test
   Scenario: To test the error messages for the Securities journey

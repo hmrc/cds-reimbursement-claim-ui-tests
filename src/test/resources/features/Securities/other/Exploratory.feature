@@ -1,4 +1,4 @@
-Feature: Security Exploratory file
+Feature: Securities Single Exploratory file
 
   @Exp
   Scenario: happy path - check importer/declarant eori pages
