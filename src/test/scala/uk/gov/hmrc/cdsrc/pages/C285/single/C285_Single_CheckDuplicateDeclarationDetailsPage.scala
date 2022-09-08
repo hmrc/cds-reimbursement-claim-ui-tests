@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Single_CheckDuplicateDeclarationDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-duplicate-declaration-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/check-duplicate-declaration-details"
   override val title = "Check these declaration details are correct for the duplicate MRN"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these declaration details are correct for the duplicate MRN - Claim back import duty and VAT - GOV.UK")

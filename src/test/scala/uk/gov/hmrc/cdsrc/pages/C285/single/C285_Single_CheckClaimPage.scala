@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Single_CheckClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/check-claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/check-claim"
   override val title = "Check the claim total for the MRN"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check the claim total for the MRN - Claim back import duty and VAT - GOV.UK")

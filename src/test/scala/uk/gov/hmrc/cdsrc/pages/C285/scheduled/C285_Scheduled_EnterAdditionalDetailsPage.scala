@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Scheduled_EnterAdditionalDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-additional-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/enter-additional-details"
   override val title = "Provide additional details about this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("Provide additional details about this claim - Claim back import duty and VAT - GOV.UK")
