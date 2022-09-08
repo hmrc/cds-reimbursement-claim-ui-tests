@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Single_ClaimantDetailsChangeClaimantDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/single/claimant-details/change-contact-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/claimant-details/change-contact-details"
   override val title = "Change contact details"
 
   override def expectedPageErrorTitle: Option[String] = Some("ERROR: Change contact details - Claim back import duty and VAT - GOV.UK")

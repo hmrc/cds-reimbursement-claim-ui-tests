@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Multiple_SelectDuties5Page extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/select-duties/5"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/select-duties/5"
   override val title = "Select the duties you want to claim for under fifth MRN"
 
   override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under fifth MRN - Claim back import duty and VAT - GOV.UK")

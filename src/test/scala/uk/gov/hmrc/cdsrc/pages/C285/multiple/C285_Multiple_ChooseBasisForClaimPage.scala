@@ -24,7 +24,7 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 
 object C285_Multiple_ChooseBasisForClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/multiple/choose-basis-for-claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/choose-basis-for-claim"
   override val title = "Choose the basis for claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("Choose the basis for claim - Claim back import duty and VAT - GOV.UK")

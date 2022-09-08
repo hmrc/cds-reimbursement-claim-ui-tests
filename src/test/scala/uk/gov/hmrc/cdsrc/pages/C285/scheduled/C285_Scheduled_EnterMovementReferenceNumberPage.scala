@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Scheduled_EnterMovementReferenceNumberPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/enter-movement-reference-number"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/enter-movement-reference-number"
   override val title = "Enter the first MRN"
 
   override def expectedPageErrorTitle: Option[String] = Some("Error: Enter the first MRN - Claim back import duty and VAT - GOV.UK")

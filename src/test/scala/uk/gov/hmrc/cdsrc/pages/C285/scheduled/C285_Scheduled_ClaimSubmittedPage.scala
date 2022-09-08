@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Scheduled_ClaimSubmittedPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/claim-submitted"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/claim-submitted"
   override val title = "Claim submitted"
 
   override def expectedPageErrorTitle: Option[String] = Some("Claim submitted - Claim back import duty and VAT - GOV.UK")

@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Scheduled_SelectDutiesClimateChangeLevyPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/scheduled/select-duties/climate-change-levy"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/climate-change-levy"
   override val title = "Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded"
 
   override def expectedPageErrorTitle: Option[String] = Some("Select the Climate Change Levy duties you want to claim for all MRNs in the file you uploaded - Claim back import duty and VAT - GOV.UK")
