@@ -26,7 +26,7 @@ object Securities_ConfirmFullRepaymentSecurityIdPage extends BasePage {
   override val title       = "Do you want to claim back all of this security deposit?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
+    "ERROR: Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(

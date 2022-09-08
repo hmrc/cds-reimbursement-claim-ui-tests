@@ -24,8 +24,8 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.{Page, WebBrowser}
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
 
+import java.lang
 import java.time.Duration
-import java.util.concurrent.TimeUnit
 import scala.jdk.CollectionConverters.asScalaBufferConverter
 
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
@@ -107,9 +107,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     expectedPageHeaderList should contain(List(pageHeader.get))
   }
 
-  def waitForPageToLoad() = {
+  def waitForPageToLoad(): lang.Boolean = {
     fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "UPLOADED"))
-    //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS)
   }
 
   def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
@@ -171,4 +170,13 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def configure(feature: String, featureState: String): Unit = {
   }
 
+  def checkPageErrorSummaryTitle(errorSummaryTitle: String): Unit = {
+    val actualErrorSummaryTitle = driver.findElement(By.cssSelector("#error-summary-title")).getText
+    actualErrorSummaryTitle should be (errorSummaryTitle)
+  }
+
+  def checkPageErrorMessage(errorMessage: String): Unit = {
+    val actualErrorMessage = driver.findElement(By.cssSelector(".govuk-error-summary__body")).getText
+    assert(actualErrorMessage.contains(errorMessage))
+  }
 }
