@@ -26,7 +26,7 @@ object Securities_SelectSecuritiesSecurityIdPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/select-securities/..."
   override val title = "Include this security deposit in your claim?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK")
 

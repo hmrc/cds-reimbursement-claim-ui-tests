@@ -1,5 +1,5 @@
 @Security @Single
-Feature: Change Link Tests - Securities Single
+Feature: Securities Single Change Link Tests
 
   @test
   Scenario: Happy path - Change link tests

@@ -110,6 +110,11 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page).checkPageErrorTitle()
   }
 
+  Then("""The error summary title is {string} and the error message is {string}""") { (errorSummaryTitle: String, errorMessage: String) =>
+    PageObjectFinder.checkPageErrorSummaryTitle(errorSummaryTitle)
+    PageObjectFinder.checkPageErrorMessage(errorMessage)
+  }
+
   Then("""I am presented with the {string} {string}""") { (page: String, specificPage: String) =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
@@ -129,11 +134,11 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page("FeatureSwitchPage").configure(feature, featureState)
   }
 
-  Given("""I enter upload customs documents service url"""){
+  Given("""I enter upload customs documents service url""") {
     driver.get("http://localhost:10110/upload-customs-documents")
   }
 
-  Then("""The page title should be {string}"""){ (expectedPageTitle: String) =>
+  Then("""The page title should be {string}""") { (expectedPageTitle: String) =>
     val pageTitle = driver.getTitle
     pageTitle should equal(expectedPageTitle)
   }

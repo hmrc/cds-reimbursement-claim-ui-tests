@@ -26,7 +26,7 @@ object Securities_ChooseFileTypePage extends BasePage {
   override val title       = "Add supporting documents to your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
+    "ERROR: Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
@@ -52,5 +52,6 @@ object Securities_ChooseFileTypePage extends BasePage {
       case "evidence supporting your claim" =>
         click on cssSelector("input[id='choose-file-type.file-type.SupportingEvidence']")
       case "proof of authority"             => click on cssSelector("input[id='choose-file-type.file-type.ProofOfAuthority']")
+      case "commercial invoice"             => click on cssSelector("input[id='choose-file-type.file-type.CommercialInvoice']")
     }
 }

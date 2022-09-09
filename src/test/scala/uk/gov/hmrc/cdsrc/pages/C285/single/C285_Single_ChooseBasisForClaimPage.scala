@@ -17,7 +17,6 @@
 package uk.gov.hmrc.cdsrc.pages.C285.single
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
