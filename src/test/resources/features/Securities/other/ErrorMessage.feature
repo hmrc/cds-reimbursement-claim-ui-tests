@@ -87,3 +87,5 @@ Feature: Securities Single Error Messages
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "Securities_Check Your Answers Page"
+    When I click continue on "Securities_Check Your Answers Page"
+    Then I am presented with the "Securities_Claim Submitted Page"

@@ -1,7 +1,7 @@
 @Security @Single
 Feature: Securities Single
 
-  @test
+  @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -78,9 +78,10 @@ Feature: Securities Single
     And I select radio button "No" on "UDF_Choose Files Page"
     When I click continue button on "UDF_Choose Files Page"
     Then I am presented with the "Securities_Check Your Answers Page"
+    When I click continue on "Securities_Check Your Answers Page"
+    Then I am presented with the "Securities_Claim Submitted Page"
 
-
-  @test
+  @test @a11y @ZAP
   Scenario: happy path - Securities without importer/declarant eori
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -162,6 +163,8 @@ Feature: Securities Single
     And I select radio button "No" on "UDF_Choose Files Page"
     When I click continue button on "UDF_Choose Files Page"
     Then I am presented with the "Securities_Check Your Answers Page"
+    When I click continue on "Securities_Check Your Answers Page"
+    Then I am presented with the "Securities_Claim Submitted Page"
 
   @test
   Scenario: happy path - Securities without importer/declarant eori and with Bod4 check

@@ -98,3 +98,5 @@ Feature: Securities Single Change Link Tests
     Then I am presented with the "ALF_Lookup Address Confirm Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Check Your Answers Page"
+    When I click continue on "Securities_Check Your Answers Page"
+    Then I am presented with the "Securities_Claim Submitted Page"
