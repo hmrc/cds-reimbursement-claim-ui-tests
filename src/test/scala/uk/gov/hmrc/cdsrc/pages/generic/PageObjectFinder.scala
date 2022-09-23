@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.cdsrc.pages.generic
 
+import io.cucumber.datatable.DataTable
+
 import java.io.{File, FileNotFoundException}
 import org.apache.commons.io.FileUtils
 import org.scalatest.exceptions.TestFailedException
@@ -52,4 +54,10 @@ object PageObjectFinder extends BasePage {
     new File(path)
   }
 
+  implicit class DataTableConverters(dataTable: DataTable) {
+
+    import scala.collection.JavaConverters._
+
+    def asScalaListOfStrings: List[String] = dataTable.cells().asScala.flatMap(_.asScala).toList
+  }
 }

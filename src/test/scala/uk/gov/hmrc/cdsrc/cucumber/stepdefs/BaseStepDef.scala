@@ -24,6 +24,8 @@ import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
 import uk.gov.hmrc.cdsrc.pages.BasePage
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
+import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder.DataTableConverters
+
 import scala.collection.JavaConverters._
 
 trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
@@ -145,9 +147,34 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     pageTitle should equal(expectedPageTitle)
   }
 
-  And("""^I should see the following details$""") { data: DataTable =>
+  And("""^I should see the following details""") { data: DataTable =>
     val expectedData = data.asMaps().asScala.toList.flatMap(_.asScala.toMap).toMap
     val actualData = PageObjectFinder.pageData
     actualData should be(expectedData)
+  }
+
+  Then("""I should see a cookie consent banner with the following details""") { data: DataTable =>
+    val expectedText = data.asScalaListOfStrings
+    PageObjectFinder.cookieBannerText() should be(expectedText)
+  }
+
+  And("""I should see the following {string} on the cookie banner""") { (bannerElement: String, data: DataTable) =>
+    val expectedText = data.asScalaListOfStrings
+    val tagName = bannerElement match {
+      case "links" => {
+        expectedText.map(link => PageObjectFinder.cookieBannerLinkUrl(link) should endWith("/tracking-consent/cookie-settings"))
+        "a"
+      }
+      case "buttons" => "button"
+    }
+    PageObjectFinder.cookieBannerLinksButtonsText(tagName) should be(expectedText)
+  }
+
+  Then("""I click on {string} button""") { buttonName: String =>
+    PageObjectFinder.button(buttonName).click()
+  }
+
+  And("""I should not see cookie consent banner""") { () =>
+    PageObjectFinder.cookieBannerPresence() should be(false)
   }
 }

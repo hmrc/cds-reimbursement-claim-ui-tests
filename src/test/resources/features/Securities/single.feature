@@ -1,8 +1,7 @@
 @Security @Single
 Feature: Securities Single
 
-  @test @a11y @ZAP
-  Scenario: happy path - check importer/declarant eori pages
+  Background: Securities common steps
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -14,6 +13,9 @@ Feature: Securities Single
     When I select radio button "securities" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "Securities_Enter Movement Reference Number Page"
+
+  @test @a11y @ZAP
+  Scenario: happy path - check importer/declarant eori pages
     When I enter "01AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
@@ -83,17 +85,6 @@ Feature: Securities Single
 
   @test @a11y @ZAP
   Scenario: happy path - Securities without importer/declarant eori
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "securities" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "Securities_Enter Movement Reference Number Page"
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
@@ -168,17 +159,6 @@ Feature: Securities Single
 
   @test
   Scenario: happy path - Securities without importer/declarant eori and with Bod4 check
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "securities" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "Securities_Enter Movement Reference Number Page"
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
@@ -194,17 +174,6 @@ Feature: Securities Single
 
   @test
   Scenario: happy path - check importer/declarant eori pages and export method page
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "securities" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "Securities_Enter Movement Reference Number Page"
     When I enter "01AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
@@ -232,19 +201,37 @@ Feature: Securities Single
     And I click continue on "Securities_Enter Export Movement Reference Number Page"
     Then I am presented with the "Securities_Claimant Details Page"
 
+  @test
+  Scenario: happy path - Temporary admission and Exported in multiple shipment
+    When I enter "01AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
+    And I click continue on "Securities_Enter Movement Reference Number Page"
+    Then I am presented with the "Securities_Choose Reason For Security Page"
+    When I select radio button "Temporary Admissions (2 years Expiration)" on "Securities_Choose Reason For Security Page"
+    And I click continue on "Securities_Choose Reason For Security Page"
+    Then I am presented with the "Securities_Enter Importer Eori Page"
+    When I enter "GB000000000000002" on "Securities_Enter Importer Eori Page"
+    And I click continue on "Securities_Enter Importer Eori Page"
+    Then I am presented with the "Securities_Enter Declarant Eori Page"
+    When I enter "GB000000000000002" on "Securities_Enter Declarant Eori Page"
+    And I click continue on "Securities_Enter Declarant Eori Page"
+    Then I am presented with the "Securities_Select Securities Security Id Page" "1 of 2,ABC0123456"
+    When I select radio button "yes" on "Securities_Select Securities Security Id Page"
+    And I click continue on "Securities_Select Securities Security Id Page"
+    Then I am presented with the "Securities_Select Securities Security Id Page" "2 of 2,DEF6543210"
+    When I select radio button "yes" on "Securities_Select Securities Security Id Page"
+    And I click continue on "Securities_Select Securities Security Id Page"
+    Then I am presented with the "Securities_Check Declaration Details Page"
+    And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Export Method Page"
+    When I select radio button "Exported in multiple shipments" on "Securities_Export Method Page"
+    And I click continue on "Securities_Export Method Page"
+    Then I am presented with the "Securities_Enter Export Movement Reference Number Multiple Page"
+    When I enter "41ABCDEFGHIJKLMNO1" on "Securities_Enter Export Movement Reference Number Multiple Page"
+    And I click continue on "Securities_Enter Export Movement Reference Number Multiple Page"
+    Then I am presented with the "Securities_Claimant Details Page"
+
   @test @a11y @ZAP
   Scenario: happy path - Securities payment method is Guarantee
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "securities" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "Securities_Enter Movement Reference Number Page"
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
