@@ -23,6 +23,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.{Page, WebBrowser}
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
+
 import java.lang
 import java.time.Duration
 import scala.jdk.CollectionConverters.asScalaBufferConverter
@@ -172,4 +173,20 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
       Map(key -> value)
     }
     }.toMap
+
+  private def cookieBanner() = driver.findElement(By.cssSelector(".cbanner-govuk-cookie-banner"))
+
+  def cookieBannerText() = cookieBanner().getText.split("\n").toList
+
+  def cookieBannerLinkUrl(linkText: String) = cookieBanner().findElement(By.partialLinkText(linkText))
+    .getAttribute("href").trim
+
+  def cookieBannerPresence() = !driver.findElements(By.cssSelector(".cbanner-govuk-cookie-banner"))
+    .isEmpty
+
+  def cookieBannerLinksButtonsText(tag: String) = cookieBanner().findElements(By.tagName(tag)).asScala
+    .map(_.getText.trim).toList
+
+  def button(buttonName: String) = cookieBanner().findElements(By.tagName("button"))
+    .asScala.filter(_.getText == buttonName).head
 }
