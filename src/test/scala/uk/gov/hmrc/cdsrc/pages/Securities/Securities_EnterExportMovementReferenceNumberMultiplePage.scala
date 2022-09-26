@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Securities_EnterExportMovementReferenceNumberMultiplePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/enter-export-movement-reference-number-multiple"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/enter-export-movement-reference-number"
   override val title       = "Enter the first export MRN in the declaration"
 
   override def expectedPageErrorTitle: Option[String] = Some(
