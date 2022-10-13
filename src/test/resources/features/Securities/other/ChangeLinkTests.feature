@@ -72,7 +72,7 @@ Feature: Securities Single Change Link Tests
     Then I am presented with the "Securities_Choose File Type Page"
     When I select radio button "Proof of authority" on "Securities_Choose File Type Page"
     And I click continue on "Securities_Choose File Type Page"
-    Then I am presented with the "UDF_Choose Files Page" "proof of authority"
+    Then I am presented with the "UDF_Choose Files Page" "letter of authority"
     When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue if I'm on "UDF_Choose Files Page"
