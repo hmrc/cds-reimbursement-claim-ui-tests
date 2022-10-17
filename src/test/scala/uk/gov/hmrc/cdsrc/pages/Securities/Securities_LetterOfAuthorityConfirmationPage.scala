@@ -22,15 +22,15 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_LetterOfAuthorityConfirmationPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/letter-of-authority-confirmation"
-  override val title       = "Letter of Authority confirmation"
+  override val title       = "Is a Letter of Authority required?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Letter of Authority confirmation - Claim back import duty and VAT - GOV.UK"
+    "ERROR: Is a Letter of Authority required? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Letter of Authority confirmation - Claim back import duty and VAT - GOV.UK"
+    "Is a Letter of Authority required? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Letter of Authority confirmation")
+  override def expectedPageHeader: Option[String] = Some("Is a Letter of Authority required?")
 }
