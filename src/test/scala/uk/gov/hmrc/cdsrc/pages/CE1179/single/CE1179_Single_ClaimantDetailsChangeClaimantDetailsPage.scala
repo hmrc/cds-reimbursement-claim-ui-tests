@@ -31,9 +31,9 @@ object CE1179_Single_ClaimantDetailsChangeClaimantDetailsPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Change contact details")
 
   override def enterDetails(data: String): Unit = {
-    enterText("enter-contact-details-rejected-goods.contact-name", if(data==""){"Mr John Smith"}else{data.split(",")(0)})
-    enterText("enter-contact-details-rejected-goods.contact-email", if(data==""){"someemail@mail.com"}else{data.split(",")(1)})
-    enterText("enter-contact-details-rejected-goods.contact-phone-number", if(data==""){"01234567890"}else{data.split(",")(2)})
+    enterText("enter-contact-details.contact-name", if(data==""){"Mr John Smith"}else{data.split(",")(0)})
+    enterText("enter-contact-details.contact-email", if(data==""){"someemail@mail.com"}else{data.split(",")(1)})
+    enterText("enter-contact-details.contact-phone-number", if(data==""){"01234567890"}else{data.split(",")(2)})
   }
 
 }
