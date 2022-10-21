@@ -176,17 +176,17 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   private def cookieBanner() = driver.findElement(By.cssSelector(".cbanner-govuk-cookie-banner"))
 
-  def cookieBannerText() = cookieBanner().getText.split("\n").toList
+  def cookieBannerText(): Seq[String] = cookieBanner().getText.split("\n").toList
 
-  def cookieBannerLinkUrl(linkText: String) = cookieBanner().findElement(By.partialLinkText(linkText))
+  def cookieBannerLinkUrl(linkText: String): String = cookieBanner().findElement(By.partialLinkText(linkText))
     .getAttribute("href").trim
 
-  def cookieBannerPresence() = !driver.findElements(By.cssSelector(".cbanner-govuk-cookie-banner"))
+  def cookieBannerPresence(): Boolean = !driver.findElements(By.cssSelector(".cbanner-govuk-cookie-banner"))
     .isEmpty
 
-  def cookieBannerLinksButtonsText(tag: String) = cookieBanner().findElements(By.tagName(tag)).asScala
+  def cookieBannerLinksButtonsText(tag: String): Seq[String] = cookieBanner().findElements(By.tagName(tag)).asScala
     .map(_.getText.trim).toList
 
-  def button(buttonName: String) = cookieBanner().findElements(By.tagName("button"))
+  def button(buttonName: String): WebElement = cookieBanner().findElements(By.tagName("button"))
     .asScala.filter(_.getText == buttonName).head
 }
