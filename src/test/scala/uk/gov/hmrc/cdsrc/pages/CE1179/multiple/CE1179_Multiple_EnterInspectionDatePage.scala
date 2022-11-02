@@ -31,9 +31,9 @@ object CE1179_Multiple_EnterInspectionDatePage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Tell us when the goods will be available until for inspection")
 
   override def enterDetails(date: String): Unit = {
-    enterText("enter-inspection-date.rejected-goods-enter-inspection-date.rejected-goods.day", date.split(",")(0))
-    enterText("enter-inspection-date.rejected-goods-enter-inspection-date.rejected-goods.month", date.split(",")(1))
-    enterText("enter-inspection-date.rejected-goods-enter-inspection-date.rejected-goods.year", date.split(",")(2))
+    enterText("enter-inspection-date.rejected-goods", date.split(",")(0))
+    enterText("enter-inspection-date.rejected-goods-month", date.split(",")(1))
+    enterText("enter-inspection-date.rejected-goods-year", date.split(",")(2))
   }
 
 }

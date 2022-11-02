@@ -45,8 +45,8 @@ object Securities_SelectSecuritiesSecurityIdPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on id("select-securities-yes")
-      case "no" => click on id("select-securities-no")
+      case "yes" => click on cssSelector("input[data-id='select-securities-yes']")
+      case "no" => click on cssSelector("input[data-id='select-securities-no']")
     }
   }
 }

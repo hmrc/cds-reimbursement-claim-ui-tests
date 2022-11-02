@@ -42,8 +42,8 @@ object Securities_ChooseBankAccountTypePage extends BasePage {
 
   override def clickRadioButton(buttonText: String): Unit = {
     buttonText.toLowerCase() match {
-      case "business bank account" => click on cssSelector("#select-bank-account-type-business-bank-account")
-      case "personal bank account" => click on cssSelector("#select-bank-account-type-personal-bank-account")
+      case "business bank account" => click on cssSelector("input[data-id='select-bank-account-type-business-bank-account']")
+      case "personal bank account" => click on cssSelector("input[data-id='select-bank-account-type-personal-bank-account'")
     }
   }
 }

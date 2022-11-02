@@ -32,8 +32,8 @@ object CE1179_Multiple_ClaimantDetailsAddPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text match {
-      case "yes" => click on cssSelector("#claimant-details-yes")
-      case "no" => click on cssSelector("#claimant-details-no")
+      case "yes" => click on cssSelector("input[data-id=‘claimant-details-yes']")
+      case "no" => click on cssSelector("input[data-id=‘claimant-details-no']")
     }
   }
 

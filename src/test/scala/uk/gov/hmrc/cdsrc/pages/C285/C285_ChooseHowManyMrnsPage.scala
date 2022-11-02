@@ -32,9 +32,9 @@ object C285_ChooseHowManyMrnsPage extends BasePage {
 
   override def clickRadioButton(text: String) {
     text.toLowerCase() match {
-      case "individual" => click on cssSelector("#select-number-of-claims-individual")
-      case "bulk" => click on cssSelector("#select-number-of-claims-bulk")
-      case "schedule" => click on cssSelector("#select-number-of-claims-scheduled")
+      case "individual" => click on cssSelector("input[data-id='select-number-of-claims-individual']")
+      case "bulk" => click on cssSelector("input[data-id='select-number-of-claims-bulk']")
+      case "schedule" => click on cssSelector("input[data-id='select-number-of-claims-scheduled']")
     }
   }
 

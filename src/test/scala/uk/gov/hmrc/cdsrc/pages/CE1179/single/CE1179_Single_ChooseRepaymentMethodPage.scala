@@ -32,8 +32,8 @@ object CE1179_Single_ChooseRepaymentMethodPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text match {
-      case "cma" => click on id("choose-payment-method.rejected-goods.single-cma")
-      case "bank transfer" => click on id("choose-payment-method.rejected-goods.single-bank-transfer")
+      case "cma" => click on cssSelector("input[data-id='choose-payment-method.rejected-goods.single-cma']")
+      case "bank transfer" => click on cssSelector("input[data-id='choose-payment-method.rejected-goods.single-bank-transfer']")
     }
   }
 
