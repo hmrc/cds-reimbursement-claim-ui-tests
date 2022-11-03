@@ -1,8 +1,8 @@
 @Security @Single
-Feature: Securities Single Data Validation
+Feature: Securities Single Data Validation on the CYA Page
 
   @test
-  Scenario: Data validation check at Check your answers page
+  Scenario: Data validation check at Check your answers page - with no Payment method
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -48,5 +48,99 @@ Feature: Securities Single Data Validation
     And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
-      | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Name on the account | Claim for DEF6543210 | Account number   | B00 - Value Added Tax | Payment method        | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Sort code      | Contact details                                        |
-      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £14,385.52                   | 14 Briar Lane,London,Pimlico,United Kingdom | Swift Goods Ltd     | Yes                  | Ending with 8523 | £200.00               | Bank account transfer | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Ending with 41 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 |
+      | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Name on the account | Claim for DEF6543210 | Account number   | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Sort code      | Contact details                                        |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £14,385.52                   | 14 Briar Lane,London,Pimlico,United Kingdom | Swift Goods Ltd     | Yes                  | Ending with 8523 | £200.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Ending with 41 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 |
+
+
+  @test
+  Scenario: Data validation check at Check your answers page - with Payment method as Bank account transfer
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "securities" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "Securities_Enter Movement Reference Number Page"
+    When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
+    And I click continue on "Securities_Enter Movement Reference Number Page"
+    Then I am presented with the "Securities_Choose Reason For Security Page"
+    When I select radio button "UKAP Entry Price" on "Securities_Choose Reason For Security Page"
+    And I click continue on "Securities_Choose Reason For Security Page"
+    Then I am presented with the "Securities_Select Securities Security Id Page" "1 of 2,ABC0123456"
+    When I select radio button "Yes" on "Securities_Select Securities Security Id Page"
+    And I click continue on "Securities_Select Securities Security Id Page"
+    Then I am presented with the "Securities_Select Securities Security Id Page" "2 of 2,DEF6543210"
+    When I select radio button "no" on "Securities_Select Securities Security Id Page"
+    And I click continue on "Securities_Select Securities Security Id Page"
+    Then I am presented with the "Securities_Check Declaration Details Page"
+    And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Claimant Details Page"
+    And I click continue on "Securities_Claimant Details Page"
+    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
+    When I select radio button "Yes" on "Securities_Confirm Full Repayment Security Id Page"
+    And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
+    Then I am presented with the "Securities_Check Claim Page"
+    And I click continue on "Securities_Check Claim Page"
+    Then I am presented with the "Securities_Check Bank Details Page"
+    When I click continue on "Securities_Check Bank Details Page"
+    Then I am presented with the "Securities_Choose File Type Page"
+    When I select radio button "Import declaration" on "Securities_Choose File Type Page"
+    And I click continue on "Securities_Choose File Type Page"
+    Then I am presented with the "UDF_Choose Files Page" "import declaration"
+    When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
+    And I select radio button "No" on "UDF_Choose Files Page"
+    And I click continue if I'm on "UDF_Choose Files Page"
+    Then I am presented with the "Securities_Check Your Answers Page"
+    And I should see the following details
+      | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Name on the account | Claim for DEF6543210 | Account number   | B00 - Value Added Tax | Payment method        | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total      | Duties selected                          | A00 - Customs Duty | Date security deposit made | Sort code      | Contact details                                        |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £14,085.52                   | 14 Briar Lane,London,Pimlico,United Kingdom | Swift Goods Ltd     | No                   | Ending with 8523 | £8,085.52             | Bank account transfer | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £14,085.52 | A00 - Customs Duty,B00 - Value Added Tax | £6,000.00          | 13 September 2019          | Ending with 41 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 |
+
+
+  @test
+  Scenario: Data validation check at Check your answers page - with Payment method as Guarantee
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "securities" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "Securities_Enter Movement Reference Number Page"
+    When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
+    And I click continue on "Securities_Enter Movement Reference Number Page"
+    Then I am presented with the "Securities_Choose Reason For Security Page"
+    When I select radio button "UKAP Entry Price" on "Securities_Choose Reason For Security Page"
+    And I click continue on "Securities_Choose Reason For Security Page"
+    Then I am presented with the "Securities_Select Securities Security Id Page" "1 of 2,ABC0123456"
+    When I select radio button "no" on "Securities_Select Securities Security Id Page"
+    And I click continue on "Securities_Select Securities Security Id Page"
+    Then I am presented with the "Securities_Select Securities Security Id Page" "2 of 2,DEF6543210"
+    When I select radio button "yes" on "Securities_Select Securities Security Id Page"
+    And I click continue on "Securities_Select Securities Security Id Page"
+    Then I am presented with the "Securities_Check Declaration Details Page"
+    And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Claimant Details Page"
+    And I click continue on "Securities_Claimant Details Page"
+    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "DEF6543210"
+    When I select radio button "Yes" on "Securities_Confirm Full Repayment Security Id Page"
+    And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
+    Then I am presented with the "Securities_Check Claim Page"
+    And I click continue on "Securities_Check Claim Page"
+    Then I am presented with the "Securities_Choose File Type Page"
+    When I select radio button "Import declaration" on "Securities_Choose File Type Page"
+    And I click continue on "Securities_Choose File Type Page"
+    Then I am presented with the "UDF_Choose Files Page" "import declaration"
+    When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
+    And I select radio button "No" on "UDF_Choose Files Page"
+    And I click continue if I'm on "UDF_Choose Files Page"
+    Then I am presented with the "Securities_Check Your Answers Page"
+    And I should see the following details
+      | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Payment method | Contact details                                        |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £300.00                      | 14 Briar Lane,London,Pimlico,United Kingdom | Yes                  | £200.00               | No                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Guarantee      | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 |

@@ -36,7 +36,7 @@ object Securities_Bod4MandatoryCheckPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
-      case "yes" => click on cssSelector("#bill-of-discharge-yes")
-      case "no"  => click on cssSelector("#bill-of-discharge-no")
+      case "yes" => click on cssSelector("input[data-id='bill-of-discharge-yes']")
+      case "no"  => click on cssSelector("input[data-id='bill-of-discharge-no']")
     }
 }

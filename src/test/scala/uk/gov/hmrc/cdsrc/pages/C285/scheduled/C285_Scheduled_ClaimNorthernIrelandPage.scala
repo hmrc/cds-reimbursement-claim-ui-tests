@@ -32,8 +32,8 @@ object C285_Scheduled_ClaimNorthernIrelandPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on cssSelector("#claim-northern-ireland-yes")
-      case "no" => click on cssSelector("#claim-northern-ireland-no")
+      case "yes" => click on cssSelector("input[data-id='claim-northern-ireland-yes']")
+      case "no" => click on cssSelector("input[data-id='claim-northern-ireland-no']")
     }
   }
 

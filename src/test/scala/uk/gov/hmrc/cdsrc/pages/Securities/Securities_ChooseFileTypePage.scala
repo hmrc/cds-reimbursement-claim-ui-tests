@@ -42,16 +42,16 @@ object Securities_ChooseFileTypePage extends BasePage {
 
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
-      case "import declaration"             => click on cssSelector("input[id='choose-file-type.file-type.ImportDeclaration']")
-      case "export declaration"             => click on cssSelector("input[id='choose-file-type.file-type.ExportDeclaration']")
-      case "export packing list"            => click on cssSelector("input[id='choose-file-type.file-type.ExportPackingList']")
+      case "import declaration"             => click on cssSelector("input[value='ImportDeclaration']")
+      case "export declaration"             => click on cssSelector("input[value='ExportDeclaration']")
+      case "export packing list"            => click on cssSelector("input[value='ExportPackingList']")
       case "substitute or diversion entry"  =>
-        click on cssSelector("input[id='choose-file-type.file-type.SubstituteOrDiversionEntry']")
-      case "bill of discharge 3"            => click on cssSelector("input[id='choose-file-type.file-type.BillOfDischarge3']")
-      case "other documents"                => click on cssSelector("input[id='choose-file-type.file-type.Other']")
+        click on cssSelector("input[value='='SubstituteOrDiversionEntry']")
+      case "bill of discharge 3"            => click on cssSelector("input[value='BillOfDischarge3']")
+      case "other documents"                => click on cssSelector("input[value='Other']")
       case "evidence supporting your claim" =>
-        click on cssSelector("input[id='choose-file-type.file-type.SupportingEvidence']")
-      case "proof of authority"             => click on cssSelector("input[id='choose-file-type.file-type.ProofOfAuthority']")
-      case "commercial invoice"             => click on cssSelector("input[id='choose-file-type.file-type.CommercialInvoice']")
+        click on cssSelector("input[value='SupportingEvidence']")
+      case "proof of authority"             => click on cssSelector("input[value='ProofOfAuthority']")
+      case "commercial invoice"             => click on cssSelector("input[value='CommercialInvoice']")
     }
 }
