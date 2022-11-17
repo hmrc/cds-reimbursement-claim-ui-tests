@@ -132,6 +132,9 @@ Feature: C285 Scheduled
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page"
+    And I should see the following details
+      | This is the basis behind the claim | VAT paid | Import date      | Contact details                  | Importer email       | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | UK Duty | Excise Duty | Total  | Duties paid | Sort code      | First MRN          | Scheduled document |
+      | Outward processing relief          | £0.00    | 12 February 2021 | Info Tech LTD,someemail@mail.com | automation@gmail.com | document.pdf,Commercial invoice | 45 Church Road,Leeds,LS1 2HA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £10.00  | £10.00  | £60.00      | £80.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page"
 
@@ -258,6 +261,9 @@ Feature: C285 Scheduled
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page"
+    And I should see the following details
+      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                    | Importer email       | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | UK Duty | Excise Duty | Total  | Duties paid | Sort code      | First MRN          | Scheduled document |
+      | Outward processing relief          | £0.00    | 12 February 2021 | Online Sales LTD,someemail@mail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 11 Mount Road,London,E10 7PP,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £10.00  | £10.00  | £60.00      | £80.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA1 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page"
 
@@ -383,6 +389,9 @@ Feature: C285 Scheduled
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page"
+    And I should see the following details
+      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                    | Importer email       | Contact address                             | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | UK Duty | Excise Duty | Total  | Duties paid | Sort code      | First MRN          | Scheduled document |
+      | Outward processing relief          | £0.00    | 12 February 2021 | Online Sales LTD,someemail@mail.com,+4420723934397 | automation@gmail.com | 11 Mount Road,London,E10 7PP,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £10.00  | £10.00  | £60.00      | £80.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA1 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page"
 

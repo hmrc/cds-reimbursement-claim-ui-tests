@@ -99,5 +99,8 @@ Feature: C285 Multiple NI
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page"
+    And I should see the following details
+      | This is the basis behind the claim                      | VAT paid | Import date      | Contact details                                    | Importer email       | Contact address                             | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 10AAAAAAAAAAAAAAA1 | Uploaded                        |
+      | Incorrect additional information code (excluding NIAID) | £0.00    | 12 February 2021 | Online Sales LTD,someemail@mail.com,+4420723934397 | automation@gmail.com | 11 Mount Road,London,E10 7PP,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page"
     Then I am presented with the "C285_Multiple_Claim Submitted Page"
