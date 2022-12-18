@@ -10,7 +10,7 @@ Feature: Securities Single Error Messages
     Then I am presented with the "Check Eori Details Page"
     When I click continue on "Check Eori Details Page"
     Then I am presented with the "Check Eori Details Page" error page
-    And The error summary title is "There is a problem" and the error message is "Select yes if these EORI details are correct"
+    And The error summary title is "There is a problem" and the error message is "Are these details correct?"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
     Then I am presented with the "Select Claim Type Page"
