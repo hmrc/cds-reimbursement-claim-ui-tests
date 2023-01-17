@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object CE1179_Single_EnterClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/enter-claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/enter-claim/..."
   override val title = "Enter the claim amount for duty A20 - Additional Duty"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the claim amount for duty A20")
