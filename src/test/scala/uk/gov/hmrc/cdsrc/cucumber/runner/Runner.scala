@@ -25,6 +25,6 @@ import org.junit.runner.RunWith
   features = Array("src/test/resources/features/1WarmUpService/UploadFileServiceWarmUp.feature", "src/test/resources/features"),
   glue = Array("uk.gov.hmrc.cdsrc.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@warmup or @test1"
+  tags = "@warmup or @test"
 )
 class Runner {}
