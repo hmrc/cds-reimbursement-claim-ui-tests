@@ -160,8 +160,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   def checkPageErrorSummaryTitle(errorSummaryTitle: String): Unit = {
     val actualErrorSummaryTitle = driver.findElement(By.className("govuk-error-summary__title")).getText
     actualErrorSummaryTitle should be(errorSummaryTitle)
-  } //#main-content > div > div > form > div.govuk-error-summary > div > h2 //#main-content > div > div > form > div.govuk-error-summary > div > div > ul > li > a
-
+  }
   def checkPageErrorMessage(errorMessage: String): Unit = {
     val actualErrorMessage = driver.findElement(By.cssSelector(".govuk-error-summary__body")).getText
     assert(actualErrorMessage.contains(errorMessage))
