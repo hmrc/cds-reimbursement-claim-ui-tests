@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.common
+package uk.gov.hmrc.cdsrc.pages.C285.single_v2
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object FeatureSwitchPage extends BasePage {
+object C285_Single_SelectReimbursementMethodPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/test-only/feature/"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/single/choose-repayment-method"
+  override val title = "Choose repayment method"
 
-  override def configure(feature: String, featureState: String): Unit = {
-    go to url + s"${feature.toLowerCase().replace(" ", "_")}/${featureState.dropRight(1)}"
-  }
+  override def expectedPageErrorTitle: Option[String] = Some("Choose repayment method - Claim back import duty and VAT - GOV.UK")
+
+  override def expectedPageTitle: Option[String] = Some("Choose repayment method - Claim back import duty and VAT - GOV.UK")
+
+  override def expectedPageHeader: Option[String] = Some("Choose repayment method")
 
 }

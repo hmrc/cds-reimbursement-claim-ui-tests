@@ -136,6 +136,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   Given("""the {string} feature is {string}""") { (feature: String, featureState: String) =>
     PageObjectFinder.page("FeatureSwitchPage").configure(feature, featureState)
+    driver.navigate().back()
   }
 
   Given("""I enter upload customs documents service url""") {
