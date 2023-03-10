@@ -26,13 +26,13 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 object C285_Single_SupportingEvidenceSelectSupportingEvidenceTypePagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/single/choose-file-type"
-  override val title = "Choose the type of supporting documents you are uploading"
+  override val title = "Add supporting documents to your claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose the type of supporting documents you are uploading - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose the type of supporting documents you are uploading - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Choose the type of supporting documents you are uploading")
+  override def expectedPageHeader: Option[String] = Some("Add supporting documents to your claim")
 
   override def checkURL: Assertion = {
     driver.getCurrentUrl should fullyMatch regex (url + ".*?").r
