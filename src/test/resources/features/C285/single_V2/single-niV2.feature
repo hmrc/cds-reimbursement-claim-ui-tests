@@ -1,5 +1,5 @@
 @C285 @Single
-Feature: C285 Single NI
+Feature: C285 Single NI V2
 
   @test @a11y @ZAP
   Scenario: happy path - duplicate mrn
