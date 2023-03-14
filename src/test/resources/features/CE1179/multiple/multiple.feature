@@ -40,7 +40,7 @@ Feature: C&E1179 Multiple
     When I select radio button "Defective" on "CE1179_Multiple_Choose Basis For Claim Page"
     And I click continue on "CE1179_Multiple_Choose Basis For Claim Page"
     Then I am presented with the "CE1179_Multiple_Choose Disposal Method Page"
-    When I select radio button "Export" on "CE1179_Multiple_Choose Disposal Method Page"
+    When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Multiple_Choose Disposal Method Page"
     And I click continue on "CE1179_Multiple_Choose Disposal Method Page"
     Then I am presented with the "CE1179_Multiple_Enter Rejected Goods Details Page"
     When I enter "under 500 characters" on "CE1179_Multiple_Enter Rejected Goods Details Page"
@@ -83,8 +83,8 @@ Feature: C&E1179 Multiple
     And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
-      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Declarant address                                 | Total  | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of |
-      | Defective                          | £0.00    | 12 February 2021 | Info Tech LTD,user@test.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | £20.00             | £20.00             | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Export                                    |
+      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Declarant address                                 | Total  | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of   |
+      | Defective                          | £0.00    | 12 February 2021 | Info Tech LTD,user@test.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | £20.00             | £20.00             | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
@@ -124,7 +124,7 @@ Feature: C&E1179 Multiple
     When I enter "under 500 characters" on "CE1179_Multiple_Enter Special Circumstances Page"
     And I click continue on "CE1179_Multiple_Enter Special Circumstances Page"
     Then I am presented with the "CE1179_Multiple_Choose Disposal Method Page"
-    When I select radio button "Export" on "CE1179_Multiple_Choose Disposal Method Page"
+    When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Multiple_Choose Disposal Method Page"
     And I click continue on "CE1179_Multiple_Choose Disposal Method Page"
     Then I am presented with the "CE1179_Multiple_Enter Rejected Goods Details Page"
     When I enter "under 500 characters" on "CE1179_Multiple_Enter Rejected Goods Details Page"
@@ -167,8 +167,8 @@ Feature: C&E1179 Multiple
     And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
-      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Declarant address                                 | Total  | 20AAAAAAAAAAAAAAA1 | 10AAAAAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of | Any special circumstances relating to your claim |
-      | Special circumstances              | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | £20.00             | £20.00             | 10AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Export                                    | under 500 characters                             |
+      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Declarant address                                 | Total  | 20AAAAAAAAAAAAAAA1 | 10AAAAAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of   | Any special circumstances relating to your claim |
+      | Special circumstances              | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | £20.00             | £20.00             | 10AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
@@ -205,7 +205,7 @@ Feature: C&E1179 Multiple
     When I select radio button "Defective" on "CE1179_Multiple_Choose Basis For Claim Page"
     And I click continue on "CE1179_Multiple_Choose Basis For Claim Page"
     Then I am presented with the "CE1179_Multiple_Choose Disposal Method Page"
-    When I select radio button "Export" on "CE1179_Multiple_Choose Disposal Method Page"
+    When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Multiple_Choose Disposal Method Page"
     And I click continue on "CE1179_Multiple_Choose Disposal Method Page"
     Then I am presented with the "CE1179_Multiple_Enter Rejected Goods Details Page"
     When I enter "under 500 characters" on "CE1179_Multiple_Enter Rejected Goods Details Page"
@@ -248,8 +248,8 @@ Feature: C&E1179 Multiple
     And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
-      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Declarant address                                 | Total  | 20AAAAAAAAAAAAAAA1 | 10AAAAAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of |
-      | Defective                          | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | £20.00             | £20.00             | 10AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Export                                    |
+      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Declarant address                                 | Total  | 20AAAAAAAAAAAAAAA1 | 10AAAAAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of   |
+      | Defective                          | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | £20.00             | £20.00             | 10AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
@@ -292,7 +292,7 @@ Feature: C&E1179 Multiple
     When I select radio button "Defective" on "CE1179_Multiple_Choose Basis For Claim Page"
     And I click continue on "CE1179_Multiple_Choose Basis For Claim Page"
     Then I am presented with the "CE1179_Multiple_Choose Disposal Method Page"
-    When I select radio button "Export" on "CE1179_Multiple_Choose Disposal Method Page"
+    When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Multiple_Choose Disposal Method Page"
     And I click continue on "CE1179_Multiple_Choose Disposal Method Page"
     Then I am presented with the "CE1179_Multiple_Enter Rejected Goods Details Page"
     When I enter "under 500 characters" on "CE1179_Multiple_Enter Rejected Goods Details Page"

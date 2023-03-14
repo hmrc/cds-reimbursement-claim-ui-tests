@@ -1,5 +1,5 @@
 @C285 @Single
-Feature: C285 Single
+Feature: C285 Single V2
 
   @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages, change contact details - v2 enabled

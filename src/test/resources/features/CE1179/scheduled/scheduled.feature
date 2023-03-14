@@ -40,7 +40,7 @@ Feature: C&E1179 Scheduled
     When I enter "under 500 characters" on "CE1179_Multiple_Enter Special Circumstances Page"
     And I click continue on "CE1179_Multiple_Enter Special Circumstances Page"
     Then I am presented with the "CE1179_Scheduled_Choose Disposal Method Page"
-    When I select radio button "Export" on "CE1179_Scheduled_Choose Disposal Method Page"
+    When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Scheduled_Choose Disposal Method Page"
     And I click continue on "CE1179_Scheduled_Choose Disposal Method Page"
     Then I am presented with the "CE1179_Scheduled_Enter Rejected Goods Details Page"
     When I enter "under 500 characters" on "CE1179_Scheduled_Enter Rejected Goods Details Page"
@@ -140,8 +140,8 @@ Feature: C&E1179 Scheduled
     And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
-      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Importer telephone | Importer name    | Declarant name     | Importer address                                 | Declarant address                                 | Total  | First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | EU Duty | Made-wine | Tobacco products | Climate Change Levy | Wine   | Beer   | Miscellaneous road fuels | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of | Any special circumstances relating to your claim | Name on the account | Sort code      | Account number   | Scheduled document |
-      | Special circumstances              | £0.00    | 12 February 2021 | Info Tech LTD,user@test.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £80.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Importer address        | 10 October 2020 | £10.00  | £10.00  | £10.00    | £10.00           | £10.00              | £10.00 | £10.00 | £10.00                   | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Export                                    | under 500 characters                             | CDS E2E To E2E Bank | Ending with 44 | Ending with 5678 | image.jpg          |
+      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Importer telephone | Importer name    | Declarant name     | Importer address                                 | Declarant address                                 | Total  | First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | EU Duty | Made-wine | Tobacco products | Climate Change Levy | Wine   | Beer   | Miscellaneous road fuels | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of   | Any special circumstances relating to your claim | Name on the account | Sort code      | Account number   | Scheduled document |
+      | Special circumstances              | £0.00    | 12 February 2021 | Info Tech LTD,user@test.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £80.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Importer address        | 10 October 2020 | £10.00  | £10.00  | £10.00    | £10.00           | £10.00              | £10.00 | £10.00 | £10.00                   | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | CDS E2E To E2E Bank | Ending with 44 | Ending with 5678 | image.jpg          |
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
@@ -184,7 +184,7 @@ Feature: C&E1179 Scheduled
     When I enter "under 500 characters" on "CE1179_Multiple_Enter Special Circumstances Page"
     And I click continue on "CE1179_Multiple_Enter Special Circumstances Page"
     Then I am presented with the "CE1179_Scheduled_Choose Disposal Method Page"
-    When I select radio button "Export" on "CE1179_Scheduled_Choose Disposal Method Page"
+    When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Scheduled_Choose Disposal Method Page"
     And I click continue on "CE1179_Scheduled_Choose Disposal Method Page"
     Then I am presented with the "CE1179_Scheduled_Enter Rejected Goods Details Page"
     When I enter "under 500 characters" on "CE1179_Scheduled_Enter Rejected Goods Details Page"

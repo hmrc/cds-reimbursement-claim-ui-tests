@@ -1,5 +1,5 @@
 @C285 @Single
-Feature: C285 Single file upload
+Feature: C285 Single file upload V2
 
   @test
   Scenario: happy path - upload 3 files

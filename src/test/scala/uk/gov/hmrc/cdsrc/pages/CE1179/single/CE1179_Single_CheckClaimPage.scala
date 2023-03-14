@@ -24,11 +24,11 @@ object CE1179_Single_CheckClaimPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/check-claim"
   override val title = "Check the claim total for the MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check the claim total for the MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Choose the reason for making this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check the claim total for the MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Choose the reason for making this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check the claim total for the MRN")
+  override def expectedPageHeader: Option[String] = Some("Choose the reason for making this claim")
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
