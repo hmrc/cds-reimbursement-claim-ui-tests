@@ -36,7 +36,7 @@ Feature: C&E1179 Single
     Then I am presented with the "CE1179_Single_Claimant Details Page"
     And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
-    When I select radio button "Not in accordance with contract" on "CE1179_Single_Choose Basis For Claim Page"
+    When I select radio button "Goods are not in accordance with contract" on "CE1179_Single_Choose Basis For Claim Page"
     And I click continue on "CE1179_Single_Choose Basis For Claim Page"
     Then I am presented with the "CE1179_Single_Choose Disposal Method Page"
     When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Single_Choose Disposal Method Page"
@@ -95,7 +95,7 @@ Feature: C&E1179 Single
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | This is the basis behind the claim | VAT paid | Import date      | Contact details                              | Importer email       | Uploaded                                                                | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Declarant address                                 | Total  | MRN                | Duties paid | Sort code      | A85 - Provisional Anti-Dumping Duty | Inspection address type | Inspection date | A90 - Definitive Countervailing Duty | These are the details of the rejected goods | A80 - Definitive Anti-Dumping Duty | Inspection address                          | A95 - Provisional Countervailing Duty | This is how the goods will be disposed of   |
-      | Not in accordance with contract    | £0.00    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | automation@gmail.com | document.pdf,Commercial invoice,image.jpg,Import and export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | +4420723934397     | IT Solutions LTD | Ending with 1001 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 56 | £10.00                              | Importer address        | 10 October 2020 | £10.00                               | under 500 characters                        | £10.00                             | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                                | Return the goods by road, rail, air or ship |
+      | Goods are not in accordance with contract    | £0.00    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | automation@gmail.com | document.pdf,Commercial invoice,image.jpg,Import and export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | +4420723934397     | IT Solutions LTD | Ending with 1001 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 56 | £10.00                              | Importer address        | 10 October 2020 | £10.00                               | under 500 characters                        | £10.00                             | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                                | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"
 
@@ -134,7 +134,7 @@ Feature: C&E1179 Single
     Then I am presented with the "CE1179_Single_Claimant Details Page"
     And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
-    When I select radio button "Not in accordance with contract" on "CE1179_Single_Choose Basis For Claim Page"
+    When I select radio button "Goods are not in accordance with contract" on "CE1179_Single_Choose Basis For Claim Page"
     And I click continue on "CE1179_Single_Choose Basis For Claim Page"
     Then I am presented with the "CE1179_Single_Choose Disposal Method Page"
     When I select radio button "Return the goods by road, rail, air or ship" on "CE1179_Single_Choose Disposal Method Page"
