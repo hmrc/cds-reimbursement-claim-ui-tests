@@ -19,9 +19,9 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_ClaimantDetailsEnterContactDetailsPage extends BasePage {
+object C285_Multiple_ClaimantDetailsEnterContactDetailsPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/claimant-details/enter-contact-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/claimant-details/enter-contact-details"
   override val title = "Add contact details"
 
   override def expectedPageErrorTitle: Option[String] = Some("Add contact details - Claim back import duty and VAT - GOV.UK")

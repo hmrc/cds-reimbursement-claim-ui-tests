@@ -19,17 +19,19 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_CheckTheseBankDetailsAreCorrectPage extends BasePage {
+object C285_Multiple_EnterDeclarantEoriPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/check-these-bank-details-are-correct"
-  override val title = "Check these bank details are correct"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-declarant-eori"
+  override val title = "Enter the declarant’s EORI number"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check these bank details are correct - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter the declarant’s EORI number - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check these bank details are correct - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the declarant’s EORI number - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
+  override def expectedPageHeader: Option[String] = Some("Enter the declarant’s EORI number")
 
-  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
+  override def enterDetails(textToEnter: String) {
+    enterText("enter-declarant-eori-number", textToEnter)
+  }
 
 }

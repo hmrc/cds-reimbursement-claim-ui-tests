@@ -19,15 +19,19 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_SelectDuties1Page extends BasePage {
+object C285_Multiple_EnterMovementReferenceNumberPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/select-duties/1"
-  override val title = "Select the duties you want to claim for under first MRN"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-movement-reference-number"
+  override val title = "Enter the first MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under first MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Enter the first MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for under first MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the first MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for under first MRN")
+  override def expectedPageHeader: Option[String] = Some("Enter the first MRN")
+
+  override def enterDetails(textToEnter: String) {
+    enterText("enter-movement-reference-number", textToEnter)
+  }
 
 }

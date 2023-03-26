@@ -21,9 +21,9 @@ import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_SelectDuties2DutyPage extends BasePage {
+object C285_Multiple_SelectDuties4DutyPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/select-duties/2/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-claim/4/..."
   override val title = ""
 
   override def expectedPageErrorTitle: Option[String] = Some("")
@@ -42,11 +42,11 @@ object C285_Multiple_SelectDuties2DutyPage extends BasePage {
   }
 
   override def checkPageTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under second MRN")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under fourth MRN")
   }
 
   override def checkPageErrorTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under second MRN")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under fourth MRN")
   }
 
 }

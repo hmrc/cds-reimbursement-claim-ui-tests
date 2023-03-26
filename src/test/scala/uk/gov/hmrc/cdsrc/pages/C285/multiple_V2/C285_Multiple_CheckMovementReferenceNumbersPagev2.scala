@@ -19,15 +19,15 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_SelectDuties4Page extends BasePage {
+object C285_Multiple_CheckMovementReferenceNumbersPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/select-duties/4"
-  override val title = "Select the duties you want to claim for under fourth MRN"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/check-movement-reference-numbers"
+  override val title = "All the MRNs entered in this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under fourth MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("All the MRNs entered in this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for under fourth MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("All the MRNs entered in this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for under fourth MRN")
+  override def expectedPageHeader: Option[String] = Some("All the MRNs entered in this claim")
 
 }

@@ -21,9 +21,9 @@ import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_SelectDuties1DutyPage extends BasePage {
+object C285_Multiple_SelectDuties1DutyPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/select-duties/1/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-claim/1/..."
   override val title = ""
 
   override def expectedPageErrorTitle: Option[String] = Some("")

@@ -19,15 +19,17 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_SelectDuties2Page extends BasePage {
+object C285_Multiple_CheckTheseBankDetailsAreCorrectPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/select-duties/2"
-  override val title = "Select the duties you want to claim for under second MRN"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/check-bank-details"
+  override val title = "Check these bank details are correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under second MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check these bank details are correct - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for under second MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check these bank details are correct - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for under second MRN")
+  override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
+
+  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
 
 }

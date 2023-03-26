@@ -19,15 +19,19 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_ClaimantDetailsPage extends BasePage {
+object C285_Multiple_EnterImporterEoriPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/claimant-details"
-  override val title = "How we will contact you about this claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-importer-eori"
+  override val title = "Enter the importer’s EORI number"
 
-  override def expectedPageErrorTitle: Option[String] = Some("How we will contact you about this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter the importer’s EORI number - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("How we will contact you about this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("How we will contact you about this claim")
+  override def expectedPageHeader: Option[String] = Some("Enter the importer’s EORI number")
+
+  override def enterDetails(textToEnter: String) {
+    enterText("enter-importer-eori-number", textToEnter)
+  }
 
 }

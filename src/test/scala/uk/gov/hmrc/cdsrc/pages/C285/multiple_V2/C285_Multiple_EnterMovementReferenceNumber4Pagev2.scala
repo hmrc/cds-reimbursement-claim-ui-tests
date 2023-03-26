@@ -19,19 +19,19 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_EnterImporterEoriPage extends BasePage {
+object C285_Multiple_EnterMovementReferenceNumber4Pagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-importer-eori"
-  override val title = "Enter the importer’s EORI number"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-movement-reference-number/4"
+  override val title = "Enter the fourth MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter the importer’s EORI number - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Enter the fourth MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter the importer’s EORI number - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the fourth MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter the importer’s EORI number")
+  override def expectedPageHeader: Option[String] = Some("Enter the fourth MRN")
 
   override def enterDetails(textToEnter: String) {
-    enterText("enter-importer-eori-number", textToEnter)
+    enterText("enter-associated-mrn", textToEnter)
   }
 
 }

@@ -19,9 +19,9 @@ package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_CheckDeclarationDetailsPage extends BasePage {
+object C285_Multiple_CheckDeclarationDetailsPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/check-declaration-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/check-declaration-details"
   override val title = "Check these declaration details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these declaration details are correct - Claim back import duty and VAT - GOV.UK")

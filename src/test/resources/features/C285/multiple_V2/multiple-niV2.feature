@@ -95,7 +95,7 @@ Feature: C285 Multiple NI
     Then I am presented with the "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page"
     When I select radio button "Commercial invoice" on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page"
     And I click continue on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "UCDF_Choose File Other Page"
+    Then I am presented with the "UCDF_Choose File Other Page" "Commercial invoice"
     When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue if I'm on "UCDF_Choose File Other Page"
