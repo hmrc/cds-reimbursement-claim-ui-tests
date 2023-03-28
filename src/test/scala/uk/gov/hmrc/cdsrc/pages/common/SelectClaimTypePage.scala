@@ -22,17 +22,17 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object SelectClaimTypePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/select-claim-type"
-  override val title       = "Choose type of claim"
+  override val title       = "Start a new claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Choose type of claim - Claim back import duty and VAT - GOV.UK"
+    "ERROR: Start a new claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Choose type of claim - Claim back import duty and VAT - GOV.UK"
+    "Start a new claim - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Choose type of claim")
+  override def expectedPageHeader: Option[String] = Some("Start a new claim")
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
