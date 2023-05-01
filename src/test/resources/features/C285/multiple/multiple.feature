@@ -1,7 +1,7 @@
 @C285 @Multiple
 Feature: C285 Multiple
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
