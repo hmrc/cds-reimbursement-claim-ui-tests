@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single NI
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: happy path - duplicate mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

@@ -1,7 +1,7 @@
 @C285 @Other
 Feature: C285 Other
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: other - click links on last page
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
