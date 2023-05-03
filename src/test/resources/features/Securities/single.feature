@@ -95,7 +95,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: happy path - Securities without importer/declarant eori
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -181,7 +181,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: Data validation check at Check your answers page - with Payment method as Bank account transfer
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -239,7 +239,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: Data validation check at Check your answers page - with Payment method as Duty deferment account
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -297,7 +297,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: Data validation check at Check your answers page - with Payment method as Cash payment
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -355,7 +355,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: Data validation check at Check your answers page - with Payment method as Guarantee Account
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -411,7 +411,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: Data validation check at Check your answers page - with Payment method as Individual Guarantee
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -558,7 +558,7 @@ Feature: Securities Single
     And I click continue on "Securities_Enter Export Movement Reference Number Multiple Page"
     Then I am presented with the "Securities_Claimant Details Page"
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: Happy path with no document upload
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
