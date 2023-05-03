@@ -167,7 +167,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: happy path - duplicate mrn journey, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
