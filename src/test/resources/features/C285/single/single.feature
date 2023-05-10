@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single
 
-  @test @ZAP
+  @test
   Scenario: happy path - check importer/declarant eori pages, change contact details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -247,7 +247,7 @@ Feature: C285 Single
     When I click continue on "C285_Single_Check Answers Accept Send Page"
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
-  @test
+  @smoke
   Scenario: error scenario - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -349,7 +349,7 @@ Feature: C285 Single
     When I click continue on "C285_Single_Check Answers Accept Send Page"
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
-  @test
+  @smoke
   Scenario: attempt entry journey (this may be deprecated since we have not accepted entry numbers for a long time)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
