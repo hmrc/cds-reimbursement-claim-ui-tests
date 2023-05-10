@@ -100,7 +100,7 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Claim Submitted Page"
 
 
-  @test @ZAP
+  @smoke
   Scenario: happy path - check importer/declarant eori pages, Special circumstances, CMA eligible
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

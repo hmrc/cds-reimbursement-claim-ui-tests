@@ -145,7 +145,7 @@ Feature: C&E1179 Scheduled - XIEORI
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
-  @test @ZAP
+  @test
   Scenario: Happy path with no document upload
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

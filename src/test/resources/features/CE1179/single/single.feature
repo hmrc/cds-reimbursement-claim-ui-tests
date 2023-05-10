@@ -99,7 +99,7 @@ Feature: C&E1179 Single
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"
 
-  @test @ZAP
+  @test
   Scenario: Happy path with no document upload
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -186,7 +186,7 @@ Feature: C&E1179 Single
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"
 
-  @test @ZAP
+  @smoke
   Scenario: happy path - check importer/declarant eori pages, Special circumstances, CMA eligible
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

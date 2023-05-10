@@ -164,7 +164,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
-  @test
+  @smoke
   Scenario: happy path - don't check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -300,7 +300,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2" error page
 
-  @test
+  @smoke
   Scenario: error scenario - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

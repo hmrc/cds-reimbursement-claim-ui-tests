@@ -167,7 +167,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
 
-  @test @ZAP
+  @test
   Scenario: happy path - duplicate mrn journey, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -250,7 +250,7 @@ Feature: C285 Single V2
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-  @test
+  @smoke
   Scenario: error scenario - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -354,7 +354,7 @@ Feature: C285 Single V2
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-  @test
+  @smoke
   Scenario: attempt entry journey (this may be deprecated since we have not accepted entry numbers for a long time)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

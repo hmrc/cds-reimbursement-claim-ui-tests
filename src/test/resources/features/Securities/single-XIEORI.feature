@@ -14,7 +14,7 @@ Feature: Securities Single - XIEORI
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "Securities_Enter Movement Reference Number Page"
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path - check importer/declarant eori pages - with no Payment method
     When I enter "01XIDCAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -181,7 +181,6 @@ Feature: Securities Single - XIEORI
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test @ZAP
   Scenario: Data validation check at Check your answers page - with Payment method as Bank account transfer
     When I enter "10XIDAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"

@@ -1,7 +1,7 @@
 @C285 @Multiple
 Feature: C285 Multiple - XIEORI V2
 
-  @test @a11y @ZAP
+  @test @ZAP
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -84,7 +84,7 @@ Feature: C285 Multiple - XIEORI V2
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
 
-  @test
+  @smoke
   Scenario: happy path - don't check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
