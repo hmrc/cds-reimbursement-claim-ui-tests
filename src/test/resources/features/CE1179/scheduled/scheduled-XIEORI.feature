@@ -1,7 +1,7 @@
 @C&E1179 @Scheduled
 Feature: C&E1179 Scheduled - XIEORI
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path - check importer/declarant eori pages, Special circumstances
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

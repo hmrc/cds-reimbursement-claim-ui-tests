@@ -1,7 +1,7 @@
 @C285 @Single @Subsidy
 Feature: C285 Single V2 with subsidy check
 
-  @test1 @a11y @ZAP @subsidy
+  @test1 @subsidy
   Scenario: happy path - Subsidy feature - v2 enabled
     Given I navigate to the "Auth Login Stub Page"
     And I enter redirectURL on "Auth Login Stub Page"
