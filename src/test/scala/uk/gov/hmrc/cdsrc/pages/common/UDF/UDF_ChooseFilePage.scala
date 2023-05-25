@@ -22,17 +22,17 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object UDF_ChooseFilePage extends BasePage {
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
-  override val title = "Add a document which shows all the MRNs in this claim"
+  override val title = "Add a document showing all MRNs in this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Add a document which shows all the MRNs in this claim - Claim back import duty and VAT - GOV.UK"
+    "Add a document showing all MRNs in this claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Add a document which shows all the MRNs in this claim - Claim back import duty and VAT - GOV.UK"
+    "Add a document showing all MRNs in this claim - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Add a document which shows all the MRNs in this claim")
+  override def expectedPageHeader: Option[String] = Some("Add a document showing all MRNs in this claim")
 
   override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 

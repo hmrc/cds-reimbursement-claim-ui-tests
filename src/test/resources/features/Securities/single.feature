@@ -297,7 +297,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+  @smoke
   Scenario: Data validation check at Check your answers page - with Payment method as Cash payment
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -411,7 +411,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+  @smoke
   Scenario: Data validation check at Check your answers page - with Payment method as Individual Guarantee
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

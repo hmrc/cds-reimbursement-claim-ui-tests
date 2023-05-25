@@ -22,12 +22,12 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_CheckClaimPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/scheduled/check-claim"
-  override val title = "Check the repayment claim totals for all MRNs"
+  override val title = "Check the repayment totals for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check the repayment claim totals for all MRNs - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check the repayment claim totals for all MRNs")
+  override def expectedPageHeader: Option[String] = Some("Check the repayment totals for this claim")
 
 }
