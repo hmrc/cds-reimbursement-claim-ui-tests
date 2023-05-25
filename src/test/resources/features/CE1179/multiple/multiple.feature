@@ -330,7 +330,7 @@ Feature: C&E1179 Multiple
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
-  @test
+  @smoke
   Scenario: error scenario - second mrn not linked to eori
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

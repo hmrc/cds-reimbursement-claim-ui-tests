@@ -1,7 +1,7 @@
 @Security @Single
 Feature: Securities Single Error Messages
 
-  @test
+  @smoke
   Scenario: To test the error messages for the Securities journey
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

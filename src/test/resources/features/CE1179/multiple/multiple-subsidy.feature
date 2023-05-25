@@ -1,7 +1,7 @@
 @C&E1179 @Multiple
 Feature: C&E1179 Multiple Subsidy
 
-  @test
+  @smoke
   Scenario: Cannot submit a C&E1179 Multiple MRN claim when first MRN is subsidy
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

@@ -1,7 +1,7 @@
 @C&E1179 @Scheduled
 Feature: C&E1179 Scheduled Subsidy
 
-  @test
+  @smoke
   Scenario: cannot submit a C&E1179 Scheduled claim when lead MRN is subsidy
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

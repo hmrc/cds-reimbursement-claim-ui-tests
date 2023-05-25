@@ -95,7 +95,7 @@ Feature: Securities Single - XIEORI
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+  @smoke
   Scenario: happy path - Securities without importer/declarant eori
     When I enter "01XICAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
