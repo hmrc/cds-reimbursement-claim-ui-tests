@@ -14,6 +14,7 @@ Feature: C285 Single V2 with subsidy check
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "c285" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
+    When the "block subsidies" feature is "enabled"
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
