@@ -13,6 +13,7 @@ Feature: C&E1179 Single Subsidy
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
+    When the "block subsidies" feature is "enabled"
     Then I am presented with the "CE1179_Choose How Many Mrns Page"
     And I select radio button "Enter one MRN" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
