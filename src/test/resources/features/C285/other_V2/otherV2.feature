@@ -29,7 +29,7 @@ Feature: C285 Other
     And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
     And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
-    When I select radio button "Duplicate MRN" on "C285_Single_Choose Basis For Claim Page v2"
+    When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
     Then I am presented with the "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
