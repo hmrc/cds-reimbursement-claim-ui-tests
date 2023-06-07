@@ -40,7 +40,7 @@ Feature: C285 Single V2
     And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
     And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
-    When I select radio button "Duplicate MRN" on "C285_Single_Choose Basis For Claim Page v2"
+    When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
     Then I am presented with the "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
@@ -83,8 +83,8 @@ Feature: C285 Single V2
 #    And I click continue on "UDF_Summary Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | VAT paid | Import date      | Contact details                              | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | MRN                | Duties paid | Sort code      |
-      | Duplicate MRN                      | £0.00    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 |
+      | This is the basis behind the claim        | VAT paid | Import date      | Contact details                              | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | MRN                | Duties paid | Sort code      |
+      | Duplicate Movement Reference Number (MRN) | £0.00    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -122,7 +122,7 @@ Feature: C285 Single V2
     And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
     And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
-    When I select radio button "Duplicate MRN" on "C285_Single_Choose Basis For Claim Page v2"
+    When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
     Then I am presented with the "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
@@ -162,13 +162,13 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
 #    And I should see the following details
 #      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Contact address                                    | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | MRN                | Duties paid | Sort code      |                      |
-#      | Duplicate MRN                      | £0.00    | 12 February 2021 | Info Tech LTD,user@test.com | automation@gmail.com | 412 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 | No documents attached |
+#      | Duplicate Movement Reference Number (MRN)                      | £0.00    | 12 February 2021 | Info Tech LTD,user@test.com | automation@gmail.com | 412 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 | No documents attached |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
 
   @test
-  Scenario: happy path - duplicate mrn journey, change bank details
+  Scenario: happy path - Duplicate Movement Reference Number (MRN) journey, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -195,7 +195,7 @@ Feature: C285 Single V2
     And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
     And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
-    When I select radio button "Duplicate MRN" on "C285_Single_Choose Basis For Claim Page v2"
+    When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
     Then I am presented with the "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
@@ -245,8 +245,8 @@ Feature: C285 Single V2
 #    When I select radio button "No" on "UDF_Summary Page"
 #    And I click continue on "UDF_Summary Page"
     And I should see the following details
-      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | MRN                | Duties paid | Sort code      |
-      | Duplicate MRN                      | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Mr John Smith       | +4420723934397     | IT Solutions LTD | Ending with 1001 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | 10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
+      | This is the basis behind the claim        | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | MRN                | Duties paid | Sort code      |
+      | Duplicate Movement Reference Number (MRN) | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Mr John Smith       | +4420723934397     | IT Solutions LTD | Ending with 1001 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | 10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -308,7 +308,7 @@ Feature: C285 Single V2
     And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
     And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
-    When I select radio button "Duplicate MRN" on "C285_Single_Choose Basis For Claim Page v2"
+    When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
     Then I am presented with the "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
@@ -349,8 +349,8 @@ Feature: C285 Single V2
 #    And I click continue on "UDF_Summary Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Importer telephone | Importer name    | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | MRN                | Duties paid | Method                         |
-      | Duplicate MRN                      | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £580.00 | £580.00 | 10AAAAAAAAAAAAAAA1 | £828.00     | Current Month Adjustment (CMA) |
+      | This is the basis behind the claim        | VAT paid | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Importer telephone | Importer name    | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | MRN                | Duties paid | Method                         |
+      | Duplicate Movement Reference Number (MRN) | £0.00    | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £580.00 | £580.00 | 10AAAAAAAAAAAAAAA1 | £828.00     | Current Month Adjustment (CMA) |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
