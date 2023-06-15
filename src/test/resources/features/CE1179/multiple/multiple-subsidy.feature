@@ -14,6 +14,7 @@ Feature: C&E1179 Multiple Subsidy
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     When the "block subsidies" feature is "enabled"
+    When the "subsidies for rejected goods" feature is "disabled"
     Then I am presented with the "CE1179_Choose How Many Mrns Page"
     When I select radio button "Enter multiple MRNs" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
@@ -23,7 +24,7 @@ Feature: C&E1179 Multiple Subsidy
     And The error summary title is "There is a problem" and the error message is "Subsidy MRNs cannot be added to online claims at this time"
 
 
-    @test
+    @test1
     Scenario: Cannot submit a C&E1179 Multiple MRN claim when second MRN is subsidy
       Given I navigate to the "Auth Login Stub Page"
       When I enter redirectURL on "Auth Login Stub Page"
@@ -36,6 +37,7 @@ Feature: C&E1179 Multiple Subsidy
       When I select radio button "ce1179" on "Select Claim Type Page"
       And I click continue on "Select Claim Type Page"
       When the "block subsidies" feature is "enabled"
+      When the "subsidies for rejected goods" feature is "disabled"
       Then I am presented with the "CE1179_Choose How Many Mrns Page"
       And I select radio button "Enter multiple MRNs" on "CE1179_Choose How Many Mrns Page"
       And I click continue on "CE1179_Choose How Many Mrns Page"
