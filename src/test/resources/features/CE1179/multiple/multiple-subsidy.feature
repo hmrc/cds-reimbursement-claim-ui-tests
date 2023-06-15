@@ -24,7 +24,7 @@ Feature: C&E1179 Multiple Subsidy
     And The error summary title is "There is a problem" and the error message is "Subsidy MRNs cannot be added to online claims at this time"
 
 
-    @test1
+    @test
     Scenario: Cannot submit a C&E1179 Multiple MRN claim when second MRN is subsidy
       Given I navigate to the "Auth Login Stub Page"
       When I enter redirectURL on "Auth Login Stub Page"
