@@ -139,7 +139,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
 
-  @smoke
+  @test
   Scenario: happy path - don't check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

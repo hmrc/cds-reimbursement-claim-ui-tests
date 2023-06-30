@@ -1,7 +1,7 @@
-@C285 @Scheduled
+#@C285 @Scheduled
 Feature: C285 Scheduled
 
-  @test
+#  @test
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -138,7 +138,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page"
 
-  @test
+#  @smoke
   Scenario: happy path - don't check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -267,7 +267,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page"
 
-  @smoke
+#  @smoke
   Scenario: happy path with no document upload
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -395,7 +395,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page"
 
-  @smoke
+#  @smoke
   Scenario: error scenario - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -423,7 +423,7 @@ Feature: C285 Scheduled
     And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page"
     And I click continue on "C285_Scheduled_Check Declaration Details Page"
 
-  @testFail
+#  @testFail
   Scenario: error scenario - test file upload size and format fail pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
