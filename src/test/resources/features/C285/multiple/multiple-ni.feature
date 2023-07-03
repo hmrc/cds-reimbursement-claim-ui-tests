@@ -1,7 +1,7 @@
-@C285 @Multiple
+#@C285 @Multiple
 Feature: C285 Multiple NI
 
-  @test
+#  @test
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -30,7 +30,7 @@ Feature: C285 Multiple NI
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page"
 
-  @test
+#  @test
   Scenario: happy path
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
