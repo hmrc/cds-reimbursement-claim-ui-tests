@@ -19,6 +19,6 @@ Feature: C&E1179 Scheduled Subsidy
     And I select radio button "Upload multiple MRNs" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
     Then I am presented with the "CE1179_Scheduled_Enter Movement Reference Number Page"
-    When I enter "10DDDDDDDDDDDDDDD1" on "CE1179_Scheduled_Enter Movement Reference Number Page"
+    When I enter "10DFSDDDDDDDDDDD01" on "CE1179_Scheduled_Enter Movement Reference Number Page"
     And I click continue on "CE1179_Scheduled_Enter Movement Reference Number Page"
     And The error summary title is "There is a problem" and the error message is "Subsidy MRNs cannot be added to online claims at this time"

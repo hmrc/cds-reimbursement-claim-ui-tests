@@ -5,7 +5,7 @@ Feature: C285 Scheduled NI
   Scenario: happy path - NI enabled
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000005" on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
     And I click continue on "Auth Login Stub Page"
     Then I am presented with the "Check Eori Details Page"
     When I select radio button "yes" on "Check Eori Details Page"
@@ -17,7 +17,7 @@ Feature: C285 Scheduled NI
     When I select radio button "schedule" on "C285_Choose How Many Mrns Page"
     And I click continue on "C285_Choose How Many Mrns Page"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page"
-    When I enter "50AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page"
+    When I enter "50AATAAAAAAAAAAA01" on "C285_Scheduled_Enter Movement Reference Number Page"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page"
     And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page"
