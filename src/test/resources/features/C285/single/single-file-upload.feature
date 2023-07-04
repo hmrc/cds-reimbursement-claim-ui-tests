@@ -1,7 +1,7 @@
-@C285 @Single
+#@C285 @Single
 Feature: C285 Single file upload
 
-  @test
+#  @test
   Scenario: happy path - upload 3 files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

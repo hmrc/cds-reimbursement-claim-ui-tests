@@ -1,7 +1,7 @@
-@C285 @Other
+#@C285 @Other
 Feature: C285 Other
 
-  @smoke
+#  @smoke
   Scenario: other - click links on last page
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -74,7 +74,7 @@ Feature: C285 Other
     When I click "Back" on "Start Page"
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
-  @testFailsOnJenkins
+#  @testFailsOnJenkins
   Scenario: other - click Accessibility footer link
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

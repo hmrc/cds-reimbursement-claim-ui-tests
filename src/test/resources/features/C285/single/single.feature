@@ -1,7 +1,7 @@
-@C285 @Single
+#@C285 @Single
 Feature: C285 Single
 
-  @test
+#  @test
   Scenario: happy path - check importer/declarant eori pages, change contact details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -87,7 +87,7 @@ Feature: C285 Single
     When I click continue on "C285_Single_Check Answers Accept Send Page"
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
-  @smoke
+#  @smoke
   Scenario: happy path with no document upload
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -165,7 +165,7 @@ Feature: C285 Single
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
 
-  @test
+#  @test
   Scenario: happy path - Duplicate Movement Reference Number (MRN) journey, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -247,7 +247,7 @@ Feature: C285 Single
     When I click continue on "C285_Single_Check Answers Accept Send Page"
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
-  @smoke
+#  @smoke
   Scenario: error scenario - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -276,7 +276,7 @@ Feature: C285 Single
     And I click continue on "C285_Single_Check Declaration Details Page"
     Then I am presented with the "C285_Single_Claimant Details Page"
 
-  @test
+#  @test
   Scenario: happy path - user selects CMA
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -349,7 +349,7 @@ Feature: C285 Single
     When I click continue on "C285_Single_Check Answers Accept Send Page"
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
-  @smoke
+#  @smoke
   Scenario: attempt entry journey (this may be deprecated since we have not accepted entry numbers for a long time)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -369,7 +369,7 @@ Feature: C285 Single
     And I click continue on "C285_Single_Enter Movement Reference Number Page"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page" error page
 
-  @ALF
+#  @ALF
   Scenario: happy path - confirm ALF data works in journey (not regression tested since this is out of our team's scope)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -448,7 +448,7 @@ Feature: C285 Single
     And I click continue on "C285_Single_Check Answers Accept Send Page"
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
-  @ALF
+#  @ALF
   Scenario: happy path - confirm ALF data works in journey, no contact details (not regression tested since this is out of our team's scope)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

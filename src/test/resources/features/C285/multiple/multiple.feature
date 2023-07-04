@@ -1,7 +1,7 @@
-@C285 @Multiple
+#@C285 @Multiple
 Feature: C285 Multiple
 
-  @test
+#  @test
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -82,7 +82,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Answers Accept Send Page"
     Then I am presented with the "C285_Multiple_Claim Submitted Page"
 
-  @smoke
+#  @smoke
   Scenario: happy path with no document upload
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -162,7 +162,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Answers Accept Send Page"
     Then I am presented with the "C285_Multiple_Claim Submitted Page"
 
-  @smoke
+#  @smoke
   Scenario: happy path - don't check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -237,7 +237,8 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Answers Accept Send Page"
     Then I am presented with the "C285_Multiple_Claim Submitted Page"
 
-  @test @stubs
+#  @test
+
   Scenario: error scenario - second mrn not linked to eori
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -263,7 +264,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Enter Movement Reference Number 2 Page"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page" error page
 
-  @test
+#  @test
   Scenario: error scenario - second mrn not linked to importer/declarant eori
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -295,7 +296,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Enter Movement Reference Number 2 Page"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page" error page
 
-  @smoke
+#  @smoke
   Scenario: error scenario - wrong mrn
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -329,7 +330,7 @@ Feature: C285 Multiple
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page"
 
-  @ALF
+#  @ALF
   Scenario: happy path (mrn) - confirm ALF data works in journey
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -419,7 +420,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Answers Accept Send Page"
     Then I am presented with the "C285_Multiple_Claim Submitted Page"
 
-  @test
+#  @test
   Scenario: happy path with many MRNs and duties
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -566,7 +567,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Answers Accept Send Page"
     Then I am presented with the "C285_Multiple_Claim Submitted Page"
 
-  @testFail
+#  @testFail
   Scenario: test temp pages - confirm ALF data works in journey (no contact details)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

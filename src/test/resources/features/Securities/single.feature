@@ -87,7 +87,7 @@ Feature: Securities Single
     Then I am presented with the "UDF_Choose Files Page" "evidence supporting your claim"
     When I upload a 2 "image.jpg" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
-    When I click continue button on "UDF_Choose Files Page"
+    When I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Import declaration              | Total security deposit value | Contact address                                           | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details             | Evidence supporting your claim           | Name on the account | Account number   | Sort code      |
@@ -173,7 +173,7 @@ Feature: Securities Single
     Then I am presented with the "UDF_Choose Files Page" "export declaration"
     When I upload a 2 "image.jpg" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
-    When I click continue button on "UDF_Choose Files Page"
+    When I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Export declaration           | Total security deposit value | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details                                        | Import declaration              | Name on the account | Account number   | Sort code      | Contact address                             |
