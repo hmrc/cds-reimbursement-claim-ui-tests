@@ -24,7 +24,7 @@ object C285_Single_EnterMovementReferenceNumberPagev2 extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/single/enter-movement-reference-number"
   override val title = "Enter the Movement Reference Number (MRN)"
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Enter the Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Enter the Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Enter the Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK")
 
