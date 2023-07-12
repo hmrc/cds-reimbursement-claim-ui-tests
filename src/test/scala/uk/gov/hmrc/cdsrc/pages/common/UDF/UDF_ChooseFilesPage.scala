@@ -26,7 +26,7 @@ object UDF_ChooseFilesPage extends BasePage {
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title = "Upload supporting documents"
 
-  override def expectedPageErrorTitle: Option[String] = Some("")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Upload commercial invoice - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("")
 

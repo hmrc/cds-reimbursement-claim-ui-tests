@@ -84,7 +84,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
   @test
-  Scenario: happy path with no document upload
+  Scenario: happy path with no document upload displays error message
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -157,6 +157,10 @@ Feature: C285 Multiple
     Then I am presented with the "UCDF_Choose File Other Page" "Commercial invoice"
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue on "UCDF_Choose File Other Page"
+    Then I am presented with the "UDF_Choose Files Page" error page
+    When I upload a 1 "image.jpg" file on "UDF_Choose Files Page"
+    And I select radio button "No" on "UDF_Choose Files Page"
+    And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
 #    And I should see the following details
 #      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Contact address                    | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
