@@ -326,6 +326,10 @@ Feature: C&E1179 Multiple
     Then I am presented with the "UDF_Choose Files Page" "commercial invoice"
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue on "UDF_Choose Files Page"
+    Then I am presented with the "UDF_Choose Files Page" error page
+    When I upload a 1 "image.jpg" file on "UDF_Choose Files Page"
+    And I select radio button "No" on "UDF_Choose Files Page"
+    And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
