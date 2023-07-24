@@ -16,7 +16,7 @@ Feature: C&E1179 Exploratory file
     And I select radio button "Enter one MRN" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
     Then I am presented with the "CE1179_Single_Enter Movement Reference Number Page"
-    When I enter "10AAAAAAAAAAAAAAA2" on "CE1179_Single_Enter Movement Reference Number Page"
+    When I enter "01AFRAAAAAAAAAAA02" on "CE1179_Single_Enter Movement Reference Number Page"
     And I click continue on "CE1179_Single_Enter Movement Reference Number Page"
     Then I am presented with the "CE1179_Single_Enter Importer Eori Page"
     When I enter "GB000000000000002" on "CE1179_Single_Enter Importer Eori Page"

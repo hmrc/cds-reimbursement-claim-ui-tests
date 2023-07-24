@@ -17,7 +17,7 @@ Feature: C285 Single file upload
     When I select radio button "individual" on "C285_Choose How Many Mrns Page"
     And I click continue on "C285_Choose How Many Mrns Page"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page"
+    When I enter "01AFRAAAAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page"
     And I click continue on "C285_Single_Enter Movement Reference Number Page"
     Then I am presented with the "C285_Single_Check Declaration Details Page"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page"

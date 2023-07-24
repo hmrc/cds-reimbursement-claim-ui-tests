@@ -19,7 +19,7 @@ Feature: C285 Single V2 with subsidy check
     When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
-    When I enter "10DDDDDDDDDDDDDDD1" on "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "10DFSDDDDDDDDDDD01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2" error page
     And The error summary title is "There is a problem" and the error message is "Subsidy MRNs cannot be added to online claims at this time"
