@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Securities_ConfirmFullRepaymentSecurityIdPage extends BasePage {
+object Securities_ConfirmFullRepaymentSecurityIdPage1 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/confirm-full-repayment/..."
   override val title       = "Do you want to claim back all of this security deposit?"
@@ -37,7 +37,7 @@ object Securities_ConfirmFullRepaymentSecurityIdPage extends BasePage {
   override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
     driver.findElement(By cssSelector "#main-content > div > div > form > span").getText should equal(
-      s"""Security ID: ${pageCaption(0)}"""
+      s"""Security deposit 1 of 2"""
     )
     driver.getCurrentUrl                                                                 should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
