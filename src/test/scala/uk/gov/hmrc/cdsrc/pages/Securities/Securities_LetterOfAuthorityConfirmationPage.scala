@@ -25,7 +25,7 @@ object Securities_LetterOfAuthorityConfirmationPage extends BasePage {
   override val title       = "Is a Letter of Authority required?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Is a Letter of Authority required? - Claim back import duty and VAT - GOV.UK"
+    "Error: Is a Letter of Authority required? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(

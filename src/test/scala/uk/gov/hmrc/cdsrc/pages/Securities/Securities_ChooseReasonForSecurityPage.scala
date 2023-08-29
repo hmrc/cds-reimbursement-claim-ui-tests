@@ -28,7 +28,7 @@ object Securities_ChooseReasonForSecurityPage extends BasePage {
   override val title       = "Select why a security deposit or guarantee was required"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Select why a security deposit or guarantee was required - Claim back import duty and VAT - GOV.UK"
+    "Error: Select why a security deposit or guarantee was required - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(

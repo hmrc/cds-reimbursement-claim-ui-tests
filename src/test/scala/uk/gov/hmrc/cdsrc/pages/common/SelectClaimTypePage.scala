@@ -25,7 +25,7 @@ object SelectClaimTypePage extends BasePage {
   override val title       = "Start a new claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Start a new claim - Claim back import duty and VAT - GOV.UK"
+    "Error: Start a new claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(

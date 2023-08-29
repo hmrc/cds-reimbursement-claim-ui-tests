@@ -26,7 +26,7 @@ object Securities_ChooseBankAccountTypePage extends BasePage {
   override val title       = "What type of account details are you providing?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: What type of account details are you providing? - Claim back import duty and VAT - GOV.UK"
+    "Error: What type of account details are you providing? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(

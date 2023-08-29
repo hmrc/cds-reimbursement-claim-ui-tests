@@ -24,7 +24,7 @@ object CheckEoriDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-eori-details"
   override val title = "Check these EORI details are correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Check these EORI details are correct - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Check these EORI details are correct - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Check these EORI details are correct - Claim back import duty and VAT - GOV.UK")
 
