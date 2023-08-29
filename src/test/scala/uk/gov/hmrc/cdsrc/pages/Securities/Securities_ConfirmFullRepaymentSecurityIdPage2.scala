@@ -26,7 +26,7 @@ object Securities_ConfirmFullRepaymentSecurityIdPage2 extends BasePage {
   override val title       = "Do you want to claim back all of this security deposit?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
+    "Error: Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
@@ -36,7 +36,7 @@ object Securities_ConfirmFullRepaymentSecurityIdPage2 extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Do you want to claim back all of this security deposit?")
   override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
-    driver.findElement(By cssSelector "#main-content > div > div > form > span").getText should equal(
+    driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
       s"""Security deposit 2 of 2"""
     )
     driver.getCurrentUrl                                                                 should equal(

@@ -28,7 +28,7 @@ object Securities_SelectDutiesSecurityIdPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for")
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
 

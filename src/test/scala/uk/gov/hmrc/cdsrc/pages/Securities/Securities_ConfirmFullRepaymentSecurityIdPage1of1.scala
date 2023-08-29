@@ -20,26 +20,27 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Securities_ConfirmFullRepaymentSecurityIdPage1 extends BasePage {
+object Securities_ConfirmFullRepaymentSecurityIdPage1of1 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/confirm-full-repayment/..."
-  override val title       = "Do you want to claim back all of this security deposit?"
+  override val title       = """Security deposit 1 of 1
+Claim back this security deposit?"""
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
+    "Error: Security deposit 1 of 1: Claim back this security deposit? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
+    "Security deposit 1 of 1: Claim back this security deposit? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageHeader: Option[String] = Some("Do you want to claim back all of this security deposit?")
   override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
-    driver.findElement(By cssSelector "#main-content > div > div > form > span").getText should equal(
-      s"""Security deposit 1 of 2"""
+    driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
+      s"""Security deposit 1 of 1"""
     )
-    driver.getCurrentUrl                                                                 should equal(
+    driver.getCurrentUrl should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
     )
   }

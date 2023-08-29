@@ -20,10 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Securities_ConfirmFullRepaymentSecurityIdPage3 extends BasePage {
+object Securities_ConfirmFullRepaymentSecurityIdPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/confirm-full-repayment/..."
-  override val title = "Do you want to claim back all of this security deposit?"
+  override val title       = "Do you want to claim back all of this security deposit?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Error: Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
@@ -34,11 +34,10 @@ object Securities_ConfirmFullRepaymentSecurityIdPage3 extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some("Do you want to claim back all of this security deposit?")
-
   override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
     driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
-      s"""Security deposit 1 of 1"""
+      s"""Security deposit 1 of 2"""
     )
     driver.getCurrentUrl should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
@@ -51,6 +50,6 @@ object Securities_ConfirmFullRepaymentSecurityIdPage3 extends BasePage {
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#confirm-full-repayment")
-      case "no" => click on cssSelector("#confirm-full-repayment-2")
+      case "no"  => click on cssSelector("#confirm-full-repayment-2")
     }
 }

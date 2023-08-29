@@ -10,7 +10,7 @@ Feature: Securities Single Error Messages
     Then I am presented with the "Check Eori Details Page"
     When I click continue on "Check Eori Details Page"
     Then I am presented with the "Check Eori Details Page" error page
-    And The error summary title is "There is a problem" and the error message is "Are these details correct?"
+    And The error summary title is "There is a problem" and the error message is "Select yes if the EORI details are correct"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
     Then I am presented with the "Select Claim Type Page"
@@ -22,7 +22,7 @@ Feature: Securities Single Error Messages
     Then I am presented with the "Securities_Enter Movement Reference Number Page"
     When I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Enter Movement Reference Number Page" error page
-    And The error summary title is "There is a problem" and the error message is "Enter a movement reference number (MRN)"
+    And The error summary title is "There is a problem" and the error message is "Enter a Movement Reference Number (MRN)"
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
@@ -33,7 +33,7 @@ Feature: Securities Single Error Messages
     And I click continue on "Securities_Choose Reason For Security Page"
     Then I am presented with the "Securities_Select Securities Security Id Page" "1 of 5,ABC0123456"
     When I click continue on "Securities_Select Securities Security Id Page"
-    Then I am presented with the "Securities_Select Securities Security Id Page" error page
+    Then I am presented with the "Securities_Select Securities Security Id Page" "1 of 5,ABC0123456" error page
     And The error summary title is "There is a problem" and the error message is "Select Yes if you are claiming for this Security"
     When I select radio button "yes" on "Securities_Select Securities Security Id Page"
     And I click continue on "Securities_Select Securities Security Id Page"
@@ -53,9 +53,9 @@ Feature: Securities Single Error Messages
     And I click continue on "Securities_Check Declaration Details Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
-    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
+    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page1 of 1" "ABC0123456"
     When I click continue on "Securities_Confirm Full Repayment Security Id Page"
-    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" error page
+    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page1 of 1" "ABC0123456" error page
     And The error summary title is "There is a problem" and the error message is "Choose 'Yes' if you would like to claim back the full amount"
     When I select radio button "Yes" on "Securities_Confirm Full Repayment Security Id Page"
     And I click continue on "Securities_Confirm Full Repayment Security Id Page"
@@ -91,7 +91,7 @@ Feature: Securities Single Error Messages
     And I click continue on "Securities_Choose File Type Page"
     Then I am presented with the "UDF_Choose Files Page" "commercial invoice"
     When I click continue on "UDF_Choose Files Page"
-    And The error summary title is "There is a problem" and the error message is "Select yes to add a different type of supporting document to your claim"
+    And The error summary title is "There is a problem" and the error message is "Upload a supporting document"
     When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue if I'm on "UDF_Choose Files Page"

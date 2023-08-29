@@ -24,25 +24,22 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_EnterClaimSecurityIdTaxCodePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/enter-claim/..."
-  override val title       = "Claim details for A20 - Additional Duty"
+  override val title       = "Claim details for A00 - Customs Duty"
 
-  override def expectedPageHeader: Option[String] = Some("Claim details for A20 - Additional Duty")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Error: Security ID: ABC0123456: Claim details for A00 - Customs Duty - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Claim details for A20 - Additional Duty - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Security ID: ABC0123456: Claim details for A00 - Customs Duty - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Claim details for A20 - Additional Duty - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageHeader: Option[String] = Some("""Security ID: ABC0123456
+Claim details for A00 - Customs Duty""")
 
-  override def checkPageHeader(): Assertion =
-    true should equal(true)
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
     enterText("enter-claim.securities.claim-amount", amounts(0))
   }
-
-  override def checkPageTitle(duty: String): Unit =
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
-
-  override def checkPageErrorTitle(duty: String): Unit =
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
 }

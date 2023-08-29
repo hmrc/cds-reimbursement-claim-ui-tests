@@ -25,7 +25,7 @@ object Securities_EnterExportMovementReferenceNumberMultiplePage extends BasePag
   override val title       = "Enter the first export MRN in the declaration"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Enter the first export MRN in the declaration - Claim back import duty and VAT - GOV.UK"
+    "Error: Enter the first export MRN in the declaration - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(

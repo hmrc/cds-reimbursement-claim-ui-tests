@@ -26,7 +26,7 @@ object Securities_EnterBankAccountDetailsPage extends BasePage {
   override val title       = "Enter your bank account details"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "ERROR: Enter your bank account details - Claim back import duty and VAT - GOV.UK"
+    "Error: Enter your bank account details - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(

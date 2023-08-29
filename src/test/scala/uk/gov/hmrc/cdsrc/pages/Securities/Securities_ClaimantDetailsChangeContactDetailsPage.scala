@@ -24,7 +24,7 @@ object Securities_ClaimantDetailsChangeContactDetailsPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/claimant-details/change-contact-details"
   override val title = "Change contact details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Change contact details - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Change contact details - Claim back import duty and VAT - GOV.UK")
 
   override def expectedPageTitle: Option[String] = Some("Change contact details - Claim back import duty and VAT - GOV.UK")
 
