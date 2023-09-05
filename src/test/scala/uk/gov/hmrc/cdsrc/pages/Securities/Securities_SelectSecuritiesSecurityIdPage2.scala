@@ -27,14 +27,14 @@ object Securities_SelectSecuritiesSecurityIdPage2 extends BasePage {
   override val title       = "Include this security deposit in your claim?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Error: Security 2 of 5: Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK"
+    "Error: Security deposit: 2 of 5: Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Security 2 of 5: Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK"
+    "Security deposit: 2 of 5: Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("""Security 2 of 5
+  override def expectedPageHeader: Option[String] = Some("""Security deposit: 2 of 5
 Include this security deposit in your claim?""")
 
   override def checkURL: Assertion =
