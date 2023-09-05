@@ -37,7 +37,7 @@ object Securities_ConfirmFullRepaymentSecurityIdPage2 extends BasePage {
   override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
     driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
-      s"""Security deposit 2 of 2"""
+      s"""Security deposit: 2 of 2"""
     )
     driver.getCurrentUrl                                                                 should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
