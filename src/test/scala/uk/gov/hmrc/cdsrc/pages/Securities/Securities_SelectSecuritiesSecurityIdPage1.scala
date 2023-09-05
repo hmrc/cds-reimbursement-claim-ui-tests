@@ -43,7 +43,7 @@ Include this security deposit in your claim?""")
   override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
     driver.findElement(By cssSelector "#main-content > div > div > h1 > span").getText should equal(
-      s"""Security ${pageCaption(0)}"""
+      s"""Security deposit: ${pageCaption(0)}"""
     )
     driver.findElement(By cssSelector "#main-content > div > div > form > h2").getText should equal(
       s"""Security deposit ID: ${pageCaption(1)}"""
