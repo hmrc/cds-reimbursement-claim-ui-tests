@@ -42,11 +42,11 @@ object C285_Single_EnterClaimPagev2 extends BasePage {
   }
 
   override def checkPageTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"$duty")
   }
 
   override def checkPageErrorTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"$duty")
   }
 
 }
