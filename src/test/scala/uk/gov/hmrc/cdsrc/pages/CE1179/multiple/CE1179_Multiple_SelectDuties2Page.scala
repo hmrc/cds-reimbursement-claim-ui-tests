@@ -22,12 +22,12 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Multiple_SelectDuties2Page extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/select-duties/2"
-  override val title = "Duties shown are all covered by subsidy"
+  override val title = "Select the duties you want to claim for under second MRN"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Duties shown are all covered by subsidy - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Select the duties you want to claim for under second MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Duties shown are all covered by subsidy - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for under second MRN - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Duties shown are all covered by subsidy")
+  override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for under second MRN")
 
 }
