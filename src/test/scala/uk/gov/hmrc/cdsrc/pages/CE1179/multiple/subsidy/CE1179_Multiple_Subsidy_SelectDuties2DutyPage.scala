@@ -7,13 +7,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Multiple_Subsidy_SelectDuties2DutyPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/enter-claim/2/..."
-  override val title = "Claim details for A80 - Definitive Anti-Dumping Duty under second MRN"
+  override val title = ""
 
-  override def expectedPageErrorTitle: Option[String] = Some("Claim details for A80 - Definitive Anti-Dumping Duty under second MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("")
 
-  override def expectedPageTitle: Option[String] = Some("Claim details for A80 - Definitive Anti-Dumping Duty under second MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("")
 
-  override def expectedPageHeader: Option[String] = Some("Claim details for A80 - Definitive Anti-Dumping Duty under second MRN")
+  override def expectedPageHeader: Option[String] = Some("")
 
   override def checkPageHeader(): Assertion = {
     true should equal(true)
@@ -25,11 +25,11 @@ object CE1179_Multiple_Subsidy_SelectDuties2DutyPage extends BasePage {
   }
 
   override def checkPageTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under second MRN")
   }
 
   override def checkPageErrorTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty")
+    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under second MRN")
   }
 
 }
