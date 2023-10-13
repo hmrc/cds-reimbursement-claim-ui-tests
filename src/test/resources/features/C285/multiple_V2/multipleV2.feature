@@ -152,9 +152,6 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Claim Page v2"
     And I select radio button "yes" on "C285_Multiple_Check Claim Page v2"
     When I click continue on "C285_Multiple_Check Claim Page v2"
-#    Then I am presented with the "C285_Multiple_Choose Payee Type v2"
-#    And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
-#    When I click continue on "C285_Multiple_Choose Payee Type v2"
     Then I am presented with the "C285_Multiple_Check These Bank Details Are Correct Page v2"
     When I click continue on "C285_Multiple_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -235,7 +232,7 @@ Feature: C285 Multiple
     And I select radio button "yes" on "C285_Multiple_Check Claim Page v2"
     When I click continue on "C285_Multiple_Check Claim Page v2"
     Then I am presented with the "C285_Multiple_Bank Account Type Page v2"
-    When I select radio button "Business bank account" on "C285_Single_Bank Account Type Page v2"
+    When I select radio button "Business bank account" on "C285_Multiple_Bank Account Type Page v2"
     And I click continue on "C285_Multiple_Bank Account Type Page v2"
     Then I am presented with the "C285_Multiple_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Multiple_Enter Bank Account Details Page v2"
@@ -680,7 +677,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
   @test
-  Scenario: happy path - happy path with only importer bank details (user is both importer and declarant)- CMA not eligible
+  Scenario: happy path - with only importer bank details (user is both importer and declarant)- CMA not eligible
 #  60AAAAAAAAAAAAAAA2 => only importer bank details (user is both importer and declarant) - CMA not eligible - skips payee indicator page and navigates to /check-bank-details page
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

@@ -954,3 +954,76 @@ Feature: C285 Single V2
       | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | Yes                                             | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | 60AAAAAAAAAAAAAAA2 | £828.00     | Ending with 41 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
+
+
+  @test
+  Scenario: happy path - Method of payment displays specified value in declaration details page
+#  MRN: 00AA001AAAAAAAAA01, Payment Method/s:001; MRN: 00AA002AAAAAAAAA01, Payment Method/s:002; MRN: 00AA003AAAAAAAAA01, Payment Method/s:003; MRN: 00AA006AAAAAAAAA01, Payment Method/s:006; MRN: 00AA001002AAAAAA01, Payment Method/s:001, 002; MRN: 00AA001003AAAAAA01, Payment Method/s:001, 003; MRN: 00AA001006AAAAAA01,  Payment Method/s:001, 006; MRN: 00AA002003AAAAAA01, Payment Method/s:002, 003;
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "c285" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "C285_Choose How Many Mrns Page v2"
+    When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
+    And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "00AA001AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I should see the following details
+      | MRN                | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
+      | 00AA001AAAAAAAAA01 | 12 February 2021 | Immediate Payment | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+    Then I go back on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "00AA002AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I should see the following details
+      | MRN                | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
+      | 00AA002AAAAAAAAA01 | 12 February 2021 | Deferment Account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+    Then I go back on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "00AA003AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I should see the following details
+      | MRN                | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
+      | 00AA003AAAAAAAAA01 | 12 February 2021 | Cash Account      | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+    Then I go back on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "00AA001002AAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I should see the following details
+      | MRN                | Import date      | Method of payment                       | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
+      | 00AA001002AAAAAA01 | 12 February 2021 | Immediate Payment and Deferment Account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+    Then I go back on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "00AA001003AAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I should see the following details
+      | MRN                | Import date      | Method of payment                  | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
+      | 00AA001003AAAAAA01 | 12 February 2021 | Immediate Payment and Cash Account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+    Then I go back on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "00AA002003AAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I should see the following details
+      | MRN                | Import date      | Method of payment                  | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
+      | 00AA002003AAAAAA01 | 12 February 2021 | Deferment Account and Cash Account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+    Then I go back on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "00AA006AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I should see the following details
+      | MRN                | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
+      | 00AA006AAAAAAAAA01 | 12 February 2021 | Subsidy           | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
