@@ -146,7 +146,7 @@ Feature: C&E1179 Scheduled - XIEORI
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
   @smoke
-  Scenario: Happy path with no document upload
+  Scenario: UnHappy path with no document upload
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -215,6 +215,4 @@ Feature: C&E1179 Scheduled - XIEORI
     Then I am presented with the "UDF_Choose Files Page" "commercial invoice"
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue on "UDF_Choose Files Page"
-    Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
-    And I click continue on "CE1179_Scheduled_Check Your Answers Page"
-    Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
+    Then The error summary title is "There is a problem" and the error message is "Upload a supporting document"
