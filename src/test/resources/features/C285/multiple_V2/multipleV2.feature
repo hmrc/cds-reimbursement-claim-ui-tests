@@ -835,7 +835,7 @@ Feature: C285 Multiple
 
   @test
   Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA not eligible
-    #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is both importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
+    #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is only importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"

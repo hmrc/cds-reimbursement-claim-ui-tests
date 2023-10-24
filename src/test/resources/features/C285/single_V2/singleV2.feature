@@ -269,7 +269,7 @@ Feature: C285 Single V2
 
   @test
   Scenario: happy path with new payee type page - user selects CMA
-    #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is both importer ) - CMA eligible - skips payee indicator page and navigates to /check-bank-details page after /choose-repayment-method page
+    #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is only importer ) - CMA eligible - displays payee indicator page and navigates to /check-bank-details page after /choose-repayment-method page
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -344,8 +344,8 @@ Feature: C285 Single V2
 
 
   @test
-  Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA not eligible
-    #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is both importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
+  Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA eligible - User selects bank transfer
+    #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is both importer ) - CMA eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
