@@ -329,10 +329,3 @@ Feature: C285 Single V2 with subsidy check
     Then I am presented with the "C285_Single_Choose Payee Type v2" "Who will the repayment be made to?"
     When I click continue on "C285_Single_Choose Payee Type v2"
     And The error summary title is "There is a problem" and the error message is "Select who the repayment will be made to"
-
-
-
-
-
-
-
