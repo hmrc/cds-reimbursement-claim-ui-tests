@@ -298,7 +298,6 @@ Feature: C&E1179 Single
 #    Then I am presented with the "CE1179_Single_Enter Claim Page" "A80 - Definitive Anti-Dumping Duty"
 #    When I enter "10" on "CE1179_Single_Enter Claim Page"
 #    And I click continue on "CE1179_Single_Enter Claim Page"
-
     When I select "A95,A90,A85" on "CE1179_Single_Select Duties Page"
     And I click continue on "CE1179_Single_Select Duties Page"
     Then I am presented with the "CE1179_Single_Enter Claim Page" "A95 - Provisional Countervailing Duty"
