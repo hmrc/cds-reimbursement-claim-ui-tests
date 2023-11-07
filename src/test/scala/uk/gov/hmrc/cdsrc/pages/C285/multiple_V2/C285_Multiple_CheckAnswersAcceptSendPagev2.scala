@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Multiple_CheckAnswersAcceptSendPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/check-your-answers"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/check-your-answers"
   override val title = "Check your answers before sending your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check your answers before sending your claim - Claim back import duty and VAT - GOV.UK")

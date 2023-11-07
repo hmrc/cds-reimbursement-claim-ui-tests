@@ -25,7 +25,7 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 object C285_Multiple_SupportingEvidenceSelectSupportingEvidenceTypePagev2 extends BasePage {
 
   override val url: String =
-    TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/choose-file-type"
+    TestConfiguration.url("cds-frontend") + "/overpayments/multiple/choose-file-type"
   override val title       = "Add supporting documents to your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(

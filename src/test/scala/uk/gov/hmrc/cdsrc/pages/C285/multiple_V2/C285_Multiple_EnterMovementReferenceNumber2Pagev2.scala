@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Multiple_EnterMovementReferenceNumber2Pagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-movement-reference-number/2"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-movement-reference-number/2"
   override val title = "Enter the second Movement Reference Number (MRN)"
 
   override def expectedPageErrorTitle: Option[String] = Some("Error: Enter the second Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK")
