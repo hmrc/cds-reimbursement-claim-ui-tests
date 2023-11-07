@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Single_EnterClaimPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/single/enter-claim/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/enter-claim/..."
   override val title = "Enter the claim amount for duty A20 - Additional Duty"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the claim amount for duty A20")

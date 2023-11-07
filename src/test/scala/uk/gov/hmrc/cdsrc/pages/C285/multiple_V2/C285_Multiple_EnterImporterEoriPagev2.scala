@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Multiple_EnterImporterEoriPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-importer-eori"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-importer-eori"
   override val title = "Enter the importer’s EORI number"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter the importer’s EORI number - Claim back import duty and VAT - GOV.UK")

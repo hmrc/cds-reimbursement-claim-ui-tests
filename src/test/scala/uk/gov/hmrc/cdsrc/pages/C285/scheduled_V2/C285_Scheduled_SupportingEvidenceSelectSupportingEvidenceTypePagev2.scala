@@ -26,7 +26,7 @@ import scala.jdk.CollectionConverters.asScalaBufferConverter
 object C285_Scheduled_SupportingEvidenceSelectSupportingEvidenceTypePagev2 extends BasePage {
 
   override val url: String =
-    TestConfiguration.url("cds-frontend") + "/overpayments/v2/scheduled/choose-file-type"
+    TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/choose-file-type"
   override val title       = "Add supporting documents to your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(

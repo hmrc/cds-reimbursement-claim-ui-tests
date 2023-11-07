@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Scheduled_CheckTheseBankDetailsAreCorrectPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/scheduled/check-bank-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/check-bank-details"
   override val title = "Check these bank details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some("Check these bank details are correct - Claim back import duty and VAT - GOV.UK")

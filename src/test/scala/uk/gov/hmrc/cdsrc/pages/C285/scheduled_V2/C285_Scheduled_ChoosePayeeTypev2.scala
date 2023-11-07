@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Scheduled_ChoosePayeeTypev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/scheduled/choose-payee-type"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/choose-payee-type"
   override val title = "Who will the repayment be made to?"
 
   override def expectedPageErrorTitle: Option[String] = Some("Who will the repayment be made to? - Claim back import duty and VAT - GOV.UK")

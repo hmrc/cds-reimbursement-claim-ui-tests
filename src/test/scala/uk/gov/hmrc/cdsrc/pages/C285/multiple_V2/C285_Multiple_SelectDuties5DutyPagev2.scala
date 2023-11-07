@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Multiple_SelectDuties5DutyPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/v2/multiple/enter-claim/5/..."
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-claim/5/..."
   override val title = ""
 
   override def expectedPageErrorTitle: Option[String] = Some("")
