@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object CE1179_Scheduled_EnterBankAccountDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/enter-bank-account-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/enter-bank-account-details"
   override val title = "Enter your bank account details"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter your bank account details - Claim back import duty and VAT - GOV.UK")
@@ -35,9 +35,9 @@ object CE1179_Scheduled_EnterBankAccountDetailsPage extends BasePage {
     val sortCode: String = "123456"
     val accountNumber: String = "11001001"
 
-    enterText("enter-bank-details.account-name", bankAccountName)
-    enterText("enter-bank-details.sort-code", sortCode)
-    enterText("enter-bank-details.account-number", accountNumber)
+    enterText("enter-bank-account-details.account-name", bankAccountName)
+    enterText("enter-bank-account-details.sort-code", sortCode)
+    enterText("enter-bank-account-details.account-number", accountNumber)
   }
 
 }
