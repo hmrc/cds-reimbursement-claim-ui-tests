@@ -493,7 +493,7 @@ Feature: C&E1179 Multiple
 
 
   @test
-  Scenario:
+  Scenario: error message on choose disposal method
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
