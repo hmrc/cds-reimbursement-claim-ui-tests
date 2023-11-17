@@ -432,3 +432,32 @@ Feature: C&E1179 Single
       | Special circumstances              | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | document.pdf,Commercial invoice,image.jpg,Import and export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £30.00 | 10AAAAAAAAAAAAAAA2 | £828.00     | £10.00                              | Importer address        | 10 October 2020 | £10.00                               | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                                | Return the goods by road, rail, air or ship | under 500 characters                             | Current Month Adjustment (CMA) |
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"
+
+
+  @test
+  Scenario: error message on choose basis for claim page
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "ce1179" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "CE1179_Choose How Many Mrns Page"
+    And I select radio button "Enter one MRN" on "CE1179_Choose How Many Mrns Page"
+    And I click continue on "CE1179_Choose How Many Mrns Page"
+    Then I am presented with the "CE1179_Single_Enter Movement Reference Number Page"
+    When I enter "60AAAAAAAAAAAAAAA5" on "CE1179_Single_Enter Movement Reference Number Page"
+    And I click continue on "CE1179_Single_Enter Movement Reference Number Page"
+    Then I am presented with the "CE1179_Single_Check Declaration Details Page"
+    When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
+    And I click continue on "CE1179_Single_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Single_Claimant Details Page"
+    And I click continue on "CE1179_Single_Claimant Details Page"
+    Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
+    And I click continue on "CE1179_Single_Choose Basis For Claim Page"
+    Then The error summary title is "There is a problem" and the error message is "Select the reason for making this claim"
+

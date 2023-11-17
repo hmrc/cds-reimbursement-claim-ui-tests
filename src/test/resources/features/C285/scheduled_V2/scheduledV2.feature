@@ -729,3 +729,26 @@ Feature: C285 Scheduled
       | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | Yes                                             | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £10.00  | £10.00  | £60.00      | £80.00 | £828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA5 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
+
+
+  @test
+  Scenario: error message on check declaration details page
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "c285" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "C285_Choose How Many Mrns Page v2"
+    When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
+    And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
+    When I enter "60AAAAAAAAAAAAAAA5" on "C285_Scheduled_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
+    And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
+    Then The error summary title is "There is a problem" and the error message is "Select yes to continue with this MRN"

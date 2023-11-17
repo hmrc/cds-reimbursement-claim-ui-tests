@@ -1027,3 +1027,54 @@ Feature: C285 Single V2
     And I should see the following details
       | MRN                | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
       | 00AA006AAAAAAAAA01 | 12 February 2021 | Subsidy           | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+
+
+  @test
+  Scenario: error message on choose payee type page (When the user didnot select any of the radio button)
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "c285" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "C285_Choose How Many Mrns Page v2"
+    When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
+    And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "60AAAAAAAAAAAAAAA5" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
+    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Page v2"
+    Then I am presented with the "C285_Single_Claim Northern Ireland Page v2"
+    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
+    And I click continue on "C285_Single_Claim Northern Ireland Page v2"
+    Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
+    When I select radio button "End use relief" on "C285_Single_Choose Basis For Claim Page v2"
+    And I click continue on "C285_Single_Choose Basis For Claim Page v2"
+    Then I am presented with the "C285_Single_Enter Additional Details Page v2"
+    When I enter "under 500 characters" on "C285_Single_Enter Additional Details Page v2"
+    And I click continue on "C285_Single_Enter Additional Details Page v2"
+    Then I am presented with the "C285_Single_Select Duties Page v2"
+    When I select "A95" on "C285_Single_Select Duties Page v2"
+    And I click continue on "C285_Single_Select Duties Page v2"
+    Then I am presented with the "C285_Single_Enter Claim Page v2" "A95 - Provisional Countervailing Duty"
+    When I enter "10" on "C285_Single_Enter Claim Page v2"
+    And I click continue on "C285_Single_Enter Claim Page v2"
+    Then I am presented with the "C285_Single_Check Claim Page v2"
+    And I select radio button "yes" on "C285_Single_Check Claim Page v2"
+    When I click continue on "C285_Single_Check Claim Page v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
+    Then The error summary title is "There is a problem" and the error message is "Select who the repayment will be made to"
+
+
+
+
+
