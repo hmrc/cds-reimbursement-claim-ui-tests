@@ -66,10 +66,10 @@ Feature: Securities Single
     When I select "A00,B00" on "Securities_Confirm Full Repayment Security Id Page2"
     And I click continue on "Securities_Confirm Full Repayment Security Id Page2"
     Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "A00 - Customs Duty"
-    When I enter "100" on "Securities_Enter Claim Security Id Tax Code Page"
+    When I enter "10" on "Securities_Enter Claim Security Id Tax Code Page"
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
     Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "B00 - Value Added Tax"
-    When I enter "200" on "Securities_Enter Claim Security Id Tax Code Page"
+    When I enter "20" on "Securities_Enter Claim Security Id Tax Code Page"
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
     Then I am presented with the "Securities_Check Claim Page"
     And I click continue on "Securities_Check Claim Page"
@@ -92,7 +92,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Import declaration              | Total security deposit value | Contact address                                           | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details             | Evidence supporting your claim           | Name on the account | Account number   | Sort code      |
-      | 01AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Manual override of duty amount | document.pdf,Import declaration | £14,385.52                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes                  | No                   | No                   | No                   | £200.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | TestUser,someemail@mail.com | image.jpg,Evidence supporting your claim | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
+      | 01AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Manual override of duty amount | document.pdf,Import declaration | £14,385.52                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | TestUser,someemail@mail.com | image.jpg,Evidence supporting your claim | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -687,10 +687,10 @@ Feature: Securities Single
     When I select "A00,B00" on "Securities_Confirm Full Repayment Security Id Page2"
     And I click continue on "Securities_Confirm Full Repayment Security Id Page2"
     Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "A00 - Customs Duty"
-    When I enter "100" on "Securities_Enter Claim Security Id Tax Code Page"
+    When I enter "10" on "Securities_Enter Claim Security Id Tax Code Page"
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
     Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "B00 - Value Added Tax"
-    When I enter "200" on "Securities_Enter Claim Security Id Tax Code Page"
+    When I enter "20" on "Securities_Enter Claim Security Id Tax Code Page"
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
     Then I am presented with the "Securities_Check Claim Page"
     And I click continue on "Securities_Check Claim Page"
@@ -722,7 +722,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Export declaration           | Total security deposit value | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details                                        | Import declaration              | Name on the account | Account number   | Sort code      | Contact address                             |
-      | 60AAAAAAAAAAAAAAA5 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £200.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | document.pdf,Import declaration | Mr John Smith       | Ending with 1001 | Ending with 56 | 14 Briar Lane,London,Pimlico,United Kingdom |
+      | 60AAAAAAAAAAAAAAA5 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | document.pdf,Import declaration | Mr John Smith       | Ending with 1001 | Ending with 56 | 14 Briar Lane,London,Pimlico,United Kingdom |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -783,10 +783,10 @@ Feature: Securities Single
     When I select "A00,B00" on "Securities_Confirm Full Repayment Security Id Page2"
     And I click continue on "Securities_Confirm Full Repayment Security Id Page2"
     Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "A00 - Customs Duty"
-    When I enter "100" on "Securities_Enter Claim Security Id Tax Code Page"
+    When I enter "10" on "Securities_Enter Claim Security Id Tax Code Page"
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
     Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "B00 - Value Added Tax"
-    When I enter "200" on "Securities_Enter Claim Security Id Tax Code Page"
+    When I enter "20" on "Securities_Enter Claim Security Id Tax Code Page"
     And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
     Then I am presented with the "Securities_Check Claim Page"
     And I click continue on "Securities_Check Claim Page"
@@ -809,6 +809,6 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Export declaration           | Total security deposit value | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details                                        | Import declaration              | Name on the account | Account number   | Sort code      | Contact address                             |
-      | 60AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £200.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | document.pdf,Import declaration | Consignee Goods Ltd | Ending with 8523 | Ending with 41 | 14 Briar Lane,London,Pimlico,United Kingdom |
+      | 60AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | document.pdf,Import declaration | Consignee Goods Ltd | Ending with 8523 | Ending with 41 | 14 Briar Lane,London,Pimlico,United Kingdom |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
