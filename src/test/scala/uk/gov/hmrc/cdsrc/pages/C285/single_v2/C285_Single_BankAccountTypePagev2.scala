@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Single_BankAccountTypePagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/bank-account-type"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/choose-bank-account-type"
   override val title = "What type of account details are you providing?"
 
   override def expectedPageErrorTitle: Option[String] = Some("What type of account details are you providing? - Claim back import duty and VAT - GOV.UK")
