@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,17 +21,32 @@ import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.webdriver.SingletonDriver
 
 import scala.util.Try
+import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.MutableCapabilities
 
 trait BrowserDriver extends LazyLogging {
   logger.info(
     s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
   )
 
-  if (!Option(System.getProperty("browser")).exists(_.length > 0)) {
+  val browserProperty = Option(System.getProperty("browser"))
+    .flatMap(v => if (v.length > 0) Some(v) else None)
+
+  if (browserProperty.isEmpty) {
     System.setProperty("browser", "chrome")
   }
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  val options: Option[MutableCapabilities] =
+    if (browserProperty.contains("chrome") || browserProperty.isEmpty) {
+      val o = new ChromeOptions()
+      o.addArguments("--headless")
+      o.addArguments("--remote-allow-origins=*")
+      o.addArguments("--ignore-ssl-errors=yes")
+      o.addArguments("--ignore-certificate-errors");
+      Some(o)
+    } else None
+
+  implicit lazy val driver: WebDriver = SingletonDriver.getInstance(options)
 
   val debug: Boolean = sys.props.getOrElse("drivernotquit", "false").toBoolean
   if (!debug)
