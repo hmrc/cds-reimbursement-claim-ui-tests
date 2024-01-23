@@ -22,12 +22,12 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_ChooseHowManyMrnsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/choose-how-many-mrns"
-  override val title = "How many Movement Reference Numbers do you want to submit in this claim?"
+  override val title = "How many Movement Reference Numbers do you want to submit?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("How many Movement Reference Numbers do you want to submit in this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("How many Movement Reference Numbers do you want to submit? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("How many Movement Reference Numbers do you want to submit in this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("How many Movement Reference Numbers do you want to submit? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("How many Movement Reference Numbers do you want to submit in this claim?")
+  override def expectedPageHeader: Option[String] = Some("How many Movement Reference Numbers do you want to submit?")
 
 }
