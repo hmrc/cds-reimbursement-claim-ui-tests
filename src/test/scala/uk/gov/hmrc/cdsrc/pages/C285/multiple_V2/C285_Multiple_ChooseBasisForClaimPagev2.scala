@@ -27,11 +27,11 @@ object C285_Multiple_ChooseBasisForClaimPagev2 extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/choose-basis-for-claim"
   override val title = "Choose the basis for claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose the reason for making this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Why are you making this claim? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose the reason for making this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Why are you making this claim? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Choose the reason for making this claim")
+  override def expectedPageHeader: Option[String] = Some("Why are you making this claim?")
 
   override def clickRadioButton(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
