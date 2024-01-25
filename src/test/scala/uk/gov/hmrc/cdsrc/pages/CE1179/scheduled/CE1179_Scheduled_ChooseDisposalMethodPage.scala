@@ -27,11 +27,11 @@ object CE1179_Scheduled_ChooseDisposalMethodPage extends BasePage {
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/choose-disposal-method"
   override val title = "Choose what you intend to do with the goods"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose how you will dispose of the goods - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("How will you dispose of the goods? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Choose how you will dispose of the goods - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("How will you dispose of the goods? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Choose how you will dispose of the goods")
+  override def expectedPageHeader: Option[String] = Some("How will you dispose of the goods?")
 
   override def clickRadioButton(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
