@@ -36,9 +36,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -80,8 +77,8 @@ Feature: C285 Multiple
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
-      | Outward processing relief          | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment| £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £379.00            | £409.00            |
+      | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
+      | Outward processing relief          | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment| £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £379.00            | £409.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -120,9 +117,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -164,8 +158,8 @@ Feature: C285 Multiple
     And I click continue if I'm on "UDF_Choose Files Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
 #    And I should see the following details
-#      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Contact address                    | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
-#      | Outward processing relief          | £0.00    | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | £379.00            | £409.00            |
+#      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Contact address                    | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
+#      | Outward processing relief          | £0.00    | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | £379.00            | £409.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -199,9 +193,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -246,8 +237,8 @@ Feature: C285 Multiple
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Were your goods imported into Northern Ireland? | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA1 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | Yes                                             | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA1 | Uploaded                        |
+      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -391,9 +382,6 @@ Feature: C285 Multiple
     And I click continue on "ALF_Lookup Address Confirm Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -488,9 +476,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -583,8 +568,8 @@ Feature: C285 Multiple
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total     | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Third MRN          | Fourth MRN         | Fifth MRN          | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | Uploaded                        |
-      | Outward processing relief          | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £1,284.20 | Immediate Payment |£828.00     | Ending with 44 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £419.00            | £384.00            | £96.20             | £340.00            | £45.00             | document.pdf,Commercial invoice |
+      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total     | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Third MRN          | Fourth MRN         | Fifth MRN          | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | Uploaded                        |
+      | Outward processing relief          | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £1,284.20 | Immediate Payment |£828.00     | Ending with 44 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £419.00            | £384.00            | £96.20             | £340.00            | £45.00             | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -629,9 +614,6 @@ Feature: C285 Multiple
     And I click continue on "ALF_Lookup Address Confirm Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Inward processing relief from Customs Duty" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -704,9 +686,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -745,8 +724,8 @@ Feature: C285 Multiple
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Were your goods imported into Northern Ireland? | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA2 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | Yes                                             | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA2 | Uploaded                        |
+      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -781,9 +760,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -825,8 +801,8 @@ Feature: C285 Multiple
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Were your goods imported into Northern Ireland? | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | Yes                                             | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
+      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -861,9 +837,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -911,8 +884,8 @@ Feature: C285 Multiple
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Were your goods imported into Northern Ireland? | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | Yes                                             | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
+      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd       | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -946,9 +919,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"

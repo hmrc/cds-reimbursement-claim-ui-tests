@@ -37,9 +37,6 @@ Feature: C285 Multiple - XIEORI V2
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -81,8 +78,8 @@ Feature: C285 Multiple - XIEORI V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20XIDCAAAAAAAAAAA1 | 10XIDCAAAAAAAAAAA1 |
-      | Outward processing relief          | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 44 | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | document.pdf,Commercial invoice | £379.00            | £409.00            |
+      | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20XIDCAAAAAAAAAAA1 | 10XIDCAAAAAAAAAAA1 |
+      | Outward processing relief          | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 44 | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | document.pdf,Commercial invoice | £379.00            | £409.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -117,9 +114,6 @@ Feature: C285 Multiple - XIEORI V2
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Multiple_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
     And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
@@ -161,8 +155,8 @@ Feature: C285 Multiple - XIEORI V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 10XIDAAAAAAAAAAAA1 | Uploaded                        |
-      | Outward processing relief          | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment| £828.00     | Ending with 44 | 10XIDAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 10XIDAAAAAAAAAAAA1 | Uploaded                        |
+      | Outward processing relief          | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD |  19 Bricks Road,Newcastle,NE12 5BT,United Kingdom| under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment| £828.00     | Ending with 44 | 10XIDAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 

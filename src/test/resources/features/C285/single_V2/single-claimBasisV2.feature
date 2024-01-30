@@ -1,7 +1,7 @@
 @C285 @Single
-Feature: C285 Single NI V2
+Feature: C285 Single Claim Basis V2
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path - Duplicate Movement Reference Number (MRN)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -25,9 +25,6 @@ Feature: C285 Single NI V2
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
-    Then I am presented with the "C285_Single_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
@@ -72,84 +69,8 @@ Feature: C285 Single NI V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim        | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 |
-    When I click continue on "C285_Single_Check Answers Accept Send Page v2"
-    Then I am presented with the "C285_Single_Claim Submitted Page v2"
-
-  @test
-  Scenario: happy path - Duplicate Movement Reference Number (MRN), not NI
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "C285_Choose How Many Mrns Page v2"
-    When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
-    And I click continue on "C285_Choose How Many Mrns Page v2"
-    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
-    And I click continue on "C285_Single_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Page v2"
-    Then I am presented with the "C285_Single_Claim Northern Ireland Page v2"
-    And I select radio button "no" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Single_Claim Northern Ireland Page v2"
-    Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
-    When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
-    And I click continue on "C285_Single_Choose Basis For Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Duplicate Movement Reference Number Page v2"
-    When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
-    And I click continue on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
-    Then I am presented with the "C285_Single_Check Duplicate Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Duplicate Declaration Details Page v2"
-    And I click continue on "C285_Single_Check Duplicate Declaration Details Page v2"
-    Then I am presented with the "C285_Single_Enter Additional Details Page v2"
-    When I enter "under 500 characters" on "C285_Single_Enter Additional Details Page v2"
-    And I click continue on "C285_Single_Enter Additional Details Page v2"
-    Then I am presented with the "C285_Single_Select Duties Page v2"
-    When I select "A80,A95,A90,A85" on "C285_Single_Select Duties Page v2"
-    And I click continue on "C285_Single_Select Duties Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "A80 - Definitive Anti-Dumping Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page v2"
-    And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "A95 - Provisional Countervailing Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page v2"
-    And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "A90 - Definitive Countervailing Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page v2"
-    And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "A85 - Provisional Anti-Dumping Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page v2"
-    And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Check Claim Page v2"
-    And I select radio button "yes" on "C285_Single_Check Claim Page v2"
-    When I click continue on "C285_Single_Check Claim Page v2"
-#    Then I am presented with the "C285_Single_Choose Payee Type v2"
-#    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
-#    When I click continue on "C285_Single_Choose Payee Type v2"
-    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
-    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
-    Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
-    When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
-    And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
-    Then I am presented with the "UCDF_Choose File Other Page" "commercial invoice"
-    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
-    And I select radio button "No" on "UCDF_Choose File Other Page"
-    And I click continue if I'm on "UCDF_Choose File Other Page"
-    Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
-    And I should see the following details
-      | This is the basis behind the claim        | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | No                                              | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 |
+      | This is the basis behind the claim        | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
+      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -177,9 +98,6 @@ Feature: C285 Single NI V2
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
-    Then I am presented with the "C285_Single_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Incorrect excise value" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
@@ -218,8 +136,8 @@ Feature: C285 Single NI V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | Excise Duty | Total   | MRN                | Duties paid | Sort code      | Method                | Method of payment |
-      | Incorrect excise value             | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £580.00     | £580.00 | 10AAAAAAAAAAAAAAA3 | £828.00     | Ending with 44 | Bank account transfer | Immediate Payment |
+      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     |  Importer address                                 | This is the reason for the claim | Declarant address                                 | Excise Duty | Total   | MRN                | Duties paid | Sort code      | Method                | Method of payment |
+      | Incorrect excise value             | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD |  19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £580.00     | £580.00 | 10AAAAAAAAAAAAAAA3 | £828.00     | Ending with 44 | Bank account transfer | Immediate Payment |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -247,9 +165,6 @@ Feature: C285 Single NI V2
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
-    Then I am presented with the "C285_Single_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Single_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Single_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Returned goods relief (RGR)" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
@@ -288,7 +203,7 @@ Feature: C285 Single NI V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Excise Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Returned goods relief (RGR)        | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £208.00 | £580.00     | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA3 | £828.00     | Ending with 44 |
+      | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Uploaded                        | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     |  Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Excise Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
+      | Returned goods relief (RGR)        | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | document.pdf,Commercial invoice | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD |  19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £208.00 | £580.00     | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA3 | £828.00     | Ending with 44 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
