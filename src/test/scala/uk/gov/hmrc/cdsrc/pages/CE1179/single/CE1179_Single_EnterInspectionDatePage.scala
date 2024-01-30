@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Single_EnterInspectionDatePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/enter-inspection-date"
-  override val title = "Tell us when the goods will be available until for inspection"
+  override val title = "Making your goods available for inspection"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Tell us when the goods will be available until for inspection - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Making your goods available for inspection - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Tell us when the goods will be available until for inspection - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Making your goods available for inspection - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Tell us when the goods will be available until for inspection")
+  override def expectedPageHeader: Option[String] = Some("Making your goods available for inspection")
 
   override def enterDetails(date: String): Unit = {
     enterText("enter-inspection-date.rejected-goods", date.split(",")(0))
