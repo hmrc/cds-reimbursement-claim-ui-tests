@@ -36,9 +36,6 @@ Feature: C285 Scheduled - XIEORI V2
 #    And I click continue on "UDF_Summary Page"
     Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
     And I click continue on "C285_Scheduled_Claimant Details Page v2"
-    Then I am presented with the "C285_Scheduled_Claim Northern Ireland Page v2"
-    And I select radio button "yes" on "C285_Scheduled_Claim Northern Ireland Page v2"
-    And I click continue on "C285_Scheduled_Claim Northern Ireland Page v2"
     Then I am presented with the "C285_Scheduled_Choose Basis For Claim Page v2"
     When I select radio button "Outward processing relief" on "C285_Scheduled_Choose Basis For Claim Page v2"
     And I click continue on "C285_Scheduled_Choose Basis For Claim Page v2"
@@ -134,8 +131,8 @@ Feature: C285 Scheduled - XIEORI V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Were your goods imported into Northern Ireland? | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | UK Duty | Excise Duty | Total  | Method of payment |Duties paid | Sort code      | First MRN          | Scheduled document |
-      | Outward processing relief          | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | Yes                                             | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £10.00  | £10.00  | £60.00      | £80.00 | Immediate Payment |£828.00     | Ending with 44 | 10XICDAAAAAAAAAAA1 | image.jpg          |
+      | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | UK Duty | Excise Duty | Total  | Method of payment |Duties paid | Sort code      | First MRN          | Scheduled document |
+      | Outward processing relief          | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £10.00  | £10.00  | £60.00      | £80.00 | Immediate Payment |£828.00     | Ending with 44 | 10XICDAAAAAAAAAAA1 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
 
