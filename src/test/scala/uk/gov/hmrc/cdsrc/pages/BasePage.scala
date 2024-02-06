@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Wait}
-import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
+import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Wait}
+import org.openqa.selenium.{By, Keys, TimeoutException, WebDriver, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
@@ -101,8 +101,26 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def checkPageHeader(): Assertion = {
-    fluentWait.until(ExpectedConditions.textToBe(By.cssSelector("h1"), expectedPageHeader.get))
-    expectedPageHeaderList should contain(List(pageHeader.get))
+    val expectedText = expectedPageHeader.get.trim.replaceAll("\\s+", " ")
+
+    val condition = new ExpectedCondition[Boolean] {
+      override def apply(driver: WebDriver): Boolean = {
+        val element = driver.findElement(By.cssSelector("h1"))
+        val actualText = element.getText.trim.replaceAll("\\s+", " ")
+        actualText.equals(expectedText)
+      }
+    }
+
+    fluentWait.until(condition)
+
+    val actualText = pageHeader.get.trim.replaceAll("\\s+", " ")
+    actualText shouldEqual expectedText
+
+    // Additional debugging information
+    println(s"Expected Text: [$expectedText]")
+    println(s"Actual Text: [$actualText]")
+
+    expectedPageHeaderList should contain(List(actualText))
   }
 
   def waitForPageToLoad(): lang.Boolean =
