@@ -38,11 +38,14 @@ object CE1179_Multiple_SelectDuties4DutyPage extends BasePage {
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    enterText("multiple-enter-claim", amounts(0))
+    enterText("enter-claim", amounts(0))
   }
 
   override def checkPageTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for $duty under fourth MRN")
+    val expectedTitle = s"Claim details $duty".replaceAll("\\s", "")
+    val actualTitle = driver.findElement(By.cssSelector("#main-content > div > div > h1")).getText.replaceAll("\\s", "")
+
+    actualTitle shouldEqual expectedTitle
   }
 
   override def checkPageErrorTitle(duty: String): Unit = {
