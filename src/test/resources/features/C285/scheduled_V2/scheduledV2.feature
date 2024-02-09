@@ -102,7 +102,7 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "Tobacco products 611-Cigarettes"
     When I enter "10,5" on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
-    Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "Tobacco products 633-Tobacco products 633-Tobacco for Heating"
+    Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "Tobacco products 633-Tobacco for Heating"
     When I enter "10,5" on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     Then I am presented with the "C285_Scheduled_Select Duties Climate Change Levy Page v2"
