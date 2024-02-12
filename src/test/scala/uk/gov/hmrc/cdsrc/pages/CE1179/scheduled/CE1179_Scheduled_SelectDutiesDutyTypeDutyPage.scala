@@ -38,12 +38,15 @@ object CE1179_Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    driver.findElement(By.name("enter-claim-scheduled.rejected-goods.paid-amount")).sendKeys(amounts(0))
-    driver.findElement(By.name("enter-claim-scheduled.rejected-goods.claim-amount")).sendKeys(amounts(1))
+    driver.findElement(By.name("enter-scheduled-claim.paid-amount")).sendKeys(amounts(0))
+    driver.findElement(By.name("enter-scheduled-claim.actual-amount")).sendKeys(amounts(1))
   }
 
   override def checkPageTitle(duty: String): Unit = {
-    driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(s"Claim details for all MRNs under $duty")
+    val expectedTitle = s"Claim details $duty".replaceAll("\\s", "")
+    val actualTitle = driver.findElement(By.cssSelector("#main-content > div > div > h1")).getText.replaceAll("\\s", "")
+
+    actualTitle shouldEqual expectedTitle
   }
 
   override def checkPageErrorTitle(duty: String): Unit = {
