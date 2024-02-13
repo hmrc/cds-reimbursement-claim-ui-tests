@@ -50,8 +50,8 @@ object Securities_CheckDeclarationDetailsPage extends BasePage {
       case "Change reason for security" =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/choose-reason-for-security']")
       case "Change claim for ABC0123456" =>
-        click on cssSelector("#main-content > div > div > dl > div:nth-child(10) > dd.govuk-summary-list__actions > a")
-      case "Change claim for DEF6543210" =>
-        click on cssSelector("#main-content > div > div > dl > div:nth-child(11) > dd.govuk-summary-list__actions > a")
+        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/select-securities/ABC0123456']")
+      case "Change claim for DEF6543213" =>
+        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/select-securities/DEF6543213']")
     }
 }
