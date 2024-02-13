@@ -48,7 +48,7 @@ Feature: Securities Single Change Link Tests
     When I select radio button "yes" on "Securities_Select Securities Security Id Page1"
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
-    When I click "Change claim for DEF6543210" on "Securities_Check Declaration Details Page"
+    When I click "Change claim for DEF6543213" on "Securities_Check Declaration Details Page"
     Then I am presented with the "Securities_Select Securities Security Id Page2"
     When I select radio button "no" on "Securities_Select Securities Security Id Page2"
     And I click continue on "Securities_Select Securities Security Id Page2"
