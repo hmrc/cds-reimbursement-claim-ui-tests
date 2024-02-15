@@ -74,6 +74,7 @@ Feature: C285 Single - XIEORI V2
 #    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
 #    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
+    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
     When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"

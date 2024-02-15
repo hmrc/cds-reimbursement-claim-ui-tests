@@ -77,6 +77,7 @@ Feature: Securities Single Change Link Tests
     When I enter "" on "Securities_Enter Bank Account Details Page"
     And I click continue on "Securities_Enter Bank Account Details Page"
     Then I am presented with the "Securities_Check Bank Details Page"
+    And I select radio button "yes" on "Securities_Check Bank Details Page"
     And I click continue on "Securities_Check Bank Details Page"
     Then I am presented with the "Securities_Choose File Type Page"
     When I select radio button "Proof of authority" on "Securities_Choose File Type Page"

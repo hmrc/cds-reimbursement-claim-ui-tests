@@ -82,6 +82,7 @@ Feature: Securities Single Error Messages
     When I enter "" on "Securities_Enter Bank Account Details Page"
     And I click continue on "Securities_Enter Bank Account Details Page"
     Then I am presented with the "Securities_Check Bank Details Page"
+    And I select radio button "yes" on "Securities_Check Bank Details Page"
     And I click continue on "Securities_Check Bank Details Page"
     Then I am presented with the "Securities_Choose File Type Page"
     When I click continue on "Securities_Choose File Type Page"

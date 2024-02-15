@@ -16,9 +16,13 @@
 
 package uk.gov.hmrc.cdsrc.pages.Securities
 
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
+import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait}
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
+import uk.gov.hmrc.cdsrc.pages.CE1179.multiple.CE1179_Multiple_CheckBankDetailsPage.cssSelector
+
+import java.time.Duration
 
 object Securities_CheckBankDetailsPage extends BasePage {
 
@@ -41,12 +45,37 @@ object Securities_CheckBankDetailsPage extends BasePage {
   override def checkPageErrorTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
 
-  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > a")
+  override def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
 
   override def clickButton(buttonText: String): Unit = {
     buttonText.toLowerCase() match {
       case "change bank details" =>
-        click on cssSelector ("a[href='/claim-back-import-duty-vat/securities/letter-of-authority-confirmation']")
+        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/letter-of-authority-confirmation']")
     }
+  }
+
+     override def clickRadioButton(text: String): Unit = {
+      val radioButtonSelector = text.toLowerCase() match {
+        case "yes" => By.cssSelector("#bank-details-yes-no input[value='true']")
+        case "no" => By.cssSelector("#bank-details-yes-no input[value='false']")
+        case _ => throw new IllegalArgumentException("Invalid option: " + text)
+      }
+
+      val wait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
+        .withTimeout(Duration.ofSeconds(10))
+        .pollingEvery(Duration.ofMillis(500))
+        .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+
+      val radioButton: WebElement = wait.until(new ExpectedCondition[WebElement] {
+        override def apply(driver: WebDriver): WebElement = {
+          driver.findElement(radioButtonSelector)
+        }
+      })
+
+      // Use JavaScript to click
+      val jsExecutor = driver.asInstanceOf[JavascriptExecutor]
+      jsExecutor.executeScript("arguments[0].click();", radioButton)
+
+
   }
 }
