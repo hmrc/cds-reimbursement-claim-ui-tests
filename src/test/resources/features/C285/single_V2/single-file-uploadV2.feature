@@ -52,6 +52,7 @@ Feature: C285 Single file upload V2
 #    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
 #    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
+    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
     When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
     # upload file 1
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
