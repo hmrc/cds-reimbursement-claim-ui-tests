@@ -32,8 +32,8 @@ object CE1179_Single_CheckClaimPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on id("check-claim.rejected-goods")
-      case "no" => click on id("check-claim.rejected-goods-2")
+      case "yes" => click on id("check-claim")
+      case "no" => click on id("check-claim")
     }
   }
 
