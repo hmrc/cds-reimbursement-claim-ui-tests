@@ -28,8 +28,7 @@ object ALF_LookupAddressLookupPage extends BasePage {
     "Find your UK address"
   )
 
-  override def expectedPageTitle: Option[String] = Some("Find your UK address")
-
-  override def expectedPageHeader: Option[String] = Some("Find your UK address")
+  override def expectedPageTitle: Option[String] = Some("Find your UK address - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageHeader: Option[String] = Some("Find your UK address - Claim back import duty and VAT - GOV.UK")
 
 }
