@@ -38,7 +38,7 @@ object CE1179_Single_EnterClaimPage extends BasePage {
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    enterText("enter-claim.rejected-goods.claim-amount", amounts(0))
+    enterText("enter-claim", amounts(0))
   }
 
   override def checkPageTitle(duty: String): Unit = {
