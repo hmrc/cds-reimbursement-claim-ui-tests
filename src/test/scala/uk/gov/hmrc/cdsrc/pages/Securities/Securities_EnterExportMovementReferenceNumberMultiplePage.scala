@@ -35,6 +35,6 @@ object Securities_EnterExportMovementReferenceNumberMultiplePage extends BasePag
   override def expectedPageHeader: Option[String] = Some("Enter the first export MRN in the declaration")
 
   override def enterDetails(textToEnter: String) {
-    enterText("enter-export-movement-reference-number-multiple", textToEnter)
+    enterText("enter-export-movement-reference-number.multiple", textToEnter)
   }
 }

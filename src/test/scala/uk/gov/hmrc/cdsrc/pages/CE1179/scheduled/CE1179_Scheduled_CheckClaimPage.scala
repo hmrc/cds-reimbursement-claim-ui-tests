@@ -32,8 +32,8 @@ object CE1179_Scheduled_CheckClaimPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
-      case "yes" => click on xpath(s"""//*[@id="check-claim-summary"]""")
-      case "no" => click on xpath(s"""//*[@id="check-claim-summary"]""")
+      case "yes" => click on xpath(s"""//*[@id="check-claim"]""")
+      case "no" => click on xpath(s"""//*[@id="check-claim"]""")
     }
   }
 
