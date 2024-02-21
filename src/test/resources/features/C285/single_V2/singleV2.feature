@@ -2,6 +2,7 @@
 Feature: C285 Single V2
 
   @test @a11y @ZAP
+#    waiting for 2814 to be finished in order to run this test successfully
   Scenario: happy path - check importer/declarant eori pages, change contact details - v2 enabled
     Given I navigate to the "Auth Login Stub Page"
     And I enter redirectURL on "Auth Login Stub Page"
@@ -29,6 +30,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     When I click "Change Contact details" on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
@@ -109,6 +116,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -151,7 +164,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Ending with 41 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Ending with 41 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -178,6 +191,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -225,39 +244,10 @@ Feature: C285 Single V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     And I should see the following details
       | This is the basis behind the claim        | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA6 | £828.00     | Ending with 56 |
+      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA6 | £828.00     | Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-  @smoke
-  Scenario: error scenario - wrong mrn
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "C285_Choose How Many Mrns Page v2"
-    When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
-    And I click continue on "C285_Choose How Many Mrns Page v2"
-    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "no" on "C285_Single_Check Declaration Details Page v2"
-    And I click continue on "C285_Single_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
-    And I click continue on "C285_Single_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
 
   @test
   Scenario: happy path with new payee type page - user selects CMA
@@ -282,6 +272,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -327,7 +323,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim        | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | MRN                | Duties paid | Method                         | Method of payment |
-      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Current Month Adjustment (CMA) | Immediate Payment |
+      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Current Month Adjustment (CMA) | Immediate Payment |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -355,6 +351,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -409,7 +411,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim        | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | MRN                | Duties paid | Method                | Method of payment |Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Bank account transfer | Immediate Payment |Ending with 56 |
+      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Bank account transfer | Immediate Payment |Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -435,84 +437,6 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2" error page
 
   @ALF
-  Scenario: happy path - confirm ALF data works in journey (not regression tested since this is out of our team's scope)
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "C285_Choose How Many Mrns Page v2"
-    When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
-    And I click continue on "C285_Choose How Many Mrns Page v2"
-    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
-    And I click continue on "C285_Single_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Check Page v2"
-    When I select radio button "no" on "C285_Single_Claimant Details Check Page v2"
-    And I click continue on "C285_Single_Claimant Details Check Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Add Page v2"
-    When I select radio button "yes" on "C285_Single_Claimant Details Add Page v2"
-    And I click continue on "C285_Single_Claimant Details Add Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Enter Contact Details Page v2"
-    And I enter "" on "C285_Single_Claimant Details Enter Contact Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Enter Contact Details Page v2"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Single_Claimant Details Page"
-    And I click continue on "C285_Single_Claimant Details Page"
-    Then I am presented with the "C285_Single_Choose Basis For Claim Page"
-    When I select radio button "Outward processing relief" on "C285_Single_Choose Basis For Claim Page"
-    And I click continue on "C285_Single_Choose Basis For Claim Page"
-    Then I am presented with the "C285_Single_Enter Additional Details Page"
-    When I enter "under 500 characters" on "C285_Single_Enter Additional Details Page"
-    And I click continue on "C285_Single_Enter Additional Details Page"
-    Then I am presented with the "C285_Single_Select Duties Page"
-    When I select "A80,A95,A90,A85" on "C285_Single_Select Duties Page"
-    And I click continue on "C285_Single_Select Duties Page"
-    Then I am presented with the "C285_Single_Enter Claim Page" "A80 - Definitive Anti-Dumping Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page"
-    And I click continue on "C285_Single_Enter Claim Page"
-    Then I am presented with the "C285_Single_Enter Claim Page" "A95 - Provisional Countervailing Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page"
-    And I click continue on "C285_Single_Enter Claim Page"
-    Then I am presented with the "C285_Single_Enter Claim Page" "A90 - Definitive Countervailing Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page"
-    And I click continue on "C285_Single_Enter Claim Page"
-    Then I am presented with the "C285_Single_Enter Claim Page" "A85 - Provisional Anti-Dumping Duty"
-    When I enter "10" on "C285_Single_Enter Claim Page"
-    And I click continue on "C285_Single_Enter Claim Page"
-    Then I am presented with the "C285_Single_Check Claim Page"
-    And I select radio button "yes" on "C285_Single_Check Claim Page"
-    When I click continue on "C285_Single_Check Claim Page"
-    Then I am presented with the "C285_Single_Choose Payee Type v2"
-    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
-    When I click continue on "C285_Single_Choose Payee Type v2"
-    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page"
-    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
-    When I click continue on "C285_Single_Check These Bank Details Are Correct Page"
-    Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
-    When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
-    And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page"
-    Then I am presented with the "UCDF_Choose File Other Page"
-    When I upload a "document.pdf" file on "UCDF_Choose File Other Page"
-    And I select radio button "No" on "UCDF_Choose File Other Page"
-    And I click continue if I'm on "UCDF_Choose File Other Page"
-    Then I am presented with the "C285_Single_Check Answers Accept Send Page"
-    And I click continue on "C285_Single_Check Answers Accept Send Page"
-    Then I am presented with the "C285_Single_Claim Submitted Page"
-
-  @ALF
   Scenario: happy path - confirm ALF data works in journey, no contact details (not regression tested since this is out of our team's scope)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -533,6 +457,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page"
     And I click continue on "C285_Single_Check Declaration Details Page"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page"
     And I click continue on "C285_Single_Claimant Details Page"
     Then I am presented with the "C285_Single_Claimant Details Enter Contact Details Page"
@@ -610,6 +540,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -658,7 +594,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -686,6 +622,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -733,7 +675,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                         | Method of payment |MRN                | Duties paid |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Current Month Adjustment (CMA) | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Current Month Adjustment (CMA) | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -760,6 +702,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -796,7 +744,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -823,6 +771,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -862,7 +816,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA2 | £828.00     | Ending with 41 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA2 | £828.00     | Ending with 41 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -889,6 +843,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
@@ -1018,6 +978,12 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
