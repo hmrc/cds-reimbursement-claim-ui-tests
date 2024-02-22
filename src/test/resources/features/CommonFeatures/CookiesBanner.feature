@@ -18,7 +18,7 @@ Feature: Cookies Banner on Claim back import duty and VAT pages
       | Reject additional cookies                                                                                                               |
       | View cookie preferences                                                                                                                           |
     And I should see the following "links" on the cookie banner
-      | View cookies |
+      | View cookie preferences |
     And I should see the following "buttons" on the cookie banner
       | Accept additional cookies |
       | Reject additional cookies |
