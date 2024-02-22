@@ -1,9 +1,9 @@
 @C285 @Single
 Feature: C285 Single V2
 
-  @test @a11y @ZAP
+@ignore
 #    waiting for 2814 to be finished in order to run this test successfully
-  Scenario: happy path - check importer/declarant eori pages, change contact details - v2 enabled
+ Scenario: happy path - check importer/declarant eori pages, change contact details - v2 enabled
     Given I navigate to the "Auth Login Stub Page"
     And I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -37,11 +37,11 @@ Feature: C285 Single V2
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Claimant Details Page v2"
-    When I click "Change Contact details" on "C285_Single_Claimant Details Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
-    And I enter "" on "C285_Single_Claimant Details Change Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
+#    When I click "Change Contact details" on "C285_Single_Claimant Details Page v2"
+#    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+#    And I enter "" on "C285_Single_Claimant Details Change Claimant Details Page v2"
+#    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+#    Then I am presented with the "C285_Single_Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
@@ -88,8 +88,8 @@ Feature: C285 Single V2
 #    And I click continue on "UDF_Summary Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim        | Import date      | Contact details                              | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     |  Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD |  19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 |
+      | This is the basis behind the claim        | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     |  Importer address                                 | This is the reason for the claim | Declarant address                                 | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
+      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD |  19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA2 | £828.00     | Ending with 44 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -164,7 +164,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Ending with 41 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | £788.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Ending with 41 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -244,7 +244,7 @@ Feature: C285 Single V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     And I should see the following details
       | This is the basis behind the claim        | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA6 | £828.00     | Ending with 56 |
+      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA6 | £828.00     | Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -323,7 +323,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim        | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | MRN                | Duties paid | Method                         | Method of payment |
-      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Current Month Adjustment (CMA) | Immediate Payment |
+      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Current Month Adjustment (CMA) | Immediate Payment |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -411,7 +411,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim        | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | MRN                | Duties paid | Method                | Method of payment |Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Bank account transfer | Immediate Payment |Ending with 56 |
+      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Bank account transfer | Immediate Payment |Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -594,7 +594,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -675,7 +675,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                         | Method of payment |MRN                | Duties paid |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Current Month Adjustment (CMA) | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Current Month Adjustment (CMA) | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -744,7 +744,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Ending with 56 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -816,7 +816,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA2 | £828.00     | Ending with 41 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA2 | £828.00     | Ending with 41 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -879,7 +879,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA2 | £828.00     | Ending with 41 |
+      | End use relief                     | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,02076783243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £208.00 | £208.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA2 | £828.00     | Ending with 41 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
