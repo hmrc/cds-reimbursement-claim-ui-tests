@@ -16,7 +16,7 @@ Feature: Cookies Banner on Claim back import duty and VAT pages
       | We would like to set additional cookies so we can remember your settings, understand how people use our services and make improvements. |
       | Accept additional cookies                                                                                                               |
       | Reject additional cookies                                                                                                               |
-      | View cookies                                                                                                                            |
+      | View cookie preferences                                                                                                                           |
     And I should see the following "links" on the cookie banner
       | View cookies |
     And I should see the following "buttons" on the cookie banner
