@@ -34,6 +34,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
@@ -79,7 +86,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
-      | Outward processing relief          | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment| £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £379.00            | £409.00            |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment| £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £379.00            | £409.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -116,6 +123,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
@@ -161,7 +175,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
 #    And I should see the following details
 #      | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Contact address                    | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total   | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
-#      | Outward processing relief          | £0.00    | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | £379.00            | £409.00            |
+#      | Outward processing relief          | £0.00    | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | £828.00     | Ending with 44 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | £379.00            | £409.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -193,6 +207,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
@@ -241,7 +262,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA1 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -340,98 +361,6 @@ Feature: C285 Multiple
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
 
-  @ALF
-  Scenario: happy path (mrn) - confirm ALF data works in journey
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "C285_Choose How Many Mrns Page v2"
-    When I select radio button "bulk" on "C285_Choose How Many Mrns Page v2"
-    And I click continue on "C285_Choose How Many Mrns Page v2"
-    Then I am presented with the "C285_Multiple_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
-    And I click continue on "C285_Multiple_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
-    When I enter "20AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
-    And I click continue on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
-    Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
-    When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
-    And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
-    When I select radio button "I am a private individual importer" on "C285_Multiple_Who Is The Declarant Page v2"
-    And I click continue on "C285_Multiple_Who Is The Declarant Page v2"
-    Then I am presented with the "C285_Multiple_Claimant Details Check Page v2"
-    When I select radio button "no" on "C285_Multiple_Claimant Details Check Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Check Page v2"
-    Then I am presented with the "C285_Multiple_Claimant Details Add Page v2"
-    When I select radio button "yes" on "C285_Multiple_Claimant Details Add Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Add Page v2"
-    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
-    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page v2"
-    And I enter "" on "ALF_Lookup Address Edit Page v2"
-    And I click continue on "ALF_Lookup Address Edit Page v2"
-    And I click continue on "ALF_Lookup Address Confirm Page v2"
-    Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Page v2"
-    Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
-    When I select radio button "Outward processing relief" on "C285_Multiple_Choose Basis For Claim Page v2"
-    And I click continue on "C285_Multiple_Choose Basis For Claim Page v2"
-    Then I am presented with the "C285_Multiple_Enter Additional Details Page v2"
-    When I enter "under 500 characters" on "C285_Multiple_Enter Additional Details Page v2"
-    And I click continue on "C285_Multiple_Enter Additional Details Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 1 Page v2"
-    When I select "A80,A95" on "C285_Multiple_Select Duties 1 Page v2"
-    And I click continue on "C285_Multiple_Select Duties 1 Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 1 Duty Page v2" "A80 - Definitive Anti-Dumping Duty"
-    When I enter "10" on "C285_Multiple_Select Duties 1 Duty Page v2"
-    And I click continue on "C285_Multiple_Select Duties 1 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 1 Duty Page v2" "A95 - Provisional Countervailing Duty"
-    When I enter "10" on "C285_Multiple_Select Duties 1 Duty Page v2"
-    And I click continue on "C285_Multiple_Select Duties 1 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 2 Page v2"
-    When I select "A90,A85" on "C285_Multiple_Select Duties 2 Page v2"
-    And I click continue on "C285_Multiple_Select Duties 2 Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 2 Duty Page v2" "A90 - Definitive Countervailing Duty"
-    When I enter "10" on "C285_Multiple_Select Duties 2 Duty Page v2"
-    And I click continue on "C285_Multiple_Select Duties 2 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 2 Duty Page v2" "A85 - Provisional Anti-Dumping Duty"
-    When I enter "10" on "C285_Multiple_Select Duties 2 Duty Page v2"
-    And I click continue on "C285_Multiple_Select Duties 2 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Check Claim Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Claim Page v2"
-    When I click continue on "C285_Multiple_Check Claim Page v2"
-    Then I am presented with the "C285_Multiple_Choose Payee Type v2"
-    And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
-    When I click continue on "C285_Multiple_Choose Payee Type v2"
-    Then I am presented with the "C285_Multiple_Check These Bank Details Are Correct Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check These Bank Details Are Correct Page v2"
-    When I click continue on "C285_Multiple_Check These Bank Details Are Correct Page v2"
-    Then I am presented with the "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
-    When I select radio button "Commercial invoice" on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
-    And I click continue on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
-    Then I am presented with the "C285_Multiple_Supporting Evidence Upload Supporting Evidence Page v2"
-    When I upload a "document.pdf" file on "C285_Multiple_Supporting Evidence Upload Supporting Evidence Page v2"
-    And I click continue on "C285_Multiple_Supporting Evidence Upload Supporting Evidence Page v2"
-    And I click continue if I'm on "C285_Multiple_Supporting Evidence Upload Progress Page v2"
-    Then I am presented with the "C285_Multiple_Supporting Evidence Check Your Answers Page v2"
-    When I select radio button "No" on "C285_Multiple_Supporting Evidence Check Your Answers Page v2"
-    And I click continue on "C285_Multiple_Supporting Evidence Check Your Answers Page v2"
-    Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
-    And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
-    Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
-
   @test
   Scenario: happy path with many MRNs and duties
     Given I navigate to the "Auth Login Stub Page"
@@ -478,6 +407,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
@@ -574,7 +510,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date      | Contact details                                      | Importer email       | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | This is the reason for the claim | Declarant address                                 | Total     | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Third MRN          | Fourth MRN         | Fifth MRN          | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | Uploaded                        |
-      | Outward processing relief          | 12 February 2021 | Online Sales LTD,automation@gmail.com,+4420723934397 | automation@gmail.com | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £1,284.20 | Immediate Payment |£828.00     | Ending with 44 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £419.00            | £384.00            | £96.20             | £340.00            | £45.00             | document.pdf,Commercial invoice |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | +4420723934397     | IT Solutions LTD | Ending with 5678 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £1,284.20 | Immediate Payment |£828.00     | Ending with 44 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £419.00            | £384.00            | £96.20             | £340.00            | £45.00             | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -607,6 +543,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Add Page v2"
     When I select radio button "yes" on "C285_Multiple_Claimant Details Add Page v2"
     And I click continue on "C285_Multiple_Claimant Details Add Page v2"
@@ -690,6 +633,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
@@ -732,7 +682,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA2 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -765,6 +715,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
@@ -810,7 +767,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Consignee Goods Ltd | 0207 678 3243      | Swift Goods Ltd | Ending with 8523 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 41 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -843,6 +800,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"
@@ -894,7 +858,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | 14 Briar Lane,London,Pimlico,United Kingdom | Mr John Smith | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd       | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 0207 678 3243      | Swift Goods Ltd | Ending with 1001 | Fred Bloggs and Co Ltd       | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |£828.00     | Ending with 56 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -926,6 +890,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
+    Then I am presented with the "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I enter "" on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click continue on "C285_Multiple_Claimant Details Enter Contact Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Multiple_Claimant Details Page v2"
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Choose Basis For Claim Page v2"

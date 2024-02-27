@@ -28,11 +28,13 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
     When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Page"
-    When I click "Change Contact details" on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
     And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
     And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "CE1179_Single_Claimant Details Page"
     And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
@@ -128,6 +130,13 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
     When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "CE1179_Single_Claimant Details Page"
     And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
@@ -183,6 +192,6 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | This is the basis behind the claim | VAT paid | Import date      | Contact details             | Importer email       | Uploaded                                                                | Contact address                                   | Importer telephone | Importer name    | Declarant name     | Importer address                                 | Declarant address                                 | Total  | MRN                | Duties paid | A85 - Provisional Anti-Dumping Duty | Inspection address type | Inspection date | A90 - Definitive Countervailing Duty | These are the details of the rejected goods | Inspection address                          | A95 - Provisional Countervailing Duty | This is how the goods will be disposed of   | Any special circumstances relating to your claim | Method                         | Method of payment |
-      | Special circumstances              | £0.00    | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | document.pdf,Commercial invoice,image.jpg,Import and export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £30.00 | 10XIDCAAAAAAAAAAA1 | £828.00     | £10.00                              | Importer address        | 10 October 2020 | £10.00                               | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                                | Return the goods by road, rail, air or ship | under 500 characters                             | Current Month Adjustment (CMA) | Immediate Payment |
+      | Special circumstances              | £0.00    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | automation@gmail.com | document.pdf,Commercial invoice,image.jpg,Import and export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £30.00 | 10XIDCAAAAAAAAAAA1 | £828.00     | £10.00                              | Importer address        | 10 October 2020 | £10.00                               | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                                | Return the goods by road, rail, air or ship | under 500 characters                             | Current Month Adjustment (CMA) | Immediate Payment |
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"

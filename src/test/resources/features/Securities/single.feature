@@ -44,6 +44,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
@@ -93,7 +100,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Import declaration              | Total security deposit value | Contact address                                           | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details             | Evidence supporting your claim           | Name on the account | Account number   | Sort code      |
-      | 01AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Manual override of duty amount | document.pdf,Import declaration | £14,385.52                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | TestUser,someemail@mail.com | image.jpg,Evidence supporting your claim | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
+      | 01AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Manual override of duty amount | document.pdf,Import declaration | £14,385.52                   | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | Mr John Smith,someemail@mail.com,01234567890 | image.jpg,Evidence supporting your claim | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -133,6 +140,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
@@ -184,7 +198,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Export declaration           | Total security deposit value | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details                                        | Import declaration              | Name on the account | Account number   | Sort code      | Contact address                             |
-      | 60AAAAAAAAAAAAAAA5 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £200.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | document.pdf,Import declaration | Consignee Goods Ltd | Ending with 8523 | Ending with 41 | 14 Briar Lane,London,Pimlico,United Kingdom |
+      | 60AAAAAAAAAAAAAAA5 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £200.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Import declaration | Consignee Goods Ltd | Ending with 8523 | Ending with 41 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -223,6 +237,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page3" "ABC0123456"
@@ -243,7 +264,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Name on the account | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | Account number   | B00 - Value Added Tax | Payment method        | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total      | Duties selected                          | A00 - Customs Duty | Date security deposit made | Sort code      | Contact details                                        |
-      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £14,085.52                   | 14 Briar Lane,London,Pimlico,United Kingdom | Swift Goods Ltd     | No                   | No                   | No                   | No                   | Ending with 8523 | £8,085.52             | Bank account transfer | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £14,085.52 | A00 - Customs Duty,B00 - Value Added Tax | £6,000.00          | 13 September 2019          | Ending with 41 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £14,085.52                   | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Swift Goods Ltd     | No                   | No                   | No                   | No                   | Ending with 8523 | £8,085.52             | Bank account transfer | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £14,085.52 | A00 - Customs Duty,B00 - Value Added Tax | £6,000.00          | 13 September 2019          | Ending with 41 | Mr John Smith,someemail@mail.com,01234567890 |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -282,6 +303,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page3" "DEF6543213"
@@ -302,7 +330,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Claim for DEF6543213 | B00 - Value Added Tax | Claim for ABC0123456 | Claim for DEF6543210 | Claim for DEF6543212 | Claim for DEF6543211 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Payment method         | Contact details                                        | Name on the account | Account number   | Sort code      |
-      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £300.00                      | 14 Briar Lane,London,Pimlico,United Kingdom | Yes                  | £200.00               | No                   | No                   | No                   | No                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Duty deferment account | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £300.00                      | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Yes                  | £200.00               | No                   | No                   | No                   | No                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Duty deferment account | Mr John Smith,someemail@mail.com,01234567890 | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -341,6 +369,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page3" "DEF6543212"
@@ -361,7 +396,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Claim for DEF6543213 | B00 - Value Added Tax | Claim for ABC0123456 | Claim for DEF6543210 | Claim for DEF6543212 | Claim for DEF6543211 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Payment method | Contact details                                        | Name on the account | Account number   | Sort code      |
-      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £300.00                      | 14 Briar Lane,London,Pimlico,United Kingdom | No                   | £200.00               | No                   | No                   | Yes                  | No                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Cash account   | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £300.00                      | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | No                   | £200.00               | No                   | No                   | Yes                  | No                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Cash account   | Mr John Smith,someemail@mail.com,01234567890 | Swift Goods Ltd     | Ending with 8523 | Ending with 41 |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -400,6 +435,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page3" "DEF6543210"
@@ -417,7 +459,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit | Import declaration              | Total security deposit value | Contact address                             | Claim for DEF6543213 | B00 - Value Added Tax | Claim for ABC0123456 | Claim for DEF6543210 | Claim for DEF6543212 | Claim for DEF6543211 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Payment method | Contact details                                        |
-      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £300.00                      | 14 Briar Lane,London,Pimlico,United Kingdom | No                   | £200.00               | No                   | Yes                  | No                   | No                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Guarantee      | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | UKAP Entry Price            | document.pdf,Import declaration | £300.00                      | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | No                   | £200.00               | No                   | Yes                  | No                   | No                   | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Guarantee      | Mr John Smith,someemail@mail.com,01234567890 |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -456,6 +498,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page3" "DEF6543211"
@@ -473,7 +522,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit                   | Import declaration              | Total security deposit value | Contact address                             | Claim for DEF6543213 | B00 - Value Added Tax | Claim for ABC0123456 | Claim for DEF6543210 | Claim for DEF6543212 | Claim for DEF6543211 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Payment method | Contact details                                        |
-      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Revenue Dispute or Inland Pre-Clearance (IPC) | document.pdf,Import declaration | £300.00                      | 14 Briar Lane,London,Pimlico,United Kingdom | No                   | £200.00               | No                   | No                   | No                   | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Guarantee      | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 |
+      | 01AAAAAAAAAAAAAAA1 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Revenue Dispute or Inland Pre-Clearance (IPC) | document.pdf,Import declaration | £300.00                      | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | No                   | £200.00               | No                   | No                   | No                   | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | Yes               | £300.00 | A00 - Customs Duty,B00 - Value Added Tax | £100.00            | 13 September 2019          | Guarantee      | Mr John Smith,someemail@mail.com,01234567890 |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -528,6 +577,13 @@ Feature: Securities Single
     Then I am presented with the "Securities_Enter Export Movement Reference Number Page"
     When I enter "41ABCDEFGHIJKLMNO1" on "Securities_Enter Export Movement Reference Number Page"
     And I click continue on "Securities_Enter Export Movement Reference Number Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
 
   @test
@@ -566,6 +622,13 @@ Feature: Securities Single
     Then I am presented with the "Securities_Enter Export Movement Reference Number Multiple Page"
     When I enter "41ABCDEFGHIJKLMNO1" on "Securities_Enter Export Movement Reference Number Multiple Page"
     And I click continue on "Securities_Enter Export Movement Reference Number Multiple Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
 
   @test
@@ -592,6 +655,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page3" "ABC0123456"
@@ -672,6 +742,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
@@ -729,7 +806,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Export declaration           | Total security deposit value | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details                                        | Import declaration              | Name on the account | Account number   | Sort code      | Contact address                             |
-      | 60AAAAAAAAAAAAAAA5 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | document.pdf,Import declaration | Mr John Smith       | Ending with 1001 | Ending with 56 | 14 Briar Lane,London,Pimlico,United Kingdom |
+      | 60AAAAAAAAAAAAAAA5 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Import declaration | Mr John Smith       | Ending with 1001 | Ending with 56 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
@@ -769,6 +846,13 @@ Feature: Securities Single
     And I click continue on "Securities_Select Securities Security Id Page"
     Then I am presented with the "Securities_Check Declaration Details Page"
     And I click continue on "Securities_Check Declaration Details Page"
+    Then I am presented with the "Securities_Change Contact Details Page"
+    And I enter "" on "Securities_Change Contact Details Page"
+    And I click continue on "Securities_Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
     And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
@@ -817,6 +901,6 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import MRN         | Importer name   | Importer email          | Importer telephone | Importer address                            | Declarant name         | Reason for security deposit    | Export declaration           | Total security deposit value | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax | Claim for ABC0123456 | Declarant address                                         | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details                                        | Import declaration              | Name on the account | Account number   | Sort code      | Contact address                             |
-      | 60AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | document.pdf,Import declaration | Consignee Goods Ltd | Ending with 8523 | Ending with 41 | 14 Briar Lane,London,Pimlico,United Kingdom |
+      | 60AAAAAAAAAAAAAAA2 | Swift Goods Ltd | enquiries@swftgoods.com | 0207 678 3243      | 14 Briar Lane,London,Pimlico,United Kingdom | Fred Bloggs and Co Ltd | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £180.00               | Yes                  | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax | £90.00            | 13 September 2019          | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Import declaration | Consignee Goods Ltd | Ending with 8523 | Ending with 41 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"

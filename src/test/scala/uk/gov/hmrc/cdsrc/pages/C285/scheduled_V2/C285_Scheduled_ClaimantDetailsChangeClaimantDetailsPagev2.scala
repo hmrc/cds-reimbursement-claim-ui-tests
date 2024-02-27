@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.C285.single_v2
+package uk.gov.hmrc.cdsrc.pages.C285.scheduled_V2
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Single_ClaimantDetailsChangeClaimantDetailsPagev2 extends BasePage {
+object C285_Scheduled_ClaimantDetailsChangeClaimantDetailsPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/claimant-details/change-contact-details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/claimant-details/change-contact-details"
   override val title = "Provide the contact details for this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some("ERROR: Provide the contact details for this claim - Claim back import duty and VAT - GOV.UK")
