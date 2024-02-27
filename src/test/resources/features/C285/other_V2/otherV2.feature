@@ -24,6 +24,7 @@ Feature: C285 Other
     And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I enter "" on "C285_Single_Claimant Details Change Claimant Details Page v2"
     And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
     And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
     And I enter "" on "ALF_Lookup Address Edit Page"
