@@ -28,11 +28,18 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    When I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Choose Basis For Claim Page"
     When I select radio button "Special circumstances" on "CE1179_Scheduled_Choose Basis For Claim Page"
     And I click continue on "CE1179_Scheduled_Choose Basis For Claim Page"
@@ -142,7 +149,7 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
       | This is the basis behind the claim | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Importer telephone | Importer name    | Declarant name     | Importer address                                 | Declarant address                                 | Total  | Method of payment |First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | EU Duty | Excise Duty  | These are the details of the rejected goods | Inspection address                          | This is how the goods will be disposed of   | Any special circumstances relating to your claim | Name on the account | Sort code      | Account number   | Scheduled document |
-      | Special circumstances              | 12 February 2021 | TestUser,someemail@mail.com | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £80.00 | Immediate Payment |10AAAAAAAAAAAAAAA2 | £828.00     | Importer address        | 10 October 2020 | £10.00  | £10.00  | £60.00    | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | CDS E2E To E2E Bank | Ending with 44 | Ending with 5678 | image.jpg          |
+      | Special circumstances              | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | +4420723934397     | IT Solutions LTD | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £80.00 | Immediate Payment |10AAAAAAAAAAAAAAA2 | £828.00     | Importer address        | 10 October 2020 | £10.00  | £10.00  | £60.00    | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | CDS E2E To E2E Bank | Ending with 44 | Ending with 5678 | image.jpg          |
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
@@ -173,11 +180,18 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    When I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Choose Basis For Claim Page"
     When I select radio button "Special circumstances" on "CE1179_Scheduled_Choose Basis For Claim Page"
     And I click continue on "CE1179_Scheduled_Choose Basis For Claim Page"
@@ -242,11 +256,18 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    When I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Choose Basis For Claim Page"
     When I select radio button "Special circumstances" on "CE1179_Scheduled_Choose Basis For Claim Page"
     And I click continue on "CE1179_Scheduled_Choose Basis For Claim Page"
@@ -300,7 +321,7 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         | Importer address                            | Declarant address                                         | Total  | Method of payment |First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | These are the details of the rejected goods | Inspection address                                    | This is how the goods will be disposed of   | Any special circumstances relating to your claim | Name on the account | Sort code      | Account number   | Scheduled document |
-      | Special circumstances              | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £10.00 | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Other address           | 10 October 2020 | £10.00  | under 500 characters                        | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Mr John Smith       | Ending with 56 | Ending with 1001 | image.jpg          |
+      | Special circumstances              | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £10.00 | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     | Other address           | 10 October 2020 | £10.00  | under 500 characters                        | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Mr John Smith       | Ending with 56 | Ending with 1001 | image.jpg          |
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
@@ -326,11 +347,18 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    When I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Choose Basis For Claim Page"
     When I select radio button "Special circumstances" on "CE1179_Scheduled_Choose Basis For Claim Page"
     And I click continue on "CE1179_Scheduled_Choose Basis For Claim Page"
@@ -381,7 +409,7 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         | Importer address                            | Declarant address                                         | Total  | Method of payment |First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | These are the details of the rejected goods | Inspection address                                    | This is how the goods will be disposed of   | Any special circumstances relating to your claim | Name on the account | Sort code      | Account number   | Scheduled document |
-      | Special circumstances              | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £10.00 | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Other address           | 10 October 2020 | £10.00  | under 500 characters                        | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Consignee Goods Ltd | Ending with 41 | Ending with 8523 | image.jpg          |
+      | Special circumstances              | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £10.00 | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Other address           | 10 October 2020 | £10.00  | under 500 characters                        | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Consignee Goods Ltd | Ending with 41 | Ending with 8523 | image.jpg          |
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
@@ -407,11 +435,18 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    When I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Choose Basis For Claim Page"
     When I select radio button "Special circumstances" on "CE1179_Scheduled_Choose Basis For Claim Page"
     And I click continue on "CE1179_Scheduled_Choose Basis For Claim Page"
@@ -470,6 +505,6 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
       | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         | Importer address                            | Declarant address                                         | Total  |  Method of payment |First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | These are the details of the rejected goods | Inspection address                                    | This is how the goods will be disposed of   | Any special circumstances relating to your claim | Name on the account | Sort code      | Account number   | Scheduled document |
-      | Special circumstances              | 13 August 2019 | Frank Sidebotham,enquiries@swftgoods.com,0207 678 3243 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 14 Briar Lane,London,Pimlico,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £10.00 | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Other address           | 10 October 2020 | £10.00  | under 500 characters                        | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Mr John Smith       | Ending with 56 | Ending with 1001 | image.jpg          |
+      | Special circumstances              | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £10.00 | Immediate Payment |60AAAAAAAAAAAAAAA5 | £828.00     | Other address           | 10 October 2020 | £10.00  | under 500 characters                        | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Mr John Smith       | Ending with 56 | Ending with 1001 | image.jpg          |
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
