@@ -22,18 +22,18 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_ClaimantDetailsChangeContactDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/claimant-details/change-contact-details"
-  override val title = "Change contact details"
+  override val title = "Provide the contact details for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Error: Change contact details - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Provide the contact details for this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Change contact details - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Provide the contact details for this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Change contact details")
+  override def expectedPageHeader: Option[String] = Some("Provide the contact details for this claim")
 
   override def enterDetails(data: String): Unit = {
-    enterText("enter-contact-details-securities.contact-name", if(data==""){"Mr John Smith"}else{data.split(",")(0)})
-    enterText("enter-contact-details-securities.contact-email", if(data==""){"someemail@mail.com"}else{data.split(",")(1)})
-    enterText("enter-contact-details-securities.contact-phone-number", if(data==""){"01234567890"}else{data.split(",")(2)})
+    enterText("enter-contact-details.contact-name", if(data==""){"Mr John Smith"}else{data.split(",")(0)})
+    enterText("enter-contact-details.contact-email", if(data==""){"someemail@mail.com"}else{data.split(",")(1)})
+    enterText("enter-contact-details.contact-phone-number", if(data==""){"01234567890"}else{data.split(",")(2)})
   }
 
 }
