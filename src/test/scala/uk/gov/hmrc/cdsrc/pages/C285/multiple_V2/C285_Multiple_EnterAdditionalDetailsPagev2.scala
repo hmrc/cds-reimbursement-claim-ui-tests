@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Multiple_EnterAdditionalDetailsPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-additional-details"
-  override val title = "Provide additional details about this claim"
+  override val title = "Additional claim details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Provide additional details about this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Additional claim details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Provide additional details about this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Additional claim details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Provide additional details about this claim")
+  override def expectedPageHeader: Option[String] = Some("Additional claim details")
 
   override def enterDetails(details: String): Unit = {
     details match {
