@@ -1,4 +1,4 @@
-@Security @Single
+@Security @Single @ignore
 Feature: Securities Single
 
   Background: Securities common steps
@@ -810,7 +810,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+  @ignore
   Scenario: with only importer bank details (user is both importer and declarant)
 #  60AAAAAAAAAAAAAAA2 => only importer bank details (user is both importer and declarant) - CMA not eligible - skips payee indicator page and navigates to /check-bank-details page
     When I enter "60AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"

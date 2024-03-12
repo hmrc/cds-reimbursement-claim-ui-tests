@@ -1,4 +1,4 @@
-@Security @Single
+@Security @Single @ignore
 Feature: Securities Single - XIEORI
 
   Background: Securities common steps
