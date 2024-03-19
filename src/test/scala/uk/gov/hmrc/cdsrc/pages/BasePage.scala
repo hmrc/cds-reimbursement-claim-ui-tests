@@ -26,7 +26,7 @@ import uk.gov.hmrc.cdsrc.driver.BrowserDriver
 
 import java.lang
 import java.time.Duration
-import scala.jdk.CollectionConverters.asScalaBufferConverter
+import scala.jdk.CollectionConverters.{BufferHasAsJava, CollectionHasAsScala}
 
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
