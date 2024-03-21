@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
+import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
 import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Wait}
 import org.openqa.selenium.{By, Keys, TimeoutException, WebDriver, WebElement}
 import org.scalatest.Assertion
@@ -23,6 +24,8 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.{Page, WebBrowser}
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
+import uk.gov.hmrc.selenium.webdriver.Driver
+
 import java.lang
 import java.time.Duration
 import scala.jdk.CollectionConverters.CollectionHasAsScala
@@ -85,13 +88,24 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
       driver.getCurrentUrl should equal(url)
     }
 
-  def uploadDocument(file: String): Unit =
-    if (file != "")
+  def uploadDocument(file: String): Unit = {
+    if (System.getProperty("browser").startsWith("remote")) {
+      Driver.asInstanceOf[RemoteWebDriver].setFileDetector(new LocalFileDetector)
+    }
+    if (file != "") {
       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+    }
+  }
 
-  def uploadDocument(docNumber: Int, file: String): Unit =
-    if (file != "")
+  def uploadDocument(docNumber: Int, file: String): Unit = {
+    if (System.getProperty("browser").startsWith("remote")) {
+      Driver.asInstanceOf[RemoteWebDriver].setFileDetector(new LocalFileDetector)
+    }
+    if (file != "") {
       enterText("file-" + docNumber, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+    }
+  }
+
 
   def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
