@@ -3,4 +3,4 @@
 BROWSER=$1
 ENVIRONMENT=$2
 
-sbt clean -Dbrowser="${BROWSER:=chrome}" -Denvironment="${ENVIRONMENT:=local}" "testOnly uk.gov.hmrc.ui.cucumber.runner.WipRunner" testReport
+sbt clean -Dbrowser="${BROWSER:=chrome}" -Denvironment="${ENVIRONMENT:=local}" "testOnly uk.gov.hmrc.cdsrc.cucumber.runner.WipRunner" testReport
