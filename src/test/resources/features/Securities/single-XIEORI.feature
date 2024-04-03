@@ -1,4 +1,4 @@
-@Security @Single @ignore
+@Security @Single
 Feature: Securities Single - XIEORI
 
   Background: Securities common steps
@@ -14,7 +14,7 @@ Feature: Securities Single - XIEORI
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "Securities_Enter Movement Reference Number Page"
 
-  @test
+
   Scenario: happy path - check importer/declarant eori pages - with no Payment method
     When I enter "01XIDCAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
