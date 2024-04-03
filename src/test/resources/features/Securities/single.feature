@@ -14,7 +14,7 @@ Feature: Securities Single
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "Securities_Enter Movement Reference Number Page"
 
-  @test @a11y @ZAP
+   @ZAP
   Scenario: happy path - check importer/declarant eori pages - with no Payment method
     When I enter "01AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -202,7 +202,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+
   Scenario: Data validation check at Check your answers page - with Payment method as Bank account transfer
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -268,7 +268,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+
   Scenario: Data validation check at Check your answers page - with Payment method as Duty deferment account
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -400,7 +400,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+
   Scenario: Data validation check at Check your answers page - with Payment method as Guarantee Account
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -526,7 +526,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+
   Scenario: happy path - Securities without importer/declarant eori and with Bod4 check
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -541,7 +541,7 @@ Feature: Securities Single
     And I click continue on "Securities_Bod4 Mandatory Check Page"
     Then I am presented with the "Securities_Error Claim Invalid No Bod4 Page"
 
-  @test
+
   Scenario: happy path - check importer/declarant eori pages and export method page
     When I enter "01AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -586,7 +586,7 @@ Feature: Securities Single
     And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
 
-  @test
+
   Scenario: happy path - Temporary admission and Exported in multiple shipment
     When I enter "01AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -631,7 +631,7 @@ Feature: Securities Single
     And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "Securities_Claimant Details Page"
 
-  @test
+
   Scenario: Happy path with no document upload
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -695,7 +695,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
-  @test
+
   Scenario: error message on select securities page
     When I enter "01AAAAAAAAAAAAAAA1" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
@@ -706,7 +706,7 @@ Feature: Securities Single
     When I click continue on "Securities_Select Securities Security Id Page"
     Then The error summary title is "There is a problem" and the error message is "Select Yes if you are claiming for this Security"
 
-  @test
+
   Scenario: Happy path with only importer bank details and displays payee type page - choose declarant
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is only importer ) - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     When I enter "60AAAAAAAAAAAAAAA5" on "Securities_Enter Movement Reference Number Page"

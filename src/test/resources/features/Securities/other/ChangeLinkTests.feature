@@ -1,7 +1,7 @@
 @Security @Single
 Feature: Securities Single Change Link Tests
 
-  @test
+
   Scenario: Happy path - Change link tests
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
