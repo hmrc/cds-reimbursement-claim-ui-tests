@@ -134,7 +134,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def waitForPageToLoad(): lang.Boolean =
-    fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "UPLOADED"))
+    fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
 
   def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
 
