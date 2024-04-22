@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single - XIEORI V2
 
-  @test
+  @test @wip
   Scenario: XIEORI- happy path - check importer/declarant eori pages, change contact details - v2 enabled
     Given I navigate to the "Auth Login Stub Page"
     And I enter redirectURL on "Auth Login Stub Page"
