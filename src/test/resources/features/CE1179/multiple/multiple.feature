@@ -503,7 +503,7 @@ Feature: C&E1179 Multiple
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "CE1179_Multiple_Choose Payee Type Page"
-    And I select radio button "Declarant" on "CE1179_Multiple_Choose Payee Type Page"
+    And I select radio button "Declarant / Representative" on "CE1179_Multiple_Choose Payee Type Page"
     When I click continue on "CE1179_Multiple_Choose Payee Type Page"
     Then I am presented with the "CE1179_Multiple_Bank Account Type Page"
     When I select radio button "Business bank account" on "CE1179_Multiple_Bank Account Type Page"
