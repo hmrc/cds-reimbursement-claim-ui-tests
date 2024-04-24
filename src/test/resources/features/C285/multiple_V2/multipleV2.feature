@@ -749,7 +749,7 @@ Feature: C285 Multiple
     And I select radio button "yes" on "C285_Multiple_Check Claim Page v2"
     When I click continue on "C285_Multiple_Check Claim Page v2"
     Then I am presented with the "C285_Multiple_Choose Payee Type v2"
-    And I select radio button "Declarant" on "C285_Multiple_Choose Payee Type v2"
+    And I select radio button "Declarant / Representative" on "C285_Multiple_Choose Payee Type v2"
     When I click continue on "C285_Multiple_Choose Payee Type v2"
     Then I am presented with the "C285_Multiple_Bank Account Type Page v2"
     When I select radio button "Business bank account" on "C285_Multiple_Bank Account Type Page v2"

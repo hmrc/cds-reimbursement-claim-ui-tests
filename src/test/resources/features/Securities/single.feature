@@ -706,7 +706,6 @@ Feature: Securities Single
     When I click continue on "Securities_Select Securities Security Id Page"
     Then The error summary title is "There is a problem" and the error message is "Select Yes if you are claiming for this Security"
 
-
   Scenario: Happy path with only importer bank details and displays payee type page - choose declarant
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is only importer ) - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     When I enter "60AAAAAAAAAAAAAAA5" on "Securities_Enter Movement Reference Number Page"
@@ -778,7 +777,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Claim Page"
     And I click continue on "Securities_Check Claim Page"
     Then I am presented with the "Securities_Choose Payee Type Page"
-    And I select radio button "Declarant" on "Securities_Choose Payee Type Page"
+    And I select radio button "Declarant / Representative" on "Securities_Choose Payee Type Page"
     When I click continue on "Securities_Choose Payee Type Page"
     Then I am presented with the "Securities_Bank Account Type Page"
     When I select radio button "Business bank account" on "Securities_Bank Account Type Page"
