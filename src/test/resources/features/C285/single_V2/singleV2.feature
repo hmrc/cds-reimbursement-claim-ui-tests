@@ -1,8 +1,6 @@
 @C285 @Single
 Feature: C285 Single V2
 
-@ignore
-#    waiting for 2814 to be finished in order to run this test successfully
  Scenario: happy path - check importer/declarant eori pages, change contact details - v2 enabled
     Given I navigate to the "Auth Login Stub Page"
     And I enter redirectURL on "Auth Login Stub Page"
@@ -74,6 +72,9 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Claim Page v2"
     And I select radio button "yes" on "C285_Single_Check Claim Page v2"
     When I click continue on "C285_Single_Check Claim Page v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
     And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
     When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
@@ -579,6 +580,9 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Claim Page v2"
     And I select radio button "yes" on "C285_Single_Check Claim Page v2"
     When I click continue on "C285_Single_Check Claim Page v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Choose Repayment Method Page"
     When I select radio button "bank transfer" on "C285_Single_Choose Repayment Method Page"
     And I click continue on "C285_Single_Choose Repayment Method Page"
@@ -662,6 +666,9 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Claim Page v2"
     And I select radio button "yes" on "C285_Single_Check Claim Page v2"
     When I click continue on "C285_Single_Check Claim Page v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Choose Repayment Method Page"
     When I select radio button "cma" on "C285_Single_Choose Repayment Method Page"
     And I click continue on "C285_Single_Choose Repayment Method Page"
@@ -734,6 +741,9 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Claim Page v2"
     And I select radio button "yes" on "C285_Single_Check Claim Page v2"
     When I click continue on "C285_Single_Check Claim Page v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Bank Account Type Page v2"
     When I select radio button "Business bank account" on "C285_Single_Bank Account Type Page v2"
     And I click continue on "C285_Single_Bank Account Type Page v2"
@@ -810,6 +820,9 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Claim Page v2"
     And I select radio button "yes" on "C285_Single_Check Claim Page v2"
     When I click continue on "C285_Single_Check Claim Page v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Choose Repayment Method Page"
     When I select radio button "bank transfer" on "C285_Single_Choose Repayment Method Page"
     And I click continue on "C285_Single_Choose Repayment Method Page"
@@ -877,6 +890,9 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Check Claim Page v2"
     And I select radio button "yes" on "C285_Single_Check Claim Page v2"
     When I click continue on "C285_Single_Check Claim Page v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
     And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
     When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"

@@ -1,7 +1,6 @@
 @Security @Single
 Feature: Securities Single Change Link Tests
 
-
   Scenario: Happy path - Change link tests
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -72,6 +71,9 @@ Feature: Securities Single Change Link Tests
     And I click continue on "Securities_Confirm Full Repayment Security Id Page3"
     Then I am presented with the "Securities_Check Claim Page"
     And I click continue on "Securities_Check Claim Page"
+    Then I am presented with the "Securities_Choose Payee Type Page"
+    And I select radio button "Importer" on "Securities_Choose Payee Type Page"
+    When I click continue on "Securities_Choose Payee Type Page"
     Then I am presented with the "Securities_Check Bank Details Page"
     When I click "Change bank details" on "Securities_Check Bank Details Page"
     Then I am presented with the "Securities_Letter Of Authority Confirmation Page"

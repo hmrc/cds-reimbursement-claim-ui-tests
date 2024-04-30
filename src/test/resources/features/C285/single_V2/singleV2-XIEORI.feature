@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single - XIEORI V2
 
-  @test @wip
+  @test
   Scenario: XIEORI- happy path - check importer/declarant eori pages, change contact details - v2 enabled
     Given I navigate to the "Auth Login Stub Page"
     And I enter redirectURL on "Auth Login Stub Page"
@@ -73,9 +73,9 @@ Feature: C285 Single - XIEORI V2
     Then I am presented with the "C285_Single_Check Claim Page v2"
     And I select radio button "yes" on "C285_Single_Check Claim Page v2"
     When I click continue on "C285_Single_Check Claim Page v2"
-#    Then I am presented with the "C285_Single_Choose Payee Type v2"
-#    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
-#    When I click continue on "C285_Single_Choose Payee Type v2"
+    Then I am presented with the "C285_Single_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
+    When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
     And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
     When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
