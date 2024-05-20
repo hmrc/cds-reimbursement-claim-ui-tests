@@ -1003,7 +1003,7 @@ Feature: C285 Single V2
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_New Tax Type Code Validation Page v2"
 
-    @test @wip
+    @test
     Scenario: Happy path page when the MRN contains both old and new tax type codes and user continues the journey
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
