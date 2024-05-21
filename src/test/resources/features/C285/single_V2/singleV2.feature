@@ -982,3 +982,46 @@ Feature: C285 Single V2
     And I should see the following details
       | MRN                | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
       | 00AA006AAAAAAAAA01 | 12 February 2021 | Subsidy           | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+
+  @test
+  Scenario: Error page when the MRN contains only new tax type codes
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "c285" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "C285_Choose How Many Mrns Page v2"
+    When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
+    And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "10AAAAAAAAAAAAA301" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_New Tax Type Code Validation Page v2"
+
+    @test
+    Scenario: Happy path page when the MRN contains both old and new tax type codes and user continues the journey
+    Given I navigate to the "Auth Login Stub Page"
+    When I enter redirectURL on "Auth Login Stub Page"
+    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
+    And I click continue on "Auth Login Stub Page"
+    Then I am presented with the "Check Eori Details Page"
+    When I select radio button "yes" on "Check Eori Details Page"
+    And I click continue on "Check Eori Details Page"
+    Then I am presented with the "Select Claim Type Page"
+    When I select radio button "c285" on "Select Claim Type Page"
+    And I click continue on "Select Claim Type Page"
+    Then I am presented with the "C285_Choose How Many Mrns Page v2"
+    When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
+    And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
+    When I enter "10AAAAAAAAAAA00301" on "C285_Single_Enter Movement Reference Number Page v2"
+    And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_New Tax Type Code Validation Page v2"
+    And I select radio button "yes" on "C285_Single_New Tax Type Code Validation Page v2"
+    And I click continue on "C285_Single_New Tax Type Code Validation Page v2"
+    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
