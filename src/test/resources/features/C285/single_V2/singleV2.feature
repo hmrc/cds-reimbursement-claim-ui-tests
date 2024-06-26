@@ -318,6 +318,9 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Select Reimbursement Method Page v2"
     When I select radio button "Current Month Adjustment (CMA)" on "C285_Single_Select Reimbursement Method Page v2"
     And I click continue on "C285_Single_Select Reimbursement Method Page v2"
+    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
+    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
+    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -327,8 +330,8 @@ Feature: C285 Single V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim        | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | MRN                | Duties paid | Method                         | Method of payment |
-      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Current Month Adjustment (CMA) | Immediate Payment |
+      | This is the basis behind the claim        | Import date    | Contact details                                        | Account number| Sort code| Name on the account|Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         | Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | MRN                | Duties paid | Method                         | Method of payment |
+      | Duplicate Movement Reference Number (MRN) | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | Ending with 8523|Ending with 41| Consignee Goods Ltd    | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | 60AAAAAAAAAAAAAAA5 | £828.00     | Current Month Adjustment (CMA) | Immediate Payment |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -610,7 +613,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
 
-  @test
+  @test @wip
   Scenario: happy path with no bank details (user is both importer and declarant)- CMA eligible - choose CMA
 #  60AAAAAAAAAAAAAAA1 => No bank details (user is both importer and declarant), CMA eligible - choose CMA, skips payee indicator page and navigates to /choose-file-type page after /choose-repayment-method page
     Given I navigate to the "Auth Login Stub Page"
@@ -671,15 +674,16 @@ Feature: C285 Single V2
     When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Choose Repayment Method Page"
     When I select radio button "cma" on "C285_Single_Choose Repayment Method Page"
-    And I click continue on "C285_Single_Choose Repayment Method Page"
-#    Then I am presented with the "C285_Single_Bank Account Type Page v2"
-#    When I select radio button "Business bank account" on "C285_Single_Bank Account Type Page v2"
-#    And I click continue on "C285_Single_Bank Account Type Page v2"
-#    Then I am presented with the "C285_Single_Enter Bank Account Details Page v2"
-#    And I enter "" on "C285_Single_Enter Bank Account Details Page v2"
-#    When I click continue on "C285_Single_Enter Bank Account Details Page v2"
-#    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
-#    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
+    And I click continue on "C285_Single_Select Reimbursement Method Page v2"
+    Then I am presented with the "C285_Single_Bank Account Type Page v2"
+    When I select radio button "Business bank account" on "C285_Single_Bank Account Type Page v2"
+    And I click continue on "C285_Single_Bank Account Type Page v2"
+    Then I am presented with the "C285_Single_Enter Bank Account Details Page v2"
+    And I enter "" on "C285_Single_Enter Bank Account Details Page v2"
+    When I click continue on "C285_Single_Enter Bank Account Details Page v2"
+    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
+    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
+    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -689,8 +693,8 @@ Feature: C285 Single V2
     And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                         | Method of payment |MRN                | Duties paid |
-      | End use relief                     | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd | Fred Bloggs and Co Ltd |  14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Current Month Adjustment (CMA) | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     |
+      | This is the basis behind the claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   |Account number| Sort code| Name on the account|Declarant name         |  Importer address                            | This is the reason for the claim | Declarant address                                         | EU Duty | Total   | Method                         | Method of payment |MRN                | Duties paid |
+      | End use relief                     | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | enquiries@swftgoods.com | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | 0207 678 3243      | Swift Goods Ltd |Ending with 1001|Ending with 56| Mr John Smith |Fred Bloggs and Co Ltd    | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £580.00 | £580.00 | Current Month Adjustment (CMA) | Immediate Payment |60AAAAAAAAAAAAAAA1 | £828.00     |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
