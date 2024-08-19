@@ -32,7 +32,7 @@ object CE1179_Multiple_EnterMovementReferenceNumber1Page extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Enter the first Movement Reference Number (MRN)")
 
   override def enterDetails(textToEnter: String) {
-    enterText("enter-movement-reference-number.rejected-goods", textToEnter)
+    enterText("enter-movement-reference-number", textToEnter)
   }
 
 }
