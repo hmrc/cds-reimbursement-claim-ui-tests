@@ -95,7 +95,6 @@ Feature: C285 Single - XIEORI V2
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-
   @test
   Scenario: happy path - user selects CMA
     Given I navigate to the "Auth Login Stub Page"
