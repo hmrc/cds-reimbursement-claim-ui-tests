@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CheckEoriDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/check-eori-details"
-  override val title = "Check your EORI Number"
+  override val title = "Check your EORI number"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Error: Check your EORI Number - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Error: Check your EORI number - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Check your EORI Number - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Check your EORI number - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Check your EORI Number")
+  override def expectedPageHeader: Option[String] = Some("Check your EORI number")
 
   override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
