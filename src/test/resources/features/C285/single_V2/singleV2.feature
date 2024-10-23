@@ -66,10 +66,10 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
-    Then I am presented with the "UCDF_Choose File Other Page C285"
-    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page C285"
+    Then I am presented with the "UCDF_Choose File Other Page" "Commercial invoice"
+    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
     And I select radio button "No" on "UCDF_Choose File Other Page"
-    And I click continue if I'm on "UCDF_Choose File Other Page C285"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |Payee|  Importer address                            | Additional claim information | Declarant address                                         | A80 - Definitive Anti-Dumping Duty |A85 - Provisional Anti-Dumping Duty|A90 - Definitive Countervailing Duty|A95 - Provisional Countervailing Duty| Total   | Method                | Method of payment |MRN                |Local Reference Number (LRN)|  Duties paid | Sort code      |
@@ -148,10 +148,10 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
-    Then I am presented with the "UCDF_Choose File Other Page C285"
-    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page C285"
+    Then I am presented with the "UCDF_Choose File Other Page" "Commercial invoice"
+    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
     And I select radio button "No" on "UCDF_Choose File Other Page"
-    And I click continue if I'm on "UCDF_Choose File Other Page C285"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim        | Import date    | Contact details                                        | Account number| Sort code| Name on the account|Importer email          | Uploaded                        | Contact address                             | Importer telephone | Importer name   | Declarant name         |Payee| Importer address                            | Additional claim information | Declarant address                                         | A85 - Provisional Anti-Dumping Duty |A90 - Definitive Countervailing Duty|A95 - Provisional Countervailing Duty| Total   | MRN                |Local Reference Number (LRN)| Duties paid | Method                         | Method of payment |
@@ -302,10 +302,10 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
-    Then I am presented with the "UCDF_Choose File Other Page C285"
-    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page C285"
+    Then I am presented with the "UCDF_Choose File Other Page" "Commercial invoice"
+    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
     And I select radio button "No" on "UCDF_Choose File Other Page"
-    And I click continue if I'm on "UCDF_Choose File Other Page C285"
+    And I click continue if I'm on "UCDF_Choose File Other Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                        | Importer email          | Uploaded                        | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         |Payee|  Importer address                            | Additional claim information | Declarant address                                         | A80 - Definitive Anti-Dumping Duty | Total   | Method                | Method of payment |MRN                |Local Reference Number (LRN)| Duties paid | Sort code      |
