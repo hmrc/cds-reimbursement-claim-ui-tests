@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Multiple_EnterBankAccountDetailsPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-bank-account-details"
-  override val title = "Enter your bank account details"
+  override val title = "Enter the UK-based bank account details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Enter your bank account details - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Enter the UK-based bank account details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Enter your bank account details - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Enter the UK-based bank account details - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Enter your bank account details")
+  override def expectedPageHeader: Option[String] = Some("Enter the UK-based bank account details")
 
   override def enterDetails(data: String): Unit = {
     val bankAccountName: String = "Mr John Smith"
