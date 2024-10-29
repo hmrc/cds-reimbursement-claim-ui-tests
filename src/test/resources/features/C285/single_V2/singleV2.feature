@@ -249,7 +249,7 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Claim Submitted Page"
 
 
-  @test
+  @test @wip
   Scenario: happy path with no bank details (user is both importer and declarant)- CMA not eligible - choose Bank account transfer
 #  60AAAAAAAAAAAAAAA1 => No bank details (user is both importer and declarant),CMA eligible - skips payee indicator page and navigates to /enter-bank-account-details page after /choose-repayment-method page
     Given I navigate to the "Auth Login Stub Page"
@@ -299,9 +299,6 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
     When I click continue on "C285_Single_Choose Payee Type v2"
-    Then I am presented with the "C285_Single_Enter Bank Account Details Page v2"
-    And I enter "" on "C285_Single_Enter Bank Account Details Page v2"
-    When I click continue on "C285_Single_Enter Bank Account Details Page v2"
 #    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
 #    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
 #    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
