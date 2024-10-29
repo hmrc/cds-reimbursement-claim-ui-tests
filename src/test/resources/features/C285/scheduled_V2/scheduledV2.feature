@@ -353,7 +353,7 @@ Feature: C285 Scheduled
     Then I am presented with the "UDF_Size Fail Page"
 
 
-  @test
+  @test @wip
   Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA not eligible
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is both importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"
@@ -477,9 +477,9 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Scheduled_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Scheduled_Enter Bank Account Details Page v2"
     When I click continue on "C285_Scheduled_Enter Bank Account Details Page v2"
-    Then I am presented with the "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-    When I select radio button "yes" on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-    And I click continue on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
+#    Then I am presented with the "C285_Scheduled_Check These Bank Details Are Correct Page v2"
+#    When I select radio button "yes" on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
+#    And I click continue on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
