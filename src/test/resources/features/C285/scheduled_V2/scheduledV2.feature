@@ -353,7 +353,7 @@ Feature: C285 Scheduled
     Then I am presented with the "UDF_Size Fail Page"
 
 
-  @test @wip
+  @test
   Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA not eligible
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is both importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"
