@@ -23,13 +23,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Single_NewTaxTypeCodeValidationPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/new-tax-type-code-validation"
-  override val title = "Sorry, there is a problem with this MRN"
+  override val title = "Sorry, there is a problem with this Movement Reference Number (MRN)"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Sorry, there is a problem with this MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Sorry, there is a problem with this Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Sorry, there is a problem with this MRN - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Sorry, there is a problem with this Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Sorry, there is a problem with this MRN")
+  override def expectedPageHeader: Option[String] = Some("Sorry, there is a problem with this Movement Reference Number (MRN)")
 
   override def clickRadioButton(text: String): Unit = {
     text match {
