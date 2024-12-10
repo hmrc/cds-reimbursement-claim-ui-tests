@@ -38,7 +38,7 @@ object C285_Multiple_SelectDuties4DutyPagev2 extends BasePage {
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    enterText("enter-claim", amounts(0))
+    enterText("enter-claim-amount", amounts(0))
   }
 
   override def checkPageTitle(duty: String): Unit = {

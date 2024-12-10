@@ -89,7 +89,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details             | Importer email       | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Additional claim details | Declarant address                                 | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | +4420723934397     | IT Solutions LTD | 11001001 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £788.00 | Immediate Payment| £828.00     | 123456 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £379.00            | £409.00            |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | +4420723934397     | IT Solutions LTD | 11001001 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £40.00 | Immediate Payment| £828.00     | 123456 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £20.00            | £20.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -177,7 +177,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | Additional claim details | Declarant address                                         | Total   | Method of payment |Local Reference Number (LRN)| Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA1 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | 11001001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 0207 678 3243      | Swift Goods Ltd | 11001001 | Fred Bloggs and Co Ltd | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £40.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -275,7 +275,7 @@ Feature: C285 Multiple
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
 
-  @test
+  @test @wip
   Scenario: happy path with many MRNs and duties
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -341,7 +341,7 @@ Feature: C285 Multiple
     When I select "A80,A95" on "C285_Multiple_Select Duties 1 Page v2"
     And I click continue on "C285_Multiple_Select Duties 1 Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 1 Duty Page v2" "A80 - Definitive Anti-Dumping Duty"
-    When I enter "0" on "C285_Multiple_Select Duties 1 Duty Page v2"
+    When I enter "10" on "C285_Multiple_Select Duties 1 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 1 Duty Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 1 Duty Page v2" "A95 - Provisional Countervailing Duty"
     When I enter "10" on "C285_Multiple_Select Duties 1 Duty Page v2"
@@ -361,7 +361,7 @@ Feature: C285 Multiple
     When I select "591,433,463" on "C285_Multiple_Select Duties 3 Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty- Miscellaneous road fuels 591"
-    When I enter "0" on "C285_Multiple_Select Duties 3 Duty Page v2"
+    When I enter "10" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - Low alcohol beverages 433"
     When I enter "5" on "C285_Multiple_Select Duties 3 Duty Page v2"
@@ -374,7 +374,7 @@ Feature: C285 Multiple
     When I select "A70,421,422,435,487" on "C285_Multiple_Select Duties 4 Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "A70 - Additional Duty"
-    When I enter "0" on "C285_Multiple_Select Duties 4 Duty Page v2"
+    When I enter "10" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Made-wine 421"
     When I enter "5" on "C285_Multiple_Select Duties 4 Duty Page v2"
@@ -393,7 +393,7 @@ Feature: C285 Multiple
     When I select "561,589,595,591,592" on "C285_Multiple_Select Duties 5 Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Hydrocarbon oil 561"
-    When I enter "0" on "C285_Multiple_Select Duties 5 Duty Page v2"
+    When I enter "10" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Biofuels 589"
     When I enter "5" on "C285_Multiple_Select Duties 5 Duty Page v2"
@@ -430,7 +430,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                                      | Importer email       | Contact address                                  | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Additional claim details | Declarant address                                 | Total     | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Third MRN          | Fourth MRN         | Fifth MRN          | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | Uploaded                        |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | +4420723934397     | IT Solutions LTD | 11001001 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £1,284.20 | Immediate Payment |£828.00     | 123456 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £419.00            | £384.00            | £96.20             | £340.00            | £45.00             | document.pdf,Commercial invoice |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | automation@gmail.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | +4420723934397     | IT Solutions LTD | 11001001 | Foxpro Central LTD | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | under 500 characters             | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £185.00 | Immediate Payment |£828.00     | 123456 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £20.00            | £15.00            | £35.00             | £70.00            | £45.00             | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -609,6 +609,6 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                        | Importer email          | Contact address                             | Name on the account | Importer telephone | Importer name   | Account number   | Declarant name         | Importer address                            | Additional claim details | Declarant address                                         | Total   | Method of payment |Local Reference Number (LRN)| Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 0207 678 3243      | Swift Goods Ltd | 11001001 | Fred Bloggs and Co Ltd       | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £788.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | enquiries@swftgoods.com | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 0207 678 3243      | Swift Goods Ltd | 11001001 | Fred Bloggs and Co Ltd       | 14 Briar Lane,London,Pimlico,United Kingdom | under 500 characters             | 10 Rillington Place,London,Pimlico,W11 1RH,United Kingdom | £40.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
