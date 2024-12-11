@@ -355,7 +355,7 @@ Feature: C&E1179 Multiple
     And I click continue on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page" error page
 
-  @test @wip
+  @test
   Scenario: Happy path with only importer bank details and displays payee type page - choose declarant
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is only importer )  - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"

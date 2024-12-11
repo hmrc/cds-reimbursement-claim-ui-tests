@@ -39,7 +39,7 @@ object CE1179_Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
     driver.findElement(By.name("enter-claim.scheduled.paid-amount")).sendKeys(amounts(0))
-    driver.findElement(By.name("enter-claim.scheduled.actual-amount")).sendKeys(amounts(1))
+    driver.findElement(By.name("enter-claim.scheduled.claim-amount")).sendKeys(amounts(1))
   }
 
   override def checkPageTitle(duty: String): Unit = {

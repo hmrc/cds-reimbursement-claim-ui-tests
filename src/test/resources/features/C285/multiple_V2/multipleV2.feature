@@ -275,7 +275,7 @@ Feature: C285 Multiple
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
 
-  @test @wip
+  @test
   Scenario: happy path with many MRNs and duties
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
