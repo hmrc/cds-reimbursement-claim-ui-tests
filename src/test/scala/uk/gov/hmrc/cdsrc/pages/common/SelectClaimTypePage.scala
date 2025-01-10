@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object SelectClaimTypePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/select-claim-type"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/choose-claim-type"
   override val title       = "Start a new claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
