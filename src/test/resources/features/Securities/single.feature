@@ -797,7 +797,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Claim Page"
     And I click continue on "Securities_Check Claim Page"
     Then I am presented with the "Securities_Choose Payee Type Page"
-    And I select radio button "Declarant / Representative" on "Securities_Choose Payee Type Page"
+    And I select radio button "Declarant" on "Securities_Choose Payee Type Page"
     When I click continue on "Securities_Choose Payee Type Page"
     Then I am presented with the "Securities_Bank Account Type Page"
     When I select radio button "Business bank account" on "Securities_Bank Account Type Page"
