@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
+package uk.gov.hmrc.cdsrc.pages.C285.single_v2
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
+
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-private object C285_Multiple_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
+private object C285_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/have-your-documents-ready"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/have-your-documents-ready"
   override val title = "Have your supporting documents ready"
 
   override def expectedPageErrorTitle: Option[String] = Some("Have your supporting documents ready - Claim back import duty and VAT - GOV.UK")

@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single V2
 
-  @test
+  @test @wip
   Scenario: happy path with payee type and with only importer bank details
 #  (MRN 60AAAAAAAAAAAAAAA5 => only importer bank details (user is importer))
     Given I navigate to the "Auth Login Stub Page"
@@ -18,6 +18,8 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
@@ -97,6 +99,8 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
@@ -181,6 +185,8 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Choose How Many Mrns Page"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page"
     And I click continue on "C285_Choose How Many Mrns Page"
+    Then I am presented with the "C285_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page"
     When I enter "10AAAAAAAAAAAAAAA6" on "C285_Single_Enter Movement Reference Number Page"
     And I click continue on "C285_Single_Enter Movement Reference Number Page"
@@ -266,6 +272,8 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "60AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
@@ -335,6 +343,8 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA001AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"

@@ -138,7 +138,10 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
 
+  def clickContinue(): Unit = click on cssSelector("#main-content > div > div > a")
+
   def clickBackButton(): Unit = click on cssSelector(".govuk-back-link")
+
 
   def clickButton(buttonText: String): Unit = click on partialLinkText(buttonText)
 
