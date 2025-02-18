@@ -17,6 +17,8 @@ Feature: C285 Scheduled - XIEORI V2
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
     When I enter "10XICDAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"

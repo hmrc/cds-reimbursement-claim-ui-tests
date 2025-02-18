@@ -1,7 +1,7 @@
 @C285 @Scheduled
 Feature: C285 Scheduled
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @wip
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -16,6 +16,8 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
     When I enter "10AAAAAAAAAAAAAAA2" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
@@ -163,6 +165,8 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
     When I enter "60AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
@@ -303,6 +307,8 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
@@ -331,6 +337,8 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
@@ -369,6 +377,8 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"

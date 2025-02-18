@@ -24,14 +24,15 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 private object C285_Scheduled_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/have-your-documents-ready"
-  override val title = "Have your supporting documents ready"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/have-your-documents-ready"
+  override val title = "Files you need for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Have your supporting documents ready - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("Files you need for this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Have your supporting documents ready - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Files you need for this claim - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Have your supporting documents ready")
+  override def expectedPageHeader: Option[String] = Some("Files you need for this claim")
+
 
   def clickContinue(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
