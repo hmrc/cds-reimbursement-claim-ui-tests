@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single Claim Basis V2
 
-  @test
+ @test @wip
   Scenario: happy path - Duplicate Movement Reference Number (MRN)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -19,7 +19,7 @@ Feature: C285 Single Claim Basis V2
     And I click continue on "C285_Choose How Many Mrns Page v2"
     Then I am presented with the "C285_Have Your Supporting Document Ready Page v2"
     When I clickContinue on "C285_Have Your Supporting Document Ready Page v2"
-    Then I am presented with "C285_Single_Enter Movement Reference Number Page v2"
+    Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
