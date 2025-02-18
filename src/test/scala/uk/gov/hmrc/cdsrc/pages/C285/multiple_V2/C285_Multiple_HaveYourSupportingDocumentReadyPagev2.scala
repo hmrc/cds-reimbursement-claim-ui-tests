@@ -36,6 +36,7 @@ private object C285_Multiple_HaveYourSupportingDocumentReadyPagev2 extends BaseP
   def clickContinue(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
 
+
   }
 
 }

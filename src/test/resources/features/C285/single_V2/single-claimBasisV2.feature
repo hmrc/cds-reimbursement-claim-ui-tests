@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single Claim Basis V2
 
- @test @wip
+ @test
   Scenario: happy path - Duplicate Movement Reference Number (MRN)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
