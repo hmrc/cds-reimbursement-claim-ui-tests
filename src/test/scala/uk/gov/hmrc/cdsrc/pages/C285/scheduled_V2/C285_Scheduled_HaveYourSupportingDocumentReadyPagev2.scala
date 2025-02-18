@@ -33,6 +33,7 @@ private object C285_Scheduled_HaveYourSupportingDocumentReadyPagev2 extends Base
 
   override def expectedPageHeader: Option[String] = Some("Files you need for this claim")
 
+
   def clickContinue(selection: String): Unit = {
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
 
