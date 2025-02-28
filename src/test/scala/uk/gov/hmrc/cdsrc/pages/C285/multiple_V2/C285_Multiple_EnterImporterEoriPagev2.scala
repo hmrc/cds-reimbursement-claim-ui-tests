@@ -30,7 +30,7 @@ object C285_Multiple_EnterImporterEoriPagev2 extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("What's the importer's EORI number?")
 
-  override def enterDetails(textToEnter: String) {
+  override def enterDetails(textToEnter: String): Unit = {
     enterText("enter-importer-eori-number", textToEnter)
   }
 
