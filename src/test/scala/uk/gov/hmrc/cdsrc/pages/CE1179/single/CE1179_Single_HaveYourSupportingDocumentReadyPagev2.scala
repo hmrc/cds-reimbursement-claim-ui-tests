@@ -24,7 +24,7 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 private object CE1179_Single_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/have-your-documents-ready"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/have-your-documents-ready"
   override val title = "Have your supporting documents ready"
 
   override def expectedPageErrorTitle: Option[String] = Some("Have your supporting documents ready - Claim back import duty and VAT - GOV.UK")
