@@ -1,7 +1,7 @@
 @C285 @Scheduled
 Feature: C285 Scheduled - XIEORI V2
 
-  @test
+  @test @wip
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -31,15 +31,7 @@ Feature: C285 Scheduled - XIEORI V2
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
     And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
-    And I enter "" on "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
-    And I click continue on "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-    And I click continue on "C285_Scheduled_Claimant Details Page v2"
+    #New Changes to the flow
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
@@ -145,6 +137,16 @@ Feature: C285 Scheduled - XIEORI V2
     When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue if I'm on "UCDF_Choose File Other Page"
+    #New changes to the flow
+    Then I am presented with the "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
+    And I enter "" on "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
+    And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 | Additional claim details | Declarant address                                 | EU Duty | UK Duty | Excise Duty | Total  | Method of payment |Duties paid | Sort code      | First MRN          | Scheduled document |

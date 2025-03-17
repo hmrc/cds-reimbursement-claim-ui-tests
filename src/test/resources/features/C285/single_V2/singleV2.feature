@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single V2
 
-  @test @wip
+  @test
   Scenario: happy path with payee type and with only importer bank details
 #  (MRN 60AAAAAAAAAAAAAAA5 => only importer bank details (user is importer))
     Given I navigate to the "Auth Login Stub Page"
