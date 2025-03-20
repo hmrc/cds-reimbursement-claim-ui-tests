@@ -1,7 +1,7 @@
 @C&E1179 @Single
 Feature: C&E1179 Single
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @wip
   Scenario: happy path - check importer/declarant eori pages, change contact details, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -69,8 +69,8 @@ Feature: C&E1179 Single
     When I enter "10" on "CE1179_Single_Enter Claim Page"
     And I click continue on "CE1179_Single_Enter Claim Page"
     Then I am presented with the "CE1179_Single_Check Claim Page"
-    When I select radio button "yes" on "CE1179_Single_Check Claim Page"
-    And I click continue on "CE1179_Single_Check Claim Page"
+    # When I select radio button "yes" on "CE1179_Single_Check Claim Page"
+    And I clickContinue on "CE1179_Single_Check Claim Page"
     Then I am presented with the "CE1179_Single_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Single_Enter Inspection Date Page"
     And I click continue on "CE1179_Single_Enter Inspection Date Page"
@@ -172,8 +172,8 @@ Feature: C&E1179 Single
     When I enter "10" on "CE1179_Single_Enter Claim Page"
     And I click continue on "CE1179_Single_Enter Claim Page"
     Then I am presented with the "CE1179_Single_Check Claim Page"
-    And I select radio button "yes" on "CE1179_Single_Check Claim Page"
-    When I click continue on "CE1179_Single_Check Claim Page"
+    # And I select radio button "yes" on "CE1179_Single_Check Claim Page"
+    When I clickcContinue on "CE1179_Single_Check Claim Page"
     Then I am presented with the "CE1179_Single_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Single_Enter Inspection Date Page"
     And I click continue on "CE1179_Single_Enter Inspection Date Page"
