@@ -16,8 +16,12 @@
 
 package uk.gov.hmrc.cdsrc.pages.C285.single_v2
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
+import uk.gov.hmrc.cdsrc.pages.C285.single_v2.C285_HaveYourSupportingDocumentReadyPagev2.driver
+
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object C285_Single_CheckClaimPagev2 extends BasePage {
 
@@ -30,11 +34,12 @@ object C285_Single_CheckClaimPagev2 extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check the repayment total for this claim")
 
-  override def clickRadioButton(text: String): Unit = {
-    text.toLowerCase() match {
-      case "yes" => click on xpath(s"""//*[@id="check-claim"]""")
-      case "no" => click on xpath(s"""//*[@id="check-claim-eori-incorrect"]""")
-    }
-  }
+  def clickContinue(selection: String): Unit = {
+    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
 
+  }
 }
+
+
+
+

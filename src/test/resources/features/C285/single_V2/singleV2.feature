@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single V2
 
-  @test @wip
+  @test
   Scenario: happy path with payee type and with only importer bank details
 #  (MRN 60AAAAAAAAAAAAAAA5 => only importer bank details (user is importer))
     Given I navigate to the "Auth Login Stub Page"
@@ -48,8 +48,8 @@ Feature: C285 Single V2
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
     Then I am presented with the "C285_Single_Check Claim Page v2"
-    And I select radio button "yes" on "C285_Single_Check Claim Page v2"
-    When I click continue on "C285_Single_Check Claim Page v2"
+    # And I select radio button "yes" on "C285_Single_Check Claim Page v2"
+    When I clickContinue on "C285_Single_Check Claim Page v2"
     Then I am presented with the "C285_Single_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
     When I click continue on "C285_Single_Choose Payee Type v2"
@@ -132,8 +132,8 @@ Feature: C285 Single V2
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
     Then I am presented with the "C285_Single_Check Claim Page v2"
-    And I select radio button "yes" on "C285_Single_Check Claim Page v2"
-    When I click continue on "C285_Single_Check Claim Page v2"
+    # And I select radio button "yes" on "C285_Single_Check Claim Page v2"
+    When I clickContinue on "C285_Single_Check Claim Page v2"
     Then I am presented with the "C285_Single_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
     When I click continue on "C285_Single_Choose Payee Type v2"
@@ -233,8 +233,8 @@ Feature: C285 Single V2
     When I enter "10" on "C285_Single_Enter Claim Page"
     And I click continue on "C285_Single_Enter Claim Page"
     Then I am presented with the "C285_Single_Check Claim Page"
-    And I select radio button "yes" on "C285_Single_Check Claim Page"
-    When I click continue on "C285_Single_Check Claim Page"
+    # And I select radio button "yes" on "C285_Single_Check Claim Page"
+    When I clickContinue on "C285_Single_Check Claim Page"
     Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page"
     Then I am presented with the "C285_Single_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
@@ -293,8 +293,8 @@ Feature: C285 Single V2
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
     Then I am presented with the "C285_Single_Check Claim Page v2"
-    And I select radio button "yes" on "C285_Single_Check Claim Page v2"
-    When I click continue on "C285_Single_Check Claim Page v2"
+    # And I select radio button "yes" on "C285_Single_Check Claim Page v2"
+    When I clickContinue on "C285_Single_Check Claim Page v2"
     Then I am presented with the "C285_Single_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
     When I click continue on "C285_Single_Choose Payee Type v2"
