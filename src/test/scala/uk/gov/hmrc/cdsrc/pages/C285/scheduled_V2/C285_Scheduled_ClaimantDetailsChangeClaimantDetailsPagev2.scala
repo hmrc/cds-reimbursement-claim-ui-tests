@@ -22,13 +22,13 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_ClaimantDetailsChangeClaimantDetailsPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/claimant-details/change-contact-details"
-  override val title = "Provide the contact details for this claim"
+  override val title = "Who should we contact about this claim?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Provide the contact details for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some("ERROR: Who should we contact about this claim? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageTitle: Option[String] = Some("Provide the contact details for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some("Who should we contact about this claim? - Claim back import duty and VAT - GOV.UK")
 
-  override def expectedPageHeader: Option[String] = Some("Provide the contact details for this claim")
+  override def expectedPageHeader: Option[String] = Some("Who should we contact about this claim?")
 
   override def enterDetails(data: String): Unit = {
     enterText("enter-contact-details.contact-name", if(data==""){"Mr John Smith"}else{data.split(",")(0)})
