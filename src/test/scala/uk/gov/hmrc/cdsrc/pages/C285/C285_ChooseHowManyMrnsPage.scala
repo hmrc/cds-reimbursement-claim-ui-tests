@@ -30,7 +30,7 @@ object C285_ChooseHowManyMrnsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Single or multiple Movement Reference Numbers (MRNs)")
 
-  override def clickRadioButton(text: String) {
+  override def clickRadioButton(text: String): Unit = {
     text.toLowerCase() match {
       case "individual" => click on cssSelector("input[data-id='select-number-of-claims-individual']")
       case "bulk" => click on cssSelector("input[data-id='select-number-of-claims-bulk']")

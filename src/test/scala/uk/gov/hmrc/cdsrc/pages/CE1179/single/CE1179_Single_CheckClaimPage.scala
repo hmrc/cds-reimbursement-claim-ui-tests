@@ -19,7 +19,7 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.single
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.C285.single_v2.C285_Single_CheckClaimPagev2.driver
+
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 

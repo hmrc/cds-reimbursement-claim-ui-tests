@@ -34,7 +34,7 @@ object Securities_EnterExportMovementReferenceNumberPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter the export MRN in the declaration")
 
-  override def enterDetails(textToEnter: String) {
+  override def enterDetails(textToEnter: String): Unit = {
     enterText("enter-export-movement-reference-number", textToEnter)
   }
 }

@@ -20,7 +20,7 @@ import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait}
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.CE1179.multiple.CE1179_Multiple_CheckBankDetailsPage.cssSelector
+
 
 import java.time.Duration
 

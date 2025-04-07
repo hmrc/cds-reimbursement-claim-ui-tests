@@ -20,7 +20,7 @@ import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait}
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.C285.multiple_V2.C285_Multiple_CheckTheseBankDetailsAreCorrectPagev2.driver
+
 
 import java.time.Duration
 

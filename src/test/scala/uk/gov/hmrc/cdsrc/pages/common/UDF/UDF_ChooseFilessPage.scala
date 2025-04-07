@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.common.UDF
 
-import org.openqa.selenium.By
-import org.scalatest.Assertion
+
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 

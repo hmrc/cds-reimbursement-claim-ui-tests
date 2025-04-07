@@ -30,7 +30,7 @@ object Securities_EnterDeclarantEoriPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("What is the declarant’s EORI number?")
 
-  override def enterDetails(textToEnter: String) {
+  override def enterDetails(textToEnter: String): Unit = {
     enterText("enter-declarant-eori-number", textToEnter)
   }
 
