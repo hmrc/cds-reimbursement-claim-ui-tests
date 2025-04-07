@@ -18,7 +18,7 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.multiple
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.CE1179.multiple.CE1179_Multiple_EnterMovementReferenceNumberPage.enterText
+
 
 object CE1179_Multiple_EnterMovementReferenceNumber1Page extends BasePage {
 
@@ -31,7 +31,7 @@ object CE1179_Multiple_EnterMovementReferenceNumber1Page extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter the first Movement Reference Number (MRN)")
 
-  override def enterDetails(textToEnter: String) {
+  override def enterDetails(textToEnter: String): Unit = {
     enterText("enter-movement-reference-number", textToEnter)
   }
 

@@ -17,11 +17,10 @@
 package uk.gov.hmrc.cdsrc.pages.C285.single_v2
 
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
-import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, WebDriverWait}
+import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait}
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import org.openqa.selenium.{By, WebDriver}
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
+
 
 import java.time.Duration
 

@@ -26,7 +26,8 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder.DataTableConverters
 
-import scala.collection.JavaConverters._
+
+import scala.jdk.CollectionConverters._
 
 trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
 

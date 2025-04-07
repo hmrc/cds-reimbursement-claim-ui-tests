@@ -30,7 +30,7 @@ object CE1179_Single_EnterMovementReferenceNumberPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Movement Reference Number (MRN)")
 
-  override def enterDetails(textToEnter: String) {
+  override def enterDetails(textToEnter: String): Unit = {
     enterText("enter-movement-reference-number", textToEnter)
   }
 

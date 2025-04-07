@@ -30,7 +30,7 @@ object CE1179_Multiple_EnterSubsidyMovementReferenceNumber2Page extends BasePage
 
   override def expectedPageHeader: Option[String] = Some("Enter the second subsidy Movement Reference Number (MRN)")
 
-  override def enterDetails(textToEnter: String) {
+  override def enterDetails(textToEnter: String): Unit = {
     enterText("enter-movement-reference-number.rejected-goods", textToEnter)
   }
 

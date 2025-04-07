@@ -30,7 +30,7 @@ object Securities_EnterMovementReferenceNumberPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Enter the Movement Reference Number (MRN)")
 
-  override def enterDetails(textToEnter: String) {
+  override def enterDetails(textToEnter: String): Unit = {
     enterText("enter-movement-reference-number", textToEnter)
   }
 
