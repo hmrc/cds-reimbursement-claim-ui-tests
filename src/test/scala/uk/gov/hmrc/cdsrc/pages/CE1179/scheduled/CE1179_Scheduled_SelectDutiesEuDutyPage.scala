@@ -22,11 +22,15 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Scheduled_SelectDutiesEuDutyPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/eu-duty"
-  override val title = "Claim details Which EU duties do you want to claim for?"
+  override val title       = "Claim details Which EU duties do you want to claim for?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Which EU duties do you want to claim for? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Which EU duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Which EU duties do you want to claim for? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Which EU duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Claim details Which EU duties do you want to claim for?")
 

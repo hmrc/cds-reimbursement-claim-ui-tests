@@ -21,12 +21,17 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Multiple_CheckMovementReferenceNumbersPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/check-movement-reference-numbers"
-  override val title = "Movement Reference Numbers (MRNs) added to your claim"
+  override val url: String =
+    TestConfiguration.url("cds-frontend") + "/overpayments/multiple/check-movement-reference-numbers"
+  override val title       = "Movement Reference Numbers (MRNs) added to your claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Movement Reference Numbers (MRNs) added to your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Movement Reference Numbers (MRNs) added to your claim - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Movement Reference Numbers (MRNs) added to your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Movement Reference Numbers (MRNs) added to your claim - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Movement Reference Numbers (MRNs) added to your claim")
 

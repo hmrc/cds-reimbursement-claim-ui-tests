@@ -22,7 +22,6 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-
 object C285_Multiple_SupportingEvidenceSelectSupportingEvidenceTypePagev2 extends BasePage {
 
   override val url: String =

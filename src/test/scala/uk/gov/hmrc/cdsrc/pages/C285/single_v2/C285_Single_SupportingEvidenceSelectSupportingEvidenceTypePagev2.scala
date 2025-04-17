@@ -26,20 +26,22 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 object C285_Single_SupportingEvidenceSelectSupportingEvidenceTypePagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/choose-file-type"
-  override val title = "Add supporting documents to your claim"
+  override val title       = "Add supporting documents to your claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Add supporting documents to your claim")
 
-  override def checkURL: Assertion = {
+  override def checkURL: Assertion =
     driver.getCurrentUrl should fullyMatch regex (url + ".*?").r
-  }
 
-  override def clickRadioButton(selection: String): Unit = {
+  override def clickRadioButton(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
-  }
 
 }

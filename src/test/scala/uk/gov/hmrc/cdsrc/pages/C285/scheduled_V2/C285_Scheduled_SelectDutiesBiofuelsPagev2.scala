@@ -22,12 +22,18 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_SelectDutiesBiofuelsPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/biofuels"
-  override val title = "Claim details Which biofuels duties do you want to claim for?"
+  override val title       = "Claim details Which biofuels duties do you want to claim for?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Which biofuels duties do you want to claim for? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Which biofuels duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Which biofuels duties do you want to claim for? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Which biofuels duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageHeader: Option[String] = Some("Claim details Which biofuels duties do you want to claim for?")
+  override def expectedPageHeader: Option[String] = Some(
+    "Claim details Which biofuels duties do you want to claim for?"
+  )
 
 }

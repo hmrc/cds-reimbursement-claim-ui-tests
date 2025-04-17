@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object UDF_SummaryPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/upload-documents/summary"
-  override val title = "You have successfully uploaded a document showing all the MRNs in this claim"
+  override val title       = "You have successfully uploaded a document showing all the MRNs in this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "You have successfully uploaded a document showing all the MRNs in this claim - Claim back import duty and VAT - GOV.UK"

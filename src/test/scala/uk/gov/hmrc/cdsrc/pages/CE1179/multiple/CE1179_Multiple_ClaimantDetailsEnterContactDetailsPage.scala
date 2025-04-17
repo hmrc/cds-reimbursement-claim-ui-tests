@@ -21,19 +21,24 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object CE1179_Multiple_ClaimantDetailsEnterContactDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/claimant-details/change-contact-details"
-  override val title = "Who should we contact about this claim?"
+  override val url: String =
+    TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/claimant-details/change-contact-details"
+  override val title       = "Who should we contact about this claim?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Who should we contact about this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Who should we contact about this claim? - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Who should we contact about this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Who should we contact about this claim? - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Who should we contact about this claim?")
 
   override def enterDetails(data: String): Unit = {
-    val fullName: String = "John Smith"
+    val fullName: String     = "John Smith"
     val emailAddress: String = "john@smith.com"
-    val telephone: String = "01234567890"
+    val telephone: String    = "01234567890"
 
     enterText("enter-contact-details.contact-name", fullName)
     enterText("enter-contact-details.contact-email", emailAddress)

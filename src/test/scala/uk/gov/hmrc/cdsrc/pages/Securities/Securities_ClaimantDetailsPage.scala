@@ -34,12 +34,11 @@ object Securities_ClaimantDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Confirm contact details for this claim")
 
-  override def clickButton(buttonText: String): Unit = {
+  override def clickButton(buttonText: String): Unit =
     buttonText.toLowerCase() match {
       case "change contact details" =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/claimant-details/change-contact-details']")
       case "change contact address" =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/claimant-details/lookup-address']")
     }
-  }
 }

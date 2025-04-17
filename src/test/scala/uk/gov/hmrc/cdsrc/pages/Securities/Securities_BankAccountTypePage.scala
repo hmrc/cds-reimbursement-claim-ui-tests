@@ -22,19 +22,24 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_BankAccountTypePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/choose-bank-account-type"
-  override val title = "What type of account details are you providing?"
+  override val title       = "What type of account details are you providing?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("What type of account details are you providing? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "What type of account details are you providing? - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("What type of account details are you providing? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "What type of account details are you providing? - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("What type of account details are you providing?")
 
-  override def clickRadioButton(text: String): Unit = {
+  override def clickRadioButton(text: String): Unit =
     text match {
-      case "Business bank account" => click on cssSelector("input[data-id='select-bank-account-type-business-bank-account']")
-      case "Personal bank account" => click on cssSelector("input[data-id='select-bank-account-type-personal-bank-account']")
+      case "Business bank account" =>
+        click on cssSelector("input[data-id='select-bank-account-type-business-bank-account']")
+      case "Personal bank account" =>
+        click on cssSelector("input[data-id='select-bank-account-type-personal-bank-account']")
     }
-  }
 
 }

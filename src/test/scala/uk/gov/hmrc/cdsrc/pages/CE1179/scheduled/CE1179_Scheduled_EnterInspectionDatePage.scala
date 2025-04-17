@@ -22,11 +22,15 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Scheduled_EnterInspectionDatePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/enter-inspection-date"
-  override val title = "Making your goods available for inspection"
+  override val title       = "Making your goods available for inspection"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Making your goods available for inspection - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Making your goods available for inspection - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Making your goods available for inspection - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Making your goods available for inspection - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Making your goods available for inspection")
 

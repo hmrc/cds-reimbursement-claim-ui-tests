@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object FeedbackPage extends BasePage {
 
   override val url: String = "http://localhost:9514/feedback/CDSRC"
-  override val title = "Feedback"
+  override val title       = "Feedback"
 
   override def expectedPageErrorTitle: Option[String] = Some("Give feedback - GOV.UK")
 

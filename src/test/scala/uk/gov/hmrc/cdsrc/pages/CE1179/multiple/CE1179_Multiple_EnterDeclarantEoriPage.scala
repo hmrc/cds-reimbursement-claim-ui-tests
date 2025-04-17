@@ -22,16 +22,19 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Multiple_EnterDeclarantEoriPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/enter-declarant-eori"
-  override val title = "What is the declarant’s EORI number?"
+  override val title       = "What is the declarant’s EORI number?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("What is the declarant’s EORI number? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "What is the declarant’s EORI number? - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("What is the declarant’s EORI number? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "What is the declarant’s EORI number? - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("What is the declarant’s EORI number?")
 
-  override def enterDetails(textToEnter: String): Unit = {
+  override def enterDetails(textToEnter: String): Unit =
     enterText("enter-declarant-eori-number", textToEnter)
-  }
 
 }

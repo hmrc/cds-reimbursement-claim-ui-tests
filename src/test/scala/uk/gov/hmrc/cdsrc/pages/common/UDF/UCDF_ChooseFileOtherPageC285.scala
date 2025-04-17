@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object UCDF_ChooseFileOtherPageC285 extends BasePage {
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
-  override val title = "Upload documents to support your claim"
+  override val title       = "Upload documents to support your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Upload documents to support your claim - Claim back import duty and VAT - GOV.UK"
@@ -34,20 +34,18 @@ object UCDF_ChooseFileOtherPageC285 extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Upload documents to support your claim")
 
-  override def clickRadioButton(text: String): Unit = {
+  override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on id("choice")
-      case "no" => click on id("choice-2")
+      case "no"  => click on id("choice-2")
     }
-  }
 
   override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
   override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url)) {
+    while (driver.getCurrentUrl.equals(url))
       clickContinueButton()
-    }
   }
 
 }

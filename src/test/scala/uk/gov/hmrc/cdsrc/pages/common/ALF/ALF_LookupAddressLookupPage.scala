@@ -22,13 +22,17 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object ALF_LookupAddressLookupPage extends BasePage {
 
   override val url: String = TestConfiguration.url("lookup-address") + "/..."
-  override val title = "Find your UK address"
+  override val title       = "Find your UK address"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Find your UK address"
   )
 
-  override def expectedPageTitle: Option[String] = Some("Find your UK address - Claim back import duty and VAT - GOV.UK")
-  override def expectedPageHeader: Option[String] = Some("Find your UK address - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String]  = Some(
+    "Find your UK address - Claim back import duty and VAT - GOV.UK"
+  )
+  override def expectedPageHeader: Option[String] = Some(
+    "Find your UK address - Claim back import duty and VAT - GOV.UK"
+  )
 
 }

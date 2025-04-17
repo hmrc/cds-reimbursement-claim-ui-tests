@@ -39,7 +39,7 @@ object Securities_ConfirmFullRepaymentSecurityIdPage2 extends BasePage {
     driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
       s"""Security deposit: 2 of 2"""
     )
-    driver.getCurrentUrl                                                                 should equal(
+    driver.getCurrentUrl                                                                      should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
     )
   }

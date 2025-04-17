@@ -22,9 +22,11 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Multiple_ClaimSubmittedPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/claim-submitted"
-  override val title = "Claim submitted"
+  override val title       = "Claim submitted"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Claim submitted - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Claim submitted - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageTitle: Option[String] = Some("Claim submitted - Claim back import duty and VAT - GOV.UK")
 

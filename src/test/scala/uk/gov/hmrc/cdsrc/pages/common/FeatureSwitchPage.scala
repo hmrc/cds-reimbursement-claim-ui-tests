@@ -23,12 +23,10 @@ object FeatureSwitchPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/test-only/feature/"
 
-  override def configure(feature: String, featureState: String): Unit = {
-    if (feature equals ("overpayments v2")){
+  override def configure(feature: String, featureState: String): Unit =
+    if (feature equals "overpayments v2") {
       go to url + s"${feature.toLowerCase().replace(" ", "_")}/${featureState.dropRight(1)}"
-    }
-    else{
+    } else {
       go to url + s"${feature.toLowerCase().replace(" ", "-")}/${featureState.dropRight(1)}"
     }
-  }
 }

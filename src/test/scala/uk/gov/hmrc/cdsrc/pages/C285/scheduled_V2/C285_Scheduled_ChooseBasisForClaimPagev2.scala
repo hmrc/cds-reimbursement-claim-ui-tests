@@ -25,16 +25,19 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 object C285_Scheduled_ChooseBasisForClaimPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/choose-basis-for-claim"
-  override val title = "Why are you making this claim?"
+  override val title       = "Why are you making this claim?"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Why are you making this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Why are you making this claim? - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Why are you making this claim? - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Why are you making this claim? - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Why are you making this claim?")
 
-  override def clickRadioButton(selection: String): Unit = {
+  override def clickRadioButton(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
-  }
 
 }

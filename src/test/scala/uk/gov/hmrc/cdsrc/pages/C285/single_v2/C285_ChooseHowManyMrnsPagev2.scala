@@ -22,20 +22,23 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_ChooseHowManyMrnsPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/choose-how-many-mrns"
-  override val title = "Single or multiple Movement Reference Numbers (MRNs)"
+  override val title       = "Single or multiple Movement Reference Numbers (MRNs)"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Single or multiple Movement Reference Numbers (MRNs) - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Single or multiple Movement Reference Numbers (MRNs) - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Single or multiple Movement Reference Numbers (MRNs) - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Single or multiple Movement Reference Numbers (MRNs) - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Single or multiple Movement Reference Numbers (MRNs)")
 
-  override def clickRadioButton(text: String): Unit = {
+  override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "individual" => click on cssSelector("input[data-id='overpayments.choose-how-many-mrns.individual']")
-      case "bulk" => click on cssSelector("input[data-id='overpayments.choose-how-many-mrns.multiple']")
-      case "schedule" => click on cssSelector("input[data-id='overpayments.choose-how-many-mrns.scheduled']")
+      case "bulk"       => click on cssSelector("input[data-id='overpayments.choose-how-many-mrns.multiple']")
+      case "schedule"   => click on cssSelector("input[data-id='overpayments.choose-how-many-mrns.scheduled']")
     }
-  }
 
 }

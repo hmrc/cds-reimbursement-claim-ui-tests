@@ -26,10 +26,16 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder.DataTableConverters
 
-
 import scala.jdk.CollectionConverters._
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with WebBrowser with BasePage {
+trait BaseStepDef
+    extends ScalaDsl
+    with EN
+    with BrowserDriver
+    with Eventually
+    with Matchers
+    with WebBrowser
+    with BasePage {
 
   When("""I select Welsh translation on {string}""") { (page: String) =>
     PageObjectFinder.page(page).waitForPageHeader
@@ -120,9 +126,10 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
     PageObjectFinder.page(page).checkPageErrorTitle()
   }
 
-  Then("""The error summary title is {string} and the error message is {string}""") { (errorSummaryTitle: String, errorMessage: String) =>
-    PageObjectFinder.checkPageErrorSummaryTitle(errorSummaryTitle)
-    PageObjectFinder.checkPageErrorMessage(errorMessage)
+  Then("""The error summary title is {string} and the error message is {string}""") {
+    (errorSummaryTitle: String, errorMessage: String) =>
+      PageObjectFinder.checkPageErrorSummaryTitle(errorSummaryTitle)
+      PageObjectFinder.checkPageErrorMessage(errorMessage)
   }
 
   Then("""I am presented with the {string} {string}""") { (page: String, specificPage: String) =>
@@ -156,7 +163,7 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   And("""^I should see the following details""") { data: DataTable =>
     val expectedData = data.asMaps().asScala.toList.flatMap(_.asScala.toMap).toMap
-    val actualData = PageObjectFinder.pageData
+    val actualData   = PageObjectFinder.pageData
     actualData should be(expectedData)
   }
 
@@ -167,11 +174,12 @@ trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually wi
 
   And("""I should see the following {string} on the cookie banner""") { (bannerElement: String, data: DataTable) =>
     val expectedText = data.asScalaListOfStrings
-    val tagName = bannerElement match {
-      case "links" => {
-        expectedText.map(link => PageObjectFinder.cookieBannerLinkUrl(link) should endWith("/tracking-consent/cookie-settings"))
+    val tagName      = bannerElement match {
+      case "links"   =>
+        expectedText.map(link =>
+          PageObjectFinder.cookieBannerLinkUrl(link) should endWith("/tracking-consent/cookie-settings")
+        )
         "a"
-      }
       case "buttons" => "button"
     }
     PageObjectFinder.cookieBannerLinksButtonsText(tagName) should be(expectedText)

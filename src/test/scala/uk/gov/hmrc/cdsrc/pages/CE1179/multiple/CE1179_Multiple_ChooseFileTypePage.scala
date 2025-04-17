@@ -25,16 +25,19 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 object CE1179_Multiple_ChooseFileTypePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/multiple/choose-file-type"
-  override val title = "Choose the type of supporting documents you are uploading"
+  override val title       = "Choose the type of supporting documents you are uploading"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Add supporting documents to your claim")
 
-  override def clickRadioButton(selection: String): Unit = {
+  override def clickRadioButton(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
-  }
 
 }

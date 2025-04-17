@@ -21,17 +21,20 @@ import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait}
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-
 import java.time.Duration
 
 object CE1179_Single_CheckBankDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/check-bank-details"
-  override val title = "Check these bank details are correct"
+  override val title       = "Check these bank details are correct"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check these bank details are correct - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Check these bank details are correct - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Check these bank details are correct - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Check these bank details are correct - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Check these bank details are correct")
 
@@ -40,8 +43,8 @@ object CE1179_Single_CheckBankDetailsPage extends BasePage {
   override def clickRadioButton(text: String): Unit = {
     val radioButtonSelector = text.toLowerCase() match {
       case "yes" => By.cssSelector("#bank-details-yes-no input[value='true']")
-      case "no" => By.cssSelector("#bank-details-yes-no input[value='false']")
-      case _ => throw new IllegalArgumentException("Invalid option: " + text)
+      case "no"  => By.cssSelector("#bank-details-yes-no input[value='false']")
+      case _     => throw new IllegalArgumentException("Invalid option: " + text)
     }
 
     val wait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
@@ -50,9 +53,8 @@ object CE1179_Single_CheckBankDetailsPage extends BasePage {
       .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
 
     val radioButton: WebElement = wait.until(new ExpectedCondition[WebElement] {
-      override def apply(driver: WebDriver): WebElement = {
+      override def apply(driver: WebDriver): WebElement =
         driver.findElement(radioButtonSelector)
-      }
     })
 
     // Use JavaScript to click
@@ -60,6 +62,5 @@ object CE1179_Single_CheckBankDetailsPage extends BasePage {
     jsExecutor.executeScript("arguments[0].click();", radioButton)
 
   }
-
 
 }

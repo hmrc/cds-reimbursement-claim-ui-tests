@@ -35,7 +35,6 @@ object Securities_EnterClaimSecurityIdTaxCodePage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("""Security ID: ABC0123456
 Claim details for A00 - Customs Duty""")
 
-
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
     enterText("enter-claim.securities.claim-amount", amounts(0))

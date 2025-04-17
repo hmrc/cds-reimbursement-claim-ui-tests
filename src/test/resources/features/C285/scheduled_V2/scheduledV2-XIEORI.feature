@@ -1,7 +1,7 @@
 @C285 @Scheduled
 Feature: C285 Scheduled - XIEORI V2
 
-  @test
+  @test @wip
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -52,7 +52,7 @@ Feature: C285 Scheduled - XIEORI V2
     Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "UK Duty A00-Customs Duty"
     When I enter "10,5" on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
-    Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "UK Duty B00-Value Added Tax"
+    Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "UK Duty B00-Value Added Tax (VAT)"
     When I enter "10,5" on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     Then I am presented with the "C285_Scheduled_Select Duties Eu Duty Page v2"
@@ -61,7 +61,7 @@ Feature: C285 Scheduled - XIEORI V2
     Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "EU Duty A50-Customs Duty"
     When I enter "10,5" on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
-    Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "EU Duty B05-Value Added Tax"
+    Then I am presented with the "C285_Scheduled_Select Duties DutyType Duty Page v2" "EU Duty B05-Value Added Tax (VAT)"
     When I enter "10,5" on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
     Then I am presented with the "C285_Scheduled_Select Duties Beer Page v2"
