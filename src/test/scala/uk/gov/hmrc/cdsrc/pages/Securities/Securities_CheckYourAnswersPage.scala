@@ -34,7 +34,7 @@ object Securities_CheckYourAnswersPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check your answers before sending your claim")
 
-  override def clickButton(buttonText: String): Unit = {
+  override def clickButton(buttonText: String): Unit =
     buttonText.toLowerCase() match {
       case "change import mrn"                  =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/enter-movement-reference-number']")
@@ -61,5 +61,4 @@ object Securities_CheckYourAnswersPage extends BasePage {
       case "change document"                    =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/upload-summary']")
     }
-  }
 }

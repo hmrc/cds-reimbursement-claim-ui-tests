@@ -22,11 +22,15 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Single_Subsidy_SelectDutiesPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/select-duties"
-  override val title = "Duties shown are all covered by subsidy"
+  override val title       = "Duties shown are all covered by subsidy"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Duties shown are all covered by subsidy - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Duties shown are all covered by subsidy - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Duties shown are all covered by subsidy - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Duties shown are all covered by subsidy - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Duties shown are all covered by subsidy")
 

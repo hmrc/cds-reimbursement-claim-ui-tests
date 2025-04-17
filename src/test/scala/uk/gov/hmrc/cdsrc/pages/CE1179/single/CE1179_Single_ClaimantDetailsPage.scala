@@ -22,18 +22,24 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Single_ClaimantDetailsPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/claimant-details"
-  override val title = "Confirm contact details for this claim"
+  override val title       = "Confirm contact details for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Confirm contact details for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Confirm contact details for this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Confirm contact details for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Confirm contact details for this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Confirm contact details for this claim")
 
   override def clickButton(buttonText: String): Unit =
     buttonText.toLowerCase() match {
-      case "change contact details" => click on cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")
-      case "change contact address" => click on cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")
+      case "change contact details" =>
+        click on cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")
+      case "change contact address" =>
+        click on cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")
     }
 
 }

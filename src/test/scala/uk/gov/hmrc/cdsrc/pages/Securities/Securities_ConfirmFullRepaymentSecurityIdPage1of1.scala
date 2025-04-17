@@ -40,7 +40,7 @@ Claim back this security deposit?"""
     driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
       s"""Security deposit: 1 of 1"""
     )
-    driver.getCurrentUrl should equal(
+    driver.getCurrentUrl                                                                      should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
     )
   }

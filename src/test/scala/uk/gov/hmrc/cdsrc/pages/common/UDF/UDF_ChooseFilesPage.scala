@@ -24,9 +24,11 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object UDF_ChooseFilesPage extends BasePage {
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
-  override val title = "Upload supporting documents"
+  override val title       = "Upload supporting documents"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Error: Upload commercial invoice - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Error: Upload commercial invoice - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageTitle: Option[String] = Some("")
 
@@ -35,28 +37,24 @@ object UDF_ChooseFilesPage extends BasePage {
   override def checkPageHeader(): Assertion =
     true should equal(true)
 
-  override def checkPageTitle(page: String): Unit = {
+  override def checkPageTitle(page: String): Unit =
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
-  }
 
-  override def checkPageErrorTitle(page: String): Unit = {
+  override def checkPageErrorTitle(page: String): Unit =
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
-  }
 
-  override def clickRadioButton(text: String): Unit = {
+  override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#choice")
-      case "no" => click on cssSelector("#choice-2")
+      case "no"  => click on cssSelector("#choice-2")
     }
-  }
 
   override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
   override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url)) {
+    while (driver.getCurrentUrl.equals(url))
       clickContinueButton()
-    }
   }
 
 }

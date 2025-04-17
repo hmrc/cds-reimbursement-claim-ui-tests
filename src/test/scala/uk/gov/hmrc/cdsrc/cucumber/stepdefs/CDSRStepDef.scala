@@ -21,8 +21,9 @@ import uk.gov.hmrc.cdsrc.pages.auth.AuthLoginStubPage
 
 class CDSRStepDef extends BaseStepDef {
 
-  When("""I enter Enrollment Key {string}, ID Name {string} and ID Value {string} on {string}""") { (eKey: String, IDName: String, IDValue: String, _: String) =>
-    AuthLoginStubPage.enrolments(eKey, IDName, IDValue)
+  When("""I enter Enrollment Key {string}, ID Name {string} and ID Value {string} on {string}""") {
+    (eKey: String, IDName: String, IDValue: String, _: String) =>
+      AuthLoginStubPage.enrolments(eKey, IDName, IDValue)
   }
 
   When("""I enter redirectURL on {string}""") { (page: String) =>

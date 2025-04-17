@@ -22,27 +22,32 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Multiple_EnterAdditionalDetailsPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-additional-details"
-  override val title = "Additional claim details"
+  override val title       = "Additional claim details"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Additional claim details - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Additional claim details - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Additional claim details - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Additional claim details - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Additional claim details")
 
-  override def enterDetails(details: String): Unit = {
+  override def enterDetails(details: String): Unit =
     details match {
       case "under 500 characters" => enterText("enter-additional-details", "under 500 characters")
-      case "over 500 characters" => enterText("enter-additional-details",
-        "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
+      case "over 500 characters"  =>
+        enterText(
+          "enter-additional-details",
           "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
-          "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
-          "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
-          "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
-          "1"
-      )
-      case _ => enterText("enter-additional-details", details)
+            "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
+            "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
+            "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
+            "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" +
+            "1"
+        )
+      case _                      => enterText("enter-additional-details", details)
     }
-  }
 
 }

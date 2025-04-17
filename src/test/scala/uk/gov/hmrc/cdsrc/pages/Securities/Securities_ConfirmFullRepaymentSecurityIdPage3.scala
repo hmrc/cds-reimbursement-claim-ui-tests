@@ -23,7 +23,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_ConfirmFullRepaymentSecurityIdPage3 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/confirm-full-repayment/..."
-  override val title = "Do you want to claim back all of this security deposit?"
+  override val title       = "Do you want to claim back all of this security deposit?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Error: Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
@@ -40,7 +40,7 @@ object Securities_ConfirmFullRepaymentSecurityIdPage3 extends BasePage {
     driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
       s"""Security deposit: 1 of 1"""
     )
-    driver.getCurrentUrl should equal(
+    driver.getCurrentUrl                                                                      should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
     )
   }
@@ -51,6 +51,6 @@ object Securities_ConfirmFullRepaymentSecurityIdPage3 extends BasePage {
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#confirm-full-repayment")
-      case "no" => click on cssSelector("#confirm-full-repayment-2")
+      case "no"  => click on cssSelector("#confirm-full-repayment-2")
     }
 }

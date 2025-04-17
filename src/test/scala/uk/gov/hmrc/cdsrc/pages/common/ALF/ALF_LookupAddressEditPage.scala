@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object ALF_LookupAddressEditPage extends BasePage {
 
   override val url: String = TestConfiguration.url("lookup-address") + "/..."
-  override val title = "Enter your address"
+  override val title       = "Enter your address"
 
   override def expectedPageErrorTitle: Option[String] = Some("Enter your address")
 

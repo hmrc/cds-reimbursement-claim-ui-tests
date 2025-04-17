@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object ALF_LookupAddressConfirmPage extends BasePage {
 
   override val url: String = TestConfiguration.url("lookup-address") + "/..."
-  override val title = "Review and confirm"
+  override val title       = "Review and confirm"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Review and confirm"

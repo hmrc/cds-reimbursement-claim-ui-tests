@@ -37,17 +37,21 @@ object Securities_CheckDeclarationDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check these declaration details are correct")
 
-  def changeLinks(page :String) ={
-    val pageRows = driver.findElements(By.cssSelector(".govuk-summary-list__key"))
-      .asScala.filter(_.getText.trim == page).head.findElement(By.xpath(".."))
+  def changeLinks(page: String) = {
+    val pageRows = driver
+      .findElements(By.cssSelector(".govuk-summary-list__key"))
+      .asScala
+      .filter(_.getText.trim == page)
+      .head
+      .findElement(By.xpath(".."))
     pageRows.findElement(By.tagName("a")).click()
   }
 
   override def clickButton(buttonText: String): Unit =
     buttonText match {
-      case "Change MRN"                 =>
+      case "Change MRN"                  =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/enter-movement-reference-number']")
-      case "Change reason for security" =>
+      case "Change reason for security"  =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/choose-reason-for-security']")
       case "Change claim for ABC0123456" =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/select-securities/ABC0123456']")

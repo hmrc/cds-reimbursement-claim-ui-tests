@@ -24,22 +24,26 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object CE1179_Scheduled_InspectionAddressChooseTypePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/inspection-address/choose-type"
-  override val title = "Choose an address for the inspection"
+  override val url: String =
+    TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/inspection-address/choose-type"
+  override val title       = "Choose an address for the inspection"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose an address for the inspection - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Choose an address for the inspection - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Choose an address for the inspection - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Choose an address for the inspection - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Choose an address for the inspection")
 
-  override def clickRadioButton(selection: String): Unit = {
+  override def clickRadioButton(selection: String): Unit =
     selection.toLowerCase() match {
-      case "importer" => driver.findElement(By.id("inspection-address.type-radio-Importer")).click()
+      case "importer"  => driver.findElement(By.id("inspection-address.type-radio-Importer")).click()
       case "declarant" => driver.findElement(By.id("inspection-address.type-radio-Declarant")).click()
-      case "other" => driver.findElement(By.id("inspection-address.type-radio-Other")).click()
-      case _ => driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
+      case "other"     => driver.findElement(By.id("inspection-address.type-radio-Other")).click()
+      case _           => driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
     }
-  }
 
 }

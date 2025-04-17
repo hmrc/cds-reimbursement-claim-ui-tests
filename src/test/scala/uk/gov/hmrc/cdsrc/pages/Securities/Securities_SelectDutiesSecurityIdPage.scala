@@ -24,17 +24,23 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_SelectDutiesSecurityIdPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/select-duties/..."
-  override val title = "Select the duties you want to claim for"
+  override val title       = "Select the duties you want to claim for"
 
   override def expectedPageHeader: Option[String] = Some("Select the duties you want to claim for")
 
-  override def expectedPageErrorTitle: Option[String] = Some("Error: Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Error: Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Select the duties you want to claim for - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def checkPageHeader(): Assertion =
     true should equal(true)
 
-   def checkSecurityId(securityID: String): Unit =
-    driver.findElement(By cssSelector "#main-content > div > div > form > span").getText should equal(s"Security ID: $securityID")
+  def checkSecurityId(securityID: String): Unit =
+    driver.findElement(By cssSelector "#main-content > div > div > form > span").getText should equal(
+      s"Security ID: $securityID"
+    )
 }

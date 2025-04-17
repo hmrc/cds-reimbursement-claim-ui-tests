@@ -34,7 +34,9 @@ object Securities_SelectSecuritiesSecurityIdPage2 extends BasePage {
     "Security deposit: 2 of 5: Include this security deposit in your claim? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Security deposit: 2 of 5 Include this security deposit in your claim?")
+  override def expectedPageHeader: Option[String] = Some(
+    "Security deposit: 2 of 5 Include this security deposit in your claim?"
+  )
 
   override def checkURL: Assertion =
     true should equal(true)

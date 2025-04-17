@@ -22,11 +22,15 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Single_SelectReimbursementMethodPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/choose-repayment-method"
-  override val title = "Choose repayment method"
+  override val title       = "Choose repayment method"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Choose repayment method - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Choose repayment method - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Choose repayment method - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Choose repayment method - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Choose repayment method")
 

@@ -20,26 +20,24 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object C285_Single_CheckClaimPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/check-claim"
-  override val title = "Check the repayment total for this claim"
+  override val title       = "Check the repayment total for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Check the repayment total for this claim")
 
-  def clickContinue(selection: String): Unit = {
+  def clickContinue(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
 
-  }
 }
-
-
-
-

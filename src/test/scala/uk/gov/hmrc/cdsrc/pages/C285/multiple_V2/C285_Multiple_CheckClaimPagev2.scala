@@ -22,19 +22,22 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Multiple_CheckClaimPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/check-claim"
-  override val title = "Check the repayment totals for this claim"
+  override val title       = "Check the repayment totals for this claim"
 
-  override def expectedPageErrorTitle: Option[String] = Some("Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageErrorTitle: Option[String] = Some(
+    "Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
-  override def expectedPageTitle: Option[String] = Some("Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK")
+  override def expectedPageTitle: Option[String] = Some(
+    "Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK"
+  )
 
   override def expectedPageHeader: Option[String] = Some("Check the repayment totals for this claim")
 
-  override def clickRadioButton(text: String): Unit = {
+  override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on xpath(s"""//*[@id="check-claim"]""")
-      case "no" => click on xpath(s"""//*[@id="check-claim-2"]""")
+      case "no"  => click on xpath(s"""//*[@id="check-claim-2"]""")
     }
-  }
 
 }

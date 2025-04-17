@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_ErrorClaimInvalidNoBod4Page extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/error/claim-invalid-nobod4"
-  override val title = "You have chosen not to continue with your claim"
+  override val title       = "You have chosen not to continue with your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "You have chosen not to continue with your claim - Claim back import duty and VAT - GOV.UK"
