@@ -1,7 +1,7 @@
 @C&E1179 @Single
 Feature: C&E1179 Single - XIEORI
 
-  @test
+  @test @wip
   Scenario: happy path - check importer/declarant eori pages, change contact details, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -30,15 +30,8 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
     When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Page"
-    And I click continue on "CE1179_Single_Claimant Details Page"
+     # NEW CHANGE CDSR-3827
+
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
     When I select radio button "Goods are not in accordance with contract" on "CE1179_Single_Choose Basis For Claim Page"
     And I click continue on "CE1179_Single_Choose Basis For Claim Page"
@@ -97,6 +90,16 @@ Feature: C&E1179 Single - XIEORI
     When I upload a 2 "image.jpg" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue if I'm on "UDF_Choose Files Page"
+     # NEW CHANGE CDSR-3827
+    Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Single_Claimant Details Page"
+    And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | Basis of claim        | Import date      | Contact details                              | Importer email       | Uploaded                                                                | Contact address                                   | Name on the account | Importer telephone | Importer name    | Account number   | Declarant name     | Importer address                                 |Payee| Declarant address                                 | Total   | Method                |  Method of payment |MRN                | Duties paid | Sort code      | A85 - Provisional Anti-Dumping Duty | Inspection address type | Inspection date | A90 - Definitive Countervailing Duty | Additional claim details | A80 - Definitive Anti-Dumping Duty | Inspection address                          | A95 - Provisional Countervailing Duty | Disposal method   |
@@ -134,15 +137,8 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
     When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Page"
-    And I click continue on "CE1179_Single_Claimant Details Page"
+    # NEW CHANGE CDSR-3827
+
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
     When I select radio button "Special circumstances" on "CE1179_Single_Choose Basis For Claim Page"
     And I click continue on "CE1179_Single_Choose Basis For Claim Page"
@@ -196,6 +192,16 @@ Feature: C&E1179 Single - XIEORI
     When I upload a 2 "image.jpg" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue button on "UDF_Choose Files Page"
+    # NEW CHANGE CDSR-3827
+    Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Single_Claimant Details Page"
+    And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | Basis of claim | VAT paid | Import date      | Contact details             | Importer email       | Uploaded                                                                | Contact address                                   | Importer telephone | Importer name    | Declarant name     | Importer address                                 | Declarant address                                 | Total  | MRN                | Duties paid | A85 - Provisional Anti-Dumping Duty | Inspection address type | Inspection date | A90 - Definitive Countervailing Duty | Additional claim details | Inspection address                          | A95 - Provisional Countervailing Duty | Disposal method   | Any special circumstances relating to your claim | Method                         | Method of payment |
