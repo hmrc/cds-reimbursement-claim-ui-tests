@@ -1,7 +1,7 @@
 @C&E1179 @Scheduled
 Feature: C&E1179 Scheduled
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @wip
   Scenario: happy path - check importer/declarant eori pages, Special circumstances
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -30,15 +30,8 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
-    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
-    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    And I click continue on "CE1179_Scheduled_Claimant Details Page"
+    #New change CDSR-3829
+
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
@@ -154,6 +147,16 @@ Feature: C&E1179 Scheduled
     When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
     And I select radio button "No" on "UDF_Choose Files Page"
     And I click continue if I'm on "UDF_Choose Files Page"
+     #New change CDSR-3829
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
+    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+    And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
       | Basis of claim | Import date      | Contact details             | Importer email       | Uploaded                        | Contact address                                   | Importer telephone | Importer name    | Declarant name     | Importer address                                 | Declarant address                                 | Total  | Method of payment |First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | EU Duty | Excise Duty  | Additional claim details | Inspection address                          | Disposal method   | Special circumstances | Name on the account | Sort code      | Account number   | Scheduled document |
@@ -190,15 +193,8 @@ Feature: C&E1179 Scheduled
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
     When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
-    And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
-    And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    And I click continue on "CE1179_Scheduled_Claimant Details Page"
+     #New change CDSR-3829
+
     Then I am presented with the "UDF_Choose File Page"
     When I upload a 1 "image.jpg" file on "UDF_Choose File Page"
     And I click continue if I'm on "UDF_Choose File Page"
@@ -245,3 +241,13 @@ Feature: C&E1179 Scheduled
     When I select radio button "No" on "UDF_Choose Files Page"
     And I click continue on "UDF_Choose Files Page"
     Then The error summary title is "There is a problem" and the error message is "Upload a supporting document"
+
+    #Then I am presented with the "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    #And I enter "" on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    #And I click continue on "CE1179_Scheduled_Claimant Details Change Contact Details Page"
+    #And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    #And I enter "" on "ALF_Lookup Address Edit Page"
+    #And I click continue on "ALF_Lookup Address Edit Page"
+    #And I click continue on "ALF_Lookup Address Confirm Page"
+    #Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+    #And I click continue on "CE1179_Scheduled_Claimant Details Page"

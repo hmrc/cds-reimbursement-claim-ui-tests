@@ -36,9 +36,7 @@ Feature: C&E1179 Multiple
     Then I am presented with the "CE1179_Multiple_Check Movement Reference Numbers Page"
     When I select radio button "No" on "CE1179_Multiple_Check Movement Reference Numbers Page"
     And I click continue on "CE1179_Multiple_Check Movement Reference Numbers Page"
-
     # New change CDSR-3828
-
     Then I am presented with the "CE1179_Multiple_Choose Basis For Claim Page"
     When I select radio button "Goods are defective" on "CE1179_Multiple_Choose Basis For Claim Page"
     And I click continue on "CE1179_Multiple_Choose Basis For Claim Page"
