@@ -322,8 +322,8 @@ Feature: C285 Single V2
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Basis of claim | Import date    | Contact details                                                | Uploaded                        | Contact address                             | Name on the account  | Account number   | Declarant name         |Payee     | Additional claim details  | A80 - Definitive Anti-Dumping Duty | Total   | Method                | Method of payment |MRN                |Local Reference Number (LRN)| Duties paid | Sort code      |
-      | End use relief                     | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith      | 11001001 | Fred Bloggs and Co Ltd |Importer  | under 500 characters             | £10.00 | £10.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 |XFGLKJDSE5GDPOIJEW985T          | £828.00     | 123456 |
+      | Basis of claim | Import date    | Contact details                                                | Uploaded                        | Contact address                             | Name on the account  | Account number      |Payee     | Additional claim details  | A80 - Definitive Anti-Dumping Duty | Total   | Method                | Method of payment |MRN                |Local Reference Number (LRN)| Duties paid | Sort code      |
+      | End use relief                     | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith      | 11001001 |Importer  | under 500 characters             | £10.00 | £10.00 | Bank account transfer | Immediate Payment |60AAAAAAAAAAAAAAA1 |XFGLKJDSE5GDPOIJEW985T          | £828.00     | 123456 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
