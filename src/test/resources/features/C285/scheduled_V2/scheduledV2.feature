@@ -147,7 +147,7 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                   | Uploaded                        | Contact address                                   | Name on the account   | Account number                               | Additional claim details                               | EU Duty | UK Duty | Excise Duty | Total  | Method of payment |Duties paid | Sort code      | First MRN          | Scheduled document |
-      | Outward processing relief          | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters            | £10.00  | £10.00  | £60.00      | £80.00 | Immediate Payment |£828.00     | 123456 | 10AAAAAAAAAAAAAAA2 | image.jpg          |
+      | Outward processing relief          | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters            | £10.00  | £10.00  | £60.00      | £80.00 | Immediate payment |£828.00     | 123456 | 10AAAAAAAAAAAAAAA2 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
 
@@ -291,7 +291,7 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                        | Uploaded                        | Contact address                             | Name on the account   | Account number                             | Additional claim details                                  | EU Duty | UK Duty | Excise Duty | Total  | Method of payment |Local Reference Number (LRN)| Duties paid | Sort code      | First MRN          | Scheduled document |
-      | Outward processing relief          | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 11001001 | under 500 characters             | £10.00  | £10.00  | £60.00      | £80.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T          |£828.00     | 123456 | 60AAAAAAAAAAAAAAA1 | image.jpg          |
+      | Outward processing relief          | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 11001001 | under 500 characters             | £10.00  | £10.00  | £60.00      | £80.00 | Immediate payment |XFGLKJDSE5GDPOIJEW985T          |£828.00     | 123456 | 60AAAAAAAAAAAAAAA1 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
 
@@ -506,7 +506,7 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                            | Uploaded                        | Contact address                             | Name on the account  | Account number                          | Additional claim details                                     | EU Duty | UK Duty | Excise Duty | Total  | Method of payment |Local Reference Number (LRN)|Duties paid | Sort code      | First MRN          | Scheduled document |
-      | Outward processing relief          | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith   | 11001001 | under 500 characters             | £10.00  | £10.00  | £60.00      | £80.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T          |£828.00     | 123456 | 60AAAAAAAAAAAAAAA5 | image.jpg          |
+      | Outward processing relief          | 13 August 2019 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith   | 11001001 | under 500 characters             | £10.00  | £10.00  | £60.00      | £80.00 | Immediate payment |XFGLKJDSE5GDPOIJEW985T          |£828.00     | 123456 | 60AAAAAAAAAAAAAAA5 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
 
