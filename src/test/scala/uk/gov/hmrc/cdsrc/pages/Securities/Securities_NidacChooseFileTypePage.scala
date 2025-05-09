@@ -20,33 +20,30 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Securities_EnterBankAccountDetailsPage extends BasePage {
+object Securities_NidacChooseFileTypePage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/enter-bank-account-details"
-  override val title       = "Enter the UK-based bank account details"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/choose-file-type"
+  override val title       = "Add supporting documents to your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Error: Enter the UK-based bank account details - Claim back import duty and VAT - GOV.UK"
+    "Error: Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Enter the UK-based bank account details - Claim back import duty and VAT - GOV.UK"
+    "Add supporting documents to your claim - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Enter the UK-based bank account details")
+  override def expectedPageHeader: Option[String] = Some("Add supporting documents to your claim")
   override def checkPageTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
 
   override def checkPageErrorTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(title)
 
-  override def enterDetails(data: String): Unit = {
-    val bankAccountName: String = "Mr John Smith"
-    val sortCode: String        = "123456"
-    val accountNumber: String   = "11001001"
-
-    enterText("enter-bank-account-details.account-name", bankAccountName)
-    enterText("enter-bank-account-details.sort-code", sortCode)
-    enterText("enter-bank-account-details.account-number", accountNumber)
-  }
+  override def clickRadioButton(text: String): Unit =
+    text.toLowerCase() match {
+      case "commercial invoice"             => click on cssSelector("input[value='CommercialInvoice']")
+      case "proof of authority"            => click on cssSelector("input[value='ProofOfAuthority']")
+      case "other"                         => click on cssSelector("input[value='Other']")
+    }
 }
