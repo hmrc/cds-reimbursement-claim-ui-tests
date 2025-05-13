@@ -18,7 +18,7 @@ package uk.gov.hmrc.cdsrc.pages.C285.scheduled_V2
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.Securities.Securities_NidacChooseFileTypePage.cssSelector
+
 
 object C285_Scheduled_SelectDutiesSelectDutyTypesPagev2 extends BasePage {
 
