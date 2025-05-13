@@ -42,7 +42,7 @@ object CE1179_Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
   }
 
   override def checkPageTitle(duty: String): Unit = {
-    val expectedTitle = s"Claim details $duty".replaceAll("\\s", "")
+    val expectedTitle = s"$duty".replaceAll("\\s", "")
     val actualTitle   = driver.findElement(By.cssSelector("#main-content > div > div > h1")).getText.replaceAll("\\s", "")
 
     actualTitle shouldEqual expectedTitle

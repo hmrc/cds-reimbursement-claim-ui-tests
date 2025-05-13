@@ -19,27 +19,19 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
+object CE1179_Scheduled_SelectDutiesExciseDutyPagev2 extends BasePage {
 
-object CE1179_Scheduled_SelectDutiesSelectDutyTypesPage extends BasePage {
-
-  override val url: String =
-    TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/select-duty-types"
-  override val title       = "Import tax to claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/excise-duty"
+  override val title       = "Claim details Which Excise duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Import tax to claim - Claim back import duty and VAT - GOV.UK"
+    "Which Excise duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Import tax to claim - Claim back import duty and VAT - GOV.UK"
+    "Which Excise duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Import tax to claim")
+  override def expectedPageHeader: Option[String] = Some("Claim details Which Excise duties do you want to claim for?")
 
-  override def clickRadioButton(text: String): Unit =
-    text.toLowerCase() match {
-      case "uk duties"             => click on cssSelector("input[value='uk-duty']")
-      case "eu duties"            => click on cssSelector("input[value='eu-duty']")
-      case "excise duties"         => click on cssSelector("input[value='excise-duty']")
-    }
 }
