@@ -121,7 +121,7 @@ Feature: C&E1179 Multiple - XIEORI
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "CE1179_Choose How Many Mrns Page"
-    And I select radio button "Enter multiple MRNs" on "CE1179_Choose How Many Mrns Page"
+    And I select radio button "Up to 20 MRNs" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
     Then I am presented with the "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
     When I clickContinue on "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
