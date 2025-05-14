@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_SelectDutiesSpiritsPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/spirits"
-  override val title       = "Claim details Which spirits duties do you want to claim for?"
+  override val title       = "Which spirits duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Which spirits duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
@@ -32,6 +32,6 @@ object C285_Scheduled_SelectDutiesSpiritsPagev2 extends BasePage {
     "Which spirits duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Claim details Which spirits duties do you want to claim for?")
+  override def expectedPageHeader: Option[String] = Some("Which spirits duties do you want to claim for?")
 
 }

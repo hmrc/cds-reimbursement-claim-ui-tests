@@ -1,7 +1,7 @@
 @C285 @Multiple
 Feature: C285 Multiple
 
-  @test @a11y @ZAP @wip
+  @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -289,7 +289,7 @@ Feature: C285 Multiple
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
 
-  @test
+  @test @wip
   Scenario: happy path with many MRNs and duties
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -368,13 +368,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Select Duties 3 Page v2"
     When I select "591,433,463" on "C285_Multiple_Select Duties 3 Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty- Miscellaneous road fuels 591"
+    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty- Excise Duty 591"
     When I enter "10" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - Low alcohol beverages 433"
+    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - Excise Duty 433"
     When I enter "5" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - Spirits 463"
+    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - Excise Duty 463"
     When I enter "20" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
 
@@ -384,35 +384,35 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "A70 - Additional Duty"
     When I enter "10" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Made-wine 421"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Excise Duty 421"
     When I enter "5" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Made-wine 422"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Excise Duty 422"
     When I enter "20" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Low alcohol beverages 435"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Excise Duty 435"
     When I enter "30" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Cider and perry 487"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Excise Duty 487"
     When I enter "5" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
 
     Then I am presented with the "C285_Multiple_Select Duties 5 Page v2"
     When I select "561,589,595,591,592" on "C285_Multiple_Select Duties 5 Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Hydrocarbon oil 561"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Excise Duty 561"
     When I enter "10" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Biofuels 589"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Excise Duty 589"
     When I enter "5" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Biofuels 595"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Excise Duty 595"
     When I enter "15" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Miscellaneous road fuels 591"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Excise Duty 591"
     When I enter "5" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Miscellaneous road fuels 592"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Excise Duty 592"
     When I enter "10" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
 

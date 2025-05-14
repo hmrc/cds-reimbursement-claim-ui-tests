@@ -22,16 +22,16 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_SelectDutiesExciseDutyPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/excise-duty"
-  override val title       = "Claim details Which Excise duties do you want to claim for?"
+  override val title       = "Excise duties"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Which Excise duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
+    "Excise duties - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Which Excise duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
+    "Excise duties - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Claim details Which Excise duties do you want to claim for?")
+  override def expectedPageHeader: Option[String] = Some("Excise duties")
 
 }
