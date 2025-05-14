@@ -33,7 +33,7 @@ object C285_Multiple_EnterMovementReferenceNumberPagev2 extends BasePage {
     "First Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Enter the first Movement Reference Number (MRN)")
+  override def expectedPageHeader: Option[String] = Some("First Movement Reference Number (MRN)")
 
   override def enterDetails(textToEnter: String): Unit =
     enterText("enter-movement-reference-number", textToEnter)
