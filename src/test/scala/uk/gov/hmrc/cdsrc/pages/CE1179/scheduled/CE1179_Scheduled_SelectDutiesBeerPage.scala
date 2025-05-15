@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object CE1179_Scheduled_SelectDutiesBeerPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/beer"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/excise-duty/beer"
   override val title       = "Claim details Which beer duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(

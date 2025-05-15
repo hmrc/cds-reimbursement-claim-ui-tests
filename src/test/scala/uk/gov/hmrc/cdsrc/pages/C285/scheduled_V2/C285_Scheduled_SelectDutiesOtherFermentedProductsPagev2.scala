@@ -21,7 +21,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object C285_Scheduled_SelectDutiesOtherFermentedProductsPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/other-fermented-products"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/excise-duty/other-fermented-products"
   override val title       = "Which other fermented products duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(

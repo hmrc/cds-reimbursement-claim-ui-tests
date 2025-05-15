@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_SelectDutiesMiscellaneousRoadFuelsPagev2 extends BasePage {
 
   override val url: String =
-    TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/miscellaneous-road-fuels"
+    TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/excise-duty/miscellaneous-road-fuels"
   override val title       = "Which miscellaneous road fuels duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
