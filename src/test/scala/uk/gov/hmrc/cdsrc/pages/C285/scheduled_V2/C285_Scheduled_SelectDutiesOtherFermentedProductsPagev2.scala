@@ -14,24 +14,26 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
+package uk.gov.hmrc.cdsrc.pages.C285.scheduled_V2
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object CE1179_Scheduled_SelectDutiesExciseDutyPagev2 extends BasePage {
+object C285_Scheduled_SelectDutiesOtherFermentedProductsPagev2 extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/excise-duty"
-  override val title       = "Excise duties"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/excise-duty/other-fermented-products"
+  override val title       = "Which other fermented products duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Excise duties - Claim back import duty and VAT - GOV.UK"
+    "Which other fermented products duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Excise duties - Claim back import duty and VAT - GOV.UK"
+    "Which other fermented products duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Excise")
+  override def expectedPageHeader: Option[String] = Some(
+    "Which other fermented products duties do you want to claim for?"
+  )
 
 }
