@@ -32,6 +32,6 @@ object CE1179_Scheduled_SelectDutiesExciseDutyPagev2 extends BasePage {
     "Excise duties - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Excise")
+  override def expectedPageHeader: Option[String] = Some("Excise duties")
 
 }

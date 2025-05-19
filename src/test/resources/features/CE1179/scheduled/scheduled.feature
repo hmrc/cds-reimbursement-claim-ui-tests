@@ -71,10 +71,11 @@ Feature: C&E1179 Scheduled
     And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
     Then I am presented with the "CE1179_Scheduled_Select Duties Excise Duty Page v2"
 
-    When I select "beer,wine,made-wine,low-alcohol-beverages,spirits,cider-perry,other-fermented-products,hydrocarbon-oils,biofuels,miscellaneous-road-fuels,tobacco,climate-change-levy" on "C285_Scheduled_Select Duties Excise Duty Page v2"
+    When I select "beer,wine,made-wine,miscellaneous-road-fuels,tobacco,climate-change-levy" on "C285_Scheduled_Select Duties Excise Duty Page v2"
     And I click continue on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
     Then I am presented with the "CE1179_Scheduled_Select Duties Beer Page"
     When I select "407,447" on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
+    And I click continue on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
     Then I am presented with the "CE1179_Scheduled_Select Duties DutyType Duty Page" "Excise Duty-407 Beer"
     When I enter "10,5" on "CE1179_Scheduled_Select Duties DutyType Duty Page"
     And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
