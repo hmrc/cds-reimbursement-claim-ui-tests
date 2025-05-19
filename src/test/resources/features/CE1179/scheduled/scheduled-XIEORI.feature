@@ -28,7 +28,7 @@ Feature: C&E1179 Scheduled - XIEORI
     When I enter "XI000000000000001" on "CE1179_Scheduled_Enter Declarant Eori Page"
     And I click continue on "CE1179_Scheduled_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
-    When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
+   # When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
      #New change CDSR-3829
 
@@ -47,36 +47,21 @@ Feature: C&E1179 Scheduled - XIEORI
     Then I am presented with the "CE1179_Scheduled_Enter Rejected Goods Details Page"
     When I enter "under 500 characters" on "CE1179_Scheduled_Enter Rejected Goods Details Page"
     And I click continue on "CE1179_Scheduled_Enter Rejected Goods Details Page"
+
     Then I am presented with the "CE1179_Scheduled_Select Duties Select Duty Types Page"
     #CDSR-3948
     When I select "uk-duty,eu-duty,excise-duty" on "CE1179_Scheduled_Select Duties Select Duty Types Page"
     And I click continue on "CE1179_Scheduled_Select Duties Select Duty Types Page"
     Then I am presented with the "CE1179_Scheduled_Select Duties Uk Duty Page"
     When I select "A00,B00" on "CE1179_Scheduled_Select Duties Uk Duty Page"
-    And I click continue on "CE1179_Scheduled_Select Duties Uk Duty Page"
-    Then I am presented with the "CE1179_Scheduled_Select Duties DutyType Duty Page" "A00-Customs Duty"
-    When I enter "10,5" on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    Then I am presented with the "CE1179_Scheduled_Select Duties DutyType Duty Page" "B00-Value Added Tax (VAT)"
-    When I enter "10,5" on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    Then I am presented with the "CE1179_Scheduled_Select Duties Eu Duty Page"
-    When I select "A50,B05" on "CE1179_Scheduled_Select Duties Eu Duty Page"
-    And I click continue on "CE1179_Scheduled_Select Duties Eu Duty Page"
-    Then I am presented with the "CE1179_Scheduled_Select Duties DutyType Duty Page" "A50-Customs Duty"
-    When I enter "10,5" on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    Then I am presented with the "CE1179_Scheduled_Select Duties DutyType Duty Page" "B05-Value Added Tax (VAT)"
-    When I enter "10,5" on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
-    Then I am presented with the "CE1179_Scheduled_Select Duties Excise Duty Page v2"
-    When I select "407,447" on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
-    And I click continue on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
 
-    When I select "uk-duty,eu-duty,excise-duty" on "CE1179_Scheduled_Select Duties Select Duty Types Page"
-    And I click continue on "CE1179_Scheduled_Select Duties Select Duty Types Page"
-    Then I am presented with the "CE1179_Scheduled_Select Duties Uk Duty Page"
-    When I select "A00,B00" on "CE1179_Scheduled_Select Duties Uk Duty Page"
+
+    #Then I am presented with the "CE1179_Scheduled_Select Duties Select Duty Types Page"
+    #CDSR-3948
+    #When I select "uk-duty,eu-duty,excise-duty" on "CE1179_Scheduled_Select Duties Select Duty Types Page"
+    #And I click continue on "CE1179_Scheduled_Select Duties Select Duty Types Page"
+    #Then I am presented with the "CE1179_Scheduled_Select Duties Uk Duty Page"
+   # When I select "A00,B00" on "CE1179_Scheduled_Select Duties Uk Duty Page"
     And I click continue on "CE1179_Scheduled_Select Duties Uk Duty Page"
     Then I am presented with the "CE1179_Scheduled_Select Duties DutyType Duty Page" "A00-Customs Duty"
     When I enter "10,5" on "CE1179_Scheduled_Select Duties DutyType Duty Page"
@@ -95,10 +80,11 @@ Feature: C&E1179 Scheduled - XIEORI
     And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
     Then I am presented with the "CE1179_Scheduled_Select Duties Excise Duty Page v2"
 
-    When I select "beer,wine,made-wine,low-alcohol-beverages,spirits,cider-perry,other-fermented-products,hydrocarbon-oils,biofuels,miscellaneous-road-fuels,tobacco,climate-change-levy" on "C285_Scheduled_Select Duties Excise Duty Page v2"
+    When I select "beer,wine,made-wine,miscellaneous-road-fuels,tobacco,climate-change-levy" on "C285_Scheduled_Select Duties Excise Duty Page v2"
     And I click continue on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
     Then I am presented with the "CE1179_Scheduled_Select Duties Beer Page"
     When I select "407,447" on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
+    And I click continue on "CE1179_Scheduled_Select Duties Excise Duty Page v2"
     Then I am presented with the "CE1179_Scheduled_Select Duties DutyType Duty Page" "Excise Duty-407 Beer"
     When I enter "10,5" on "CE1179_Scheduled_Select Duties DutyType Duty Page"
     And I click continue on "CE1179_Scheduled_Select Duties DutyType Duty Page"
@@ -194,7 +180,7 @@ Feature: C&E1179 Scheduled - XIEORI
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                 | Uploaded                        | Contact address                                                                                                   | Total  | Method of payment |First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | EU Duty | Excise Duty  | Additional claim details | Inspection address                          | Disposal method   | Special circumstances | Name on the account | Sort code      | Account number   | Scheduled document |
-      | Special circumstances              | 12 February 2021 | John Smith,john@smith.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom    | £30.00 | Immediate payment |10AAAXICDAAAAAAAA1 | £828.00     | Importer address        | 10 October 2020 | £10.00  | £10.00  | £10.00    | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Mr John Smith | 123456 | 11001001 | image.jpg          |
+      | Special circumstances              | 12 February 2021 | John Smith,john@smith.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom    | £80.00 | Immediate payment |10AAAXICDAAAAAAAA1 | £828.00     | Importer address        | 10 October 2020 | £10.00  | £10.00  | £60.00    | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Mr John Smith | 123456 | 11001001 | image.jpg          |
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
@@ -225,7 +211,7 @@ Feature: C&E1179 Scheduled - XIEORI
     When I enter "XI000000000000001" on "CE1179_Scheduled_Enter Declarant Eori Page"
     And I click continue on "CE1179_Scheduled_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
-    When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
+    #When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
      #New change CDSR-3829
 

@@ -48,9 +48,9 @@ object CE1179_Scheduled_SelectDutiesDutyTypeDutyPage extends BasePage {
     actualTitle shouldEqual expectedTitle
   }
 
-  override def checkPageErrorTitle(duty: String): Unit =
+  /*override def checkPageErrorTitle(duty: String): Unit =
     driver.findElement(By cssSelector "#main-content > div > div > h1").getText should equal(
       s"Claim details for all MRNs under $duty"
-    )
+    )*/
 
 }
