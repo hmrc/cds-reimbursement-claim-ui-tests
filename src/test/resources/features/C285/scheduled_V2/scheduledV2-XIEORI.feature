@@ -29,7 +29,7 @@ Feature: C285 Scheduled - XIEORI V2
     When I enter "XI000000000000001" on "C285_Scheduled_Enter Declarant Eori Page v2"
     And I click continue on "C285_Scheduled_Enter Declarant Eori Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
     #New Changes to the flow
     Then I am presented with the "UDF_Choose File Page"

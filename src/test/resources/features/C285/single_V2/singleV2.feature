@@ -24,7 +24,7 @@ Feature: C285 Single V2
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "End use relief" on "C285_Single_Choose Basis For Claim Page v2"
@@ -105,7 +105,7 @@ Feature: C285 Single V2
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
@@ -278,7 +278,7 @@ Feature: C285 Single V2
     When I enter "60AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "End use relief" on "C285_Single_Choose Basis For Claim Page v2"
@@ -350,56 +350,56 @@ Feature: C285 Single V2
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I should see the following details
-      | Movement Reference Number (MRN)                | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
-      | 00AA001AAAAAAAAA01 | 12 February 2021 | Immediate payment | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+      |MRN                  | Date of import      | Method of payment | Total       | Email                     |  Name              | Address                                           | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty |A90 - Definitive Countervailing Duty |
+      | 00AA001AAAAAAAAA01  | 12 February 2021    | Immediate payment | £828.00     | automation@gmail.com      | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             |£218.00                             | £211.00                               | £228.00                             |
     Then I go back on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA002AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I should see the following details
-      | Movement Reference Number (MRN)                   | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
-      | 00AA002AAAAAAAAA01 | 12 February 2021 | Deferment account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+      |MRN                 | Date of import   | Method of payment | Total       |    Email                 | Name               | Address                                           | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty    |A90 - Definitive Countervailing Duty |
+      | 00AA002AAAAAAAAA01 | 12 February 2021 | Deferment account | £828.00     | automation@gmail.com     | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             |                    £218.00         | £211.00                                  | £228.00                             |
     Then I go back on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA003AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I should see the following details
-      | Movement Reference Number (MRN)                  | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
-      | 00AA003AAAAAAAAA01 | 12 February 2021 | Cash account      | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+      |MRN                  | Date of import      | Method of payment | Total        | Email                    | Name               | Address                                           | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty |A90 - Definitive Countervailing Duty |
+      | 00AA003AAAAAAAAA01  | 12 February 2021    | Cash account      | £828.00      | automation@gmail.com     | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             | £218.00                            | £211.00                               | £228.00                             |
     Then I go back on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA001002AAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I should see the following details
-      | Movement Reference Number (MRN)                   | Import date      | Method of payment                       | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
-      | 00AA001002AAAAAA01 | 12 February 2021 | Immediate payment and Deferment account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+      |MRN                  | Date of import      | Method of payment                       | Total         | Email                      |  Name              |  Address                                          | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty |A90 - Definitive Countervailing Duty |
+      | 00AA001002AAAAAA01  | 12 February 2021    | Immediate payment and Deferment account | £828.00       | automation@gmail.com       | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             | £218.00                            |  £211.00                              | £228.00                             |
     Then I go back on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA001003AAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I should see the following details
-      | Movement Reference Number (MRN)                   | Import date      | Method of payment                  | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
-      | 00AA001003AAAAAA01 | 12 February 2021 | Immediate payment and Cash account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+      |MRN                  | Date of import      | Method of payment                  | Total        | Email                    | Name               | Address                                           | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty |A90 - Definitive Countervailing Duty |
+      | 00AA001003AAAAAA01  | 12 February 2021    | Immediate payment and Cash account | £828.00      | automation@gmail.com     | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             |  £218.00                           | £211.00                               | £228.00                             |
     Then I go back on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA002003AAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I should see the following details
-      | Movement Reference Number (MRN)                   | Import date      | Method of payment                  | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
-      | 00AA002003AAAAAA01 | 12 February 2021 | Deferment account and Cash account | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+      |MRN                  | Date of import      | Method of payment                  | Total        | Email                     | Name               | Address                                           | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty |A90 - Definitive Countervailing Duty |
+      | 00AA002003AAAAAA01  | 12 February 2021    | Deferment account and Cash account | £828.00      | automation@gmail.com      | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             | £218.00                            | £211.00                               | £228.00                             |
     Then I go back on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA006AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
     And I should see the following details
-      | Movement Reference Number (MRN)                   | Import date      | Method of payment | Duties paid | Importer name    | Importer email       | Importer telephone | Importer address                                 | Declarant name     | Declarant address                                 |
-      | 00AA006AAAAAAAAA01 | 12 February 2021 | Subsidy           | £828.00     | IT Solutions LTD | automation@gmail.com | +4420723934397     | 19 Bricks Road,Newcastle,NE12 5BT,United Kingdom | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
+      |MRN                  | Date of import      | Method of payment | Total         | Email                      | Name               | Address                                           | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty |A90 - Definitive Countervailing Duty |
+      | 00AA006AAAAAAAAA01  | 12 February 2021    | Subsidy           | £828.00       | automation@gmail.com       | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             | £218.00                            | £211.00                               | £228.00                             |
 
   @test
   Scenario: Error page when the MRN contains only new tax type codes
