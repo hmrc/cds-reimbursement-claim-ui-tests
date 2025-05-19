@@ -28,7 +28,7 @@ Feature: C&E1179 Scheduled
     When I enter "GB000000000000002" on "CE1179_Scheduled_Enter Declarant Eori Page"
     And I click continue on "CE1179_Scheduled_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
-    When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
+    #When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
     #New change CDSR-3829
 
@@ -201,7 +201,7 @@ Feature: C&E1179 Scheduled
     When I enter "GB000000000000002" on "CE1179_Scheduled_Enter Declarant Eori Page"
     And I click continue on "CE1179_Scheduled_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Scheduled_Check Declaration Details Page"
-    When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
+   # When I select radio button "Yes" on "CE1179_Scheduled_Check Declaration Details Page"
     And I click continue on "CE1179_Scheduled_Check Declaration Details Page"
      #New change CDSR-3829
 

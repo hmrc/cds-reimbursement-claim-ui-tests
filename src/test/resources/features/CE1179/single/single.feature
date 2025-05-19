@@ -28,7 +28,7 @@ Feature: C&E1179 Single
     When I enter "GB000000000000002" on "CE1179_Single_Enter Declarant Eori Page"
     And I click continue on "CE1179_Single_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
-    When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
+    #When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
     # NEW CHANGE CDSR-3827
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
@@ -138,7 +138,7 @@ Feature: C&E1179 Single
     When I enter "GB000000000000002" on "CE1179_Single_Enter Declarant Eori Page"
     And I click continue on "CE1179_Single_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
-    When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
+    #When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
       # NEW CHANGE CDSR-3827
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"

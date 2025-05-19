@@ -28,7 +28,7 @@ Feature: C&E1179 Single - XIEORI
     When I enter "XI000000000000001" on "CE1179_Single_Enter Declarant Eori Page"
     And I click continue on "CE1179_Single_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
-    When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
+    #When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
      # NEW CHANGE CDSR-3827
 
@@ -135,7 +135,7 @@ Feature: C&E1179 Single - XIEORI
     When I enter "XI000000000000001" on "CE1179_Single_Enter Declarant Eori Page"
     And I click continue on "CE1179_Single_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
-    When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
+    #When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
     # NEW CHANGE CDSR-3827
 
