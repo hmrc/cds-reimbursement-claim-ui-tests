@@ -28,7 +28,7 @@ Feature: C285 Scheduled
     When I enter "GB000000000000002" on "C285_Scheduled_Enter Declarant Eori Page v2"
     And I click continue on "C285_Scheduled_Enter Declarant Eori Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
     #New  flow change
     Then I am presented with the "UDF_Choose File Page"
@@ -241,7 +241,7 @@ Feature: C285 Scheduled
     When I enter "60AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
     # New Changes of flow
     Then I am presented with the "UDF_Choose File Page"
@@ -455,7 +455,7 @@ Feature: C285 Scheduled
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    And I select radio button "no" on "C285_Scheduled_Check Declaration Details Page v2"
+    #And I select radio button "no" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
@@ -525,7 +525,7 @@ Feature: C285 Scheduled
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
     # New changes to the flow
     Then I am presented with the "UDF_Choose File Page"
