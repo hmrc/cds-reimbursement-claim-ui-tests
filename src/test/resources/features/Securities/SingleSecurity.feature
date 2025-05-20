@@ -143,7 +143,7 @@ Feature: Securities Single
     When I enter "01AAAAAAAAAAAAA110" on "Securities_Enter Movement Reference Number Page"
     And I click continue on "Securities_Enter Movement Reference Number Page"
     Then I am presented with the "Securities_Choose Reason For Security Page"
-    When I select radio button "Missing document: preference" on "Securities_Choose Reason For Security Page"
+    When I select radio button "Missing proof of origin" on "Securities_Choose Reason For Security Page"
     And I click continue on "Securities_Choose Reason For Security Page"
     #Then I am presented with the "Securities_Enter Importer Eori Page"
     #When I enter "GB000000000000002" on "Securities_Enter Importer Eori Page"
@@ -240,7 +240,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Import Movement Reference Number (MRN)    | Local Reference Number (LRN)| Proof of origin     | Other supporting documents                  | Reason for security deposit           |  Payment method          | Total security deposit value   | Contact address                                         | Payee       | Any information that may support the claim | Claim full amount | Total     | Duties selected    | A00 - Customs Duty   | Date security deposit made | Claim for security deposit or guarantee | Contact details                              | Name on the account | Account number   | Sort code      |
-      | 01AAAAAAAAAAAAA110                        | XFGLKJDSE5GDPOIJEW985T      | document.pdf        | document.pdf,Commercial invoice             | Missing document: preference          |  Bank account transfer   | £6,000.00                      | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom       | Importer    | under 500 characters                       |Yes                | £6,000.00 | A00 - Customs Duty | £6,000.00            | 13 September 2019          | Yes                                     |Mr John Smith,someemail@mail.com,01234567890  | Mr John Smith       | 11001001         | 123456         |
+      | 01AAAAAAAAAAAAA110                        | XFGLKJDSE5GDPOIJEW985T      | document.pdf        | document.pdf,Commercial invoice             | Missing proof of origin          |  Bank account transfer   | £6,000.00                      | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom       | Importer    | under 500 characters                       |Yes                | £6,000.00 | A00 - Customs Duty | £6,000.00            | 13 September 2019          | Yes                                     |Mr John Smith,someemail@mail.com,01234567890  | Mr John Smith       | 11001001         | 123456         |
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
