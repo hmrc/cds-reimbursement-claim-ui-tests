@@ -368,7 +368,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Select Duties 3 Page v2"
     When I select "591,433,463" on "C285_Multiple_Select Duties 3 Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty- 591 Miscellaneous road fuels"
+    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - 591 Miscellaneous road fuels"
     When I enter "10" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
     Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - 433 Low alcohol beverages"
