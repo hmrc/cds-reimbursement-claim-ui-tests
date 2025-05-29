@@ -22,22 +22,22 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-object Securities_ChooseReasonForSecurityPage extends BasePage {
+private object Securities_HaveYourSupportingDocumentReadyPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/choose-reason-for-security"
-  override val title       = "Why was a security deposit or guarantee needed?"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/have-your-documents-ready"
+  override val title       = "Have your supporting documents ready"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Error: Why was a security deposit or guarantee needed? - Claim back import duty and VAT - GOV.UK"
+    "Have your supporting documents ready - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Why was a security deposit or guarantee needed? - Claim back import duty and VAT - GOV.UK"
+    "Have your supporting documents ready - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Why was a security deposit or guarantee needed?")
+  override def expectedPageHeader: Option[String] = Some("Have your supporting documents ready")
 
-  override def clickRadioButton(selection: String): Unit =
+  def clickContinue(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
 
 }
