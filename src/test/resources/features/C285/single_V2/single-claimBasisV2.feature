@@ -1,7 +1,7 @@
 @C285 @Single
 Feature: C285 Single Claim Basis V2
 
- @test @wip
+ @test
   Scenario: happy path - Duplicate Movement Reference Number (MRN)
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -23,7 +23,7 @@ Feature: C285 Single Claim Basis V2
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
    Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
    When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
@@ -32,7 +32,7 @@ Feature: C285 Single Claim Basis V2
    When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
    And I click continue on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
    Then I am presented with the "C285_Single_Check Duplicate Declaration Details Page v2"
-   And I select radio button "yes" on "C285_Single_Check Duplicate Declaration Details Page v2"
+   #And I select radio button "yes" on "C285_Single_Check Duplicate Declaration Details Page v2"
    And I click continue on "C285_Single_Check Duplicate Declaration Details Page v2"
    Then I am presented with the "C285_Single_Enter Additional Details Page v2"
    When I enter "under 500 characters" on "C285_Single_Enter Additional Details Page v2"
@@ -83,7 +83,7 @@ Feature: C285 Single Claim Basis V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim        | Import date  |   Contact details  | Uploaded        |Contact address                                     | Name on the account    | Account number    |Duplicate MRN|Payee| Additional claim details | A80 - Definitive Anti-Dumping Duty |A85 - Provisional Anti-Dumping Duty|A90 - Definitive Countervailing Duty|A95 - Provisional Countervailing Duty| Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 12 February 2021  | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom  | Mr John Smith | 11001001 |20AAAAAAAAAAAAAAA1 |Importer    | under 500 characters             | £10.00 | £10.00                                   | £10.00                             | £10.00                              | £40.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA1 | £828.00     | 123456 |
+      | Duplicate Movement Reference Number (MRN) | 12 February 2021  | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom  | Mr John Smith | 11001001 |20AAAAAAAAAAAAAAA1 |Importer    | under 500 characters             | £10.00 | £10.00                                   | £10.00                             | £10.00                              | £40.00 | Bank account transfer | Immediate payment |10AAAAAAAAAAAAAAA1 | £828.00     | 123456 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -109,7 +109,7 @@ Feature: C285 Single Claim Basis V2
     When I enter "10AAAAAAAAAAAAAAA3" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Incorrect excise value" on "C285_Single_Choose Basis For Claim Page v2"
@@ -120,13 +120,13 @@ Feature: C285 Single Claim Basis V2
     Then I am presented with the "C285_Single_Select Duties Page v2"
     When I select "421,623,99C" on "C285_Single_Select Duties Page v2"
     And I click continue on "C285_Single_Select Duties Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - Made-wine 421"
+    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - 421 Made-wine"
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - Tobacco products 623"
+    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - 623 Tobacco products"
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - Climate Change Levy 99C"
+    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - 99C Climate Change Levy"
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
     Then I am presented with the "C285_Single_Check Claim Page v2"
@@ -163,7 +163,7 @@ Feature: C285 Single Claim Basis V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                                            | Uploaded                        | Contact address                                  | Name on the account    | Account number       |Payee                              | Additional claim details                              | 421 - Sparkling, 8.5% and above but not exceeding 15% |99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain|623 - Other smoking tobacco| Total   | MRN                | Duties paid | Sort code      | Method                | Method of payment |
-      | Incorrect excise value             | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 |Importer    | under 500 characters             | £10.00     |£10.00                                                                                                                                                   |£10.00                     | £30.00 | 10AAAAAAAAAAAAAAA3 | £828.00     | 123456 | Bank account transfer | Immediate Payment |
+      | Incorrect excise value             | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 |Importer    | under 500 characters             | £10.00     |£10.00                                                                                                                                                   |£10.00                     | £30.00 | 10AAAAAAAAAAAAAAA3 | £828.00     | 123456 | Bank account transfer | Immediate payment |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -187,7 +187,7 @@ Feature: C285 Single Claim Basis V2
     When I enter "10AAAAAAAAAAAAAAA3" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Returned goods relief (RGR)" on "C285_Single_Choose Basis For Claim Page v2"
@@ -201,13 +201,13 @@ Feature: C285 Single Claim Basis V2
     Then I am presented with the "C285_Single_Enter Claim Page v2" "A80 - Definitive Anti-Dumping Duty"
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - Made-wine 421"
+    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - 421 Made-wine"
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - Tobacco products 623"
+    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - 623 Tobacco products"
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
-    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - Climate Change Levy 99C"
+    Then I am presented with the "C285_Single_Enter Claim Page v2" "Excise Duty - 99C Climate Change Levy"
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
     Then I am presented with the "C285_Single_Check Claim Page v2"
@@ -239,6 +239,6 @@ Feature: C285 Single Claim Basis V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                       | Uploaded                        | Contact address                                  | Name on the account    | Account number        | Additional claim details   | EU Duty | Excise Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Returned goods relief (RGR)        | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith   | 11001001  | under 500 characters           | £208.00 | £580.00     | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA3 | £828.00     | 123456 |
+      | Returned goods relief (RGR)        | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith   | 11001001  | under 500 characters           | £208.00 | £580.00     | £788.00 | Bank account transfer | Immediate payment |10AAAAAAAAAAAAAAA3 | £828.00     | 123456 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"

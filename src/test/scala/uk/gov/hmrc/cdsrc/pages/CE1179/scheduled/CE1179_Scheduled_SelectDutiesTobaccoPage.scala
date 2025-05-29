@@ -21,8 +21,8 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object CE1179_Scheduled_SelectDutiesTobaccoPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/tobacco"
-  override val title       = "Claim details Which tobacco products duties do you want to claim for?"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/excise-duty/tobacco"
+  override val title       = "Which tobacco products duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Which tobacco products duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
@@ -33,7 +33,7 @@ object CE1179_Scheduled_SelectDutiesTobaccoPage extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some(
-    "Claim details Which tobacco products duties do you want to claim for?"
+    "Which tobacco products duties do you want to claim for?"
   )
 
 }

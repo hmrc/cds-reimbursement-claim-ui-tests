@@ -22,8 +22,8 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_SelectDutiesMiscellaneousRoadFuelsPagev2 extends BasePage {
 
   override val url: String =
-    TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/miscellaneous-road-fuels"
-  override val title       = "Claim details Which miscellaneous road fuels duties do you want to claim for?"
+    TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/excise-duty/miscellaneous-road-fuels"
+  override val title       = "Which miscellaneous road fuels duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Which miscellaneous road fuels duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
@@ -34,7 +34,7 @@ object C285_Scheduled_SelectDutiesMiscellaneousRoadFuelsPagev2 extends BasePage 
   )
 
   override def expectedPageHeader: Option[String] = Some(
-    "Claim details Which miscellaneous road fuels duties do you want to claim for?"
+    "Which miscellaneous road fuels duties do you want to claim for?"
   )
 
 }

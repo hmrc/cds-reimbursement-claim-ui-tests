@@ -14,28 +14,26 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
+package uk.gov.hmrc.cdsrc.pages.C285.scheduled_V2
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_EnterMovementReferenceNumber2Pagev2 extends BasePage {
+object C285_Scheduled_SelectDutiesOtherFermentedProductsPagev2 extends BasePage {
 
-  override val url: String =
-    TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-movement-reference-number/2"
-  override val title       = "Second Movement Reference Number (MRN)"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/excise-duty/other-fermented-products"
+  override val title       = "Which other fermented products duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Error: Second Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK"
+    "Which other fermented products duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Second Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK"
+    "Which other fermented products duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Second Movement Reference Number (MRN)")
-
-  override def enterDetails(textToEnter: String): Unit =
-    enterText("enter-movement-reference-number", textToEnter)
+  override def expectedPageHeader: Option[String] = Some(
+    "Which other fermented products duties do you want to claim for?"
+  )
 
 }

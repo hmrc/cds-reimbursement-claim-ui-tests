@@ -22,8 +22,8 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object C285_Scheduled_SelectDutiesClimateChangeLevyPagev2 extends BasePage {
 
   override val url: String =
-    TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/climate-change-levy"
-  override val title       = "Claim details Which Climate Change Levy duties do you want to claim for?"
+    TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/select-duties/excise-duty/climate-change-levy"
+  override val title       = "Which Climate Change Levy duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Which Climate Change Levy duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
@@ -34,7 +34,7 @@ object C285_Scheduled_SelectDutiesClimateChangeLevyPagev2 extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some(
-    "Claim details Which Climate Change Levy duties do you want to claim for?"
+    "Which Climate Change Levy duties do you want to claim for?"
   )
 
 }

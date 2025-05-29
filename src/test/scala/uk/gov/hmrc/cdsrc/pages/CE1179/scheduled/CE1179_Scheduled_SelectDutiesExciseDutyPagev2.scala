@@ -14,28 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
+package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_EnterMovementReferenceNumber2Pagev2 extends BasePage {
+object CE1179_Scheduled_SelectDutiesExciseDutyPagev2 extends BasePage {
 
-  override val url: String =
-    TestConfiguration.url("cds-frontend") + "/overpayments/multiple/enter-movement-reference-number/2"
-  override val title       = "Second Movement Reference Number (MRN)"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/excise-duty"
+  override val title       = "Excise duties"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Error: Second Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK"
+    "Excise duties - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Second Movement Reference Number (MRN) - Claim back import duty and VAT - GOV.UK"
+    "Excise duties - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Second Movement Reference Number (MRN)")
-
-  override def enterDetails(textToEnter: String): Unit =
-    enterText("enter-movement-reference-number", textToEnter)
+  override def expectedPageHeader: Option[String] = Some("Excise duties")
 
 }

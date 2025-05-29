@@ -22,8 +22,8 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object CE1179_Scheduled_SelectDutiesHydrocarbonOilsPage extends BasePage {
 
   override val url: String =
-    TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/hydrocarbon-oils"
-  override val title       = "Claim details Which hydrocarbon oil duties do you want to claim for?"
+    TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/select-duties/excise-duty/hydrocarbon-oils"
+  override val title       = "Which hydrocarbon oil duties do you want to claim for?"
 
   override def expectedPageErrorTitle: Option[String] = Some(
     "Which hydrocarbon oil duties do you want to claim for? - Claim back import duty and VAT - GOV.UK"
@@ -34,7 +34,7 @@ object CE1179_Scheduled_SelectDutiesHydrocarbonOilsPage extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some(
-    "Claim details Which hydrocarbon oil duties do you want to claim for?"
+    "Which hydrocarbon oil duties do you want to claim for?"
   )
 
 }

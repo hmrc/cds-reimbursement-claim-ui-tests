@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 package uk.gov.hmrc.cdsrc.driver
 
 import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.selenium.webdriver.Driver
 
-trait BrowserDriver {
-  /*implicit def driver: RemoteWebDriver = Driver.instance */
-  implicit def driver: WebDriver = Driver.instance :WebDriver
+
+object Driver {
+
+  implicit var instance: WebDriver= _
 
 }

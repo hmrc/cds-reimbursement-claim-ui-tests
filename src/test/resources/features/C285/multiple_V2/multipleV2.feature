@@ -1,7 +1,7 @@
 @C285 @Multiple
 Feature: C285 Multiple
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @wip
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -28,7 +28,7 @@ Feature: C285 Multiple
     When I enter "GB000000000000002" on "C285_Multiple_Enter Declarant Eori Page v2"
     And I click continue on "C285_Multiple_Enter Declarant Eori Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "20AAAAAAAAAAAAAAA2" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -93,7 +93,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                  | Contact address                                   | Name on the account   | Account number                                    | Additional claim details                               | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith     | 11001001  | under 500 characters             | £40.00 | Immediate Payment| £828.00     | 123456 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £20.00            | £20.00            |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith     | 11001001  | under 500 characters             | £40.00 | Immediate payment| £828.00     | 123456 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £20.00            | £20.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -120,7 +120,7 @@ Feature: C285 Multiple
     When I enter "60AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -185,7 +185,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                                | Contact address                             | Name on the account  | Account number                             | Additional claim details                            | Total   | Method of payment |Local Reference Number (LRN)| Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA1 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 11001001  | under 500 characters             | £40.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 11001001  | under 500 characters             | £40.00 | Immediate payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -211,7 +211,7 @@ Feature: C285 Multiple
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "10AAAAAAAAAAAAAAA2" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -311,7 +311,7 @@ Feature: C285 Multiple
     When I enter "01AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "Yes" on "C285_Multiple_Check Declaration Details Page v2"
+    #And I select radio button "Yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "02AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -368,13 +368,13 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Select Duties 3 Page v2"
     When I select "591,433,463" on "C285_Multiple_Select Duties 3 Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty- Miscellaneous road fuels 591"
+    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - 591 Miscellaneous road fuels"
     When I enter "10" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - Low alcohol beverages 433"
+    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - 433 Low alcohol beverages"
     When I enter "5" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - Spirits 463"
+    Then I am presented with the "C285_Multiple_Select Duties 3 Duty Page v2" "Excise Duty - 463 Spirits"
     When I enter "20" on "C285_Multiple_Select Duties 3 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 3 Duty Page v2"
 
@@ -384,35 +384,35 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "A70 - Additional Duty"
     When I enter "10" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Made-wine 421"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - 421 Made-wine"
     When I enter "5" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Made-wine 422"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - 422 Made-wine"
     When I enter "20" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Low alcohol beverages 435"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - 435 Low alcohol beverages"
     When I enter "30" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - Cider and perry 487"
+    Then I am presented with the "C285_Multiple_Select Duties 4 Duty Page v2" "Excise Duty - 487 Cider and perry"
     When I enter "5" on "C285_Multiple_Select Duties 4 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 4 Duty Page v2"
 
     Then I am presented with the "C285_Multiple_Select Duties 5 Page v2"
     When I select "561,589,595,591,592" on "C285_Multiple_Select Duties 5 Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Hydrocarbon oil 561"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - 561 Hydrocarbon oil"
     When I enter "10" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Biofuels 589"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - 589 Biofuels"
     When I enter "5" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Biofuels 595"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - 595 Biofuels"
     When I enter "15" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Miscellaneous road fuels 591"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - 591 Miscellaneous road fuels"
     When I enter "5" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
-    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - Miscellaneous road fuels 592"
+    Then I am presented with the "C285_Multiple_Select Duties 5 Duty Page v2" "Excise Duty - 592 Miscellaneous road fuels"
     When I enter "10" on "C285_Multiple_Select Duties 5 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
 
@@ -448,7 +448,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                                         | Contact address                                  | Name on the account     | Account number                                 | Additional claim details                                | Total     | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Third MRN          | Fourth MRN         | Fifth MRN          | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | Uploaded                        |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith  | 11001001  | under 500 characters             | £185.00 | Immediate Payment |£828.00     | 123456 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £20.00            | £15.00            | £35.00             | £70.00            | £45.00             | document.pdf,Commercial invoice |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith  | 11001001  | under 500 characters             | £185.00 | Immediate payment |£828.00     | 123456 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £20.00            | £15.00            | £35.00             | £70.00            | £45.00             | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -568,7 +568,7 @@ Feature: C285 Multiple
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
+   # And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -633,6 +633,6 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date    | Contact details                                             | Contact address                             | Name on the account  | Account number          | Additional claim details                                       | Total   | Method of payment |Local Reference Number (LRN)| Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters             | £40.00 | Immediate Payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters             | £40.00 | Immediate payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"

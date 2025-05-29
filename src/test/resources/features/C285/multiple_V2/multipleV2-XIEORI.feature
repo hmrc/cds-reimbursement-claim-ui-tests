@@ -29,7 +29,7 @@ Feature: C285 Multiple - XIEORI V2
     When I enter "XI000000000000001" on "C285_Multiple_Enter Declarant Eori Page v2"
     And I click continue on "C285_Multiple_Enter Declarant Eori Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "20XIDCAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -94,7 +94,7 @@ Feature: C285 Multiple - XIEORI V2
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                   | Contact address                                   | Name on the account   | Account number   | Additional claim details                                 | Total   | Method of payment |Duties paid | Sort code      | First MRN          | Second MRN         | Uploaded                        | 20XIDCAAAAAAAAAAA1 | 10XIDCAAAAAAAAAAA1 |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters            | £40.00 | Immediate Payment |£828.00     | 123456 | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | document.pdf,Commercial invoice | £20.00            | £20.00            |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters            | £40.00 | Immediate payment |£828.00     | 123456 | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | document.pdf,Commercial invoice | £20.00            | £20.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -121,7 +121,7 @@ Feature: C285 Multiple - XIEORI V2
     When I enter "10XIDAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -183,7 +183,7 @@ Feature: C285 Multiple - XIEORI V2
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date      | Contact details                                           | Contact address                                  | Name on the account   | Account number                                | This is the reason for the claim                                | Total   |Method of payment | Duties paid | Sort code      | First MRN          | Second MRN         | 20AAAAAAAAAAAAAAA1 | 10XIDAAAAAAAAAAAA1 | Uploaded                        |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters             | £788.00 | Immediate Payment| £828.00     | 123456 | 10XIDAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
+      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters             | £788.00 | Immediate payment| £828.00     | 123456 | 10XIDAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £379.00            | £409.00            | document.pdf,Commercial invoice |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 

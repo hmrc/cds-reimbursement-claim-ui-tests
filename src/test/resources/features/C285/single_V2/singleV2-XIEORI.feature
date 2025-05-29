@@ -41,7 +41,7 @@ Feature: C285 Single - XIEORI V2
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Duplicate Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Duplicate Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Duplicate Declaration Details Page v2"
     And I click continue on "C285_Single_Check Duplicate Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Additional Details Page v2"
     When I enter "under 500 characters" on "C285_Single_Enter Additional Details Page v2"
@@ -93,7 +93,7 @@ Feature: C285 Single - XIEORI V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim        | Import date      | Contact details                 | Uploaded                        | Contact address                                   | Name on the account   | Account number                               | This is the reason for the claim                          | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith    | 11001001 | under 500 characters           | £788.00 | £788.00 | Bank account transfer | Immediate Payment |10XICDAAAAAAAAAAA1 | £828.00     | 123456 |
+      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith    | 11001001 | under 500 characters           | £788.00 | £788.00 | Bank account transfer | Immediate payment |10XICDAAAAAAAAAAA1 | £828.00     | 123456 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
@@ -119,7 +119,7 @@ Feature: C285 Single - XIEORI V2
     When I enter "10XICAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Duplicate Movement Reference Number (MRN)" on "C285_Single_Choose Basis For Claim Page v2"
@@ -128,7 +128,7 @@ Feature: C285 Single - XIEORI V2
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Duplicate Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Duplicate Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Duplicate Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Duplicate Declaration Details Page v2"
     And I click continue on "C285_Single_Check Duplicate Declaration Details Page v2"
     Then I am presented with the "C285_Single_Enter Additional Details Page v2"
     When I enter "under 500 characters" on "C285_Single_Enter Additional Details Page v2"
@@ -182,7 +182,7 @@ Feature: C285 Single - XIEORI V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim        | Import date      | Contact details                      | Uploaded                        | Contact address                                     |Account number| Sort code| Name on the account   |Duplicate MRN|Payee                              | Additional claim details                                | A85 - Provisional Anti-Dumping Duty |A90 - Definitive Countervailing Duty| Total   | MRN                |A95 - Provisional Countervailing Duty| Duties paid | Method                         | Method of payment |
-      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890  | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |11001001|123456| Mr John Smith |20AAAAAAAAAAAAAAA1|Importer | under 500 characters             | £10.00 | £10.00                | £30.00 | 10XICAAAAAAAAAAAA1 | £10.00     | £828.00                             | Current Month Adjustment (CMA) | Immediate Payment |
+      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890  | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |11001001|123456| Mr John Smith |20AAAAAAAAAAAAAAA1|Importer | under 500 characters             | £10.00 | £10.00                | £30.00 | 10XICAAAAAAAAAAAA1 | £10.00     | £828.00                             | Current Month Adjustment (CMA) | Immediate payment |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 

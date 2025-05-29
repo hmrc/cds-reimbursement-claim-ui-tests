@@ -14,7 +14,7 @@ Feature: C&E1179 Single - XIEORI
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "CE1179_Choose How Many Mrns Page"
-    And I select radio button "Enter one MRN" on "CE1179_Choose How Many Mrns Page"
+    And I select radio button "One MRN" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
     Then I am presented with the "CE1179_Single_Have Your Supporting Document Ready Page v2"
     When I clickContinue on "CE1179_Single_Have Your Supporting Document Ready Page v2"
@@ -28,7 +28,7 @@ Feature: C&E1179 Single - XIEORI
     When I enter "XI000000000000001" on "CE1179_Single_Enter Declarant Eori Page"
     And I click continue on "CE1179_Single_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
-    When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
+    #When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
      # NEW CHANGE CDSR-3827
 
@@ -103,7 +103,7 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | Basis of claim        | Import date      | Contact details                                  | Uploaded                                                                | Contact address                                   | Name on the account    | Account number    |Payee     | Total   | Method                |  Method of payment |MRN                | Duties paid | Sort code      | A85 - Provisional Anti-Dumping Duty | Inspection address type | Inspection date | A90 - Definitive Countervailing Duty | Additional claim details | A80 - Definitive Anti-Dumping Duty | Inspection address                          | A95 - Provisional Countervailing Duty | Disposal method   |
-      | Goods are not in accordance with contract | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice,image.jpg,Import or export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith        | 11001001 |Importer| £40.00 | Bank account transfer | Immediate Payment  |10XICDAAAAAAAAAAA1 | £828.00     | 123456 | £10.00                             | Importer address        | 10 October 2020 | £10.00                              | under 500 characters                        | £10.00                            | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                               | Return the goods by road, rail, air or ship |
+      | Goods are not in accordance with contract | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice,image.jpg,Import or export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith        | 11001001 |Importer| £40.00 | Bank account transfer | Immediate payment  |10XICDAAAAAAAAAAA1 | £828.00     | 123456 | £10.00                             | Importer address        | 10 October 2020 | £10.00                              | under 500 characters                        | £10.00                            | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                               | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"
 
@@ -121,7 +121,7 @@ Feature: C&E1179 Single - XIEORI
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "CE1179_Choose How Many Mrns Page"
-    And I select radio button "Enter one MRN" on "CE1179_Choose How Many Mrns Page"
+    And I select radio button "One MRN" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
     Then I am presented with the "CE1179_Single_Have Your Supporting Document Ready Page v2"
     When I clickContinue on "CE1179_Single_Have Your Supporting Document Ready Page v2"
@@ -135,7 +135,7 @@ Feature: C&E1179 Single - XIEORI
     When I enter "XI000000000000001" on "CE1179_Single_Enter Declarant Eori Page"
     And I click continue on "CE1179_Single_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Single_Check Declaration Details Page"
-    When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
+    #When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
     # NEW CHANGE CDSR-3827
 
@@ -205,6 +205,6 @@ Feature: C&E1179 Single - XIEORI
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | Basis of claim | VAT paid | Import date      | Contact details                  | Uploaded                                                                | Contact address                                                                                                   | Total  | MRN                | Duties paid | A85 - Provisional Anti-Dumping Duty | Inspection address type | Inspection date | A90 - Definitive Countervailing Duty | Additional claim details | Inspection address                          | A95 - Provisional Countervailing Duty | Disposal method   | Any special circumstances relating to your claim | Method                         | Method of payment |
-      | Special circumstances              | £0.00    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice,image.jpg,Import or export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom    | £30.00 | 10XIDCAAAAAAAAAAA1 | £828.00     | £10.00                              | Importer address        | 10 October 2020 | £10.00                               | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                                | Return the goods by road, rail, air or ship | under 500 characters                             | Current Month Adjustment (CMA) | Immediate Payment |
+      | Special circumstances              | £0.00    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Commercial invoice,image.jpg,Import or export declaration | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom    | £30.00 | 10XIDCAAAAAAAAAAA1 | £828.00     | £10.00                              | Importer address        | 10 October 2020 | £10.00                               | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | £10.00                                | Return the goods by road, rail, air or ship | under 500 characters                             | Current Month Adjustment (CMA) | Immediate payment |
     And I click continue on "CE1179_Single_Check Your Answers Page"
     Then I am presented with the "CE1179_Single_Claim Submitted Page"

@@ -20,7 +20,7 @@ Feature: C285 Single file upload V2
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
+    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
     Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
     And I enter "" on "C285_Single_Claimant Details Change Claimant Details Page v2"
@@ -89,6 +89,6 @@ Feature: C285 Single file upload V2
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date      | Contact details                                           | Uploaded                                                                        | Contact address                                  | Name on the account    | Account number                              | This is the reason for the claim                                | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duty suspension                    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890  | image.jpg,Commercial invoice,document.pdf,Bill of lading,image.png,Packing list | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | 12345678  | under 500 characters            | £788.00 | £788.00 | Bank account transfer | Immediate Payment |10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 |
+      | Duty suspension                    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890  | image.jpg,Commercial invoice,document.pdf,Bill of lading,image.png,Packing list | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | 12345678  | under 500 characters            | £788.00 | £788.00 | Bank account transfer | Immediate payment |10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"

@@ -14,7 +14,7 @@ Feature: C&E1179 Multiple - XIEORI
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "CE1179_Choose How Many Mrns Page"
-    When I select radio button "Enter multiple MRNs" on "CE1179_Choose How Many Mrns Page"
+    When I select radio button "Up to 20 MRNs" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
     Then I am presented with the "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
     When I clickContinue on "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
@@ -28,7 +28,7 @@ Feature: C&E1179 Multiple - XIEORI
     When I enter "XI000000000000001" on "CE1179_Multiple_Enter Declarant Eori Page"
     And I click continue on "CE1179_Multiple_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-    And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
+    #And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
     And I click continue on "CE1179_Multiple_Check Declaration Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     When I enter "20XIDCAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
@@ -103,7 +103,7 @@ Feature: C&E1179 Multiple - XIEORI
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Basis of claim | Import date      | Contact details               | Uploaded                        | Contact address                                   | Name on the account   | Account number                                 | Total  | Method of payment  |20XIDCAAAAAAAAAAA1 | 10XIDCAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | Additional claim details | Inspection address                          | Disposal method   |
-      | Goods are defective                | 12 February 2021 | John Smith,john@smith.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001  | £40.00 | Immediate Payment |£20.00             | £20.00             | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | £828.00     | 123456 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
+      | Goods are defective                | 12 February 2021 | John Smith,john@smith.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001  | £40.00 | Immediate payment |£20.00             | £20.00             | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | £828.00     | 123456 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
@@ -121,7 +121,7 @@ Feature: C&E1179 Multiple - XIEORI
     When I select radio button "ce1179" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
     Then I am presented with the "CE1179_Choose How Many Mrns Page"
-    And I select radio button "Enter multiple MRNs" on "CE1179_Choose How Many Mrns Page"
+    And I select radio button "Up to 20 MRNs" on "CE1179_Choose How Many Mrns Page"
     And I click continue on "CE1179_Choose How Many Mrns Page"
     Then I am presented with the "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
     When I clickContinue on "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
@@ -129,7 +129,7 @@ Feature: C&E1179 Multiple - XIEORI
     When I enter "10XIDAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number Page"
     And I click continue on "CE1179_Multiple_Enter Movement Reference Number Page"
     Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-    And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
+    #And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
     And I click continue on "CE1179_Multiple_Check Declaration Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     When I enter "20AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
@@ -201,7 +201,7 @@ Feature: C&E1179 Multiple - XIEORI
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                                            | Uploaded                        | Contact address                                  | Name on the account     | Account number                                | Total  | Method of payment |20AAAAAAAAAAAAAAA1 | 10XIDAAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | Additional claim details | Inspection address                          | Disposal method   |
-      | Goods are defective                | 12 February 2021 | John Smith,john@smith.com,01234567890  | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith  | 11001001 | £788.00 | Immediate Payment |£379.00             | £409.00             | 10XIDAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £828.00     | 123456 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
+      | Goods are defective                | 12 February 2021 | John Smith,john@smith.com,01234567890  | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith  | 11001001 | £788.00 | Immediate payment |£379.00             | £409.00             | 10XIDAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £828.00     | 123456 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
