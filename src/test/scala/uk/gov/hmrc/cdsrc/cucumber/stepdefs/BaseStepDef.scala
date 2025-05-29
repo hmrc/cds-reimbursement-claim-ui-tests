@@ -37,6 +37,7 @@ trait BaseStepDef
     with WebBrowser
     with BasePage {
 
+
   When("""I select Welsh translation on {string}""") { (page: String) =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).enableWelsh()
@@ -193,3 +194,5 @@ trait BaseStepDef
     PageObjectFinder.cookieBannerPresence() should be(false)
   }
 }
+
+
