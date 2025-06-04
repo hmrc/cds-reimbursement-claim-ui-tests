@@ -187,8 +187,8 @@ Feature: C285 Scheduled - XIEORI V2
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
 
     Then I am presented with the "C285_Scheduled_Check Claim Page v2"
-    When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
-    And I click continue on "C285_Scheduled_Check Claim Page v2"
+    #When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
+    And I clickContinue on "C285_Scheduled_Check Claim Page v2"
     Then I am presented with the "C285_Scheduled_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
     When I click continue on "C285_Scheduled_Choose Payee Type v2"
