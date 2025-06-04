@@ -38,7 +38,6 @@ object CE1179_Scheduled_CheckClaimPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check the repayment totals for this claim")
 
-  def clickContinue(selection: String): Unit =
-    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
+
 
 }

@@ -17,6 +17,7 @@
 package uk.gov.hmrc.cdsrc.pages
 
 
+import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebElement}
 import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Wait}
 import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
 import org.scalatest.Assertion
@@ -99,12 +100,12 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }*/
 
   def uploadDocument(file: String): Unit = {
-    /*fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type=file")))
-    val fileInput = driver.findElement(By.cssSelector("input[id=file-1"))*/
+    /*fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type=file")))*/
+    val fileInput = driver.findElement(By.xpath("//*[@id=\"file-1\"]"))
     if (file != "") {
       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
     }
-    /*fileInput.sendKeys(getClass.getResource(file).getPath)*/
+    fileInput.sendKeys(getClass.getResource(file).getPath)
   }
 
   def uploadDocument(docNumber: Int, file: String): Unit = {
