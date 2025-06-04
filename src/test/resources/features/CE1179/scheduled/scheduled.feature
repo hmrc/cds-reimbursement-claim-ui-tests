@@ -135,7 +135,7 @@ Feature: C&E1179 Scheduled
 
     Then I am presented with the "CE1179_Scheduled_Check Claim Page"
     #When I select radio button "Yes" on "CE1179_Scheduled_Check Claim Page"
-    And I clickContinue on "CE1179_Scheduled_Check Claim Page"
+    And I click continue on "CE1179_Scheduled_Check Claim Page"
     Then I am presented with the "CE1179_Scheduled_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Scheduled_Enter Inspection Date Page"
     And I click continue on "CE1179_Scheduled_Enter Inspection Date Page"
