@@ -99,11 +99,12 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }*/
 
   def uploadDocument(file: String): Unit = {
-    val fileInput = driver.findElement(By.cssSelector("input[type=file"))
+    /*fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type=file")))
+    val fileInput = driver.findElement(By.cssSelector("input[id=file-1"))*/
     if (file != "") {
       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
     }
-    fileInput.sendKeys(getClass.getResource(file).getPath)
+    /*fileInput.sendKeys(getClass.getResource(file).getPath)*/
   }
 
   def uploadDocument(docNumber: Int, file: String): Unit = {
@@ -113,9 +114,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
       enterText("file-" + docNumber, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
     }
   }
-
-
-
 
 
     def continuouslyClickContinue(): Unit = {

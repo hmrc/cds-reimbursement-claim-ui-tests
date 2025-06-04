@@ -184,10 +184,10 @@ Feature: C285 Scheduled
      And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
 
     Then I am presented with the "C285_Scheduled_Check Claim Page v2"
-    When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
-    And I click continue on "C285_Scheduled_Check Claim Page v2"
+    #When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
+    And I clickContinue on "C285_Scheduled_Check Claim Page v2"
     Then I am presented with the "C285_Scheduled_Choose Payee Type v2"
-    And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
+    And I select radio button "Importer" on "C285_Scheduled_Choose Payee Type v2"
     When I click continue on "C285_Scheduled_Choose Payee Type v2"
 #    Then I am presented with the "C285_Scheduled_Check These Bank Details Are Correct Page v2"
 #    When I select radio button "yes" on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
@@ -199,7 +199,7 @@ Feature: C285 Scheduled
     When I select radio button "Commercial invoice" on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     Then I am presented with the "UCDF_Choose File Other Page" "commercial invoice"
-    When I upload a 1 "document.pdf" file on "UCDF_Choose File Other Page"
+    When I upload a 1 "document.doc" file on "UCDF_Choose File Other Page"
     And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue if I'm on "UCDF_Choose File Other Page"
 #New flow changes
@@ -398,8 +398,8 @@ Feature: C285 Scheduled
 
 
     Then I am presented with the "C285_Scheduled_Check Claim Page v2"
-    When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
-    And I click continue on "C285_Scheduled_Check Claim Page v2"
+    #When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
+    And I clickContinue on "C285_Scheduled_Check Claim Page v2"
     Then I am presented with the "C285_Scheduled_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
     When I click continue on "C285_Scheduled_Choose Payee Type v2"
@@ -681,8 +681,8 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
   #CDSR-3948
     Then I am presented with the "C285_Scheduled_Check Claim Page v2"
-    When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
-    And I click continue on "C285_Scheduled_Check Claim Page v2"
+    #When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
+    And I clickContinue on "C285_Scheduled_Check Claim Page v2"
     Then I am presented with the "C285_Scheduled_Choose Payee Type v2"
     And I select radio button "Declarant" on "C285_Multiple_Choose Payee Type v2"
     When I click continue on "C285_Scheduled_Choose Payee Type v2"

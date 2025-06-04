@@ -16,28 +16,29 @@
 
 package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
+
+
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object CE1179_Scheduled_CheckClaimPage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/scheduled/check-claim"
-  override val title       = "Check the repayment total for this claim"
+  override val title       = "Check the repayment totals for this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK"
+    "Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK"
+    "Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Check the repayment total for this claim")
+  override def expectedPageHeader: Option[String] = Some("Check the repayment totals for this claim")
 
-  override def clickRadioButton(text: String): Unit =
-    text.toLowerCase() match {
-      case "yes" => click on xpath(s"""//*[@id="check-claim"]""")
-      case "no"  => click on xpath(s"""//*[@id="check-claim"]""")
-    }
+  def clickContinue(selection: String): Unit =
+    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
 
 }
