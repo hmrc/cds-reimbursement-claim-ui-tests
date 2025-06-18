@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages.Securities
 
-import org.openqa.selenium.By
+
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 

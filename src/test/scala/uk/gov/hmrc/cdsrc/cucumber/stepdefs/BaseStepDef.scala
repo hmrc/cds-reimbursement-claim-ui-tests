@@ -107,10 +107,16 @@ trait BaseStepDef
 
   When("""I upload a {string} file on {string}""") { (file: String, page: String) =>
     PageObjectFinder.page(page).uploadDocument(file)
+    waitForPageToLoad()
   }
 
-  When("""I upload a {int} {string} file on {string}""") { (fileNumber: Int, file: String, page: String) =>
-    PageObjectFinder.page(page).uploadDocument(fileNumber, file)
+  // When("""I upload a {int} {string} file on {string}""") { (fileNumber: Int, file: String, page: String) =>
+  // PageObjectFinder.page(page).uploadDocument(fileNumber, file)
+  //waitForPageToLoad()
+
+  When("""I upload a {int} {string} file on {string}""") { (idx: Int,file: String, page: String) =>
+    //val driver = new BrowserDriver {}.driver // Create an instance of BrowserDriver trait
+    PageObjectFinder.page(page).uploadDocument(idx,file)
     waitForPageToLoad()
   }
 

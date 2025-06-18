@@ -21,6 +21,7 @@ import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
+
 object UDF_ChooseFilesPage extends BasePage {
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
@@ -58,3 +59,4 @@ object UDF_ChooseFilesPage extends BasePage {
   }
 
 }
+

@@ -18,7 +18,7 @@ package uk.gov.hmrc.cdsrc.pages.Securities
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.common.CheckEoriDetailsPage.cssSelector
+
 
 object Securities_NidacAddOtherDocument extends BasePage {
 
