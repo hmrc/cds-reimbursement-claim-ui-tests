@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
-
-import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebElement}
 import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Wait}
 import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
 import org.scalatest.Assertion
@@ -36,7 +34,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
   /** Fluent Wait config * */
-  var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
+  def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(20))
     .pollingEvery(Duration.ofMillis(500))
 
@@ -91,13 +89,13 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
 
- /* def uploadDocument(file: String): Unit = {
-   /* val element: Unit = driver.findElement(By.id("file")).sendKeys(getClass.getResource(file).getPath)*/
-    driver.asInstanceOf[RemoteWebElement].setFileDetector(new LocalFileDetector)
-    if (file != "") {
-      enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
-    }
-  }*/
+  /* def uploadDocument(file: String): Unit = {
+    /* val element: Unit = driver.findElement(By.id("file")).sendKeys(getClass.getResource(file).getPath)*/
+     driver.asInstanceOf[RemoteWebElement].setFileDetector(new LocalFileDetector)
+     if (file != "") {
+       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+     }
+   }*/
 
   def uploadDocument(file: String): Unit = {
     /*fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type=file")))*/
@@ -108,135 +106,141 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     fileInput.sendKeys(getClass.getResource(file).getPath)
   }
 
-  def uploadDocument(docNumber: Int, file: String): Unit = {
+  //def uploadDocument(docNumber: Int, file: String): Unit = {
     /*val element: Unit = driver.findElement(By.id("file")).sendKeys(getClass.getResource(file).getPath)*/
-   /*driver.asInstanceOf[RemoteWebElement].setFileDetector(new LocalFileDetector)*/
+    /*driver.asInstanceOf[RemoteWebElement].setFileDetector(new LocalFileDetector)*/
+    //if (file != "") {
+     // enterText("file-" + docNumber, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+    //}
+  //}
+
+  def uploadDocument( idx: Int, file: String): Unit = {
+    val id = "file-" + idx
     if (file != "") {
-      enterText("file-" + docNumber, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+      enterText(id, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+    }}
+
+
+  def continuouslyClickContinue(): Unit = {
+    waitForPageToLoad()
+    while (find(tagName("h1")).map(_.text).contains("We are checking your document"))
+      clickContinueButton()
+  }
+
+  def checkPageHeader(): Assertion = {
+    val expectedText = expectedPageHeader.get.trim.replaceAll("\\s+", " ")
+
+    val condition = new ExpectedCondition[Boolean] {
+      override def apply(driver: WebDriver): Boolean = {
+        val element = driver.findElement(By.cssSelector("h1"))
+        val actualText = element.getText.trim.replaceAll("\\s+", " ")
+        actualText.equals(expectedText)
+      }
+    }
+
+    fluentWait.until(condition)
+
+    val actualText = pageHeader.get.trim.replaceAll("\\s+", " ")
+    actualText shouldEqual expectedText
+
+    // Additional debugging information
+    println(s"Expected Text: [$expectedText]")
+    println(s"Actual Text: [$actualText]")
+
+    expectedPageHeaderList should contain(List(actualText))
+  }
+
+  def waitForPageToLoad(): lang.Boolean =
+    fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
+
+  def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
+
+  def clickContinue(): Unit = click on cssSelector("#main-content > div > div > a")
+
+  def clickBackButton(): Unit = click on cssSelector(".govuk-back-link")
+
+  def clickButton(buttonText: String): Unit = click on partialLinkText(buttonText)
+
+  def clickRadioButton(text: String): Unit =
+    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == text).head.click()
+
+  def selectCheckBox(): Unit = {}
+
+  def elementText(query: Query): String = find(query).get.underlying.getText
+
+  def selectBoxes(toSelect: Array[String]): Unit =
+    for (i <- toSelect.indices)
+      click on xpath(s"//input[@value='${toSelect(i)}']")
+
+  def textField(id: String, value: String): Unit = {
+    val elem = find(id)
+    if (elem.isDefined) {
+      val e = new TextField(elem.get.underlying)
+      if (e.isDisplayed) e.value = value
     }
   }
 
-
-    def continuouslyClickContinue(): Unit = {
-      waitForPageToLoad()
-      while (find(tagName("h1")).map(_.text).contains("We are checking your document"))
-        clickContinueButton()
-    }
-
-    def checkPageHeader(): Assertion = {
-      val expectedText = expectedPageHeader.get.trim.replaceAll("\\s+", " ")
-
-      val condition = new ExpectedCondition[Boolean] {
-        override def apply(driver: WebDriver): Boolean = {
-          val element = driver.findElement(By.cssSelector("h1"))
-          val actualText = element.getText.trim.replaceAll("\\s+", " ")
-          actualText.equals(expectedText)
-        }
-      }
-
-      fluentWait.until(condition)
-
-      val actualText = pageHeader.get.trim.replaceAll("\\s+", " ")
-      actualText shouldEqual expectedText
-
-      // Additional debugging information
-      println(s"Expected Text: [$expectedText]")
-      println(s"Actual Text: [$actualText]")
-
-      expectedPageHeaderList should contain(List(actualText))
-    }
-
-    def waitForPageToLoad(): lang.Boolean =
-      fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
-
-    def clickContinueButton(): Unit = click on cssSelector("#main-content > div > div > form > button")
-
-    def clickContinue(): Unit = click on cssSelector("#main-content > div > div > a")
-
-    def clickBackButton(): Unit = click on cssSelector(".govuk-back-link")
-
-    def clickButton(buttonText: String): Unit = click on partialLinkText(buttonText)
-
-    def clickRadioButton(text: String): Unit =
-      driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == text).head.click()
-
-    def selectCheckBox(): Unit = {}
-
-    def elementText(query: Query): String = find(query).get.underlying.getText
-
-    def selectBoxes(toSelect: Array[String]): Unit =
-      for (i <- toSelect.indices)
-        click on xpath(s"//input[@value='${toSelect(i)}']")
-
-    def textField(id: String, value: String): Unit = {
-      val elem = find(id)
-      if (elem.isDefined) {
-        val e = new TextField(elem.get.underlying)
-        if (e.isDisplayed) e.value = value
-      }
-    }
-
-    def enterText(id: String, textToEnter: String): Unit = {
-      driver.findElement(By.id(id)).clear()
-      driver.findElement(By.id(id)).sendKeys(textToEnter)
-    }
-
-    def selectFromAutocomplete(id: String, textToSelect: String): Unit =
-      driver.findElement(By.id(id)).sendKeys(textToSelect + Keys.ENTER)
-
-    def enterDetails(data: String): Unit = {}
-
-    def dropdownSelect(selection: String): Unit = {}
-
-    def enableWelsh(): Unit =
-      if (System.getProperty("welsh", "false") == "true")
-        click on cssSelector("body > div:nth-child(5) > nav > ul > li:nth-child(2) > a > span:nth-child(2)")
-
-    def enableEnglish(): Unit =
-      if (System.getProperty("welsh", "false") == "false")
-        click on cssSelector("body > div:nth-child(5) > nav > ul > li:nth-child(1) > a > span:nth-child(2)")
-
-    def clickOnLinkText(text: String): Unit = click on linkText(text)
-
-    def configure(feature: String, featureState: String): Unit = {}
-
-    def checkPageErrorSummaryTitle(errorSummaryTitle: String): Unit = {
-      val actualErrorSummaryTitle = driver.findElement(By.className("govuk-error-summary__title")).getText
-      actualErrorSummaryTitle should be(errorSummaryTitle)
-    }
-
-    def checkPageErrorMessage(errorMessage: String): Unit = {
-      val actualErrorMessage = driver.findElement(By.cssSelector(".govuk-error-summary__body")).getText
-      assert(actualErrorMessage.contains(errorMessage))
-    }
-
-    def pageData: Map[String, String] = driver
-      .findElements(By.cssSelector(".govuk-summary-list__row"))
-      .asScala
-      .flatMap { row =>
-        val key = row.findElement(By.cssSelector(".govuk-summary-list__key")).getText.trim
-        val value = row.findElement(By.cssSelector(".govuk-summary-list__value")).getText.trim.replace("\n", ",")
-        Map(key -> value)
-      }
-      .toMap
-
-    def cookieBanner() = driver.findElement(By.cssSelector(".cbanner-govuk-cookie-banner"))
-
-    def cookieBannerText(): Seq[String] = cookieBanner().getText.split("\n").toList
-
-    def cookieBannerLinkUrl(linkText: String): String = cookieBanner()
-      .findElement(By.partialLinkText(linkText))
-      .getAttribute("href")
-      .trim
-
-    def cookieBannerPresence(): Boolean = !driver.findElements(By.cssSelector(".cbanner-govuk-cookie-banner")).isEmpty
-
-    def cookieBannerLinksButtonsText(tag: String): Seq[String] = cookieBanner()
-      .findElements(By.tagName(tag))
-      .asScala
-      .map(_.getText.trim)
-      .toList
-
-    def button(buttonName: String): WebElement =
-      cookieBanner().findElements(By.tagName("button")).asScala.filter(_.getText == buttonName).head
+  def enterText(id: String, textToEnter: String): Unit = {
+    driver.findElement(By.id(id)).clear()
+    driver.findElement(By.id(id)).sendKeys(textToEnter)
   }
+
+  def selectFromAutocomplete(id: String, textToSelect: String): Unit =
+    driver.findElement(By.id(id)).sendKeys(textToSelect + Keys.ENTER)
+
+  def enterDetails(data: String): Unit = {}
+
+  def dropdownSelect(selection: String): Unit = {}
+
+  def enableWelsh(): Unit =
+    if (System.getProperty("welsh", "false") == "true")
+      click on cssSelector("body > div:nth-child(5) > nav > ul > li:nth-child(2) > a > span:nth-child(2)")
+
+  def enableEnglish(): Unit =
+    if (System.getProperty("welsh", "false") == "false")
+      click on cssSelector("body > div:nth-child(5) > nav > ul > li:nth-child(1) > a > span:nth-child(2)")
+
+  def clickOnLinkText(text: String): Unit = click on linkText(text)
+
+  def configure(feature: String, featureState: String): Unit = {}
+
+  def checkPageErrorSummaryTitle(errorSummaryTitle: String): Unit = {
+    val actualErrorSummaryTitle = driver.findElement(By.className("govuk-error-summary__title")).getText
+    actualErrorSummaryTitle should be(errorSummaryTitle)
+  }
+
+  def checkPageErrorMessage(errorMessage: String): Unit = {
+    val actualErrorMessage = driver.findElement(By.cssSelector(".govuk-error-summary__body")).getText
+    assert(actualErrorMessage.contains(errorMessage))
+  }
+
+  def pageData: Map[String, String] = driver
+    .findElements(By.cssSelector(".govuk-summary-list__row"))
+    .asScala
+    .flatMap { row =>
+      val key = row.findElement(By.cssSelector(".govuk-summary-list__key")).getText.trim
+      val value = row.findElement(By.cssSelector(".govuk-summary-list__value")).getText.trim.replace("\n", ",")
+      Map(key -> value)
+    }
+    .toMap
+
+  def cookieBanner() = driver.findElement(By.cssSelector(".cbanner-govuk-cookie-banner"))
+
+  def cookieBannerText(): Seq[String] = cookieBanner().getText.split("\n").toList
+
+  def cookieBannerLinkUrl(linkText: String): String = cookieBanner()
+    .findElement(By.partialLinkText(linkText))
+    .getAttribute("href")
+    .trim
+
+  def cookieBannerPresence(): Boolean = !driver.findElements(By.cssSelector(".cbanner-govuk-cookie-banner")).isEmpty
+
+  def cookieBannerLinksButtonsText(tag: String): Seq[String] = cookieBanner()
+    .findElements(By.tagName(tag))
+    .asScala
+    .map(_.getText.trim)
+    .toList
+
+  def button(buttonName: String): WebElement =
+    cookieBanner().findElements(By.tagName("button")).asScala.filter(_.getText == buttonName).head
+}

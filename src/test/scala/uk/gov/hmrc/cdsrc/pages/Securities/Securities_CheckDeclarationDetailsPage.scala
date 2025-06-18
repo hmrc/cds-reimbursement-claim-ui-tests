@@ -19,7 +19,7 @@ package uk.gov.hmrc.cdsrc.pages.Securities
 import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-import uk.gov.hmrc.cdsrc.pages.Securities.Securities_HaveYourSupportingDocumentReadyPage.driver
+
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
@@ -38,7 +38,7 @@ object Securities_CheckDeclarationDetailsPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Check the Movement Reference Number (MRN) you entered")
 
-  def changeLinks(page: String) = {
+  def changeLinks(page: String): Unit = {
     val pageRows = driver
       .findElements(By.cssSelector(".govuk-summary-list__key"))
       .asScala
