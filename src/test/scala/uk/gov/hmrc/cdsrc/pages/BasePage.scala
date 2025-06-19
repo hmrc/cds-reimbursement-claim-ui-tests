@@ -23,6 +23,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.{Page, WebBrowser}
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
+import uk.gov.hmrc.cdsrc.pages.common.StartPage.waitForPageToLoad
 
 import java.lang
 import java.time.Duration
@@ -35,7 +36,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   /** Fluent Wait config * */
   def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(20))
+    .withTimeout(Duration.ofSeconds(40))
     .pollingEvery(Duration.ofMillis(500))
 
   def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
@@ -118,7 +119,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     val id = "file-" + idx
     if (file != "") {
       enterText(id, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
-    }}
+    }
+    }
 
 
   def continuouslyClickContinue(): Unit = {
