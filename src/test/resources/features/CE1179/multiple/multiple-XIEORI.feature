@@ -66,8 +66,8 @@ Feature: C&E1179 Multiple - XIEORI
     When I enter "10" on "CE1179_Multiple_Select Duties 2 Duty Page"
     And I click continue on "CE1179_Multiple_Select Duties 2 Duty Page"
     Then I am presented with the "CE1179_Multiple_Check Claim Page"
-    And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
-    When I click continue on "CE1179_Multiple_Check Claim Page"
+    #And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
+    When I clickContinue on "CE1179_Multiple_Check Claim Page"
     Then I am presented with the "CE1179_Multiple_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Multiple_Enter Inspection Date Page"
     And I click continue on "CE1179_Multiple_Enter Inspection Date Page"
@@ -102,7 +102,7 @@ Feature: C&E1179 Multiple - XIEORI
     And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
-      | Basis of claim | Import date      | Contact details               | Uploaded                        | Contact address                                   | Name on the account   | Account number                                 | Total  | Method of payment  |20XIDCAAAAAAAAAAA1 | 10XIDCAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | Additional claim details | Inspection address                          | Disposal method   |
+      | Basis of claim | Import date      | Contact details               | Uploaded                        | Contact address                                   | Name on the account   | Account number                                 | Total  | Method of payment  |20XIDCAAAAAAAAAAA1 | 10XIDCAAAAAAAAAAA1 | 1st MRN          | 2nd MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | Additional claim details | Inspection address                          | Disposal method   |
       | Goods are defective                | 12 February 2021 | John Smith,john@smith.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001  | £40.00 | Immediate payment |£20.00             | £20.00             | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | £828.00     | 123456 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
@@ -167,8 +167,8 @@ Feature: C&E1179 Multiple - XIEORI
     When I enter "10" on "CE1179_Multiple_Select Duties 2 Duty Page"
     And I click continue on "CE1179_Multiple_Select Duties 2 Duty Page"
     Then I am presented with the "CE1179_Multiple_Check Claim Page"
-    And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
-    When I click continue on "CE1179_Multiple_Check Claim Page"
+    #And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
+    When I clickContinue on "CE1179_Multiple_Check Claim Page"
     Then I am presented with the "CE1179_Multiple_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Multiple_Enter Inspection Date Page"
     And I click continue on "CE1179_Multiple_Enter Inspection Date Page"
@@ -200,7 +200,7 @@ Feature: C&E1179 Multiple - XIEORI
     And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
-      | Basis of claim | Import date      | Contact details                                            | Uploaded                        | Contact address                                  | Name on the account     | Account number                                | Total  | Method of payment |20AAAAAAAAAAAAAAA1 | 10XIDAAAAAAAAAAAA1 | First MRN          | Second MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | Additional claim details | Inspection address                          | Disposal method   |
+      | Basis of claim | Import date      | Contact details                                            | Uploaded                        | Contact address                                  | Name on the account     | Account number                                | Total  | Method of payment |20AAAAAAAAAAAAAAA1 | 10XIDAAAAAAAAAAAA1 | 1st MRN          | 2nd MRN         | Duties paid | Sort code      | Inspection address type | Inspection date | Additional claim details | Inspection address                          | Disposal method   |
       | Goods are defective                | 12 February 2021 | John Smith,john@smith.com,01234567890  | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith  | 11001001 | £788.00 | Immediate payment |£379.00             | £409.00             | 10XIDAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £828.00     | 123456 | Importer address        | 10 October 2020 | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
