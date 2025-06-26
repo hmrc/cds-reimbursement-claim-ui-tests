@@ -1,7 +1,7 @@
 @C&E1179 @Multiple
 Feature: C&E1179 Multiple
 
-  @test @wip
+  @test
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
