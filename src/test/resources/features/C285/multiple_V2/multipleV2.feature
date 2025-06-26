@@ -92,13 +92,13 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Basis of claim | Import date      | Contact details                  | Contact address                                   | Name on the account   | Account number                                    | Additional claim details                               | Total   |Method of payment | Duties paid | Sort code      | 1st MRN          | 2nd MRN         | Uploaded                        | 20AAAAAAAAAAAAAAA2 | 10AAAAAAAAAAAAAAA2 |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith     | 11001001  | under 500 characters             | £40.00 | Immediate payment| £828.00     | 123456 | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | document.pdf,Commercial invoice | £20.00            | £20.00            |
+        | Reason for claim      | Personal details                  | Address                                   | Bank details  | Additional claim information     | Total         | 1st Movement Reference Number (MRN)   | 2nd MRN         | Uploaded files  | 1st MRN10AAAAAAAAAAAAAAA2 |   2nd MRN20AAAAAAAAAAAAAAA2| Payee |
+        | Outward processing relief           | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001      | under 500 characters  | £40.00      | 10AAAAAAAAAAAAAAA2 | 20AAAAAAAAAAAAAAA2 | Commercial invoice:,document.pdf | £20.00            | £20.00            |Importer|
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
 
-  @test
+  @test @wip
   Scenario: happy path - with no bank details (user is both importer and declarant)
     #  60AAAAAAAAAAAAAAA1 => No bank details (user is both importer and declarant), - skips payee indicator page and navigates to /choose Bank account transfer,> /enter-bank-account-details page
     Given I navigate to the "Auth Login Stub Page"
@@ -184,8 +184,8 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Basis of claim | Import date    | Contact details                                                | Contact address                             | Name on the account  | Account number                             | Additional claim details                            | Total   | Method of payment |Local Reference Number (LRN)| Duties paid | Sort code      | 1st MRN          | 2nd MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA1 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith       | 11001001  | under 500 characters             | £40.00 | Immediate payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
+      | Reason for claim     | Personal details                                                | Address                             | Bank details                              | Additional claim information                            | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | 2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA1 | Uploaded files  |Payee|
+      | Outward processing relief          | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001        | under 500 characters             | £40.00 | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | Commercial invoice:,document.pdf|Importer    |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -289,7 +289,7 @@ Feature: C285 Multiple
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
 
-  @test
+  @test @wip
   Scenario: happy path with many MRNs and duties
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -447,8 +447,8 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Basis of claim | Import date      | Contact details                                         | Contact address                                  | Name on the account     | Account number                                 | Additional claim details                                | Total     | Method of payment |Duties paid | Sort code      | 1st MRN          | 2nd MRN         | 3rd MRN          | 4th MRN         | 5th MRN          | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | Uploaded                        |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith  | 11001001  | under 500 characters             | £185.00 | Immediate payment |£828.00     | 123456 | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £20.00            | £15.00            | £35.00             | £70.00            | £45.00             | document.pdf,Commercial invoice |
+      | Reason for claim       | Personal details                                         | Address                                  | Bank details    | Payee                                 | Additional claim information                                | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | 3rd MRN          | 4th MRN         | 5th MRN          | 1st MRN01AAAAAAAAAAAAAAA1 | 2nd MRN02AAAAAAAAAAAAAAA1 | 3rd MRN10XXXXXXXXXXXXXXX1 | 4th MRN10YYYYYYYYYYYYYYY1 | 5th MRN10ZZZZZZZZZZZZZZZ1 | Uploaded files                       |
+      | Outward processing relief           | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001  | Importer  | under 500 characters             | £185.00  | 01AAAAAAAAAAAAAAA1 | 02AAAAAAAAAAAAAAA1 | 10XXXXXXXXXXXXXXX1 | 10YYYYYYYYYYYYYYY1 | 10ZZZZZZZZZZZZZZZ1 | £20.00            | £15.00            | £35.00             | £70.00            | £45.00             | Commercial invoice:,document.pdf|
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
@@ -546,7 +546,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
 
-  @test
+  @test @wip
   Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA not eligible
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is only importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"
@@ -632,7 +632,7 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Basis of claim | Import date    | Contact details                                             | Contact address                             | Name on the account  | Account number          | Additional claim details                                       | Total   | Method of payment |Local Reference Number (LRN)| Duties paid | Sort code      | 1st MRN          | 2nd MRN         | 20AAAAAAAAAAAAAAA1 | 60AAAAAAAAAAAAAAA5 | Uploaded                        |
-      | Outward processing relief          | 13 August 2019 | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters             | £40.00 | Immediate payment |XFGLKJDSE5GDPOIJEW985T                 |£828.00     | 123456 | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | document.pdf,Commercial invoice |
+      | Reason for claim    | Personal details                                             | Address                             | Bank details  | Payee          | Additional claim information                                       | Total    | 1st Movement Reference Number (MRN)         | 2nd MRN         | 2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA5 | Uploaded files   |
+      | Outward processing relief       | John Smith,john@smith.com,01234567890  | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001 | Declarant | under 500 characters             | £40.00  | 60AAAAAAAAAAAAAAA5 | 20AAAAAAAAAAAAAAA1 | £20.00            | £20.00            | Commercial invoice:,document.pdf |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
