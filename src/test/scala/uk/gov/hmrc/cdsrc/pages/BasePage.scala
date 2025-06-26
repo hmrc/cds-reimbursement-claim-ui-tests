@@ -220,8 +220,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     .findElements(By.cssSelector(".govuk-summary-list__row"))
     .asScala
     .flatMap { row =>
-      val key = row.findElement(By.cssSelector(".govuk-summary-list__key")).getText.trim
-      val value = row.findElement(By.cssSelector(".govuk-summary-list__value")).getText.trim.replace("\n", ",")
+      val key = row.findElement(By.cssSelector(".govuk-summary-list__key")).getText.trim.replace("\n","")
+      val value = row.findElement(By.cssSelector(".govuk-summary-list__value")).getText.trim.replace("\n",",")
+   //val value = row.findElement(By.cssSelector(".govuk-summary-list__value")).getText.trim.replace("\n", ",")
       Map(key -> value)
     }
     .toMap

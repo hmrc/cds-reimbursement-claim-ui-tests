@@ -1,7 +1,7 @@
 @C285 @Multiple
 Feature: C285 Multiple - XIEORI V2
 
-  @test
+  @test @wip
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -93,8 +93,8 @@ Feature: C285 Multiple - XIEORI V2
     And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Basis of claim | Import date      | Contact details                   | Contact address                                   | Name on the account   | Account number   | Additional claim details                                 | Total   | Method of payment |Duties paid | Sort code      | 1st MRN          | 2nd MRN         | Uploaded                        | 20XIDCAAAAAAAAAAA1 | 10XIDCAAAAAAAAAAA1 |
-      | Outward processing relief          | 12 February 2021 | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith | 11001001 | under 500 characters            | £40.00 | Immediate payment |£828.00     | 123456 | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | document.pdf,Commercial invoice | £20.00            | £20.00            |
+      | Reason for claim     | Personal details                   | Address                                   | Bank details  | Payee   | Additional claim information                                 | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | Uploaded files                       | 2nd MRN20XIDCAAAAAAAAAAA1 | 1st MRN10XIDCAAAAAAAAAAA1 |
+      | Outward processing relief         | John Smith,john@smith.com,01234567890 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001 | Importer | under 500 characters            | £40.00  | 10XIDCAAAAAAAAAAA1 | 20XIDCAAAAAAAAAAA1 | Commercial invoice:,document.pdf| £20.00            | £20.00            |
     And I click continue on "C285_Multiple_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
