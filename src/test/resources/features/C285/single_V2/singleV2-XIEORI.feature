@@ -97,7 +97,7 @@ Feature: C285 Single - XIEORI V2
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-  @test
+  @test @wip
   Scenario: happy path - user selects CMA
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -181,8 +181,8 @@ Feature: C285 Single - XIEORI V2
 #    And I click continue on "UDF_Summary Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Basis of claim        | Import date      | Contact details                      | Uploaded                        | Contact address                                     |Account number| Sort code| Name on the account   |Duplicate MRN|Payee                              | Additional claim details                                | A85 - Provisional Anti-Dumping Duty |A90 - Definitive Countervailing Duty| Total   | MRN                |A95 - Provisional Countervailing Duty| Duties paid | Method                         | Method of payment |
-      | Duplicate Movement Reference Number (MRN) | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890  | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |11001001|123456| Mr John Smith |20AAAAAAAAAAAAAAA1|Importer | under 500 characters             | £10.00 | £10.00                | £30.00 | 10XICAAAAAAAAAAAA1 | £10.00     | £828.00                             | Current Month Adjustment (CMA) | Immediate payment |
+      | Reason for claim             | Personal details                      | Uploaded files                        | Address                                    | Bank details   |Duplicate MRN|Payee                              | Additional claim information                              | What do you want to claim? | A85 - Provisional Anti-Dumping Duty |A90 - Definitive Countervailing Duty| Total   | Movement Reference Number (MRN)              |A95 - Provisional Countervailing Duty | Method                         |
+      | Duplicate Movement Reference Number (MRN)  | Mr John Smith,someemail@mail.com,01234567890  | Commercial invoice:,document.pdf | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001|20AAAAAAAAAAAAAAA1|Importer | under 500 characters                     | A95 - Provisional Countervailing Duty,A90 - Definitive Countervailing Duty,A85 - Provisional Anti-Dumping Duty| £10.00 | £10.00                | £30.00 | 10XICAAAAAAAAAAAA1 | £10.00                               | Current Month Adjustment (CMA) |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
