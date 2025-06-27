@@ -26,6 +26,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder.DataTableConverters
 
+import java.sql.DriverManager
 import scala.jdk.CollectionConverters._
 
 trait BaseStepDef
@@ -114,9 +115,8 @@ trait BaseStepDef
   // PageObjectFinder.page(page).uploadDocument(fileNumber, file)
   //waitForPageToLoad()
 
-  When("""I upload a {int} {string} file on {string}""") { (idx: Int,file: String, page: String) =>
-    //val driver = new BrowserDriver {}.driver // Create an instance of BrowserDriver trait
-    PageObjectFinder.page(page).uploadDocument(idx,file)
+  When("""I upload a {int} {string} file on {string}""") { (docNumber: Int, file: String, page: String) =>
+    PageObjectFinder.page(page).uploadDocument(docNumber,file)
     waitForPageToLoad()
   }
 

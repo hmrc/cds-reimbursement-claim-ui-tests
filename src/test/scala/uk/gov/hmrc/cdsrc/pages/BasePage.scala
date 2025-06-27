@@ -16,7 +16,8 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
-import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Wait}
+import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
+import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Wait, WebDriverWait}
 import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.concurrent.Eventually
@@ -100,13 +101,25 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   def uploadDocument(file: String): Unit = {
     /*fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type=file")))*/
-    val fileInput = driver.findElement(By.xpath("//*[@id=\"file-1\"]"))
     if (file != "") {
       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
     }
-    fileInput.sendKeys(getClass.getResource(file).getPath)
   }
+  def uploadDocument( docNumber: Int, file: String): Unit = {
+    if (file.nonEmpty) {
+      // Only set file detector if driver is a RemoteWebDriver
 
+
+      val wait = new WebDriverWait(driver, Duration.ofSeconds(10))
+      val fileInput: WebElement = wait.until(
+      ExpectedConditions.presenceOfElementLocated(By.id(s"file-$docNumber"))
+      )
+
+      val filePath = System.getProperty("user.dir") + s"/src/test/resources/files/$file"
+      fileInput.sendKeys(filePath)
+
+  }
+  }
   //def uploadDocument(docNumber: Int, file: String): Unit = {
     /*val element: Unit = driver.findElement(By.id("file")).sendKeys(getClass.getResource(file).getPath)*/
     /*driver.asInstanceOf[RemoteWebElement].setFileDetector(new LocalFileDetector)*/
@@ -115,12 +128,12 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     //}
   //}
 
-  def uploadDocument( idx: Int, file: String): Unit = {
-    val id = "file-" + idx
-    if (file != "") {
-      enterText(id, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
-    }
-    }
+//def uploadDocument( idx: Int, file: String): Unit = {
+ // val id = "file-" + idx
+ // if (file != "") {
+//    enterText(id, System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+ // }
+ // }
 
 
   def continuouslyClickContinue(): Unit = {

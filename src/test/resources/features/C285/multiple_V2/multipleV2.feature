@@ -98,7 +98,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
 
-  @test @wip
+  @test
   Scenario: happy path - with no bank details (user is both importer and declarant)
     #  60AAAAAAAAAAAAAAA1 => No bank details (user is both importer and declarant), - skips payee indicator page and navigates to /choose Bank account transfer,> /enter-bank-account-details page
     Given I navigate to the "Auth Login Stub Page"
@@ -289,7 +289,7 @@ Feature: C285 Multiple
     When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
 
-  @test @wip
+  @test
   Scenario: happy path with many MRNs and duties
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -546,7 +546,7 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Claim Submitted Page v2"
 
 
-  @test @wip
+  @test
   Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA not eligible
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is only importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"
