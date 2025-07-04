@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.cdsrc.pages
 
-import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
+
 import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Wait, WebDriverWait}
 import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
 import org.scalatest.Assertion
@@ -24,7 +24,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.selenium.{Page, WebBrowser}
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
-import uk.gov.hmrc.cdsrc.pages.common.StartPage.waitForPageToLoad
+
 
 import java.lang
 import java.time.Duration

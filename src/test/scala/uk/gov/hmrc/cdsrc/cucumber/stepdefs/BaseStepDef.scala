@@ -26,7 +26,6 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder
 import uk.gov.hmrc.cdsrc.pages.generic.PageObjectFinder.DataTableConverters
 
-import java.sql.DriverManager
 import scala.jdk.CollectionConverters._
 
 trait BaseStepDef
