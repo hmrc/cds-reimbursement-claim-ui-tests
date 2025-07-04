@@ -1,7 +1,7 @@
 @C285 @Scheduled
 Feature: C285 Scheduled
 
-  @test @a11y @ZAP @wip
+  @test @a11y @ZAP
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -219,7 +219,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
 
-  @test @wip
+  @test
   Scenario: happy path -  with no bank details (user is both importer and declarant)
     #  60AAAAAAAAAAAAAAA1 => No bank details (user is both importer and declarant), - skips payee indicator page and navigates to /choose Bank account transfer,> /enter-bank-account-details page
     Given I navigate to the "Auth Login Stub Page"
@@ -503,7 +503,7 @@ Feature: C285 Scheduled
     Then I am presented with the "UDF_Size Fail Page"
 
 
-  @test @wip
+  @test
   Scenario: happy path with new payee type page - user with only importer bank details and selects declarant user - CMA not eligible
     #  60AAAAAAAAAAAAAAA5 => only importer bank details (user is both importer ) - CMA not eligible - display payee indicator page and navigates to /enter-bank-account-details after /bank-account-type page
     Given I navigate to the "Auth Login Stub Page"
