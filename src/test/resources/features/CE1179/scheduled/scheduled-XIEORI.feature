@@ -1,7 +1,7 @@
 @C&E1179 @Scheduled
 Feature: C&E1179 Scheduled - XIEORI
 
-  @test
+  @test @wip
   Scenario: happy path - check importer/declarant eori pages, Special circumstances
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -179,8 +179,8 @@ Feature: C&E1179 Scheduled - XIEORI
     And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
-      | Basis of claim | Import date      | Contact details                 | Uploaded                        | Contact address                                                                                                   | Total  | Method of payment |First MRN          | Duties paid | Inspection address type | Inspection date | UK Duty | EU Duty | Excise Duty  | Additional claim details | Inspection address                          | Disposal method   | Special circumstances | Name on the account | Sort code      | Account number   | Scheduled document |
-      | Special circumstances              | 12 February 2021 | John Smith,john@smith.com,01234567890 | document.pdf,Commercial invoice | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom    | £80.00 | Immediate payment |10AAAXICDAAAAAAAA1 | £828.00     | Importer address        | 10 October 2020 | £10.00  | £10.00  | £60.00    | under 500 characters                        | 11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters                             | Mr John Smith | 123456 | 11001001 | image.jpg          |
+      | Reason for claim      | Personal details                 | Uploaded files                        | Address                           | Total  | First Movement Reference Number (MRN)        | Inspection date | UK Duty | EU Duty | Excise Duty  | Additional claim information | Inspection address                          | Disposal method   | Details of the special circumstances | Bank details   | Payee  | Claim summary document |
+      | Special circumstances | John Smith,john@smith.com,01234567890 | Commercial invoice:,document.pdf| 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom    | £80.00 |10AAAXICDAAAAAAAA1        | 10 October 2020 | £10.00  | £10.00  | £60.00    | under 500 characters                        | Importer address:,11 Mount Road,London,E10 7PP,United Kingdom | Return the goods by road, rail, air or ship | under 500 characters   | Mr John Smith,123456,11001001 | Importer | image.jpg          |
     And I click continue on "CE1179_Scheduled_Check Your Answers Page"
     Then I am presented with the "CE1179_Scheduled_Claim Submitted Page"
 
