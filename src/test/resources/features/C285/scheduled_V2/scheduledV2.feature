@@ -214,7 +214,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Reason for claim       | Personal details                   | Uploaded files                        | Address                                   | Bank details   | Payee                               | Additional claim information                               | EU Duty | UK Duty | Excise Duty | Total      | First Movement Reference Number (MRN)          | Claim summary document |
+      | Reason for claim       | Personal details                   | Uploaded files                        | Address                                   | Bank details   | Payee                               | Additional claim information                               | EU duty | UK duty | Excise duty | Total      | First Movement Reference Number (MRN)          | Claim summary document |
       | Outward processing relief          | Mr John Smith,someemail@mail.com,01234567890 | Commercial invoice:,document.doc | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001 | Importer | under 500 characters            | £10.00  | £10.00  | £115.00      | £135.00 | 10AAAAAAAAAAAAAAA2 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
@@ -428,7 +428,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Reason for claim   | Personal details                                        | Uploaded files                      | Address                             | Bank details  | Payee                             | Additional claim information                                  | EU Duty | UK Duty | Excise Duty | Total       | First Movement Reference Number (MRN)          | Claim summary document	 |
+      | Reason for claim   | Personal details                                        | Uploaded files                      | Address                             | Bank details  | Payee                             | Additional claim information                                  | EU duty | UK duty | Excise duty | Total       | First Movement Reference Number (MRN)          | Claim summary document	 |
       | Outward processing relief          | Mr John Smith,someemail@mail.com,01234567890 | Commercial invoice:,document.pdf | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001      | Importer | under 500 characters             | £10.00  | £10.00  | £115.00      | £135.00  | 60AAAAAAAAAAAAAAA1 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
@@ -711,7 +711,7 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Reason for claim    | Personal details                                            | Uploaded files                        | Address                             | Bank details  | Payee                          | Additional claim information                                     | EU Duty | UK Duty | Excise Duty | Total       | First Movement Reference Number (MRN)         | Claim summary document |
+      | Reason for claim    | Personal details                                            | Uploaded files                        | Address                             | Bank details  | Payee                          | Additional claim information                                     | EU duty | UK duty | Excise duty | Total       | First Movement Reference Number (MRN)         | Claim summary document |
       | Outward processing relief           | Mr John Smith,someemail@mail.com,01234567890 | Commercial invoice:,document.pdf | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001   | Declarant | under 500 characters             | £10.00  | £10.00  | £115.00      | £135.00  | 60AAAAAAAAAAAAAAA5 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
