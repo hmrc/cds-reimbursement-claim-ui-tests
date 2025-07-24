@@ -327,7 +327,7 @@ Feature: C285 Single V2
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-  @test
+  @test @wip
   Scenario: happy path - Method of payment displays specified value in declaration details page
 #  MRN: 00AA001AAAAAAAAA01, Payment Method/s:001; MRN: 00AA002AAAAAAAAA01, Payment Method/s:002; MRN: 00AA003AAAAAAAAA01, Payment Method/s:003; MRN: 00AA006AAAAAAAAA01, Payment Method/s:006; MRN: 00AA001002AAAAAA01, Payment Method/s:001, 002; MRN: 00AA001003AAAAAA01, Payment Method/s:001, 003; MRN: 00AA001006AAAAAA01,  Payment Method/s:001, 006; MRN: 00AA002003AAAAAA01, Payment Method/s:002, 003;
     Given I navigate to the "Auth Login Stub Page"
@@ -396,10 +396,8 @@ Feature: C285 Single V2
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "00AA006AAAAAAAAA01" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    And I should see the following details
-      |MRN                  | Date of import      | Method of payment | Total         | Email                      | Name               | Address                                           | A85 - Provisional Anti-Dumping Duty | A80 - Definitive Anti-Dumping Duty | A95 - Provisional Countervailing Duty |A90 - Definitive Countervailing Duty |
-      | 00AA006AAAAAAAAA01  | 12 February 2021    | Subsidy           | £828.00       | automation@gmail.com       | Foxpro Central LTD | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | £171.00                             | £218.00                            | £211.00                               | £228.00                             |
+    Then The error summary title is "There is a problem" and the error message is "Subsidy MRNs cannot be added to online claims at this time"
+
 
   @test
   Scenario: Error page when the MRN contains only new tax type codes
