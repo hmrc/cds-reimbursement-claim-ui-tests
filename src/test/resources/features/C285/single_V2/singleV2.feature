@@ -327,7 +327,7 @@ Feature: C285 Single V2
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-  @test @wip
+  @test
   Scenario: happy path - Method of payment displays specified value in declaration details page
 #  MRN: 00AA001AAAAAAAAA01, Payment Method/s:001; MRN: 00AA002AAAAAAAAA01, Payment Method/s:002; MRN: 00AA003AAAAAAAAA01, Payment Method/s:003; MRN: 00AA006AAAAAAAAA01, Payment Method/s:006; MRN: 00AA001002AAAAAA01, Payment Method/s:001, 002; MRN: 00AA001003AAAAAA01, Payment Method/s:001, 003; MRN: 00AA001006AAAAAA01,  Payment Method/s:001, 006; MRN: 00AA002003AAAAAA01, Payment Method/s:002, 003;
     Given I navigate to the "Auth Login Stub Page"
