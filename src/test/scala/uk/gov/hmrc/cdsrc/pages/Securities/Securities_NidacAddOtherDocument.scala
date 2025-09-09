@@ -19,7 +19,6 @@ package uk.gov.hmrc.cdsrc.pages.Securities
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-
 object Securities_NidacAddOtherDocument extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/add-other-documents"

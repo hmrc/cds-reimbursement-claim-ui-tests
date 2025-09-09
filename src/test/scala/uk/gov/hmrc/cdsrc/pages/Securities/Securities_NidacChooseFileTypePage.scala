@@ -42,8 +42,8 @@ object Securities_NidacChooseFileTypePage extends BasePage {
 
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
-      case "commercial invoice"             => click on cssSelector("input[value='CommercialInvoice']")
-      case "proof of authority"            => click on cssSelector("input[value='ProofOfAuthority']")
-      case "other"                         => click on cssSelector("input[value='Other']")
+      case "commercial invoice" => click on cssSelector("input[value='CommercialInvoice']")
+      case "proof of authority" => click on cssSelector("input[value='ProofOfAuthority']")
+      case "other"              => click on cssSelector("input[value='Other']")
     }
 }

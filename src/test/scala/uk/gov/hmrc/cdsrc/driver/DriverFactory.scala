@@ -66,7 +66,7 @@ class DriverFactory extends LazyLogging {
     options
   }
 
-   def edgeOptions(): EdgeOptions = {
+  def edgeOptions(): EdgeOptions = {
     val options: EdgeOptions = new EdgeOptions
 
     options.setBrowserVersion(edgeBrowserVersion)
@@ -140,7 +140,7 @@ class DriverFactory extends LazyLogging {
     capabilities
   }
 
- def securityAssessment(capabilities: MutableCapabilities): MutableCapabilities = {
+  def securityAssessment(capabilities: MutableCapabilities): MutableCapabilities = {
     val browserName = capabilities.getBrowserName
     val proxy       = new Proxy()
 

@@ -37,7 +37,6 @@ trait BaseStepDef
     with WebBrowser
     with BasePage {
 
-
   When("""I select Welsh translation on {string}""") { (page: String) =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).enableWelsh()
@@ -115,7 +114,7 @@ trait BaseStepDef
   //waitForPageToLoad()
 
   When("""I upload a {int} {string} file on {string}""") { (docNumber: Int, file: String, page: String) =>
-    PageObjectFinder.page(page).uploadDocument(docNumber,file)
+    PageObjectFinder.page(page).uploadDocument(docNumber, file)
     waitForPageToLoad()
   }
 
@@ -199,5 +198,3 @@ trait BaseStepDef
     PageObjectFinder.cookieBannerPresence() should be(false)
   }
 }
-
-

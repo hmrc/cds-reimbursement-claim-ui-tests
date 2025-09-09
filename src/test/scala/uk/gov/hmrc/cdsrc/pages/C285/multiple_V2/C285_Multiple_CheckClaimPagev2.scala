@@ -35,9 +35,9 @@ object C285_Multiple_CheckClaimPagev2 extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Check the repayment totals for this claim")
 
   //override def clickRadioButton(text: String): Unit =
-    //text.toLowerCase() match {
-      //case "yes" => click on xpath(s"""//*[@id="check-claim"]""")
-      //case "no"  => click on xpath(s"""//*[@id="check-claim-2"]""")
-    //}
+  //text.toLowerCase() match {
+  //case "yes" => click on xpath(s"""//*[@id="check-claim"]""")
+  //case "no"  => click on xpath(s"""//*[@id="check-claim-2"]""")
+  //}
 
 }

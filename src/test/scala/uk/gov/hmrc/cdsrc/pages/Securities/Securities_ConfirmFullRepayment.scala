@@ -49,9 +49,9 @@ object Securities_ConfirmFullRepayment extends BasePage {
 
   override def clickButton(buttonText: String): Unit =
     buttonText match {
-      case "Export Method"                  =>
+      case "Export Method" =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/export-method']")
-      case "Partial Claim"  =>
+      case "Partial Claim" =>
         click on cssSelector("a[href='/claim-back-import-duty-vat/securities/partial-claims']")
 
     }

@@ -42,12 +42,12 @@ object Securities_ChooseFileTypePage extends BasePage {
 
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
-      case "commercial invoice"             => click on cssSelector("input[value='CommercialInvoice']")
-      case "import declaration"             => click on cssSelector("input[value='ImportDeclaration']")
+      case "commercial invoice"            => click on cssSelector("input[value='CommercialInvoice']")
+      case "import declaration"            => click on cssSelector("input[value='ImportDeclaration']")
       case "export declaration"            => click on cssSelector("input[value='ExportDeclaration']")
-      case "import packing list"            => click on cssSelector("input[value='='ImportPackingList]")
-      case "export packing list"            => click on cssSelector("input[value='ExportPackingList']")
-      case "substitute or diversion entry"  => click on cssSelector("input[value='SubstituteOrDiversionEntry']")
+      case "import packing list"           => click on cssSelector("input[value='='ImportPackingList]")
+      case "export packing list"           => click on cssSelector("input[value='ExportPackingList']")
+      case "substitute or diversion entry" => click on cssSelector("input[value='SubstituteOrDiversionEntry']")
       case "proof of authority"            => click on cssSelector("input[value='ProofOfAuthority']")
       case "other"                         => click on cssSelector("input[value='Other']")
     }
