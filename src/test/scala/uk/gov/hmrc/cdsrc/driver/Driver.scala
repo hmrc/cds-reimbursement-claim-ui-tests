@@ -18,9 +18,8 @@ package uk.gov.hmrc.cdsrc.driver
 
 import org.openqa.selenium.WebDriver
 
-
 object Driver {
 
-  implicit var instance: WebDriver= _
+  implicit var instance: WebDriver = _
 
 }

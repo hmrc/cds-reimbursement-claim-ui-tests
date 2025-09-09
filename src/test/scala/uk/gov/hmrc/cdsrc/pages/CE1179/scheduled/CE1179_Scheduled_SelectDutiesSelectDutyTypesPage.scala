@@ -19,7 +19,6 @@ package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-
 object CE1179_Scheduled_SelectDutiesSelectDutyTypesPage extends BasePage {
 
   override val url: String =
@@ -38,8 +37,8 @@ object CE1179_Scheduled_SelectDutiesSelectDutyTypesPage extends BasePage {
 
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
-      case "uk duties"             => click on cssSelector("input[value='uk-duty']")
-      case "eu duties"            => click on cssSelector("input[value='eu-duty']")
-      case "excise duties"         => click on cssSelector("input[value='excise-duty']")
+      case "uk duties"     => click on cssSelector("input[value='uk-duty']")
+      case "eu duties"     => click on cssSelector("input[value='eu-duty']")
+      case "excise duties" => click on cssSelector("input[value='excise-duty']")
     }
 }

@@ -16,11 +16,8 @@
 
 package uk.gov.hmrc.cdsrc.pages.CE1179.scheduled
 
-
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
-
-
 
 object CE1179_Scheduled_CheckClaimPage extends BasePage {
 
@@ -36,7 +33,5 @@ object CE1179_Scheduled_CheckClaimPage extends BasePage {
   )
 
   override def expectedPageHeader: Option[String] = Some("Check the repayment totals for this claim")
-
-
 
 }

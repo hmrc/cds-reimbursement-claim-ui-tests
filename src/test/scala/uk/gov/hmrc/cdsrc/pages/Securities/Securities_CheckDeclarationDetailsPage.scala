@@ -20,7 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object Securities_CheckDeclarationDetailsPage extends BasePage {
@@ -50,7 +49,6 @@ object Securities_CheckDeclarationDetailsPage extends BasePage {
 
   def clickContinue(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
-
 
   /*override def clickButton(buttonText: String): Unit =
     buttonText match {

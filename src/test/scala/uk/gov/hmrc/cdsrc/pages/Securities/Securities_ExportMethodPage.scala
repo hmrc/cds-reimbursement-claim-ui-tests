@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.cdsrc.pages.Securities
 
-
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -35,19 +34,18 @@ object Securities_ExportMethodPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("What did you do with the goods?")
 
-
   /*def enterDetails(): Unit = {} */
 
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
-      case "exported in single or multiple shipments"                 => click on cssSelector("#choose-export-method")
-      case "declared to a customs warehouse"                           => click on cssSelector("#choose-export-method-2")
-      case "declared to a Free Zone"                                  => click on cssSelector("#choose-export-method-3")
-      case "declared to authorised-use or end-use relief"             => click on cssSelector("#choose-export-method-4")
-      case "declared to free circulation"                             => click on cssSelector("#choose-export-method-5")
-      case "declared to inward-processing relief"                       => click on cssSelector("#choose-export-method-6")
-      case "declared to another trader under temporary admission"       => click on cssSelector("#choose-export-method-7")
-      case "destroyed"                                                  => click on cssSelector("#choose-export-method-8")
-      case "others"                                                   => click on cssSelector("#choose-export-method-9")
+      case "exported in single or multiple shipments"             => click on cssSelector("#choose-export-method")
+      case "declared to a customs warehouse"                      => click on cssSelector("#choose-export-method-2")
+      case "declared to a Free Zone"                              => click on cssSelector("#choose-export-method-3")
+      case "declared to authorised-use or end-use relief"         => click on cssSelector("#choose-export-method-4")
+      case "declared to free circulation"                         => click on cssSelector("#choose-export-method-5")
+      case "declared to inward-processing relief"                 => click on cssSelector("#choose-export-method-6")
+      case "declared to another trader under temporary admission" => click on cssSelector("#choose-export-method-7")
+      case "destroyed"                                            => click on cssSelector("#choose-export-method-8")
+      case "others"                                               => click on cssSelector("#choose-export-method-9")
     }
 }

@@ -20,12 +20,11 @@ import com.typesafe.config.{Config, ConfigFactory}
 import scala.concurrent.duration.{Duration, DurationInt}
 import scala.jdk.DurationConverters._
 
-
 object TestConfiguration {
-    val config: Config        = ConfigFactory.load()
-    val env: String           = config.getString("environment")
-    val defaultConfig: Config = config.getConfig("local")
-    val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
+  val config: Config        = ConfigFactory.load()
+  val env: String           = config.getString("environment")
+  val defaultConfig: Config = config.getConfig("local")
+  val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
 
   // Everything is a `def`` so that tests can invalidate the config
   private def configuration: Config =
@@ -81,8 +80,6 @@ object TestConfiguration {
 
   private def serviceRoute(service: String): String =
     environmentConfiguration.getString(s"services.$service.productionRoute")
-  def environmentHost: String = envConfig.getString("services.host")
-
-
+  def environmentHost: String                       = envConfig.getString("services.host")
 
 }
