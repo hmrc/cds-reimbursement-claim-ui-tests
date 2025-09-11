@@ -75,7 +75,7 @@ Feature: Securities Single
 
 
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @wip
   Scenario: happy path - nidac mdp single check eori pages - with no Payment method
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -108,6 +108,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_EnterBankAccountDetailsPage"
     And I enter "" on "Securities_EnterBankAccountDetailsPage"
     When I click continue on "Securities_EnterBankAccountDetailsPage"
+
     Then I am presented with the "Securities_AddProofOfOrigin" "Proof of origin"
     When I upload a 1 "document.pdf" file on "Securities_AddProofOfOrigin"
     And I click continue if I'm on "Securities_AddProofOfOrigin"

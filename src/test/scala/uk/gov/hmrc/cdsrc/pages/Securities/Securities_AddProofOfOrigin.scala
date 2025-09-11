@@ -38,10 +38,10 @@ object Securities_AddProofOfOrigin extends BasePage {
 
   override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
-  override def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url))
-      clickContinueButton()
-  }
+  //override def continuouslyClickContinue(): Unit = {
+   // waitForPageToLoad()
+    //while (driver.getCurrentUrl.equals(url))
+    //  clickContinueButton()
+  //}
 
 }
