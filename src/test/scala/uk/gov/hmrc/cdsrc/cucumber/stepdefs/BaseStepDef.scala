@@ -101,6 +101,7 @@ trait BaseStepDef
   }
 
   When("""I click continue if I'm on {string}""") { (page: String) =>
+    PageObjectFinder.page(page).clickContinueButton()
     PageObjectFinder.page(page).continuouslyClickContinue()
   }
 
