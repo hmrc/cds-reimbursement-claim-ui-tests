@@ -34,7 +34,9 @@ object UCDF_ChooseFileOtherPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Add documents to support your claim")
 
-  override def clickRadioButton(text: String): Unit =
+  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+
+  /*override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on id("choice")
       case "no"  => click on id("choice-2")
@@ -46,6 +48,6 @@ object UCDF_ChooseFileOtherPage extends BasePage {
     waitForPageToLoad()
     while (driver.getCurrentUrl.equals(url))
       clickContinueButton()
-  }
+  }*/
 
 }

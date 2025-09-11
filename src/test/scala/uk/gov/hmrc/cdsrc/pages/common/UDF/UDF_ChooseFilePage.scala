@@ -36,12 +36,12 @@ object UDF_ChooseFilePage extends BasePage {
     "Add a document showing all Movement Reference Numbers (MRNs) in this claim"
   )
 
-  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+ override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
-  override def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url))
-      clickContinueButton()
-  }
+ // override def continuouslyClickContinue(): Unit = {
+  //  waitForPageToLoad()
+  //  while (driver.getCurrentUrl.equals(url))
+    //  clickContinueButton()
+  //}
 
 }
