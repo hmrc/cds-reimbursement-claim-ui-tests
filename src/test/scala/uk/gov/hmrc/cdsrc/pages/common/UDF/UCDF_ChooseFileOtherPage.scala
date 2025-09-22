@@ -42,7 +42,7 @@ object UCDF_ChooseFileOtherPage extends BasePage {
       case "no"  => click on id("choice-2")
     }
 
-  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+  //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
   override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()

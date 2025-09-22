@@ -57,6 +57,6 @@ object UDF_ChooseFilesPage extends BasePage {
     waitForPageToLoad()
     while (driver.getCurrentUrl.equals(url))
       clickContinueButton()
-  } */
+  }*/
 
 }
