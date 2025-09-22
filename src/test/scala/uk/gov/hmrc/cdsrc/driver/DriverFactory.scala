@@ -17,9 +17,9 @@
 package uk.gov.hmrc.cdsrc.driver
 
 import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
-import org.openqa.selenium.edge.{EdgeDriver, EdgeOptions}
-import org.openqa.selenium.firefox.{FirefoxDriver, FirefoxOptions}
+import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.edge.EdgeOptions
+import org.openqa.selenium.firefox.FirefoxOptions
 import org.openqa.selenium.logging.{LogType, LoggingPreferences}
 import org.openqa.selenium.{MutableCapabilities, Proxy, WebDriver}
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
@@ -38,9 +38,9 @@ class DriverFactory extends LazyLogging {
 
   def initialise(): WebDriver =
     TestConfiguration.browserType match {
-      case Some("chrome")  => new ChromeDriver(chromeOptions())
-      case Some("edge")    => new EdgeDriver(edgeOptions())
-      case Some("firefox") => new FirefoxDriver(firefoxOptions())
+      //case Some("chrome")  => new ChromeDriver(chromeOptions())
+      //case Some("edge")    => new EdgeDriver(edgeOptions())
+      //case Some("firefox") => new FirefoxDriver(firefoxOptions())
       case Some(browser)   => throw DriverFactoryException(s"Browser '$browser' is not supported.")
       case None            => throw DriverFactoryException("System property 'browser' is required but was not defined.")
     }

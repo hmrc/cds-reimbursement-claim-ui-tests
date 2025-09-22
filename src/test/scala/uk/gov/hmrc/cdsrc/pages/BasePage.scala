@@ -36,10 +36,24 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     .withTimeout(Duration.ofSeconds(100))
     .pollingEvery(Duration.ofMillis(500))
 
-  def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
+//  def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
+
+
+  protected object Waits {
+    val defaultWait: Duration = Duration.ofSeconds(50) // You can make this configurable
+  }
+
+  def waitForPageHeader: WebElement = {
+    val wait = new WebDriverWait(driver, Waits.defaultWait)
+
+    wait.until(
+      ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
+    )
+  }
+
 
   object WaitConfig {
-    val defaultWait: Duration = Duration.ofSeconds(10) // You can load this from config if needed
+    val defaultWait: Duration = Duration.ofSeconds(50) // You can load this from config if needed
   }
 
   def waitForUploadedFile: WebElement = {
@@ -148,7 +162,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //}
 
   def continuouslyClickContinue(): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(90))
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(120))
 
     var headingText = wait.until(
       ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
@@ -156,6 +170,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
     while (headingText == "We are checking your document") {
       clickContinueButton()
+
 
       // Re-wait for the heading to update after clicking
       headingText = wait.until(
@@ -201,7 +216,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //click on cssSelector("#main-content > div > div > form > button")
 
   def clickContinueButton(): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(95))
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(125))
     val continueButton = wait.until(
       ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button"))
     )
