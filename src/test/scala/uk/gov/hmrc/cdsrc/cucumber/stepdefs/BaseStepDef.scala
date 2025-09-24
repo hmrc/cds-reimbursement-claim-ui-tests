@@ -73,6 +73,7 @@ trait BaseStepDef
   }
 
   When("""I click continue button on {string}""") { (page: String) =>
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).waitForUploadedFile
     PageObjectFinder.page(page).clickContinueButton()
   }
@@ -83,6 +84,7 @@ trait BaseStepDef
   }
 
   When("""I click {string} on {string}""") { (button: String, page: String) =>
+    PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).clickButton(button)
   }
 

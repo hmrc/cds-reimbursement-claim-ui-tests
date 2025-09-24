@@ -75,7 +75,7 @@ Feature: Securities Single
 
 
 
-  @test @a11y @ZAP @wip
+  @test @a11y @ZAP
   Scenario: happy path - nidac mdp single check eori pages - with no Payment method
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"

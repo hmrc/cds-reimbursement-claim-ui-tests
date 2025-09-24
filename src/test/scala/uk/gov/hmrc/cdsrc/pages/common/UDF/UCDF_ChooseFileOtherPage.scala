@@ -36,15 +36,18 @@ object UCDF_ChooseFileOtherPage extends BasePage {
 
   override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
-  /*override def clickRadioButton(text: String): Unit =
+ /* override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on id("choice")
       case "no"  => click on id("choice-2")
-    }
+    }*/
 
-  //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
-  override def continuouslyClickContinue(): Unit = {
+
+
+
+
+  /*override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
     while (driver.getCurrentUrl.equals(url))
       clickContinueButton()
