@@ -43,17 +43,17 @@ object UDF_ChooseFilesPage extends BasePage {
   override def checkPageErrorTitle(page: String): Unit =
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
 
-  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
- /* override def clickRadioButton(text: String): Unit =
+/*
+  override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on cssSelector("#choice")
       case "no"  => click on cssSelector("#choice-2")
     }
+*/
+  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
-
-
-  override def continuouslyClickContinue(): Unit = {
+ /* override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
     while (driver.getCurrentUrl.equals(url))
       clickContinueButton()

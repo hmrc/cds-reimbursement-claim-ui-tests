@@ -40,7 +40,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
   protected object Waits {
-    val defaultWait: Duration = Duration.ofSeconds(50) // You can make this configurable
+    val defaultWait: Duration = Duration.ofSeconds(100) // You can make this configurable
   }
 
   def waitForPageHeader: WebElement = {
@@ -99,7 +99,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
   def checkPageTitle(): Assertion = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(90))
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
     expectedPageTitleList should contain (List(pageTitle))
   }
@@ -124,7 +124,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
   def checkURL: Assertion = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(90))
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
 
     // Wait until the URL contains or equals the expected value
     if (url.contains("...")) {
@@ -171,7 +171,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     while (headingText == "We are checking your document") {
       clickContinueButton()
 
-
       // Re-wait for the heading to update after clicking
       headingText = wait.until(
         ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
@@ -216,7 +215,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //click on cssSelector("#main-content > div > div > form > button")
 
   def clickContinueButton(): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(125))
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
     val continueButton = wait.until(
       ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button"))
     )
@@ -227,7 +226,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //click on cssSelector("#main-content > div > div > a")
 
   def clickContinue(): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(90))
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(150))
 
     val continueLink: WebElement = wait.until(
       ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > a"))

@@ -31,7 +31,6 @@ Feature: C&E1179 Single - XIEORI
     #When I select radio button "yes" on "CE1179_Single_Check Declaration Details Page"
     And I click continue on "CE1179_Single_Check Declaration Details Page"
      # NEW CHANGE CDSR-3827
-
     Then I am presented with the "CE1179_Single_Choose Basis For Claim Page"
     When I select radio button "Goods are not in accordance with contract" on "CE1179_Single_Choose Basis For Claim Page"
     And I click continue on "CE1179_Single_Choose Basis For Claim Page"
