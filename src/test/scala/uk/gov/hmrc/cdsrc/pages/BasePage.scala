@@ -214,13 +214,21 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //def clickContinueButton(): Unit =
   //click on cssSelector("#main-content > div > div > form > button")
 
-  def clickContinueButton(): Unit = {
+  /*def clickContinueButton(): Unit = {
     val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
     val continueButton = wait.until(
       ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button"))
     )
     continueButton.click()
+  }*/
+
+
+  def clickContinueButton(): Unit = {
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
+    wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button")))
+    driver.findElement(By.cssSelector("#main-content > div > div > form > button")).click()
   }
+
 
   //def clickContinue(): Unit =
   //click on cssSelector("#main-content > div > div > a")
