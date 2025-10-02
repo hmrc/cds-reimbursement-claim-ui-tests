@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.cdsrc.pages.common.UDF
 
+import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.ExpectedConditions
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
@@ -34,17 +36,19 @@ object UCDF_ChooseFileOtherPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Add documents to support your claim")
 
-  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+  //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+
+  override def clickContinueButton(): Unit = {
+    fluentWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#upload-documents-submit")))
+    driver.findElement(By.cssSelector("#upload-documents-submit")).click()
+  }
+  //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
  /* override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {
       case "yes" => click on id("choice")
       case "no"  => click on id("choice-2")
     }*/
-
-
-
-
 
 
   /*override def continuouslyClickContinue(): Unit = {

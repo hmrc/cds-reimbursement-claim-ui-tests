@@ -21,16 +21,16 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Securities_CheckClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/check-claim"
-  override val title       = "Check the claim details for these security deposits"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/single/check-claim"
+  override val title       = "Check the repayment total for this claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Check the claim details for these security deposits - Claim back import duty and VAT - GOV.UK"
+    "Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Check the claim details for these security deposits - Claim back import duty and VAT - GOV.UK"
+    "Check the repayment total for this claim - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Check the claim details for these security deposits")
+  override def expectedPageHeader: Option[String] = Some("Check the repayment total for this claim")
 }
