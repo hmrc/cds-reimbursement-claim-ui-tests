@@ -17,6 +17,7 @@
 package uk.gov.hmrc.cdsrc.pages.C285.scheduled_V2
 
 import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.ExpectedConditions
 import org.scalatest.Assertion
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
@@ -39,8 +40,13 @@ object C285_Scheduled_SupportingEvidenceSelectSupportingEvidenceTypePagev2 exten
 
   override def expectedPageHeader: Option[String] = Some("Add supporting documents to your claim")
 
-  override def checkURL: Assertion =
-    driver.getCurrentUrl should fullyMatch regex (url + ".*?").r
+  /*override def checkURL(): Assertion =
+    driver.getCurrentUrl should fullyMatch regex (url + ".*?").r*/
+
+  override def checkURL: Assertion = {
+    fluentWait.until(ExpectedConditions.urlToBe(url))
+    driver.getCurrentUrl should equal(url)
+  }
 
   override def clickRadioButton(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()

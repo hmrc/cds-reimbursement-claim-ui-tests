@@ -33,7 +33,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   /** Fluent Wait config * */
   def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(100))
+    .withTimeout(Duration.ofSeconds(50))
     .pollingEvery(Duration.ofMillis(500))
 
 //  def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
@@ -44,9 +44,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def waitForPageHeader: WebElement = {
-    val wait = new WebDriverWait(driver, Waits.defaultWait)
+    //val fluentWait = new WebDriverWait(driver, Waits.defaultWait)
 
-    wait.until(
+    fluentWait.until(
       ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
     )
   }
@@ -57,9 +57,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   }
 
   def waitForUploadedFile: WebElement = {
-    val wait = new WebDriverWait(driver, WaitConfig.defaultWait)
+    //val wait = new WebDriverWait(driver, WaitConfig.defaultWait)
 
-    wait.until(
+    fluentWait.until(
       ExpectedConditions.visibilityOfElementLocated(
         By.xpath("(//span[@class='multi-file-upload__uploaded-tag govuk-tag'][normalize-space()='Uploaded'])[2]")
       )
@@ -99,19 +99,21 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
   def checkPageTitle(): Assertion = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
+    fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
     expectedPageTitleList should contain (List(pageTitle))
   }
 
 
   def checkPageErrorTitle(): Assertion = {
-    val fluentWait = new WebDriverWait(driver, Duration.ofSeconds(90))
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
     expectedPageErrorTitleList should contain(List(pageTitle))
   }
 
-  def checkPageTitle(page: String): Unit = {}
+  def checkPageTitle(page: String): Unit = {
+    fluentWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > h1")))
+    driver.findElement(By.cssSelector("#main-content > div > div > h1"))
+  }
+
 
   def checkPageErrorTitle(page: String): Unit = {}
 
@@ -121,17 +123,18 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //  } else {
   //    driver.getCurrentUrl should equal(url)
   //  }
-
+  //def checkURL(): Unit = {
+   // fluentWait.until(ExpectedConditions.urlToBe(url))
+   // driver.getCurrentUrl should equal(url)
+  //}
 
   def checkURL: Assertion = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
-
     // Wait until the URL contains or equals the expected value
     if (url.contains("...")) {
-      wait.until(ExpectedConditions.urlMatches(url.replace("...", "") + ".*"))
+     fluentWait.until(ExpectedConditions.urlMatches(url.replace("...", "") + ".*"))
       driver.getCurrentUrl should fullyMatch regex (url.replace("...", "") + ".*").r
     } else {
-      wait.until(ExpectedConditions.urlToBe(url))
+      fluentWait.until(ExpectedConditions.urlToBe(url))
       driver.getCurrentUrl should equal(url)
     }
   }
@@ -162,9 +165,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //}
 
   def continuouslyClickContinue(): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(120))
+    //val wait = new WebDriverWait(driver, Duration.ofSeconds(120))
 
-    var headingText = wait.until(
+    var headingText = fluentWait.until(
       ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
     ).getText
 
@@ -172,7 +175,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
       clickContinueButton()
 
       // Re-wait for the heading to update after clicking
-      headingText = wait.until(
+      headingText = fluentWait.until(
         ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
       ).getText
     }
@@ -207,8 +210,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
   def waitForPageToLoad(): java.lang.Boolean = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(90))
-    wait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
+    //val wait = new WebDriverWait(driver, Duration.ofSeconds(90))
+    fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
   }
 
   //def clickContinueButton(): Unit =
@@ -224,8 +227,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
 
   def clickContinueButton(): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(100))
-    wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button")))
+    //val wait = new WebDriverWait(driver, Duration.ofSeconds(150))
+    fluentWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button")))
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).click()
   }
 
@@ -234,9 +237,8 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //click on cssSelector("#main-content > div > div > a")
 
   def clickContinue(): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(150))
-
-    val continueLink: WebElement = wait.until(
+    //val wait = new WebDriverWait(driver, Duration.ofSeconds(150))
+    val continueLink: WebElement = fluentWait.until(
       ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > a"))
     )
 
@@ -255,14 +257,14 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
    // driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == text).head.click()
 
   def clickRadioButton(text: String): Unit = {
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(85))
+    //val wait = new WebDriverWait(driver, Duration.ofSeconds(85))
 
-    val label: WebElement = wait.until { _ =>
+    val label: WebElement = fluentWait.until { _ =>
       val labels = driver.findElements(By.tagName("label")).asScala
       labels.find(_.getText.trim == text).orNull
     }
 
-    wait.until(ExpectedConditions.elementToBeClickable(label)).click()
+    fluentWait.until(ExpectedConditions.elementToBeClickable(label)).click()
   }
 
 

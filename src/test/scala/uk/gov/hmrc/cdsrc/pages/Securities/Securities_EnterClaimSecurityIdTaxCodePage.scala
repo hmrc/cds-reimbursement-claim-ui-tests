@@ -22,21 +22,20 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 object Securities_EnterClaimSecurityIdTaxCodePage extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/securities/enter-claim/..."
-  override val title       = "Claim details for A00 - Customs Duty"
+  override val title       = "A00 - Customs Duty"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Error: Security ID: ABC0123456: Claim details for A00 - Customs Duty - Claim back import duty and VAT - GOV.UK"
+    "Error: A00 - Customs Duty - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Security ID: ABC0123456: Claim details for A00 - Customs Duty - Claim back import duty and VAT - GOV.UK"
+    "A00 - Customs Duty - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("""Security ID: ABC0123456
-Claim details for A00 - Customs Duty""")
+  override def expectedPageHeader: Option[String] = Some("""A00 - Customs Duty""")
 
   override def enterDetails(data: String): Unit = {
     val amounts: Array[String] = data.split(",")
-    enterText("enter-claim.securities.claim-amount", amounts(0))
+    enterText("enter-claim-amount", amounts(0))
   }
 }

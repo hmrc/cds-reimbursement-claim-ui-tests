@@ -1,20 +1,16 @@
 # cds-reimbursement-claim-ui-tests
 UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
 
-# Chromedriver setup
-Download the latest Chromedriver from (http://chromedriver.chromium.org/downloads).
-
-Extract the zip file and save the driver in the following folder - /usr/local/bin/
-
 # Cloning the project and service startup
 
 Clone this project to the directory of your choice
 
+# Service manager profile required to run the test
 On a Terminal instance, start up all services using:
 
 ```sm2 -start CDSRC_ALL ```
 
-If you want to run the Customs Financials Frontend service locally, stop the service using:
+If you want to run the Customs Reimbursement Frontend service locally, stop the service using:
 
 ```sm2 -stop CDSRC_FRONTEND```
 
@@ -41,10 +37,6 @@ To run the tests against an environment set the corresponding `host` environment
 For example, to execute the `run_tests.sh` script against QA  environment using Chrome remote-webdriver
 
     ./run_tests.sh qa remote-chrome
-
-
-### Running tests using BrowserStack
-If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/master/README.md/#user-content-running-tests-using-browser-stack) project.
 
 ## Installing local driver binaries
 
