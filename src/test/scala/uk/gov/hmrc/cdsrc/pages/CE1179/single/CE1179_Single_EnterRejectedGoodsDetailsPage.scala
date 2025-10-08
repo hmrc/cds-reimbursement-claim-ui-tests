@@ -23,17 +23,17 @@ object CE1179_Single_EnterRejectedGoodsDetailsPage extends BasePage {
 
   override val url: String =
     TestConfiguration.url("cds-frontend") + "/rejected-goods/single/enter-rejected-goods-details"
-  override val title       = "Additional claim details"
+  override val title       = "Tell us more about your claim"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Additional claim details - Claim back import duty and VAT - GOV.UK"
+    "Tell us more about your claim - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Additional claim details - Claim back import duty and VAT - GOV.UK"
+    "Tell us more about your claim - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Additional claim details")
+  override def expectedPageHeader: Option[String] = Some("Tell us more about your claim")
 
   override def enterDetails(details: String): Unit =
     details match {
