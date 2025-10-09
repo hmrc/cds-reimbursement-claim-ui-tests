@@ -27,21 +27,21 @@ import uk.gov.hmrc.cdsrc.driver.BrowserDriver
 import java.time.Duration
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
+
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
   val title: String        = ""
 
   /** Fluent Wait config * */
   def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(50))
-    .pollingEvery(Duration.ofMillis(500))
+    .withTimeout(Duration.ofSeconds(200))
+    .pollingEvery(Duration.ofMillis(10))
+    .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
 
 //  def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
 
 
-  protected object Waits {
-    val defaultWait: Duration = Duration.ofSeconds(100) // You can make this configurable
-  }
 
   def waitForPageHeader: WebElement = {
     //val fluentWait = new WebDriverWait(driver, Waits.defaultWait)
