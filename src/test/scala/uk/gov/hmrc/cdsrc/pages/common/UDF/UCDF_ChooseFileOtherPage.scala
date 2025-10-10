@@ -16,12 +16,16 @@
 
 package uk.gov.hmrc.cdsrc.pages.common.UDF
 
-import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.{By, StaleElementReferenceException}
+import org.slf4j.LoggerFactory
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
+
 object UCDF_ChooseFileOtherPage extends BasePage {
+  private val log = LoggerFactory.getLogger(getClass)
+
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title       = "Add documents to support your claim"
@@ -36,25 +40,52 @@ object UCDF_ChooseFileOtherPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Add documents to support your claim")
 
-  //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+  private val continueButtonSelector = By.cssSelector("#upload-documents-submit")
 
   override def clickContinueButton(): Unit = {
-    fluentWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#upload-documents-submit")))
-    driver.findElement(By.cssSelector("#upload-documents-submit")).click()
+    var attempts = 0
+    var success = false
+
+    while (!success && attempts < 3) {
+      try {
+        log.info(s"Attempting to click continue button on attempt $attempts")
+        val continueButton = fluentWait.until(ExpectedConditions.refreshed(
+          ExpectedConditions.elementToBeClickable(continueButtonSelector)
+        ))
+        continueButton.click()
+        log.info("Successfully clicked continue button.")
+        success = true
+      } catch {
+        case e: StaleElementReferenceException =>
+          log.warn(s"StaleElementReferenceException on attempt $attempts: ${e.getMessage}")
+          attempts += 1
+          Thread.sleep(500)
+        case e: Exception =>
+          log.error(s"Unexpected error while clicking continue: ${e.getMessage}")
+          throw e
+      }
+    }
+
+    if (!success) {
+      throw new RuntimeException("Failed to click continue button after 3 attempts due to stale element.")
+    }
   }
-  //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
- /* override def clickRadioButton(text: String): Unit =
-    text.toLowerCase() match {
-      case "yes" => click on id("choice")
-      case "no"  => click on id("choice-2")
-    }*/
-
-
-  /*override def continuouslyClickContinue(): Unit = {
+ /* override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url))
-      clickContinueButton()
-  }*/
+    var attempts = 0
 
+    while (driver.getCurrentUrl.equals(url) && attempts < 5) {
+      log.info(s"Still on upload page, attempt $attempts to click continue.")
+      clickContinueButton()
+      attempts += 1
+      Thread.sleep(500)
+    }
+
+    if (driver.getCurrentUrl.equals(url)) {
+      log.warn("Still on the same page after multiple attempts to click continue.")
+    } else {
+      log.info("Navigation successful after clicking continue.")
+    }
+  }*/
 }

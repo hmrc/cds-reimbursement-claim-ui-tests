@@ -137,9 +137,9 @@ Feature: C285 Single Claim Basis V2
     When I click continue on "C285_Single_Choose Payee Type v2"
     Then I am presented with the "C285_Single_Select Reimbursement Method Page v2"
     When I select radio button "Bank account transfer" on "C285_Single_Select Reimbursement Method Page v2"
-    When I click continue on "C285_Single_Select Reimbursement Method Page v2"
-#    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
-#    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
+    And I click continue on "C285_Single_Select Reimbursement Method Page v2"
+  # Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
+  #  And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
 #    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Single_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Single_Enter Bank Account Details Page v2"
@@ -162,8 +162,8 @@ Feature: C285 Single Claim Basis V2
     And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
-      | Reason for claim          | Personal details                                | Uploaded files                       | Address                                           | Bank details                  |Payee       | Additional claim information    | What do you want to claim?                                                                                                                                                                                             | 421 - Sparkling, 8.5% and above but not exceeding 15% | 99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain | 623 - Other smoking tobacco| Total  | Movement Reference Number (MRN)   | Method                |
-      | Incorrect excise value    | Mr John Smith,someemail@mail.com,01234567890    | Commercial invoice:,document.pdf     | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001 |Importer    | under 500 characters            | 421 - Sparkling, 8.5% and above but not exceeding 15%,623 - Other smoking tobacco,99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain | £10.00                                                | £10.00                                                                                                                               | £10.00                     | £30.00 | 10AAAAAAAAAAAAAAA3                | Bank account transfer |
+      | Reason for claim          | Personal details                                | Uploaded files                       | Address                                           | Bank details                  |Payee       | Additional claim information    | What do you want to claim?                                                                                                                                                                                                    | 421 - Sparkling, 8.5% and above but not exceeding 15%  | 623 - Other smoking tobacco |99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain	| Total  | Movement Reference Number (MRN)   | Method   |
+      | Incorrect excise value    | Mr John Smith,someemail@mail.com,01234567890    | Commercial invoice:,document.pdf     | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001 |Importer    | under 500 characters            | 421 - Sparkling, 8.5% and above but not exceeding 15%,623 - Other smoking tobacco,99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain	      | £10.00   | £10.00       | £10.00   | £30.00 | 10AAAAAAAAAAAAAAA3  | Bank account transfer |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
