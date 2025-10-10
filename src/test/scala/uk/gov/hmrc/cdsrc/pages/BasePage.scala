@@ -17,7 +17,7 @@
 package uk.gov.hmrc.cdsrc.pages
 
 import org.openqa.selenium.support.ui._
-import org.openqa.selenium.{By, Keys, WebDriver, WebElement}
+import org.openqa.selenium.{By, Keys, StaleElementReferenceException, WebDriver, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
@@ -40,6 +40,24 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
 
 //  def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
+def findElementWithRetry(): WebElement = {
+  var lastException: Throwable = null
+
+  for (_ <- 1 to 3) {
+    try {
+      val element = fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("my-element-id")))
+      if (element.isDisplayed) {
+        return element
+      }
+    } catch {
+      case e: StaleElementReferenceException =>
+        lastException = e
+        Thread.sleep(10)
+    }
+  }
+
+  throw lastException  // or handle it appropriately
+}
 
 
 
@@ -165,8 +183,7 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
   //}
 
   def continuouslyClickContinue(): Unit = {
-    //val wait = new WebDriverWait(driver, Duration.ofSeconds(120))
-
+    //waitForPageToLoad()
     var headingText = fluentWait.until(
       ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
     ).getText
