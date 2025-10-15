@@ -16,10 +16,14 @@
 
 package uk.gov.hmrc.cdsrc.pages.common.UDF
 
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.{By, StaleElementReferenceException}
+import org.slf4j.LoggerFactory
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object UDF_ChooseFilePage extends BasePage {
+  private val log = LoggerFactory.getLogger(getClass)
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title       = "Add your claim details"
@@ -36,9 +40,39 @@ object UDF_ChooseFilePage extends BasePage {
     "Add your claim details"
   )
 
- override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+ //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
 
+ // private val continueButtonSelector = By.cssSelector("#upload-documents-submit")
+  override def clickContinueButton(): Unit = {
+    var attempts = 0
+    var success = false
 
+    while (!success && attempts < 3) {
+      try {
+        log.info(s"Attempting to click continue button on attempt $attempts")
+        fluentWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.id(("upload-documents-submit")))).andThen(_.click()))
+
+        /*val continueButton = fluentWait.until(ExpectedConditions.refreshed(
+          ExpectedConditions.elementToBeClickable(continueButtonSelector)
+        ))
+        continueButton.click()
+        log.info("Successfully clicked continue button.")*/
+        success = true
+      } catch {
+        case e: StaleElementReferenceException =>
+          log.warn(s"StaleElementReferenceException on attempt $attempts: ${e.getMessage}")
+          attempts += 1
+          Thread.sleep(100)
+        case e: Exception =>
+          log.error(s"Unexpected error while clicking continue: ${e.getMessage}")
+          throw e
+      }
+    }
+
+    if (!success) {
+      throw new RuntimeException("Failed to click continue button after 3 attempts due to stale element.")
+    }
+  }
  /* override def continuouslyClickContinue(): Unit = {
     waitForPageToLoad()
     while (driver.getCurrentUrl.equals(url))

@@ -55,7 +55,7 @@ object UDF_ChooseFilesPage extends BasePage {
     }
 */
   //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
-private val continueButtonSelector = By.cssSelector("#upload-documents-submit")
+//private val continueButtonSelector = By.cssSelector("#upload-documents-submit")
 override def clickContinueButton(): Unit = {
   var attempts = 0
   var success = false
@@ -63,10 +63,11 @@ override def clickContinueButton(): Unit = {
   while (!success && attempts < 3) {
     try {
       log.info(s"Attempting to click continue button on attempt $attempts")
-      val continueButton = fluentWait.until(ExpectedConditions.refreshed(
+      fluentWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.id(("upload-documents-submit")))).andThen(_.click()))
+     /* val continueButton = fluentWait.until(ExpectedConditions.refreshed(
         ExpectedConditions.elementToBeClickable(continueButtonSelector)
       ))
-      continueButton.click()
+      continueButton.click()*/
       log.info("Successfully clicked continue button.")
       success = true
     } catch {

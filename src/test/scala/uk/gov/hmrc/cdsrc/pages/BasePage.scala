@@ -25,48 +25,53 @@ import org.scalatestplus.selenium.{Page, WebBrowser}
 import uk.gov.hmrc.cdsrc.driver.BrowserDriver
 
 import java.time.Duration
+import java.util.concurrent.TimeUnit
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 
 trait BasePage extends Page with Matchers with BrowserDriver with Eventually with WebBrowser {
   override val url: String = ""
-  val title: String        = ""
+  val title: String = ""
+  val WAIT_TIME = 250
 
   /** Fluent Wait config * */
   def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(200))
-    .pollingEvery(Duration.ofMillis(10))
+    .withTimeout(Duration.ofSeconds(60))
+    .pollingEvery(Duration.ofMillis(1))
     .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
     .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
 
-//  def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
-def findElementWithRetry(): WebElement = {
-  var lastException: Throwable = null
+  val fluentWaitElementNotPresent: Wait[WebDriver] = new FluentWait[WebDriver](driver)
+    .withTimeout(Duration.ofSeconds(1))
+    .pollingEvery(Duration.ofSeconds(1))
 
-  for (_ <- 1 to 3) {
-    try {
-      val element = fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("my-element-id")))
-      if (element.isDisplayed) {
-        return element
+  //  def waitForPageHeader: WebElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
+  def findElementWithRetry(): WebElement = {
+    var lastException: Throwable = null
+
+    for (_ <- 1 to 3) {
+      try {
+        val element = fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("my-element-id")))
+        if (element.isDisplayed) {
+          return element
+        }
+      } catch {
+        case e: StaleElementReferenceException =>
+          lastException = e
+          Thread.sleep(10)
       }
-    } catch {
-      case e: StaleElementReferenceException =>
-        lastException = e
-        Thread.sleep(10)
     }
+
+    throw lastException // or handle it appropriately
   }
-
-  throw lastException  // or handle it appropriately
-}
-
 
 
   def waitForPageHeader: WebElement = {
     //val fluentWait = new WebDriverWait(driver, Waits.defaultWait)
 
-    fluentWait.until(
+    fluentWait.until(ExpectedConditions.refreshed(
       ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
-    )
+    ))
   }
 
 
@@ -106,19 +111,19 @@ def findElementWithRetry(): WebElement = {
       header
   }
 
-  private val expectedPageTitleList      = expectedPageTitle.map(_.split(";").toList)
+  private val expectedPageTitleList = expectedPageTitle.map(_.split(";").toList)
   private val expectedPageErrorTitleList = expectedPageErrorTitle.map(_.split(";").toList)
-  private val expectedPageHeaderList     = expectedPageHeader.map(_.split(";").toList)
+  private val expectedPageHeaderList = expectedPageHeader.map(_.split(";").toList)
 
   //def checkPageTitle(): Assertion = {
-   // fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
-    //expectedPageTitleList should contain(List(pageTitle))
+  // fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
+  //expectedPageTitleList should contain(List(pageTitle))
   //}
 
 
   def checkPageTitle(): Assertion = {
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")))
-    expectedPageTitleList should contain (List(pageTitle))
+    expectedPageTitleList should contain(List(pageTitle))
   }
 
 
@@ -135,21 +140,21 @@ def findElementWithRetry(): WebElement = {
 
   def checkPageErrorTitle(page: String): Unit = {}
 
- // def checkURL: Assertion =
+  // def checkURL: Assertion =
   //  if (url.contains("...")) {
   //    driver.getCurrentUrl should fullyMatch regex (url.replace("...", "") + ".*").r
   //  } else {
   //    driver.getCurrentUrl should equal(url)
   //  }
   //def checkURL(): Unit = {
-   // fluentWait.until(ExpectedConditions.urlToBe(url))
-   // driver.getCurrentUrl should equal(url)
+  // fluentWait.until(ExpectedConditions.urlToBe(url))
+  // driver.getCurrentUrl should equal(url)
   //}
 
   def checkURL: Assertion = {
     // Wait until the URL contains or equals the expected value
     if (url.contains("...")) {
-     fluentWait.until(ExpectedConditions.urlMatches(url.replace("...", "") + ".*"))
+      fluentWait.until(ExpectedConditions.urlMatches(url.replace("...", "") + ".*"))
       driver.getCurrentUrl should fullyMatch regex (url.replace("...", "") + ".*").r
     } else {
       fluentWait.until(ExpectedConditions.urlToBe(url))
@@ -158,7 +163,7 @@ def findElementWithRetry(): WebElement = {
   }
 
 
-  def uploadDocument(file: String): Unit                 =
+  def uploadDocument(file: String): Unit =
     if (file != "") {
       enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
     }
@@ -178,8 +183,8 @@ def findElementWithRetry(): WebElement = {
   }
 
   //def continuouslyClickContinue(): Unit = {
-    //while (find(tagName("h1")).map(_.text).contains("We are checking your document"))
-   //   clickContinueButton()
+  //while (find(tagName("h1")).map(_.text).contains("We are checking your document"))
+  //   clickContinueButton()
   //}
 
   def continuouslyClickContinue(): Unit = {
@@ -196,6 +201,7 @@ def findElementWithRetry(): WebElement = {
         ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
       ).getText
     }
+    TimeUnit.MILLISECONDS.sleep(WAIT_TIME)
   }
 
 
@@ -204,7 +210,7 @@ def findElementWithRetry(): WebElement = {
 
     val condition = new ExpectedCondition[Boolean] {
       override def apply(driver: WebDriver): Boolean = {
-        val element    = driver.findElement(By.cssSelector("h1"))
+        val element = driver.findElement(By.cssSelector("h1"))
         val actualText = element.getText.trim.replaceAll("\\s+", " ")
         actualText.equals(expectedText)
       }
@@ -222,8 +228,8 @@ def findElementWithRetry(): WebElement = {
     expectedPageHeaderList should contain(List(actualText))
   }
 
- // def waitForPageToLoad(): lang.Boolean =
-    //fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
+  // def waitForPageToLoad(): lang.Boolean =
+  //fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
 
 
   def waitForPageToLoad(): java.lang.Boolean = {
@@ -248,6 +254,9 @@ def findElementWithRetry(): WebElement = {
     fluentWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button")))
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).click()
   }
+{
+  TimeUnit.MILLISECONDS.sleep(WAIT_TIME)
+}
 
 
   //def clickContinue(): Unit =
@@ -255,8 +264,8 @@ def findElementWithRetry(): WebElement = {
 
   def clickContinue(): Unit = {
     //val wait = new WebDriverWait(driver, Duration.ofSeconds(150))
-    val continueLink: WebElement = fluentWait.until(
-      ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > a"))
+    val continueLink: WebElement = fluentWait.until(ExpectedConditions.refreshed(
+      ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > a")))
     )
 
     continueLink.click()
@@ -282,6 +291,8 @@ def findElementWithRetry(): WebElement = {
     }
 
     fluentWait.until(ExpectedConditions.elementToBeClickable(label)).click()
+
+
   }
 
 
