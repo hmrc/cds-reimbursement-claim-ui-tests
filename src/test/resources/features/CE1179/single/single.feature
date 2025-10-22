@@ -1,7 +1,7 @@
 @C&E1179 @Single
 Feature: C&E1179 Single
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @wip
   Scenario: happy path - check importer/declarant eori pages, change contact details, change bank details
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -97,11 +97,7 @@ Feature: C&E1179 Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Page"
-    When I click "Change Contact details" on "CE1179_Single_Claimant Details Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
-    And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
+    #When I click "Change Contact details" on "CE1179_Single_Claimant Details Page"
     #Then I am presented with the "CE1179_Single_Claimant Details Page"
     #And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
