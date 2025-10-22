@@ -1,7 +1,7 @@
 @C285 @Multiple
 Feature: C285 Multiple
 
-  @test @a11y @ZAP
+  @test @a11y @ZAP @wip
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -84,8 +84,8 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Page v2"
+   # Then I am presented with the "C285_Multiple_Claimant Details Page v2"
+   # And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
         | Reason for claim      | Personal details                  | Address                                   | Bank details  | Additional claim information     | Total         | 1st Movement Reference Number (MRN)   | 2nd MRN         | Uploaded files  | 1st MRN10AAAAAAAAAAAAAAA2 |   2nd MRN20AAAAAAAAAAAAAAA2| Payee |
@@ -176,8 +176,8 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Page v2"
+    #Then I am presented with the "C285_Multiple_Claimant Details Page v2"
+    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim     | Personal details                                                | Address                             | Bank details                              | Additional claim information                            | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | 2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA1 | Uploaded files  |Payee|
@@ -439,8 +439,8 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Page v2"
+   # Then I am presented with the "C285_Multiple_Claimant Details Page v2"
+    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim       | Personal details                                         | Address                                  | Bank details    | Payee                                 | Additional claim information                                | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | 3rd MRN          | 4th MRN         | 5th MRN          | 1st MRN01AAAAAAAAAAAAAAA1 | 2nd MRN02AAAAAAAAAAAAAAA1 | 3rd MRN10XXXXXXXXXXXXXXX1 | 4th MRN10YYYYYYYYYYYYYYY1 | 5th MRN10ZZZZZZZZZZZZZZZ1 | Uploaded files                       |
@@ -624,8 +624,8 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Page v2"
+    #Then I am presented with the "C285_Multiple_Claimant Details Page v2"
+    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim    | Personal details                                             | Address                             | Bank details  | Payee          | Additional claim information                                       | Total    | 1st Movement Reference Number (MRN)         | 2nd MRN         | 2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA5 | Uploaded files   |

@@ -166,8 +166,8 @@ Feature: C&E1179 Scheduled
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
-    And I click continue on "CE1179_Scheduled_Claimant Details Page"
+   # Then I am presented with the "CE1179_Scheduled_Claimant Details Page"
+   # And I click continue on "CE1179_Scheduled_Claimant Details Page"
     Then I am presented with the "CE1179_Scheduled_Check Your Answers Page"
     And I should see the following details
       | Reason for claim     | Personal details                | Uploaded files                        | Address                                 | Total |	First Movement Reference Number (MRN)           | Inspection date | UK duty | EU duty | Excise duty  | Additional claim information | Inspection address                          | Disposal method   | Details of the special circumstances | Bank details      | Payee   | Claim summary document |

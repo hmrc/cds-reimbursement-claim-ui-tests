@@ -89,8 +89,8 @@ Feature: C285 Multiple - XIEORI V2
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Page v2"
+    #Then I am presented with the "C285_Multiple_Claimant Details Page v2"
+    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim     | Personal details                   | Address                                   | Bank details  | Payee   | Additional claim information                                 | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | Uploaded files                       | 2nd MRN20XIDCAAAAAAAAAAA1 | 1st MRN10XIDCAAAAAAAAAAA1 |
@@ -178,8 +178,8 @@ Feature: C285 Multiple - XIEORI V2
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    And I click continue on "C285_Multiple_Claimant Details Page v2"
+    #Then I am presented with the "C285_Multiple_Claimant Details Page v2"
+    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | This is the basis behind the claim | Import date      | Contact details                                           | Contact address                                  | Name on the account   | Account number                                | This is the reason for the claim                                | Total   |Method of payment | Duties paid | Sort code      | 1st MRN          | 2nd MRN         | 20AAAAAAAAAAAAAAA1 | 10XIDAAAAAAAAAAAA1 | Uploaded                        |

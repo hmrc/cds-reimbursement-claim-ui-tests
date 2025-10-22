@@ -210,8 +210,8 @@ Feature: C285 Scheduled
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-    And I click continue on "C285_Scheduled_Claimant Details Page v2"
+    #Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
+   # And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim       | Personal details                   | Uploaded files                        | Address                                   | Bank details   | Payee                               | Additional claim information                               | EU duty | UK duty | Excise duty | Total      | First Movement Reference Number (MRN)          | Claim summary document |
@@ -424,8 +424,8 @@ Feature: C285 Scheduled
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-    And I click continue on "C285_Scheduled_Claimant Details Page v2"
+    #Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
+    #And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim   | Personal details                                        | Uploaded files                      | Address                             | Bank details  | Payee                             | Additional claim information                                  | EU duty | UK duty | Excise duty | Total       | First Movement Reference Number (MRN)          | Claim summary document	 |
@@ -707,8 +707,8 @@ Feature: C285 Scheduled
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-    And I click continue on "C285_Scheduled_Claimant Details Page v2"
+    #Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
+    #And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim    | Personal details                                            | Uploaded files                        | Address                             | Bank details  | Payee                          | Additional claim information                                     | EU duty | UK duty | Excise duty | Total       | First Movement Reference Number (MRN)         | Claim summary document |

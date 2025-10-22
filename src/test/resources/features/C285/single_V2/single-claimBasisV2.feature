@@ -75,8 +75,8 @@ Feature: C285 Single Claim Basis V2
    And I enter "" on "ALF_Lookup Address Edit Page"
    And I click continue on "ALF_Lookup Address Edit Page"
    And I click continue on "ALF_Lookup Address Confirm Page"
-   Then I am presented with the "C285_Single_Claimant Details Page v2"
-   And I click continue on "C285_Single_Claimant Details Page v2"
+   #Then I am presented with the "C285_Single_Claimant Details Page v2"
+   #And I click continue on "C285_Single_Claimant Details Page v2"
 #    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
 #    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
 #    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
@@ -87,7 +87,7 @@ Feature: C285 Single Claim Basis V2
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
 
-  @test @wip
+  @test
   Scenario: happy path - excise duty selected
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -158,8 +158,8 @@ Feature: C285 Single Claim Basis V2
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Page v2"
+    #Then I am presented with the "C285_Single_Claimant Details Page v2"
+   # And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim          | Personal details                                | Uploaded files                       | Address                                           | Bank details                  |Payee       | Additional claim information    | What do you want to claim?                                                                                                                                                                                                    | 421 - Sparkling, 8.5% and above but not exceeding 15%  | 623 - Other smoking tobacco |99C - Gas supplied by a gas utility or any gas supplied in a gaseous state that is of a kind supplied by a gas utility Great Britain	| Total  | Movement Reference Number (MRN)   | Method   |
@@ -234,8 +234,8 @@ Feature: C285 Single Claim Basis V2
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Page v2"
+    #Then I am presented with the "C285_Single_Claimant Details Page v2"
+    #And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Basis of claim | Import date      | Contact details                       | Uploaded                        | Contact address                                  | Name on the account    | Account number        | Additional claim details   | EU Duty | Excise Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
