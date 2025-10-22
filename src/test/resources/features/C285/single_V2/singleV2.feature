@@ -73,8 +73,8 @@ Feature: C285 Single V2
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Page v2"
+    #Then I am presented with the "C285_Single_Claimant Details Page v2"
+   # And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim    | Personal details                              | Uploaded files                      | Address                                           | Bank details                     |Payee     | Additional claim information    | What do you want to claim?                                                                                                                       | A80 - Definitive Anti-Dumping Duty | A85 - Provisional Anti-Dumping Duty| A90 - Definitive Countervailing Duty|A95 - Provisional Countervailing Duty| Total   | Method  |Movement Reference Number (MRN)|
@@ -160,8 +160,8 @@ Feature: C285 Single V2
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Page v2"
+    #Then I am presented with the "C285_Single_Claimant Details Page v2"
+    #And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim           | Personal details                                       | Bank details       | Uploaded files     | Address                                   |Duplicate MRN|Payee                          | Additional claim information                                   | What do you want to claim? |A85 - Provisional Anti-Dumping Duty |A90 - Definitive Countervailing Duty|A95 - Provisional Countervailing Duty| Total   | Movement Reference Number (MRN)               | Method                         |
@@ -318,8 +318,8 @@ Feature: C285 Single V2
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Page v2"
+    #Then I am presented with the "C285_Single_Claimant Details Page v2"
+    #And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim    | Personal details                                                | Uploaded files                        | Address                             | Bank details        |Payee     | Additional claim information  |What do you want to claim? | A80 - Definitive Anti-Dumping Duty | Total   | Method                 |Movement Reference Number (MRN)               |

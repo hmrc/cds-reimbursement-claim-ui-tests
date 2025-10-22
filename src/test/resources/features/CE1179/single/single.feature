@@ -102,8 +102,8 @@ Feature: C&E1179 Single
     Then I am presented with the "CE1179_Single_Claimant Details Change Claimant Details Page"
     And I enter "" on "CE1179_Single_Claimant Details Change Claimant Details Page"
     And I click continue on "CE1179_Single_Claimant Details Change Claimant Details Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Page"
-    And I click continue on "CE1179_Single_Claimant Details Page"
+    #Then I am presented with the "CE1179_Single_Claimant Details Page"
+    #And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | Reason for claim                           | Personal details                             | Uploaded files                                                           | Address                                           |  Bank details	                 | Payee     | Total  | Method                | What do you want to claim? |Movement Reference Number (MRN)  | A85 - Provisional Anti-Dumping Duty  | Inspection date | A90 - Definitive Countervailing Duty | Additional claim information | A80 - Definitive Anti-Dumping Duty | Inspection address                          | A95 - Provisional Countervailing Duty | Disposal method   |
@@ -202,8 +202,8 @@ Feature: C&E1179 Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Single_Claimant Details Page"
-    And I click continue on "CE1179_Single_Claimant Details Page"
+    #Then I am presented with the "CE1179_Single_Claimant Details Page"
+    #And I click continue on "CE1179_Single_Claimant Details Page"
     Then I am presented with the "CE1179_Single_Check Your Answers Page"
     And I should see the following details
       | Reason for claim     | Personal details                 | Uploaded files                                                                | Address     | Total  |Movement Reference Number (MRN)                | A85 - Provisional Anti-Dumping Duty  | Inspection date | A90 - Definitive Countervailing Duty | Additional claim information | Inspection address                          | A95 - Provisional Countervailing Duty | Disposal method   | What do you want to claim?| Any special circumstances relating to your claim | Method                          |

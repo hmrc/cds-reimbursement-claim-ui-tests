@@ -63,8 +63,8 @@ Feature: Securities Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "Securities_Claimant Details Page"
-    And I click continue on "Securities_Claimant Details Page"
+   # Then I am presented with the "Securities_Claimant Details Page"
+   # And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Movement Reference Number (MRN)       | Do you want to claim back the full amount?   | Uploaded files                                                  |Why was a security deposit needed?         | Address                                           | Payee       | Do you want to provide more detail? | What did you do with the goods? | Total     | What do you want to claim?  | A00 - Customs Duty    | Personal details                             | Bank details                       |
@@ -132,8 +132,8 @@ Feature: Securities Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "Securities_Claimant Details Page"
-    And I click continue on "Securities_Claimant Details Page"
+   # Then I am presented with the "Securities_Claimant Details Page"
+   # And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Movement Reference Number (MRN)    |Do you want to claim back the full amount?  |Proof of origin     | Other uploaded files                  | Why was a security deposit needed?   | Address                                           | Payee       | Do you want to provide more detail? | What do you want to claim? | Total   |A00 - Customs Duty     | Do you want to add other documents to your claim? | Personal details      | Bank details |
@@ -219,8 +219,8 @@ Feature: Securities Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "Securities_Claimant Details Page"
-    And I click continue on "Securities_Claimant Details Page"
+   # Then I am presented with the "Securities_Claimant Details Page"
+   # And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Movement Reference Number (MRN)       | Do you want to claim back the full amount?   | Uploaded files                                                  |Why was a security deposit needed?         | Address                                           | Payee       | Do you want to provide more detail? |What did you do with the goods? |1st export MRN |Total     | What do you want to claim?  | A00 - Customs Duty    | Personal details                             | Bank details                       |

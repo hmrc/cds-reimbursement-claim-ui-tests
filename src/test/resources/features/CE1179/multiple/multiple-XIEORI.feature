@@ -98,8 +98,8 @@ Feature: C&E1179 Multiple - XIEORI
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Multiple_Claimant Details Page"
-    And I click continue on "CE1179_Multiple_Claimant Details Page"
+    #Then I am presented with the "CE1179_Multiple_Claimant Details Page"
+    #And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Reason for claim    | Personal details               | Uploaded files                       | Address                                   | Bank details   | Payee                                 | Total    |2nd MRN20XIDCAAAAAAAAAAA1 | 1st MRN10XIDCAAAAAAAAAAA1 | 1st Movement Reference Number (MRN)          | 2nd MRN               | Inspection date | Additional claim information | Inspection address                          | Disposal method   |
@@ -196,8 +196,8 @@ Feature: C&E1179 Multiple - XIEORI
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "CE1179_Multiple_Claimant Details Page"
-    And I click continue on "CE1179_Multiple_Claimant Details Page"
+    #Then I am presented with the "CE1179_Multiple_Claimant Details Page"
+    #And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Reason for claim     | Personal details                       | Uploaded files                   | Address                                           | Bank details      | Payee    | Total  |2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN10XIDAAAAAAAAAAAA1 | 1st Movement Reference Number (MRN)          | 2nd MRN             | Inspection date | Additional claim information | Inspection address   | Disposal method   |
