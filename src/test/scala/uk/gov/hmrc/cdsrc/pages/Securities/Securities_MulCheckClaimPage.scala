@@ -14,26 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.cdsrc.pages.C285.multiple_V2
+package uk.gov.hmrc.cdsrc.pages.Securities
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object C285_Multiple_CheckClaimPagev2 extends BasePage {
+object Securities_MulCheckClaimPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/multiple/check-claim"
-  override val title       = "Check the repayment totals for this claim"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/check-claim"
+  override val title       = "Check the claim details for these security deposits"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK"
+    "Check the claim details for these security deposits - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Check the repayment totals for this claim - Claim back import duty and VAT - GOV.UK"
+    "Check the claim details for these security deposits - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Check the repayment totals for this claim")
-
-
-
+  override def expectedPageHeader: Option[String] = Some("Check the claim details for these security deposits")
 }

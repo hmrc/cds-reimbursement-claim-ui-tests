@@ -1,70 +1,105 @@
+**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
+
 # cds-reimbursement-claim-ui-tests
-UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
 
-# Cloning the project and service startup
+UI test suite for the CDS Reimbursement service cds-reimbursement-claim-frontend for  (`cds-reimbursement-claim-ui-tests`) -
+UI test suite using WebDriver and `cucumber`for BDD Testing and Service Manager for managing dependencies locally.
 
-Clone this project to the directory of your choice
+## Nomenclature
 
-# Service manager profile required to run the test
-On a Terminal instance, start up all services using:
+A list of definitions for unusual terms in the code.
 
-```sm2 -start CDSRC_ALL ```
+## Technical documentation
 
-If you want to run the Customs Reimbursement Frontend service locally, stop the service using:
+Link to the journey's :- https://confluence.tools.tax.service.gov.uk/display/CDSR/Entire+User+Journeys+-+June+2025
 
-```sm2 -stop CDSRC_FRONTEND```
+## Running the tests
+    #  Pre-requisites
+    Prior to executing the tests ensure you have:
+- Docker - to run mongo and browser (Chrome or Firefox) inside a container
+  docker run --rm -d --name mongo -d -p 27017:27017 mongo:4.0
+- Java (JDK 11 or 21)=Required to compile and run Scala-based projects
+  CDSR is mainly compatible with JDK 21
+- sbt(Scala Build Tool)=Required to compile & run the application. Ensure the version matches what's in build.sbt
+- Git = To clone the repository and manage branches
+    1) https://github.com/hmrc/cds-reimbursement-claim-ui-tests
+    2) https://github.com/hmrc/cds-reimbursement-claim-frontend
+    3) https://github.com/hmrc/cds-reimbursement-claim-stubs
 
-Then run the Frontend locally using:
+- Appropriate [drivers installed](#installing-local-driver-binaries) - to run tests against locally installed Browser
+- Installed/configured [service manager](https://github.com/hmrc/service-manager).
 
-```sbt "run 7500 -Dplay.http.router=testOnlyDoNotUseInAppConf.Routes"```
+Run the following command to start services locally:
+
+1) To Start all services
+   sm2 -start CDSRC_ALL
+2) To stop the services
+    sm2 --stop-all
+3) Checking the status of services (-s or -status)
+   sm2 --status
 
 ## Running the Tests
 
-1. Navigate to the directory where the project has been cloned.
+Run Acceptance test using SM2 Locally
 
-2. To run all acceptance tests on your local machine, use: ```./run_tests.sh```  OR ```sbt -Dbrowser=$BROWSER -Denvironment=$ENV $DRIVER -Ddrivernotquit=true "testOnly uk.gov.hmrc.cdsrc.cucumber.runner.Runner"```
+1. Navigate to the directory where the project has been cloned.
+2. To run all acceptance tests on your local machine, use: ```./run_tests.sh```
 3. To run all tests that are tagged as "@wip", use: ```./run_tests_wip.sh```
 4. By default, the scripts execute in headless mode. To run them with the browser ui visible, set the below-mentioned property in run_tests_wip.sh script - Argument -Dbrowser.option.headless=false
 
-Security and Accessibility tests
-The accessibility and ZAP tests are run as part of Jenkins job. We can get the latest reports from the corresponding acceptance-tests customs-cash-account-acceptance-tests job.
+## Security and Accessibility tests
+The accessibility and ZAP tests are run as part of Jenkins job. 
+We can get the latest reports from the corresponding acceptance-tests CDS Reimbursement Claim UI Tests job.
 
-#### Running the tests against a test environment
+## Test the application manually
 
-To run the tests against an environment set the corresponding `host` environment property as specified under
- `<env>.host.services` in the [application.conf](/src/test/resources/application.conf). 
+1. Local
+   auth-login-stub  (Link 'http://localhost:9949/auth-login-stub/gg-sign-in')
 
-For example, to execute the `run_tests.sh` script against QA  environment using Chrome remote-webdriver
+   Details to give in Authority wizard page
+   Redirect url      = http://localhost:7500/claim-back-import-duty-vat/start
+   Enrolment Key     ='HMRC-CUS-ORG'
+   Identifier Name   ='EORINumber'
+   Identifier Value  ='GB000000000000001'
 
-    ./run_tests.sh qa remote-chrome
+2. Development
+   auth-login-stub  (Link 'https://www.development.tax.service.gov.uk/auth-login-stub/gg-sign-in?continue=%2Fclaim-back-import-duty-vat%2Fstart')
 
-## Installing local driver binaries
+   Details to give in Authority wizard page
+   Redirect url      = /claim-back-import-duty-vat/start
+   Enrolment Key     ='HMRC-CUS-ORG'
+   Identifier Name   ='EORINumber'
+   Identifier Value  ='GB000000000000001'
 
-This project supports UI test execution using Firefox (Geckodriver) and Chrome (Chromedriver) browsers. 
 
-See the `drivers/` directory for some helpful scripts to do the installation work for you.  They should work on both Mac and Linux by running the following command:
+3. Staging
+   auth-login-stub (Link 'https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in?continue=%2Fclaim-back-import-duty-vat%2Fstart')
 
-    ./installGeckodriver.sh <operating-system> <driver-version>
-    or
-    ./installChromedriver <operating-system> <driver-version>
+   Details to give in Authority wizard page
+   Redirect url      = /claim-back-import-duty-vat/start
+   Enrolment Key     ='HMRC-CUS-ORG'
+   Identifier Name   ='EORINumber'
+   Identifier Value  ='GB000000000000001'
 
-- *<operating-system>* defaults to **linux64**, however it also supports **macos**
-- *<driver-version>* defaults to **0.21.0** for Gecko/Firefox, and the latest release for Chrome.  You can, however, however pass any version available at the [Geckodriver](https://github.com/mozilla/geckodriver/tags) or [Chromedriver](http://chromedriver.storage.googleapis.com/) repositories.
 
-**Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
+## Useful links
 
-**Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
+All the useful link for the CDSR space is listed in confluence page https://confluence.tools.tax.service.gov.uk/display/CDSR/Useful+URL%27S+%2CUI+Automation+%2CPerformance+Test+Repos+and+Requirement
+
+1. Link to the Stub data used in local and staging environment(git hub)   =https://github.com/hmrc/cds-reimbursement-claim-stubs/blob/main/README.md
+2. Link to the Stub data used in local and staging environment Confluence = https://confluence.tools.tax.service.gov.uk/display/CDSR/Simulation+Data
+
 
 ### Scalafmt
- This repository uses [Scalafmt](https://scalameta.org/scalafmt/), a code formatter for Scala. The formatting rules configured for this repository are defined within [.scalafmt.conf](.scalafmt.conf).
+This repository uses [Scalafmt](https://scalameta.org/scalafmt/), a code formatter for Scala. The formatting rules configured for this repository are defined within [.scalafmt.conf](.scalafmt.conf).
 
- To apply formatting to this repository using the configured rules in [.scalafmt.conf](.scalafmt.conf) execute:
+To apply formatting to this repository using the configured rules in [.scalafmt.conf](.scalafmt.conf) execute:
 
  ```
  sbt scalafmtAll
  ```
-
- To check files have been formatted as expected execute:
+    
+To check files have been formatted as expected execute:
 
  ```
  sbt scalafmtCheckAll scalafmtSbtCheck

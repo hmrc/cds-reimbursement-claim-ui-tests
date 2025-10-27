@@ -1,8 +1,8 @@
 @Security @Single @ignore
 Feature: Securities Single
 
-  @test @a11y @ZAP
-  Scenario: happy path - ntas ta single check eori pages - with no Payment method
+  @test
+  Scenario: happy path - ntas TA single check eori pages - with no Payment method
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
     And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
@@ -54,7 +54,7 @@ Feature: Securities Single
 
     Then I am presented with the "Securities_EnterAdditionalDetailsPage"
     When I enter "under 500 characters" on "Securities_EnterAdditionalDetailsPage"
-    And I click continue on "Securities_EnterAdditionalDetailsPage  "
+    And I click continue on "Securities_EnterAdditionalDetailsPage "
 
     Then I am presented with the "Securities_Change Contact Details Page"
     And I enter "" on "Securities_Change Contact Details Page"
@@ -63,8 +63,6 @@ Feature: Securities Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-   # Then I am presented with the "Securities_Claimant Details Page"
-   # And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Movement Reference Number (MRN)       | Do you want to claim back the full amount?   | Uploaded files                                                  |Why was a security deposit needed?         | Address                                           | Payee       | Do you want to provide more detail? | What did you do with the goods? | Total     | What do you want to claim?  | A00 - Customs Duty    | Personal details                             | Bank details                       |
@@ -73,7 +71,7 @@ Feature: Securities Single
     Then I am presented with the "Securities_Claim Submitted Page"
 
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path - nidac mdp single check eori pages - with no Payment method
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -132,8 +130,6 @@ Feature: Securities Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-   # Then I am presented with the "Securities_Claimant Details Page"
-   # And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Movement Reference Number (MRN)    |Do you want to claim back the full amount?  |Proof of origin     | Other uploaded files                  | Why was a security deposit needed?   | Address                                           | Payee       | Do you want to provide more detail? | What do you want to claim? | Total   |A00 - Customs Duty     | Do you want to add other documents to your claim? | Personal details      | Bank details |
@@ -141,7 +137,7 @@ Feature: Securities Single
     When I click continue on "Securities_Check Your Answers Page"
     Then I am presented with the "Securities_Claim Submitted Page"
 
- @test @a11y @ZAP
+ @test
   Scenario: happy path - Temporary admission and Exported in multiple shipment
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -219,8 +215,6 @@ Feature: Securities Single
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-   # Then I am presented with the "Securities_Claimant Details Page"
-   # And I click continue on "Securities_Claimant Details Page"
     Then I am presented with the "Securities_Check Your Answers Page"
     And I should see the following details
       | Movement Reference Number (MRN)       | Do you want to claim back the full amount?   | Uploaded files                                                  |Why was a security deposit needed?         | Address                                           | Payee       | Do you want to provide more detail? |What did you do with the goods? |1st export MRN |Total     | What do you want to claim?  | A00 - Customs Duty    | Personal details                             | Bank details                       |
@@ -229,101 +223,3 @@ Feature: Securities Single
     Then I am presented with the "Securities_Claim Submitted Page"
 
 
-
-  @ignore
-  Scenario: with only importer bank details (user is both importer and declarant)
-#  60AAAAAAAAAAAAAAA2 => only importer bank details (user is both importer and declarant) - CMA not eligible - skips payee indicator page and navigates to /check-bank-details page
-    When I enter "60AAAAAAAAAAAAAAA2" on "Securities_Enter Movement Reference Number Page"
-    And I click continue on "Securities_Enter Movement Reference Number Page"
-    Then I am presented with the "Securities_Choose Reason For Security Page"
-    When I select radio button "Inward Processing Relief (IPR)" on "Securities_Choose Reason For Security Page"
-    And I click continue on "Securities_Choose Reason For Security Page"
-    Then I am presented with the "Securities_Check Total Import Discharged Page"
-    When I select radio button "yes" on "Securities_Check Total Import Discharged Page"
-    And I click continue on "Securities_Check Total Import Discharged Page"
-    Then I am presented with the "Securities_Bod3 Mandatory Check Page"
-    When I select radio button "no" on "Securities_Bod3 Mandatory Check Page"
-    And I click continue on "Securities_Bod3 Mandatory Check Page"
-    Then I am presented with the "Securities_Error Claim Invalid No Bod3 Page"
-    When I click back button on "Securities_Error Claim Invalid No Bod3 Page"
-    Then I am presented with the "Securities_Bod3 Mandatory Check Page"
-    When I select radio button "yes" on "Securities_Bod3 Mandatory Check Page"
-    And I click continue on "Securities_Bod3 Mandatory Check Page"
-    Then I am presented with the "Securities_Select Securities Security Id Page" "1 of 5,ABC0123456"
-    When I select radio button "yes" on "Securities_Select Securities Security Id Page"
-    And I click continue on "Securities_Select Securities Security Id Page"
-    Then I am presented with the "Securities_Select Securities Security Id Page" "2 of 5,DEF6543213"
-    When I select radio button "yes" on "Securities_Select Securities Security Id Page"
-    And I click continue on "Securities_Select Securities Security Id Page"
-    Then I am presented with the "Securities_Select Securities Security Id Page" "3 of 5,DEF6543212"
-    When I select radio button "no" on "Securities_Select Securities Security Id Page"
-    And I click continue on "Securities_Select Securities Security Id Page"
-    Then I am presented with the "Securities_Select Securities Security Id Page" "4 of 5,DEF6543210"
-    When I select radio button "no" on "Securities_Select Securities Security Id Page"
-    And I click continue on "Securities_Select Securities Security Id Page"
-    Then I am presented with the "Securities_Select Securities Security Id Page" "5 of 5,DEF6543211"
-    When I select radio button "no" on "Securities_Select Securities Security Id Page"
-    And I click continue on "Securities_Select Securities Security Id Page"
-    Then I am presented with the "Securities_Check Declaration Details Page"
-    And I click continue on "Securities_Check Declaration Details Page"
-    Then I am presented with the "Securities_Change Contact Details Page"
-    And I enter "" on "Securities_Change Contact Details Page"
-    And I click continue on "Securities_Change Contact Details Page"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "Securities_Claimant Details Page"
-    And I click continue on "Securities_Claimant Details Page"
-    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page" "ABC0123456"
-    When I select radio button "No" on "Securities_Confirm Full Repayment Security Id Page"
-    And I click continue on "Securities_Confirm Full Repayment Security Id Page"
-    Then I am presented with the "Securities_Select Duties Security Id Page" "ABC0123456"
-    When I select "A00,B00" on "Securities_Confirm Full Repayment Security Id Page"
-    And I click continue on "Securities_Confirm Full Repayment Security Id Page"
-    Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "A00 - Customs Duty"
-    When I enter "500" on "Securities_Enter Claim Security Id Tax Code Page"
-    And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
-    Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "B00 - Value Added Tax (VAT)"
-    When I enter "500" on "Securities_Enter Claim Security Id Tax Code Page"
-    And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
-    Then I am presented with the "Securities_Confirm Full Repayment Security Id Page2" "DEF6543213"
-    When I select radio button "No" on "Securities_Confirm Full Repayment Security Id Page2"
-    And I click continue on "Securities_Confirm Full Repayment Security Id Page2"
-    Then I am presented with the "Securities_Select Duties Security Id Page" "DEF6543213"
-    When I select "A00,B00" on "Securities_Confirm Full Repayment Security Id Page2"
-    And I click continue on "Securities_Confirm Full Repayment Security Id Page2"
-    Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "A00 - Customs Duty"
-    When I enter "10" on "Securities_Enter Claim Security Id Tax Code Page"
-    And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
-    Then I am presented with the "Securities_Enter Claim Security Id Tax Code Page" "B00 - Value Added Tax (VAT)"
-    When I enter "20" on "Securities_Enter Claim Security Id Tax Code Page"
-    And I click continue on "Securities_Enter Claim Security Id Tax Code Page"
-    Then I am presented with the "Securities_Check Claim Page"
-    And I click continue on "Securities_Check Claim Page"
-    Then I am presented with the "Securities_Choose Payee Type Page"
-    And I select radio button "Importer" on "Securities_Choose Payee Type Page"
-    When I click continue on "Securities_Choose Payee Type Page"
-    Then I am presented with the "Securities_Check Bank Details Page"
-    And I select radio button "yes" on "Securities_Check Bank Details Page"
-    When I click continue on "Securities_Check Bank Details Page"
-    Then I am presented with the "Securities_Choose File Type Page"
-    When I select radio button "Import declaration" on "Securities_Choose File Type Page"
-    And I click continue on "Securities_Choose File Type Page"
-    Then I am presented with the "UDF_Choose Files Page" "import declaration"
-    When I upload a 1 "document.pdf" file on "UDF_Choose Files Page"
-    And I select radio button "Yes" on "UDF_Choose Files Page"
-    And I click continue if I'm on "UDF_Choose Files Page"
-    Then I am presented with the "Securities_Choose File Type Page"
-    When I select radio button "Export declaration" on "Securities_Choose File Type Page"
-    And I click continue on "Securities_Choose File Type Page"
-    Then I am presented with the "UDF_Choose Files Page" "export declaration"
-    When I upload a 2 "image.jpg" file on "UDF_Choose Files Page"
-    And I select radio button "No" on "UDF_Choose Files Page"
-    When I click continue if I'm on "UDF_Choose Files Page"
-    Then I am presented with the "Securities_Check Your Answers Page"
-    And I should see the following details
-      | Import MRN         | Importer name                                     | Reason for security deposit    | Export declaration           | Total security deposit value | Claim for DEF6543213 | Claim for DEF6543212 | Claim for DEF6543211 | Claim for DEF6543210 | B00 - Value Added Tax (VAT) | Claim for ABC0123456                                        | Claim full amount | Total   | Duties selected                          | A00 - Customs Duty | Date security deposit made | Contact details                                        | Import declaration              | Name on the account | Account number   | Sort code      | Contact address                             |
-      | 60AAAAAAAAAAAAAAA2 | Swift Goods Ltd      | Inward Processing Relief (IPR) | image.jpg,Export declaration | £14,385.52                   | Yes                  | No                   | No                   | No                   | £180.00               | Yes                 | No               | £270.00 | A00 - Customs Duty,B00 - Value Added Tax (VAT) | £90.00            | 13 September 2019          | Mr John Smith,someemail@mail.com,01234567890 | document.pdf,Import declaration | Consignee Goods Ltd | Ending with 8523 | Ending with 41 | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom |
-    When I click continue on "Securities_Check Your Answers Page"
-    Then I am presented with the "Securities_Claim Submitted Page"

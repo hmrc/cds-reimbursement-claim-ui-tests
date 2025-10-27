@@ -22,20 +22,20 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-object Securities_CheckDeclarationDetailsPage extends BasePage {
+object Securities_MulCheckDeclarationDetailsPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/single/check-mrn"
-  override val title       = "Check the Movement Reference Number (MRN) you entered"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/check-declaration-details"
+  override val title       = "Check these declaration details are correct"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Check the Movement Reference Number (MRN) you entered - Claim back import duty and VAT - GOV.UK"
+    "Check these declaration details are correct - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Check the Movement Reference Number (MRN) you entered - Claim back import duty and VAT - GOV.UK"
+    "Check these declaration details are correct - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Check the Movement Reference Number (MRN) you entered")
+  override def expectedPageHeader: Option[String] = Some("Check these declaration details are correct")
 
   def changeLinks(page: String): Unit = {
     val pageRows = driver
@@ -48,7 +48,6 @@ object Securities_CheckDeclarationDetailsPage extends BasePage {
   }
 
   def clickContinue(selection: String): Unit =
-    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
+    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()}
 
 
-}

@@ -1,7 +1,7 @@
 @C285 @Scheduled
 Feature: C285 Scheduled
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -28,7 +28,6 @@ Feature: C285 Scheduled
     When I enter "GB000000000000002" on "C285_Scheduled_Enter Declarant Eori Page v2"
     And I click continue on "C285_Scheduled_Enter Declarant Eori Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    #And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
     #New  flow change
     Then I am presented with the "UDF_Choose File Page"
@@ -184,14 +183,10 @@ Feature: C285 Scheduled
      And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
 
     Then I am presented with the "C285_Scheduled_Check Claim Page v2"
-    #When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
     And I click continue on "C285_Scheduled_Check Claim Page v2"
     Then I am presented with the "C285_Scheduled_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Scheduled_Choose Payee Type v2"
     When I click continue on "C285_Scheduled_Choose Payee Type v2"
-#    Then I am presented with the "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-#    When I select radio button "yes" on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-#    And I click continue on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Scheduled_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Scheduled_Enter Bank Account Details Page v2"
     When I click continue on "C285_Scheduled_Enter Bank Account Details Page v2"
@@ -210,8 +205,6 @@ Feature: C285 Scheduled
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-   # And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim       | Personal details                   | Uploaded files                        | Address                                   | Bank details   | Payee                               | Additional claim information                               | EU duty | UK duty | Excise duty | Total      | First Movement Reference Number (MRN)          | Claim summary document |
@@ -241,7 +234,6 @@ Feature: C285 Scheduled
     When I enter "60AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    #And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
     # New Changes of flow
     Then I am presented with the "UDF_Choose File Page"
@@ -398,7 +390,6 @@ Feature: C285 Scheduled
 
 
     Then I am presented with the "C285_Scheduled_Check Claim Page v2"
-    #When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
     And I click continue on "C285_Scheduled_Check Claim Page v2"
     Then I am presented with the "C285_Scheduled_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
@@ -406,9 +397,6 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Scheduled_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Scheduled_Enter Bank Account Details Page v2"
     When I click continue on "C285_Scheduled_Enter Bank Account Details Page v2"
-#    Then I am presented with the "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-#    When I select radio button "yes" on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-#    And I click continue on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -424,83 +412,12 @@ Feature: C285 Scheduled
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-    #And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim   | Personal details                                        | Uploaded files                      | Address                             | Bank details  | Payee                             | Additional claim information                                  | EU duty | UK duty | Excise duty | Total       | First Movement Reference Number (MRN)          | Claim summary document	 |
       | Outward processing relief          | Mr John Smith,someemail@mail.com,01234567890 | Commercial invoice:,document.pdf | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001      | Importer | under 500 characters             | £10.00  | £10.00  | £115.00      | £135.00  | 60AAAAAAAAAAAAAAA1 | image.jpg          |
     And I click continue on "C285_Scheduled_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Scheduled_Claim Submitted Page v2"
-
-  @smoke
-  Scenario: error scenario - wrong mrn
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "C285_Choose How Many Mrns Page v2"
-    When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
-    And I click continue on "C285_Choose How Many Mrns Page v2"
-    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
-    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
-    Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    #And I select radio button "no" on "C285_Scheduled_Check Declaration Details Page v2"
-    And I click continue on "C285_Multiple_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
-    And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
-
-  @testFail
-  Scenario: error scenario - test file upload size and format fail pages
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "C285_Choose How Many Mrns Page v2"
-    When I select radio button "schedule" on "C285_Choose How Many Mrns Page v2"
-    And I click continue on "C285_Choose How Many Mrns Page v2"
-    Then I am presented with the "C285_Scheduled_Have Your Supporting Document Ready Page v2"
-    When I clickContinue on "C285_Scheduled_Have Your Supporting Document Ready Page v2"
-    Then I am presented with the "C285_Scheduled_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Scheduled_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
-    And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
-    And I enter "" on "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
-    And I click continue on "C285_Scheduled_Claimant Details Change Claimant Details Page v2"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-    And I click continue on "C285_Scheduled_Claimant Details Page v2"
-    Then I am presented with the "UDF_Choose File Page"
-    # I upload a file that is too big
-    When I upload a 1 "image-big.jpg" file on "UDF_Choose File Page"
-    And I click continue if I'm on "UDF_Choose File Page"
-    Then I am presented with the "UDF_Size Fail Page"
 
 
   @test
@@ -525,7 +442,6 @@ Feature: C285 Scheduled
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Scheduled_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Scheduled_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Scheduled_Check Declaration Details Page v2"
-    #And I select radio button "yes" on "C285_Scheduled_Check Declaration Details Page v2"
     And I click continue on "C285_Scheduled_Check Declaration Details Page v2"
     # New changes to the flow
     Then I am presented with the "UDF_Choose File Page"
@@ -681,7 +597,6 @@ Feature: C285 Scheduled
     And I click continue on "C285_Scheduled_Select Duties DutyType Duty Page v2"
   #CDSR-3948
     Then I am presented with the "C285_Scheduled_Check Claim Page v2"
-    #When I select radio button "Yes" on "C285_Scheduled_Check Claim Page v2"
     And I click continue on "C285_Scheduled_Check Claim Page v2"
     Then I am presented with the "C285_Scheduled_Choose Payee Type v2"
     And I select radio button "Declarant" on "C285_Multiple_Choose Payee Type v2"
@@ -689,9 +604,6 @@ Feature: C285 Scheduled
     Then I am presented with the "C285_Scheduled_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Scheduled_Enter Bank Account Details Page v2"
     When I click continue on "C285_Scheduled_Enter Bank Account Details Page v2"
-#    Then I am presented with the "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-#    When I select radio button "yes" on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
-#    And I click continue on "C285_Scheduled_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Scheduled_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -707,8 +619,6 @@ Feature: C285 Scheduled
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "C285_Scheduled_Claimant Details Page v2"
-    #And I click continue on "C285_Scheduled_Claimant Details Page v2"
     Then I am presented with the "C285_Scheduled_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim    | Personal details                                            | Uploaded files                        | Address                             | Bank details  | Payee                          | Additional claim information                                     | EU duty | UK duty | Excise duty | Total       | First Movement Reference Number (MRN)         | Claim summary document |

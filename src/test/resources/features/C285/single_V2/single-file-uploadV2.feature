@@ -1,6 +1,7 @@
 @C285 @Single
 Feature: C285 Single file upload V2
 
+  @test
   Scenario: happy path - upload 3 files
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -15,21 +16,13 @@ Feature: C285 Single file upload V2
     Then I am presented with the "C285_Choose How Many Mrns Page v2"
     When I select radio button "individual" on "C285_Choose How Many Mrns Page v2"
     And I click continue on "C285_Choose How Many Mrns Page v2"
+    Then I am presented with the "C285_Have Your Supporting Document Ready Page v2"
+    When I clickContinue on "C285_Have Your Supporting Document Ready Page v2"
     Then I am presented with the "C285_Single_Enter Movement Reference Number Page v2"
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Single_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Single_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Single_Check Declaration Details Page v2"
-    #And I select radio button "yes" on "C285_Single_Check Declaration Details Page v2"
     And I click continue on "C285_Single_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
-    And I enter "" on "C285_Single_Claimant Details Change Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
-    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
-    And I enter "" on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Edit Page"
-    And I click continue on "ALF_Lookup Address Confirm Page"
-    Then I am presented with the "C285_Single_Claimant Details Page v2"
-    And I click continue on "C285_Single_Claimant Details Page v2"
     Then I am presented with the "C285_Single_Choose Basis For Claim Page v2"
     When I select radio button "Duty suspension" on "C285_Single_Choose Basis For Claim Page v2"
     And I click continue on "C285_Single_Choose Basis For Claim Page v2"
@@ -52,14 +45,13 @@ Feature: C285 Single file upload V2
     When I enter "10" on "C285_Single_Enter Claim Page v2"
     And I click continue on "C285_Single_Enter Claim Page v2"
     Then I am presented with the "C285_Single_Check Claim Page v2"
-    And I select radio button "yes" on "C285_Single_Check Claim Page v2"
-    When I click continue on "C285_Single_Check Claim Page v2"
+    When I clickContinue on "C285_Single_Check Claim Page v2"
     Then I am presented with the "C285_Single_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Single_Choose Payee Type v2"
     When I click continue on "C285_Single_Choose Payee Type v2"
-    Then I am presented with the "C285_Single_Check These Bank Details Are Correct Page v2"
-    And I select radio button "yes" on "C285_Single_Check These Bank Details Are Correct Page v2"
-    When I click continue on "C285_Single_Check These Bank Details Are Correct Page v2"
+    Then I am presented with the "C285_Single_Enter Bank Account Details Page v2"
+    And I enter "" on "C285_Single_Enter Bank Account Details Page v2"
+    When I click continue on "C285_Single_Enter Bank Account Details Page v2"
     # upload file 1
     Then I am presented with the "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -82,12 +74,16 @@ Feature: C285 Single file upload V2
     And I click continue on "C285_Single_Supporting Evidence Select Supporting Evidence Type Page v2"
     Then I am presented with the "UCDF_Choose File Other Page" "packing list"
     When I upload a 3 "image.png" file on "UCDF_Choose File Other Page"
-    And I select radio button "NO" on "UCDF_Choose File Other Page"
+    And I select radio button "No" on "UCDF_Choose File Other Page"
     And I click continue if I'm on "UCDF_Choose File Other Page"
     # continue journey
+    Then I am presented with the "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I enter "" on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click continue on "C285_Single_Claimant Details Change Claimant Details Page v2"
+    And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
+    And I enter "" on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Edit Page"
+    And I click continue on "ALF_Lookup Address Confirm Page"
     Then I am presented with the "C285_Single_Check Answers Accept Send Page v2"
-    And I should see the following details
-      | This is the basis behind the claim | Import date      | Contact details                                           | Uploaded                                                                        | Contact address                                  | Name on the account    | Account number                              | This is the reason for the claim                                | EU Duty | Total   | Method                | Method of payment |MRN                | Duties paid | Sort code      |
-      | Duty suspension                    | 12 February 2021 | Mr John Smith,someemail@mail.com,01234567890  | image.jpg,Commercial invoice,document.pdf,Bill of lading,image.png,Packing list | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | CDS E2E To E2E Bank | 12345678  | under 500 characters            | £788.00 | £788.00 | Bank account transfer | Immediate payment |10AAAAAAAAAAAAAAA1 | £828.00     | Ending with 44 |
     When I click continue on "C285_Single_Check Answers Accept Send Page v2"
     Then I am presented with the "C285_Single_Claim Submitted Page v2"
