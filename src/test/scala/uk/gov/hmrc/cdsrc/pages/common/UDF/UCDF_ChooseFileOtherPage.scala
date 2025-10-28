@@ -40,18 +40,6 @@ object UCDF_ChooseFileOtherPage extends BasePage {
 
   override def expectedPageHeader: Option[String] = Some("Add documents to support your claim")
 
-  //private val continueButtonSelector = By.cssSelector("#upload-documents-submit")
-
-
- /* override def clickRadioButton(text: String): Unit = {
-    val radioselector =text.toLowerCase match {
-      case "yes" => By.id("choice")
-      case "no"  => By.id("choice-2")
-    }
-
-   // fluentWait.until(ExpectedConditions.elementToBeClickable(radioselector)).click()
-
-  }*/
 
   override def clickContinueButton(): Unit = {
     var attempts = 0
@@ -61,11 +49,6 @@ object UCDF_ChooseFileOtherPage extends BasePage {
       try {
         log.info(s"Attempting to click continue button on attempt $attempts")
         fluentWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.id(("upload-documents-submit")))).andThen(_.click()))
-        /*val continueButton = fluentWait.until(ExpectedConditions.refreshed(
-          ExpectedConditions.elementToBeClickable(continueButtonSelector)
-        ))
-        continueButton.click()
-        log.info("Successfully clicked continue button.")*/
         success = true
       } catch {
         case e: StaleElementReferenceException =>
@@ -82,21 +65,5 @@ object UCDF_ChooseFileOtherPage extends BasePage {
       throw new RuntimeException("Failed to click continue button after 3 attempts due to stale element.")
     }
   }
-  /* override def continuouslyClickContinue(): Unit = {
-     waitForPageToLoad()
-     var attempts = 0
 
-     while (driver.getCurrentUrl.equals(url) && attempts < 5) {
-       log.info(s"Still on upload page, attempt $attempts to click continue.")
-       clickContinueButton()
-       attempts += 1
-       Thread.sleep(500)
-     }
-
-     if (driver.getCurrentUrl.equals(url)) {
-       log.warn("Still on the same page after multiple attempts to click continue.")
-     } else {
-       log.info("Navigation successful after clicking continue.")
-     }
-   }*/
 }
