@@ -40,9 +40,6 @@ object UDF_ChooseFilePage extends BasePage {
     "Add your claim details"
   )
 
- //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
-
- // private val continueButtonSelector = By.cssSelector("#upload-documents-submit")
   override def clickContinueButton(): Unit = {
     var attempts = 0
     var success = false
@@ -51,12 +48,6 @@ object UDF_ChooseFilePage extends BasePage {
       try {
         log.info(s"Attempting to click continue button on attempt $attempts")
         fluentWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.id(("upload-documents-submit")))).andThen(_.click()))
-
-        /*val continueButton = fluentWait.until(ExpectedConditions.refreshed(
-          ExpectedConditions.elementToBeClickable(continueButtonSelector)
-        ))
-        continueButton.click()
-        log.info("Successfully clicked continue button.")*/
         success = true
       } catch {
         case e: StaleElementReferenceException =>
@@ -73,10 +64,6 @@ object UDF_ChooseFilePage extends BasePage {
       throw new RuntimeException("Failed to click continue button after 3 attempts due to stale element.")
     }
   }
- /* override def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url))
-      clickContinueButton()
-  }*/
+
 
 }

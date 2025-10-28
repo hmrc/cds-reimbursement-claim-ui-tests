@@ -285,7 +285,7 @@ Feature: C&E1179 Multiple
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Reason for claim    | Personal details                                              | Uploaded files                        | Address                             | Bank details   | Payee     | Total  |2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA1 | 1st Movement Reference Number (MRN)          | 2nd MRN             | Inspection date | Additional claim information | Inspection address                                    | Disposal method   |
-      | Goods are defective                 | John Smith,john@smith.com,01234567890| Commercial invoice:,document.pdf | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001   | Importer | £40.00  |£20.00             | £20.00             | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1         | 10 October 2020 | under 500 characters                                   | Other address| Return the goods by road, rail, air or ship |
+      | Goods are defective                 | John Smith,john@smith.com,01234567890| Commercial invoice:,document.pdf | 12 Skybricks Road,Coventry,CV3 6EA,United Kingdom | Mr John Smith,123456,11001001   | Importer | £40.00  |£20.00             | £20.00             | 60AAAAAAAAAAAAAAA1 | 20AAAAAAAAAAAAAAA1         | 10 October 2025 | under 500 characters                                   | Other address| Return the goods by road, rail, air or ship |
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 

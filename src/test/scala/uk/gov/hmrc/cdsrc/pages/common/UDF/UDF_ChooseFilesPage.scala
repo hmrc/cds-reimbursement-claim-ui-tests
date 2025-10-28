@@ -46,16 +46,6 @@ object UDF_ChooseFilesPage extends BasePage {
   override def checkPageErrorTitle(page: String): Unit =
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
 
-
-/*
-  override def clickRadioButton(text: String): Unit =
-    text.toLowerCase() match {
-      case "yes" => click on cssSelector("#choice")
-      case "no"  => click on cssSelector("#choice-2")
-    }
-*/
-  //override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
-//private val continueButtonSelector = By.cssSelector("#upload-documents-submit")
 override def clickContinueButton(): Unit = {
   var attempts = 0
   var success = false
@@ -64,10 +54,6 @@ override def clickContinueButton(): Unit = {
     try {
       log.info(s"Attempting to click continue button on attempt $attempts")
       fluentWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.id(("upload-documents-submit")))).andThen(_.click()))
-     /* val continueButton = fluentWait.until(ExpectedConditions.refreshed(
-        ExpectedConditions.elementToBeClickable(continueButtonSelector)
-      ))
-      continueButton.click()*/
       log.info("Successfully clicked continue button.")
       success = true
     } catch {
@@ -86,10 +72,5 @@ override def clickContinueButton(): Unit = {
   }
 }
 
- /* override def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url))
-      clickContinueButton()
-  }*/
 
 }
