@@ -20,7 +20,6 @@ import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.selenium.webdriver.Driver
 
 trait BrowserDriver {
-  /*implicit def driver: RemoteWebDriver = Driver.instance */
   implicit def driver: WebDriver = Driver.instance: WebDriver
 
 }

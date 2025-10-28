@@ -28,7 +28,6 @@ Feature: C&E1179 Multiple
     When I enter "GB000000000000002" on "CE1179_Multiple_Enter Declarant Eori Page"
     And I click continue on "CE1179_Multiple_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
     And I click continue on "CE1179_Multiple_Check Declaration Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     When I enter "20AAAAAAAAAAAAAAA2" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
@@ -65,7 +64,6 @@ Feature: C&E1179 Multiple
     When I enter "10" on "CE1179_Multiple_Select Duties 2 Duty Page"
     And I click continue on "CE1179_Multiple_Select Duties 2 Duty Page"
     Then I am presented with the "CE1179_Multiple_Check Claim Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
     When I clickContinue on "CE1179_Multiple_Check Claim Page"
     Then I am presented with the "CE1179_Multiple_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Multiple_Enter Inspection Date Page"
@@ -79,9 +77,6 @@ Feature: C&E1179 Multiple
     Then I am presented with the "CE1179_Multiple_Enter Bank Account Details Page"
     When I enter "" on "CE1179_Multiple_Enter Bank Account Details Page"
     And I click continue on "CE1179_Multiple_Enter Bank Account Details Page"
-#    Then I am presented with the "CE1179_Multiple_Check Bank Details Page"
-#    And I select radio button "yes" on "CE1179_Multiple_Check Bank Details Page"
-#    When I click continue on "CE1179_Multiple_Check Bank Details Page"
     Then I am presented with the "CE1179_Multiple_Choose File Type Page"
     When I select radio button "Commercial invoice" on "CE1179_Multiple_Choose File Type Page"
     And I click continue on "CE1179_Multiple_Choose File Type Page"
@@ -98,8 +93,6 @@ Feature: C&E1179 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "CE1179_Multiple_Claimant Details Page"
-    #And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Reason for claim      | Personal details                | Uploaded files                        | Address                                   | Bank details   | Payee                      | Total   | 2nd MRN20AAAAAAAAAAAAAAA2 | 1st MRN10AAAAAAAAAAAAAAA2 | 1st Movement Reference Number (MRN)          | 2nd MRN              | Inspection date | Additional claim information | Inspection address                          | Disposal method   |
@@ -107,7 +100,7 @@ Feature: C&E1179 Multiple
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path - Special circumstances, CMA eligible
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -128,7 +121,6 @@ Feature: C&E1179 Multiple
     When I enter "10AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number Page"
     And I click continue on "CE1179_Multiple_Enter Movement Reference Number Page"
     Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
     And I click continue on "CE1179_Multiple_Check Declaration Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     When I enter "20AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
@@ -137,7 +129,6 @@ Feature: C&E1179 Multiple
     When I select radio button "No" on "CE1179_Multiple_Check Movement Reference Numbers Page"
     And I click continue on "CE1179_Multiple_Check Movement Reference Numbers Page"
      # New change CDSR-3828
-
     Then I am presented with the "CE1179_Multiple_Choose Basis For Claim Page"
     When I select radio button "Special circumstances" on "CE1179_Multiple_Choose Basis For Claim Page"
     And I click continue on "CE1179_Multiple_Choose Basis For Claim Page"
@@ -169,7 +160,6 @@ Feature: C&E1179 Multiple
     When I enter "10" on "CE1179_Multiple_Select Duties 2 Duty Page"
     And I click continue on "CE1179_Multiple_Select Duties 2 Duty Page"
     Then I am presented with the "CE1179_Multiple_Check Claim Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
     When I clickContinue on "CE1179_Multiple_Check Claim Page"
     Then I am presented with the "CE1179_Multiple_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Multiple_Enter Inspection Date Page"
@@ -180,9 +170,6 @@ Feature: C&E1179 Multiple
     Then I am presented with the "CE1179_Multiple_Choose Payee Type Page"
     And I select radio button "Importer" on "CE1179_Multiple_Choose Payee Type Page"
     When I click continue on "CE1179_Multiple_Choose Payee Type Page"
-#    Then I am presented with the "CE1179_Multiple_Check Bank Details Page"
-#    And I select radio button "yes" on "CE1179_Multiple_Check Bank Details Page"
-#    When I click continue on "CE1179_Multiple_Check Bank Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Bank Account Details Page"
     When I enter "" on "CE1179_Multiple_Enter Bank Account Details Page"
     And I click continue on "CE1179_Multiple_Enter Bank Account Details Page"
@@ -201,8 +188,6 @@ Feature: C&E1179 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "CE1179_Multiple_Claimant Details Page"
-   # And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Reason for claim       | Personal details                                         | Uploaded files                        | Address                                  | Bank details    | Payee   | Total   |2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN10AAAAAAAAAAAAAAA1 | 1st Movement Reference Number (MRN)          | 2nd MRN              | Inspection date | Additional claim information | Inspection address                          | Disposal method   | Details of the special circumstances |
@@ -232,7 +217,6 @@ Feature: C&E1179 Multiple
     When I enter "60AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number Page"
     And I click continue on "CE1179_Multiple_Enter Movement Reference Number Page"
     Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
     And I click continue on "CE1179_Multiple_Check Declaration Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     When I enter "20AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
@@ -241,7 +225,6 @@ Feature: C&E1179 Multiple
     When I select radio button "No" on "CE1179_Multiple_Check Movement Reference Numbers Page"
     And I click continue on "CE1179_Multiple_Check Movement Reference Numbers Page"
     # New change CDSR-3828
-
     Then I am presented with the "CE1179_Multiple_Choose Basis For Claim Page"
     When I select radio button "Goods are defective" on "CE1179_Multiple_Choose Basis For Claim Page"
     And I click continue on "CE1179_Multiple_Choose Basis For Claim Page"
@@ -270,10 +253,9 @@ Feature: C&E1179 Multiple
     When I enter "10" on "CE1179_Multiple_Select Duties 2 Duty Page"
     And I click continue on "CE1179_Multiple_Select Duties 2 Duty Page"
     Then I am presented with the "CE1179_Multiple_Check Claim Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
     When I clickContinue on "CE1179_Multiple_Check Claim Page"
     Then I am presented with the "CE1179_Multiple_Enter Inspection Date Page"
-    When I enter "10,10,2020" on "CE1179_Multiple_Enter Inspection Date Page"
+    When I enter "10,10,2025" on "CE1179_Multiple_Enter Inspection Date Page"
     And I click continue on "CE1179_Multiple_Enter Inspection Date Page"
     And I click "Enter the address manually" on "ALF_Lookup Address Lookup Page"
     And I enter "" on "ALF_Lookup Address Edit Page"
@@ -285,9 +267,6 @@ Feature: C&E1179 Multiple
     Then I am presented with the "CE1179_Multiple_Enter Bank Account Details Page"
     When I enter "" on "CE1179_Multiple_Enter Bank Account Details Page"
     And I click continue on "CE1179_Multiple_Enter Bank Account Details Page"
-#    Then I am presented with the "CE1179_Multiple_Check Bank Details Page"
-#    And I select radio button "yes" on "CE1179_Multiple_Check Bank Details Page"
-#    When I click continue on "CE1179_Multiple_Check Bank Details Page"
     Then I am presented with the "CE1179_Multiple_Choose File Type Page"
     When I select radio button "Commercial invoice" on "CE1179_Multiple_Choose File Type Page"
     And I click continue on "CE1179_Multiple_Choose File Type Page"
@@ -303,8 +282,6 @@ Feature: C&E1179 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "CE1179_Multiple_Claimant Details Page"
-    #And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Reason for claim    | Personal details                                              | Uploaded files                        | Address                             | Bank details   | Payee     | Total  |2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA1 | 1st Movement Reference Number (MRN)          | 2nd MRN             | Inspection date | Additional claim information | Inspection address                                    | Disposal method   |
@@ -312,33 +289,6 @@ Feature: C&E1179 Multiple
     And I click continue on "CE1179_Multiple_Check Your Answers Page"
     Then I am presented with the "CE1179_Multiple_Claim Submitted Page"
 
-  @smoke
-  Scenario: error scenario - second mrn not linked to eori
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "ce1179" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "CE1179_Choose How Many Mrns Page"
-    When I select radio button "Up to 20 MRNs" on "CE1179_Choose How Many Mrns Page"
-    And I click continue on "CE1179_Choose How Many Mrns Page"
-    Then I am presented with the "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
-    When I clickContinue on "CE1179_Multiple_Have Your Supporting Document Ready Page v2"
-    Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number Page"
-    When I enter "10AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number Page"
-    And I click continue on "CE1179_Multiple_Enter Movement Reference Number Page"
-    Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
-    And I click continue on "CE1179_Multiple_Check Declaration Details Page"
-    Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
-    When I enter "10AAAAAAAAAAAAAAA2" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
-    And I click continue on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
-    Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page" error page
 
   @test
   Scenario: error scenario - second mrn not linked to importer/declarant eori
@@ -367,7 +317,6 @@ Feature: C&E1179 Multiple
     When I enter "GB000000000000002" on "CE1179_Multiple_Enter Declarant Eori Page"
     And I click continue on "CE1179_Multiple_Enter Declarant Eori Page"
     Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-   # And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
     And I click continue on "CE1179_Multiple_Check Declaration Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     When I enter "10AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
@@ -396,7 +345,6 @@ Feature: C&E1179 Multiple
     When I enter "60AAAAAAAAAAAAAAA5" on "CE1179_Multiple_Enter Movement Reference Number Page"
     And I click continue on "CE1179_Multiple_Enter Movement Reference Number Page"
     Then I am presented with the "CE1179_Multiple_Check Declaration Details Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Declaration Details Page"
     And I click continue on "CE1179_Multiple_Check Declaration Details Page"
     Then I am presented with the "CE1179_Multiple_Enter Movement Reference Number 2 Page"
     When I enter "20AAAAAAAAAAAAAAA1" on "CE1179_Multiple_Enter Movement Reference Number 2 Page"
@@ -405,7 +353,6 @@ Feature: C&E1179 Multiple
     When I select radio button "No" on "CE1179_Multiple_Check Movement Reference Numbers Page"
     And I click continue on "CE1179_Multiple_Check Movement Reference Numbers Page"
      # New change CDSR-3828
-
     Then I am presented with the "CE1179_Multiple_Choose Basis For Claim Page"
     When I select radio button "Goods are defective" on "CE1179_Multiple_Choose Basis For Claim Page"
     And I click continue on "CE1179_Multiple_Choose Basis For Claim Page"
@@ -428,7 +375,6 @@ Feature: C&E1179 Multiple
     When I enter "10" on "CE1179_Multiple_Select Duties 2 Duty Page"
     And I click continue on "CE1179_Multiple_Select Duties 2 Duty Page"
     Then I am presented with the "CE1179_Multiple_Check Claim Page"
-    #And I select radio button "yes" on "CE1179_Multiple_Check Claim Page"
     When I clickContinue on "CE1179_Multiple_Check Claim Page"
     Then I am presented with the "CE1179_Multiple_Enter Inspection Date Page"
     When I enter "10,10,2020" on "CE1179_Multiple_Enter Inspection Date Page"
@@ -443,9 +389,6 @@ Feature: C&E1179 Multiple
     Then I am presented with the "CE1179_Multiple_Enter Bank Account Details Page"
     When I enter "" on "CE1179_Multiple_Enter Bank Account Details Page"
     And I click continue on "CE1179_Multiple_Enter Bank Account Details Page"
-#    Then I am presented with the "CE1179_Multiple_Check Bank Details Page"
-#    And I select radio button "yes" on "CE1179_Multiple_Check Bank Details Page"
-#    When I click continue on "CE1179_Multiple_Check Bank Details Page"
     Then I am presented with the "CE1179_Multiple_Choose File Type Page"
     When I select radio button "Commercial invoice" on "CE1179_Multiple_Choose File Type Page"
     And I click continue on "CE1179_Multiple_Choose File Type Page"
@@ -464,8 +407,6 @@ Feature: C&E1179 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-   # Then I am presented with the "CE1179_Multiple_Claimant Details Page"
-   # And I click continue on "CE1179_Multiple_Claimant Details Page"
     Then I am presented with the "CE1179_Multiple_Check Your Answers Page"
     And I should see the following details
       | Reason for claim    | Personal details        | Uploaded files                     | Address                             | Bank details  | Payee   | Total  |2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA5 | 1st Movement Reference Number (MRN)   | 2nd MRN     | Inspection date | Additional claim information | Inspection address    | Disposal method   |

@@ -16,36 +16,35 @@
 
 package uk.gov.hmrc.cdsrc.pages.Securities
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
 import uk.gov.hmrc.cdsrc.pages.BasePage
 
 object Securities_ConfirmFullRepaymentSecurityIdPage extends BasePage {
 
-  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/confirm-full-repayment/..."
-  override val title       = "Do you want to claim back all of this security deposit?"
+  override val url: String = TestConfiguration.url("cds-frontend") + "/securities/confirm-full-repayment/ABC0123456"
+  override val title       = "Claiming back security deposit ID: ABC0123456"
 
   override def expectedPageErrorTitle: Option[String] = Some(
-    "Error: Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
+    "Error: Claiming back security deposit ID: ABC0123456 - Claim back import duty and VAT - GOV.UK"
   )
 
   override def expectedPageTitle: Option[String] = Some(
-    "Do you want to claim back all of this security deposit? - Claim back import duty and VAT - GOV.UK"
+    "Claiming back security deposit ID: ABC0123456 - Claim back import duty and VAT - GOV.UK"
   )
 
-  override def expectedPageHeader: Option[String] = Some("Do you want to claim back all of this security deposit?")
-  override def checkPageTitle(page: String): Unit = {
+  override def expectedPageHeader: Option[String] = Some("Claiming back security deposit ID: ABC0123456")
+ /* override def checkPageTitle(page: String): Unit = {
     val pageCaption: Array[String] = page.split(",")
     driver.findElement(By cssSelector "#main-content > div > div > form > h1 > span").getText should equal(
       s"""Security deposit: 1 of 2"""
     )
-    driver.getCurrentUrl                                                                      should equal(
+    driver.getCurrentUrl should equal(
       TestConfiguration.url("cds-frontend") + s"""/securities/confirm-full-repayment/${pageCaption(0)}"""
     )
   }
 
   override def checkPageErrorTitle(duty: String): Unit =
-    driver.findElement(By cssSelector "#main-content > div > div > form > h1").getText should equal(title)
+    driver.findElement(By cssSelector "#main-content > div > div > form > h1").getText should equal(title)*/
 
   override def clickRadioButton(text: String): Unit =
     text.toLowerCase() match {

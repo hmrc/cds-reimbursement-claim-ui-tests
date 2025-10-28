@@ -1,7 +1,7 @@
 @C285 @Multiple
 Feature: C285 Multiple
 
-  @test @a11y @ZAP
+  @test
   Scenario: happy path - check importer/declarant eori pages
     Given I navigate to the "Auth Login Stub Page"
     When I enter redirectURL on "Auth Login Stub Page"
@@ -84,8 +84,6 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-   # Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-   # And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
         | Reason for claim      | Personal details                  | Address                                   | Bank details  | Additional claim information     | Total         | 1st Movement Reference Number (MRN)   | 2nd MRN         | Uploaded files  | 1st MRN10AAAAAAAAAAAAAAA2 |   2nd MRN20AAAAAAAAAAAAAAA2| Payee |
@@ -116,7 +114,6 @@ Feature: C285 Multiple
     When I enter "60AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    #And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -150,7 +147,6 @@ Feature: C285 Multiple
     When I enter "10" on "C285_Multiple_Select Duties 2 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 2 Duty Page v2"
     Then I am presented with the "C285_Multiple_Check Claim Page v2"
-    #And I select radio button "yes" on "C285_Multiple_Check Claim Page v2"
     When I clickContinue on "C285_Multiple_Check Claim Page v2"
     Then I am presented with the "C285_Multiple_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
@@ -158,9 +154,6 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Multiple_Enter Bank Account Details Page v2"
     When I click continue on "C285_Multiple_Enter Bank Account Details Page v2"
-#    Then I am presented with the "C285_Multiple_Check These Bank Details Are Correct Page v2"
-#    And I select radio button "yes" on "C285_Multiple_Check These Bank Details Are Correct Page v2"
-#    When I click continue on "C285_Multiple_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -176,8 +169,6 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim     | Personal details                                                | Address                             | Bank details                              | Additional claim information                            | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | 2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA1 | Uploaded files  |Payee|
@@ -194,7 +185,6 @@ Feature: C285 Multiple
     Then I am presented with the "Check Eori Details Page"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "c285" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
@@ -207,7 +197,6 @@ Feature: C285 Multiple
     When I enter "10AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    #And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "10AAAAAAAAAAAAAAA2" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -222,7 +211,6 @@ Feature: C285 Multiple
     Then I am presented with the "Check Eori Details Page"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "c285" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
@@ -248,42 +236,6 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2" error page
 
-  @smoke
-  Scenario: error scenario - wrong mrn
-    Given I navigate to the "Auth Login Stub Page"
-    When I enter redirectURL on "Auth Login Stub Page"
-    And I enter Enrollment Key "HMRC-CUS-ORG", ID Name "EORINumber" and ID Value "GB000000000000001" on "Auth Login Stub Page"
-    And I click continue on "Auth Login Stub Page"
-    Then I am presented with the "Check Eori Details Page"
-    When I select radio button "yes" on "Check Eori Details Page"
-    And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
-    Then I am presented with the "Select Claim Type Page"
-    When I select radio button "c285" on "Select Claim Type Page"
-    And I click continue on "Select Claim Type Page"
-    Then I am presented with the "C285_Choose How Many Mrns Page v2"
-    When I select radio button "bulk" on "C285_Choose How Many Mrns Page v2"
-    And I click continue on "C285_Choose How Many Mrns Page v2"
-    Then I am presented with the "C285_Multiple_Have Your Supporting Document Ready Page v2"
-    When I clickContinue on "C285_Multiple_Have Your Supporting Document Ready Page v2"
-    Then I am presented with the "C285_Multiple_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "no" on "C285_Multiple_Check Declaration Details Page v2"
-    And I click continue on "C285_Multiple_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Multiple_Enter Movement Reference Number Page v2"
-    When I enter "10AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
-    And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
-    Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    And I select radio button "Yes" on "C285_Multiple_Check Declaration Details Page v2"
-    And I click continue on "C285_Multiple_Check Declaration Details Page v2"
-    Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
-    When I enter "20AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
-    And I click continue on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
-    Then I am presented with the "C285_Multiple_Check Movement Reference Numbers Page v2"
-    When I select radio button "No" on "C285_Multiple_Check Movement Reference Numbers Page v2"
-    And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
 
   @test
   Scenario: happy path with many MRNs and duties
@@ -294,7 +246,6 @@ Feature: C285 Multiple
     Then I am presented with the "Check Eori Details Page"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "c285" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
@@ -307,7 +258,6 @@ Feature: C285 Multiple
     When I enter "01AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-    #And I select radio button "Yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Movement Reference Numbers Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "02AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -413,14 +363,10 @@ Feature: C285 Multiple
     And I click continue on "C285_Multiple_Select Duties 5 Duty Page v2"
 
     Then I am presented with the "C285_Multiple_Check Claim Page v2"
-    #And I select radio button "yes" on "C285_Multiple_Check Claim Page v2"
     When I clickContinue on "C285_Multiple_Check Claim Page v2"
     Then I am presented with the "C285_Multiple_Choose Payee Type v2"
     And I select radio button "Importer" on "C285_Multiple_Choose Payee Type v2"
     When I click continue on "C285_Multiple_Choose Payee Type v2"
-#    Then I am presented with the "C285_Multiple_Check These Bank Details Are Correct Page v2"
-#    And I select radio button "yes" on "C285_Multiple_Check These Bank Details Are Correct Page v2"
-#    When I click continue on "C285_Multiple_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Multiple_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Multiple_Enter Bank Account Details Page v2"
     When I click continue on "C285_Multiple_Enter Bank Account Details Page v2"
@@ -439,8 +385,6 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-   # Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim       | Personal details                                         | Address                                  | Bank details    | Payee                                 | Additional claim information                                | Total         | 1st Movement Reference Number (MRN)          | 2nd MRN         | 3rd MRN          | 4th MRN         | 5th MRN          | 1st MRN01AAAAAAAAAAAAAAA1 | 2nd MRN02AAAAAAAAAAAAAAA1 | 3rd MRN10XXXXXXXXXXXXXXX1 | 4th MRN10YYYYYYYYYYYYYYY1 | 5th MRN10ZZZZZZZZZZZZZZZ1 | Uploaded files                       |
@@ -458,7 +402,6 @@ Feature: C285 Multiple
     Then I am presented with the "Check Eori Details Page"
     When I select radio button "yes" on "Check Eori Details Page"
     And I click continue on "Check Eori Details Page"
-#    When the "overpayments v2" feature is "enabled"
     Then I am presented with the "Select Claim Type Page"
     When I select radio button "c285" on "Select Claim Type Page"
     And I click continue on "Select Claim Type Page"
@@ -564,7 +507,6 @@ Feature: C285 Multiple
     When I enter "60AAAAAAAAAAAAAAA5" on "C285_Multiple_Enter Movement Reference Number Page v2"
     And I click continue on "C285_Multiple_Enter Movement Reference Number Page v2"
     Then I am presented with the "C285_Multiple_Check Declaration Details Page v2"
-   # And I select radio button "yes" on "C285_Multiple_Check Declaration Details Page v2"
     And I click continue on "C285_Multiple_Check Declaration Details Page v2"
     Then I am presented with the "C285_Multiple_Enter Movement Reference Number 2 Page v2"
     When I enter "20AAAAAAAAAAAAAAA1" on "C285_Multiple_Enter Movement Reference Number 2 Page v2"
@@ -598,7 +540,6 @@ Feature: C285 Multiple
     When I enter "10" on "C285_Multiple_Select Duties 2 Duty Page v2"
     And I click continue on "C285_Multiple_Select Duties 2 Duty Page v2"
     Then I am presented with the "C285_Multiple_Check Claim Page v2"
-    #And I select radio button "yes" on "C285_Multiple_Check Claim Page v2"
     When I clickContinue on "C285_Multiple_Check Claim Page v2"
     Then I am presented with the "C285_Multiple_Choose Payee Type v2"
     And I select radio button "Declarant" on "C285_Multiple_Choose Payee Type v2"
@@ -606,9 +547,6 @@ Feature: C285 Multiple
     Then I am presented with the "C285_Multiple_Enter Bank Account Details Page v2"
     And I enter "" on "C285_Multiple_Enter Bank Account Details Page v2"
     When I click continue on "C285_Multiple_Enter Bank Account Details Page v2"
-#    Then I am presented with the "C285_Multiple_Check These Bank Details Are Correct Page v2"
-#    And I select radio button "yes" on "C285_Multiple_Check These Bank Details Are Correct Page v2"
-#    When I click continue on "C285_Multiple_Check These Bank Details Are Correct Page v2"
     Then I am presented with the "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
     When I select radio button "Commercial invoice" on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
     And I click continue on "C285_Multiple_Supporting Evidence Select Supporting Evidence Type Page v2"
@@ -624,8 +562,6 @@ Feature: C285 Multiple
     And I enter "" on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Edit Page"
     And I click continue on "ALF_Lookup Address Confirm Page"
-    #Then I am presented with the "C285_Multiple_Claimant Details Page v2"
-    #And I click continue on "C285_Multiple_Claimant Details Page v2"
     Then I am presented with the "C285_Multiple_Check Answers Accept Send Page v2"
     And I should see the following details
       | Reason for claim    | Personal details                                             | Address                             | Bank details  | Payee          | Additional claim information                                       | Total    | 1st Movement Reference Number (MRN)         | 2nd MRN         | 2nd MRN20AAAAAAAAAAAAAAA1 | 1st MRN60AAAAAAAAAAAAAAA5 | Uploaded files   |

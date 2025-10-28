@@ -50,15 +50,5 @@ object Securities_CheckDeclarationDetailsPage extends BasePage {
   def clickContinue(selection: String): Unit =
     driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
 
-  /*override def clickButton(buttonText: String): Unit =
-    buttonText match {
-      case "Change MRN"                  =>
-        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/have-your-documents-ready']")
-      case "Change reason for security"  =>
-        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/choose-reason-for-security']")
-      case "Change claim for ABC0123456" =>
-        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/select-securities/ABC0123456']")
-      case "Change claim for DEF6543213" =>
-        click on cssSelector("a[href='/claim-back-import-duty-vat/securities/select-securities/DEF6543213']")
-    }*/
+
 }

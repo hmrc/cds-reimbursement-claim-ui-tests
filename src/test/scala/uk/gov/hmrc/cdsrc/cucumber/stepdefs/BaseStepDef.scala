@@ -112,10 +112,6 @@ trait BaseStepDef
     waitForPageToLoad()
   }
 
-  // When("""I upload a {int} {string} file on {string}""") { (fileNumber: Int, file: String, page: String) =>
-  // PageObjectFinder.page(page).uploadDocument(fileNumber, file)
-  //waitForPageToLoad()
-
   When("""I upload a {int} {string} file on {string}""") { (docNumber: Int, file: String, page: String) =>
     PageObjectFinder.page(page).uploadDocument(docNumber, file)
     waitForPageToLoad()
