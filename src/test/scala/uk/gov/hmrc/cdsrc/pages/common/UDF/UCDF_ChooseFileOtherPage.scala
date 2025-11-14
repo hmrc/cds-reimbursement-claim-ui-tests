@@ -54,7 +54,6 @@ object UCDF_ChooseFileOtherPage extends BasePage {
         case e: StaleElementReferenceException =>
           log.warn(s"StaleElementReferenceException on attempt $attempts: ${e.getMessage}")
           attempts += 1
-          Thread.sleep(100)
         case e: Exception =>
           log.error(s"Unexpected error while clicking continue: ${e.getMessage}")
           throw e
