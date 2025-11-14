@@ -1,5 +1,3 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
-
 # cds-reimbursement-claim-ui-tests
 
 UI test suite for the CDS Reimbursement service cds-reimbursement-claim-frontend for  (`cds-reimbursement-claim-ui-tests`) -
@@ -13,30 +11,40 @@ A list of definitions for unusual terms in the code.
 
 Link to the journey's :- https://confluence.tools.tax.service.gov.uk/display/CDSR/Entire+User+Journeys+-+June+2025
 
-## Running the tests
-    #  Pre-requisites
-    Prior to executing the tests ensure you have:
+##  Pre-requisites
+
+### Services
+
+Prior to executing the tests ensure you have:
 - Docker - to run mongo and browser (Chrome or Firefox) inside a container
   docker run --rm -d --name mongo -d -p 27017:27017 mongo:4.0
-- Java (JDK 11 or 21)=Required to compile and run Scala-based projects
+- Java (JDK 11 or 21) - Required to compile and run Scala-based projects
   CDSR is mainly compatible with JDK 21
-- sbt(Scala Build Tool)=Required to compile & run the application. Ensure the version matches what's in build.sbt
-- Git = To clone the repository and manage branches
+- sbt(Scala Build Tool) - Required to compile & run the application. Ensure the version matches what's in build.sbt
+- Git - To clone the repository and manage branches
     1) https://github.com/hmrc/cds-reimbursement-claim-ui-tests
     2) https://github.com/hmrc/cds-reimbursement-claim-frontend
     3) https://github.com/hmrc/cds-reimbursement-claim-stubs
-
 - Appropriate [drivers installed](#installing-local-driver-binaries) - to run tests against locally installed Browser
 - Installed/configured [service manager](https://github.com/hmrc/service-manager).
 
-Run the following command to start services locally:
+Run the following command to start the services locally:
 
-1) To Start all services
+```
    sm2 -start CDSRC_ALL
-2) To stop the services
+```
+
+To stop the services:
+
+```
     sm2 --stop-all
-3) Checking the status of services (-s or -status)
-   sm2 --status
+```
+
+To check the status of services:
+
+```
+sm2 --status
+```
 
 ## Running the Tests
 
