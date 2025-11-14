@@ -31,13 +31,13 @@ Prior to executing the tests ensure you have:
 Run the following command to start the services locally:
 
 ```
-   sm2 -start CDSRC_ALL
+sm2 --start CDSRC_ALL
 ```
 
 To stop the services:
 
 ```
-    sm2 --stop-all
+sm2 --stop-all
 ```
 
 To check the status of services:
