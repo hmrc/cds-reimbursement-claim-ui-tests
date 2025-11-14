@@ -60,7 +60,6 @@ override def clickContinueButton(): Unit = {
       case e: StaleElementReferenceException =>
         log.warn(s"StaleElementReferenceException on attempt $attempts: ${e.getMessage}")
         attempts += 1
-        Thread.sleep(500)
       case e: Exception =>
         log.error(s"Unexpected error while clicking continue: ${e.getMessage}")
         throw e
