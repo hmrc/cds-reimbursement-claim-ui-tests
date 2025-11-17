@@ -3,6 +3,10 @@
     {
       "path": "http://localhost:10110/upload-customs-documents",
       "reason": "Design decision by GOV.UK team"
+    },
+    {
+      "path": "http://localhost:9028/lookup-address",
+      "reason": "This is an External/Dependent service"
     }
 
 
