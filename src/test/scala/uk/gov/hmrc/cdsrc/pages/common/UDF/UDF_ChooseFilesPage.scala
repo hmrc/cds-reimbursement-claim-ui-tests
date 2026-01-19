@@ -46,30 +46,32 @@ object UDF_ChooseFilesPage extends BasePage {
   override def checkPageErrorTitle(page: String): Unit =
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
 
-override def clickContinueButton(): Unit = {
-  var attempts = 0
-  var success = false
+  override def clickContinueButton(): Unit = {
+    var attempts = 0
+    var success  = false
 
-  while (!success && attempts < 3) {
-    try {
-      log.info(s"Attempting to click continue button on attempt $attempts")
-      fluentWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.id(("upload-documents-submit")))).andThen(_.click()))
-      log.info("Successfully clicked continue button.")
-      success = true
-    } catch {
-      case e: StaleElementReferenceException =>
-        log.warn(s"StaleElementReferenceException on attempt $attempts: ${e.getMessage}")
-        attempts += 1
-      case e: Exception =>
-        log.error(s"Unexpected error while clicking continue: ${e.getMessage}")
-        throw e
+    while (!success && attempts < 3)
+      try {
+        log.info(s"Attempting to click continue button on attempt $attempts")
+        fluentWait.until(
+          ExpectedConditions
+            .refreshed(ExpectedConditions.presenceOfElementLocated(By.id("upload-documents-submit")))
+            .andThen(_.click())
+        )
+        log.info("Successfully clicked continue button.")
+        success = true
+      } catch {
+        case e: StaleElementReferenceException =>
+          log.warn(s"StaleElementReferenceException on attempt $attempts: ${e.getMessage}")
+          attempts += 1
+        case e: Exception                      =>
+          log.error(s"Unexpected error while clicking continue: ${e.getMessage}")
+          throw e
+      }
+
+    if (!success) {
+      throw new RuntimeException("Failed to click continue button after 3 attempts due to stale element.")
     }
   }
-
-  if (!success) {
-    throw new RuntimeException("Failed to click continue button after 3 attempts due to stale element.")
-  }
-}
-
 
 }

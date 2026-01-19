@@ -184,9 +184,9 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     fluentWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#main-content > div > div > form > button")))
     driver.findElement(By.cssSelector("#main-content > div > div > form > button")).click()
   }
-{
-  TimeUnit.MILLISECONDS.sleep(WAIT_TIME)
-}
+  {
+    TimeUnit.MILLISECONDS.sleep(WAIT_TIME)
+  }
 
   def clickContinue(): Unit = {
     val continueLink: WebElement = fluentWait.until(ExpectedConditions.refreshed(
