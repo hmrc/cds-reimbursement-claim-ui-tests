@@ -46,7 +46,7 @@ object UDF_ChooseFilesPage extends BasePage {
   override def checkPageErrorTitle(page: String): Unit =
     driver.findElement(By tagName "h1").getText should equal("Upload " + page)
 
-override def clickContinueButton(): Unit = {
+  override def clickContinueButton(): Unit = {
   var attempts = 0
   var success = false
 
