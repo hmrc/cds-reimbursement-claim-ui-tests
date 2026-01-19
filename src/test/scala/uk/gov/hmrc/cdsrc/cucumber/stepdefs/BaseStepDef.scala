@@ -98,7 +98,7 @@ trait BaseStepDef
     PageObjectFinder.page(page).dropdownSelect(selection)
   }
 
-  Then("""I navigate to the {string}""") { page: String =>
+  Then("""I navigate to the {string}""") { (page: String) =>
     go to PageObjectFinder.page(page)
   }
 
@@ -117,14 +117,14 @@ trait BaseStepDef
     waitForPageToLoad()
   }
 
-  Then("""I am presented with the {string}""") { page: String =>
+  Then("""I am presented with the {string}""") { (page: String) =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkPageHeader()
     PageObjectFinder.page(page).checkPageTitle()
   }
 
-  Then("""I am presented with the {string} error page""") { page: String =>
+  Then("""I am presented with the {string} error page""") { (page: String) =>
     PageObjectFinder.page(page).waitForPageHeader
     PageObjectFinder.page(page).checkURL
     PageObjectFinder.page(page).checkPageErrorTitle()
@@ -165,13 +165,13 @@ trait BaseStepDef
     pageTitle should equal(expectedPageTitle)
   }
 
-  And("""^I should see the following details""") { data: DataTable =>
+  And("""^I should see the following details""") { (data: DataTable) =>
     val expectedData = data.asMaps().asScala.toList.flatMap(_.asScala.toMap).toMap
     val actualData   = PageObjectFinder.pageData
     actualData should be(expectedData)
   }
 
-  Then("""I should see a cookie consent banner with the following details""") { data: DataTable =>
+  Then("""I should see a cookie consent banner with the following details""") { (data: DataTable) =>
     val expectedText = data.asScalaListOfStrings
     PageObjectFinder.cookieBannerText() should be(expectedText)
   }
@@ -189,7 +189,7 @@ trait BaseStepDef
     PageObjectFinder.cookieBannerLinksButtonsText(tagName) should be(expectedText)
   }
 
-  Then("""I click on {string} button""") { buttonName: String =>
+  Then("""I click on {string} button""") { (buttonName: String) =>
     PageObjectFinder.button(buttonName).click()
   }
 
