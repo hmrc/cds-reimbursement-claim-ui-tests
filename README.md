@@ -52,8 +52,7 @@ Run Acceptance test using SM2 Locally
 
 1. Navigate to the directory where the project has been cloned.
 2. To run all acceptance tests on your local machine, use: ```./run_tests.sh```
-3. To run all tests that are tagged as "@wip", use: ```./run_tests_wip.sh```
-4. By default, the scripts execute in headless mode. To run them with the browser ui visible, set the below-mentioned property in run_tests_wip.sh script - Argument -Dbrowser.option.headless=false
+3. By default, the scripts execute in headless mode. To run them with the browser ui visible, set the below-mentioned property in run_tests_wip.sh script - Argument -Dbrowser.option.headless=false
 
 ## Security and Accessibility tests
 The accessibility and ZAP tests are run as part of Jenkins job. 
