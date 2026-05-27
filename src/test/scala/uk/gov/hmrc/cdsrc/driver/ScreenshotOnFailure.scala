@@ -19,6 +19,7 @@ package uk.gov.hmrc.cdsrc.driver
 import org.openqa.selenium.io.FileHandler.{copy, createDir}
 import org.openqa.selenium.{OutputType, TakesScreenshot}
 import org.scalatest.{Documenting, Outcome, TestSuite, TestSuiteMixin}
+import uk.gov.hmrc.selenium.webdriver.{Driver => SeleniumDriver}
 
 import java.io.File
 
@@ -39,7 +40,7 @@ trait ScreenshotOnFailure extends TestSuiteMixin with Documenting { this: TestSu
   }
 
   private def captureScreenshot(screenshotName: String, screenshotDirectory: String): Unit = {
-    val tmpFile        = Driver.instance.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
+    val tmpFile        = SeleniumDriver.instance.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
     val screenshotFile = new File(screenshotDirectory, screenshotName)
 
     createDir(new File(screenshotDirectory))
