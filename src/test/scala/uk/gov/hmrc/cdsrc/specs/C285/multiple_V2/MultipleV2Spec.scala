@@ -533,10 +533,6 @@ class MultipleV2Spec extends BaseSpec {
       C285_Multiple_CheckDeclarationDetailsPagev2.checkPageHeader()
       C285_Multiple_CheckDeclarationDetailsPagev2.checkPageTitle()
 
-      And("User selects radio button yes on C285 Multiple Check Declaration Details Page v2")
-      C285_Multiple_CheckDeclarationDetailsPagev2.waitForPageHeader
-      C285_Multiple_CheckDeclarationDetailsPagev2.clickRadioButton("yes")
-
       And("User clicks continue on C285 Multiple Check Declaration Details Page v2")
       C285_Multiple_CheckDeclarationDetailsPagev2.waitForPageHeader
       C285_Multiple_CheckDeclarationDetailsPagev2.clickContinueButton()

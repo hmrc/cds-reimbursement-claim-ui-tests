@@ -27,7 +27,7 @@ trait ScreenshotOnFailure extends TestSuiteMixin with Documenting { this: TestSu
 
   abstract override def withFixture(test: NoArgTest): Outcome = {
     val testOutcome         = super.withFixture(test)
-    val testName            = test.name.replaceAll(" ", "-").replaceAll(":", "")
+    val testName            = test.name.replaceAll(" ", "-").replaceAll(":", "").replaceAll("/", "-")
     val screenshotName      = testName + ".png"
     val screenshotDirectory = "./target/test-reports/html-report/images/screenshots/"
 
