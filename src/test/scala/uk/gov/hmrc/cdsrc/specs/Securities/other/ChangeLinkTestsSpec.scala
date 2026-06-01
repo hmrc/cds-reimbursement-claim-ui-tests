@@ -91,9 +91,9 @@ class ChangeLinkTestsSpec extends BaseSpec {
       Securities_ChooseReasonForSecurityPage.checkPageHeader()
       Securities_ChooseReasonForSecurityPage.checkPageTitle()
 
-      When("User selects radio button Manual override of duty amount on Securities Choose Reason For Security Page")
+      When("User selects radio button Temporary Admission (24 months) on Securities Choose Reason For Security Page")
       Securities_ChooseReasonForSecurityPage.waitForPageHeader
-      Securities_ChooseReasonForSecurityPage.clickRadioButton("Manual override of duty amount")
+      Securities_ChooseReasonForSecurityPage.clickRadioButton("Temporary Admission (24 months)")
 
       And("User clicks continue on Securities Choose Reason For Security Page")
       Securities_ChooseReasonForSecurityPage.waitForPageHeader
@@ -165,14 +165,14 @@ class ChangeLinkTestsSpec extends BaseSpec {
       Securities_SelectSecuritiesSecurityIdPage.clickContinueButton()
 
       Then("User is presented with the Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.checkURL
-      Securities_CheckDeclarationDetailsPage.checkPageHeader()
-      Securities_CheckDeclarationDetailsPage.checkPageTitle()
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.checkURL
+      Securities_MulCheckDeclarationDetailsPage.checkPageHeader()
+      Securities_MulCheckDeclarationDetailsPage.checkPageTitle()
 
       When("User clicks Change MRN on Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.clickButton("Change MRN")
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.changeLinks("Import Movement Reference Number (MRN)")
 
       Then("User is presented with the Securities Enter Movement Reference Number Page")
       Securities_EnterMovementReferenceNumberPage.waitForPageHeader
@@ -185,14 +185,14 @@ class ChangeLinkTestsSpec extends BaseSpec {
       Securities_EnterMovementReferenceNumberPage.clickContinueButton()
 
       Then("User is presented with the Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.checkURL
-      Securities_CheckDeclarationDetailsPage.checkPageHeader()
-      Securities_CheckDeclarationDetailsPage.checkPageTitle()
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.checkURL
+      Securities_MulCheckDeclarationDetailsPage.checkPageHeader()
+      Securities_MulCheckDeclarationDetailsPage.checkPageTitle()
 
       When("User clicks Change reason for security on Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.clickButton("Change reason for security")
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.changeLinks("Reason for security deposit")
 
       Then("User is presented with the Securities Choose Reason For Security Page")
       Securities_ChooseReasonForSecurityPage.waitForPageHeader
@@ -205,14 +205,14 @@ class ChangeLinkTestsSpec extends BaseSpec {
       Securities_ChooseReasonForSecurityPage.clickContinueButton()
 
       Then("User is presented with the Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.checkURL
-      Securities_CheckDeclarationDetailsPage.checkPageHeader()
-      Securities_CheckDeclarationDetailsPage.checkPageTitle()
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.checkURL
+      Securities_MulCheckDeclarationDetailsPage.checkPageHeader()
+      Securities_MulCheckDeclarationDetailsPage.checkPageTitle()
 
       When("User clicks Change claim for ABC0123456 on Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.clickButton("Change claim for ABC0123456")
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.changeLinks("Claim for security deposit or guarantee 1 of 5")
 
       Then("User is presented with the Securities Select Securities Security Id Page1")
       Securities_SelectSecuritiesSecurityIdPage1.waitForPageHeader
@@ -229,14 +229,14 @@ class ChangeLinkTestsSpec extends BaseSpec {
       Securities_SelectSecuritiesSecurityIdPage.clickContinueButton()
 
       Then("User is presented with the Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.checkURL
-      Securities_CheckDeclarationDetailsPage.checkPageHeader()
-      Securities_CheckDeclarationDetailsPage.checkPageTitle()
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.checkURL
+      Securities_MulCheckDeclarationDetailsPage.checkPageHeader()
+      Securities_MulCheckDeclarationDetailsPage.checkPageTitle()
 
       When("User clicks Change claim for DEF6543213 on Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.clickButton("Change claim for DEF6543213")
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.changeLinks("Claim for security deposit or guarantee 2 of 5")
 
       Then("User is presented with the Securities Select Securities Security Id Page2")
       Securities_SelectSecuritiesSecurityIdPage2.waitForPageHeader
@@ -253,14 +253,128 @@ class ChangeLinkTestsSpec extends BaseSpec {
       Securities_SelectSecuritiesSecurityIdPage2.clickContinueButton()
 
       Then("User is presented with the Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.checkURL
-      Securities_CheckDeclarationDetailsPage.checkPageHeader()
-      Securities_CheckDeclarationDetailsPage.checkPageTitle()
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.checkURL
+      Securities_MulCheckDeclarationDetailsPage.checkPageHeader()
+      Securities_MulCheckDeclarationDetailsPage.checkPageTitle()
 
       And("User clicks continue on Securities Check Declaration Details Page")
-      Securities_CheckDeclarationDetailsPage.waitForPageHeader
-      Securities_CheckDeclarationDetailsPage.clickContinueButton()
+      Securities_MulCheckDeclarationDetailsPage.waitForPageHeader
+      Securities_MulCheckDeclarationDetailsPage.clickContinueButton()
+
+      Then("User is presented with the Securities Have Your Supporting Document Ready Page")
+      Securities_HaveYourSupportingDocumentReadyPage.waitForPageHeader
+      Securities_HaveYourSupportingDocumentReadyPage.checkURL
+      Securities_HaveYourSupportingDocumentReadyPage.checkPageHeader()
+      Securities_HaveYourSupportingDocumentReadyPage.checkPageTitle()
+
+      And("User clicks continue on Securities Have Your Supporting Document Ready Page")
+      Securities_HaveYourSupportingDocumentReadyPage.waitForPageHeader
+      Securities_HaveYourSupportingDocumentReadyPage.clickContinue()
+
+      Then("User is presented with the Securities Export Method Page")
+      Securities_ExportMethodPage.waitForPageHeader
+      Securities_ExportMethodPage.checkURL
+      Securities_ExportMethodPage.checkPageHeader()
+      Securities_ExportMethodPage.checkPageTitle()
+
+      When("User selects Declared to a customs warehouse on Securities Export Method Page")
+      Securities_ExportMethodPage.waitForPageHeader
+      Securities_ExportMethodPage.clickRadioButton("Declared to a customs warehouse")
+
+      And("User clicks continue on Securities Export Method Page")
+      Securities_ExportMethodPage.waitForPageHeader
+      Securities_ExportMethodPage.clickContinueButton()
+
+      Then("User is presented with the Securities Confirm Full Repayment Security Id Page3 - ABC0123456")
+      Securities_ConfirmFullRepaymentSecurityIdPage3.waitForPageHeader
+
+      When("User selects radio button Yes on Securities Confirm Full Repayment Security Id Page3")
+      Securities_ConfirmFullRepaymentSecurityIdPage3.waitForPageHeader
+      Securities_ConfirmFullRepaymentSecurityIdPage3.clickRadioButton("Yes")
+
+      And("User clicks continue on Securities Confirm Full Repayment Security Id Page3")
+      Securities_ConfirmFullRepaymentSecurityIdPage3.waitForPageHeader
+      Securities_ConfirmFullRepaymentSecurityIdPage3.clickContinueButton()
+
+      Then("User is presented with the Securities Check Claim Page")
+      Securities_MulCheckClaimPage.waitForPageHeader
+      Securities_MulCheckClaimPage.checkURL
+      Securities_MulCheckClaimPage.checkPageHeader()
+      Securities_MulCheckClaimPage.checkPageTitle()
+
+      And("User clicks continue on Securities Check Claim Page")
+      Securities_MulCheckClaimPage.waitForPageHeader
+      Securities_MulCheckClaimPage.clickContinueButton()
+
+      Then("User is presented with the Securities Choose Payee Type Page")
+      Securities_ChoosePayeeTypePage.waitForPageHeader
+      Securities_ChoosePayeeTypePage.checkURL
+      Securities_ChoosePayeeTypePage.checkPageHeader()
+      Securities_ChoosePayeeTypePage.checkPageTitle()
+
+      And("User selects radio button Importer on Securities Choose Payee Type Page")
+      Securities_ChoosePayeeTypePage.waitForPageHeader
+      Securities_ChoosePayeeTypePage.clickRadioButton("Importer")
+
+      When("User clicks continue on Securities Choose Payee Type Page")
+      Securities_ChoosePayeeTypePage.waitForPageHeader
+      Securities_ChoosePayeeTypePage.clickContinueButton()
+
+      Then("User is presented with the Securities Enter Bank Account Details Page")
+      Securities_EnterBankAccountDetailsPage.waitForPageHeader
+      Securities_EnterBankAccountDetailsPage.checkURL
+      Securities_EnterBankAccountDetailsPage.checkPageHeader()
+      Securities_EnterBankAccountDetailsPage.checkPageTitle()
+
+      When("User enters empty string on Securities Enter Bank Account Details Page")
+      Securities_EnterBankAccountDetailsPage.waitForPageHeader
+      Securities_EnterBankAccountDetailsPage.enterDetails("")
+
+      And("User clicks continue on Securities Enter Bank Account Details Page")
+      Securities_EnterBankAccountDetailsPage.waitForPageHeader
+      Securities_EnterBankAccountDetailsPage.clickContinueButton()
+
+      Then("User is presented with the Securities Choose File Type Page")
+      Securities_ChooseFileTypePage.waitForPageHeader
+      Securities_ChooseFileTypePage.checkURL
+      Securities_ChooseFileTypePage.checkPageHeader()
+      Securities_ChooseFileTypePage.checkPageTitle()
+
+      When("User selects radio button Proof of authority on Securities Choose File Type Page")
+      Securities_ChooseFileTypePage.waitForPageHeader
+      Securities_ChooseFileTypePage.clickRadioButton("Proof of authority")
+
+      And("User clicks continue on Securities Choose File Type Page")
+      Securities_ChooseFileTypePage.waitForPageHeader
+      Securities_ChooseFileTypePage.clickContinueButton()
+
+      Then("User is presented with the UDF Choose Files Page - letter of authority")
+      UDF_ChooseFilesPage.waitForPageHeader
+      UDF_ChooseFilesPage.checkURL
+      UDF_ChooseFilesPage.checkPageTitle("proof of authority")
+
+      When("User uploads a 1 document.pdf file on UDF Choose Files Page")
+      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
+      UDF_ChooseFilesPage.waitForPageToLoad()
+
+      And("User selects radio button No on UDF Choose Files Page")
+      UDF_ChooseFilesPage.waitForPageHeader
+      UDF_ChooseFilesPage.clickRadioButton("No")
+
+      And("User clicks continue if on UDF Choose Files Page")
+      UDF_ChooseFilesPage.clickContinueButton()
+      UDF_ChooseFilesPage.continuouslyClickContinue()
+
+      Then("User is presented with the Securities Enter Additional Details Page")
+      Securities_EnterAdditionalDetailsPage.waitForPageHeader
+      Securities_EnterAdditionalDetailsPage.checkURL
+      Securities_EnterAdditionalDetailsPage.checkPageHeader()
+      Securities_EnterAdditionalDetailsPage.checkPageTitle()
+
+      And("User clicks continue on Securities Enter Additional Details Page")
+      Securities_EnterAdditionalDetailsPage.waitForPageHeader
+      Securities_EnterAdditionalDetailsPage.clickContinueButton()
 
       Then("User is presented with the Securities Change Contact Details Page")
       Securities_ChangeContactDetailsPage.waitForPageHeader
@@ -291,170 +405,6 @@ class ChangeLinkTestsSpec extends BaseSpec {
       And("User clicks continue on ALF Lookup Address Confirm Page")
       ALF_LookupAddressConfirmPage.waitForPageHeader
       ALF_LookupAddressConfirmPage.clickContinueButton()
-
-      Then("User is presented with the Securities Claimant Details Page")
-      Securities_ClaimantDetailsChangeContactDetailsPage.waitForPageHeader
-      Securities_ClaimantDetailsChangeContactDetailsPage.checkURL
-      Securities_ClaimantDetailsChangeContactDetailsPage.checkPageHeader()
-      Securities_ClaimantDetailsChangeContactDetailsPage.checkPageTitle()
-
-      When("User clicks Change contact details on Securities Claimant Details Page")
-      Securities_ClaimantDetailsChangeContactDetailsPage.waitForPageHeader
-      Securities_ClaimantDetailsChangeContactDetailsPage.clickButton("Change contact details")
-
-      Then("User is presented with the Securities Change Contact Details Page")
-      Securities_ChangeContactDetailsPage.waitForPageHeader
-      Securities_ChangeContactDetailsPage.checkURL
-      Securities_ChangeContactDetailsPage.checkPageHeader()
-      Securities_ChangeContactDetailsPage.checkPageTitle()
-
-      And("User clicks continue on Securities Change Contact Details Page")
-      Securities_ChangeContactDetailsPage.waitForPageHeader
-      Securities_ChangeContactDetailsPage.clickContinueButton()
-
-      Then("User is presented with the Securities Claimant Details Page")
-      Securities_ClaimantDetailsChangeContactDetailsPage.waitForPageHeader
-      Securities_ClaimantDetailsChangeContactDetailsPage.checkURL
-      Securities_ClaimantDetailsChangeContactDetailsPage.checkPageHeader()
-      Securities_ClaimantDetailsChangeContactDetailsPage.checkPageTitle()
-
-      And("User clicks continue on Securities Claimant Details Page")
-      Securities_ClaimantDetailsChangeContactDetailsPage.waitForPageHeader
-      Securities_ClaimantDetailsChangeContactDetailsPage.clickContinueButton()
-
-      Then("User is presented with the Securities Confirm Full Repayment Security Id Page3 - ABC0123456")
-      Securities_ConfirmFullRepaymentSecurityIdPage3.waitForPageHeader
-      Securities_ConfirmFullRepaymentSecurityIdPage3.checkURL
-      Securities_ConfirmFullRepaymentSecurityIdPage3.checkPageTitle("ABC0123456")
-
-      When("User selects radio button Yes on Securities Confirm Full Repayment Security Id Page3")
-      Securities_ConfirmFullRepaymentSecurityIdPage3.waitForPageHeader
-      Securities_ConfirmFullRepaymentSecurityIdPage3.clickRadioButton("Yes")
-
-      And("User clicks continue on Securities Confirm Full Repayment Security Id Page3")
-      Securities_ConfirmFullRepaymentSecurityIdPage3.waitForPageHeader
-      Securities_ConfirmFullRepaymentSecurityIdPage3.clickContinueButton()
-
-      Then("User is presented with the Securities Check Claim Page")
-      Securities_CheckClaimPage.waitForPageHeader
-      Securities_CheckClaimPage.checkURL
-      Securities_CheckClaimPage.checkPageHeader()
-      Securities_CheckClaimPage.checkPageTitle()
-
-      And("User clicks continue on Securities Check Claim Page")
-      Securities_CheckClaimPage.waitForPageHeader
-      Securities_CheckClaimPage.clickContinueButton()
-
-      Then("User is presented with the Securities Choose Payee Type Page")
-      Securities_ChoosePayeeTypePage.waitForPageHeader
-      Securities_ChoosePayeeTypePage.checkURL
-      Securities_ChoosePayeeTypePage.checkPageHeader()
-      Securities_ChoosePayeeTypePage.checkPageTitle()
-
-      And("User selects radio button Importer on Securities Choose Payee Type Page")
-      Securities_ChoosePayeeTypePage.waitForPageHeader
-      Securities_ChoosePayeeTypePage.clickRadioButton("Importer")
-
-      When("User clicks continue on Securities Choose Payee Type Page")
-      Securities_ChoosePayeeTypePage.waitForPageHeader
-      Securities_ChoosePayeeTypePage.clickContinueButton()
-
-      Then("User is presented with the Securities Check Bank Details Page")
-      Securities_CheckBankDetailsPage.waitForPageHeader
-      Securities_CheckBankDetailsPage.checkURL
-      Securities_CheckBankDetailsPage.checkPageHeader()
-      Securities_CheckBankDetailsPage.checkPageTitle()
-
-      When("User clicks Change bank details on Securities Check Bank Details Page")
-      Securities_CheckBankDetailsPage.waitForPageHeader
-      Securities_CheckBankDetailsPage.clickButton("Change bank details")
-
-      Then("User is presented with the Securities Letter Of Authority Confirmation Page")
-      Securities_LetterOfAuthorityConfirmationPage.waitForPageHeader
-      Securities_LetterOfAuthorityConfirmationPage.checkURL
-      Securities_LetterOfAuthorityConfirmationPage.checkPageHeader()
-      Securities_LetterOfAuthorityConfirmationPage.checkPageTitle()
-
-      When("User selects radio button Yes on Securities Letter Of Authority Confirmation Page")
-      Securities_LetterOfAuthorityConfirmationPage.waitForPageHeader
-      Securities_LetterOfAuthorityConfirmationPage.clickRadioButton("Yes")
-
-      And("User clicks continue on Securities Letter Of Authority Confirmation Page")
-      Securities_LetterOfAuthorityConfirmationPage.waitForPageHeader
-      Securities_LetterOfAuthorityConfirmationPage.clickContinueButton()
-
-      Then("User is presented with the Securities Choose Bank Account Type Page")
-      Securities_ChooseBankAccountTypePage.waitForPageHeader
-      Securities_ChooseBankAccountTypePage.checkURL
-      Securities_ChooseBankAccountTypePage.checkPageHeader()
-      Securities_ChooseBankAccountTypePage.checkPageTitle()
-
-      When("User selects radio button Business bank account on Securities Choose Bank Account Type Page")
-      Securities_ChooseBankAccountTypePage.waitForPageHeader
-      Securities_ChooseBankAccountTypePage.clickRadioButton("Business bank account")
-
-      And("User clicks continue on Securities Choose Bank Account Type Page")
-      Securities_ChooseBankAccountTypePage.waitForPageHeader
-      Securities_ChooseBankAccountTypePage.clickContinueButton()
-
-      Then("User is presented with the Securities Enter Bank Account Details Page")
-      Securities_EnterBankAccountDetailsPage.waitForPageHeader
-      Securities_EnterBankAccountDetailsPage.checkURL
-      Securities_EnterBankAccountDetailsPage.checkPageHeader()
-      Securities_EnterBankAccountDetailsPage.checkPageTitle()
-
-      When("User enters empty string on Securities Enter Bank Account Details Page")
-      Securities_EnterBankAccountDetailsPage.waitForPageHeader
-      Securities_EnterBankAccountDetailsPage.enterDetails("")
-
-      And("User clicks continue on Securities Enter Bank Account Details Page")
-      Securities_EnterBankAccountDetailsPage.waitForPageHeader
-      Securities_EnterBankAccountDetailsPage.clickContinueButton()
-
-      Then("User is presented with the Securities Check Bank Details Page")
-      Securities_CheckBankDetailsPage.waitForPageHeader
-      Securities_CheckBankDetailsPage.checkURL
-      Securities_CheckBankDetailsPage.checkPageHeader()
-      Securities_CheckBankDetailsPage.checkPageTitle()
-
-      And("User selects radio button yes on Securities Check Bank Details Page")
-      Securities_CheckBankDetailsPage.waitForPageHeader
-      Securities_CheckBankDetailsPage.clickRadioButton("yes")
-
-      And("User clicks continue on Securities Check Bank Details Page")
-      Securities_CheckBankDetailsPage.waitForPageHeader
-      Securities_CheckBankDetailsPage.clickContinueButton()
-
-      Then("User is presented with the Securities Choose File Type Page")
-      Securities_ChooseFileTypePage.waitForPageHeader
-      Securities_ChooseFileTypePage.checkURL
-      Securities_ChooseFileTypePage.checkPageHeader()
-      Securities_ChooseFileTypePage.checkPageTitle()
-
-      When("User selects radio button Proof of authority on Securities Choose File Type Page")
-      Securities_ChooseFileTypePage.waitForPageHeader
-      Securities_ChooseFileTypePage.clickRadioButton("Proof of authority")
-
-      And("User clicks continue on Securities Choose File Type Page")
-      Securities_ChooseFileTypePage.waitForPageHeader
-      Securities_ChooseFileTypePage.clickContinueButton()
-
-      Then("User is presented with the UDF Choose Files Page - letter of authority")
-      UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.checkURL
-      UDF_ChooseFilesPage.checkPageTitle("letter of authority")
-
-      When("User uploads a 1 document.pdf file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
-      UDF_ChooseFilesPage.waitForPageToLoad()
-
-      And("User selects radio button No on UDF Choose Files Page")
-      UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("No")
-
-      And("User clicks continue if I'm on UDF Choose Files Page")
-      UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
 
       Then("User is presented with the Securities Check Your Answers Page")
       Securities_CheckYourAnswersPage.waitForPageHeader

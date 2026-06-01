@@ -75,9 +75,9 @@ class ExploratorySpec extends BaseSpec {
       Securities_EnterMovementReferenceNumberPage.checkPageHeader()
       Securities_EnterMovementReferenceNumberPage.checkPageTitle()
 
-      When("User enters 10AAAAAAAAAAAAAAA1 on Securities Enter Movement Reference Number Page")
+      When("User enters 01AAAAAAAAAAAAA110 on Securities Enter Movement Reference Number Page")
       Securities_EnterMovementReferenceNumberPage.waitForPageHeader
-      Securities_EnterMovementReferenceNumberPage.enterDetails("10AAAAAAAAAAAAAAA1")
+      Securities_EnterMovementReferenceNumberPage.enterDetails("01AAAAAAAAAAAAA110")
 
       And("User clicks continue on Securities Enter Movement Reference Number Page")
       Securities_EnterMovementReferenceNumberPage.waitForPageHeader
@@ -89,9 +89,9 @@ class ExploratorySpec extends BaseSpec {
       Securities_ChooseReasonForSecurityPage.checkPageHeader()
       Securities_ChooseReasonForSecurityPage.checkPageTitle()
 
-      When("User selects radio button Account Sales on Securities Choose Reason For Security Page")
+      When("User selects radio button Temporary Admission (24 months) on Securities Choose Reason For Security Page")
       Securities_ChooseReasonForSecurityPage.waitForPageHeader
-      Securities_ChooseReasonForSecurityPage.clickRadioButton("Account Sales")
+      Securities_ChooseReasonForSecurityPage.clickRadioButton("Temporary Admission (24 months)")
 
       And("User clicks continue on Securities Choose Reason For Security Page")
       Securities_ChooseReasonForSecurityPage.waitForPageHeader

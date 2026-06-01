@@ -38,6 +38,8 @@ object Securities_ChooseReasonForSecurityPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some("Why was a security deposit or guarantee needed?")
 
   override def clickRadioButton(selection: String): Unit =
-    driver.findElements(By.tagName("label")).asScala.filter(_.getText.trim == selection).head.click()
+    driver.findElements(By.tagName("label")).asScala
+      .filter(_.getText.trim.split("\n").head.trim == selection)
+      .head.click()
 
 }
