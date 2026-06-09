@@ -1,7 +1,7 @@
 # cds-reimbursement-claim-ui-tests
 
 UI test suite for the CDS Reimbursement service cds-reimbursement-claim-frontend for  (`cds-reimbursement-claim-ui-tests`) -
-UI test suite using WebDriver and `cucumber`for BDD Testing and Service Manager for managing dependencies locally.
+UI test suite using WebDriver and `scalatest` for BDD Testing and Service Manager for managing dependencies locally.
 
 ## Nomenclature
 
