@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-private object C285_Scheduled_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
+object C285_Scheduled_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/scheduled/have-your-documents-ready"
   override val title       = "Files you need for this claim"

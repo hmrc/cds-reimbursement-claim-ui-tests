@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-private object C285_Single_SubsidyWaiverPagev2 extends BasePage {
+object C285_Single_SubsidyWaiverPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/overpayments/single/enter-movement-reference-number"
   override val title       = "You cannot use this service to claim for duties covered by the Customs Duty Waiver Scheme"

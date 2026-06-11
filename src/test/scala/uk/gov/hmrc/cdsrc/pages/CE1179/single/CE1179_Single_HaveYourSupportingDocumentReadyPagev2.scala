@@ -22,7 +22,7 @@ import uk.gov.hmrc.cdsrc.pages.BasePage
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-private object CE1179_Single_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
+object CE1179_Single_HaveYourSupportingDocumentReadyPagev2 extends BasePage {
 
   override val url: String = TestConfiguration.url("cds-frontend") + "/rejected-goods/single/have-your-documents-ready"
   override val title       = "Have your supporting documents ready"
