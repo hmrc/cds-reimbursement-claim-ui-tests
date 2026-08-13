@@ -39,10 +39,4 @@ object CheckEoriDetailsPage extends BasePage {
       case "yes" => click on cssSelector("#check-eori-details")
       case "no"  => click on cssSelector("#check-eori-details-2")
     }
-
-  override def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url))
-      clickContinueButton()
-  }
 }
