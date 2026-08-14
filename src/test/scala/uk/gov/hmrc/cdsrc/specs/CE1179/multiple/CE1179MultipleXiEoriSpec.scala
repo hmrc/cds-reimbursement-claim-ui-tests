@@ -384,12 +384,16 @@ class CE1179MultipleXiEoriSpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("commercial invoice")
 
       When("User uploads a 1 document.pdf file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument("document.pdf")
-      UDF_ChooseFilesPage.waitForUploadedFiles(1)
+      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
+      UDF_ChooseFilesPage.waitForPageToLoad()
 
-      And("User clicks continue on UDF Choose Files Page")
+      And("User selects radio button No on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
+      UDF_ChooseFilesPage.clickRadioButton("No")
+
+      And("User clicks continue if I'm on UDF Choose Files Page")
       UDF_ChooseFilesPage.clickContinueButton()
+      UDF_ChooseFilesPage.continuouslyClickContinue()
 
       Then("User is presented with the CE1179 Multiple Claimant Details Enter Contact Details Page")
       CE1179_Multiple_ClaimantDetailsEnterContactDetailsPage.waitForPageHeader
