@@ -179,12 +179,10 @@ class MultipleV2Spec extends BaseSpec {
     UCDF_ChooseFileOtherPage.waitForPageHeader
     UCDF_ChooseFileOtherPage.checkURL
     UCDF_ChooseFileOtherPage.checkPageTitle("Commercial invoice")
-    UCDF_ChooseFileOtherPage.uploadDocument(1, "document.pdf")
-    UCDF_ChooseFileOtherPage.waitForPageToLoad()
+    UCDF_ChooseFileOtherPage.uploadDocument("document.pdf")
+    UCDF_ChooseFileOtherPage.waitForUploadedFiles(1)
     UCDF_ChooseFileOtherPage.waitForPageHeader
-    UCDF_ChooseFileOtherPage.clickRadioButton("No")
     UCDF_ChooseFileOtherPage.clickContinueButton()
-    UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
     C285_Multiple_ClaimantDetailsEnterContactDetailsPagev2.waitForPageHeader
     C285_Multiple_ClaimantDetailsEnterContactDetailsPagev2.checkURL
