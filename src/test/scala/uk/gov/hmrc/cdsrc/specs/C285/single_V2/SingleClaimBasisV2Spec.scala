@@ -295,16 +295,12 @@ class SingleClaimBasisV2Spec extends BaseSpec {
       UCDF_ChooseFileOtherPage.checkPageTitle("Commercial invoice")
 
       When("User uploads a 1 document.pdf file on UCDF Choose File Other Page")
-      UCDF_ChooseFileOtherPage.uploadDocument(1, "document.pdf")
-      UCDF_ChooseFileOtherPage.waitForPageToLoad()
+      UCDF_ChooseFileOtherPage.uploadDocument("document.pdf")
+      UCDF_ChooseFileOtherPage.waitForUploadedFiles(1)
 
-      And("User selects radio button No on UCDF Choose File Other Page")
+      And("User clicks continue on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.waitForPageHeader
-      UCDF_ChooseFileOtherPage.clickRadioButton("No")
-
-      And("User clicks continue if I'm on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.clickContinueButton()
-      UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
       Then("User is presented with the C285 Single Claimant Details Change Claimant Details Page v2")
       C285_Single_ClaimantDetailsChangeClaimantDetailsPagev2.waitForPageHeader
@@ -618,16 +614,12 @@ class SingleClaimBasisV2Spec extends BaseSpec {
       UCDF_ChooseFileOtherPage.checkPageTitle("Commercial invoice")
 
       When("User uploads a 1 document.pdf file on UCDF Choose File Other Page")
-      UCDF_ChooseFileOtherPage.uploadDocument(1, "document.pdf")
-      UCDF_ChooseFileOtherPage.waitForPageToLoad()
+      UCDF_ChooseFileOtherPage.uploadDocument("document.pdf")
+      UCDF_ChooseFileOtherPage.waitForUploadedFiles(1)
 
-      And("User selects radio button No on UCDF Choose File Other Page")
+      And("User clicks continue on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.waitForPageHeader
-      UCDF_ChooseFileOtherPage.clickRadioButton("No")
-
-      And("User clicks continue if I'm on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.clickContinueButton()
-      UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
       Then("User is presented with the C285 Single Claimant Details Change Claimant Details Page v2")
       C285_Single_ClaimantDetailsChangeClaimantDetailsPagev2.waitForPageHeader

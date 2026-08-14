@@ -355,16 +355,12 @@ class ChangeLinkTestsSpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("proof of authority")
 
       When("User uploads a 1 document.pdf file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("document.pdf")
+      UDF_ChooseFilesPage.waitForUploadedFiles(1)
 
-      And("User selects radio button No on UDF Choose Files Page")
+      And("User clicks continue on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("No")
-
-      And("User clicks continue if on UDF Choose Files Page")
       UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
 
       Then("User is presented with the Securities Enter Additional Details Page")
       Securities_EnterAdditionalDetailsPage.waitForPageHeader

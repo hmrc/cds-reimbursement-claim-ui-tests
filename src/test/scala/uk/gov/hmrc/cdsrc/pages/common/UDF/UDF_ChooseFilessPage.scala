@@ -17,9 +17,8 @@
 package uk.gov.hmrc.cdsrc.pages.common.UDF
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
-import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object UDF_ChooseFilessPage extends BasePage {
+object UDF_ChooseFilessPage extends UploadDocumentsPage {
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title       = "Add a document which shows all the subsidy MRNs in this claim"
@@ -35,13 +34,4 @@ object UDF_ChooseFilessPage extends BasePage {
   override def expectedPageHeader: Option[String] = Some(
     "Add a document which shows all the subsidy MRNs in this claim"
   )
-
-  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
-
-  override def continuouslyClickContinue(): Unit = {
-    waitForPageToLoad()
-    while (driver.getCurrentUrl.equals(url))
-      clickContinueButton()
-  }
-
 }
