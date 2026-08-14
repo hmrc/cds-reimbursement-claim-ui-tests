@@ -517,12 +517,12 @@ class ScheduledV2XiEoriSpec extends BaseSpec {
       UDF_ChooseFilePage.checkPageTitle()
 
       When("User uploads a 1 image.jpg file on UDF Choose File Page")
-      UDF_ChooseFilePage.uploadDocument("image.jpg")
-      UDF_ChooseFilePage.waitForUploadedFiles(1)
+      UDF_ChooseFilePage.uploadDocument(1, "image.jpg")
+      UDF_ChooseFilePage.waitForPageToLoad()
 
-      And("User clicks continue on UDF Choose File Page")
-      UDF_ChooseFilePage.waitForPageHeader
+      And("User clicks continue if I'm on UDF Choose File Page")
       UDF_ChooseFilePage.clickContinueButton()
+      UDF_ChooseFilePage.continuouslyClickContinue()
 
       Then("User is presented with the C285 Scheduled Choose Basis For Claim Page v2")
       C285_Scheduled_ChooseBasisForClaimPagev2.waitForPageHeader
@@ -613,12 +613,16 @@ class ScheduledV2XiEoriSpec extends BaseSpec {
       UCDF_ChooseFileOtherPage.checkPageTitle("commercial invoice")
 
       When("User uploads a 1 document.pdf file on UCDF Choose File Other Page")
-      UCDF_ChooseFileOtherPage.uploadDocument("document.pdf")
-      UCDF_ChooseFileOtherPage.waitForUploadedFiles(1)
+      UCDF_ChooseFileOtherPage.uploadDocument(1, "document.pdf")
+      UCDF_ChooseFileOtherPage.waitForPageToLoad()
 
-      And("User clicks continue on UCDF Choose File Other Page")
+      And("User selects radio button No on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.waitForPageHeader
+      UCDF_ChooseFileOtherPage.clickRadioButton("No")
+
+      And("User clicks continue if I'm on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.clickContinueButton()
+      UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
       Then("User is presented with the C285 Scheduled Claimant Details Change Claimant Details Page v2")
       C285_Scheduled_ClaimantDetailsChangeClaimantDetailsPagev2.waitForPageHeader

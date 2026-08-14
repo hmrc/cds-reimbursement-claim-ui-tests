@@ -272,12 +272,16 @@ class SingleFileUploadV2Spec extends BaseSpec {
       UCDF_ChooseFileOtherPage.checkPageTitle("commercial invoice")
 
       When("User uploads a 1 image.jpg file on UCDF Choose File Other Page")
-      UCDF_ChooseFileOtherPage.uploadDocument("image.jpg")
-      UCDF_ChooseFileOtherPage.waitForUploadedFiles(1)
+      UCDF_ChooseFileOtherPage.uploadDocument(1, "image.jpg")
+      UCDF_ChooseFileOtherPage.waitForPageToLoad()
 
-      And("User clicks upload another type of document on UCDF Choose File Other Page")
+      And("User selects radio button Yes on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.waitForPageHeader
-      UCDF_ChooseFileOtherPage.clickUploadAnotherTypeButton()
+      UCDF_ChooseFileOtherPage.clickRadioButton("Yes")
+
+      And("User clicks continue if I'm on UCDF Choose File Other Page")
+      UCDF_ChooseFileOtherPage.clickContinueButton()
+      UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
       // upload file 2
       Then("User is presented with the C285 Single Supporting Evidence Select Supporting Evidence Type Page v2 again")
@@ -300,12 +304,16 @@ class SingleFileUploadV2Spec extends BaseSpec {
       UCDF_ChooseFileOtherPage.checkPageTitle("bill of landing")
 
       When("User uploads a 2 document.pdf file on UCDF Choose File Other Page")
-      UCDF_ChooseFileOtherPage.uploadDocument("document.pdf")
-      UCDF_ChooseFileOtherPage.waitForUploadedFiles(2)
+      UCDF_ChooseFileOtherPage.uploadDocument(2, "document.pdf")
+      UCDF_ChooseFileOtherPage.waitForPageToLoad()
 
-      And("User clicks upload another type of document on UCDF Choose File Other Page")
+      And("User selects radio button Yes on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.waitForPageHeader
-      UCDF_ChooseFileOtherPage.clickUploadAnotherTypeButton()
+      UCDF_ChooseFileOtherPage.clickRadioButton("Yes")
+
+      And("User clicks continue if I'm on UCDF Choose File Other Page")
+      UCDF_ChooseFileOtherPage.clickContinueButton()
+      UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
       // upload file 3
       Then("User is presented with the C285 Single Supporting Evidence Select Supporting Evidence Type Page v2 again for file 3")
@@ -328,12 +336,16 @@ class SingleFileUploadV2Spec extends BaseSpec {
       UCDF_ChooseFileOtherPage.checkPageTitle("packing list")
 
       When("User uploads a 3 image.png file on UCDF Choose File Other Page")
-      UCDF_ChooseFileOtherPage.uploadDocument("image.png")
-      UCDF_ChooseFileOtherPage.waitForUploadedFiles(3)
+      UCDF_ChooseFileOtherPage.uploadDocument(3, "image.png")
+      UCDF_ChooseFileOtherPage.waitForPageToLoad()
 
-      And("User clicks continue on UCDF Choose File Other Page")
+      And("User selects radio button No on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.waitForPageHeader
+      UCDF_ChooseFileOtherPage.clickRadioButton("No")
+
+      And("User clicks continue if I'm on UCDF Choose File Other Page")
       UCDF_ChooseFileOtherPage.clickContinueButton()
+      UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
       // continue journey
       Then("User is presented with the C285 Single Claimant Details Change Claimant Details Page v2")

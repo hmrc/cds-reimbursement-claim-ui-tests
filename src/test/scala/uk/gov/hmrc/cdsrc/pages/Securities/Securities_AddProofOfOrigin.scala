@@ -17,9 +17,9 @@
 package uk.gov.hmrc.cdsrc.pages.Securities
 
 import uk.gov.hmrc.cdsrc.conf.TestConfiguration
-import uk.gov.hmrc.cdsrc.pages.common.UDF.UploadDocumentsPage
+import uk.gov.hmrc.cdsrc.pages.BasePage
 
-object Securities_AddProofOfOrigin extends UploadDocumentsPage {
+object Securities_AddProofOfOrigin extends BasePage {
 
   override val url: String = TestConfiguration.url("upload-customs-frontend") + "/choose-files"
   override val title       = "Add proof of origin"
@@ -35,4 +35,13 @@ object Securities_AddProofOfOrigin extends UploadDocumentsPage {
   override def expectedPageHeader: Option[String] = Some(
     "Add proof of origin"
   )
+
+  override def clickContinueButton(): Unit = click on cssSelector("#upload-documents-submit")
+
+  //override def continuouslyClickContinue(): Unit = {
+   // waitForPageToLoad()
+    //while (driver.getCurrentUrl.equals(url))
+    //  clickContinueButton()
+  //}
+
 }
