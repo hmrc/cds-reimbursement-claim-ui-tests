@@ -57,13 +57,17 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     val defaultWait: Duration = Duration.ofSeconds(50) // You can load this from config if needed
   }
 
-  def waitForUploadedFile: WebElement = {
-    fluentWait.until(
-      ExpectedConditions.visibilityOfElementLocated(
-        By.xpath("(//span[@class='multi-file-upload__uploaded-tag govuk-tag'][normalize-space()='Uploaded'])[2]")
-      )
-    )
-  }
+  private def uploadWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
+    .withTimeout(Duration.ofSeconds(30))
+    .pollingEvery(Duration.ofMillis(500))
+    .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
+
+  private val uploadedTag = By.cssSelector(".govuk-summary-list__row .govuk-tag--green")
+
+  private val fileInput = By.cssSelector("input[type='file']")
+
+  private val uploadButton = By.cssSelector("form button[type='submit']")
 
   /** Page assertions * */
   def expectedPageTitle: Option[String] = None
@@ -116,39 +120,15 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
 
   def uploadDocument(file: String): Unit =
     if (file != "") {
-      enterText("file", System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+      uploadWait.until(ExpectedConditions.presenceOfElementLocated(fileInput))
+      driver
+        .findElement(fileInput)
+        .sendKeys(System.getProperty("user.dir") + "/src/test/resources/files/" + file)
+      driver.findElement(uploadButton).click()
     }
 
-
-  def uploadDocument(docNumber: Int, file: String): Unit = {
-    if (file.nonEmpty) {
-      val wait = new WebDriverWait(driver, Duration.ofSeconds(90))
-
-      // Wait for the file input to be present and visible
-      val fileInput: WebElement = wait.until(
-        ExpectedConditions.visibilityOfElementLocated(By.id(s"file-$docNumber"))
-      )
-      val filePath = System.getProperty("user.dir") + s"/src/test/resources/files/$file"
-      fileInput.sendKeys(filePath)
-    }
-  }
-
-
-  def continuouslyClickContinue(): Unit = {
-    var headingText = fluentWait.until(
-      ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
-    ).getText
-
-    while (headingText == "We are checking your document") {
-      clickContinueButton()
-
-      // Re-wait for the heading to update after clicking
-      headingText = fluentWait.until(
-        ExpectedConditions.visibilityOfElementLocated(By.tagName("h1"))
-      ).getText
-    }
-    TimeUnit.MILLISECONDS.sleep(WAIT_TIME)
-  }
+  def waitForUploadedFiles(expectedCount: Int): Unit =
+    uploadWait.until(_.findElements(uploadedTag).size == expectedCount)
 
 
   def checkPageHeader(): Assertion = {
@@ -172,11 +152,6 @@ trait BasePage extends Page with Matchers with BrowserDriver with Eventually wit
     println(s"Actual Text: [$actualText]")
 
     expectedPageHeaderList should contain(List(actualText))
-  }
-
-
-  def waitForPageToLoad(): java.lang.Boolean = {
-    fluentWait.until(ExpectedConditions.textToBe(By.cssSelector(".multi-file-upload__uploaded-tag"), "Uploaded"))
   }
 
 

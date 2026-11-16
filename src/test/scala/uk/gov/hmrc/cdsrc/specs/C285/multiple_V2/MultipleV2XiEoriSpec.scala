@@ -266,12 +266,10 @@ class MultipleV2XiEoriSpec extends BaseSpec {
       UCDF_ChooseFileOtherPage.waitForPageHeader
       UCDF_ChooseFileOtherPage.checkURL
       UCDF_ChooseFileOtherPage.checkPageTitle("commercial invoice")
-      UCDF_ChooseFileOtherPage.uploadDocument(1, "document.pdf")
-      UCDF_ChooseFileOtherPage.waitForPageToLoad()
+      UCDF_ChooseFileOtherPage.uploadDocument("document.pdf")
+      UCDF_ChooseFileOtherPage.waitForUploadedFiles(1)
       UCDF_ChooseFileOtherPage.waitForPageHeader
-      UCDF_ChooseFileOtherPage.clickRadioButton("No")
       UCDF_ChooseFileOtherPage.clickContinueButton()
-      UCDF_ChooseFileOtherPage.continuouslyClickContinue()
 
       Then("User is presented with the C285 Multiple Claimant Details Enter Contact Details Page v2")
       C285_Multiple_ClaimantDetailsEnterContactDetailsPagev2.waitForPageHeader

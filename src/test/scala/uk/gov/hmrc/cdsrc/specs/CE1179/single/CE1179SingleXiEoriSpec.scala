@@ -341,16 +341,12 @@ class CE1179SingleXiEoriSpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("commercial invoice")
 
       When("User uploads a 1 document.pdf file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("document.pdf")
+      UDF_ChooseFilesPage.waitForUploadedFiles(1)
 
-      And("User selects radio button Yes on UDF Choose Files Page")
+      And("User clicks upload another type of document on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("Yes")
-
-      And("User clicks continue if I'm on UDF Choose Files Page")
-      UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
+      UDF_ChooseFilesPage.clickUploadAnotherTypeButton()
 
       Then("User is presented with the CE1179 Single Choose File Type Page again")
       CE1179_Single_ChooseFileTypePage.waitForPageHeader
@@ -372,16 +368,12 @@ class CE1179SingleXiEoriSpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("import or export declaration")
 
       When("User uploads a 2 image.jpg file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(2, "image.jpg")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("image.jpg")
+      UDF_ChooseFilesPage.waitForUploadedFiles(2)
 
-      And("User selects radio button No on UDF Choose Files Page")
+      And("User clicks continue on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("No")
-
-      And("User clicks continue if I'm on UDF Choose Files Page")
       UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
 
       Then("User is presented with the CE1179 Single Claimant Details Change Claimant Details Page")
       CE1179_Single_ClaimantDetailsChangeClaimantDetailsPage.waitForPageHeader

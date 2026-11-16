@@ -195,16 +195,12 @@ class SingleSecuritySpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("import declaration")
 
       When("User uploads a 1 document.pdf file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("document.pdf")
+      UDF_ChooseFilesPage.waitForUploadedFiles(1)
 
-      And("User selects radio button Yes on UDF Choose Files Page")
+      And("User clicks upload another type of document on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("Yes")
-
-      And("User clicks continue if I'm on UDF Choose Files Page")
-      UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
+      UDF_ChooseFilesPage.clickUploadAnotherTypeButton()
 
       Then("User is presented with the Securities Choose File Type Page again")
       Securities_ChooseFileTypePage.waitForPageHeader
@@ -226,16 +222,12 @@ class SingleSecuritySpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("export declaration")
 
       When("User uploads a 2 image.jpg file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(2, "image.jpg")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("image.jpg")
+      UDF_ChooseFilesPage.waitForUploadedFiles(2)
 
-      And("User selects radio button No on UDF Choose Files Page")
+      When("User clicks continue on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("No")
-
-      When("User clicks continue if I'm on UDF Choose Files Page")
       UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
 
       Then("User is presented with the Securities EnterAdditionalDetailsPage")
       Securities_EnterAdditionalDetailsPage.waitForPageHeader
@@ -455,12 +447,12 @@ class SingleSecuritySpec extends BaseSpec {
       Securities_AddProofOfOrigin.checkPageTitle("Proof of origin")
 
       When("User uploads a 1 document.pdf file on Securities AddProofOfOrigin")
-      Securities_AddProofOfOrigin.uploadDocument(1, "document.pdf")
-      Securities_AddProofOfOrigin.waitForPageToLoad()
+      Securities_AddProofOfOrigin.uploadDocument("document.pdf")
+      Securities_AddProofOfOrigin.waitForUploadedFiles(1)
 
-      And("User clicks continue if I'm on Securities AddProofOfOrigin")
+      And("User clicks continue on Securities AddProofOfOrigin")
+      Securities_AddProofOfOrigin.waitForPageHeader
       Securities_AddProofOfOrigin.clickContinueButton()
-      Securities_AddProofOfOrigin.continuouslyClickContinue()
 
       Then("User is presented with the Securities NidacAddOtherDocument")
       Securities_NidacAddOtherDocument.waitForPageHeader
@@ -496,16 +488,12 @@ class SingleSecuritySpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("commercial invoice")
 
       When("User uploads a 1 document.pdf file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("document.pdf")
+      UDF_ChooseFilesPage.waitForUploadedFiles(1)
 
-      And("User selects radio button No on UDF Choose Files Page")
+      When("User clicks continue on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("No")
-
-      When("User clicks continue if I'm on UDF Choose Files Page")
       UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
 
       Then("User is presented with the Securities EnterAdditionalDetailsPage")
       Securities_EnterAdditionalDetailsPage.waitForPageHeader
@@ -809,16 +797,12 @@ class SingleSecuritySpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("import declaration")
 
       When("User uploads a 1 document.pdf file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(1, "document.pdf")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("document.pdf")
+      UDF_ChooseFilesPage.waitForUploadedFiles(1)
 
-      And("User selects radio button Yes on UDF Choose Files Page")
+      And("User clicks upload another type of document on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("Yes")
-
-      And("User clicks continue if I'm on UDF Choose Files Page")
-      UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
+      UDF_ChooseFilesPage.clickUploadAnotherTypeButton()
 
       Then("User is presented with the Securities Choose File Type Page again")
       Securities_ChooseFileTypePage.waitForPageHeader
@@ -840,16 +824,12 @@ class SingleSecuritySpec extends BaseSpec {
       UDF_ChooseFilesPage.checkPageTitle("export declaration")
 
       When("User uploads a 2 image.jpg file on UDF Choose Files Page")
-      UDF_ChooseFilesPage.uploadDocument(2, "image.jpg")
-      UDF_ChooseFilesPage.waitForPageToLoad()
+      UDF_ChooseFilesPage.uploadDocument("image.jpg")
+      UDF_ChooseFilesPage.waitForUploadedFiles(2)
 
-      And("User selects radio button No on UDF Choose Files Page")
+      When("User clicks continue on UDF Choose Files Page")
       UDF_ChooseFilesPage.waitForPageHeader
-      UDF_ChooseFilesPage.clickRadioButton("No")
-
-      When("User clicks continue if I'm on UDF Choose Files Page")
       UDF_ChooseFilesPage.clickContinueButton()
-      UDF_ChooseFilesPage.continuouslyClickContinue()
 
       Then("User is presented with the Securities EnterAdditionalDetailsPage")
       Securities_EnterAdditionalDetailsPage.waitForPageHeader
